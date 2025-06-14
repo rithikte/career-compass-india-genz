@@ -1,13 +1,12 @@
 import React from 'react';
 import {
-  LineChart,
-  Line,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
   Tooltip,
   ResponsiveContainer,
   CartesianGrid,
-  Legend,
   LabelList,
 } from 'recharts';
 import { Users, Briefcase, TrendingUp } from 'lucide-react';
@@ -63,75 +62,88 @@ const careerData = [
   }
 ];
 
-// Format the salary data for line charting
-const mapToLineData = (career: typeof careerData[0]) => [
+// Prepare the data for the horizontal bar chart
+const mapToBarData = (career: typeof careerData[0]) => [
   { level: 'Entry', salary: career.entry },
   { level: 'Mid', salary: career.mid },
   { level: 'Senior', salary: career.senior },
 ];
 
-const EntryMidSeniorCard = ({ entry, mid, senior }: { entry: number; mid: number; senior: number }) => (
-  <div className="grid grid-cols-3 gap-4 text-center mt-4">
-    <div className="bg-blue-50 p-3 rounded-lg shadow">
-      <div className="text-lg font-bold text-blue-800">₹{entry}</div>
-      <div className="text-sm text-blue-600 font-semibold">Entry</div>
-    </div>
-    <div className="bg-indigo-50 p-3 rounded-lg shadow">
-      <div className="text-lg font-bold text-indigo-800">₹{mid}</div>
-      <div className="text-sm text-indigo-600 font-semibold">Mid</div>
-    </div>
-    <div className="bg-purple-50 p-3 rounded-lg shadow">
-      <div className="text-lg font-bold text-purple-800">₹{senior}+</div>
-      <div className="text-sm text-purple-600 font-semibold">Senior</div>
-    </div>
-  </div>
-);
+const COLORS = {
+  Entry: '#3b82f6',   // blue-500
+  Mid: '#6366f1',     // indigo-500
+  Senior: '#8b5cf6',  // purple-500
+};
 
-const SalaryLineChart = ({ data }: { data: { level: string, salary: number }[] }) => (
-  <ResponsiveContainer width="100%" minWidth={240} height={120}>
-    <LineChart data={data} margin={{ left: 12, right: 16, top: 16, bottom: 4 }}>
-      <CartesianGrid stroke="#e0e7eb" strokeDasharray="4 8" vertical={false} />
+const HorizontalBarChart = ({ data }: { data: { level: string, salary: number }[] }) => (
+  <ResponsiveContainer width="100%" height={80}>
+    <BarChart
+      data={data}
+      layout="vertical"
+      margin={{ top: 8, right: 24, left: 0, bottom: 0 }}
+      barCategoryGap={16}
+    >
+      <CartesianGrid stroke="#e0e7eb" strokeDasharray="4 8" horizontal vertical={false} />
       <XAxis
-        dataKey="level"
-        tick={{ fontWeight: 700, fill: "#1e293b", fontSize: 16 }}
+        type="number"
         axisLine={false}
         tickLine={false}
+        fontSize={14}
+        tick={{ fontWeight: 600, fill: "#334155" }}
+        tickFormatter={v => `₹${v}L`}
+        domain={[0, (data) => Math.max(...data.map(d => d.salary)) + 4]}
       />
       <YAxis
+        dataKey="level"
+        type="category"
         axisLine={false}
         tickLine={false}
-        width={50}
-        tick={{ fontWeight: 600, fill: "#334155", fontSize: 14 }}
-        tickFormatter={v => `₹${v}L`}
-        domain={['auto', 'auto']}
+        fontSize={15}
+        tick={{ fontWeight: 700, fill: "#1e293b" }}
+        width={60}
       />
       <Tooltip
         formatter={(v: number) => [`₹${v} LPA`, "Salary"]}
         labelFormatter={l => `${l} Level`}
         contentStyle={{ borderRadius: 8, fontWeight: 'bold' }}
       />
-      <Line
-        type="monotone"
-        dataKey="salary"
-        stroke="#2563eb"
-        strokeWidth={3}
-        dot={{ stroke: "#2563eb", fill: "#fff", strokeWidth: 2, r: 6 }}
-        activeDot={{ r: 8, stroke: "#1e40af" }}
-        isAnimationActive={true}
-      >
+      <Bar dataKey="salary" radius={[6, 6, 6, 6]}>
+        {
+          data.map((d, i) => (
+            <Cell key={d.level} fill={COLORS[d.level as keyof typeof COLORS] || "#818cf8"} />
+          ))
+        }
         <LabelList
           dataKey="salary"
-          position="top"
+          position="right"
           formatter={(v: number) => `₹${v}L`}
           style={{
             fontWeight: 700,
-            fontSize: 15,
-            fill: "#2563eb",
+            fontSize: 16,
+            fill: "#1e293b",
+            textShadow: "0 1px 8px #fff"
           }}
         />
-      </Line>
-    </LineChart>
+      </Bar>
+    </BarChart>
   </ResponsiveContainer>
+);
+
+const EntryMidSeniorCard = ({ entry, mid, senior }: { entry: number; mid: number; senior: number }) => (
+  <div className="grid grid-cols-3 gap-4 text-center mt-2 mb-2">
+    <div className="bg-blue-50 p-2 rounded-lg shadow">
+      <div className="text-base font-bold text-blue-800">₹{entry}L</div>
+      <div className="text-xs text-blue-600 font-semibold">Entry</div>
+    </div>
+    <div className="bg-indigo-50 p-2 rounded-lg shadow">
+      <div className="text-base font-bold text-indigo-800">₹{mid}L</div>
+      <div className="text-xs text-indigo-600 font-semibold">Mid</div>
+    </div>
+    <div className="bg-purple-50 p-2 rounded-lg shadow">
+      <div className="text-base font-bold text-purple-800">₹{senior}L+</div>
+      <div className="text-xs text-purple-600 font-semibold">Senior</div>
+    </div>
+  </div>
 );
 
 export const CareerOutcomes = () => {
@@ -145,10 +157,12 @@ export const CareerOutcomes = () => {
           Explore high-growth aerospace careers with competitive salaries
         </p>
       </div>
-
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
         {careerData.map((career) => (
-          <div key={career.role} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col gap-2">
+          <div
+            key={career.role}
+            className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col gap-2"
+          >
             <div className="flex items-center mb-2">
               <span className="text-3xl mr-3">{career.icon}</span>
               <div>
@@ -156,14 +170,14 @@ export const CareerOutcomes = () => {
                 <p className="text-sm text-gray-600">{career.duties}</p>
               </div>
             </div>
-            <div className="mt-2">
-              <SalaryLineChart data={mapToLineData(career)} />
+            {/* Chart + Card together */}
+            <div className="w-full mb-1">
+              <HorizontalBarChart data={mapToBarData(career)} />
+              <EntryMidSeniorCard entry={career.entry} mid={career.mid} senior={career.senior} />
             </div>
-            <EntryMidSeniorCard entry={career.entry} mid={career.mid} senior={career.senior} />
           </div>
         ))}
       </div>
-
       <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-8 rounded-lg mt-10">
         <div className="flex items-center justify-center space-x-8">
           <div className="text-center">
@@ -187,4 +201,4 @@ export const CareerOutcomes = () => {
   );
 };
 
-// The file is getting lengthy. For best maintainability, consider splitting components (like SalaryLineChart and EntryMidSeniorCard) into their own files.
+// The file is getting lengthy. For best maintainability, consider splitting components (like HorizontalBarChart and EntryMidSeniorCard) into their own files for easier edits in the future.
