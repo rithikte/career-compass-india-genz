@@ -128,12 +128,6 @@ export const GrowthRate = () => {
         <h3 className="text-2xl font-bold text-slate-900 mb-2 text-center">
           Growth Projection Comparison
         </h3>
-        <p className="text-center text-gray-500 mb-2">
-          <span className="font-semibold">Read this chart as:</span> If you start with a 'Growth Index' of 100 jobs in 2025, the lines show how many jobs would exist in 5, 10, and 15 years based on projected growth rates for each role.
-        </p>
-        <p className="text-center text-xs text-gray-400 mb-4">
-          Example: A value of 200 at Year 10 means the number of jobs has doubled in 10 years.
-        </p>
         <div className="h-96">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={projectionData}>
@@ -165,7 +159,7 @@ export const GrowthRate = () => {
         <div className="bg-blue-50 mt-8 rounded p-4 max-w-2xl mx-auto text-sm text-blue-800 border border-blue-200">
           <span className="font-bold block mb-1">How to interpret:</span>
           <span>
-            This chart shows <b>how total jobs are projected to grow</b> in each aerospace career. A 'Growth Index' of 100 means the number of jobs in 2025—so a value of 160 in 2035 (Year 10) means 60% more jobs than in 2025. Each line shows this change for a specific career and timeframe.
+            Value shows expected jobs in future compared to 2025 (100 = same jobs; 180 = 80% more jobs).
           </span>
         </div>
       </div>
