@@ -78,7 +78,7 @@ export const JobDemand = () => {
         </div>
         <div className="bg-gradient-to-r from-purple-600 to-purple-700 text-white p-6 rounded-lg text-center">
           <TrendingUp className="w-12 h-12 mx-auto mb-4" />
-          <div className="text-3xl font-bold">{Math.round((totalJobs2040/totalJobs2025 - 1) * 100)}%</div>
+          <div className="text-3xl font-bold">{Math.round(((totalJobs2040/totalJobs2025) - 1) * 100)}%</div>
           <div className="text-purple-200">Total Growth</div>
         </div>
       </div>
@@ -94,7 +94,7 @@ export const JobDemand = () => {
               <XAxis dataKey="shortName" />
               <YAxis tickFormatter={(value) => `${value/1000}K`} />
               <Tooltip 
-                formatter={(value, name) => [`${(value/1000).toFixed(0)}K jobs`, name]}
+                formatter={(value: number, name: string) => [`${(value/1000).toFixed(0)}K jobs`, name]}
                 labelStyle={{ color: '#1e293b' }}
               />
               <Bar dataKey="2025" fill="#3b82f6" name="2025" radius={[4, 4, 0, 0]} />

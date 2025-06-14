@@ -136,7 +136,7 @@ export const GrowthRate = () => {
               <XAxis dataKey="role" />
               <YAxis />
               <Tooltip 
-                formatter={(value, name) => [`${Math.round(value)}%`, 'Growth Index']}
+                formatter={(value: number) => [`${Math.round(value)}%`, 'Growth Index']}
                 labelStyle={{ color: '#1e293b' }}
               />
               <Line type="monotone" dataKey="year5" stroke="#3b82f6" strokeWidth={2} name="5 Years" />
