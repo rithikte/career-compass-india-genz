@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
   LineChart,
@@ -70,34 +69,22 @@ const mapToLineData = (career: typeof careerData[0]) => [
   { level: 'Senior', salary: career.senior },
 ];
 
-const LEVEL_COLORS = {
-  Entry: '#3b82f6',   // blue-500
-  Mid: '#6366f1',     // indigo-500
-  Senior: '#8b5cf6',  // purple-500
-};
-
-const SimpleLineChart = ({ data }: { data: { level: string, salary: number }[] }) => {
+const VerticalLineChart = ({ data }: { data: { level: string, salary: number }[] }) => {
   if (!Array.isArray(data)) {
-    console.error("SimpleLineChart expected array data but got:", data);
+    console.error("VerticalLineChart expected array data but got:", data);
     return null;
   }
   return (
     <ResponsiveContainer width="100%" height={80}>
       <LineChart
         data={data}
+        layout="vertical"
         margin={{ top: 8, right: 24, left: 0, bottom: 0 }}
       >
         <CartesianGrid stroke="#e0e7eb" strokeDasharray="4 8" horizontal vertical={false} />
         <XAxis
-          dataKey="level"
-          type="category"
-          axisLine={false}
-          tickLine={false}
-          fontSize={14}
-          tick={{ fontWeight: 600, fill: "#334155" }}
-        />
-        <YAxis
           type="number"
+          dataKey="salary"
           axisLine={false}
           tickLine={false}
           fontSize={13}
@@ -105,9 +92,17 @@ const SimpleLineChart = ({ data }: { data: { level: string, salary: number }[] }
           width={36}
           tickFormatter={(v) => `₹${v}L`}
         />
-        <Tooltip 
-          formatter={(v: number) => [`₹${v} LPA`, "Salary"]} 
-          labelFormatter={(l) => `${l} Level`} 
+        <YAxis
+          type="category"
+          dataKey="level"
+          axisLine={false}
+          tickLine={false}
+          fontSize={14}
+          tick={{ fontWeight: 600, fill: "#334155" }}
+        />
+        <Tooltip
+          formatter={(v: number) => [`₹${v} LPA`, "Salary"]}
+          labelFormatter={(l) => `${l} Level`}
           contentStyle={{ borderRadius: 8, fontWeight: 'bold' }}
         />
         <Line 
@@ -125,7 +120,7 @@ const SimpleLineChart = ({ data }: { data: { level: string, salary: number }[] }
         >
           <LabelList 
             dataKey="salary"
-            position="top"
+            position="right"
             formatter={(v: number) => `₹${v}L`}
             style={{
               fontWeight: 700,
@@ -183,7 +178,7 @@ export const CareerOutcomes = () => {
             </div>
             {/* Chart + Card together */}
             <div className="w-full mb-1">
-              <SimpleLineChart data={mapToLineData(career)} />
+              <VerticalLineChart data={mapToLineData(career)} />
               <EntryMidSeniorCard entry={career.entry} mid={career.mid} senior={career.senior} />
             </div>
           </div>
@@ -212,5 +207,4 @@ export const CareerOutcomes = () => {
   );
 };
 
-// The file is getting lengthy. For best maintainability, consider splitting components (like SimpleLineChart and EntryMidSeniorCard) into their own files for easier edits in the future.
-
+// The file is getting lengthy. For best maintainability, consider splitting components (like VerticalLineChart and EntryMidSeniorCard) into their own files for easier edits in the future.
