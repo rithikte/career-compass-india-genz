@@ -159,7 +159,7 @@ export const GrowthRate = () => {
         <div className="bg-blue-50 mt-8 rounded p-4 max-w-2xl mx-auto text-sm text-blue-800 border border-blue-200">
           <span className="font-bold block mb-1">How to interpret:</span>
           <span>
-            Value shows expected jobs in future compared to 2025 (100 = same jobs; 180 = 80% more jobs).
+            100 means same jobs as 2025. 150 means 50% more jobs. Higher number = more jobs in future.
           </span>
         </div>
       </div>
