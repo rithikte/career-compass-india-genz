@@ -156,26 +156,26 @@ export const GrowthRate = () => {
             </LineChart>
           </ResponsiveContainer>
         </div>
-        <div className="bg-blue-50 mt-8 rounded p-4 max-w-2xl mx-auto text-sm border border-blue-200">
+        <div className="bg-blue-50 mt-8 rounded p-4 max-w-2xl mx-auto border border-blue-200">
           <span className="font-bold block mb-4 text-blue-900 text-lg">How to understand it easily:</span>
-          <div className="flex flex-col md:flex-row gap-3">
-            <div className="flex-1 bg-gradient-to-r from-blue-300 via-blue-100 to-white rounded-lg p-4 flex items-center shadow hover:scale-105 transition-transform">
-              <span className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-blue-400 mr-3 drop-shadow">
+          <div className="flex flex-col gap-3 text-base sm:text-lg">
+            <div className="flex items-baseline gap-2">
+              <span className="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-blue-400" style={{ minWidth: 56 }}>
                 0
               </span>
-              <span className="text-blue-900 font-semibold">= Same number of jobs as today</span>
+              <span className="text-blue-900 font-medium">= Same number of jobs as today</span>
             </div>
-            <div className="flex-1 bg-gradient-to-r from-green-300 via-green-100 to-white rounded-lg p-4 flex items-center shadow hover:scale-105 transition-transform">
-              <span className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-400 mr-3 drop-shadow">
+            <div className="flex items-baseline gap-2">
+              <span className="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-400" style={{ minWidth: 56 }}>
                 200
               </span>
-              <span className="text-green-900 font-semibold">= Double the jobs!</span>
+              <span className="text-green-900 font-medium">= Double the jobs!</span>
             </div>
-            <div className="flex-1 bg-gradient-to-r from-yellow-200 via-orange-100 to-white rounded-lg p-4 flex items-center shadow hover:scale-105 transition-transform">
-              <span className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-orange-400 mr-3 drop-shadow">
+            <div className="flex items-baseline gap-2">
+              <span className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-orange-400" style={{ minWidth: 100 }}>
                 Bigger number
               </span>
-              <span className="text-yellow-900 font-semibold">= More job chances for you in future!</span>
+              <span className="text-yellow-900 font-medium">= More job chances for you in future!</span>
             </div>
           </div>
         </div>
