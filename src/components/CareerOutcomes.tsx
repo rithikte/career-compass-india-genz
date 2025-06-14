@@ -1,14 +1,14 @@
+
 import React from 'react';
 import {
-  BarChart,
-  Bar,
+  LineChart,
+  Line,
   XAxis,
   YAxis,
   Tooltip,
   ResponsiveContainer,
   CartesianGrid,
-  LabelList,
-  Cell   // <-- Fix: Import Cell from recharts
+  LabelList
 } from 'recharts';
 import { Users, Briefcase, TrendingUp } from 'lucide-react';
 
@@ -63,75 +63,79 @@ const careerData = [
   }
 ];
 
-// Prepare the data for the horizontal bar chart
-const mapToBarData = (career: typeof careerData[0]) => [
+// Prepare the data for the simple line chart
+const mapToLineData = (career: typeof careerData[0]) => [
   { level: 'Entry', salary: career.entry },
   { level: 'Mid', salary: career.mid },
   { level: 'Senior', salary: career.senior },
 ];
 
-const COLORS = {
+const LEVEL_COLORS = {
   Entry: '#3b82f6',   // blue-500
   Mid: '#6366f1',     // indigo-500
   Senior: '#8b5cf6',  // purple-500
 };
 
-const HorizontalBarChart = ({ data }: { data: { level: string, salary: number }[] }) => {
+const SimpleLineChart = ({ data }: { data: { level: string, salary: number }[] }) => {
   if (!Array.isArray(data)) {
-    console.error("HorizontalBarChart expected array data but got:", data);
+    console.error("SimpleLineChart expected array data but got:", data);
     return null;
   }
   return (
     <ResponsiveContainer width="100%" height={80}>
-      <BarChart
+      <LineChart
         data={data}
-        layout="vertical"
         margin={{ top: 8, right: 24, left: 0, bottom: 0 }}
-        barCategoryGap={16}
       >
         <CartesianGrid stroke="#e0e7eb" strokeDasharray="4 8" horizontal vertical={false} />
         <XAxis
-          type="number"
-          axisLine={false}
-          tickLine={false}
-          fontSize={14}
-          tick={{ fontWeight: 600, fill: "#334155" }}
-          tickFormatter={v => `₹${v}L`}
-          domain={[0, (chartData: any[]) => Math.max(...(Array.isArray(chartData) ? chartData.map(d => d.salary) : [0])) + 4]}
-        />
-        <YAxis
           dataKey="level"
           type="category"
           axisLine={false}
           tickLine={false}
-          fontSize={15}
-          tick={{ fontWeight: 700, fill: "#1e293b" }}
-          width={60}
+          fontSize={14}
+          tick={{ fontWeight: 600, fill: "#334155" }}
         />
-        <Tooltip
-          formatter={(v: number) => [`₹${v} LPA`, "Salary"]}
-          labelFormatter={l => `${l} Level`}
+        <YAxis
+          type="number"
+          axisLine={false}
+          tickLine={false}
+          fontSize={13}
+          tick={{ fontWeight: 700, fill: "#6366f1" }}
+          width={36}
+          tickFormatter={(v) => `₹${v}L`}
+        />
+        <Tooltip 
+          formatter={(v: number) => [`₹${v} LPA`, "Salary"]} 
+          labelFormatter={(l) => `${l} Level`} 
           contentStyle={{ borderRadius: 8, fontWeight: 'bold' }}
         />
-        <Bar dataKey="salary" radius={[6, 6, 6, 6]}>
-          {
-            data.map((d, i) => (
-              <Cell key={d.level} fill={COLORS[d.level as keyof typeof COLORS] || "#818cf8"} />
-            ))
-          }
-          <LabelList
+        <Line 
+          type="monotone"
+          dataKey="salary"
+          stroke="#6366f1"
+          strokeWidth={3}
+          dot={{
+            stroke: "#fff", 
+            strokeWidth: 2, 
+            fill: "#6366f1", 
+            r: 6
+          }}
+          activeDot={{ r: 8 }}
+        >
+          <LabelList 
             dataKey="salary"
-            position="right"
+            position="top"
             formatter={(v: number) => `₹${v}L`}
             style={{
               fontWeight: 700,
-              fontSize: 16,
-              fill: "#1e293b",
+              fontSize: 15,
+              fill: "#4f46e5",
               textShadow: "0 1px 8px #fff"
             }}
           />
-        </Bar>
-      </BarChart>
+        </Line>
+      </LineChart>
     </ResponsiveContainer>
   );
 };
@@ -179,7 +183,7 @@ export const CareerOutcomes = () => {
             </div>
             {/* Chart + Card together */}
             <div className="w-full mb-1">
-              <HorizontalBarChart data={mapToBarData(career)} />
+              <SimpleLineChart data={mapToLineData(career)} />
               <EntryMidSeniorCard entry={career.entry} mid={career.mid} senior={career.senior} />
             </div>
           </div>
@@ -208,4 +212,5 @@ export const CareerOutcomes = () => {
   );
 };
 
-// The file is getting lengthy. For best maintainability, consider splitting components (like HorizontalBarChart and EntryMidSeniorCard) into their own files for easier edits in the future.
+// The file is getting lengthy. For best maintainability, consider splitting components (like SimpleLineChart and EntryMidSeniorCard) into their own files for easier edits in the future.
+
