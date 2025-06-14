@@ -156,22 +156,28 @@ export const GrowthRate = () => {
             </LineChart>
           </ResponsiveContainer>
         </div>
-        <div className="bg-blue-50 mt-8 rounded p-4 max-w-2xl mx-auto text-sm text-blue-800 border border-blue-200">
-          <span className="font-bold block mb-1">How to understand it easily:</span>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>
-              <span role="img" aria-label="jobs">🔵</span>{" "}
-              <span className="font-semibold">100</span> = Same number of jobs as <span className="font-semibold">today</span>
-            </li>
-            <li>
-              <span role="img" aria-label="double">🟢</span>{" "}
-              <span className="font-semibold">200</span> = <span className="font-semibold">Double</span> the jobs!
-            </li>
-            <li>
-              <span role="img" aria-label="up">🚀</span>{" "}
-              Bigger number <span className="font-semibold">= More job chances</span> for you in the future!
-            </li>
-          </ul>
+        <div className="bg-blue-50 mt-8 rounded p-4 max-w-2xl mx-auto text-sm border border-blue-200">
+          <span className="font-bold block mb-4 text-blue-900 text-lg">How to understand it easily:</span>
+          <div className="flex flex-col md:flex-row gap-3">
+            <div className="flex-1 bg-gradient-to-r from-blue-300 via-blue-100 to-white rounded-lg p-4 flex items-center shadow hover:scale-105 transition-transform">
+              <span className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-blue-400 mr-3 drop-shadow">
+                0
+              </span>
+              <span className="text-blue-900 font-semibold">= Same number of jobs as today</span>
+            </div>
+            <div className="flex-1 bg-gradient-to-r from-green-300 via-green-100 to-white rounded-lg p-4 flex items-center shadow hover:scale-105 transition-transform">
+              <span className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-400 mr-3 drop-shadow">
+                200
+              </span>
+              <span className="text-green-900 font-semibold">= Double the jobs!</span>
+            </div>
+            <div className="flex-1 bg-gradient-to-r from-yellow-200 via-orange-100 to-white rounded-lg p-4 flex items-center shadow hover:scale-105 transition-transform">
+              <span className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-orange-400 mr-3 drop-shadow">
+                Bigger number
+              </span>
+              <span className="text-yellow-900 font-semibold">= More job chances for you in future!</span>
+            </div>
+          </div>
         </div>
       </div>
 
