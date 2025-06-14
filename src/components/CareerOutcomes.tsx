@@ -113,6 +113,17 @@ const chartData = careerData.map(career => ({
   icon: career.icon,
 }));
 
+// Custom X-axis labels for Entry-Mid-Senior underneath each bar group
+const EntryMidSeniorLabels = () => (
+  <div className="w-full flex justify-center mt-2 select-none">
+    <div className="grid grid-cols-3 gap-8 max-w-xl mx-auto text-base font-extrabold text-gray-500">
+      <span className="text-blue-700">Entry</span>
+      <span className="text-cyan-700 text-center">Mid</span>
+      <span className="text-purple-700 text-right">Senior</span>
+    </div>
+  </div>
+);
+
 export const CareerOutcomes = () => {
   return (
     <div className="space-y-8">
@@ -257,6 +268,8 @@ export const CareerOutcomes = () => {
             </Bar>
           </BarChart>
         </ResponsiveContainer>
+        {/* Insert Entry-Mid-Senior labels directly under the chart */}
+        <EntryMidSeniorLabels />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
