@@ -1,7 +1,14 @@
-
 import React from 'react';
 import {
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LabelList, Legend
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  LabelList,
+  Legend
 } from 'recharts';
 import { Users, Briefcase, TrendingUp } from 'lucide-react';
 
@@ -56,37 +63,182 @@ const careerData = [
   }
 ];
 
-const BAR_COLORS = ['#4f46e5', '#0ea5e9', '#a21caf']; // Entry, Mid, Senior
-const LEVEL_COLORS = {
-  Entry: '#4f46e5',
-  Mid: '#0ea5e9',
-  Senior: '#a21caf'
+const LEVEL_GRADIENTS = {
+  entry: {
+    id: "entryGrad",
+    from: "#6366f1",
+    to: "#a5b4fc"
+  },
+  mid: {
+    id: "midGrad",
+    from: "#0ea5e9",
+    to: "#99f6e4"
+  },
+  senior: {
+    id: "seniorGrad",
+    from: "#a21caf",
+    to: "#f472b6"
+  }
 };
 
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     return (
-      <div className="rounded-lg shadow-lg px-4 py-2 bg-white border border-blue-100">
-        <div className="font-bold text-blue-800">{label} Level</div>
-        <div className="text-slate-700 text-lg font-semibold">
-          <span className="text-blue-700">₹{payload[0].value} LPA</span>
-        </div>
+      <div className="rounded-lg shadow-lg px-4 py-2 bg-white border border-blue-100 animate-fade-in">
+        <div className="font-bold text-blue-800">{payload[0].payload?.role}</div>
+        {payload.map((p: any) => (
+          <div key={p.name} className="flex items-center gap-2 mt-1">
+            <span className="inline-block w-2 h-2 rounded-full"
+              style={{
+                background: p.name === "Entry" ? LEVEL_GRADIENTS.entry.from :
+                            p.name === "Mid"   ? LEVEL_GRADIENTS.mid.from :
+                            LEVEL_GRADIENTS.senior.from
+              }}
+            ></span>
+            <span className="font-bold text-xl text-gray-700">{p.name}:</span>
+            <span className="font-mono font-semibold text-base text-blue-800">₹{p.value} LPA</span>
+          </div>
+        ))}
       </div>
     );
   }
   return null;
 };
 
+const chartData = careerData.map(career => ({
+  role: career.role,
+  Entry: career.entry,
+  Mid: career.mid,
+  Senior: career.senior,
+  icon: career.icon,
+}));
+
 export const CareerOutcomes = () => {
   return (
     <div className="space-y-8">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-slate-900 mb-4">
+        <h2 className="text-4xl font-bold text-slate-900 mb-3">
           What Can I Become After This Degree?
         </h2>
         <p className="text-xl text-gray-600">
           Explore high-growth aerospace careers with competitive salaries
         </p>
+      </div>
+
+      <div className="bg-slate-50 dark:bg-slate-900/30 rounded-2xl px-2 py-8 shadow-lg">
+        <div className="flex items-center gap-3 mb-6">
+          <span className="bg-gradient-to-tr from-blue-600 to-violet-500 px-4 py-1 rounded-full text-white font-semibold shadow">
+            <TrendingUp className="inline w-5 h-5 mr-1" /> Career Salary Comparison
+          </span>
+          <span className="text-muted-foreground text-xs ml-4">All figures: ₹ Lakh Per Annum (LPA)</span>
+        </div>
+        <ResponsiveContainer width="100%" height={400}>
+          <BarChart
+            data={chartData}
+            margin={{ top: 32, right: 24, left: 28, bottom: 32 }}
+            barGap={16}
+          >
+            <defs>
+              <linearGradient id="entryGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#6366f1" stopOpacity={0.92}/>
+                <stop offset="100%" stopColor="#a5b4fc" stopOpacity={0.52}/>
+              </linearGradient>
+              <linearGradient id="midGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#0ea5e9" stopOpacity={0.94}/>
+                <stop offset="100%" stopColor="#99f6e4" stopOpacity={0.58}/>
+              </linearGradient>
+              <linearGradient id="seniorGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#a21caf" stopOpacity={0.93}/>
+                <stop offset="100%" stopColor="#f472b6" stopOpacity={0.64}/>
+              </linearGradient>
+            </defs>
+            <CartesianGrid strokeDasharray="3 5" vertical={false} stroke="#e5e7eb" />
+            <XAxis dataKey="role"
+              tick={{ fontWeight: 700, fill: '#3730a3', fontSize: 15}}
+              axisLine={false}
+              tickLine={false}
+              interval={0}
+              minTickGap={18}
+              tickFormatter={(v: string, i: number) => (
+                chartData[i]?.icon ? `${chartData[i].icon} ${v.split(' ')[0]}` : v
+              )}
+              angle={-13}
+              dx={-6}
+              dy={10}
+            />
+            <YAxis
+              width={68}
+              tick={{fontWeight: 500, fill: '#334155', fontSize: 14}}
+              axisLine={false}
+              tickLine={false}
+              tickFormatter={v => `₹${v}L`}
+              label={{
+                value: 'Salary (₹LPA)',
+                angle: -90, position: 'insideLeft',
+                fill: '#4f46e5',
+                fontSize: 15,
+                fontWeight: 700,
+                offset: -8
+              }}
+            />
+            <Tooltip content={<CustomTooltip />} cursor={{fill: '#e0e7ff', opacity: 0.21}} />
+            <Legend
+              formatter={value => <span className="font-semibold text-base text-slate-600">{value} Level</span>}
+              iconType="circle"
+              verticalAlign="top"
+              align="center"
+              wrapperStyle={{ paddingBottom: 22 }}
+            />
+            <Bar
+              dataKey="Entry"
+              name="Entry"
+              radius={[16, 16, 12, 12]}
+              fill="url(#entryGrad)"
+              animationDuration={1500}
+              className="drop-shadow-lg"
+              isAnimationActive={true}
+            >
+              <LabelList
+                dataKey="Entry"
+                position="top"
+                formatter={val => `₹${val}L`}
+                className="font-extrabold text-blue-700 text-lg"
+              />
+            </Bar>
+            <Bar
+              dataKey="Mid"
+              name="Mid"
+              radius={[16, 16, 12, 12]}
+              fill="url(#midGrad)"
+              animationDuration={1800}
+              className="drop-shadow-lg"
+              isAnimationActive={true}
+            >
+              <LabelList
+                dataKey="Mid"
+                position="top"
+                formatter={val => `₹${val}L`}
+                className="font-extrabold text-cyan-600 text-lg"
+              />
+            </Bar>
+            <Bar
+              dataKey="Senior"
+              name="Senior"
+              radius={[16, 16, 12, 12]}
+              fill="url(#seniorGrad)"
+              animationDuration={2000}
+              className="drop-shadow-lg"
+              isAnimationActive={true}
+            >
+              <LabelList
+                dataKey="Senior"
+                position="top"
+                formatter={val => `₹${val}L`}
+                className="font-extrabold text-violet-700 text-lg"
+              />
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
@@ -101,76 +253,6 @@ export const CareerOutcomes = () => {
                 <h3 className="text-xl font-bold text-slate-900">{career.role}</h3>
                 <p className="text-sm text-gray-600">{career.duties}</p>
               </div>
-            </div>
-
-            <div className="relative h-64 mb-4 animate-fade-in">
-              <div className="absolute left-3 top-2 z-10">
-                <span className="bg-blue-100 text-blue-700 uppercase text-xs px-3 py-1 rounded-full font-semibold tracking-wider shadow-sm">
-                  Salary Growth by Experience
-                </span>
-              </div>
-              <ResponsiveContainer width="100%" height="95%">
-                <BarChart
-                  data={[
-                    { level: 'Entry', salary: career.entry },
-                    { level: 'Mid', salary: career.mid },
-                    { level: 'Senior', salary: career.senior }
-                  ]}
-                  margin={{ top: 40, right: 20, left: 10, bottom: 24 }}
-                  barSize={38}
-                >
-                  <defs>
-                    <linearGradient id="entryGradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#6366f1" stopOpacity={0.92}/>
-                      <stop offset="100%" stopColor="#7dd3fc" stopOpacity={0.52}/>
-                    </linearGradient>
-                    <linearGradient id="midGradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#06b6d4" stopOpacity={0.94}/>
-                      <stop offset="100%" stopColor="#0ea5e9" stopOpacity={0.58}/>
-                    </linearGradient>
-                    <linearGradient id="seniorGradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#d946ef" stopOpacity={0.93}/>
-                      <stop offset="100%" stopColor="#a21caf" stopOpacity={0.64}/>
-                    </linearGradient>
-                  </defs>
-                  <CartesianGrid strokeDasharray="6 6" vertical={false} stroke="#e0e7ff" />
-                  <XAxis dataKey="level" tick={{fontWeight: 600, fill: '#3730a3', fontSize: 16}} axisLine={false} tickLine={false}/>
-                  <YAxis
-                    width={55}
-                    tick={{fontWeight: 500, fill: '#334155', fontSize: 15}}
-                    axisLine={false}
-                    tickLine={false}
-                    tickFormatter={v => `₹${v}L`}
-                  />
-                  <Tooltip content={<CustomTooltip />} cursor={{fill: '#e0e7ff', opacity: 0.19}} />
-                  <Legend
-                    formatter={(value) => {
-                      return <span className="font-semibold text-sm text-gray-600">{value} Level</span>;
-                    }}
-                    iconType="circle"
-                    verticalAlign="top"
-                    align="center"
-                  />
-                  <Bar
-                    dataKey="salary"
-                    radius={[16, 16, 8, 8]}
-                    isAnimationActive={true}
-                    animationDuration={1200}
-                    fill={
-                      career.role === 'Aerospace Engineer' ? 'url(#entryGradient)' :
-                      career.role === 'Avionics Engineer' ? 'url(#midGradient)' :
-                      'url(#seniorGradient)'
-                    }
-                  >
-                    <LabelList
-                      dataKey="salary"
-                      position="top"
-                      formatter={(val: number) => `₹${val}L`}
-                      className="font-bold text-base text-gray-900"
-                    />
-                  </Bar>
-                </BarChart>
-              </ResponsiveContainer>
             </div>
 
             <div className="grid grid-cols-3 gap-4 text-center">
