@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
   BarChart,
@@ -77,59 +76,65 @@ const COLORS = {
   Senior: '#8b5cf6',  // purple-500
 };
 
-const HorizontalBarChart = ({ data }: { data: { level: string, salary: number }[] }) => (
-  <ResponsiveContainer width="100%" height={80}>
-    <BarChart
-      data={data}
-      layout="vertical"
-      margin={{ top: 8, right: 24, left: 0, bottom: 0 }}
-      barCategoryGap={16}
-    >
-      <CartesianGrid stroke="#e0e7eb" strokeDasharray="4 8" horizontal vertical={false} />
-      <XAxis
-        type="number"
-        axisLine={false}
-        tickLine={false}
-        fontSize={14}
-        tick={{ fontWeight: 600, fill: "#334155" }}
-        tickFormatter={v => `₹${v}L`}
-        domain={[0, (data) => Math.max(...data.map(d => d.salary)) + 4]}
-      />
-      <YAxis
-        dataKey="level"
-        type="category"
-        axisLine={false}
-        tickLine={false}
-        fontSize={15}
-        tick={{ fontWeight: 700, fill: "#1e293b" }}
-        width={60}
-      />
-      <Tooltip
-        formatter={(v: number) => [`₹${v} LPA`, "Salary"]}
-        labelFormatter={l => `${l} Level`}
-        contentStyle={{ borderRadius: 8, fontWeight: 'bold' }}
-      />
-      <Bar dataKey="salary" radius={[6, 6, 6, 6]}>
-        {
-          data.map((d, i) => (
-            <Cell key={d.level} fill={COLORS[d.level as keyof typeof COLORS] || "#818cf8"} />
-          ))
-        }
-        <LabelList
-          dataKey="salary"
-          position="right"
-          formatter={(v: number) => `₹${v}L`}
-          style={{
-            fontWeight: 700,
-            fontSize: 16,
-            fill: "#1e293b",
-            textShadow: "0 1px 8px #fff"
-          }}
+const HorizontalBarChart = ({ data }: { data: { level: string, salary: number }[] }) => {
+  if (!Array.isArray(data)) {
+    console.error("HorizontalBarChart expected array data but got:", data);
+    return null;
+  }
+  return (
+    <ResponsiveContainer width="100%" height={80}>
+      <BarChart
+        data={data}
+        layout="vertical"
+        margin={{ top: 8, right: 24, left: 0, bottom: 0 }}
+        barCategoryGap={16}
+      >
+        <CartesianGrid stroke="#e0e7eb" strokeDasharray="4 8" horizontal vertical={false} />
+        <XAxis
+          type="number"
+          axisLine={false}
+          tickLine={false}
+          fontSize={14}
+          tick={{ fontWeight: 600, fill: "#334155" }}
+          tickFormatter={v => `₹${v}L`}
+          domain={[0, (chartData: any[]) => Math.max(...(Array.isArray(chartData) ? chartData.map(d => d.salary) : [0])) + 4]}
         />
-      </Bar>
-    </BarChart>
-  </ResponsiveContainer>
-);
+        <YAxis
+          dataKey="level"
+          type="category"
+          axisLine={false}
+          tickLine={false}
+          fontSize={15}
+          tick={{ fontWeight: 700, fill: "#1e293b" }}
+          width={60}
+        />
+        <Tooltip
+          formatter={(v: number) => [`₹${v} LPA`, "Salary"]}
+          labelFormatter={l => `${l} Level`}
+          contentStyle={{ borderRadius: 8, fontWeight: 'bold' }}
+        />
+        <Bar dataKey="salary" radius={[6, 6, 6, 6]}>
+          {
+            data.map((d, i) => (
+              <Cell key={d.level} fill={COLORS[d.level as keyof typeof COLORS] || "#818cf8"} />
+            ))
+          }
+          <LabelList
+            dataKey="salary"
+            position="right"
+            formatter={(v: number) => `₹${v}L`}
+            style={{
+              fontWeight: 700,
+              fontSize: 16,
+              fill: "#1e293b",
+              textShadow: "0 1px 8px #fff"
+            }}
+          />
+        </Bar>
+      </BarChart>
+    </ResponsiveContainer>
+  );
+};
 
 const EntryMidSeniorCard = ({ entry, mid, senior }: { entry: number; mid: number; senior: number }) => (
   <div className="grid grid-cols-3 gap-4 text-center mt-2 mb-2">
