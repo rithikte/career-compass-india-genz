@@ -132,109 +132,127 @@ export const CareerOutcomes = () => {
           </span>
           <span className="text-muted-foreground text-xs ml-4">All figures: ₹ Lakh Per Annum (LPA)</span>
         </div>
-        <ResponsiveContainer width="100%" height={400}>
+        <ResponsiveContainer width="100%" height={390}>
           <BarChart
             data={chartData}
-            margin={{ top: 32, right: 24, left: 28, bottom: 32 }}
-            barGap={16}
+            margin={{ top: 32, right: 20, left: 18, bottom: 32 }}
+            barGap={22}
           >
-            <defs>
-              <linearGradient id="entryGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#6366f1" stopOpacity={0.92}/>
-                <stop offset="100%" stopColor="#a5b4fc" stopOpacity={0.52}/>
-              </linearGradient>
-              <linearGradient id="midGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#0ea5e9" stopOpacity={0.94}/>
-                <stop offset="100%" stopColor="#99f6e4" stopOpacity={0.58}/>
-              </linearGradient>
-              <linearGradient id="seniorGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#a21caf" stopOpacity={0.93}/>
-                <stop offset="100%" stopColor="#f472b6" stopOpacity={0.64}/>
-              </linearGradient>
-            </defs>
-            <CartesianGrid strokeDasharray="3 5" vertical={false} stroke="#e5e7eb" />
-            <XAxis dataKey="role"
-              tick={{ fontWeight: 700, fill: '#3730a3', fontSize: 15}}
+            <CartesianGrid strokeDasharray="4 8" vertical={false} stroke="#e0e7eb" />
+            <XAxis
+              dataKey="role"
+              tick={{
+                fontWeight: 700,
+                fill: "#3730a3",
+                fontSize: 16,
+                letterSpacing: "0.02em",
+              }}
               axisLine={false}
               tickLine={false}
               interval={0}
-              minTickGap={18}
-              tickFormatter={(v: string, i: number) => (
-                chartData[i]?.icon ? `${chartData[i].icon} ${v.split(' ')[0]}` : v
-              )}
-              angle={-13}
-              dx={-6}
-              dy={10}
+              minTickGap={8}
+              tickFormatter={(v: string, i: number) =>
+                chartData[i]?.icon ? `${chartData[i].icon} ${v.split(" ")[0]}` : v
+              }
+              angle={-8}
+              dy={8}
             />
             <YAxis
-              width={68}
-              tick={{fontWeight: 500, fill: '#334155', fontSize: 14}}
+              width={64}
+              tick={{
+                fontWeight: 700,
+                fill: "#334155",
+                fontSize: 15,
+                letterSpacing: '.01em',
+              }}
               axisLine={false}
               tickLine={false}
-              tickFormatter={v => `₹${v}L`}
+              tickFormatter={(v) => `₹${v}L`}
               label={{
-                value: 'Salary (₹LPA)',
-                angle: -90, position: 'insideLeft',
-                fill: '#4f46e5',
-                fontSize: 15,
+                value: "Salary (₹LPA)",
+                angle: -90,
+                position: "insideLeft",
+                fill: "#4f46e5",
+                fontSize: 16,
                 fontWeight: 700,
-                offset: -8
+                offset: -8,
+                style: { textAnchor: "middle" }
               }}
             />
-            <Tooltip content={<CustomTooltip />} cursor={{fill: '#e0e7ff', opacity: 0.21}} />
+            <Tooltip content={<CustomTooltip />} cursor={{ fill: "#e0e7ff", opacity: 0.18 }} />
             <Legend
-              formatter={value => <span className="font-semibold text-base text-slate-600">{value} Level</span>}
+              formatter={(value) => (
+                <span className="font-semibold text-base text-slate-600">{value} Level</span>
+              )}
               iconType="circle"
               verticalAlign="top"
               align="center"
-              wrapperStyle={{ paddingBottom: 22 }}
+              wrapperStyle={{ paddingBottom: 18 }}
             />
             <Bar
               dataKey="Entry"
               name="Entry"
-              radius={[16, 16, 12, 12]}
-              fill="url(#entryGrad)"
-              animationDuration={1500}
-              className="drop-shadow-lg"
+              radius={[12, 12, 8, 8]}
+              fill="#2563eb"
+              maxBarSize={38}
               isAnimationActive={true}
+              animationDuration={900}
             >
               <LabelList
                 dataKey="Entry"
                 position="top"
-                formatter={val => `₹${val}L`}
-                className="font-extrabold text-blue-700 text-lg"
+                formatter={(val) => `₹${val}L`}
+                style={{
+                  fontWeight: 800,
+                  fontSize: 16,
+                  fill: "#2563eb",
+                  textShadow: "0 2px 4px #fff7"
+                }}
+                className="font-extrabold"
               />
             </Bar>
             <Bar
               dataKey="Mid"
               name="Mid"
-              radius={[16, 16, 12, 12]}
-              fill="url(#midGrad)"
-              animationDuration={1800}
-              className="drop-shadow-lg"
+              radius={[12, 12, 8, 8]}
+              fill="#06b6d4"
+              maxBarSize={38}
               isAnimationActive={true}
+              animationDuration={1150}
             >
               <LabelList
                 dataKey="Mid"
                 position="top"
-                formatter={val => `₹${val}L`}
-                className="font-extrabold text-cyan-600 text-lg"
+                formatter={(val) => `₹${val}L`}
+                style={{
+                  fontWeight: 800,
+                  fontSize: 16,
+                  fill: "#0e7490",
+                  textShadow: "0 2px 4px #fff9"
+                }}
+                className="font-extrabold"
               />
             </Bar>
             <Bar
               dataKey="Senior"
               name="Senior"
-              radius={[16, 16, 12, 12]}
-              fill="url(#seniorGrad)"
-              animationDuration={2000}
-              className="drop-shadow-lg"
+              radius={[12, 12, 8, 8]}
+              fill="#a21caf"
+              maxBarSize={38}
               isAnimationActive={true}
+              animationDuration={1300}
             >
               <LabelList
                 dataKey="Senior"
                 position="top"
-                formatter={val => `₹${val}L`}
-                className="font-extrabold text-violet-700 text-lg"
+                formatter={(val) => `₹${val}L`}
+                style={{
+                  fontWeight: 800,
+                  fontSize: 16,
+                  fill: "#a21caf",
+                  textShadow: "0 2px 4px #fff8"
+                }}
+                className="font-extrabold"
               />
             </Bar>
           </BarChart>
