@@ -1,7 +1,8 @@
+
 import React from 'react';
 import {
-  LineChart,
-  Line,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
   Tooltip,
@@ -62,21 +63,27 @@ const careerData = [
   }
 ];
 
-// Prepare the data for the simple line chart
-const mapToLineData = (career: typeof careerData[0]) => [
+// Prepare the data for the simple bar chart
+const mapToBarData = (career: typeof careerData[0]) => [
   { level: 'Entry', salary: career.entry },
   { level: 'Mid', salary: career.mid },
   { level: 'Senior', salary: career.senior },
 ];
 
-const VerticalLineChart = ({ data }: { data: { level: string, salary: number }[] }) => {
+const LEVEL_COLORS = {
+  Entry: '#3b82f6',   // blue-500
+  Mid: '#6366f1',     // indigo-500
+  Senior: '#8b5cf6',  // purple-500
+};
+
+const VerticalBarChart = ({ data }: { data: { level: string, salary: number }[] }) => {
   if (!Array.isArray(data)) {
-    console.error("VerticalLineChart expected array data but got:", data);
+    console.error("VerticalBarChart expected array data but got:", data);
     return null;
   }
   return (
     <ResponsiveContainer width="100%" height={80}>
-      <LineChart
+      <BarChart
         data={data}
         layout="vertical"
         margin={{ top: 8, right: 24, left: 0, bottom: 0 }}
@@ -105,20 +112,12 @@ const VerticalLineChart = ({ data }: { data: { level: string, salary: number }[]
           labelFormatter={(l) => `${l} Level`}
           contentStyle={{ borderRadius: 8, fontWeight: 'bold' }}
         />
-        <Line 
-          type="monotone"
+        <Bar 
           dataKey="salary"
-          stroke="#6366f1"
-          strokeWidth={3}
-          dot={{
-            stroke: "#fff", 
-            strokeWidth: 2, 
-            fill: "#6366f1", 
-            r: 6
-          }}
-          activeDot={{ r: 8 }}
+          fill="#6366f1"
+          radius={[0, 20, 20, 0]}
         >
-          <LabelList 
+          <LabelList
             dataKey="salary"
             position="right"
             formatter={(v: number) => `₹${v}L`}
@@ -129,8 +128,8 @@ const VerticalLineChart = ({ data }: { data: { level: string, salary: number }[]
               textShadow: "0 1px 8px #fff"
             }}
           />
-        </Line>
-      </LineChart>
+        </Bar>
+      </BarChart>
     </ResponsiveContainer>
   );
 };
@@ -178,7 +177,7 @@ export const CareerOutcomes = () => {
             </div>
             {/* Chart + Card together */}
             <div className="w-full mb-1">
-              <VerticalLineChart data={mapToLineData(career)} />
+              <VerticalBarChart data={mapToBarData(career)} />
               <EntryMidSeniorCard entry={career.entry} mid={career.mid} senior={career.senior} />
             </div>
           </div>
@@ -207,4 +206,5 @@ export const CareerOutcomes = () => {
   );
 };
 
-// The file is getting lengthy. For best maintainability, consider splitting components (like VerticalLineChart and EntryMidSeniorCard) into their own files for easier edits in the future.
+// The file is getting lengthy. For best maintainability, consider splitting components (like VerticalBarChart and EntryMidSeniorCard) into their own files for easier edits in the future.
+
