@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {
   BarChart,
@@ -8,6 +9,7 @@ import {
   ResponsiveContainer,
   CartesianGrid,
   LabelList,
+  Cell   // <-- Fix: Import Cell from recharts
 } from 'recharts';
 import { Users, Briefcase, TrendingUp } from 'lucide-react';
 
