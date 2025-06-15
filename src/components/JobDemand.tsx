@@ -9,42 +9,48 @@ const demandData = [
     '2025': 90000,
     '2040': 250000,
     growth: 178,
-    shortName: 'Aerospace'
+    shortName: 'Aerospace',
+    why: 'ISRO missions + defense expansion'
   },
   {
     role: 'Avionics Engineer',
     '2025': 35000,
     '2040': 140000,
     growth: 300,
-    shortName: 'Avionics'
+    shortName: 'Avionics',
+    why: 'Smart aircraft systems boom'
   },
   {
     role: 'Aircraft Maintenance Eng.',
     '2025': 60000,
     '2040': 250000,
     growth: 317,
-    shortName: 'Maintenance'
+    shortName: 'Maintenance',
+    why: 'India becoming global MRO hub'
   },
   {
     role: 'Flight Test Engineer',
     '2025': 6000,
     '2040': 18000,
     growth: 200,
-    shortName: 'Flight Test'
+    shortName: 'Flight Test',
+    why: 'More indigenous aircraft development'
   },
   {
     role: 'Drone/UAV Engineer',
     '2025': 25000,
     '2040': 500000,
     growth: 1900,
-    shortName: 'Drone/UAV'
+    shortName: 'Drone/UAV',
+    why: '1000+ drone startups launching'
   },
   {
     role: 'Data Analyst (Aviation)',
     '2025': 18000,
     '2040': 300000,
     growth: 1567,
-    shortName: 'Data Analyst'
+    shortName: 'Data Analyst',
+    why: 'AI-driven predictive maintenance'
   }
 ];
 
@@ -135,6 +141,9 @@ export const JobDemand = () => {
                   }`}>
                     +{item.growth}%
                   </span>
+                </div>
+                <div className="mt-1 text-xs text-gray-500">
+                  Why: {item.why}
                 </div>
               </div>
             </div>
