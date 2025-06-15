@@ -49,6 +49,7 @@ export const BestStates = () => {
   const total = 175000; // Sum of jobs from statesData
   const unfilled = 68000;
   const filled = total - unfilled;
+  const skillGapPercent = 39;
 
   return (
     <div className="space-y-8">
@@ -119,17 +120,21 @@ export const BestStates = () => {
           A major opportunity lost—skills gap leaves thousands of aerospace jobs open.
         </p>
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-2">
-          <div className="bg-white bg-opacity-20 rounded-lg px-6 py-3 text-center">
+          <div className="bg-white bg-opacity-20 rounded-lg px-6 py-3 text-center min-w-[120px]">
             <div className="text-lg font-bold">{total.toLocaleString()}+</div>
             <div className="text-sm text-orange-100">Total Jobs</div>
           </div>
-          <div className="bg-white bg-opacity-20 rounded-lg px-6 py-3 text-center">
+          <div className="bg-white bg-opacity-20 rounded-lg px-6 py-3 text-center min-w-[120px]">
             <div className="text-lg font-bold">{filled.toLocaleString()}+</div>
             <div className="text-sm text-orange-100">Filled</div>
           </div>
-          <div className="bg-white bg-opacity-20 rounded-lg px-6 py-3 text-center">
+          <div className="bg-white bg-opacity-20 rounded-lg px-6 py-3 text-center min-w-[120px]">
             <div className="text-lg font-bold">{unfilled.toLocaleString()}+</div>
             <div className="text-sm text-orange-100">Unfilled</div>
+          </div>
+          <div className="bg-white bg-opacity-20 rounded-lg px-6 py-3 text-center min-w-[120px] border-2 border-orange-300">
+            <div className="text-lg font-bold">{skillGapPercent}%</div>
+            <div className="text-sm text-orange-100">Skill Gap</div>
           </div>
         </div>
       </div>
