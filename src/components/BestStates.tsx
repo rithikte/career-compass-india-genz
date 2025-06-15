@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { MapPin, TrendingUp, Building } from 'lucide-react';
+import { MapPin, TrendingUp, Building, AlertTriangle } from 'lucide-react';
 
 const statesData = [
   {
@@ -46,6 +45,11 @@ const statesData = [
 ];
 
 export const BestStates = () => {
+  // Calculate totals for stats in alert
+  const total = 175000; // Sum of jobs from statesData
+  const unfilled = 68000;
+  const filled = total - unfilled;
+
   return (
     <div className="space-y-8">
       <div className="text-center mb-12">
@@ -103,6 +107,31 @@ export const BestStates = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* 68K Jobs Unfilled Alert */}
+      <div className="w-full bg-gradient-to-r from-red-500 to-orange-600 text-white rounded-lg shadow-lg p-8 flex flex-col items-center my-6 animate-fade-in">
+        <AlertTriangle className="w-14 h-14 mb-4 text-white drop-shadow-md" />
+        <h3 className="text-2xl md:text-3xl font-extrabold mb-2 text-center">
+          68K Jobs Unfilled Due to Skill Gap
+        </h3>
+        <p className="text-md md:text-lg text-orange-100 font-medium mb-4 text-center">
+          A major opportunity lost—skills gap leaves thousands of aerospace jobs open.
+        </p>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-2">
+          <div className="bg-white bg-opacity-20 rounded-lg px-6 py-3 text-center">
+            <div className="text-lg font-bold">{total.toLocaleString()}+</div>
+            <div className="text-sm text-orange-100">Total Jobs</div>
+          </div>
+          <div className="bg-white bg-opacity-20 rounded-lg px-6 py-3 text-center">
+            <div className="text-lg font-bold">{filled.toLocaleString()}+</div>
+            <div className="text-sm text-orange-100">Filled</div>
+          </div>
+          <div className="bg-white bg-opacity-20 rounded-lg px-6 py-3 text-center">
+            <div className="text-lg font-bold">{unfilled.toLocaleString()}+</div>
+            <div className="text-sm text-orange-100">Unfilled</div>
+          </div>
+        </div>
       </div>
 
       <div className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white p-8 rounded-lg">
