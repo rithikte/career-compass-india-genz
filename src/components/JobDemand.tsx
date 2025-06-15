@@ -142,7 +142,12 @@ export const JobDemand = () => {
                     +{item.growth}%
                   </span>
                 </div>
-                <div className="mt-1 text-sm font-semibold text-gray-700">
+                <div
+                  className="mt-3 flex justify-center items-center text-center font-semibold text-sm rounded-md py-2 px-2"
+                  style={{
+                    background: 'linear-gradient(90deg, #e0ecff 0%, #f0fff4 100%)',
+                  }}
+                >
                   Why: {item.why}
                 </div>
               </div>
