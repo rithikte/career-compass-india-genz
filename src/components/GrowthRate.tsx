@@ -160,19 +160,19 @@ export const GrowthRate = () => {
           <span className="font-bold block mb-4 text-blue-900 text-lg">How to understand it easily:</span>
           <div className="flex flex-col gap-3 text-base sm:text-lg">
             <div className="flex items-baseline gap-2">
-              <span className="text-2xl font-extrabold text-blue-900" style={{ minWidth: 100 }}>
+              <span className="font-bold text-blue-900" style={{ minWidth: 100 }}>
                 0
               </span>
               <span className="text-blue-900 font-normal">= Same number of jobs as today</span>
             </div>
             <div className="flex items-baseline gap-2">
-              <span className="text-2xl font-extrabold text-blue-900" style={{ minWidth: 100 }}>
+              <span className="font-bold text-blue-900" style={{ minWidth: 100 }}>
                 200
               </span>
               <span className="text-green-900 font-normal">= Double the jobs!</span>
             </div>
             <div className="flex items-baseline gap-2">
-              <span className="text-2xl font-extrabold text-blue-900" style={{ minWidth: 100 }}>
+              <span className="font-bold text-blue-900" style={{ minWidth: 100 }}>
                 Bigger number
               </span>
               <span className="text-yellow-900 font-normal">= More job chances for you in future!</span>
