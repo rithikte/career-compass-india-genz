@@ -166,13 +166,13 @@ export const GrowthRate = () => {
               <span className="text-blue-900 font-normal">= Same number of jobs as today</span>
             </div>
             <div className="flex items-baseline gap-2">
-              <span className="font-bold text-blue-900" style={{ minWidth: 100 }}>
+              <span className="font-bold text-green-900" style={{ minWidth: 100 }}>
                 200
               </span>
               <span className="text-green-900 font-normal">= Double the jobs!</span>
             </div>
             <div className="flex items-baseline gap-2">
-              <span className="font-bold text-blue-900" style={{ minWidth: 100 }}>
+              <span className="font-bold text-yellow-900" style={{ minWidth: 100 }}>
                 Bigger number
               </span>
               <span className="text-yellow-900 font-normal">= More job chances for you in future!</span>
