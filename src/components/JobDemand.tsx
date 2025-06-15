@@ -142,7 +142,7 @@ export const JobDemand = () => {
                     +{item.growth}%
                   </span>
                 </div>
-                <div className="mt-1 text-xs text-gray-500">
+                <div className="mt-1 text-sm font-semibold text-gray-700">
                   Why: {item.why}
                 </div>
               </div>
