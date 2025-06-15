@@ -130,7 +130,7 @@ export const BestStates = () => {
           </div>
           <div className="bg-white bg-opacity-20 rounded-lg px-6 py-3 text-center min-w-[120px]">
             <div className="text-lg font-bold">{unfilled.toLocaleString()}+</div>
-            <div className="text-sm text-orange-100">Unfilled</div>
+            <div className="text-sm text-orange-100">Jobs Unfilled Yearly Due to Skills Gap</div>
           </div>
           <div className="bg-white bg-opacity-20 rounded-lg px-6 py-3 text-center min-w-[120px] border-2 border-orange-300">
             <div className="text-lg font-bold">{skillGapPercent}%</div>
