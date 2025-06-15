@@ -157,7 +157,7 @@ export const GrowthRate = () => {
           </ResponsiveContainer>
         </div>
         <div className="bg-blue-50 mt-8 rounded p-4 max-w-2xl mx-auto border border-blue-200">
-          <span className="font-bold block mb-4 text-blue-900 text-lg">How to understand it easily:</span>
+          <span className="font-bold block mb-4 text-blue-900 text-lg text-center w-full">How to understand it easily:</span>
           <div className="flex flex-col gap-3 text-base sm:text-lg">
             <div className="flex items-baseline gap-2">
               <span className="font-bold text-blue-900" style={{ minWidth: 100 }}>
