@@ -1,52 +1,46 @@
-
 import React from 'react';
-import { School, Globe, MapPin, Award, Users, Clock } from 'lucide-react';
+import { School, Globe, MapPin, Award } from 'lucide-react';
 
 const topColleges = [
   {
-    name: 'IIT Bombay',
+    name: 'Malla Reddy College of Engineering',
     program: 'B.Tech Aerospace Engineering',
-    location: 'Mumbai, Maharashtra',
-    ranking: '#1',
-    specialization: 'Aerodynamics, Propulsion',
-    fees: '₹2.5L/year',
-    placement: '₹15L average'
+    location: 'Gandimaisamma, RR District, Hyderabad',
+    logoInitial: 'MR',
+    fees: '₹1.3L/year',
+    placement: '₹6L average'
   },
   {
-    name: 'IIT Kharagpur',
-    program: 'B.Tech Aerospace Engineering',
-    location: 'Kharagpur, West Bengal',
-    ranking: '#2',
-    specialization: 'Aircraft Design, Materials',
-    fees: '₹2.5L/year',
-    placement: '₹14L average'
-  },
-  {
-    name: 'IIT Kanpur',
-    program: 'B.Tech Aerospace Engineering',
-    location: 'Kanpur, Uttar Pradesh',
-    ranking: '#3',
-    specialization: 'Flight Mechanics, Avionics',
-    fees: '₹2.5L/year',
-    placement: '₹13L average'
-  },
-  {
-    name: 'IISc Bangalore',
-    program: 'B.Sc. Physics + Aerospace Research',
-    location: 'Bangalore, Karnataka',
-    ranking: '#4',
-    specialization: 'Space Physics, Satellite Tech',
-    fees: '₹1.2L/year',
-    placement: '₹12L average'
-  },
-  {
-    name: 'Anna University',
+    name: 'CVR College of Engineering',
     program: 'B.Tech Aeronautical Engineering',
-    location: 'Chennai, Tamil Nadu',
-    ranking: '#5',
-    specialization: 'Aircraft Maintenance, Manufacturing',
-    fees: '₹80K/year',
-    placement: '₹8L average'
+    location: 'Mangalpally, Ibrahimpatnam, Hyderabad',
+    logoInitial: 'CV',
+    fees: '₹1.2L/year',
+    placement: '₹5.5L average'
+  },
+  {
+    name: 'GRIET (Gokaraju Rangaraju Institute)',
+    program: 'B.Tech Aeronautical Engineering',
+    location: 'Bachupally, Hyderabad',
+    logoInitial: 'GR',
+    fees: '₹1.4L/year',
+    placement: '₹5.8L average'
+  },
+  {
+    name: 'CBIT (Chaitanya Bharathi Institute)',
+    program: 'B.E Aerospace/Aeronautical',
+    location: 'Gandipet, Hyderabad',
+    logoInitial: 'CB',
+    fees: '₹1.6L/year',
+    placement: '₹6.2L average'
+  },
+  {
+    name: 'VNR VJIET (Vallurupalli Nageswara Rao Vignana Jyothi Institute)',
+    program: 'B.Tech Aeronautical Engineering',
+    location: 'Bachupally, Hyderabad',
+    logoInitial: 'VN',
+    fees: '₹1.5L/year',
+    placement: '₹6L average'
   }
 ];
 
@@ -128,13 +122,12 @@ export const WhereToLearn = () => {
         </p>
       </div>
 
-      {/* Top Colleges Section */}
+      {/* Hyderabad Colleges Section */}
       <div className="bg-white rounded-lg shadow-lg p-8">
         <div className="flex items-center mb-6">
           <School className="w-8 h-8 text-blue-600 mr-3" />
-          <h3 className="text-2xl font-bold text-slate-900">Top 5 Colleges for Aerospace Studies</h3>
+          <h3 className="text-2xl font-bold text-slate-900">Colleges Hyderabad</h3>
         </div>
-        
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
           {topColleges.map((college, index) => (
             <div
@@ -142,12 +135,12 @@ export const WhereToLearn = () => {
               className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-300"
             >
               <div className="flex items-center justify-between mb-4">
-                <h4 className="text-lg font-bold text-slate-900">{college.name}</h4>
-                <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-sm font-semibold">
-                  {college.ranking}
-                </span>
+                {/* Circular logo/initials placeholder */}
+                <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-2 font-bold text-blue-700 text-lg shadow-md">
+                  {college.logoInitial}
+                </div>
+                <h4 className="text-lg font-bold text-slate-900 flex-1 text-right">{college.name}</h4>
               </div>
-              
               <div className="space-y-2 mb-4">
                 <div className="text-sm text-gray-600">{college.program}</div>
                 <div className="flex items-center text-sm text-gray-600">
@@ -155,12 +148,7 @@ export const WhereToLearn = () => {
                   {college.location}
                 </div>
               </div>
-              
               <div className="space-y-2 mb-4">
-                <div className="flex justify-between">
-                  <span className="text-sm text-gray-600">Specialization</span>
-                  <span className="text-sm font-semibold">{college.specialization}</span>
-                </div>
                 <div className="flex justify-between">
                   <span className="text-sm text-gray-600">Fees</span>
                   <span className="text-sm font-bold text-orange-600">{college.fees}</span>
