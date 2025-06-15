@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { AlertTriangle, TrendingUp } from 'lucide-react';
+import { AlertTriangle, TrendingUp, CheckCircle } from 'lucide-react';
 
 const skillGapData = [
   {
@@ -90,6 +89,7 @@ export const SkillGap = () => {
           <div className="text-blue-200">Months to Bridge</div>
         </div>
         <div className="bg-gradient-to-r from-green-600 to-green-700 text-white p-6 rounded-lg text-center">
+          <CheckCircle className="w-12 h-12 mx-auto mb-4" />
           <div className="text-3xl font-bold">85%</div>
           <div className="text-green-200">Success Rate</div>
         </div>
