@@ -8,11 +8,171 @@ const certificationPaths = [
     totalDuration: '10 months',
     finalGap: '0-3%',
     certifications: [
-      { level: 'Foundation', name: 'Aerospace Basics (NPTEL/IIT)', duration: '1.5 months', readiness: 55 },
-      { level: 'Specialization', name: 'CATIA / SolidWorks Aerospace Modules', duration: '2 months', readiness: 75 },
-      { level: 'Advanced', name: 'Propulsion & Aerodynamics (Coursera/IIT-M)', duration: '2.5 months', readiness: 90 },
-      { level: 'Expert', name: 'Systems Design (Simulink/Ansys)', duration: '3 months', readiness: 100 },
-      { level: 'AI Cert.', name: 'AI for CFD & Material Simulation', duration: '1 month', readiness: 100, isAI: true }
+      { 
+        level: 'Foundation', 
+        name: 'Aerospace Engineering Basics (NPTEL/IIT)', 
+        duration: '1.5 months', 
+        readiness: 55,
+        whenToPursue: '🔹 1st–2nd Year (Parallel with degree; helps understand fundamentals)'
+      },
+      { 
+        level: 'Specialization', 
+        name: 'CATIA V5 / SolidWorks (Aerospace Modules)', 
+        duration: '2 months', 
+        readiness: 75,
+        whenToPursue: '🔹 2nd–3rd Year (Parallel; ideal for design software mastery)'
+      },
+      { 
+        level: 'Advanced', 
+        name: 'Propulsion & Aerodynamics (Coursera/IIT-M)', 
+        duration: '2.5 months', 
+        readiness: 90,
+        whenToPursue: '🔹 3rd–Final Year or just After degree (for strong domain expertise)'
+      },
+      { 
+        level: 'Expert', 
+        name: 'Aerospace Systems Design (Simulink/Ansys)', 
+        duration: '3 months', 
+        readiness: 100,
+        whenToPursue: '🔹 After Degree (or Final Semester with internship; simulation-heavy)'
+      },
+      { 
+        level: 'AI Cert.', 
+        name: 'AI for CFD & Material Simulation', 
+        duration: '1 month', 
+        readiness: 100, 
+        isAI: true,
+        whenToPursue: '🔹 After Degree (Optional but future-proof for AI-based aerospace roles)'
+      }
+    ]
+  },
+  {
+    role: 'Avionics Engineer',
+    totalDuration: '10 months',
+    finalGap: '0-2%',
+    certifications: [
+      { 
+        level: 'Foundation', 
+        name: 'Intro to Avionics + Digital Circuits', 
+        duration: '1.5 months', 
+        readiness: 55,
+        whenToPursue: '🔹 1st–2nd Year (Parallel with degree; builds core electronics base)'
+      },
+      { 
+        level: 'Specialization', 
+        name: 'Embedded C Programming', 
+        duration: '2 months', 
+        readiness: 72,
+        whenToPursue: '🔹 2nd–3rd Year (Parallel; essential for avionics software systems)'
+      },
+      { 
+        level: 'Advanced', 
+        name: 'VHDL / FPGA for Avionics Systems', 
+        duration: '2.5 months', 
+        readiness: 90,
+        whenToPursue: '🔹 3rd–Final Year or After Degree (complex but crucial for hardware design)'
+      },
+      { 
+        level: 'Expert', 
+        name: 'ARINC Protocols + Avionics Testing', 
+        duration: '3 months', 
+        readiness: 100,
+        whenToPursue: '🔹 After Degree or Final Year Internship Phase (industry-standard tools)'
+      },
+      { 
+        level: 'AI Cert.', 
+        name: 'AI for Fault Detection in Avionics Systems', 
+        duration: '1 month', 
+        readiness: 100, 
+        isAI: true,
+        whenToPursue: '🔹 After Degree (Optional; helps in predictive maintenance roles)'
+      }
+    ]
+  },
+  {
+    role: 'Aircraft Maintenance Engineer (AME)',
+    totalDuration: '10 months',
+    finalGap: '0-2%',
+    certifications: [
+      { 
+        level: 'Foundation', 
+        name: 'AME DGCA Module 1 + Safety Basics', 
+        duration: '1.5 months', 
+        readiness: 60,
+        whenToPursue: '🔹 1st–2nd Year (Parallel; builds regulatory & safety knowledge)'
+      },
+      { 
+        level: 'Specialization', 
+        name: 'Aircraft Systems & CAMO Training', 
+        duration: '2 months', 
+        readiness: 75,
+        whenToPursue: '🔹 2nd–3rd Year (Parallel or short-term break; key for airworthiness roles)'
+      },
+      { 
+        level: 'Advanced', 
+        name: 'MRO Software Tools (Ramco/TRAX)', 
+        duration: '2.5 months', 
+        readiness: 90,
+        whenToPursue: '🔹 Final Year or Post-degree (used in real-world MRO environments)'
+      },
+      { 
+        level: 'Expert', 
+        name: 'Predictive Maintenance Techniques', 
+        duration: '3 months', 
+        readiness: 100,
+        whenToPursue: '🔹 After Degree or Internship Phase (needed for high-responsibility roles)'
+      },
+      { 
+        level: 'AI Cert.', 
+        name: 'AI for Aircraft Maintenance Forecasting', 
+        duration: '1 month', 
+        readiness: 100, 
+        isAI: true,
+        whenToPursue: '🔹 After Degree (Optional; boosts skill for future digital aviation MRO)'
+      }
+    ]
+  },
+  {
+    role: 'Flight Test Engineer',
+    totalDuration: '10 months',
+    finalGap: '0-3%',
+    certifications: [
+      { 
+        level: 'Foundation', 
+        name: 'Aircraft Sensors & Instrumentation', 
+        duration: '1.5 months', 
+        readiness: 55,
+        whenToPursue: '🔹 1st–2nd Year (Parallel; builds base in aerodynamics + electronics)'
+      },
+      { 
+        level: 'Specialization', 
+        name: 'Flight Testing Fundamentals', 
+        duration: '2 months', 
+        readiness: 70,
+        whenToPursue: '🔹 2nd–3rd Year (Parallel; crucial for conceptual understanding)'
+      },
+      { 
+        level: 'Advanced', 
+        name: 'MATLAB + Flight Simulations', 
+        duration: '2.5 months', 
+        readiness: 88,
+        whenToPursue: '🔹 Final Year or After Degree (requires strong math/sim background)'
+      },
+      { 
+        level: 'Expert', 
+        name: 'Real-World Test Data Analysis Tools', 
+        duration: '3 months', 
+        readiness: 100,
+        whenToPursue: '🔹 After Degree or Final Semester (highly applied & tool-heavy)'
+      },
+      { 
+        level: 'AI Cert.', 
+        name: 'AI in Flight Performance Analytics', 
+        duration: '1 month', 
+        readiness: 100, 
+        isAI: true,
+        whenToPursue: '🔹 After Degree (Optional; enhances analytics & automation skills)'
+      }
     ]
   },
   {
@@ -20,11 +180,42 @@ const certificationPaths = [
     totalDuration: '10 months',
     finalGap: '0-2%',
     certifications: [
-      { level: 'Foundation', name: 'Drone Assembly + Basics', duration: '1.5 months', readiness: 60 },
-      { level: 'Specialization', name: 'PX4 / Ardupilot Programming', duration: '2 months', readiness: 78 },
-      { level: 'Advanced', name: 'DGCA + BVLOS Training', duration: '2.5 months', readiness: 92 },
-      { level: 'Expert', name: 'Swarm UAVs + Navigation Systems', duration: '3 months', readiness: 100 },
-      { level: 'AI Cert.', name: 'AI for Object Detection in UAVs', duration: '1 month', readiness: 100, isAI: true }
+      { 
+        level: 'Foundation', 
+        name: 'Drone Fundamentals + Assembly', 
+        duration: '1.5 months', 
+        readiness: 60,
+        whenToPursue: '🔹 1st–2nd Year (Parallel; builds mechanical & electrical base)'
+      },
+      { 
+        level: 'Specialization', 
+        name: 'PX4 / Ardupilot Programming', 
+        duration: '2 months', 
+        readiness: 78,
+        whenToPursue: '🔹 2nd–3rd Year (Parallel; core UAV control systems & coding logic)'
+      },
+      { 
+        level: 'Advanced', 
+        name: 'DGCA Certification + BVLOS Safety Training', 
+        duration: '2.5 months', 
+        readiness: 92,
+        whenToPursue: '🔹 Final Year or Post-degree (Required for legal flight & operations)'
+      },
+      { 
+        level: 'Expert', 
+        name: 'Swarm Drones & Autonomous Navigation Systems', 
+        duration: '3 months', 
+        readiness: 100,
+        whenToPursue: '🔹 After Degree or Final Semester (for R&D, autonomous flight jobs)'
+      },
+      { 
+        level: 'AI Cert.', 
+        name: 'AI for Object Detection in UAVs', 
+        duration: '1 month', 
+        readiness: 100, 
+        isAI: true,
+        whenToPursue: '🔹 After Degree (Optional; boosts role-fit in surveillance & defense AI)'
+      }
     ]
   },
   {
@@ -32,11 +223,42 @@ const certificationPaths = [
     totalDuration: '10 months',
     finalGap: '0-2%',
     certifications: [
-      { level: 'Foundation', name: 'Excel + SQL for Aviation', duration: '1.5 months', readiness: 60 },
-      { level: 'Specialization', name: 'Python + Tableau + Dashboards', duration: '2 months', readiness: 78 },
-      { level: 'Advanced', name: 'ML Forecasting (Pandas + Scikit-Learn)', duration: '2.5 months', readiness: 90 },
-      { level: 'Expert', name: 'GenAI for Airline Ops', duration: '3 months', readiness: 100 },
-      { level: 'AI Cert.', name: 'Deep Learning for Aviation Insights', duration: '1 month', readiness: 100, isAI: true }
+      { 
+        level: 'Foundation', 
+        name: 'Excel + SQL for Aviation Data', 
+        duration: '1.5 months', 
+        readiness: 60,
+        whenToPursue: '🔹 1st–2nd Year (Parallel; builds core data handling and analysis base)'
+      },
+      { 
+        level: 'Specialization', 
+        name: 'Python + Tableau + Aviation Dashboards', 
+        duration: '2 months', 
+        readiness: 78,
+        whenToPursue: '🔹 2nd–3rd Year (Parallel; essential for aviation KPI reporting)'
+      },
+      { 
+        level: 'Advanced', 
+        name: 'ML Forecasting (Pandas + Scikit-learn)', 
+        duration: '2.5 months', 
+        readiness: 90,
+        whenToPursue: '🔹 Final Year or After Degree (builds future traffic/fuel prediction)'
+      },
+      { 
+        level: 'Expert', 
+        name: 'GenAI for Airline Operations & Optimization', 
+        duration: '3 months', 
+        readiness: 100,
+        whenToPursue: '🔹 After Degree or Capstone Semester (cutting-edge for operational AI)'
+      },
+      { 
+        level: 'AI Cert.', 
+        name: 'Deep Learning for Airline Insights', 
+        duration: '1 month', 
+        readiness: 100, 
+        isAI: true,
+        whenToPursue: '🔹 After Degree (Optional; boosts data storytelling and advanced modeling)'
+      }
     ]
   }
 ];
@@ -113,7 +335,13 @@ export const CertificationStack = () => {
                         style={{ width: `${cert.readiness}%` }}
                       ></div>
                     </div>
-                    <div className="text-xs font-bold text-gray-700">{cert.readiness}% Ready</div>
+                    <div className="text-xs font-bold text-gray-700 mb-3">{cert.readiness}% Ready</div>
+                    
+                    {/* When to Pursue */}
+                    <div className="border-t pt-2 mt-2">
+                      <div className="text-xs font-semibold text-gray-600 mb-1">When to Pursue:</div>
+                      <div className="text-xs text-gray-700 leading-tight">{cert.whenToPursue}</div>
+                    </div>
                   </div>
                 </div>
               ))}
