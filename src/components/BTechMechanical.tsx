@@ -9,7 +9,7 @@ export const BTechMechanical = () => {
         <h1 className="text-4xl font-bold text-gray-900">B.Tech Mechanical</h1>
         <div className="space-y-2">
           <h2 className="text-2xl font-semibold text-primary">Core Topic: Waves & Oscillations</h2>
-          <h3 className="text-xl text-secondary">Aerospace & Aviation Industry</h3>
+          <h3 className="text-xl text-secondary">Industry: Aerospace & Aviation</h3>
         </div>
       </div>
 
