@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { Header } from '../components/Header';
+import { BTechMechanical } from '../components/BTechMechanical';
 import { CareerOutcomes } from '../components/CareerOutcomes';
 import { HiringCompanies } from '../components/HiringCompanies';
 import { GrowthRate } from '../components/GrowthRate';
@@ -17,9 +18,10 @@ import { India2040 } from '../components/India2040';
 import { WhereToLearn } from '../components/WhereToLearn';
 
 const Index = () => {
-  const [activeSection, setActiveSection] = useState('career-outcomes');
+  const [activeSection, setActiveSection] = useState('btech-mechanical');
 
   const sections = [
+    { id: 'btech-mechanical', title: 'Degree B.Tech Mechanical', component: BTechMechanical },
     { id: 'career-outcomes', title: 'Career Outcomes', component: CareerOutcomes },
     { id: 'hiring-companies', title: 'Hiring Companies', component: HiringCompanies },
     { id: 'growth-rate', title: 'Growth Rate', component: GrowthRate },
@@ -36,7 +38,7 @@ const Index = () => {
     { id: 'where-to-learn', title: 'Where to Learn', component: WhereToLearn },
   ];
 
-  const ActiveComponent = sections.find(s => s.id === activeSection)?.component || CareerOutcomes;
+  const ActiveComponent = sections.find(s => s.id === activeSection)?.component || BTechMechanical;
 
   return (
     <div className="min-h-screen bg-gray-50">
