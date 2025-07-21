@@ -57,6 +57,39 @@ export const AIImpact = () => {
         ))}
       </div>
 
+      <div className="bg-gray-50 border-l-4 border-blue-500 p-6 rounded-lg mb-8">
+        <h4 className="text-lg font-semibold text-gray-800 mb-3">AI Replace Reports Source:</h4>
+        <ul className="text-gray-700 space-y-1">
+          <li>• NITI Aayog AI for All Reports</li>
+          <li>• World Economic Forum India Data</li>
+          <li>• Aviation Ministry's Civil Aviation Vision 2040</li>
+        </ul>
+      </div>
+
+      <div className="bg-blue-50 border border-blue-200 p-6 rounded-lg mb-8">
+        <div className="flex items-start space-x-3">
+          <AlertTriangle className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
+          <div>
+            <h4 className="text-xl font-bold text-blue-900 mb-3">What's Really Happening:</h4>
+            <p className="text-blue-800 text-lg mb-4">
+              AI is not killing jobs — it's killing <strong>unskilled jobs</strong>.
+            </p>
+            <p className="text-blue-700 mb-4">
+              Companies still hiring but only for students who are skilled and know the latest tools.
+            </p>
+            <div className="bg-white p-4 rounded border-l-4 border-green-500">
+              <h5 className="font-semibold text-green-800 mb-2">Solution:</h5>
+              <p className="text-green-700 mb-2">
+                <strong>Upskill + Certify + Know Your Role → You get hired.</strong>
+              </p>
+              <p className="text-green-600 font-medium">
+                90% Companies Expecting Certifications to Get Job in 2-3 Attempts
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="bg-gradient-to-r from-orange-600 to-red-600 text-white p-8 rounded-lg">
         <div className="text-center">
           <Brain className="w-12 h-12 mx-auto mb-4" />
