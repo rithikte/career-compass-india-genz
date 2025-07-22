@@ -17,6 +17,7 @@ import { GovtSupport } from '../components/GovtSupport';
 import { India2040 } from '../components/India2040';
 import { WhereToLearn } from '../components/WhereToLearn';
 import { InterviewSituation } from '../components/InterviewSituation';
+import IndustryAdvice from '../components/IndustryAdvice';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('btech-mechanical');
@@ -37,6 +38,7 @@ const Index = () => {
     { id: 'govt-support', title: 'Govt Support', component: GovtSupport },
     { id: 'india-2040', title: 'India 2040', component: India2040 },
     { id: 'interview-situation', title: 'Interview Situation', component: InterviewSituation },
+    { id: 'industry-advice', title: '20 Years Industry Advice', component: IndustryAdvice },
     { id: 'where-to-learn', title: 'Where to Learn', component: WhereToLearn },
   ];
 
