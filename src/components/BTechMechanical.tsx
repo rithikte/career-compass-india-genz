@@ -1,10 +1,8 @@
 import React from 'react';
 import { CheckCircle, XCircle, AlertTriangle, Brain, Cog, Calculator, Wrench, Plane, Zap, Target, Clock, BookOpen, Shield } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-
 export const BTechMechanical = () => {
-  return (
-    <div className="space-y-8">
+  return <div className="space-y-8">
       {/* Hero Section with Core Topic */}
       <div className="relative bg-gradient-to-br from-primary via-primary/80 to-secondary text-white rounded-2xl p-8 overflow-hidden">
         <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
@@ -17,7 +15,7 @@ export const BTechMechanical = () => {
           </div>
           
           <div className="space-y-3">
-            <h1 className="text-4xl md:text-5xl font-bold">Core Focus Area</h1>
+            <h1 className="text-4xl md:text-5xl font-bold">Aviation - Industry</h1>
             <div className="bg-white/20 rounded-lg p-4 inline-block">
               <h2 className="text-2xl font-bold text-yellow-300">⚡ Waves & Oscillations</h2>
               <p className="text-lg opacity-90">The Foundation of Modern Aerospace</p>
@@ -56,7 +54,7 @@ export const BTechMechanical = () => {
             </div>
             Why Waves & Oscillations Are Everything in Aerospace
           </CardTitle>
-          <CardDescription className="text-lg">
+          <CardDescription className="text-lg font-semibold">
             This isn't just physics theory - it's the core science behind every flying machine
           </CardDescription>
         </CardHeader>
@@ -69,7 +67,7 @@ export const BTechMechanical = () => {
                 </div>
                 <h3 className="font-bold text-blue-900">Aircraft Stability</h3>
               </div>
-              <p className="text-blue-800 text-sm">
+              <p className="text-blue-800 text-sm font-medium">
                 Understanding vibrations keeps planes stable during turbulence and prevents dangerous oscillations
               </p>
             </div>
@@ -81,7 +79,7 @@ export const BTechMechanical = () => {
                 </div>
                 <h3 className="font-bold text-green-900">Engine Optimization</h3>
               </div>
-              <p className="text-green-800 text-sm">
+              <p className="text-green-800 text-sm font-medium">
                 Wave analysis reduces engine noise, improves fuel efficiency, and prevents mechanical failures
               </p>
             </div>
@@ -93,7 +91,7 @@ export const BTechMechanical = () => {
                 </div>
                 <h3 className="font-bold text-purple-900">Safety Testing</h3>
               </div>
-              <p className="text-purple-800 text-sm">
+              <p className="text-purple-800 text-sm font-medium">
                 Oscillation testing ensures aircraft can handle extreme conditions before human lives depend on it
               </p>
             </div>
@@ -136,7 +134,7 @@ export const BTechMechanical = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 mb-1">Extreme Patience</h3>
-                  <p className="text-gray-600 text-sm">Simulations take hours. Tests fail repeatedly. You'll redo calculations 10 times before getting it right.</p>
+                  <p className="text-gray-600 text-sm font-medium">Simulations take hours. Tests fail repeatedly. You'll redo calculations 10 times before getting it right.</p>
                 </div>
               </div>
 
@@ -146,7 +144,7 @@ export const BTechMechanical = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 mb-1">Complex Problem Solving</h3>
-                  <p className="text-gray-600 text-sm">No Google answers for real engineering problems. You think step-by-step or you fail.</p>
+                  <p className="text-gray-600 text-sm font-semibold">No Google answers for real engineering problems. You think step-by-step or you fail.</p>
                 </div>
               </div>
 
@@ -156,7 +154,7 @@ export const BTechMechanical = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 mb-1">Tool Mastery</h3>
-                  <p className="text-gray-600 text-sm">MATLAB, ANSYS, CATIA aren't optional. You'll live in these software tools for 4 years.</p>
+                  <p className="text-gray-600 text-sm font-semibold">MATLAB, ANSYS, CATIA aren't optional. You'll live in these software tools for 4 years.</p>
                 </div>
               </div>
             </div>
@@ -168,7 +166,7 @@ export const BTechMechanical = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 mb-1">Perfect Accuracy</h3>
-                  <p className="text-gray-600 text-sm">One decimal wrong = mission failure. Lives depend on your calculations being exact.</p>
+                  <p className="text-gray-600 text-sm font-medium">One decimal wrong = mission failure. Lives depend on your calculations being exact.</p>
                 </div>
               </div>
 
@@ -178,7 +176,7 @@ export const BTechMechanical = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 mb-1">Failure Resilience</h3>
-                  <p className="text-gray-600 text-sm">You'll fail often. Designs will break. Code will crash. Can you keep going?</p>
+                  <p className="text-gray-600 text-sm font-semibold">You'll fail often. Designs will break. Code will crash. Can you keep going?</p>
                 </div>
               </div>
 
@@ -188,7 +186,7 @@ export const BTechMechanical = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 mb-1">Mental Toughness</h3>
-                  <p className="text-gray-600 text-sm">Long nights, design failures, software crashes. Your mind must stay sharp under pressure.</p>
+                  <p className="text-gray-600 text-sm font-medium">Long nights, design failures, software crashes. Your mind must stay sharp under pressure.</p>
                 </div>
               </div>
             </div>
@@ -205,7 +203,7 @@ export const BTechMechanical = () => {
             </div>
             What You'll Actually Master in 4 Years
           </CardTitle>
-          <CardDescription className="text-lg">
+          <CardDescription className="text-lg font-semibold">
             Real skills that aerospace companies need - not just theory
           </CardDescription>
         </CardHeader>
@@ -262,10 +260,10 @@ export const BTechMechanical = () => {
           </CardHeader>
           <CardContent className="p-6">
             <div className="space-y-3 text-red-800">
-              <p>❌ You'll pass exams but fail in labs</p>
-              <p>❌ You'll blame professors when you struggle</p>
-              <p>❌ You'll copy assignments without understanding</p>
-              <p>❌ You'll graduate but feel lost in interviews</p>
+              <p className="text-base font-medium">❌ You'll pass exams but fail in labs</p>
+              <p className="font-medium">❌ You'll blame professors when you struggle</p>
+              <p className="font-medium">❌ You'll copy assignments without understanding</p>
+              <p className="font-medium">❌ You'll graduate but feel lost in interviews</p>
               <p className="font-bold mt-4">Result: Wasted 4 years and frustrated with engineering</p>
             </div>
           </CardContent>
@@ -281,10 +279,10 @@ export const BTechMechanical = () => {
           </CardHeader>
           <CardContent className="p-6">
             <div className="space-y-3 text-green-800">
-              <p>✅ You'll enjoy solving complex problems</p>
-              <p>✅ You'll build strong technical skills</p>
-              <p>✅ You'll understand what you're learning</p>
-              <p>✅ You'll be job-ready from any college</p>
+              <p className="font-medium">✅ You'll enjoy solving complex problems</p>
+              <p className="font-medium">✅ You'll build strong technical skills</p>
+              <p className="font-medium">✅ You'll understand what you're learning</p>
+              <p className="font-medium">✅ You'll be job-ready from any college</p>
               <p className="font-bold mt-4">Result: Strong engineer ready for ISRO, HAL, or aerospace startups</p>
             </div>
           </CardContent>
@@ -311,6 +309,5 @@ export const BTechMechanical = () => {
           </div>
         </CardContent>
       </Card>
-    </div>
-  );
+    </div>;
 };
