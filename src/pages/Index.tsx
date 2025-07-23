@@ -18,6 +18,7 @@ import { India2040 } from '../components/India2040';
 import { WhereToLearn } from '../components/WhereToLearn';
 import { InterviewSituation } from '../components/InterviewSituation';
 import IndustryAdvice from '../components/IndustryAdvice';
+import CollegeDetails from '../components/CollegeDetails';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('btech-mechanical');
@@ -40,6 +41,7 @@ const Index = () => {
     { id: 'interview-situation', title: 'Interview Situation', component: InterviewSituation },
     { id: 'industry-advice', title: '20 Years Industry Advice', component: IndustryAdvice },
     { id: 'where-to-learn', title: 'Where to Learn', component: WhereToLearn },
+    { id: 'college-details', title: 'B.Tech – Degree Landing Page', component: CollegeDetails },
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || BTechMechanical;
