@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { GraduationCap, Users } from 'lucide-react';
+import { Users } from 'lucide-react';
+import { Logo } from './Logo';
 
 export const Header = () => {
   return (
@@ -8,10 +9,7 @@ export const Header = () => {
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="text-center">
           <div className="flex justify-center items-center mb-6">
-            <GraduationCap className="w-16 h-16 mr-4" />
-            <h1 className="text-5xl font-bold tracking-tight">
-              Aerospace Career Maps
-            </h1>
+            <Logo />
           </div>
           <p className="text-xl text-blue-200 mb-8 max-w-3xl mx-auto">
             Swiss-Style Career Guidance for Indian Undergraduates
