@@ -6,7 +6,7 @@ export const Header = () => {
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="text-center">
           
-          <p className="text-blue-200 mb-8 max-w-3xl mx-[250px] my-0 text-6xl font-bold">Undergraduate Maps</p>
+          <p className="text-blue-200 mb-8 max-w-3xl my-0 text-6xl font-bold mx-0">Undergraduate Maps</p>
           <div className="flex justify-center items-center space-x-8 text-blue-200">
             <div className="flex items-center">
               <Users className="w-5 h-5 mr-2" />
