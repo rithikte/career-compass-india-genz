@@ -167,6 +167,104 @@ export const HomePage = () => {
           </div>
         </div>
 
+        {/* Platform Workflows */}
+        <div className="mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Explore Career Workflow */}
+            <Card className="relative overflow-hidden group hover:shadow-xl transition-all duration-300 border-0 bg-white/90 backdrop-blur-sm">
+              <CardContent className="p-8">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 mb-4">
+                    <Target className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Explore Career</h3>
+                </div>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center gap-3">
+                    <span className="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-bold">1</span>
+                    <span className="text-gray-700">Choose Degree Name</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-bold">2</span>
+                    <span className="text-gray-700">Choose Core Subject</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-bold">3</span>
+                    <span className="text-gray-700">Choose Core Topic</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-bold">4</span>
+                    <span className="text-gray-700">Choose Work Nature</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-bold">5</span>
+                    <span className="text-gray-700">Best Aligned 2 Industries with Best Fit Job Roles</span>
+                  </div>
+                </div>
+                
+                <Button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 rounded-xl">
+                  Explore Career
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Wished Degree Workflow */}
+            <Card className="relative overflow-hidden group hover:shadow-xl transition-all duration-300 border-0 bg-white/90 backdrop-blur-sm">
+              <CardContent className="p-8">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 mb-4">
+                    <Award className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Wished Degree</h3>
+                </div>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center gap-3">
+                    <span className="w-8 h-8 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-sm font-bold">1</span>
+                    <span className="text-gray-700">Choose Degree</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-8 h-8 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-sm font-bold">2</span>
+                    <span className="text-gray-700">State & Central Posts</span>
+                  </div>
+                </div>
+                
+                <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 rounded-xl">
+                  Wished Degree
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Government Jobs Workflow */}
+            <Card className="relative overflow-hidden group hover:shadow-xl transition-all duration-300 border-0 bg-white/90 backdrop-blur-sm">
+              <CardContent className="p-8">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 mb-4">
+                    <Building2 className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Government Jobs</h3>
+                </div>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center gap-3">
+                    <span className="w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm font-bold">1</span>
+                    <span className="text-gray-700">Choose Degree</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm font-bold">2</span>
+                    <span className="text-gray-700">State & Central Posts</span>
+                  </div>
+                </div>
+                
+                <Button className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-3 rounded-xl">
+                  Government Jobs
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
         {/* Call to Action */}
         <div className="text-center">
           <Button 
