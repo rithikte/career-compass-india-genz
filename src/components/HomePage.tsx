@@ -193,6 +193,97 @@ export const HomePage = () => {
           </div>
         </div>
 
+        {/* Statistics Section */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Trusted by Thousands Across India
+            </h2>
+            <p className="text-xl text-gray-600">
+              Join the revolution in career guidance and degree selection
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 mb-16">
+            {/* Colleges Collaborated */}
+            <div className="text-center group">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-2">
+                  1,247+
+                </div>
+                <div className="text-sm font-medium text-gray-700">Colleges</div>
+                <div className="text-xs text-gray-500">Collaborated</div>
+              </div>
+            </div>
+
+            {/* Institutes Collaborated */}
+            <div className="text-center group">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
+                  856+
+                </div>
+                <div className="text-sm font-medium text-gray-700">Institutes</div>
+                <div className="text-xs text-gray-500">Collaborated</div>
+              </div>
+            </div>
+
+            {/* Online Institutes */}
+            <div className="text-center group">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div className="text-3xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-2">
+                  342+
+                </div>
+                <div className="text-sm font-medium text-gray-700">Online</div>
+                <div className="text-xs text-gray-500">Institutes</div>
+              </div>
+            </div>
+
+            {/* Degrees */}
+            <div className="text-center group">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-2">
+                  189+
+                </div>
+                <div className="text-sm font-medium text-gray-700">Degrees</div>
+                <div className="text-xs text-gray-500">Available</div>
+              </div>
+            </div>
+
+            {/* Industries */}
+            <div className="text-center group">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-2">
+                  467+
+                </div>
+                <div className="text-sm font-medium text-gray-700">Industries</div>
+                <div className="text-xs text-gray-500">Covered</div>
+              </div>
+            </div>
+
+            {/* Job Roles */}
+            <div className="text-center group">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div className="text-3xl font-bold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent mb-2">
+                  2,834+
+                </div>
+                <div className="text-sm font-medium text-gray-700">Job Roles</div>
+                <div className="text-xs text-gray-500">Men & Women</div>
+              </div>
+            </div>
+
+            {/* Happy Students */}
+            <div className="text-center group">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div className="text-3xl font-bold bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent mb-2">
+                  15,678+
+                </div>
+                <div className="text-sm font-medium text-gray-700">Happy</div>
+                <div className="text-xs text-gray-500">Students</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Call to Action */}
         <div className="text-center">
           <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-12 py-6 text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
