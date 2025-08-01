@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { Header } from '../components/Header';
+import { HomePage } from '../components/HomePage';
 import { BTechMechanical } from '../components/BTechMechanical';
 import { CareerOutcomes } from '../components/CareerOutcomes';
 import { HiringCompanies } from '../components/HiringCompanies';
@@ -21,9 +22,10 @@ import IndustryAdvice from '../components/IndustryAdvice';
 import CollegeDetails from '../components/CollegeDetails';
 
 const Index = () => {
-  const [activeSection, setActiveSection] = useState('btech-mechanical');
+  const [activeSection, setActiveSection] = useState('home');
 
   const sections = [
+    { id: 'home', title: 'Home', component: HomePage },
     { id: 'btech-mechanical', title: 'Degree B.Tech Mechanical', component: BTechMechanical },
     { id: 'career-outcomes', title: 'Career Outcomes', component: CareerOutcomes },
     { id: 'hiring-companies', title: 'Hiring Companies', component: HiringCompanies },
@@ -44,7 +46,7 @@ const Index = () => {
     { id: 'college-details', title: 'B.Tech – Degree Landing Page', component: CollegeDetails },
   ];
 
-  const ActiveComponent = sections.find(s => s.id === activeSection)?.component || BTechMechanical;
+  const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
 
   return (
     <div className="min-h-screen bg-gray-50">
