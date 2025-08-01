@@ -194,6 +194,85 @@ export const BTechMechanical = () => {
         </CardContent>
       </Card>
 
+      {/* What You'll Study in College */}
+      <Card className="border-2 border-blue-200">
+        <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50">
+          <CardTitle className="flex items-center gap-3 text-2xl text-blue-900">
+            <div className="p-2 bg-blue-100 rounded-lg">
+              <BookOpen className="h-6 w-6 text-blue-600" />
+            </div>
+            What You'll Study in College (Related to Waves & Oscillations)
+          </CardTitle>
+          <CardDescription className="text-blue-700 text-lg font-medium">
+            Here's exactly what you'll learn year by year - be realistic about the workload
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="p-6">
+          {/* Year-wise curriculum table */}
+          <div className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
+            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4">
+              <div className="grid grid-cols-2 gap-4 font-bold text-lg">
+                <div>Year</div>
+                <div>Subjects You'll Touch</div>
+              </div>
+            </div>
+            
+            <div className="divide-y divide-gray-200">
+              <div className="grid grid-cols-2 gap-4 p-4 hover:bg-gray-50">
+                <div className="font-bold text-blue-600 text-lg">1st Year</div>
+                <div className="text-gray-700">
+                  <strong>Engineering Physics</strong> – Basics of waves, vibrations, resonance (how things shake or vibrate)
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4 p-4 hover:bg-gray-50">
+                <div className="font-bold text-green-600 text-lg">2nd Year</div>
+                <div className="text-gray-700">
+                  <strong>Strength of Materials</strong> – How materials behave when they vibrate or face repeated stress
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4 p-4 hover:bg-gray-50">
+                <div className="font-bold text-purple-600 text-lg">3rd Year</div>
+                <div className="text-gray-700">
+                  <strong>Vibrations & Dynamics</strong> – How engines, wings, and moving parts oscillate (vibrate) during flight
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4 p-4 hover:bg-gray-50">
+                <div className="font-bold text-orange-600 text-lg">4th Year</div>
+                <div className="text-gray-700">
+                  <strong>Aero-mechanical Electives</strong> (if available) – Sound vibration control, aircraft structure response, fatigue analysis
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Important Reality Check */}
+          <div className="mt-6 p-6 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg border-2 border-yellow-200">
+            <div className="flex items-start gap-3">
+              <AlertTriangle className="h-7 w-7 text-yellow-600 mt-1 flex-shrink-0" />
+              <div>
+                <h3 className="font-bold text-yellow-900 text-lg mb-3">Critical Reality Check:</h3>
+                <p className="text-yellow-800 text-base font-medium leading-relaxed">
+                  In B.Tech Mechanical Engineering, you'll learn only <span className="font-bold text-orange-700">20–30% about Waves & Oscillations</span> — enough to understand the basics, but not enough to get an aviation job directly unless you do extra certifications and projects.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Important Quote */}
+          <div className="mt-6 p-6 bg-gradient-to-r from-red-50 to-pink-50 rounded-lg border-2 border-red-200">
+            <div className="text-center">
+              <div className="text-4xl mb-4">⚠️</div>
+              <blockquote className="text-lg font-bold text-red-900 leading-relaxed">
+                "Only students who enjoy solving real-world motion, machines, and design problems using deep Math and Physics — especially 3D Geometry, Thermodynamics, Mechanics, and Algebra — should choose Mechanical Engineering; everyone else will struggle, lose interest, or get stuck in non-core jobs."
+              </blockquote>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
       {/* What You'll Actually Learn */}
       <Card>
         <CardHeader>
