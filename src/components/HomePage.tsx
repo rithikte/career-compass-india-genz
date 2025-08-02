@@ -212,7 +212,7 @@ export const HomePage = () => {
                   1,247+
                 </div>
                 <div className="text-sm font-medium text-gray-700">Colleges</div>
-                <div className="text-xs text-gray-500">Collaborated</div>
+                <div className="text-xs text-gray-500 rounded-md">Collaborated</div>
               </div>
             </div>
 
@@ -223,7 +223,7 @@ export const HomePage = () => {
                   856+
                 </div>
                 <div className="text-sm font-medium text-gray-700">Institutes</div>
-                <div className="text-xs text-gray-500">Collaborated</div>
+                <div className="text-xs text-gray-500 rounded-md">Collaborated</div>
               </div>
             </div>
 
@@ -234,7 +234,7 @@ export const HomePage = () => {
                   342+
                 </div>
                 <div className="text-sm font-medium text-gray-700">Online</div>
-                <div className="text-xs text-gray-500">Institutes</div>
+                <div className="text-xs text-gray-500 rounded-md">Institutes</div>
               </div>
             </div>
 
@@ -245,7 +245,7 @@ export const HomePage = () => {
                   189+
                 </div>
                 <div className="text-sm font-medium text-gray-700">Degrees</div>
-                <div className="text-xs text-gray-500">Available</div>
+                <div className="text-xs text-gray-500 rounded-md">Available</div>
               </div>
             </div>
 
@@ -256,7 +256,7 @@ export const HomePage = () => {
                   467+
                 </div>
                 <div className="text-sm font-medium text-gray-700">Industries</div>
-                <div className="text-xs text-gray-500">Covered</div>
+                <div className="text-xs text-gray-500 rounded-md">Covered</div>
               </div>
             </div>
 
@@ -267,7 +267,7 @@ export const HomePage = () => {
                   2,834+
                 </div>
                 <div className="text-sm font-medium text-gray-700">Job Roles</div>
-                <div className="text-xs text-gray-500">Men & Women</div>
+                <div className="text-xs text-gray-500 rounded-md">Men & Women</div>
               </div>
             </div>
 
@@ -278,7 +278,7 @@ export const HomePage = () => {
                   15,678+
                 </div>
                 <div className="text-sm font-medium text-gray-700">Happy</div>
-                <div className="text-xs text-gray-500">Students</div>
+                <div className="text-xs text-gray-500 rounded-md">Students</div>
               </div>
             </div>
           </div>
