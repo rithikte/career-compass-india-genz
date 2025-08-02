@@ -110,7 +110,7 @@ export const HomePage = () => {
                         <h3 className="text-xl font-bold text-gray-900">{stage.title}</h3>
                       </div>
                       
-                      <p className="text-gray-600 leading-relaxed">{stage.description}</p>
+                      <p className="text-gray-600 leading-relaxed font-medium">{stage.description}</p>
                     </div>
                     
                     {/* Connection Arrow */}
