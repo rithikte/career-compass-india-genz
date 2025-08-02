@@ -363,91 +363,177 @@ const NatureOfWork = () => {
                   </div>
 
                   {/* Main Content Grid */}
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-                    {/* Industry & Roles */}
-                    <div className="lg:col-span-2 space-y-8">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    {/* Left Column - Industry & Gender Roles */}
+                    <div className="space-y-8">
                       {/* Industry Focus */}
-                      <div className="bg-gradient-to-r from-slate-50 to-slate-100 rounded-2xl p-6 border border-slate-200/50">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="text-2xl">{role.industryIcon}</div>
-                          <h4 className="text-lg font-bold text-slate-800 tracking-wide">INDUSTRY FOCUS</h4>
+                      <div className="relative bg-white/90 backdrop-blur-xl rounded-3xl p-8 border-2 border-slate-200/30 shadow-2xl overflow-hidden group hover:shadow-3xl transition-all duration-500">
+                        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 opacity-80"></div>
+                        <div className="relative z-10">
+                          <div className="flex items-center gap-4 mb-6">
+                            <div className="text-4xl filter drop-shadow-lg">{role.industryIcon}</div>
+                            <div>
+                              <h4 className="text-xl font-black text-slate-800 tracking-wide mb-1">INDUSTRY FOCUS</h4>
+                              <div className="w-16 h-1 bg-gradient-to-r from-indigo-500 to-purple-500"></div>
+                            </div>
+                          </div>
+                          <p className="text-slate-700 font-semibold text-lg leading-relaxed">
+                            {role.industry}
+                          </p>
                         </div>
-                        <p className="text-slate-700 font-medium text-lg">
-                          {role.industry}
-                        </p>
                       </div>
                       
-                      {/* Gender Roles */}
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border-2 border-blue-200/50">
-                          <div className="flex items-center gap-3 mb-4">
-                            <User className="h-5 w-5 text-blue-600" />
-                            <h4 className="font-bold text-blue-800 tracking-wide">ROLE FOR MEN</h4>
+                      {/* Gender Roles - Enhanced Visual Separation */}
+                      <div className="space-y-6">
+                        {/* Men's Role */}
+                        <div className="relative bg-gradient-to-br from-blue-500/5 via-cyan-500/5 to-blue-600/10 backdrop-blur-xl rounded-3xl p-8 border-2 border-blue-300/30 shadow-xl overflow-hidden group hover:shadow-2xl hover:scale-[1.02] transition-all duration-500">
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-200/20 to-transparent rounded-full -mr-16 -mt-16"></div>
+                          <div className="relative z-10">
+                            <div className="flex items-center gap-4 mb-6">
+                              <div className="relative">
+                                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg rotate-3 group-hover:rotate-6 transition-transform duration-300">
+                                  <User className="h-8 w-8 text-white" />
+                                </div>
+                                <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-blue-400 rounded-full flex items-center justify-center">
+                                  <span className="text-white text-xs font-bold">♂</span>
+                                </div>
+                              </div>
+                              <div>
+                                <h4 className="text-lg font-black text-blue-800 tracking-wide mb-1">IDEAL ROLE FOR MEN</h4>
+                                <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-cyan-500"></div>
+                              </div>
+                            </div>
+                            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-blue-200/50">
+                              <p className="text-blue-900 font-semibold text-lg leading-relaxed">
+                                {role.menRole}
+                              </p>
+                            </div>
                           </div>
-                          <p className="text-blue-900 font-medium leading-relaxed">
-                            {role.menRole}
-                          </p>
                         </div>
                         
-                        <div className="bg-gradient-to-br from-pink-50 to-pink-100 rounded-2xl p-6 border-2 border-pink-200/50">
-                          <div className="flex items-center gap-3 mb-4">
-                            <UserCheck className="h-5 w-5 text-pink-600" />
-                            <h4 className="font-bold text-pink-800 tracking-wide">ROLE FOR WOMEN</h4>
-                          </div>
-                          <p className="text-pink-900 font-medium leading-relaxed">
-                            {role.womenRole}
-                          </p>
-                        </div>
-                      </div>
-                      
-                      {/* Why It Suits */}
-                      <div className="bg-gradient-to-br from-amber-50 to-yellow-100 rounded-2xl p-6 border-2 border-amber-200/50">
-                        <h4 className="font-bold text-amber-800 mb-4 tracking-wide">WHY IT SUITS EACH GENDER</h4>
-                        <div className="space-y-2">
-                          {role.whySuits.split('\n').map((line, i) => (
-                            <p key={i} className="text-amber-900 font-medium">
-                              {line}
-                            </p>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Technical Requirements */}
-                    <div className="space-y-6">
-                      {/* Math Load */}
-                      <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/50">
-                        <div className="flex items-center gap-3 mb-4">
-                          <Calculator className="h-6 w-6 text-blue-600" />
-                          <span className="font-bold text-slate-800 tracking-wide">MATH LOAD</span>
-                        </div>
-                        <div className="relative">
-                          <div className="bg-slate-200 rounded-full h-8 relative overflow-hidden">
-                            <div 
-                              className={`h-full bg-gradient-to-r ${getProgressGradient(role.mathLoad)} transition-all duration-1000 flex items-center justify-center relative`}
-                              style={{ width: `${role.mathLoad}%` }}
-                            >
-                              <span className="text-white font-bold text-sm z-10">{role.mathLoad}%</span>
-                              <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
+                        {/* Women's Role */}
+                        <div className="relative bg-gradient-to-br from-pink-500/5 via-rose-500/5 to-pink-600/10 backdrop-blur-xl rounded-3xl p-8 border-2 border-pink-300/30 shadow-xl overflow-hidden group hover:shadow-2xl hover:scale-[1.02] transition-all duration-500">
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-pink-200/20 to-transparent rounded-full -mr-16 -mt-16"></div>
+                          <div className="relative z-10">
+                            <div className="flex items-center gap-4 mb-6">
+                              <div className="relative">
+                                <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl flex items-center justify-center shadow-lg rotate-3 group-hover:rotate-6 transition-transform duration-300">
+                                  <UserCheck className="h-8 w-8 text-white" />
+                                </div>
+                                <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-pink-400 rounded-full flex items-center justify-center">
+                                  <span className="text-white text-xs font-bold">♀</span>
+                                </div>
+                              </div>
+                              <div>
+                                <h4 className="text-lg font-black text-pink-800 tracking-wide mb-1">IDEAL ROLE FOR WOMEN</h4>
+                                <div className="w-12 h-1 bg-gradient-to-r from-pink-500 to-rose-500"></div>
+                              </div>
+                            </div>
+                            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-pink-200/50">
+                              <p className="text-pink-900 font-semibold text-lg leading-relaxed">
+                                {role.womenRole}
+                              </p>
                             </div>
                           </div>
                         </div>
                       </div>
-                      
-                      {/* Physics Load */}
-                      <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/50">
-                        <div className="flex items-center gap-3 mb-4">
-                          <Atom className="h-6 w-6 text-purple-600" />
-                          <span className="font-bold text-slate-800 tracking-wide">PHYSICS LOAD</span>
+                    </div>
+
+                    {/* Right Column - Why It Suits & Technical Requirements */}
+                    <div className="space-y-8">
+                      {/* Why It Suits Each Gender - Enhanced */}
+                      <div className="relative bg-gradient-to-br from-amber-500/5 via-yellow-500/5 to-orange-500/10 backdrop-blur-xl rounded-3xl p-8 border-2 border-amber-300/30 shadow-xl overflow-hidden group hover:shadow-2xl hover:scale-[1.02] transition-all duration-500">
+                        <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-amber-200/20 to-transparent rounded-full -mr-20 -mt-20"></div>
+                        <div className="relative z-10">
+                          <div className="flex items-center gap-4 mb-8">
+                            <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg rotate-3 group-hover:rotate-6 transition-transform duration-300">
+                              <Brain className="h-8 w-8 text-white" />
+                            </div>
+                            <div>
+                              <h4 className="text-xl font-black text-amber-800 tracking-wide mb-1">WHY IT SUITS EACH GENDER</h4>
+                              <div className="w-16 h-1 bg-gradient-to-r from-amber-500 to-orange-500"></div>
+                            </div>
+                          </div>
+                          
+                          <div className="space-y-6">
+                            {role.whySuits.split('\n').map((line, i) => {
+                              const isForMen = line.toLowerCase().includes('men:');
+                              const isForWomen = line.toLowerCase().includes('women:');
+                              
+                              return (
+                                <div 
+                                  key={i} 
+                                  className={`relative rounded-2xl p-6 border-2 transition-all duration-300 hover:scale-105 ${
+                                    isForMen 
+                                      ? 'bg-gradient-to-r from-blue-50/80 to-cyan-50/80 border-blue-200/50' 
+                                      : isForWomen 
+                                        ? 'bg-gradient-to-r from-pink-50/80 to-rose-50/80 border-pink-200/50'
+                                        : 'bg-white/60 border-slate-200/50'
+                                  }`}
+                                >
+                                  <div className="flex items-start gap-3">
+                                    <div className={`w-8 h-8 rounded-xl flex items-center justify-center text-sm font-bold shadow-lg ${
+                                      isForMen 
+                                        ? 'bg-gradient-to-br from-blue-500 to-blue-600 text-white' 
+                                        : isForWomen 
+                                          ? 'bg-gradient-to-br from-pink-500 to-pink-600 text-white'
+                                          : 'bg-gradient-to-br from-slate-500 to-slate-600 text-white'
+                                    }`}>
+                                      {isForMen ? '♂' : isForWomen ? '♀' : '●'}
+                                    </div>
+                                    <p className={`font-semibold leading-relaxed flex-1 ${
+                                      isForMen 
+                                        ? 'text-blue-900' 
+                                        : isForWomen 
+                                          ? 'text-pink-900'
+                                          : 'text-slate-800'
+                                    }`}>
+                                      {line}
+                                    </p>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
                         </div>
-                        <div className="relative">
-                          <div className="bg-slate-200 rounded-full h-8 relative overflow-hidden">
-                            <div 
-                              className={`h-full bg-gradient-to-r ${getProgressGradient(role.physicsLoad)} transition-all duration-1000 flex items-center justify-center relative`}
-                              style={{ width: `${role.physicsLoad}%` }}
-                            >
-                              <span className="text-white font-bold text-sm z-10">{role.physicsLoad}%</span>
-                              <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
+                      </div>
+                      
+                      {/* Technical Requirements */}
+                      <div className="space-y-6">
+                        {/* Math Load */}
+                        <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/50">
+                          <div className="flex items-center gap-3 mb-4">
+                            <Calculator className="h-6 w-6 text-blue-600" />
+                            <span className="font-bold text-slate-800 tracking-wide">MATH LOAD</span>
+                          </div>
+                          <div className="relative">
+                            <div className="bg-slate-200 rounded-full h-8 relative overflow-hidden">
+                              <div 
+                                className={`h-full bg-gradient-to-r ${getProgressGradient(role.mathLoad)} transition-all duration-1000 flex items-center justify-center relative`}
+                                style={{ width: `${role.mathLoad}%` }}
+                              >
+                                <span className="text-white font-bold text-sm z-10">{role.mathLoad}%</span>
+                                <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {/* Physics Load */}
+                        <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/50">
+                          <div className="flex items-center gap-3 mb-4">
+                            <Atom className="h-6 w-6 text-purple-600" />
+                            <span className="font-bold text-slate-800 tracking-wide">PHYSICS LOAD</span>
+                          </div>
+                          <div className="relative">
+                            <div className="bg-slate-200 rounded-full h-8 relative overflow-hidden">
+                              <div 
+                                className={`h-full bg-gradient-to-r ${getProgressGradient(role.physicsLoad)} transition-all duration-1000 flex items-center justify-center relative`}
+                                style={{ width: `${role.physicsLoad}%` }}
+                              >
+                                <span className="text-white font-bold text-sm z-10">{role.physicsLoad}%</span>
+                                <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
+                              </div>
                             </div>
                           </div>
                         </div>
