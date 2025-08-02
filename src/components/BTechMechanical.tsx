@@ -220,28 +220,28 @@ export const BTechMechanical = () => {
             <div className="divide-y divide-gray-200">
               <div className="grid grid-cols-2 gap-4 p-4 hover:bg-gray-50">
                 <div className="font-bold text-blue-600 text-lg">1st Year</div>
-                <div className="text-gray-700">
+                <div className="text-gray-700 rounded-md">
                   <strong>Engineering Physics</strong> – Basics of waves, vibrations, resonance (how things shake or vibrate)
                 </div>
               </div>
               
               <div className="grid grid-cols-2 gap-4 p-4 hover:bg-gray-50">
                 <div className="font-bold text-green-600 text-lg">2nd Year</div>
-                <div className="text-gray-700">
+                <div className="text-gray-700 rounded-md">
                   <strong>Strength of Materials</strong> – How materials behave when they vibrate or face repeated stress
                 </div>
               </div>
               
               <div className="grid grid-cols-2 gap-4 p-4 hover:bg-gray-50">
                 <div className="font-bold text-purple-600 text-lg">3rd Year</div>
-                <div className="text-gray-700">
+                <div className="text-gray-700 rounded-md">
                   <strong>Vibrations & Dynamics</strong> – How engines, wings, and moving parts oscillate (vibrate) during flight
                 </div>
               </div>
               
               <div className="grid grid-cols-2 gap-4 p-4 hover:bg-gray-50">
                 <div className="font-bold text-orange-600 text-lg">4th Year</div>
-                <div className="text-gray-700">
+                <div className="text-gray-700 rounded-md">
                   <strong>Aero-mechanical Electives</strong> (if available) – Sound vibration control, aircraft structure response, fatigue analysis
                 </div>
               </div>
