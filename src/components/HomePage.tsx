@@ -44,23 +44,55 @@ export const HomePage = () => {
   const [selectedState, setSelectedState] = useState('');
   const [isStateDropdownOpen, setIsStateDropdownOpen] = useState(false);
   const [animatedStats, setAnimatedStats] = useState([]);
-
   useEffect(() => {
     // Animate stats when component mounts
     const timer = setTimeout(() => {
-      setAnimatedStats([
-        { value: 1247, label: 'Colleges', sublabel: 'Collaborated', gradient: 'from-blue-600 to-cyan-600', icon: Shield },
-        { value: 856, label: 'Institutes', sublabel: 'Collaborated', gradient: 'from-purple-600 to-pink-600', icon: Building2 },
-        { value: 342, label: 'Online', sublabel: 'Institutes', gradient: 'from-green-600 to-emerald-600', icon: BookOpen },
-        { value: 189, label: 'Degrees', sublabel: 'Available', gradient: 'from-orange-600 to-red-600', icon: Award },
-        { value: 467, label: 'Industries', sublabel: 'Covered', gradient: 'from-indigo-600 to-purple-600', icon: TrendingUp },
-        { value: 2834, label: 'Job Roles', sublabel: 'Men & Women', gradient: 'from-teal-600 to-blue-600', icon: Users },
-        { value: 15678, label: 'Happy', sublabel: 'Students', gradient: 'from-pink-600 to-rose-600', icon: Sparkles }
-      ]);
+      setAnimatedStats([{
+        value: 1247,
+        label: 'Colleges',
+        sublabel: 'Collaborated',
+        gradient: 'from-blue-600 to-cyan-600',
+        icon: Shield
+      }, {
+        value: 856,
+        label: 'Institutes',
+        sublabel: 'Collaborated',
+        gradient: 'from-purple-600 to-pink-600',
+        icon: Building2
+      }, {
+        value: 342,
+        label: 'Online',
+        sublabel: 'Institutes',
+        gradient: 'from-green-600 to-emerald-600',
+        icon: BookOpen
+      }, {
+        value: 189,
+        label: 'Degrees',
+        sublabel: 'Available',
+        gradient: 'from-orange-600 to-red-600',
+        icon: Award
+      }, {
+        value: 467,
+        label: 'Industries',
+        sublabel: 'Covered',
+        gradient: 'from-indigo-600 to-purple-600',
+        icon: TrendingUp
+      }, {
+        value: 2834,
+        label: 'Job Roles',
+        sublabel: 'Men & Women',
+        gradient: 'from-teal-600 to-blue-600',
+        icon: Users
+      }, {
+        value: 15678,
+        label: 'Happy',
+        sublabel: 'Students',
+        gradient: 'from-pink-600 to-rose-600',
+        icon: Sparkles
+      }]);
     }, 500);
     return () => clearTimeout(timer);
   }, []);
-
   return <div className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50 min-h-screen overflow-hidden">
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-4 pt-12 pb-20">
@@ -85,10 +117,7 @@ export const HomePage = () => {
         <div className="flex justify-center mb-16 relative z-10">
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full opacity-20 group-hover:opacity-30 blur transition-all duration-300"></div>
-            <button 
-              onClick={() => setIsStateDropdownOpen(!isStateDropdownOpen)} 
-              className="relative flex items-center gap-3 bg-white/95 backdrop-blur-xl px-8 py-4 rounded-full shadow-xl border border-white/50 hover:shadow-2xl hover:bg-white transition-all duration-500 min-w-[250px] justify-between group-hover:scale-105"
-            >
+            <button onClick={() => setIsStateDropdownOpen(!isStateDropdownOpen)} className="relative flex items-center gap-3 bg-white/95 backdrop-blur-xl px-8 py-4 rounded-full shadow-xl border border-white/50 hover:shadow-2xl hover:bg-white transition-all duration-500 min-w-[250px] justify-between group-hover:scale-105">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
                   <MapPin className="w-5 h-5 text-white" />
@@ -100,28 +129,21 @@ export const HomePage = () => {
               <ChevronDown className={`w-5 h-5 text-gray-600 transition-transform duration-300 ${isStateDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
             
-            {isStateDropdownOpen && (
-              <div className="absolute top-full mt-4 left-0 right-0 bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 max-h-80 overflow-y-auto z-50 animate-scale-in">
+            {isStateDropdownOpen && <div className="absolute top-full mt-4 left-0 right-0 bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 max-h-80 overflow-y-auto z-50 animate-scale-in">
                 <div className="p-2">
-                  {indianStates.map((state, index) => (
-                    <button 
-                      key={state} 
-                      onClick={() => {
-                        setSelectedState(state);
-                        setIsStateDropdownOpen(false);
-                      }} 
-                      className="w-full text-left px-6 py-4 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 text-gray-700 rounded-2xl transition-all duration-200 font-medium hover:scale-[1.02] group"
-                      style={{ animationDelay: `${index * 20}ms` }}
-                    >
+                  {indianStates.map((state, index) => <button key={state} onClick={() => {
+                setSelectedState(state);
+                setIsStateDropdownOpen(false);
+              }} className="w-full text-left px-6 py-4 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 text-gray-700 rounded-2xl transition-all duration-200 font-medium hover:scale-[1.02] group" style={{
+                animationDelay: `${index * 20}ms`
+              }}>
                       <div className="flex items-center gap-3">
                         <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
                         {state}
                       </div>
-                    </button>
-                  ))}
+                    </button>)}
                 </div>
-              </div>
-            )}
+              </div>}
           </div>
         </div>
 
@@ -162,7 +184,7 @@ export const HomePage = () => {
           
           <div className="max-w-4xl mx-auto mb-12">
             <p className="text-2xl md:text-3xl text-gray-600 font-medium leading-relaxed mb-6 animate-fade-in delay-300">
-              Navigate your academic future with <span className="text-blue-600 font-semibold">precision</span>
+              Navigate your academic future with <span className="text-blue-600 font-semibold">purpose</span>
             </p>
             <p className="text-lg text-gray-500 leading-relaxed animate-fade-in delay-500">
               Our AI-powered platform analyzes your interests, aligns them with market trends, 
@@ -182,7 +204,7 @@ export const HomePage = () => {
             </div>
             <div className="flex items-center gap-2 text-gray-600">
               <Users className="w-5 h-5 text-blue-500" />
-              <span className="font-semibold">15,000+ Happy Students</span>
+              <span className="font-semibold">Built for Gen Z</span>
             </div>
           </div>
         </div>
@@ -319,9 +341,10 @@ export const HomePage = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 mb-16 relative z-10">
             {animatedStats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <div key={index} className="text-center group animate-fade-in" style={{ animationDelay: `${index * 150}ms` }}>
+            const Icon = stat.icon;
+            return <div key={index} className="text-center group animate-fade-in" style={{
+              animationDelay: `${index * 150}ms`
+            }}>
                   <div className="relative bg-white/90 backdrop-blur-xl rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/50 group-hover:scale-110 group-hover:-translate-y-2 overflow-hidden">
                     {/* Gradient Background */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
@@ -344,9 +367,8 @@ export const HomePage = () => {
                     <div className="absolute top-3 right-3 w-8 h-8 bg-gradient-to-br from-white/20 to-white/5 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
                     <div className="absolute bottom-3 left-3 w-4 h-4 bg-gradient-to-br from-white/10 to-white/5 rounded-full group-hover:scale-150 transition-transform duration-300"></div>
                   </div>
-                </div>
-              );
-            })}
+                </div>;
+          })}
           </div>
           
           {/* Trust Indicators */}
