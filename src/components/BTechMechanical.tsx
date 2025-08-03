@@ -1,420 +1,331 @@
 import React from 'react';
-import { CheckCircle, XCircle, AlertTriangle, Brain, Cog, Calculator, Wrench, Plane, Zap, Target, Clock, BookOpen, Shield, Users, Building, Lightbulb, TrendingUp } from 'lucide-react';
+import { CheckCircle, XCircle, AlertTriangle, Brain, Cog, Calculator, Wrench, Plane, Zap, Target, Clock, BookOpen, Shield } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, RadialBarChart, RadialBar, LineChart, Line } from 'recharts';
-// Enhanced data for visualizations
-const skillDemandData = [
-  { skill: 'Physics', demand: 95, color: '#3b82f6' },
-  { skill: 'Mathematics', demand: 90, color: '#6366f1' },
-  { skill: 'Software', demand: 85, color: '#8b5cf6' },
-  { skill: 'Design', demand: 80, color: '#06b6d4' },
-  { skill: 'Testing', demand: 75, color: '#10b981' }
-];
-
-const careerProgressionData = [
-  { year: 0, salary: 4, title: 'Entry' },
-  { year: 3, salary: 8, title: 'Mid' },
-  { year: 7, salary: 15, title: 'Senior' },
-  { year: 12, salary: 25, title: 'Lead' },
-  { year: 20, salary: 45, title: 'Expert' }
-];
-
-const subjectComplexityData = [
-  { subject: 'Physics', complexity: 85, timeHours: 120 },
-  { subject: 'Math', complexity: 90, timeHours: 140 },
-  { subject: 'Design', complexity: 75, timeHours: 100 },
-  { subject: 'Software', complexity: 80, timeHours: 110 }
-];
-
-const industryDistribution = [
-  { name: 'Defense', value: 35, color: '#ef4444' },
-  { name: 'Civil Aviation', value: 30, color: '#3b82f6' },
-  { name: 'Space', value: 20, color: '#8b5cf6' },
-  { name: 'Research', value: 15, color: '#10b981' }
-];
-
 export const BTechMechanical = () => {
-  return <div className="space-y-12 animate-fade-in">
-      {/* Enhanced Hero Section with Live Stats */}
+  return <div className="space-y-8">
+      {/* Hero Section with Core Topic */}
       <div className="relative bg-gradient-to-br from-primary via-primary/80 to-secondary text-white rounded-2xl p-8 overflow-hidden">
-        {/* Floating Elements */}
-        <div className="absolute top-4 right-4 bg-white/20 rounded-lg px-3 py-1 animate-pulse">
-          <span className="text-sm font-semibold">Live: 2.5L+ Jobs</span>
-        </div>
-        <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16 animate-float"></div>
-        <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12 animate-float"></div>
+        <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
+        <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
         
-        <div className="relative text-center space-y-8">
-          <div className="inline-flex items-center gap-3 bg-white/20 backdrop-blur rounded-full px-6 py-3 animate-scale-in">
-            <Plane className="h-7 w-7" />
-            <span className="font-bold text-lg">B.Tech Mechanical Engineering</span>
+        <div className="relative text-center space-y-6">
+          <div className="inline-flex items-center gap-3 bg-white/20 rounded-full px-6 py-2">
+            <Plane className="h-6 w-6" />
+            <span className="font-semibold">B.Tech Mechanical Engineering</span>
           </div>
           
-          <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl font-black bg-gradient-to-r from-white to-yellow-200 bg-clip-text text-transparent">
-              AVIATION INDUSTRY
-            </h1>
-            <div className="bg-white/20 backdrop-blur rounded-2xl p-6 inline-block">
-              <h2 className="text-3xl font-bold text-yellow-300 mb-2">⚡ Waves & Oscillations</h2>
-              <p className="text-xl opacity-90">The Foundation of Modern Aerospace</p>
-              <div className="flex justify-center gap-4 mt-4">
-                <div className="text-center">
-                  <div className="text-2xl font-bold">95%</div>
-                  <div className="text-sm opacity-80">Physics Focus</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold">15L+</div>
-                  <div className="text-sm opacity-80">Avg Salary</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold">20%</div>
-                  <div className="text-sm opacity-80">Growth Rate</div>
-                </div>
-              </div>
+          <div className="space-y-3">
+            <h1 className="text-4xl md:text-5xl font-bold">Aviation - Industry</h1>
+            <div className="bg-white/20 rounded-lg p-4 inline-block">
+              <h2 className="text-2xl font-bold text-yellow-300">⚡ Waves & Oscillations</h2>
+              <p className="text-lg opacity-90">The Foundation of Modern Aerospace</p>
             </div>
           </div>
 
-          {/* Industry Distribution Mini Chart */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-            {industryDistribution.map((item, index) => (
-              <div key={item.name} className="bg-white/20 backdrop-blur rounded-xl p-4 animate-scale-in" 
-                   style={{animationDelay: `${index * 100}ms`}}>
-                <div className="w-8 h-8 rounded-full mx-auto mb-2" style={{backgroundColor: item.color}}></div>
-                <div className="text-center">
-                  <div className="text-lg font-bold">{item.value}%</div>
-                  <div className="text-sm opacity-90">{item.name}</div>
-                </div>
+          <div className="flex flex-wrap justify-center gap-4 mt-6">
+            <div className="bg-white/20 rounded-lg px-4 py-2">
+              <div className="flex items-center gap-2">
+                <Plane className="h-5 w-5" />
+                <span className="font-semibold">Aerospace Engineering</span>
               </div>
-            ))}
+            </div>
+            <div className="bg-white/20 rounded-lg px-4 py-2">
+              <div className="flex items-center gap-2">
+                <Shield className="h-5 w-5" />
+                <span className="font-semibold">Defense Systems</span>
+              </div>
+            </div>
+            <div className="bg-white/20 rounded-lg px-4 py-2">
+              <div className="flex items-center gap-2">
+                <Zap className="h-5 w-5" />
+                <span className="font-semibold">Aviation Technology</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Skills Demand Visualization - 60% Chart */}
-      <div className="grid lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2">
-          <Card className="border-2 border-primary/20 h-full">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-2xl">
-                <div className="p-2 bg-primary/10 rounded-lg">
-                  <Zap className="h-6 w-6 text-primary" />
-                </div>
-                Skills Demand in Aerospace Industry
-              </CardTitle>
-              <CardDescription className="text-lg">
-                What skills aerospace companies value most (2024 Analysis)
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="h-80">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={skillDemandData}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="skill" />
-                  <YAxis />
-                  <Tooltip formatter={(value) => [`${value}%`, "Demand"]} />
-                  <Bar dataKey="demand" fill="#3b82f6" radius={[8, 8, 0, 0]}>
-                    {skillDemandData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={entry.color} />
-                    ))}
-                  </Bar>
-                </BarChart>
-              </ResponsiveContainer>
-            </CardContent>
-          </Card>
-        </div>
-        
-        {/* 40% Content */}
-        <Card className="border-2 border-blue-200">
-          <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50">
-            <CardTitle className="text-xl text-blue-900">Key Insights</CardTitle>
-          </CardHeader>
-          <CardContent className="p-6">
-            <div className="space-y-4">
-              <div className="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
-                <Target className="h-5 w-5 text-blue-600 mt-1" />
-                <div>
-                  <h4 className="font-bold text-blue-900">Physics = 95% Demand</h4>
-                  <p className="text-sm text-blue-800">Wave mechanics are core to aircraft stability</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 p-3 bg-green-50 rounded-lg">
-                <Calculator className="h-5 w-5 text-green-600 mt-1" />
-                <div>
-                  <h4 className="font-bold text-green-900">Math = 90% Demand</h4>
-                  <p className="text-sm text-green-800">Complex equations solve real flight problems</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 p-3 bg-purple-50 rounded-lg">
-                <Cog className="h-5 w-5 text-purple-600 mt-1" />
-                <div>
-                  <h4 className="font-bold text-purple-900">Software = 85% Demand</h4>
-                  <p className="text-sm text-purple-800">MATLAB, ANSYS are industry standard</p>
-                </div>
-              </div>
+      {/* Why Waves & Oscillations Matter */}
+      <Card className="border-2 border-primary/20">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-3 text-2xl">
+            <div className="p-2 bg-primary/10 rounded-lg">
+              <Zap className="h-6 w-6 text-primary" />
             </div>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Career Progression Chart - 60% Visual */}
-      <div className="grid lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2">
-          <Card className="border-2 border-green-200">
-            <CardHeader className="bg-gradient-to-r from-green-50 to-emerald-50">
-              <CardTitle className="flex items-center gap-3 text-2xl text-green-900">
-                <div className="p-2 bg-green-100 rounded-lg">
-                  <TrendingUp className="h-6 w-6 text-green-600" />
-                </div>
-                Career Progression & Salary Growth
-              </CardTitle>
-              <CardDescription className="text-green-700 text-lg">
-                Your 20-year journey in aerospace engineering
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="h-80">
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={careerProgressionData}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="year" label={{ value: 'Years Experience', position: 'insideBottom', offset: -5 }} />
-                  <YAxis label={{ value: 'Salary (LPA)', angle: -90, position: 'insideLeft' }} />
-                  <Tooltip formatter={(value) => [`₹${value}L`, "Salary"]} />
-                  <Line type="monotone" dataKey="salary" stroke="#10b981" strokeWidth={3} dot={{ fill: '#10b981', strokeWidth: 2, r: 6 }} />
-                </LineChart>
-              </ResponsiveContainer>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* 40% Content - What This Field Demands */}
-        <Card className="border-2 border-red-200">
-          <CardHeader className="bg-gradient-to-r from-red-50 to-orange-50">
-            <CardTitle className="flex items-center gap-3 text-xl text-red-900">
-              <div className="p-2 bg-red-100 rounded-lg">
-                <Brain className="h-6 w-6 text-red-600" />
-              </div>
-              Reality Check
-            </CardTitle>
-            <CardDescription className="text-red-700 font-medium">
-              Can you handle this for 4 years?
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="p-6">
-            <div className="space-y-4">
-              <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                <div className="p-2 bg-blue-100 rounded-lg flex-shrink-0">
-                  <Clock className="h-4 w-4 text-blue-600" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-900 text-sm">Extreme Patience</h4>
-                  <p className="text-gray-600 text-xs">Simulations take hours. You'll redo calculations 10+ times.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                <div className="p-2 bg-purple-100 rounded-lg flex-shrink-0">
-                  <Brain className="h-4 w-4 text-purple-600" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-900 text-sm">Complex Problem Solving</h4>
-                  <p className="text-gray-600 text-xs">No Google answers for real engineering problems.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                <div className="p-2 bg-green-100 rounded-lg flex-shrink-0">
-                  <Calculator className="h-4 w-4 text-green-600" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-900 text-sm">Tool Mastery</h4>
-                  <p className="text-gray-600 text-xs">MATLAB, ANSYS, CATIA - you'll live in these for 4 years.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                <div className="p-2 bg-red-100 rounded-lg flex-shrink-0">
-                  <Target className="h-4 w-4 text-red-600" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-900 text-sm">Perfect Accuracy</h4>
-                  <p className="text-gray-600 text-xs">One decimal wrong = mission failure.</p>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Subject Complexity Analysis - 60% Chart */}
-      <div className="grid lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2">
-          <Card className="border-2 border-blue-200">
-            <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50">
-              <CardTitle className="flex items-center gap-3 text-2xl text-blue-900">
+            Why Waves & Oscillations Are Everything in Aerospace
+          </CardTitle>
+          <CardDescription className="text-lg font-semibold">
+            This isn't just physics theory - it's the core science behind every flying machine
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+              <div className="flex items-center gap-2 mb-3">
                 <div className="p-2 bg-blue-100 rounded-lg">
-                  <BookOpen className="h-6 w-6 text-blue-600" />
+                  <Target className="h-5 w-5 text-blue-600" />
                 </div>
-                Subject Difficulty & Time Investment
-              </CardTitle>
-              <CardDescription className="text-blue-700 text-lg">
-                What you'll actually face in 4 years - hour by hour breakdown
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="h-80">
-              <ResponsiveContainer width="100%" height="100%">
-                <RadialBarChart cx="50%" cy="50%" innerRadius="20%" outerRadius="80%" data={subjectComplexityData}>
-                  <RadialBar dataKey="complexity" cornerRadius={10} fill="#3b82f6" />
-                  <Tooltip formatter={(value) => [`${value}%`, "Difficulty"]} />
-                </RadialBarChart>
-              </ResponsiveContainer>
-            </CardContent>
-          </Card>
-        </div>
+                <h3 className="font-bold text-blue-900">Aircraft Stability</h3>
+              </div>
+              <p className="text-blue-800 text-sm font-medium">
+                Understanding vibrations keeps planes stable during turbulence and prevents dangerous oscillations
+              </p>
+            </div>
 
-        {/* 40% Content - Year-wise Study Plan */}
-        <Card className="border-2 border-indigo-200">
-          <CardHeader className="bg-gradient-to-r from-indigo-50 to-purple-50">
-            <CardTitle className="text-xl text-indigo-900">4-Year Study Roadmap</CardTitle>
-          </CardHeader>
-          <CardContent className="p-6">
-            <div className="space-y-4">
-              <div className="border-l-4 border-blue-500 pl-4 py-2">
-                <div className="font-bold text-blue-600 text-lg">1st Year</div>
-                <div className="text-sm text-gray-700">
-                  <strong>Engineering Physics</strong> – Wave mechanics, vibrations (120 hrs)
+            <div className="bg-green-50 rounded-lg p-4 border border-green-200">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="p-2 bg-green-100 rounded-lg">
+                  <Cog className="h-5 w-5 text-green-600" />
                 </div>
+                <h3 className="font-bold text-green-900">Engine Optimization</h3>
               </div>
-              
-              <div className="border-l-4 border-green-500 pl-4 py-2">
-                <div className="font-bold text-green-600 text-lg">2nd Year</div>
-                <div className="text-sm text-gray-700">
-                  <strong>Strength of Materials</strong> – Material vibration behavior (140 hrs)
-                </div>
-              </div>
-              
-              <div className="border-l-4 border-purple-500 pl-4 py-2">
-                <div className="font-bold text-purple-600 text-lg">3rd Year</div>
-                <div className="text-sm text-gray-700">
-                  <strong>Vibrations & Dynamics</strong> – Engine oscillations (100 hrs)
-                </div>
-              </div>
-              
-              <div className="border-l-4 border-orange-500 pl-4 py-2">
-                <div className="font-bold text-orange-600 text-lg">4th Year</div>
-                <div className="text-sm text-gray-700">
-                  <strong>Aero-mechanical Electives</strong> – Fatigue analysis (110 hrs)
-                </div>
-              </div>
+              <p className="text-green-800 text-sm font-medium">
+                Wave analysis reduces engine noise, improves fuel efficiency, and prevents mechanical failures
+              </p>
+            </div>
 
-              <div className="mt-6 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-                <div className="flex items-center gap-2">
-                  <AlertTriangle className="h-5 w-5 text-yellow-600" />
-                  <span className="font-bold text-yellow-900 text-sm">Reality Check:</span>
+            <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="p-2 bg-purple-100 rounded-lg">
+                  <Shield className="h-5 w-5 text-purple-600" />
                 </div>
-                <p className="text-yellow-800 text-sm mt-2">
-                  Only <span className="font-bold">20-30%</span> covers Waves & Oscillations directly. Need extra certifications for aviation jobs.
+                <h3 className="font-bold text-purple-900">Safety Testing</h3>
+              </div>
+              <p className="text-purple-800 text-sm font-medium">
+                Oscillation testing ensures aircraft can handle extreme conditions before human lives depend on it
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-6 p-4 bg-gradient-to-r from-orange-50 to-red-50 rounded-lg border border-orange-200">
+            <div className="flex items-start gap-3">
+              <AlertTriangle className="h-6 w-6 text-orange-600 mt-1 flex-shrink-0" />
+              <div>
+                <h3 className="font-bold text-orange-900 mb-2">Reality Check:</h3>
+                <p className="text-orange-800">
+                  This isn't about memorizing formulas. You'll spend 4 years learning how wave physics saves lives and builds the future of flight. 
+                  <span className="font-semibold"> If you're not genuinely fascinated by how things work at this level, this degree will feel like torture.</span>
                 </p>
               </div>
             </div>
-          </CardContent>
-        </Card>
-      </div>
+          </div>
+        </CardContent>
+      </Card>
 
-      {/* Industry Distribution Chart - 60% Visual */}
-      <div className="grid lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-2xl">
-                <div className="p-2 bg-primary/10 rounded-lg">
-                  <Building className="h-6 w-6 text-primary" />
-                </div>
-                Aerospace Industry Job Distribution
-              </CardTitle>
-              <CardDescription className="text-lg">
-                Where aerospace engineers actually work - real industry data
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="h-80">
-              <ResponsiveContainer width="100%" height="100%">
-                <PieChart>
-                  <Pie
-                    data={industryDistribution}
-                    cx="50%"
-                    cy="50%"
-                    innerRadius={60}
-                    outerRadius={120}
-                    paddingAngle={5}
-                    dataKey="value"
-                  >
-                    {industryDistribution.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={entry.color} />
-                    ))}
-                  </Pie>
-                  <Tooltip formatter={(value) => [`${value}%`, "Jobs"]} />
-                </PieChart>
-              </ResponsiveContainer>
-              <div className="flex flex-wrap justify-center gap-4 mt-4">
-                {industryDistribution.map((item) => (
-                  <div key={item.name} className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full" style={{backgroundColor: item.color}}></div>
-                    <span className="text-sm">{item.name} ({item.value}%)</span>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* 40% Content - Skills Mastery */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-3 text-xl">
-              <div className="p-2 bg-primary/10 rounded-lg">
-                <Lightbulb className="h-6 w-6 text-primary" />
-              </div>
-              Skills You'll Master
-            </CardTitle>
-            <CardDescription>
-              Real capabilities aerospace companies need
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="p-6">
+      {/* What This Field Demands - Reality Check */}
+      <Card className="border-2 border-red-200">
+        <CardHeader className="bg-gradient-to-r from-red-50 to-orange-50">
+          <CardTitle className="flex items-center gap-3 text-2xl text-red-900">
+            <div className="p-2 bg-red-100 rounded-lg">
+              <Brain className="h-6 w-6 text-red-600" />
+            </div>
+            What This Degree Will Demand From You
+          </CardTitle>
+          <CardDescription className="text-red-700 text-lg font-medium">
+            Be honest with yourself - can you handle this for 4 years?
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="p-6">
+          <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
-              <div className="space-y-3">
-                <h4 className="text-lg font-bold text-gray-900">Core Sciences</h4>
-                <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  <span className="text-sm"><strong>Advanced Physics:</strong> Wave mechanics for aircraft systems</span>
+              <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                <div className="p-2 bg-blue-100 rounded-lg flex-shrink-0">
+                  <Clock className="h-5 w-5 text-blue-600" />
                 </div>
-                <div className="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-sm"><strong>Engineering Math:</strong> Differential equations for flight</span>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-purple-50 rounded-lg">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                  <span className="text-sm"><strong>Materials Science:</strong> Metal behavior under stress</span>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">Extreme Patience</h3>
+                  <p className="text-gray-600 text-sm font-medium">Simulations take hours. Tests fail repeatedly. You'll redo calculations 10 times before getting it right.</p>
                 </div>
               </div>
 
-              <div className="space-y-3">
-                <h4 className="text-lg font-bold text-gray-900">Industry Tools</h4>
-                <div className="flex items-center gap-3 p-3 bg-orange-50 rounded-lg">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                  <span className="text-sm"><strong>CAD Software:</strong> CATIA, SolidWorks</span>
+              <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                <div className="p-2 bg-purple-100 rounded-lg flex-shrink-0">
+                  <Brain className="h-5 w-5 text-purple-600" />
                 </div>
-                <div className="flex items-center gap-3 p-3 bg-red-50 rounded-lg">
-                  <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                  <span className="text-sm"><strong>Simulation:</strong> ANSYS, MATLAB</span>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">Complex Problem Solving</h3>
+                  <p className="text-gray-600 text-sm font-semibold">No Google answers for real engineering problems. You think step-by-step or you fail.</p>
                 </div>
-                <div className="flex items-center gap-3 p-3 bg-yellow-50 rounded-lg">
-                  <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                  <span className="text-sm"><strong>Analysis:</strong> CFD, structural testing</span>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                <div className="p-2 bg-green-100 rounded-lg flex-shrink-0">
+                  <Calculator className="h-5 w-5 text-green-600" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">Tool Mastery</h3>
+                  <p className="text-gray-600 text-sm font-semibold">MATLAB, ANSYS, CATIA aren't optional. You'll live in these software tools for 4 years.</p>
                 </div>
               </div>
             </div>
-          </CardContent>
-        </Card>
-      </div>
+
+            <div className="space-y-4">
+              <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                <div className="p-2 bg-red-100 rounded-lg flex-shrink-0">
+                  <Target className="h-5 w-5 text-red-600" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">Perfect Accuracy</h3>
+                  <p className="text-gray-600 text-sm font-medium">One decimal wrong = mission failure. Lives depend on your calculations being exact.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                <div className="p-2 bg-orange-100 rounded-lg flex-shrink-0">
+                  <XCircle className="h-5 w-5 text-orange-600" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">Failure Resilience</h3>
+                  <p className="text-gray-600 text-sm font-semibold">You'll fail often. Designs will break. Code will crash. Can you keep going?</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                <div className="p-2 bg-yellow-100 rounded-lg flex-shrink-0">
+                  <Shield className="h-5 w-5 text-yellow-600" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">Mental Toughness</h3>
+                  <p className="text-gray-600 text-sm font-medium">Long nights, design failures, software crashes. Your mind must stay sharp under pressure.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* What You'll Study in College */}
+      <Card className="border-2 border-blue-200">
+        <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50">
+          <CardTitle className="flex items-center gap-3 text-2xl text-blue-900">
+            <div className="p-2 bg-blue-100 rounded-lg">
+              <BookOpen className="h-6 w-6 text-blue-600" />
+            </div>
+            What You'll Study in College (Related to Waves & Oscillations)
+          </CardTitle>
+          <CardDescription className="text-blue-700 text-lg font-medium">
+            Here's exactly what you'll learn year by year - be realistic about the workload
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="p-6">
+          {/* Year-wise curriculum table */}
+          <div className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
+            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4">
+              <div className="grid grid-cols-2 gap-4 font-bold text-lg">
+                <div>Year</div>
+                <div>Subjects You'll Touch</div>
+              </div>
+            </div>
+            
+            <div className="divide-y divide-gray-200">
+              <div className="grid grid-cols-2 gap-4 p-4 hover:bg-gray-50">
+                <div className="font-bold text-blue-600 text-lg">1st Year</div>
+                <div className="text-gray-700 rounded-md">
+                  <strong>Engineering Physics</strong> – Basics of waves, vibrations, resonance (how things shake or vibrate)
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4 p-4 hover:bg-gray-50">
+                <div className="font-bold text-green-600 text-lg">2nd Year</div>
+                <div className="text-gray-700 rounded-md">
+                  <strong>Strength of Materials</strong> – How materials behave when they vibrate or face repeated stress
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4 p-4 hover:bg-gray-50">
+                <div className="font-bold text-purple-600 text-lg">3rd Year</div>
+                <div className="text-gray-700 rounded-md">
+                  <strong>Vibrations & Dynamics</strong> – How engines, wings, and moving parts oscillate (vibrate) during flight
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4 p-4 hover:bg-gray-50">
+                <div className="font-bold text-orange-600 text-lg">4th Year</div>
+                <div className="text-gray-700 rounded-md">
+                  <strong>Aero-mechanical Electives</strong> (if available) – Sound vibration control, aircraft structure response, fatigue analysis
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Important Reality Check */}
+          <div className="mt-6 p-6 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg border-2 border-yellow-200">
+            <div className="flex items-start gap-3">
+              <AlertTriangle className="h-7 w-7 text-yellow-600 mt-1 flex-shrink-0" />
+              <div>
+                <h3 className="font-bold text-yellow-900 text-lg mb-3">Critical Reality Check:</h3>
+                <p className="text-yellow-800 text-base font-medium leading-relaxed">
+                  In B.Tech Mechanical Engineering, you'll learn only <span className="font-bold text-orange-700">20–30% about Waves & Oscillations</span> — enough to understand the basics, but not enough to get an aviation job directly unless you do extra certifications and projects.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Important Quote */}
+          <div className="mt-6 p-6 bg-gradient-to-r from-red-50 to-pink-50 rounded-lg border-2 border-red-200">
+            <div className="text-center">
+              <div className="text-4xl mb-4">⚠️</div>
+              <blockquote className="text-lg font-bold text-red-900 leading-relaxed">
+                "Only students who enjoy solving real-world motion, machines, and design problems using deep Math and Physics — especially 3D Geometry, Thermodynamics, Mechanics, and Algebra — should choose Mechanical Engineering; everyone else will struggle, lose interest, or get stuck in non-core jobs."
+              </blockquote>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* What You'll Actually Learn */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-3 text-2xl">
+            <div className="p-2 bg-primary/10 rounded-lg">
+              <BookOpen className="h-6 w-6 text-primary" />
+            </div>
+            What You'll Actually Master in 4 Years
+          </CardTitle>
+          <CardDescription className="text-lg font-semibold">
+            Real skills that aerospace companies need - not just theory
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Core Sciences</h3>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  <span><strong>Advanced Physics:</strong> Wave mechanics, fluid dynamics, thermodynamics for real aircraft systems</span>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span><strong>Engineering Mathematics:</strong> Complex analysis, differential equations that solve real flight problems</span>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-purple-50 rounded-lg">
+                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                  <span><strong>Materials Science:</strong> How metals behave under extreme stress, heat, and vibration</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Industry Tools</h3>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 p-3 bg-orange-50 rounded-lg">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                  <span><strong>CAD/CAE Software:</strong> CATIA, SolidWorks for designing aircraft components</span>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-red-50 rounded-lg">
+                  <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                  <span><strong>Simulation Tools:</strong> ANSYS, MATLAB for testing before building prototypes</span>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-yellow-50 rounded-lg">
+                  <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                  <span><strong>Analysis Software:</strong> CFD tools for airflow, structural analysis for safety</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
 
       {/* Decision Point - Are You Ready? */}
       <div className="grid md:grid-cols-2 gap-8">
