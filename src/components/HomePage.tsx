@@ -184,7 +184,7 @@ export const HomePage = () => {
           
           <div className="max-w-4xl mx-auto mb-12">
             <p className="text-2xl md:text-3xl text-gray-600 font-medium leading-relaxed mb-6 animate-fade-in delay-300">
-              Navigate your academic future with <span className="text-blue-600 font-semibold">precision</span>
+              Navigate your academic future with <span className="text-blue-600 font-semibold">purpose</span>
             </p>
             <p className="text-lg text-gray-500 leading-relaxed animate-fade-in delay-500">
               Our AI-powered platform analyzes your interests, aligns them with market trends, 
