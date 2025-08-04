@@ -59,8 +59,73 @@ export const BTechMechanical = () => {
           </CardDescription>
         </CardHeader>
         <CardContent className="p-6">
-          {/* Math Topics Table */}
-          
+          {/* Essential Math & Physics Foundation Table */}
+          <div className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm mb-6">
+            <div className="bg-gradient-to-r from-primary to-secondary text-white p-4">
+              <div className="grid grid-cols-3 gap-4 font-bold text-lg">
+                <div className="flex items-center gap-2">
+                  <Calculator className="h-5 w-5" />
+                  Category
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-5 w-5" />
+                  Most Important Topics
+                </div>
+                <div className="flex items-center gap-2">
+                  <Zap className="h-5 w-5" />
+                  Usage in Aviation NVH Careers
+                </div>
+              </div>
+            </div>
+            
+            <div className="divide-y divide-gray-200">
+              <div className="grid grid-cols-3 gap-4 p-4 hover:bg-gray-50">
+                <div className="font-bold text-blue-600 text-lg flex items-center gap-2">
+                  <Calculator className="h-5 w-5" />
+                  Math
+                </div>
+                <div className="text-gray-700">
+                  <div className="space-y-1">
+                    <div>• Differential Equations</div>
+                    <div>• Fourier/Laplace</div>
+                    <div>• Matrices/Eigenvalues</div>
+                    <div>• Calculus</div>
+                  </div>
+                </div>
+                <div className="text-gray-700">
+                  <div className="space-y-1">
+                    <div>• Vibration modeling</div>
+                    <div>• Signal filtering</div>
+                    <div>• Modal analysis</div>
+                    <div>• Response prediction</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-3 gap-4 p-4 hover:bg-gray-50">
+                <div className="font-bold text-green-600 text-lg flex items-center gap-2">
+                  <Brain className="h-5 w-5" />
+                  Physics
+                </div>
+                <div className="text-gray-700">
+                  <div className="space-y-1">
+                    <div>• Vibrations & Oscillations</div>
+                    <div>• Kinematics of Motion</div>
+                    <div>• Material Properties</div>
+                    <div>• Thermo-acoustics</div>
+                  </div>
+                </div>
+                <div className="text-gray-700">
+                  <div className="space-y-1">
+                    <div>• Structural vibration</div>
+                    <div>• Fatigue testing</div>
+                    <div>• Noise/vibration diagnosis</div>
+                    <div>• Damping systems</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Key Insight */}
           <div className="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-lg p-6 border-2 border-amber-200">
