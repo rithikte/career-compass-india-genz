@@ -22,26 +22,7 @@ export const BTechMechanical = () => {
             </div>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4 mt-6">
-            <div className="bg-white/20 rounded-lg px-4 py-2">
-              <div className="flex items-center gap-2">
-                <Plane className="h-5 w-5" />
-                <span className="font-semibold">Aerospace Engineering</span>
-              </div>
-            </div>
-            <div className="bg-white/20 rounded-lg px-4 py-2">
-              <div className="flex items-center gap-2">
-                <Shield className="h-5 w-5" />
-                <span className="font-semibold">Defense Systems</span>
-              </div>
-            </div>
-            <div className="bg-white/20 rounded-lg px-4 py-2">
-              <div className="flex items-center gap-2">
-                <Zap className="h-5 w-5" />
-                <span className="font-semibold">Aviation Technology</span>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
 
@@ -85,7 +66,7 @@ export const BTechMechanical = () => {
                   Math
                 </div>
                 <div className="text-gray-700">
-                  <div className="space-y-1">
+                  <div className="space-y-1 rounded-md">
                     <div>• Differential Equations</div>
                     <div>• Fourier/Laplace</div>
                     <div>• Matrices/Eigenvalues</div>
@@ -93,7 +74,7 @@ export const BTechMechanical = () => {
                   </div>
                 </div>
                 <div className="text-gray-700">
-                  <div className="space-y-1">
+                  <div className="space-y-1 rounded-md">
                     <div>• Vibration modeling</div>
                     <div>• Signal filtering</div>
                     <div>• Modal analysis</div>
@@ -108,7 +89,7 @@ export const BTechMechanical = () => {
                   Physics
                 </div>
                 <div className="text-gray-700">
-                  <div className="space-y-1">
+                  <div className="space-y-1 rounded-md">
                     <div>• Vibrations & Oscillations</div>
                     <div>• Kinematics of Motion</div>
                     <div>• Material Properties</div>
@@ -116,7 +97,7 @@ export const BTechMechanical = () => {
                   </div>
                 </div>
                 <div className="text-gray-700">
-                  <div className="space-y-1">
+                  <div className="space-y-1 rounded-md">
                     <div>• Structural vibration</div>
                     <div>• Fatigue testing</div>
                     <div>• Noise/vibration diagnosis</div>
@@ -355,84 +336,8 @@ export const BTechMechanical = () => {
 
       {/* What This Field Demands - Reality Check */}
       <Card className="border-2 border-red-200">
-        <CardHeader className="bg-gradient-to-r from-red-50 to-orange-50">
-          <CardTitle className="flex items-center gap-3 text-2xl text-red-900">
-            <div className="p-2 bg-red-100 rounded-lg">
-              <Brain className="h-6 w-6 text-red-600" />
-            </div>
-            What This Degree Will Demand From You
-          </CardTitle>
-          <CardDescription className="text-red-700 text-lg font-medium">
-            Be honest with yourself - can you handle this for 4 years?
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="p-6">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                <div className="p-2 bg-blue-100 rounded-lg flex-shrink-0">
-                  <Clock className="h-5 w-5 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-1">Extreme Patience</h3>
-                  <p className="text-gray-600 text-sm font-medium">Simulations take hours. Tests fail repeatedly. You'll redo calculations 10 times before getting it right.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                <div className="p-2 bg-purple-100 rounded-lg flex-shrink-0">
-                  <Brain className="h-5 w-5 text-purple-600" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-1">Complex Problem Solving</h3>
-                  <p className="text-gray-600 text-sm font-semibold">No Google answers for real engineering problems. You think step-by-step or you fail.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                <div className="p-2 bg-green-100 rounded-lg flex-shrink-0">
-                  <Calculator className="h-5 w-5 text-green-600" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-1">Tool Mastery</h3>
-                  <p className="text-gray-600 text-sm font-semibold">MATLAB, ANSYS, CATIA aren't optional. You'll live in these software tools for 4 years.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                <div className="p-2 bg-red-100 rounded-lg flex-shrink-0">
-                  <Target className="h-5 w-5 text-red-600" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-1">Perfect Accuracy</h3>
-                  <p className="text-gray-600 text-sm font-medium">One decimal wrong = mission failure. Lives depend on your calculations being exact.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                <div className="p-2 bg-orange-100 rounded-lg flex-shrink-0">
-                  <XCircle className="h-5 w-5 text-orange-600" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-1">Failure Resilience</h3>
-                  <p className="text-gray-600 text-sm font-semibold">You'll fail often. Designs will break. Code will crash. Can you keep going?</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                <div className="p-2 bg-yellow-100 rounded-lg flex-shrink-0">
-                  <Shield className="h-5 w-5 text-yellow-600" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-1">Mental Toughness</h3>
-                  <p className="text-gray-600 text-sm font-medium">Long nights, design failures, software crashes. Your mind must stay sharp under pressure.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </CardContent>
+        
+        
       </Card>
 
       {/* What You'll Study in College */}
@@ -444,9 +349,7 @@ export const BTechMechanical = () => {
             </div>
             What You'll Study in College (Related to Waves & Oscillations)
           </CardTitle>
-          <CardDescription className="text-blue-700 text-lg font-medium">
-            Here's exactly what you'll learn year by year - be realistic about the workload
-          </CardDescription>
+          
         </CardHeader>
         <CardContent className="p-6">
           {/* Year-wise curriculum table */}
@@ -503,14 +406,7 @@ export const BTechMechanical = () => {
           </div>
 
           {/* Important Quote */}
-          <div className="mt-6 p-6 bg-gradient-to-r from-red-50 to-pink-50 rounded-lg border-2 border-red-200">
-            <div className="text-center">
-              <div className="text-4xl mb-4">⚠️</div>
-              <blockquote className="text-lg font-bold text-red-900 leading-relaxed">
-                "Only students who enjoy solving real-world motion, machines, and design problems using deep Math and Physics — especially 3D Geometry, Thermodynamics, Mechanics, and Algebra — should choose Mechanical Engineering; everyone else will struggle, lose interest, or get stuck in non-core jobs."
-              </blockquote>
-            </div>
-          </div>
+          
         </CardContent>
       </Card>
 
@@ -547,23 +443,7 @@ export const BTechMechanical = () => {
               </div>
             </div>
 
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Industry Tools</h3>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 p-3 bg-orange-50 rounded-lg">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                  <span><strong>CAD/CAE Software:</strong> CATIA, SolidWorks for designing aircraft components</span>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-red-50 rounded-lg">
-                  <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                  <span><strong>Simulation Tools:</strong> ANSYS, MATLAB for testing before building prototypes</span>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-yellow-50 rounded-lg">
-                  <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                  <span><strong>Analysis Software:</strong> CFD tools for airflow, structural analysis for safety</span>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </CardContent>
       </Card>
