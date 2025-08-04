@@ -146,6 +146,146 @@ export const BTechMechanical = () => {
         </CardContent>
       </Card>
 
+      {/* Engineering Subjects Intensity Across 4 Years */}
+      <Card className="border-2 border-primary/20">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-3 text-2xl">
+            <div className="p-2 bg-primary/10 rounded-lg">
+              <BookOpen className="h-6 w-6 text-primary" />
+            </div>
+            Engineering Subjects Intensity Across 4 Years
+          </CardTitle>
+          <CardDescription className="text-lg font-semibold">
+            Detailed breakdown of Math & Physics topics by semester and their real-world applications
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="p-6">
+          {/* Math Topics Table */}
+          <div className="mb-8">
+            <div className="flex items-center gap-3 mb-4">
+              <Calculator className="h-6 w-6 text-blue-600" />
+              <h3 className="text-xl font-bold text-gray-900">Math Topics</h3>
+            </div>
+            <div className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
+              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4">
+                <div className="grid grid-cols-4 gap-4 font-bold text-sm">
+                  <div>Math Topic</div>
+                  <div>Sems Covered</div>
+                  <div>Intensity Peak (%)</div>
+                  <div>Core Usage</div>
+                </div>
+              </div>
+              
+              <div className="divide-y divide-gray-200">
+                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900">Calculus (Diff + Int)</div>
+                  <div className="text-gray-700">Sem 1–4</div>
+                  <div className="font-bold text-blue-600">90%</div>
+                  <div className="text-gray-700 text-sm">Thermo, Fluids, Vibrations, HMT</div>
+                </div>
+                
+                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900">Differential Equations</div>
+                  <div className="text-gray-700">Sem 2–5</div>
+                  <div className="font-bold text-green-600">85%</div>
+                  <div className="text-gray-700 text-sm">Vibration, Dynamics, FEM</div>
+                </div>
+                
+                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900">Linear Algebra / Matrices</div>
+                  <div className="text-gray-700">Sem 1, 3, 6</div>
+                  <div className="font-bold text-purple-600">75%</div>
+                  <div className="text-gray-700 text-sm">FEA, Design, System Modeling</div>
+                </div>
+                
+                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900">Fourier/Laplace</div>
+                  <div className="text-gray-700">Sem 4–7</div>
+                  <div className="font-bold text-orange-600">70%</div>
+                  <div className="text-gray-700 text-sm">Signal systems, control</div>
+                </div>
+                
+                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900">Optimization / OR</div>
+                  <div className="text-gray-700">Sem 5–6</div>
+                  <div className="font-bold text-yellow-600">60%</div>
+                  <div className="text-gray-700 text-sm">Manufacturing, Project planning</div>
+                </div>
+                
+                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900">Probability & Stats</div>
+                  <div className="text-gray-700">Sem 5, 6</div>
+                  <div className="font-bold text-red-600">50%</div>
+                  <div className="text-gray-700 text-sm">Quality control, failure analysis</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Physics Topics Table */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <Brain className="h-6 w-6 text-green-600" />
+              <h3 className="text-xl font-bold text-gray-900">Physics Topics</h3>
+            </div>
+            <div className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
+              <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white p-4">
+                <div className="grid grid-cols-4 gap-4 font-bold text-sm">
+                  <div>Physics Topic</div>
+                  <div>Sems Covered</div>
+                  <div>Intensity Peak (%)</div>
+                  <div>Core Usage</div>
+                </div>
+              </div>
+              
+              <div className="divide-y divide-gray-200">
+                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900">Kinematics & Laws of Motion</div>
+                  <div className="text-gray-700">Sem 1–3</div>
+                  <div className="font-bold text-purple-600">70%</div>
+                  <div className="text-gray-700 text-sm">Dynamics, Mechanisms</div>
+                </div>
+                
+                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900">Thermodynamics</div>
+                  <div className="text-gray-700">Sem 2–6</div>
+                  <div className="font-bold text-red-600">90%</div>
+                  <div className="text-gray-700 text-sm">Engines, Refrigeration, HMT</div>
+                </div>
+                
+                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900">Fluid Mechanics</div>
+                  <div className="text-gray-700">Sem 3–5</div>
+                  <div className="font-bold text-blue-600">85%</div>
+                  <div className="text-gray-700 text-sm">Pumps, Pipes, Simulations</div>
+                </div>
+                
+                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900">Material Properties</div>
+                  <div className="text-gray-700">Sem 2–4</div>
+                  <div className="font-bold text-orange-600">70%</div>
+                  <div className="text-gray-700 text-sm">Strength of Materials</div>
+                </div>
+                
+                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900">Vibrations & Oscillations</div>
+                  <div className="text-gray-700">Sem 5–6</div>
+                  <div className="font-bold text-green-600">80%</div>
+                  <div className="text-gray-700 text-sm">Dynamics of Machines</div>
+                </div>
+                
+                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900">Heat Transfer</div>
+                  <div className="text-gray-700">Sem 4–6</div>
+                  <div className="font-bold text-red-600">90%</div>
+                  <div className="text-gray-700 text-sm">Design of heat exchangers, thermal systems</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
       {/* Why Waves & Oscillations Matter */}
       <Card className="border-2 border-primary/20">
         <CardHeader>
