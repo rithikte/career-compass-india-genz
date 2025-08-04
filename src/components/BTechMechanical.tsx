@@ -45,6 +45,167 @@ export const BTechMechanical = () => {
         </div>
       </div>
 
+      {/* Focus to Get Into Aviation Industry */}
+      <Card className="border-2 border-primary/20">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-3 text-2xl">
+            <div className="p-2 bg-primary/10 rounded-lg">
+              <Target className="h-6 w-6 text-primary" />
+            </div>
+            Focus to Get Into Aviation Industry
+          </CardTitle>
+          <CardDescription className="text-lg font-semibold">
+            Essential Math & Physics foundation for aviation NVH careers
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="p-6">
+          {/* Math Topics Table */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-8">
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-blue-100 rounded-lg">
+                  <Calculator className="h-6 w-6 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold text-blue-900">🧮 Math Topics</h3>
+              </div>
+              
+              <div className="overflow-hidden rounded-lg border border-blue-200 bg-white shadow-sm">
+                <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-3">
+                  <div className="grid grid-cols-3 gap-2 font-semibold text-sm">
+                    <div>✅ Most Important Topics</div>
+                    <div>Sems</div>
+                    <div>Peak %</div>
+                  </div>
+                </div>
+                
+                <div className="divide-y divide-blue-100">
+                  <div className="grid grid-cols-3 gap-2 p-3 hover:bg-blue-50 text-sm">
+                    <div className="font-medium text-gray-800">Calculus (Diff + Int)</div>
+                    <div className="text-blue-600 font-semibold">1–4</div>
+                    <div className="font-bold text-blue-700">90%</div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 p-3 hover:bg-blue-50 text-sm">
+                    <div className="font-medium text-gray-800">Differential Equations</div>
+                    <div className="text-green-600 font-semibold">2–5</div>
+                    <div className="font-bold text-green-700">85%</div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 p-3 hover:bg-blue-50 text-sm">
+                    <div className="font-medium text-gray-800">Linear Algebra / Matrices</div>
+                    <div className="text-purple-600 font-semibold">1,3,6</div>
+                    <div className="font-bold text-purple-700">75%</div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 p-3 hover:bg-blue-50 text-sm">
+                    <div className="font-medium text-gray-800">Fourier/Laplace</div>
+                    <div className="text-orange-600 font-semibold">4–7</div>
+                    <div className="font-bold text-orange-700">70%</div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 p-3 hover:bg-blue-50 text-sm">
+                    <div className="font-medium text-gray-800">Optimization / OR</div>
+                    <div className="text-red-600 font-semibold">5–6</div>
+                    <div className="font-bold text-red-700">60%</div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 p-3 hover:bg-blue-50 text-sm">
+                    <div className="font-medium text-gray-800">Probability & Stats</div>
+                    <div className="text-indigo-600 font-semibold">5,6</div>
+                    <div className="font-bold text-indigo-700">50%</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                <h4 className="font-bold text-blue-900 mb-2">🔥 Usage in Aviation NVH Careers</h4>
+                <ul className="text-blue-800 text-sm space-y-1">
+                  <li>• Vibration modeling & analysis</li>
+                  <li>• Signal filtering & processing</li>
+                  <li>• Modal analysis for structures</li>
+                  <li>• Response prediction systems</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Physics Topics Table */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-green-100 rounded-lg">
+                  <Zap className="h-6 w-6 text-green-600" />
+                </div>
+                <h3 className="text-xl font-bold text-green-900">⚛️ Physics Topics</h3>
+              </div>
+              
+              <div className="overflow-hidden rounded-lg border border-green-200 bg-white shadow-sm">
+                <div className="bg-gradient-to-r from-green-600 to-green-700 text-white p-3">
+                  <div className="grid grid-cols-3 gap-2 font-semibold text-sm">
+                    <div>✅ Most Important Topics</div>
+                    <div>Sems</div>
+                    <div>Peak %</div>
+                  </div>
+                </div>
+                
+                <div className="divide-y divide-green-100">
+                  <div className="grid grid-cols-3 gap-2 p-3 hover:bg-green-50 text-sm">
+                    <div className="font-medium text-gray-800">Thermodynamics</div>
+                    <div className="text-red-600 font-semibold">2–6</div>
+                    <div className="font-bold text-red-700">90%</div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 p-3 hover:bg-green-50 text-sm">
+                    <div className="font-medium text-gray-800">Heat Transfer</div>
+                    <div className="text-orange-600 font-semibold">4–6</div>
+                    <div className="font-bold text-orange-700">90%</div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 p-3 hover:bg-green-50 text-sm">
+                    <div className="font-medium text-gray-800">Fluid Mechanics</div>
+                    <div className="text-blue-600 font-semibold">3–5</div>
+                    <div className="font-bold text-blue-700">85%</div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 p-3 hover:bg-green-50 text-sm">
+                    <div className="font-medium text-gray-800">Vibrations & Oscillations</div>
+                    <div className="text-purple-600 font-semibold">5–6</div>
+                    <div className="font-bold text-purple-700">80%</div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 p-3 hover:bg-green-50 text-sm">
+                    <div className="font-medium text-gray-800">Kinematics & Motion</div>
+                    <div className="text-green-600 font-semibold">1–3</div>
+                    <div className="font-bold text-green-700">70%</div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 p-3 hover:bg-green-50 text-sm">
+                    <div className="font-medium text-gray-800">Material Properties</div>
+                    <div className="text-indigo-600 font-semibold">2–4</div>
+                    <div className="font-bold text-indigo-700">70%</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-green-50 rounded-lg p-4 border border-green-200">
+                <h4 className="font-bold text-green-900 mb-2">🔥 Usage in Aviation NVH Careers</h4>
+                <ul className="text-green-800 text-sm space-y-1">
+                  <li>• Structural vibration analysis</li>
+                  <li>• Fatigue testing & evaluation</li>
+                  <li>• Noise/vibration diagnosis</li>
+                  <li>• Damping system design</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Key Insight */}
+          <div className="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-lg p-6 border-2 border-amber-200">
+            <div className="flex items-start gap-3">
+              <div className="p-2 bg-amber-100 rounded-lg flex-shrink-0">
+                <Brain className="h-6 w-6 text-amber-600" />
+              </div>
+              <div>
+                <h3 className="font-bold text-amber-900 text-lg mb-2">💡 Key Insight for Aviation Careers</h3>
+                <p className="text-amber-800 font-medium leading-relaxed">
+                  These subjects work together: <span className="font-bold">Math provides the tools, Physics provides the understanding</span>. 
+                  In aviation NVH (Noise, Vibration, Harshness), you'll use differential equations to model how aircraft structures vibrate, 
+                  Fourier analysis to break down complex vibration patterns, and thermodynamics to understand how temperature affects material behavior.
+                </p>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
       {/* Why Waves & Oscillations Matter */}
       <Card className="border-2 border-primary/20">
         <CardHeader>
