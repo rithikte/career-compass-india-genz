@@ -258,6 +258,15 @@ const NatureOfWork = () => {
                 </span>
               </h3>
               
+              <div className="mb-4">
+                <p className="text-2xl font-bold text-slate-700 mb-2">
+                  "From Your Desk to the Factory Floor"
+                </p>
+                <p className="text-lg text-orange-600 font-medium italic">
+                  Discover where your engineering career will take you daily
+                </p>
+              </div>
+              
               <p className="text-xl text-slate-600 leading-relaxed font-light max-w-2xl">
                 Seven distinct career paths with interactive insights into industry statistics, 
                 growth potential, and work-life dynamics.
@@ -331,19 +340,35 @@ const NatureOfWork = () => {
                       </div>
                       
                       {/* Quick Stats - 5 cols */}
-                      <div className="col-span-5 grid grid-cols-5 gap-3">
-                        
-                        
-                        
-                        <div className="text-center bg-slate-50/50 rounded-xl p-3 border border-slate-200/30">
-                          <Clock className="h-4 w-4 text-purple-500 mx-auto mb-2" />
-                          <div className="text-sm font-black text-slate-800">{work.stats.workHours}</div>
-                          <div className="text-xs text-slate-500 font-medium">Hours</div>
+                      <div className="col-span-5 grid grid-cols-3 gap-4">
+                        <div className="text-center bg-slate-50/50 rounded-xl p-4 border border-slate-200/30">
+                          <BarChart3 className="h-6 w-6 text-blue-500 mx-auto mb-2" />
+                          <div className="text-lg font-black text-slate-800">{work.stats.percentage}</div>
+                          <div className="text-xs text-slate-500 font-medium">Market Share</div>
                         </div>
-                        <div className="text-center bg-slate-50/50 rounded-xl p-3 border border-slate-200/30">
-                          <MapPin className="h-4 w-4 text-orange-500 mx-auto mb-2" />
-                          <div className="text-sm font-black text-slate-800">{work.stats.locations}</div>
-                          <div className="text-xs text-slate-500 font-medium">Location</div>
+                        <div className="text-center bg-slate-50/50 rounded-xl p-4 border border-slate-200/30">
+                          <TrendingUp className="h-6 w-6 text-green-500 mx-auto mb-2" />
+                          <div className="text-lg font-black text-slate-800">{work.stats.growth}</div>
+                          <div className="text-xs text-slate-500 font-medium">Growth Rate</div>
+                        </div>
+                        <div className="text-center bg-slate-50/50 rounded-xl p-4 border border-slate-200/30">
+                          <Activity className="h-6 w-6 text-purple-500 mx-auto mb-2" />
+                          <div className="text-lg font-black text-slate-800">{work.stats.avgSalary}</div>
+                          <div className="text-xs text-slate-500 font-medium">Avg Salary</div>
+                        </div>
+                      </div>
+                      
+                      {/* Hours & Location - Vertical Layout */}
+                      <div className="col-span-5 mt-4 grid grid-cols-2 gap-4">
+                        <div className="flex flex-col items-center bg-slate-50/50 rounded-xl p-4 border border-slate-200/30">
+                          <Clock className="h-6 w-6 text-purple-500 mb-2" />
+                          <div className="text-sm font-black text-slate-800 text-center">{work.stats.workHours}</div>
+                          <div className="text-xs text-slate-500 font-medium">Work Hours</div>
+                        </div>
+                        <div className="flex flex-col items-center bg-slate-50/50 rounded-xl p-4 border border-slate-200/30">
+                          <MapPin className="h-6 w-6 text-orange-500 mb-2" />
+                          <div className="text-sm font-black text-slate-800 text-center">{work.stats.locations}</div>
+                          <div className="text-xs text-slate-500 font-medium">Locations</div>
                         </div>
                       </div>
                       
