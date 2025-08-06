@@ -6,124 +6,82 @@ import { Monitor, Building2, TestTube, Gamepad2, Users, Settings, Brain, Star, C
 const NatureOfWork = () => {
   const [selectedWork, setSelectedWork] = useState<number | null>(null);
   const workTypes = [{
-    icon: Monitor,
-    type: "Desk-Based",
-    subtitle: "Computer-Oriented",
-    emoji: "🧑‍💻",
-    explanation: "You work full-time on a computer using software tools, mostly sitting indoors in an office.",
-    stats: {
-      percentage: "35%",
-      growth: "+12%",
-      avgSalary: "₹8-15 LPA",
-      workHours: "9-6 Fixed",
-      locations: "Metro Cities"
-    },
-    gradient: "from-blue-500 via-blue-600 to-indigo-600",
-    lightBg: "bg-blue-50/80",
-    borderColor: "border-blue-200/50",
-    shadowColor: "shadow-blue-500/20"
-  }, {
-    icon: Building2,
-    type: "On-Field",
-    subtitle: "Site-Based",
-    emoji: "🏗️",
-    explanation: "You go to real sites like factories, plants, or construction areas to check or fix machines and systems.",
-    stats: {
-      percentage: "28%",
-      growth: "+8%",
-      avgSalary: "₹6-12 LPA",
-      workHours: "Flexible",
-      locations: "Industrial Areas"
-    },
-    gradient: "from-orange-500 via-orange-600 to-red-600",
-    lightBg: "bg-orange-50/80",
-    borderColor: "border-orange-200/50",
-    shadowColor: "shadow-orange-500/20"
-  }, {
-    icon: TestTube,
-    type: "Lab/Equipment",
-    subtitle: "Research-Based",
-    emoji: "🧪",
-    explanation: "You work with machines, circuits, or samples inside a lab using tools and technical equipment.",
-    stats: {
-      percentage: "15%",
-      growth: "+15%",
-      avgSalary: "₹7-14 LPA",
-      workHours: "9-5 Standard",
-      locations: "R&D Centers"
-    },
-    gradient: "from-green-500 via-green-600 to-emerald-600",
-    lightBg: "bg-green-50/80",
-    borderColor: "border-green-200/50",
-    shadowColor: "shadow-green-500/20"
-  }, {
-    icon: Gamepad2,
-    type: "Simulation",
-    subtitle: "Virtual Modeling",
-    emoji: "🎮",
-    explanation: "You build and test virtual versions of machines or systems using simulation software before they're real.",
-    stats: {
-      percentage: "8%",
-      growth: "+25%",
-      avgSalary: "₹10-18 LPA",
-      workHours: "Flexible",
-      locations: "Tech Hubs"
-    },
-    gradient: "from-purple-500 via-purple-600 to-violet-600",
-    lightBg: "bg-purple-50/80",
-    borderColor: "border-purple-200/50",
-    shadowColor: "shadow-purple-500/20"
-  }, {
-    icon: Users,
-    type: "Client-Facing",
-    subtitle: "Communication-Heavy",
-    emoji: "🤝",
-    explanation: "You explain technical ideas to clients, give demos, or manage project discussions with teams.",
-    stats: {
-      percentage: "10%",
-      growth: "+18%",
-      avgSalary: "₹9-16 LPA",
-      workHours: "Variable",
-      locations: "Corporate Offices"
-    },
-    gradient: "from-pink-500 via-pink-600 to-rose-600",
-    lightBg: "bg-pink-50/80",
-    borderColor: "border-pink-200/50",
-    shadowColor: "shadow-pink-500/20"
+    icon: Brain,
+    type: "Strategy",
+    subtitle: "Think-Tank Roles",
+    emoji: "🧠",
+    explanation: "You do planning, analysis, or design thinking to improve systems or develop new products and ideas.",
+    breakdown: "70% Strategy – 30% Desk",
+    gradient: "from-slate-200 via-white to-slate-100",
+    lightBg: "bg-slate-50/80",
+    borderColor: "border-slate-200/50",
+    shadowColor: "shadow-slate-500/20"
   }, {
     icon: Settings,
     type: "Operations",
     subtitle: "Back-End Execution",
     emoji: "⚙️",
     explanation: "You handle the working systems behind a company like supply, production, or delivery — mostly coordination work.",
-    stats: {
-      percentage: "20%",
-      growth: "+10%",
-      avgSalary: "₹7-13 LPA",
-      workHours: "Standard",
-      locations: "Manufacturing Hubs"
-    },
-    gradient: "from-yellow-500 via-yellow-600 to-amber-600",
-    lightBg: "bg-yellow-50/80",
-    borderColor: "border-yellow-200/50",
-    shadowColor: "shadow-yellow-500/20"
+    breakdown: "60% Ops – 40% Desk",
+    gradient: "from-slate-200 via-white to-slate-100",
+    lightBg: "bg-slate-50/80",
+    borderColor: "border-slate-200/50",
+    shadowColor: "shadow-slate-500/20"
   }, {
-    icon: Brain,
-    type: "Strategy",
-    subtitle: "Think-Tank Roles",
-    emoji: "🧠",
-    explanation: "You do planning, analysis, or design thinking to improve systems or develop new products and ideas.",
-    stats: {
-      percentage: "5%",
-      growth: "+30%",
-      avgSalary: "₹12-22 LPA",
-      workHours: "Strategic",
-      locations: "Consulting Firms"
-    },
-    gradient: "from-indigo-500 via-indigo-600 to-blue-600",
-    lightBg: "bg-indigo-50/80",
-    borderColor: "border-indigo-200/50",
-    shadowColor: "shadow-indigo-500/20"
+    icon: Gamepad2,
+    type: "Simulation",
+    subtitle: "Virtual Modeling",
+    emoji: "🎮",
+    explanation: "You build and test virtual versions of machines or systems using simulation software before they're real.",
+    breakdown: "80% Simulation – 20% Field",
+    gradient: "from-slate-200 via-white to-slate-100",
+    lightBg: "bg-slate-50/80",
+    borderColor: "border-slate-200/50",
+    shadowColor: "shadow-slate-500/20"
+  }, {
+    icon: TestTube,
+    type: "Lab/Equipment",
+    subtitle: "Research-Based",
+    emoji: "🧪",
+    explanation: "You work with machines, circuits, or samples inside a lab using tools and technical equipment.",
+    breakdown: "70% Lab – 30% Desk",
+    gradient: "from-slate-200 via-white to-slate-100",
+    lightBg: "bg-slate-50/80",
+    borderColor: "border-slate-200/50",
+    shadowColor: "shadow-slate-500/20"
+  }, {
+    icon: Monitor,
+    type: "Desk-Based",
+    subtitle: "Computer-Oriented",
+    emoji: "🧑‍💻",
+    explanation: "You work full-time on a computer using software tools, mostly sitting indoors in an office.",
+    breakdown: "90% Desk – 10% Meetings",
+    gradient: "from-slate-200 via-white to-slate-100",
+    lightBg: "bg-slate-50/80",
+    borderColor: "border-slate-200/50",
+    shadowColor: "shadow-slate-500/20"
+  }, {
+    icon: Users,
+    type: "Client-Facing",
+    subtitle: "Communication-Heavy",
+    emoji: "🤝",
+    explanation: "You explain technical ideas to clients, give demos, or manage project discussions with teams.",
+    breakdown: "60% Client – 40% Strategy",
+    gradient: "from-slate-200 via-white to-slate-100",
+    lightBg: "bg-slate-50/80",
+    borderColor: "border-slate-200/50",
+    shadowColor: "shadow-slate-500/20"
+  }, {
+    icon: Building2,
+    type: "On-Field",
+    subtitle: "Site-Based",
+    emoji: "🏗️",
+    explanation: "You go to real sites like factories, plants, or construction areas to check or fix machines and systems.",
+    breakdown: "80% Field – 20% Office",
+    gradient: "from-slate-200 via-white to-slate-100",
+    lightBg: "bg-slate-50/80",
+    borderColor: "border-slate-200/50",
+    shadowColor: "shadow-slate-500/20"
   }];
   // Map work types to detailed role data
   const workTypeMapping = {
@@ -352,36 +310,12 @@ const NatureOfWork = () => {
                         </p>
                       </div>
                       
-                      {/* Quick Stats - 5 cols */}
-                      <div className="col-span-5 grid grid-cols-3 gap-4">
-                        <div className="text-center bg-slate-50/50 rounded-xl p-4 border border-slate-200/30">
-                          <BarChart3 className="h-6 w-6 text-blue-500 mx-auto mb-2" />
-                          <div className="text-lg font-black text-slate-800">{work.stats.percentage}</div>
-                          <div className="text-xs text-slate-500 font-medium">Market Share</div>
-                        </div>
-                        <div className="text-center bg-slate-50/50 rounded-xl p-4 border border-slate-200/30">
-                          <TrendingUp className="h-6 w-6 text-green-500 mx-auto mb-2" />
-                          <div className="text-lg font-black text-slate-800">{work.stats.growth}</div>
-                          <div className="text-xs text-slate-500 font-medium">Growth Rate</div>
-                        </div>
-                        <div className="text-center bg-slate-50/50 rounded-xl p-4 border border-slate-200/30">
-                          <Activity className="h-6 w-6 text-purple-500 mx-auto mb-2" />
-                          <div className="text-lg font-black text-slate-800">{work.stats.avgSalary}</div>
-                          <div className="text-xs text-slate-500 font-medium">Avg Salary</div>
-                        </div>
-                      </div>
-                      
-                      {/* Hours & Location - Vertical Layout */}
-                      <div className="col-span-5 mt-4 grid grid-cols-2 gap-4">
-                        <div className="flex flex-col items-center bg-slate-50/50 rounded-xl p-4 border border-slate-200/30">
-                          <Clock className="h-6 w-6 text-purple-500 mb-2" />
-                          <div className="text-sm font-black text-slate-800 text-center">{work.stats.workHours}</div>
-                          <div className="text-xs text-slate-500 font-medium">Work Hours</div>
-                        </div>
-                        <div className="flex flex-col items-center bg-slate-50/50 rounded-xl p-4 border border-slate-200/30">
-                          <MapPin className="h-6 w-6 text-orange-500 mb-2" />
-                          <div className="text-sm font-black text-slate-800 text-center">{work.stats.locations}</div>
-                          <div className="text-xs text-slate-500 font-medium">Locations</div>
+                       {/* Work Breakdown - Centered */}
+                      <div className="col-span-5 flex justify-center">
+                        <div className="text-center bg-slate-50/50 rounded-xl p-6 border border-slate-200/30 min-w-[300px]">
+                          <Activity className="h-8 w-8 text-slate-600 mx-auto mb-3" />
+                          <div className="text-2xl font-black text-slate-800 mb-2">{work.breakdown}</div>
+                          <div className="text-sm text-slate-500 font-medium">Work Distribution</div>
                         </div>
                       </div>
                       
@@ -576,7 +510,7 @@ const NatureOfWork = () => {
                     })()}
                   </CardContent>
                 </Card>;
-          })}
+            })}
           </div>
         </div>
 
