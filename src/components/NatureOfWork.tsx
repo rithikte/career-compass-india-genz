@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Monitor, Building2, TestTube, Gamepad2, Users, Settings, Brain, Star, Calculator, Atom, User, UserCheck, Zap, Target, TrendingUp, ChevronRight, BarChart3, Activity, Clock, MapPin } from 'lucide-react';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { Monitor, Building2, TestTube, Gamepad2, Users, Settings, Brain, Star, Calculator, Atom, User, UserCheck, Zap, Target, TrendingUp, ChevronRight, BarChart3, Activity, Clock, MapPin, ChevronDown, Users2, UserX } from 'lucide-react';
 const NatureOfWork = () => {
   const [selectedWork, setSelectedWork] = useState<number | null>(null);
   const workTypes = [{
@@ -124,96 +125,108 @@ const NatureOfWork = () => {
     borderColor: "border-indigo-200/50",
     shadowColor: "shadow-indigo-500/20"
   }];
+  // Map work types to detailed role data
+  const workTypeMapping = {
+    "Strategy": 0,      // Strategy / Think-Tank
+    "Operations": 1,    // Operations / Back-End  
+    "Simulation": 2,    // Simulation / Virtual Modeling
+    "Lab/Equipment": 3, // Lab / Equipment-Based
+    "Desk-Based": 4,    // Desk-Based / Computer-Oriented
+    "Client-Facing": 5, // Client-Facing / Communication
+    "On-Field": 6       // Create separate entry for On-Field
+  };
+
   const detailedRoles = [{
-    workType: "Strategy / Think-Tank",
+    workType: "Strategy",
     emoji: "🧠",
-    intensity: "70% Strategy – 30% Desk",
-    industry: "Product R&D + Simulation Strategy",
-    industryIcon: "📊",
+    intensity: "Strategy / Think-Tank",
+    industry: "📊 Product R&D + Simulation Strategy",
     menRole: "Mechanical R&D Strategy Analyst",
     womenRole: "Simulation Data Research Associate",
-    whySuits: "Men: Big-picture modeling + field insights\nWomen: Deep research & analytical desk work",
+    menWhySuits: "Big-picture modeling + field insights",
+    womenWhySuits: "Deep research & analytical desk work",
     align: 9.0,
     mathLoad: 85,
     physicsLoad: 60,
-    gradient: "from-indigo-500 to-purple-600",
-    lightBg: "bg-indigo-50/80",
-    borderGlow: "border-indigo-300/50 shadow-indigo-200/50"
+    gradient: "from-indigo-500 to-purple-600"
   }, {
-    workType: "Operations / Back-End",
+    workType: "Operations",
     emoji: "⚙️",
-    intensity: "60% Ops – 40% Desk",
-    industry: "Supply Chain Optimization (Engineering)",
-    industryIcon: "🏭",
+    intensity: "Operations / Back-End",
+    industry: "🏭 Supply Chain Optimization (Engineering)",
     menRole: "Mechanical Systems Optimization Engineer",
     womenRole: "Plant Data Operations Analyst",
-    whySuits: "Men: Live system flow optimization\nWomen: Stable coordination, process monitoring",
+    menWhySuits: "Live system flow optimization",
+    womenWhySuits: "Stable coordination, process monitoring",
     align: 8.2,
     mathLoad: 80,
     physicsLoad: 40,
-    gradient: "from-yellow-500 to-orange-600",
-    lightBg: "bg-yellow-50/80",
-    borderGlow: "border-yellow-300/50 shadow-yellow-200/50"
+    gradient: "from-yellow-500 to-orange-600"
   }, {
-    workType: "Simulation / Virtual Modeling",
+    workType: "Simulation",
     emoji: "🎮",
-    intensity: "80% Simulation – 20% Field",
-    industry: "Digital Twin & System Modeling",
-    industryIcon: "🧠",
+    intensity: "Simulation / Virtual Modeling",
+    industry: "🧠 Digital Twin & System Modeling",
     menRole: "Digital Twin Systems Developer",
     womenRole: "Model-Based Simulation Specialist",
-    whySuits: "Men: Coding + model testing with partial site check\nWomen: Pure software-based modeling",
+    menWhySuits: "Coding + model testing with partial site check",
+    womenWhySuits: "Pure software-based modeling",
     align: 10.0,
     mathLoad: 90,
     physicsLoad: 75,
-    gradient: "from-purple-500 to-violet-600",
-    lightBg: "bg-purple-50/80",
-    borderGlow: "border-purple-300/50 shadow-purple-200/50"
+    gradient: "from-purple-500 to-violet-600"
   }, {
-    workType: "Lab / Equipment-Based",
+    workType: "Lab/Equipment",
     emoji: "🧪",
-    intensity: "70% Lab – 30% Desk",
-    industry: "Mechatronics Testing & Robotics Labs",
-    industryIcon: "🤖",
+    intensity: "Lab / Equipment-Based",
+    industry: "🤖 Mechatronics Testing & Robotics Labs",
     menRole: "Automation Testing Engineer",
     womenRole: "Control Systems Lab Analyst",
-    whySuits: "Men: Robotics + hardware calibration\nWomen: Sensor tuning & equipment-focused lab work",
+    menWhySuits: "Robotics + hardware calibration",
+    womenWhySuits: "Sensor tuning & equipment-focused lab work",
     align: 8.8,
     mathLoad: 70,
     physicsLoad: 80,
-    gradient: "from-green-500 to-emerald-600",
-    lightBg: "bg-green-50/80",
-    borderGlow: "border-green-300/50 shadow-green-200/50"
+    gradient: "from-green-500 to-emerald-600"
   }, {
-    workType: "Desk-Based / Computer-Oriented",
+    workType: "Desk-Based",
     emoji: "🧑‍💻",
-    intensity: "90% Desk – 10% Meetings",
-    industry: "CAD & Simulation Engineering",
-    industryIcon: "💻",
+    intensity: "Desk-Based / Computer-Oriented",
+    industry: "💻 CAD & Simulation Engineering",
     menRole: "CAE Engineer (Computer-Aided Engineering)",
     womenRole: "3D CAD Simulation Designer",
-    whySuits: "Men: Full simulation & test validation\nWomen: Calm setup with creative CAD modeling",
+    menWhySuits: "Full simulation & test validation",
+    womenWhySuits: "Calm setup with creative CAD modeling",
     align: 9.5,
     mathLoad: 85,
     physicsLoad: 60,
-    gradient: "from-blue-500 to-indigo-600",
-    lightBg: "bg-blue-50/80",
-    borderGlow: "border-blue-300/50 shadow-blue-200/50"
+    gradient: "from-blue-500 to-indigo-600"
   }, {
-    workType: "Client-Facing / Communication",
+    workType: "Client-Facing",
     emoji: "🤝",
-    intensity: "60% Client – 40% Strategy",
-    industry: "Techno-Commercial Mechanical Solutions",
-    industryIcon: "🏢",
+    intensity: "Client-Facing / Communication",
+    industry: "🏢 Techno-Commercial Mechanical Solutions",
     menRole: "Simulation Strategy Consultant",
     womenRole: "Mechanical Forecast Analyst",
-    whySuits: "Men: On-site delivery + client explanations\nWomen: Strategy planning + client report analysis",
+    menWhySuits: "On-site delivery + client explanations",
+    womenWhySuits: "Strategy planning + client report analysis",
     align: 6.8,
     mathLoad: 60,
     physicsLoad: 30,
-    gradient: "from-pink-500 to-rose-600",
-    lightBg: "bg-pink-50/80",
-    borderGlow: "border-pink-300/50 shadow-pink-200/50"
+    gradient: "from-pink-500 to-rose-600"
+  }, {
+    workType: "On-Field",
+    emoji: "🏗️",
+    intensity: "On-Field / Site-Based",
+    industry: "🏭 Manufacturing & Construction Sites",
+    menRole: "Site Engineering Supervisor",
+    womenRole: "Project Coordination Specialist",
+    menWhySuits: "Physical site management + equipment handling",
+    womenWhySuits: "Site documentation + team coordination",
+    align: 7.5,
+    mathLoad: 65,
+    physicsLoad: 70,
+    gradient: "from-orange-500 to-red-600"
   }];
   const getStarRating = (rating: number) => {
     return Array.from({
@@ -378,8 +391,189 @@ const NatureOfWork = () => {
                       </div>
                     </div>
                     
-                    {/* Expanded Content */}
-                    {isSelected}
+                    {/* Expanded Content - Gender-Specific Role Tables */}
+                    {isSelected && (() => {
+                      const roleData = detailedRoles.find(role => role.workType === work.type);
+                      if (!roleData) return null;
+                      
+                      return (
+                        <div className="mt-8 pt-8 border-t border-slate-200/50">
+                          {/* Section Header */}
+                          <div className="flex items-center justify-center mb-8">
+                            <div className="flex items-center gap-4">
+                              <div className="text-3xl">{roleData.emoji}</div>
+                              <h4 className="text-2xl font-black text-slate-800 tracking-tight">
+                                {roleData.intensity}
+                              </h4>
+                              <div className="text-3xl">{roleData.emoji}</div>
+                            </div>
+                          </div>
+
+                          {/* Industry Header */}
+                          <div className="text-center mb-8">
+                            <div className={`inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r ${roleData.gradient} rounded-full shadow-lg`}>
+                              <Target className="h-5 w-5 text-white" />
+                              <span className="text-white font-bold text-lg">{roleData.industry}</span>
+                            </div>
+                          </div>
+
+                          {/* Gender-Specific Tables */}
+                          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            {/* Men's Table */}
+                            <div className="space-y-4">
+                              <div className="flex items-center gap-3 mb-6">
+                                <Users2 className="h-6 w-6 text-blue-600" />
+                                <h5 className="text-xl font-black text-slate-800 tracking-tight">
+                                  MEN SPECIFIC CAREER ROLES
+                                </h5>
+                              </div>
+                              
+                              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border border-blue-200/50 overflow-hidden shadow-lg">
+                                <Table>
+                                  <TableHeader>
+                                    <TableRow className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-600">
+                                      <TableHead className="text-white font-bold">Criteria</TableHead>
+                                      <TableHead className="text-white font-bold">Details</TableHead>
+                                    </TableRow>
+                                  </TableHeader>
+                                  <TableBody>
+                                    <TableRow className="hover:bg-blue-50/50">
+                                      <TableCell className="font-semibold text-slate-700">🧠 Work Nature</TableCell>
+                                      <TableCell className="font-medium">{roleData.intensity}</TableCell>
+                                    </TableRow>
+                                    <TableRow className="hover:bg-blue-50/50">
+                                      <TableCell className="font-semibold text-slate-700">🎯 Industry</TableCell>
+                                      <TableCell className="font-medium">{roleData.industry}</TableCell>
+                                    </TableRow>
+                                    <TableRow className="hover:bg-blue-50/50">
+                                      <TableCell className="font-semibold text-slate-700">👨‍🔧 Role</TableCell>
+                                      <TableCell className="font-medium text-blue-700">{roleData.menRole}</TableCell>
+                                    </TableRow>
+                                    <TableRow className="hover:bg-blue-50/50">
+                                      <TableCell className="font-semibold text-slate-700">💡 Why It Suits</TableCell>
+                                      <TableCell className="font-medium">{roleData.menWhySuits}</TableCell>
+                                    </TableRow>
+                                    <TableRow className="hover:bg-blue-50/50">
+                                      <TableCell className="font-semibold text-slate-700">⭐ Alignment</TableCell>
+                                      <TableCell>
+                                        <div className="flex items-center gap-2">
+                                          <span className="font-bold text-lg">{roleData.align}/10</span>
+                                          <div className="flex">{getStarRating(roleData.align)}</div>
+                                        </div>
+                                      </TableCell>
+                                    </TableRow>
+                                    <TableRow className="hover:bg-blue-50/50">
+                                      <TableCell className="font-semibold text-slate-700">🔢 Math Load</TableCell>
+                                      <TableCell>
+                                        <div className="flex items-center gap-3">
+                                          <span className="font-bold">{roleData.mathLoad}%</span>
+                                          <div className="flex-1 h-3 bg-slate-200 rounded-full overflow-hidden">
+                                            <div 
+                                              className={`h-full bg-gradient-to-r ${getProgressGradient(roleData.mathLoad)} transition-all duration-500`}
+                                              style={{ width: `${roleData.mathLoad}%` }}
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </TableCell>
+                                    </TableRow>
+                                    <TableRow className="hover:bg-blue-50/50">
+                                      <TableCell className="font-semibold text-slate-700">⚛️ Physics Load</TableCell>
+                                      <TableCell>
+                                        <div className="flex items-center gap-3">
+                                          <span className="font-bold">{roleData.physicsLoad}%</span>
+                                          <div className="flex-1 h-3 bg-slate-200 rounded-full overflow-hidden">
+                                            <div 
+                                              className={`h-full bg-gradient-to-r ${getProgressGradient(roleData.physicsLoad)} transition-all duration-500`}
+                                              style={{ width: `${roleData.physicsLoad}%` }}
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </TableCell>
+                                    </TableRow>
+                                  </TableBody>
+                                </Table>
+                              </div>
+                            </div>
+
+                            {/* Women's Table */}
+                            <div className="space-y-4">
+                              <div className="flex items-center gap-3 mb-6">
+                                <UserCheck className="h-6 w-6 text-pink-600" />
+                                <h5 className="text-xl font-black text-slate-800 tracking-tight">
+                                  WOMEN SPECIFIC CAREER ROLES
+                                </h5>
+                              </div>
+                              
+                              <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl border border-pink-200/50 overflow-hidden shadow-lg">
+                                <Table>
+                                  <TableHeader>
+                                    <TableRow className="bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-500 hover:to-rose-600">
+                                      <TableHead className="text-white font-bold">Criteria</TableHead>
+                                      <TableHead className="text-white font-bold">Details</TableHead>
+                                    </TableRow>
+                                  </TableHeader>
+                                  <TableBody>
+                                    <TableRow className="hover:bg-pink-50/50">
+                                      <TableCell className="font-semibold text-slate-700">🧠 Work Nature</TableCell>
+                                      <TableCell className="font-medium">{roleData.intensity}</TableCell>
+                                    </TableRow>
+                                    <TableRow className="hover:bg-pink-50/50">
+                                      <TableCell className="font-semibold text-slate-700">🎯 Industry</TableCell>
+                                      <TableCell className="font-medium">{roleData.industry}</TableCell>
+                                    </TableRow>
+                                    <TableRow className="hover:bg-pink-50/50">
+                                      <TableCell className="font-semibold text-slate-700">👩‍💻 Role</TableCell>
+                                      <TableCell className="font-medium text-pink-700">{roleData.womenRole}</TableCell>
+                                    </TableRow>
+                                    <TableRow className="hover:bg-pink-50/50">
+                                      <TableCell className="font-semibold text-slate-700">💡 Why It Suits</TableCell>
+                                      <TableCell className="font-medium">{roleData.womenWhySuits}</TableCell>
+                                    </TableRow>
+                                    <TableRow className="hover:bg-pink-50/50">
+                                      <TableCell className="font-semibold text-slate-700">⭐ Alignment</TableCell>
+                                      <TableCell>
+                                        <div className="flex items-center gap-2">
+                                          <span className="font-bold text-lg">{roleData.align}/10</span>
+                                          <div className="flex">{getStarRating(roleData.align)}</div>
+                                        </div>
+                                      </TableCell>
+                                    </TableRow>
+                                    <TableRow className="hover:bg-pink-50/50">
+                                      <TableCell className="font-semibold text-slate-700">🔢 Math Load</TableCell>
+                                      <TableCell>
+                                        <div className="flex items-center gap-3">
+                                          <span className="font-bold">{roleData.mathLoad}%</span>
+                                          <div className="flex-1 h-3 bg-slate-200 rounded-full overflow-hidden">
+                                            <div 
+                                              className={`h-full bg-gradient-to-r ${getProgressGradient(roleData.mathLoad)} transition-all duration-500`}
+                                              style={{ width: `${roleData.mathLoad}%` }}
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </TableCell>
+                                    </TableRow>
+                                    <TableRow className="hover:bg-pink-50/50">
+                                      <TableCell className="font-semibold text-slate-700">⚛️ Physics Load</TableCell>
+                                      <TableCell>
+                                        <div className="flex items-center gap-3">
+                                          <span className="font-bold">{roleData.physicsLoad}%</span>
+                                          <div className="flex-1 h-3 bg-slate-200 rounded-full overflow-hidden">
+                                            <div 
+                                              className={`h-full bg-gradient-to-r ${getProgressGradient(roleData.physicsLoad)} transition-all duration-500`}
+                                              style={{ width: `${roleData.physicsLoad}%` }}
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </TableCell>
+                                    </TableRow>
+                                  </TableBody>
+                                </Table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })()}
                   </CardContent>
                 </Card>;
           })}
