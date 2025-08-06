@@ -31,6 +31,7 @@ export default function SignUp() {
     currentStudies: '',
     interStream: '',
     degreeYear: '',
+    btechYear: '',
     state: '',
     district: '',
     mobile: '',
@@ -175,7 +176,8 @@ export default function SignUp() {
                     <SelectContent>
                       <SelectItem value="school">School</SelectItem>
                       <SelectItem value="inter">Intermediate</SelectItem>
-                      <SelectItem value="degree">Degree/B.Tech</SelectItem>
+                      <SelectItem value="degree">Degree</SelectItem>
+                      <SelectItem value="btech">B.Tech</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -209,6 +211,26 @@ export default function SignUp() {
                       Degree Year
                     </Label>
                     <Select value={formData.degreeYear} onValueChange={(value) => handleInputChange('degreeYear', value)}>
+                      <SelectTrigger className="h-12 bg-slate-50/50 border-slate-200">
+                        <SelectValue placeholder="Select your year" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="1st">1st Year</SelectItem>
+                        <SelectItem value="2nd">2nd Year</SelectItem>
+                        <SelectItem value="3rd">3rd Year</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                )}
+
+                {/* B.Tech Year (conditional) */}
+                {formData.currentStudies === 'btech' && (
+                  <div className="space-y-2">
+                    <Label className="flex items-center gap-2 text-slate-700 font-medium">
+                      <GraduationCap className="h-4 w-4 text-purple-500" />
+                      B.Tech Year
+                    </Label>
+                    <Select value={formData.btechYear} onValueChange={(value) => handleInputChange('btechYear', value)}>
                       <SelectTrigger className="h-12 bg-slate-50/50 border-slate-200">
                         <SelectValue placeholder="Select your year" />
                       </SelectTrigger>
