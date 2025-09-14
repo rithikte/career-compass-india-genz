@@ -21,6 +21,7 @@ import { WhereToLearn } from '../components/WhereToLearn';
 import { InterviewSituation } from '../components/InterviewSituation';
 import IndustryAdvice from '../components/IndustryAdvice';
 import CollegeDetails from '../components/CollegeDetails';
+import AboutUs from '../components/AboutUs';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -46,6 +47,7 @@ const Index = () => {
     { id: 'industry-advice', title: '20 Years Industry Advice', component: IndustryAdvice },
     { id: 'where-to-learn', title: 'Where to Learn', component: WhereToLearn },
     { id: 'college-details', title: 'B.Tech – Degree Landing Page', component: CollegeDetails },
+    { id: 'about-us', title: 'About Us', component: AboutUs },
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
