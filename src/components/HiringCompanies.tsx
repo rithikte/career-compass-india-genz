@@ -17,16 +17,6 @@ const publicSectorData = [
     role: 'Aircraft Maintenance Eng.',
     companies: ['Indigo', 'SpiceJet', 'Air India', 'Lufthansa Technik', 'GMR'],
     locations: ['Delhi', 'Mumbai', 'Bengaluru']
-  },
-  {
-    role: 'Drone/UAV Engineer',
-    companies: ['ideaForge', 'Garuda Aerospace', 'Aarav Systems', 'Skylark Drones', 'Quidich'],
-    locations: ['Bengaluru', 'Chennai', 'Mumbai']
-  },
-  {
-    role: 'Data Analyst (Aviation)',
-    companies: ['Lufthansa Tech', 'Indigo', 'AAI', 'IBM', 'Accenture'],
-    locations: ['Bengaluru', 'Gurgaon', 'Hyderabad']
   }
 ];
 
@@ -48,24 +38,6 @@ const privateSectorData = [
     companyCount: '130–160+',
     companies: ['Air Works Group', 'Indamer MRO', 'GMR Aero Technic', 'Max MRO', 'AI Engineering Services', 'Star Air'],
     locations: ['Delhi', 'Mumbai', 'Bengaluru', 'Chennai']
-  },
-  {
-    role: 'Flight Test Engineer',
-    companyCount: '15–25+',
-    companies: ['TATA ASL', 'Mahindra Aerospace', 'Genser Aerospace', 'Kalyani Rafael', 'R&D Aviation Labs', 'Tier-1 Suppliers'],
-    locations: ['Bengaluru', 'Pune', 'Chennai', 'Mumbai']
-  },
-  {
-    role: 'Drone/UAV Engineer',
-    companyCount: '300–400+',
-    companies: ['ideaForge', 'Garuda Aerospace', 'General Aeronautics', 'Throttle Aerospace', 'Aero360', 'Marut Drones', 'TechEagle', 'Omnipresent'],
-    locations: ['Bengaluru', 'Chennai', 'Mumbai', 'Hyderabad', 'Pune']
-  },
-  {
-    role: 'Data Analyst (Aviation)',
-    companyCount: '100–130+',
-    companies: ['GMR Analytics', 'IBS Software', 'Ramco Aviation', 'Amadeus Labs India', 'Sabre India', 'Flydocs', 'Dataevolve'],
-    locations: ['Bengaluru', 'Gurgaon', 'Hyderabad', 'Chennai']
   }
 ];
 
@@ -244,12 +216,12 @@ export const HiringCompanies = () => {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="text-center">
-              <div className="text-3xl font-bold">1000+</div>
+              <div className="text-3xl font-bold">600+</div>
               <div className="text-purple-200">Total Companies</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold">400+</div>
-              <div className="text-purple-200">Drone Startups</div>
+              <div className="text-3xl font-bold">310+</div>
+              <div className="text-purple-200">Private Companies</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold">60%</div>

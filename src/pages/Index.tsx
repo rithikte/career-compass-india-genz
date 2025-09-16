@@ -11,7 +11,7 @@ import { BestStates } from '../components/BestStates';
 import { AIImpact } from '../components/AIImpact';
 import { JobSecurity } from '../components/JobSecurity';
 import { SkillGap } from '../components/SkillGap';
-import { DegreeRatings } from '../components/DegreeRatings';
+
 import { CertificationStack } from '../components/CertificationStack';
 import NatureOfWork from '../components/NatureOfWork';
 import { PostCertBenefits } from '../components/PostCertBenefits';
@@ -38,7 +38,7 @@ const Index = () => {
     { id: 'ai-impact', title: 'AI Impact', component: AIImpact },
     { id: 'job-security', title: 'Job Security', component: JobSecurity },
     { id: 'skill-gap', title: 'Skill Gap', component: SkillGap },
-    { id: 'degree-ratings', title: 'Degree Ratings', component: DegreeRatings },
+    
     { id: 'certification-stack', title: 'Certification Stack', component: CertificationStack },
     { id: 'post-cert-benefits', title: 'Post-Cert Benefits', component: PostCertBenefits },
     { id: 'govt-support', title: 'Govt Support', component: GovtSupport },

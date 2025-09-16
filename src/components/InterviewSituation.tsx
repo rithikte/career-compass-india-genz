@@ -28,22 +28,6 @@ const interviewData = [
     rejectedAfterInterview: 44,
     didntReachFinal: 39,
     rejectionReasons: "No embedded/VHDL skills, weak circuit logic"
-  },
-  {
-    role: "Ground Ops / Cabin Crew",
-    applicants: 130,
-    gotJob: 45,
-    rejectedAfterInterview: 30,
-    didntReachFinal: 55,
-    rejectionReasons: "Weak soft skills, poor English, no DGCA cert"
-  },
-  {
-    role: "Pilot Trainee (CPL track)",
-    applicants: 150,
-    gotJob: 23,
-    rejectedAfterInterview: 88,
-    didntReachFinal: 39,
-    rejectionReasons: "No CPL, medical disqualifications"
   }
 ];
 
@@ -75,7 +59,7 @@ export const InterviewSituation = () => {
         <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
           <CardContent className="p-6 text-center">
             <Users className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-blue-900">116</div>
+            <div className="text-2xl font-bold text-blue-900">110</div>
             <div className="text-sm text-blue-700">Avg Applicants per Job</div>
           </CardContent>
         </Card>
@@ -83,7 +67,7 @@ export const InterviewSituation = () => {
         <Card className="bg-gradient-to-br from-green-50 to-green-100 border-green-200">
           <CardContent className="p-6 text-center">
             <CheckCircle className="w-8 h-8 text-green-600 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-green-900">31</div>
+            <div className="text-2xl font-bold text-green-900">35</div>
             <div className="text-sm text-green-700">Get the Job</div>
           </CardContent>
         </Card>
@@ -91,7 +75,7 @@ export const InterviewSituation = () => {
         <Card className="bg-gradient-to-br from-red-50 to-red-100 border-red-200">
           <CardContent className="p-6 text-center">
             <XCircle className="w-8 h-8 text-red-600 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-red-900">50</div>
+            <div className="text-2xl font-bold text-red-900">40</div>
             <div className="text-sm text-red-700">Rejected After Interview</div>
           </CardContent>
         </Card>

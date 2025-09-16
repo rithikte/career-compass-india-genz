@@ -23,27 +23,6 @@ const growthData = [
     reason: 'India becoming global MRO hub',
     trend: 'Boom',
     color: '#8b5cf6'
-  },
-  {
-    role: 'Flight Test Engineer',
-    cagr: 7,
-    reason: 'HAL, DRDO test labs',
-    trend: 'Moderate',
-    color: '#06b6d4'
-  },
-  {
-    role: 'Drone/UAV Engineer',
-    cagr: 20,
-    reason: '1000+ drone startups',
-    trend: 'Explosive',
-    color: '#10b981'
-  },
-  {
-    role: 'Data Analyst (Aviation)',
-    cagr: 15,
-    reason: 'Predictive maintenance, data ops',
-    trend: 'Boom',
-    color: '#f59e0b'
   }
 ];
 
@@ -186,20 +165,20 @@ export const GrowthRate = () => {
           <Target className="w-12 h-12 mx-auto mb-4" />
           <h3 className="text-2xl font-bold mb-2">Growth Spotlight</h3>
           <p className="text-green-200 text-lg mb-6">
-            Drone/UAV Engineering leads with 20% CAGR - fastest growing aerospace career
+            Aircraft Maintenance Engineering leads with 13.5% CAGR - fastest growing aerospace career
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-green-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-2xl font-bold">20%</div>
-              <div className="text-green-200">Drone Engineering</div>
-            </div>
-            <div className="bg-green-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-2xl font-bold">15%</div>
-              <div className="text-green-200">Data Analytics</div>
-            </div>
-            <div className="bg-green-500 bg-opacity-30 p-4 rounded-lg">
               <div className="text-2xl font-bold">13.5%</div>
               <div className="text-green-200">Aircraft Maintenance</div>
+            </div>
+            <div className="bg-green-500 bg-opacity-30 p-4 rounded-lg">
+              <div className="text-2xl font-bold">11%</div>
+              <div className="text-green-200">Avionics Engineering</div>
+            </div>
+            <div className="bg-green-500 bg-opacity-30 p-4 rounded-lg">
+              <div className="text-2xl font-bold">9%</div>
+              <div className="text-green-200">Aerospace Engineering</div>
             </div>
           </div>
         </div>
