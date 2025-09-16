@@ -35,39 +35,6 @@ const benefitsData = [
       after: '₹4L starting salary',
       careerPath: 'Technician → Engineer → Manager'
     }
-  },
-  {
-    role: 'Flight Test Engineer',
-    promotionBoost: 28,
-    salaryHike: 30,
-    interviewBoost: 2.7,
-    details: {
-      before: '₹5L entry level',
-      after: '₹6.5L starting salary',
-      careerPath: 'Associate → Engineer → Principal Engineer'
-    }
-  },
-  {
-    role: 'Drone/UAV Engineer',
-    promotionBoost: 35,
-    salaryHike: 40,
-    interviewBoost: 4.0,
-    details: {
-      before: '₹3L entry level',
-      after: '₹4.2L starting salary',
-      careerPath: 'Developer → Engineer → Tech Lead'
-    }
-  },
-  {
-    role: 'Data Analyst (Aviation)',
-    promotionBoost: 38,
-    salaryHike: 45,
-    interviewBoost: 4.5,
-    details: {
-      before: '₹4L entry level',
-      after: '₹5.8L starting salary',
-      careerPath: 'Analyst → Senior Analyst → Data Scientist'
-    }
   }
 ];
 
@@ -184,7 +151,7 @@ export const PostCertBenefits = () => {
           <DollarSign className="w-12 h-12 mx-auto mb-4" />
           <h3 className="text-2xl font-bold mb-2">ROI Spotlight</h3>
           <p className="text-green-200 text-lg mb-6">
-            Data Analyst roles show highest returns: 45% salary hike + 4.5x interview success rate
+            Aerospace Engineer roles show highest returns: 40% salary hike + 3.5x interview success rate
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-green-500 bg-opacity-30 p-4 rounded-lg">

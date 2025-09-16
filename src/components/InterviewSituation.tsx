@@ -30,30 +30,6 @@ const interviewData = [
     rejectionReasons: "No embedded/VHDL skills, weak circuit logic"
   },
   {
-    role: "Flight Test Engineer",
-    applicants: 90,
-    gotJob: 20,
-    rejectedAfterInterview: 45,
-    didntReachFinal: 25,
-    rejectionReasons: "Low math/sim proficiency, poor test exposure"
-  },
-  {
-    role: "Drone/UAV Engineer",
-    applicants: 130,
-    gotJob: 25,
-    rejectedAfterInterview: 65,
-    didntReachFinal: 40,
-    rejectionReasons: "No DGCA drone certs, poor UAV programming"
-  },
-  {
-    role: "Data Analyst (Aviation)",
-    applicants: 115,
-    gotJob: 30,
-    rejectedAfterInterview: 55,
-    didntReachFinal: 30,
-    rejectionReasons: "No SQL/Python/Tableau, weak domain knowledge"
-  },
-  {
     role: "Ground Ops / Cabin Crew",
     applicants: 130,
     gotJob: 45,

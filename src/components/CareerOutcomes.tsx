@@ -36,30 +36,6 @@ const careerData = [
     mid: 8.0,
     senior: 15.0,
     icon: '🔧'
-  },
-  {
-    role: 'Flight Test Engineer',
-    duties: 'Tests aircraft performance and safety',
-    entry: 5.0,
-    mid: 14.0,
-    senior: 22.0,
-    icon: '🧪'
-  },
-  {
-    role: 'Drone/UAV Engineer',
-    duties: 'Builds and manages drones',
-    entry: 3.0,
-    mid: 9.0,
-    senior: 16.0,
-    icon: '🚁'
-  },
-  {
-    role: 'Data Analyst (Aviation)',
-    duties: 'Analyzes flight/fuel/maintenance data',
-    entry: 4.0,
-    mid: 11.0,
-    senior: 18.0,
-    icon: '📊'
   }
 ];
 
@@ -192,12 +168,12 @@ export const CareerOutcomes = () => {
           </div>
           <div className="text-center">
             <Briefcase className="w-8 h-8 mx-auto mb-2" />
-            <div className="text-2xl font-bold">6</div>
+            <div className="text-2xl font-bold">3</div>
             <div className="text-blue-200">Career Paths</div>
           </div>
           <div className="text-center">
             <Users className="w-8 h-8 mx-auto mb-2" />
-            <div className="text-2xl font-bold">50L+</div>
+            <div className="text-2xl font-bold">64L+</div>
             <div className="text-blue-200">Jobs by 2040</div>
           </div>
         </div>

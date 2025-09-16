@@ -6,10 +6,7 @@ import { Shield, AlertTriangle, TrendingUp } from 'lucide-react';
 const securityData = [
   { role: 'Aerospace Engineer', withAI: 88, withoutAI: 52, shortName: 'Aerospace' },
   { role: 'Avionics Engineer', withAI: 91, withoutAI: 45, shortName: 'Avionics' },
-  { role: 'Aircraft Maintenance Eng.', withAI: 79, withoutAI: 58, shortName: 'Maintenance' },
-  { role: 'Flight Test Engineer', withAI: 87, withoutAI: 41, shortName: 'Flight Test' },
-  { role: 'Drone/UAV Engineer', withAI: 95, withoutAI: 22, shortName: 'Drone/UAV' },
-  { role: 'Data Analyst (Aviation)', withAI: 96, withoutAI: 28, shortName: 'Data Analyst' }
+  { role: 'Aircraft Maintenance Eng.', withAI: 79, withoutAI: 58, shortName: 'Maintenance' }
 ];
 
 export const JobSecurity = () => {
@@ -86,20 +83,20 @@ export const JobSecurity = () => {
           <TrendingUp className="w-12 h-12 mx-auto mb-4" />
           <h3 className="text-2xl font-bold mb-2">The AI Skills Advantage</h3>
           <p className="text-green-200 text-lg mb-6">
-            Professionals with AI skills have 40-70% higher job security across all aerospace roles
+            Professionals with AI skills have 30-45% higher job security across all aerospace roles
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-green-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-2xl font-bold">96%</div>
-              <div className="text-green-200">Data Analysts with AI</div>
+              <div className="text-2xl font-bold">91%</div>
+              <div className="text-green-200">Avionics Engineers with AI</div>
             </div>
             <div className="bg-blue-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-2xl font-bold">95%</div>
-              <div className="text-blue-200">Drone Engineers with AI</div>
+              <div className="text-2xl font-bold">88%</div>
+              <div className="text-blue-200">Aerospace Engineers with AI</div>
             </div>
             <div className="bg-indigo-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-2xl font-bold">91%</div>
-              <div className="text-indigo-200">Avionics Engineers with AI</div>
+              <div className="text-2xl font-bold">79%</div>
+              <div className="text-indigo-200">Maintenance Engineers with AI</div>
             </div>
           </div>
         </div>

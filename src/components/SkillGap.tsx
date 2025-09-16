@@ -23,27 +23,6 @@ const skillGapData = [
     requiredSkill: 88,
     gap: 25,
     priority: 'Medium'
-  },
-  {
-    role: 'Flight Test Engineer',
-    currentSkill: 50,
-    requiredSkill: 90,
-    gap: 40,
-    priority: 'Critical'
-  },
-  {
-    role: 'Drone/UAV Engineer',
-    currentSkill: 42,
-    requiredSkill: 94,
-    gap: 52,
-    priority: 'Critical'
-  },
-  {
-    role: 'Data Analyst (Aviation)',
-    currentSkill: 48,
-    requiredSkill: 93,
-    gap: 45,
-    priority: 'Critical'
   }
 ];
 
@@ -157,20 +136,20 @@ export const SkillGap = () => {
           <AlertTriangle className="w-12 h-12 mx-auto mb-4" />
           <h3 className="text-2xl font-bold mb-2">Critical Skills Alert</h3>
           <p className="text-orange-200 text-lg mb-6">
-            Drone/UAV Engineering has the highest skill gap at 52% - immediate action needed!
+            Avionics Engineering has the highest skill gap at 40% - immediate action needed!
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-red-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-2xl font-bold">52%</div>
-              <div className="text-red-200">Drone Engineering Gap</div>
-            </div>
-            <div className="bg-red-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-2xl font-bold">45%</div>
-              <div className="text-red-200">Data Analytics Gap</div>
-            </div>
-            <div className="bg-red-500 bg-opacity-30 p-4 rounded-lg">
               <div className="text-2xl font-bold">40%</div>
               <div className="text-red-200">Avionics Gap</div>
+            </div>
+            <div className="bg-red-500 bg-opacity-30 p-4 rounded-lg">
+              <div className="text-2xl font-bold">34%</div>
+              <div className="text-red-200">Aerospace Gap</div>
+            </div>
+            <div className="bg-red-500 bg-opacity-30 p-4 rounded-lg">
+              <div className="text-2xl font-bold">25%</div>
+              <div className="text-red-200">Maintenance Gap</div>
             </div>
           </div>
         </div>

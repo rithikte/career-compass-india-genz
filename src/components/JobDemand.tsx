@@ -27,30 +27,6 @@ const demandData = [
     growth: 317,
     shortName: 'Maintenance',
     why: 'India becoming global MRO hub'
-  },
-  {
-    role: 'Flight Test Engineer',
-    '2025': 6000,
-    '2040': 18000,
-    growth: 200,
-    shortName: 'Flight Test',
-    why: 'More indigenous aircraft development'
-  },
-  {
-    role: 'Drone/UAV Engineer',
-    '2025': 25000,
-    '2040': 500000,
-    growth: 1900,
-    shortName: 'Drone/UAV',
-    why: '1000+ drone startups launching'
-  },
-  {
-    role: 'Data Analyst (Aviation)',
-    '2025': 18000,
-    '2040': 300000,
-    growth: 1567,
-    shortName: 'Data Analyst',
-    why: 'AI-driven predictive maintenance'
   }
 ];
 
@@ -79,7 +55,7 @@ export const JobDemand = () => {
         </div>
         <div className="bg-gradient-to-r from-green-600 to-green-700 text-white p-6 rounded-lg text-center">
           <Briefcase className="w-12 h-12 mx-auto mb-4" />
-          <div className="text-3xl font-bold">{(totalJobs2040/100000).toFixed(1)}M</div>
+          <div className="text-3xl font-bold">{(totalJobs2040/1000).toFixed(0)}K</div>
           <div className="text-green-200">Jobs in 2040</div>
         </div>
         <div className="bg-gradient-to-r from-purple-600 to-purple-700 text-white p-6 rounded-lg text-center">
@@ -160,16 +136,16 @@ export const JobDemand = () => {
         <div className="text-center">
           <h3 className="text-2xl font-bold mb-4">🚀 Demand Explosion Alert</h3>
           <p className="text-red-200 text-lg mb-6">
-            Drone/UAV Engineering will see 1900% growth - from 25K to 5 Lakh jobs!
+            Aircraft Maintenance Engineering will see 317% growth - from 60K to 2.5 Lakh jobs!
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-red-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-3xl font-bold">5 Lakh</div>
-              <div className="text-red-200">Drone Jobs by 2040</div>
+              <div className="text-3xl font-bold">2.5 Lakh</div>
+              <div className="text-red-200">Maintenance Jobs by 2040</div>
             </div>
             <div className="bg-orange-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-3xl font-bold">3 Lakh</div>
-              <div className="text-orange-200">Data Analyst Jobs</div>
+              <div className="text-3xl font-bold">1.4 Lakh</div>
+              <div className="text-orange-200">Avionics Jobs</div>
             </div>
           </div>
         </div>
