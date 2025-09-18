@@ -129,26 +129,26 @@ const EntryMidSeniorCard = ({ entry, mid, senior }: { entry: number; mid: number
 
 export const CareerOutcomes = () => {
   return (
-    <div className="space-y-8">
-      <div className="text-center mb-8">
-        <h2 className="text-4xl font-bold text-slate-900 mb-3">
+    <div className="space-y-6 sm:space-y-8">
+      <div className="text-center mb-6 sm:mb-8">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-3 px-4">
           What Can I Become After This Degree?
         </h2>
-        <p className="text-xl text-gray-600">
+        <p className="text-lg sm:text-xl text-gray-600 px-4">
           Explore high-growth aerospace careers with competitive salaries
         </p>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         {careerData.map((career) => (
           <div
             key={career.role}
-            className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col gap-2"
+            className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col gap-2"
           >
-            <div className="flex items-center mb-2">
-              <span className="text-3xl mr-3">{career.icon}</span>
-              <div>
-                <h3 className="text-xl font-bold text-slate-900">{career.role}</h3>
-                <p className="text-sm text-gray-600">{career.duties}</p>
+            <div className="flex items-start sm:items-center mb-2">
+              <span className="text-2xl sm:text-3xl mr-2 sm:mr-3 flex-shrink-0">{career.icon}</span>
+              <div className="min-w-0">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 leading-tight">{career.role}</h3>
+                <p className="text-xs sm:text-sm text-gray-600 leading-tight">{career.duties}</p>
               </div>
             </div>
             {/* Chart + Card together */}
@@ -159,22 +159,22 @@ export const CareerOutcomes = () => {
           </div>
         ))}
       </div>
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-8 rounded-lg mt-10">
-        <div className="flex items-center justify-center space-x-8">
+      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4 sm:p-6 lg:p-8 rounded-lg mt-6 sm:mt-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           <div className="text-center">
-            <TrendingUp className="w-8 h-8 mx-auto mb-2" />
-            <div className="text-2xl font-bold">15-20%</div>
-            <div className="text-blue-200">Average Growth</div>
+            <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2" />
+            <div className="text-xl sm:text-2xl font-bold">15-20%</div>
+            <div className="text-blue-200 text-sm sm:text-base">Average Growth</div>
           </div>
           <div className="text-center">
-            <Briefcase className="w-8 h-8 mx-auto mb-2" />
-            <div className="text-2xl font-bold">3</div>
-            <div className="text-blue-200">Career Paths</div>
+            <Briefcase className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2" />
+            <div className="text-xl sm:text-2xl font-bold">3</div>
+            <div className="text-blue-200 text-sm sm:text-base">Career Paths</div>
           </div>
           <div className="text-center">
-            <Users className="w-8 h-8 mx-auto mb-2" />
-            <div className="text-2xl font-bold">64L+</div>
-            <div className="text-blue-200">Jobs by 2040</div>
+            <Users className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2" />
+            <div className="text-xl sm:text-2xl font-bold">64L+</div>
+            <div className="text-blue-200 text-sm sm:text-base">Jobs by 2040</div>
           </div>
         </div>
       </div>

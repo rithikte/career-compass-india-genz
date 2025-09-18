@@ -38,38 +38,38 @@ export const JobDemand = () => {
 
   return (
     <div className="space-y-8">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-slate-900 mb-4">
+      <div className="text-center mb-8 sm:mb-12 px-4">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
           Job Demand Forecast
         </h2>
-        <p className="text-xl text-gray-600">
+        <p className="text-lg sm:text-xl text-gray-600">
           2025 vs 2040 • Market Explosion Analysis
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-6 rounded-lg text-center">
-          <Users className="w-12 h-12 mx-auto mb-4" />
-          <div className="text-3xl font-bold">{(totalJobs2025/1000).toFixed(0)}K</div>
-          <div className="text-blue-200">Jobs in 2025</div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8">
+        <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 sm:p-6 rounded-lg text-center">
+          <Users className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 mx-auto mb-3 sm:mb-4" />
+          <div className="text-2xl sm:text-3xl font-bold">{(totalJobs2025/1000).toFixed(0)}K</div>
+          <div className="text-blue-200 text-sm sm:text-base">Jobs in 2025</div>
         </div>
-        <div className="bg-gradient-to-r from-green-600 to-green-700 text-white p-6 rounded-lg text-center">
-          <Briefcase className="w-12 h-12 mx-auto mb-4" />
-          <div className="text-3xl font-bold">{(totalJobs2040/1000).toFixed(0)}K</div>
-          <div className="text-green-200">Jobs in 2040</div>
+        <div className="bg-gradient-to-r from-green-600 to-green-700 text-white p-4 sm:p-6 rounded-lg text-center">
+          <Briefcase className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 mx-auto mb-3 sm:mb-4" />
+          <div className="text-2xl sm:text-3xl font-bold">{(totalJobs2040/1000).toFixed(0)}K</div>
+          <div className="text-green-200 text-sm sm:text-base">Jobs in 2040</div>
         </div>
-        <div className="bg-gradient-to-r from-purple-600 to-purple-700 text-white p-6 rounded-lg text-center">
-          <TrendingUp className="w-12 h-12 mx-auto mb-4" />
-          <div className="text-3xl font-bold">{Math.round(((totalJobs2040/totalJobs2025) - 1) * 100)}%</div>
-          <div className="text-purple-200">Total Growth</div>
+        <div className="bg-gradient-to-r from-purple-600 to-purple-700 text-white p-4 sm:p-6 rounded-lg text-center sm:col-span-2 lg:col-span-1">
+          <TrendingUp className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 mx-auto mb-3 sm:mb-4" />
+          <div className="text-2xl sm:text-3xl font-bold">{Math.round(((totalJobs2040/totalJobs2025) - 1) * 100)}%</div>
+          <div className="text-purple-200 text-sm sm:text-base">Total Growth</div>
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-lg p-8">
-        <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8">
+        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6 text-center">
           Job Demand Comparison: 2025 vs 2040
         </h3>
-        <div className="h-96 mb-6">
+        <div className="h-64 sm:h-80 lg:h-96 mb-4 sm:mb-6">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={demandData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
@@ -86,13 +86,13 @@ export const JobDemand = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
         {demandData.map((item, index) => (
           <div
             key={item.role}
-            className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+            className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300"
           >
-            <h3 className="text-lg font-bold text-slate-900 mb-4">{item.role}</h3>
+            <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-4">{item.role}</h3>
             
             <div className="space-y-4">
               <div className="flex justify-between items-center">

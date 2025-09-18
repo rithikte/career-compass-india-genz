@@ -46,42 +46,42 @@ export const HiringCompanies = () => {
 
   return (
     <div className="space-y-8">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-slate-900 mb-4">
+      <div className="text-center mb-8 sm:mb-12 px-4">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
           Who Will Hire Me?
         </h2>
-        <p className="text-xl text-gray-600">
+        <p className="text-lg sm:text-xl text-gray-600">
           Comprehensive overview of aerospace companies actively recruiting in India
         </p>
       </div>
 
       {/* Tab Navigation */}
-      <div className="flex justify-center mb-8">
-        <div className="bg-gray-100 p-1 rounded-lg flex">
+      <div className="flex justify-center mb-6 sm:mb-8 px-4">
+        <div className="bg-gray-100 p-1 rounded-lg flex flex-col sm:flex-row w-full sm:w-auto">
           <button
             onClick={() => setActiveTab('public')}
-            className={`px-6 py-3 rounded-md font-semibold transition-all duration-200 ${
+            className={`px-4 sm:px-6 py-3 rounded-md font-semibold transition-all duration-200 mb-1 sm:mb-0 ${
               activeTab === 'public'
                 ? 'bg-white text-indigo-600 shadow-sm'
                 : 'text-gray-600 hover:text-indigo-600'
             }`}
           >
-            <div className="flex items-center space-x-2">
-              <Building className="w-5 h-5" />
-              <span>Public Sector & MNCs</span>
+            <div className="flex items-center justify-center space-x-2">
+              <Building className="w-4 sm:w-5 h-4 sm:h-5" />
+              <span className="text-sm sm:text-base">Public Sector & MNCs</span>
             </div>
           </button>
           <button
             onClick={() => setActiveTab('private')}
-            className={`px-6 py-3 rounded-md font-semibold transition-all duration-200 ${
+            className={`px-4 sm:px-6 py-3 rounded-md font-semibold transition-all duration-200 ${
               activeTab === 'private'
                 ? 'bg-white text-indigo-600 shadow-sm'
                 : 'text-gray-600 hover:text-indigo-600'
             }`}
           >
-            <div className="flex items-center space-x-2">
-              <Users className="w-5 h-5" />
-              <span>Private Sector & Startups</span>
+            <div className="flex items-center justify-center space-x-2">
+              <Users className="w-4 sm:w-5 h-4 sm:h-5" />
+              <span className="text-sm sm:text-base">Private Sector & Startups</span>
             </div>
           </button>
         </div>
@@ -89,28 +89,28 @@ export const HiringCompanies = () => {
 
       {/* Public Sector Tab */}
       {activeTab === 'public' && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
           {publicSectorData.map((item, index) => (
             <div
               key={item.role}
-              className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+              className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="flex items-center mb-6">
-                <Building className="w-6 h-6 text-indigo-600 mr-3" />
-                <h3 className="text-xl font-bold text-slate-900">{item.role}</h3>
+              <div className="flex items-center mb-4 sm:mb-6">
+                <Building className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600 mr-2 sm:mr-3 flex-shrink-0" />
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900">{item.role}</h3>
               </div>
 
-              <div className="mb-6">
-                <h4 className="text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">
+              <div className="mb-4 sm:mb-6">
+                <h4 className="text-xs sm:text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">
                   Top Hiring Companies
                 </h4>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                   {item.companies.map((company, idx) => (
                     <div
                       key={company}
-                      className="bg-gradient-to-r from-blue-50 to-indigo-50 p-3 rounded-lg text-center hover:from-blue-100 hover:to-indigo-100 transition-colors duration-200"
+                      className="bg-gradient-to-r from-blue-50 to-indigo-50 p-2 sm:p-3 rounded-lg text-center hover:from-blue-100 hover:to-indigo-100 transition-colors duration-200"
                     >
-                      <div className="font-semibold text-slate-800">{company}</div>
+                      <div className="font-semibold text-slate-800 text-sm sm:text-base">{company}</div>
                     </div>
                   ))}
                 </div>
