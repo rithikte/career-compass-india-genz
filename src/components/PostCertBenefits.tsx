@@ -67,17 +67,17 @@ export const PostCertBenefits = () => {
   const avgPromotionBoost = Math.round(benefitsData.reduce((sum, item) => sum + item.promotionBoost, 0) / benefitsData.length);
 
   return (
-    <div className="space-y-8">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-slate-900 mb-4">
+    <div className="space-y-6 sm:space-y-8">
+      <div className="text-center mb-8 sm:mb-12 px-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
           Post-Certification Benefits
         </h2>
-        <p className="text-xl text-gray-600">
+        <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
           ROI Analysis • Before vs After Certification Impact
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8">
         {roiMetrics.map((metric, index) => (
           <div
             key={metric.metric}
@@ -90,7 +90,7 @@ export const PostCertBenefits = () => {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {benefitsData.map((item, index) => (
           <div
             key={item.role}

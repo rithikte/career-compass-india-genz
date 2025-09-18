@@ -12,21 +12,21 @@ const COLORS = ['#ef4444', '#10b981'];
 
 export const AIImpact = () => {
   return (
-    <div className="space-y-8">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-slate-900 mb-4">
+    <div className="space-y-6 sm:space-y-8">
+      <div className="text-center mb-8 sm:mb-12 px-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
           AI Impact on Jobs
         </h2>
-        <p className="text-xl text-gray-600">
+        <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
           Automation timeline and job security analysis
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
         {aiImpactData.map((data, index) => (
-          <div key={data.timeframe} className="bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-2xl font-bold text-center mb-6">{data.timeframe}</h3>
-            <div className="h-64">
+          <div key={data.timeframe} className="bg-white rounded-lg shadow-lg p-4 sm:p-6">
+            <h3 className="text-xl sm:text-2xl font-bold text-center mb-4 sm:mb-6">{data.timeframe}</h3>
+            <div className="h-48 sm:h-56 md:h-64">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie
@@ -36,8 +36,8 @@ export const AIImpact = () => {
                     ]}
                     cx="50%"
                     cy="50%"
-                    innerRadius={60}
-                    outerRadius={100}
+                    innerRadius={40}
+                    outerRadius={80}
                     paddingAngle={5}
                     dataKey="value"
                   >
@@ -50,8 +50,8 @@ export const AIImpact = () => {
               </ResponsiveContainer>
             </div>
             <div className="text-center mt-4">
-              <div className="text-3xl font-bold text-red-600">{data.impact}%</div>
-              <div className="text-gray-600">Jobs at Risk</div>
+              <div className="text-2xl sm:text-3xl font-bold text-red-600">{data.impact}%</div>
+              <div className="text-sm sm:text-base text-gray-600">Jobs at Risk</div>
             </div>
           </div>
         ))}

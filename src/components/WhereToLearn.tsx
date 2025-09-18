@@ -112,23 +112,23 @@ const offlineCenters = [
 
 export const WhereToLearn = () => {
   return (
-    <div className="space-y-8">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-slate-900 mb-4">
+    <div className="space-y-6 sm:space-y-8">
+      <div className="text-center mb-8 sm:mb-12 px-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
           Where to Learn & Get Certified
         </h2>
-        <p className="text-xl text-gray-600">
+        <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
           Complete Learning Pathways • Colleges, Online & Offline Options
         </p>
       </div>
 
       {/* Hyderabad Colleges Section */}
-      <div className="bg-white rounded-lg shadow-lg p-8">
-        <div className="flex items-center mb-6">
-          <School className="w-8 h-8 text-blue-600 mr-3" />
-          <h3 className="text-2xl font-bold text-slate-900">Colleges Hyderabad</h3>
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
+        <div className="flex items-center mb-4 sm:mb-6">
+          <School className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-blue-600 mr-3" />
+          <h3 className="text-xl sm:text-2xl font-bold text-slate-900">Colleges Hyderabad</h3>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {topColleges.map((college, index) => (
             <div
               key={college.name}
@@ -164,13 +164,13 @@ export const WhereToLearn = () => {
       </div>
 
       {/* Online Platforms Section */}
-      <div className="bg-white rounded-lg shadow-lg p-8">
-        <div className="flex items-center mb-6">
-          <Globe className="w-8 h-8 text-green-600 mr-3" />
-          <h3 className="text-2xl font-bold text-slate-900">Online Learning Platforms</h3>
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
+        <div className="flex items-center mb-4 sm:mb-6">
+          <Globe className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-green-600 mr-3" />
+          <h3 className="text-xl sm:text-2xl font-bold text-slate-900">Online Learning Platforms</h3>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
           {onlinePlatforms.map((platform, index) => (
             <div
               key={platform.platform}
@@ -218,13 +218,13 @@ export const WhereToLearn = () => {
       </div>
 
       {/* Offline Centers Section */}
-      <div className="bg-white rounded-lg shadow-lg p-8">
-        <div className="flex items-center mb-6">
-          <MapPin className="w-8 h-8 text-purple-600 mr-3" />
-          <h3 className="text-2xl font-bold text-slate-900">Offline Training Centers</h3>
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
+        <div className="flex items-center mb-4 sm:mb-6">
+          <MapPin className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-purple-600 mr-3" />
+          <h3 className="text-xl sm:text-2xl font-bold text-slate-900">Offline Training Centers</h3>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {offlineCenters.map((center, index) => (
             <div
               key={center.center}

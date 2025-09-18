@@ -52,17 +52,17 @@ export const BestStates = () => {
   const skillGapPercent = 39;
 
   return (
-    <div className="space-y-8">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-slate-900 mb-4">
+    <div className="space-y-6 sm:space-y-8">
+      <div className="text-center mb-8 sm:mb-12 px-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
           Best States in India for Jobs
         </h2>
-        <p className="text-xl text-gray-600">
+        <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
           Geographic job hotspots and aerospace clusters
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
         {statesData.map((state, index) => (
           <div
             key={state.state}
@@ -111,30 +111,30 @@ export const BestStates = () => {
       </div>
 
       {/* Jobs Unfilled Alert */}
-      <div className="w-full bg-gradient-to-r from-red-500 to-orange-600 text-white rounded-lg shadow-lg p-8 flex flex-col items-center my-6 animate-fade-in">
-        <AlertTriangle className="w-14 h-14 mb-4 text-white drop-shadow-md" />
-        <h3 className="text-2xl md:text-3xl font-extrabold mb-2 text-center">
+      <div className="w-full bg-gradient-to-r from-red-500 to-orange-600 text-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8 flex flex-col items-center my-6 animate-fade-in">
+        <AlertTriangle className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 mb-4 text-white drop-shadow-md" />
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold mb-2 text-center">
           Jobs Unfilled Due to Skill Gap
         </h3>
-        <p className="text-md md:text-lg text-orange-100 font-medium mb-4 text-center">
+        <p className="text-sm sm:text-base md:text-lg text-orange-100 font-medium mb-4 text-center max-w-2xl">
           A major opportunity lost—skills gap leaves thousands of jobs open
         </p>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-2">
-          <div className="bg-white bg-opacity-20 rounded-lg px-6 py-3 text-center min-w-[120px]">
-            <div className="text-lg font-bold">{total.toLocaleString()}+</div>
-            <div className="text-sm text-orange-100">Total Jobs</div>
+        <div className="grid grid-cols-2 md:flex md:flex-row items-center justify-center gap-3 sm:gap-4 mt-2 w-full max-w-4xl">
+          <div className="bg-white bg-opacity-20 rounded-lg px-3 sm:px-4 md:px-6 py-2 sm:py-3 text-center min-w-[100px] sm:min-w-[120px]">
+            <div className="text-base sm:text-lg font-bold">{total.toLocaleString()}+</div>
+            <div className="text-xs sm:text-sm text-orange-100">Total Jobs</div>
           </div>
-          <div className="bg-white bg-opacity-20 rounded-lg px-6 py-3 text-center min-w-[120px]">
-            <div className="text-lg font-bold">{filled.toLocaleString()}+</div>
-            <div className="text-sm text-orange-100">Filled</div>
+          <div className="bg-white bg-opacity-20 rounded-lg px-3 sm:px-4 md:px-6 py-2 sm:py-3 text-center min-w-[100px] sm:min-w-[120px]">
+            <div className="text-base sm:text-lg font-bold">{filled.toLocaleString()}+</div>
+            <div className="text-xs sm:text-sm text-orange-100">Filled</div>
           </div>
-          <div className="bg-white bg-opacity-20 rounded-lg px-6 py-3 text-center min-w-[120px]">
-            <div className="text-lg font-bold">{unfilled.toLocaleString()}+</div>
-            <div className="text-sm text-orange-100">Unfilled</div>
+          <div className="bg-white bg-opacity-20 rounded-lg px-3 sm:px-4 md:px-6 py-2 sm:py-3 text-center min-w-[100px] sm:min-w-[120px]">
+            <div className="text-base sm:text-lg font-bold">{unfilled.toLocaleString()}+</div>
+            <div className="text-xs sm:text-sm text-orange-100">Unfilled</div>
           </div>
-          <div className="bg-white bg-opacity-20 rounded-lg px-6 py-3 text-center min-w-[120px] border-2 border-orange-300">
-            <div className="text-lg font-bold">{skillGapPercent}%</div>
-            <div className="text-sm text-orange-100">Skill Gap</div>
+          <div className="bg-white bg-opacity-20 rounded-lg px-3 sm:px-4 md:px-6 py-2 sm:py-3 text-center min-w-[100px] sm:min-w-[120px] border-2 border-orange-300">
+            <div className="text-base sm:text-lg font-bold">{skillGapPercent}%</div>
+            <div className="text-xs sm:text-sm text-orange-100">Skill Gap</div>
           </div>
         </div>
       </div>

@@ -11,26 +11,32 @@ const securityData = [
 
 export const JobSecurity = () => {
   return (
-    <div className="space-y-8">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-slate-900 mb-4">
+    <div className="space-y-6 sm:space-y-8">
+      <div className="text-center mb-8 sm:mb-12 px-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
           Job Security Analysis
         </h2>
-        <p className="text-xl text-gray-600">
+        <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
           With vs Without AI Skills • Future-Proofing Your Career
         </p>
       </div>
 
-      <div className="bg-white rounded-lg shadow-lg p-8">
-        <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
+        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6 text-center">
           Job Security Comparison
         </h3>
-        <div className="h-96">
+        <div className="h-64 sm:h-80 md:h-96">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={securityData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+            <BarChart data={securityData} margin={{ top: 20, right: 10, left: 10, bottom: 40 }}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="shortName" />
-              <YAxis />
+              <XAxis 
+                dataKey="shortName" 
+                angle={-45}
+                textAnchor="end"
+                height={60}
+                fontSize={12}
+              />
+              <YAxis fontSize={12} />
               <Tooltip 
                 formatter={(value, name) => [`${value}%`, name]}
                 labelStyle={{ color: '#1e293b' }}
@@ -42,7 +48,7 @@ export const JobSecurity = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {securityData.map((item, index) => (
           <div
             key={item.role}

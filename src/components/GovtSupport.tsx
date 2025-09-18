@@ -76,17 +76,17 @@ const govtInitiatives = [
 
 export const GovtSupport = () => {
   return (
-    <div className="space-y-8">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-slate-900 mb-4">
+    <div className="space-y-6 sm:space-y-8">
+      <div className="text-center mb-8 sm:mb-12 px-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
           Government Support & Vision
         </h2>
-        <p className="text-xl text-gray-600">
+        <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
           Why Indian Government is Investing Heavily in Aerospace
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {supportReasons.map((reason, index) => (
           <div
             key={reason.title}
@@ -107,12 +107,12 @@ export const GovtSupport = () => {
         ))}
       </div>
 
-      <div className="bg-white rounded-lg shadow-lg p-8">
-        <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
+        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6 text-center">
           Major Government Initiatives & Budgets
         </h3>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
           {govtInitiatives.map((initiative, index) => (
             <div
               key={initiative.initiative}
@@ -141,14 +141,14 @@ export const GovtSupport = () => {
         </div>
       </div>
 
-      <div className="bg-gradient-to-r from-orange-600 to-red-600 text-white p-8 rounded-lg">
+      <div className="bg-gradient-to-r from-orange-600 to-red-600 text-white p-4 sm:p-6 md:p-8 rounded-lg">
         <div className="text-center">
-          <Flag className="w-12 h-12 mx-auto mb-4" />
-          <h3 className="text-2xl font-bold mb-2">🇮🇳 Atmanirbhar Bharat Vision</h3>
-          <p className="text-orange-200 text-lg mb-6">
+          <Flag className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 mx-auto mb-4" />
+          <h3 className="text-xl sm:text-2xl font-bold mb-2">🇮🇳 Atmanirbhar Bharat Vision</h3>
+          <p className="text-sm sm:text-base md:text-lg text-orange-200 mb-4 sm:mb-6">
             India aims to become a global aerospace manufacturing hub by 2030
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
             <div className="bg-orange-500 bg-opacity-30 p-4 rounded-lg">
               <div className="text-2xl font-bold">₹4000 Cr</div>
               <div className="text-orange-200">Total Investment</div>

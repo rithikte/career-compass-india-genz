@@ -200,28 +200,28 @@ const NatureOfWork = () => {
   return <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
       {/* Background Geometric Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-br from-orange-200/30 to-pink-200/30 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-br from-indigo-100/20 to-purple-100/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-10 sm:top-20 right-10 sm:right-20 w-32 h-32 sm:w-48 sm:h-48 md:w-72 md:h-72 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 sm:bottom-20 left-10 sm:left-20 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-gradient-to-br from-orange-200/30 to-pink-200/30 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[600px] md:w-[800px] h-[400px] sm:h-[600px] md:h-[800px] bg-gradient-to-br from-indigo-100/20 to-purple-100/20 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
         {/* Swiss Typography Header */}
         
 
         {/* Work Environment Types - Vertical Interactive Cards */}
         <div className="mb-32">
-          {/* Header with 60-40 Rule Layout */}
-          <div className="grid grid-cols-5 gap-8 mb-20">
-            {/* 60% Content Side */}
-            <div className="col-span-3 space-y-8">
-              <div className="inline-flex items-center gap-4 mb-8">
-                <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-pink-500"></div>
-                <Zap className="h-8 w-8 text-orange-500" />
-                <div className="w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500"></div>
+          {/* Header Layout - Responsive */}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 mb-12 sm:mb-16 md:mb-20">
+            {/* Content Section */}
+            <div className="lg:col-span-3 space-y-4 sm:space-y-6 md:space-y-8">
+              <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mb-6 sm:mb-8 justify-center sm:justify-start">
+                <div className="w-10 sm:w-16 md:w-20 h-1 bg-gradient-to-r from-orange-500 to-pink-500"></div>
+                <Zap className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-orange-500" />
+                <div className="w-10 sm:w-16 md:w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500"></div>
               </div>
               
-              <h3 className="text-5xl font-black text-slate-800 tracking-tight leading-none mb-6">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-slate-800 tracking-tight leading-none mb-4 sm:mb-6 text-center lg:text-left">
                 WORK ENVIRONMENT
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-pink-500">
@@ -229,41 +229,35 @@ const NatureOfWork = () => {
                 </span>
               </h3>
               
-              <div className="mb-4">
-                <p className="text-2xl font-bold text-slate-700 mb-2">
+              <div className="mb-4 text-center lg:text-left">
+                <p className="text-lg sm:text-xl md:text-2xl font-bold text-slate-700 mb-2">
                   "From Your Desk to the Factory Floor"
                 </p>
-                <p className="text-lg text-orange-600 font-medium italic">
+                <p className="text-base sm:text-lg text-orange-600 font-medium italic">
                   Discover where your engineering career will take you daily
                 </p>
               </div>
               
-              <p className="text-xl text-slate-600 leading-relaxed font-light max-w-2xl">
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed font-light max-w-2xl text-center lg:text-left mx-auto lg:mx-0">
                 Seven distinct career paths with interactive insights into industry statistics, 
                 growth potential, and work-life dynamics.
               </p>
-              
-              {/* Mini Statistics Dashboard */}
-              
             </div>
             
-            {/* 40% Visual Side */}
-            <div className="col-span-2 relative">
+            {/* Visual Section - Hidden on small screens */}
+            <div className="hidden lg:block lg:col-span-2 relative">
               <div className="sticky top-20">
-                {/* Geometric Infographic */}
-                <div className="relative w-full h-80 bg-gradient-to-br from-slate-50 via-white to-slate-100 rounded-3xl border border-slate-200/50 overflow-hidden">
+                <div className="relative w-full h-60 md:h-80 bg-gradient-to-br from-slate-50 via-white to-slate-100 rounded-3xl border border-slate-200/50 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-orange-100/30 via-pink-100/30 to-purple-100/30"></div>
                   
-                  {/* Floating Elements */}
-                  <div className="absolute top-8 right-8 w-16 h-16 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full opacity-20 animate-pulse"></div>
-                  <div className="absolute bottom-12 left-8 w-24 h-24 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-2xl opacity-20 rotate-12"></div>
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-purple-400 to-violet-500 rounded-full opacity-10"></div>
+                  <div className="absolute top-4 sm:top-8 right-4 sm:right-8 w-10 h-10 sm:w-16 sm:h-16 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full opacity-20 animate-pulse"></div>
+                  <div className="absolute bottom-6 sm:bottom-12 left-4 sm:left-8 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-2xl opacity-20 rotate-12"></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 sm:w-32 sm:h-32 bg-gradient-to-br from-purple-400 to-violet-500 rounded-full opacity-10"></div>
                   
-                  {/* Central Icon */}
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <div className="relative w-20 h-20 bg-gradient-to-br from-orange-500 to-pink-500 rounded-2xl shadow-2xl">
+                    <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-orange-500 to-pink-500 rounded-2xl shadow-2xl">
                       <div className="absolute inset-2 bg-white rounded-xl flex items-center justify-center">
-                        <Target className="h-8 w-8 text-slate-700" />
+                        <Target className="h-6 w-6 sm:h-8 sm:w-8 text-slate-700" />
                       </div>
                     </div>
                   </div>

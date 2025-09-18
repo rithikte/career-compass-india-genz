@@ -45,17 +45,17 @@ export const InterviewSituation = () => {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="text-center space-y-4">
-        <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+      <div className="text-center space-y-4 px-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
           The Interview Reality Check
         </h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
           What actually happens when 100+ students compete for aviation jobs
         </p>
       </div>
 
       {/* Overall Statistics */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
         <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
           <CardContent className="p-6 text-center">
             <Users className="w-8 h-8 text-blue-600 mx-auto mb-2" />
@@ -90,25 +90,25 @@ export const InterviewSituation = () => {
       </div>
 
       {/* Success Rate Chart */}
-      <Card className="p-6">
+      <Card className="p-4 sm:p-6">
         <CardHeader>
-          <CardTitle className="text-center text-xl font-bold text-gray-800">
+          <CardTitle className="text-center text-lg sm:text-xl font-bold text-gray-800">
             Success Rate by Job Role
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="h-64">
+          <div className="h-48 sm:h-56 md:h-64">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={chartData}>
+              <BarChart data={chartData} margin={{ top: 10, right: 10, left: 0, bottom: 60 }}>
                 <XAxis 
                   dataKey="name" 
                   angle={-45}
                   textAnchor="end"
                   height={80}
                   interval={0}
-                  fontSize={12}
+                  fontSize={10}
                 />
-                <YAxis />
+                <YAxis fontSize={10} />
                 <Bar dataKey="success" fill="#22c55e" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
@@ -117,7 +117,7 @@ export const InterviewSituation = () => {
       </Card>
 
       {/* Individual Role Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {interviewData.map((item, index) => {
           const successRate = getSuccessRate(item.gotJob, item.applicants);
           const rejectionRate = (item.rejectedAfterInterview / item.applicants) * 100;

@@ -147,59 +147,54 @@ const getLevelColor = (level: string) => {
 
 export const CertificationStack = () => {
   return (
-    <div className="space-y-8">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-slate-900 mb-4">
+    <div className="space-y-6 sm:space-y-8">
+      <div className="text-center mb-8 sm:mb-12 px-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
           Certification Stack Roadmap
         </h2>
-        <p className="text-xl text-gray-600">
+        <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
           Your path from 0% to 100% job readiness
         </p>
       </div>
 
       {certificationPaths.map((path, pathIndex) => (
-        <div key={path.role} className="bg-white rounded-lg shadow-lg p-8 mb-8">
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">{path.role}</h3>
-              <div className="flex items-center space-x-4">
+        <div key={path.role} className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8 mb-6 sm:mb-8">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 sm:mb-8">
+            <div className="w-full sm:w-auto mb-4 sm:mb-0">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">{path.role}</h3>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
                 <div className="flex items-center">
-                  <Clock className="w-5 h-5 text-blue-600 mr-2" />
-                  <span className="text-gray-600">Total Duration: {path.totalDuration}</span>
+                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 mr-2" />
+                  <span className="text-sm sm:text-base text-gray-600">Total Duration: {path.totalDuration}</span>
                 </div>
                 <div className="flex items-center">
-                  <Target className="w-5 h-5 text-green-600 mr-2" />
-                  <span className="text-gray-600">Final Gap: {path.finalGap}</span>
+                  <Target className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2" />
+                  <span className="text-sm sm:text-base text-gray-600">Final Gap: {path.finalGap}</span>
                 </div>
               </div>
             </div>
-            <Award className="w-12 h-12 text-yellow-500" />
+            <Award className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-yellow-500" />
           </div>
 
           {/* Timeline */}
           <div className="relative">
-            {/* Horizontal line */}
-            <div className="absolute top-6 left-0 right-0 h-0.5 bg-gray-300"></div>
-            
-            <div className="flex justify-between items-start">
+            {/* Mobile/Small Screen: Vertical Layout */}
+            <div className="block md:hidden space-y-6">
               {path.certifications.map((cert, certIndex) => (
-                <div key={certIndex} className="flex flex-col items-center relative">
-                  {/* Timeline dot */}
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center z-10 ${
+                <div key={certIndex} className="flex items-start space-x-4">
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${
                     cert.isAI ? 'bg-red-600' : 'bg-blue-600'
                   }`}>
-                    <CheckCircle className="w-6 h-6 text-white" />
+                    <CheckCircle className="w-5 h-5 text-white" />
                   </div>
                   
-                  {/* Certification card */}
-                  <div className="mt-4 bg-gray-50 rounded-lg p-4 w-48 text-center">
+                  <div className="flex-1 bg-gray-50 rounded-lg p-4">
                     <span className={`inline-block px-2 py-1 rounded-full text-xs font-semibold mb-2 ${getLevelColor(cert.level)}`}>
                       {cert.level}
                     </span>
                     <h4 className="text-sm font-bold text-gray-900 mb-2">{cert.name}</h4>
                     <div className="text-xs text-gray-600 mb-2">{cert.duration}</div>
                     
-                    {/* Progress bar */}
                     <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
                       <div 
                         className={`h-2 rounded-full ${cert.isAI ? 'bg-red-600' : 'bg-blue-600'}`}
@@ -208,7 +203,6 @@ export const CertificationStack = () => {
                     </div>
                     <div className="text-xs font-bold text-gray-700 mb-3">{cert.readiness}% Ready</div>
                     
-                    {/* When to Pursue */}
                     <div className="border-t pt-2 mt-2">
                       <div className="text-xs font-semibold text-gray-600 mb-1">When to Pursue:</div>
                       <div className="text-xs text-gray-700 leading-tight">{cert.whenToPursue}</div>
@@ -216,6 +210,44 @@ export const CertificationStack = () => {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Desktop: Horizontal Timeline */}
+            <div className="hidden md:block">
+              <div className="absolute top-6 left-0 right-0 h-0.5 bg-gray-300"></div>
+              
+              <div className="flex justify-between items-start">
+                {path.certifications.map((cert, certIndex) => (
+                  <div key={certIndex} className="flex flex-col items-center relative">
+                    <div className={`w-12 h-12 rounded-full flex items-center justify-center z-10 ${
+                      cert.isAI ? 'bg-red-600' : 'bg-blue-600'
+                    }`}>
+                      <CheckCircle className="w-6 h-6 text-white" />
+                    </div>
+                    
+                    <div className="mt-4 bg-gray-50 rounded-lg p-3 w-40 lg:w-48 text-center">
+                      <span className={`inline-block px-2 py-1 rounded-full text-xs font-semibold mb-2 ${getLevelColor(cert.level)}`}>
+                        {cert.level}
+                      </span>
+                      <h4 className="text-xs lg:text-sm font-bold text-gray-900 mb-2 leading-tight">{cert.name}</h4>
+                      <div className="text-xs text-gray-600 mb-2">{cert.duration}</div>
+                      
+                      <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
+                        <div 
+                          className={`h-2 rounded-full ${cert.isAI ? 'bg-red-600' : 'bg-blue-600'}`}
+                          style={{ width: `${cert.readiness}%` }}
+                        ></div>
+                      </div>
+                      <div className="text-xs font-bold text-gray-700 mb-3">{cert.readiness}% Ready</div>
+                      
+                      <div className="border-t pt-2 mt-2">
+                        <div className="text-xs font-semibold text-gray-600 mb-1">When to Pursue:</div>
+                        <div className="text-xs text-gray-700 leading-tight">{cert.whenToPursue}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 

@@ -4,25 +4,23 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 export const BTechMechanical = () => {
   return <div className="space-y-8">
       {/* Hero Section with Core Topic */}
-      <div className="relative bg-gradient-to-br from-primary via-primary/80 to-secondary text-white rounded-2xl p-8 overflow-hidden">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
-        <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
+      <div className="relative bg-gradient-to-br from-primary via-primary/80 to-secondary text-white rounded-2xl p-4 sm:p-6 md:p-8 overflow-hidden">
+        <div className="absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-white/10 rounded-full -translate-y-8 translate-x-8 sm:-translate-y-12 sm:translate-x-12 md:-translate-y-16 md:translate-x-16"></div>
+        <div className="absolute bottom-0 left-0 w-12 h-12 sm:w-18 sm:h-18 md:w-24 md:h-24 bg-white/10 rounded-full translate-y-6 -translate-x-6 sm:translate-y-9 sm:-translate-x-9 md:translate-y-12 md:-translate-x-12"></div>
         
-        <div className="relative text-center space-y-6">
-          <div className="inline-flex items-center gap-3 bg-white/20 rounded-full px-6 py-2">
-            <Plane className="h-6 w-6" />
-            <span className="font-semibold">B.Tech Mechanical Engineering</span>
+        <div className="relative text-center space-y-4 sm:space-y-6">
+          <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/20 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 md:px-6">
+            <Plane className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
+            <span className="font-semibold text-xs sm:text-sm md:text-base">B.Tech Mechanical Engineering</span>
           </div>
           
-          <div className="space-y-3">
-            <h1 className="text-4xl md:text-5xl font-bold">Aviation - Industry</h1>
-            <div className="bg-white/20 rounded-lg p-4 inline-block">
-              <h2 className="text-2xl font-bold text-yellow-300">⚡ Waves & Oscillations</h2>
-              <p className="text-lg opacity-90">The Foundation of Modern Aerospace</p>
+          <div className="space-y-2 sm:space-y-3">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">Aviation - Industry</h1>
+            <div className="bg-white/20 rounded-lg p-3 sm:p-4 inline-block max-w-full">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-yellow-300">⚡ Waves & Oscillations</h2>
+              <p className="text-sm sm:text-base md:text-lg opacity-90">The Foundation of Modern Aerospace</p>
             </div>
           </div>
-
-          
         </div>
       </div>
 
@@ -41,31 +39,31 @@ export const BTechMechanical = () => {
         </CardHeader>
         <CardContent className="p-6">
           {/* Essential Math & Physics Foundation Table */}
-          <div className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm mb-6">
-            <div className="bg-gradient-to-r from-primary to-secondary text-white p-4">
-              <div className="grid grid-cols-3 gap-4 font-bold text-lg">
-                <div className="flex items-center gap-2">
-                  <Calculator className="h-5 w-5" />
-                  Category
+          <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm mb-6">
+            <div className="bg-gradient-to-r from-primary to-secondary text-white p-3 sm:p-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 font-bold text-sm sm:text-base md:text-lg">
+                <div className="flex items-center gap-2 mb-2 sm:mb-0">
+                  <Calculator className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <span className="text-xs sm:text-sm md:text-base">Category</span>
+                </div>
+                <div className="flex items-center gap-2 mb-2 sm:mb-0">
+                  <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <span className="text-xs sm:text-sm md:text-base">Most Important Topics</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5" />
-                  Most Important Topics
-                </div>
-                <div className="flex items-center gap-2">
-                  <Zap className="h-5 w-5" />
-                  Usage in Aviation NVH Careers
+                  <Zap className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <span className="text-xs sm:text-sm md:text-base">Usage in Aviation NVH Careers</span>
                 </div>
               </div>
             </div>
             
             <div className="divide-y divide-gray-200">
-              <div className="grid grid-cols-3 gap-4 p-4 hover:bg-gray-50">
-                <div className="font-bold text-blue-600 text-lg flex items-center gap-2">
-                  <Calculator className="h-5 w-5" />
-                  Math
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-gray-50">
+                <div className="font-bold text-blue-600 text-base sm:text-lg flex items-center gap-2 mb-2 sm:mb-0">
+                  <Calculator className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <span>Math</span>
                 </div>
-                <div className="text-gray-700">
+                <div className="text-gray-700 text-sm sm:text-base">
                   <div className="space-y-1 rounded-md">
                     <div>• Differential Equations</div>
                     <div>• Fourier/Laplace</div>
@@ -73,7 +71,7 @@ export const BTechMechanical = () => {
                     <div>• Calculus</div>
                   </div>
                 </div>
-                <div className="text-gray-700">
+                <div className="text-gray-700 text-sm sm:text-base">
                   <div className="space-y-1 rounded-md">
                     <div>• Vibration modeling</div>
                     <div>• Signal filtering</div>
@@ -83,12 +81,12 @@ export const BTechMechanical = () => {
                 </div>
               </div>
               
-              <div className="grid grid-cols-3 gap-4 p-4 hover:bg-gray-50">
-                <div className="font-bold text-green-600 text-lg flex items-center gap-2">
-                  <Brain className="h-5 w-5" />
-                  Physics
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-gray-50">
+                <div className="font-bold text-green-600 text-base sm:text-lg flex items-center gap-2 mb-2 sm:mb-0">
+                  <Brain className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <span>Physics</span>
                 </div>
-                <div className="text-gray-700">
+                <div className="text-gray-700 text-sm sm:text-base">
                   <div className="space-y-1 rounded-md">
                     <div>• Vibrations & Oscillations</div>
                     <div>• Kinematics of Motion</div>
@@ -96,7 +94,7 @@ export const BTechMechanical = () => {
                     <div>• Thermo-acoustics</div>
                   </div>
                 </div>
-                <div className="text-gray-700">
+                <div className="text-gray-700 text-sm sm:text-base">
                   <div className="space-y-1 rounded-md">
                     <div>• Structural vibration</div>
                     <div>• Fatigue testing</div>
