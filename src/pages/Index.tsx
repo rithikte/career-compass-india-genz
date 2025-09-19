@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import Seo from "@/components/Seo";
 import { Header } from '../components/Header';
 import { HomePage } from '../components/HomePage';
 import { BTechMechanical } from '../components/BTechMechanical';
@@ -54,6 +55,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Seo title="Undergraduate Maps — Home" description="Pick the right degree with clear career outcomes." />
       <Header />
       
       {/* Navigation */}

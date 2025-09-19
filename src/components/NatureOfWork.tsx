@@ -356,7 +356,7 @@ const NatureOfWork = () => {
                                 </h5>
                               </div>
                               
-                              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border border-blue-200/50 overflow-hidden shadow-lg">
+                              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border border-blue-200/50 overflow-x-auto shadow-lg">
                                 <Table>
                                   <TableHeader>
                                     <TableRow className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-600">
@@ -432,7 +432,7 @@ const NatureOfWork = () => {
                                 </h5>
                               </div>
                               
-                              <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl border border-pink-200/50 overflow-hidden shadow-lg">
+                              <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl border border-pink-200/50 overflow-x-auto shadow-lg">
                                 <Table>
                                   <TableHeader>
                                     <TableRow className="bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-500 hover:to-rose-600">

@@ -145,7 +145,7 @@ export const BTechMechanical = () => {
               <Calculator className="h-6 w-6 text-blue-600" />
               <h3 className="text-xl font-bold text-gray-900">Math Topics</h3>
             </div>
-            <div className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
+            <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
               <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4">
                 <div className="grid grid-cols-4 gap-4 font-bold text-sm">
                   <div>Math Topic</div>
@@ -207,7 +207,7 @@ export const BTechMechanical = () => {
               <Brain className="h-6 w-6 text-green-600" />
               <h3 className="text-xl font-bold text-gray-900">Physics Topics</h3>
             </div>
-            <div className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
+            <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
               <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white p-4">
                 <div className="grid grid-cols-4 gap-4 font-bold text-sm">
                   <div>Physics Topic</div>
