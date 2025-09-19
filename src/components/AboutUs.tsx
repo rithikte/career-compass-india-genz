@@ -42,79 +42,98 @@ const AboutUs = () => {
 
   return (
     <div className="bg-background">
-      {/* Hero Section */}
-      <section className="px-6 pt-24 pb-16 max-w-4xl mx-auto">
-        <div className="text-center mb-24">
-          <div className="inline-block px-4 py-2 bg-muted rounded-full text-sm text-muted-foreground font-medium mb-8">
-            About Undergraduate Maps
+      {/* Swiss Hero Section */}
+      <section className="swiss-section">
+        <div className="swiss-container">
+          <div className="text-center max-w-4xl mx-auto space-y-swiss-2xl">
+            <div className="space-y-swiss-lg">
+              <div className="text-swiss-caption text-primary">
+                About Undergraduate Maps
+              </div>
+              
+              <h1 className="text-swiss-display text-foreground leading-tight">
+                Revolutionizing
+                <span className="block text-primary">Career Guidance</span>
+              </h1>
+              
+              <p className="text-swiss-subtitle text-muted-foreground max-w-2xl mx-auto">
+                India's first AI-powered platform that maps every degree to real career outcomes, 
+                giving students clarity and parents confidence.
+              </p>
+            </div>
           </div>
-          
-          <h1 className="text-5xl md:text-6xl font-light text-foreground mb-8 leading-[1.1] tracking-tight">
-            Revolutionizing Career Guidance
-          </h1>
-          
-          <p className="text-xl text-muted-foreground font-normal max-w-2xl mx-auto leading-relaxed">
-            India's first AI-powered platform that maps every degree to real career outcomes, 
-            giving students clarity and parents confidence.
-          </p>
         </div>
       </section>
 
-      {/* Q&A Section */}
-      <section className="px-6 pb-24 max-w-4xl mx-auto">
-        <div className="space-y-20">
-          {faqs.map((faq, index) => {
-            const Icon = faq.icon;
-            return (
-              <article key={faq.id} className="group">
-                <div className="flex items-start gap-8 mb-8">
-                  <div className="flex-shrink-0 w-12 h-12 bg-foreground rounded-full flex items-center justify-center">
-                    <Icon className="w-6 h-6 text-background" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-baseline gap-4 mb-4">
-                      <span className="text-sm font-medium text-muted-foreground">
+      {/* Swiss Divider */}
+      <div className="swiss-divider"></div>
+
+      {/* Q&A Section - Swiss Layout */}
+      <section className="swiss-section">
+        <div className="swiss-container max-w-6xl">
+          <div className="space-y-swiss-3xl">
+            {faqs.map((faq, index) => {
+              const Icon = faq.icon;
+              return (
+                <article key={faq.id} className="group">
+                  <div className="swiss-grid grid-cols-1 lg:grid-cols-12 gap-swiss-xl items-start">
+                    {/* Icon & Number */}
+                    <div className="lg:col-span-2 flex items-start gap-swiss-md">
+                      <div className="w-12 h-12 bg-primary flex items-center justify-center">
+                        <Icon className="w-6 h-6 text-primary-foreground" />
+                      </div>
+                      <div className="text-swiss-caption text-muted-foreground pt-3">
                         Q{index + 1}
-                      </span>
-                      <h2 className="text-3xl md:text-4xl font-light text-foreground leading-tight">
-                        {faq.question}
-                      </h2>
+                      </div>
                     </div>
                     
-                    <div className="text-xl text-foreground font-medium mb-6 leading-relaxed">
-                      {faq.shortAnswer}
+                    {/* Content */}
+                    <div className="lg:col-span-10 space-y-swiss-lg">
+                      <div className="space-y-swiss-md">
+                        <h2 className="text-swiss-title text-foreground leading-tight">
+                          {faq.question}
+                        </h2>
+                        
+                        <div className="text-swiss-subtitle text-foreground font-medium">
+                          {faq.shortAnswer}
+                        </div>
+                      </div>
+                      
+                      <div className="text-swiss-body text-muted-foreground leading-relaxed whitespace-pre-line pl-swiss-lg border-l border-border">
+                        {faq.detailedAnswer}
+                      </div>
                     </div>
                   </div>
-                </div>
-                
-                <div className="ml-20 text-base text-muted-foreground leading-relaxed whitespace-pre-line">
-                  {faq.detailedAnswer}
-                </div>
-                
-                {index < faqs.length - 1 && (
-                  <div className="mt-20 h-px bg-border"></div>
-                )}
-              </article>
-            );
-          })}
+                  
+                  {index < faqs.length - 1 && (
+                    <div className="swiss-divider"></div>
+                  )}
+                </article>
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      {/* Final Promise Section */}
-      <section className="px-6 pb-24 max-w-4xl mx-auto">
-        <div className="text-center py-20 border-t border-border">
-          <div className="inline-block px-4 py-2 bg-muted rounded-full text-sm text-muted-foreground font-medium mb-8">
-            Our Promise to India
+      {/* Final Promise Section - Swiss Minimal */}
+      <section className="swiss-section bg-muted/30">
+        <div className="swiss-container">
+          <div className="text-center max-w-4xl mx-auto space-y-swiss-2xl">
+            <div className="space-y-swiss-lg">
+              <div className="text-swiss-caption text-primary">
+                Our Promise to India
+              </div>
+              
+              <h2 className="text-swiss-title text-foreground">
+                A Future Built on Clarity
+              </h2>
+              
+              <blockquote className="text-swiss-subtitle font-light text-foreground leading-relaxed max-w-3xl mx-auto border-l-2 border-primary pl-swiss-lg">
+                "Every student deserves a clear future — and every parent deserves peace of mind. 
+                That's our promise to the new India."
+              </blockquote>
+            </div>
           </div>
-          
-          <h2 className="text-4xl md:text-5xl font-light text-foreground mb-12 leading-tight">
-            A Future Built on Clarity
-          </h2>
-          
-          <blockquote className="text-2xl font-light text-foreground leading-relaxed max-w-3xl mx-auto">
-            "Every student deserves a clear future — and every parent deserves peace of mind. 
-            That's our promise to the new India."
-          </blockquote>
         </div>
       </section>
     </div>
