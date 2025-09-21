@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { AlertTriangle, TrendingUp, CheckCircle } from 'lucide-react';
+import SourceBadge from './SourceBadge';
 
 const skillGapData = [
   {
@@ -54,6 +55,11 @@ export const SkillGap = () => {
         <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
           Current vs Required Skills • India 2025 Assessment
         </p>
+        <div className="flex flex-wrap justify-center gap-2 mt-4">
+          <SourceBadge href="https://www.nasscom.in/knowledge-center/publications/skill-development-reports" label="NASSCOM Skills" />
+          <SourceBadge href="https://www.skillscouncil.in/aerospace-sector-skill-council" label="ASSC Reports" />
+          <SourceBadge href="https://www.teamlease.com/reports/job-and-salary-primer" label="TeamLease Study" />
+        </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8">

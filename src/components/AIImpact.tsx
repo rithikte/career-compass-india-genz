@@ -2,6 +2,7 @@
 import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { Brain, AlertTriangle, Shield } from 'lucide-react';
+import SourceBadge from './SourceBadge';
 
 const aiImpactData = [
   { timeframe: '5 Years', impact: 28, safe: 72, name: '5Y Impact' },
@@ -20,6 +21,11 @@ export const AIImpact = () => {
         <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
           Automation timeline and job security analysis
         </p>
+        <div className="flex flex-wrap justify-center gap-2 mt-4">
+          <SourceBadge href="https://www.mckinsey.com/featured-insights/artificial-intelligence/the-age-of-ai" label="McKinsey AI Report" />
+          <SourceBadge href="https://www.weforum.org/reports/the-future-of-jobs-report-2023" label="WEF Jobs Report" />
+          <SourceBadge href="https://www.pwc.com/gx/en/issues/artificial-intelligence/ai-and-workforce-evolution" label="PwC AI Workforce" />
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">

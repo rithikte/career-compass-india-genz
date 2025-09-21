@@ -2,6 +2,7 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Shield, AlertTriangle, TrendingUp } from 'lucide-react';
+import SourceBadge from './SourceBadge';
 
 const securityData = [
   { role: 'Aerospace Engineer', withAI: 88, withoutAI: 52, shortName: 'Aerospace' },
@@ -19,6 +20,11 @@ export const JobSecurity = () => {
         <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
           With vs Without AI Skills • Future-Proofing Your Career
         </p>
+        <div className="flex flex-wrap justify-center gap-2 mt-4">
+          <SourceBadge href="https://www.weforum.org/reports/the-future-of-jobs-report-2023" label="WEF Jobs Report" />
+          <SourceBadge href="https://www2.deloitte.com/us/en/insights/focus/technology-and-the-future-of-work" label="Deloitte Future Work" />
+          <SourceBadge href="https://www.linkedin.com/business/learning/blog/learning-and-development/workplace-learning-report" label="LinkedIn Skills Gap" />
+        </div>
       </div>
 
       <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">

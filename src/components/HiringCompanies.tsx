@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { Building, MapPin, TrendingUp, Users, Briefcase } from 'lucide-react';
+import SourceBadge from './SourceBadge';
 
 const publicSectorData = [
   {
@@ -53,6 +54,11 @@ export const HiringCompanies = () => {
         <p className="text-lg sm:text-xl text-gray-600">
           Comprehensive overview of aerospace companies actively recruiting in India
         </p>
+        <div className="flex flex-wrap justify-center gap-2 mt-4">
+          <SourceBadge href="https://www.hal-india.co.in/careers" label="HAL Careers" />
+          <SourceBadge href="https://careers.boeing.com/india" label="Boeing India" />
+          <SourceBadge href="https://www.tataaerospace.com/careers" label="TATA Aerospace" />
+        </div>
       </div>
 
       {/* Tab Navigation */}

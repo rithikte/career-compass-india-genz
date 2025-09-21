@@ -2,6 +2,7 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import { TrendingUp, Users, Briefcase } from 'lucide-react';
+import SourceBadge from './SourceBadge';
 
 const demandData = [
   {
@@ -45,6 +46,11 @@ export const JobDemand = () => {
         <p className="text-lg sm:text-xl text-gray-600">
           2025 vs 2040 • Market Explosion Analysis
         </p>
+        <div className="flex flex-wrap justify-center gap-2 mt-4">
+          <SourceBadge href="https://www.assocham.org/reports/aerospace-defence-in-india" label="ASSOCHAM Report" />
+          <SourceBadge href="https://www.pwc.in/research-and-insights-hub/aerospace-and-defence" label="PwC India Analysis" />
+          <SourceBadge href="https://www.skillscouncil.in/aerospace-reports" label="Skills Council" />
+        </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8">

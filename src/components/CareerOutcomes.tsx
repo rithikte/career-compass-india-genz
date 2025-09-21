@@ -11,6 +11,7 @@ import {
   LabelList
 } from 'recharts';
 import { Users, Briefcase, TrendingUp } from 'lucide-react';
+import SourceBadge from './SourceBadge';
 
 const careerData = [
   {
@@ -137,6 +138,11 @@ export const CareerOutcomes = () => {
         <p className="text-lg sm:text-xl text-gray-600 px-4">
           Explore high-growth aerospace careers with competitive salaries
         </p>
+        <div className="flex flex-wrap justify-center gap-2 mt-4">
+          <SourceBadge href="https://www.payscale.com/research/IN/Job=Aerospace_Engineer/Salary" label="PayScale India" />
+          <SourceBadge href="https://careers.isro.gov.in" label="ISRO Careers" />
+          <SourceBadge href="https://www.naukri.com/aerospace-engineer-jobs" label="Naukri.com" />
+        </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         {careerData.map((career) => (
@@ -175,6 +181,29 @@ export const CareerOutcomes = () => {
             <Users className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2" />
             <div className="text-xl sm:text-2xl font-bold">64L+</div>
             <div className="text-blue-200 text-sm sm:text-base">Jobs by 2040</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Data Sources Section */}
+      <div className="bg-gray-50 border border-gray-200 p-6 rounded-lg">
+        <h4 className="text-lg font-semibold text-gray-800 mb-4">📊 Data Sources & Methodology</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <h5 className="font-semibold text-gray-700 mb-2">Salary Data:</h5>
+            <div className="flex flex-wrap gap-2">
+              <SourceBadge href="https://www.payscale.com/research/IN/Job=Aerospace_Engineer/Salary" label="PayScale" />
+              <SourceBadge href="https://www.glassdoor.co.in/Salaries/aerospace-engineer-salary" label="Glassdoor" />
+              <SourceBadge href="https://www.ambitionbox.com/profiles/aerospace-engineer/salary" label="AmbitionBox" />
+            </div>
+          </div>
+          <div>
+            <h5 className="font-semibold text-gray-700 mb-2">Job Growth:</h5>
+            <div className="flex flex-wrap gap-2">
+              <SourceBadge href="https://careers.isro.gov.in" label="ISRO" />
+              <SourceBadge href="https://www.hal-india.co.in/careers" label="HAL" />
+              <SourceBadge href="https://www.drdo.gov.in/careers" label="DRDO" />
+            </div>
           </div>
         </div>
       </div>

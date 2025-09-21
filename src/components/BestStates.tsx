@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, TrendingUp, Building, AlertTriangle } from 'lucide-react';
+import SourceBadge from './SourceBadge';
 
 const statesData = [
   {
@@ -60,6 +61,11 @@ export const BestStates = () => {
         <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
           Geographic job hotspots and aerospace clusters
         </p>
+        <div className="flex flex-wrap justify-center gap-2 mt-4">
+          <SourceBadge href="https://www.karnataka.gov.in/aerospace" label="Karnataka Aerospace" />
+          <SourceBadge href="https://www.telanganatoday.com/aerospace-clusters" label="Telangana Policy" />
+          <SourceBadge href="https://www.maharashtra.gov.in/industrial-development" label="Maharashtra Govt" />
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">

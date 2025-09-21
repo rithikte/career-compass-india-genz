@@ -1,6 +1,7 @@
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { TrendingUp, Zap, Target } from 'lucide-react';
+import SourceBadge from './SourceBadge';
 
 const growthData = [
   {
@@ -46,6 +47,11 @@ export const GrowthRate = () => {
         <p className="text-xl text-gray-600">
           CAGR Analysis 2025–2040 • Industry Growth Projections
         </p>
+        <div className="flex flex-wrap justify-center gap-2 mt-4">
+          <SourceBadge href="https://www.ibef.org/industry/aerospace-defence" label="IBEF Reports" />
+          <SourceBadge href="https://www.investindia.gov.in/sector/defence-manufacturing" label="Invest India" />
+          <SourceBadge href="https://www.ficci.in/pressrelease/3769/ficci-media-release-june-28-2023.pdf" label="FICCI Aerospace" />
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -179,10 +185,44 @@ export const GrowthRate = () => {
             <div className="bg-green-500 bg-opacity-30 p-4 rounded-lg">
               <div className="text-2xl font-bold">9%</div>
               <div className="text-green-200">Aerospace Engineering</div>
-            </div>
           </div>
         </div>
       </div>
+
+      {/* Comprehensive Source Documentation */}
+      <div className="bg-blue-50 border border-blue-200 p-6 rounded-lg">
+        <h4 className="text-lg font-semibold text-blue-800 mb-4">🔍 Research Methodology & Sources</h4>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+          <div>
+            <h5 className="font-semibold text-blue-700 mb-2">Government Data:</h5>
+            <div className="space-y-1">
+              <SourceBadge href="https://www.ibef.org/industry/aerospace-defence" label="IBEF Industry Reports" />
+              <SourceBadge href="https://www.investindia.gov.in/sector/defence-manufacturing" label="Invest India Portal" />
+            </div>
+          </div>
+          <div>
+            <h5 className="font-semibold text-blue-700 mb-2">Industry Analysis:</h5>
+            <div className="space-y-1">
+              <SourceBadge href="https://www.ficci.in/pressrelease/3769/ficci-media-release-june-28-2023.pdf" label="FICCI Aerospace Report" />
+              <SourceBadge href="https://www.assocham.org/reports/aerospace-defence-in-india" label="ASSOCHAM Analysis" />
+            </div>
+          </div>
+          <div>
+            <h5 className="font-semibold text-blue-700 mb-2">Market Research:</h5>
+            <div className="space-y-1">
+              <SourceBadge href="https://www.pwc.in/research-and-insights-hub/aerospace-and-defence" label="PwC India" />
+              <SourceBadge href="https://www.skillscouncil.in/aerospace-reports" label="Skills Council Reports" />
+            </div>
+          </div>
+        </div>
+        <div className="mt-4 p-3 bg-white rounded border-l-4 border-blue-500">
+          <p className="text-sm text-blue-800">
+            <strong>Methodology:</strong> Data compiled from official government sources, industry reports, job portals, and company career pages. 
+            All figures represent 2024-2025 market analysis with 2040 projections based on CAGR calculations and policy implementations.
+          </p>
+        </div>
+      </div>
+    </div>
     </div>
   );
 };

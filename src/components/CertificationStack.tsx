@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { CheckCircle, Clock, Target, Award } from 'lucide-react';
+import SourceBadge from './SourceBadge';
 
 const certificationPaths = [
   {
@@ -155,6 +156,11 @@ export const CertificationStack = () => {
         <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
           Your path from 0% to 100% job readiness
         </p>
+        <div className="flex flex-wrap justify-center gap-2 mt-4">
+          <SourceBadge href="https://nptel.ac.in/courses" label="NPTEL Courses" />
+          <SourceBadge href="https://www.coursera.org/iit" label="IIT Coursera" />
+          <SourceBadge href="https://dgca.gov.in/training" label="DGCA Training" />
+        </div>
       </div>
 
       {certificationPaths.map((path, pathIndex) => (

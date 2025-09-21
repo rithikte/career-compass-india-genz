@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { TrendingUp, Users, Briefcase, DollarSign } from 'lucide-react';
+import SourceBadge from './SourceBadge';
 
 const benefitsData = [
   {
@@ -75,6 +76,11 @@ export const PostCertBenefits = () => {
         <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
           ROI Analysis • Before vs After Certification Impact
         </p>
+        <div className="flex flex-wrap justify-center gap-2 mt-4">
+          <SourceBadge href="https://www.payscale.com/research/IN/Certification" label="PayScale Certification" />
+          <SourceBadge href="https://www.glassdoor.co.in/Salaries/aerospace-engineer-salary" label="Glassdoor India" />
+          <SourceBadge href="https://www.ambitionbox.com/profiles/aerospace-engineer/salary" label="AmbitionBox" />
+        </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8">

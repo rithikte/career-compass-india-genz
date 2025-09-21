@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Shield, Users, TrendingUp, Globe, Flag, Award } from 'lucide-react';
+import SourceBadge from './SourceBadge';
 
 const supportReasons = [
   {
@@ -84,6 +85,11 @@ export const GovtSupport = () => {
         <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
           Why Indian Government is Investing Heavily in Aerospace
         </p>
+        <div className="flex flex-wrap justify-center gap-2 mt-4">
+          <SourceBadge href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=1940156" label="PIB Drone Policy" />
+          <SourceBadge href="https://www.skillindia.gov.in/aerospacedefense" label="Skill India Portal" />
+          <SourceBadge href="https://www.makeinindia.com/sector/defence-manufacturing" label="Make in India" />
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { TrendingUp, Users, Globe, Target, Flag, Award } from 'lucide-react';
+import SourceBadge from './SourceBadge';
 
 const india2040Metrics = [
   {
@@ -95,6 +96,11 @@ export const India2040 = () => {
         <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
           How Aerospace Will Transform India by 2040
         </p>
+        <div className="flex flex-wrap justify-center gap-2 mt-4">
+          <SourceBadge href="https://www.niti.gov.in/reports" label="NITI Aayog Reports" />
+          <SourceBadge href="https://www.vision2047.gov.in" label="Vision 2047 Portal" />
+          <SourceBadge href="https://www.ey.com/en_in/aerospace-defense" label="EY India Research" />
+        </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">

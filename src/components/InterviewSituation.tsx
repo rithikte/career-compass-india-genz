@@ -3,6 +3,7 @@ import { AlertTriangle, Users, XCircle, CheckCircle, Clock, TrendingDown, Brain 
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Cell } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Progress } from './ui/progress';
+import SourceBadge from './SourceBadge';
 
 const interviewData = [
   {
@@ -52,6 +53,11 @@ export const InterviewSituation = () => {
         <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
           What actually happens when 100+ students compete for aviation jobs
         </p>
+        <div className="flex flex-wrap justify-center gap-2 mt-4">
+          <SourceBadge href="https://www.aicte-india.org/feedback/placement-statistics" label="AICTE Placement Data" />
+          <SourceBadge href="https://www.naukri.com/company-reviews/aerospace-companies" label="Naukri Reviews" />
+          <SourceBadge href="https://www.glassdoor.co.in/Interview/aerospace-engineer-interview-questions" label="Glassdoor Interviews" />
+        </div>
       </div>
 
       {/* Overall Statistics */}
