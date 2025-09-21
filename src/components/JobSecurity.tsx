@@ -95,7 +95,7 @@ export const JobSecurity = () => {
           <TrendingUp className="w-12 h-12 mx-auto mb-4" />
           <h3 className="text-2xl font-bold mb-2">The AI Skills Advantage</h3>
           <p className="text-green-200 text-lg mb-6">
-            Professionals with AI skills have 30-45% higher job security across all aerospace roles
+            <strong>AI-trained engineers have 30-45% higher security.</strong> Professionals with AI skills have significantly better job security across all aerospace roles.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-green-500 bg-opacity-30 p-4 rounded-lg">

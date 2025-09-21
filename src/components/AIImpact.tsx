@@ -78,6 +78,9 @@ export const AIImpact = () => {
           <div>
             <h4 className="text-xl font-bold text-blue-900 mb-3">What's Really Happening:</h4>
             <p className="text-blue-800 text-lg mb-4">
+              <strong>AI is replacing tasks, not engineers. Skilled graduates remain essential.</strong>
+            </p>
+            <p className="text-blue-800 text-lg mb-4">
               AI is not killing jobs — it's killing <strong>unskilled jobs</strong>.
             </p>
             <p className="text-blue-700 mb-4">

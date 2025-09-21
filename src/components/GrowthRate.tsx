@@ -173,6 +173,10 @@ export const GrowthRate = () => {
           <p className="text-green-200 text-lg mb-6">
             Aircraft Maintenance Engineering leads with 13.5% CAGR - fastest growing aerospace career
           </p>
+          <div className="bg-green-500 bg-opacity-30 p-4 rounded-lg mb-6">
+            <h4 className="text-lg font-bold mb-2">🌍 Global vs India Snapshot</h4>
+            <p className="text-green-100">India aerospace CAGR: <strong>11-13%</strong> vs Global: <strong>~7-8%</strong> (PwC/FICCI reports)</p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-green-500 bg-opacity-30 p-4 rounded-lg">
               <div className="text-2xl font-bold">13.5%</div>
@@ -185,6 +189,21 @@ export const GrowthRate = () => {
             <div className="bg-green-500 bg-opacity-30 p-4 rounded-lg">
               <div className="text-2xl font-bold">9%</div>
               <div className="text-green-200">Aerospace Engineering</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Real-world Growth Drivers */}
+      <div className="bg-amber-50 border border-amber-200 p-6 rounded-lg mb-8">
+        <h4 className="text-lg font-semibold text-amber-800 mb-4">🚀 Real-world Drivers (2024 News)</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white p-4 rounded border-l-4 border-amber-500">
+            <h5 className="font-semibold text-amber-700 mb-2">Airbus MRO Hub Expansion</h5>
+            <p className="text-amber-800 text-sm">Airbus expanding MRO (Maintenance, Repair, Operations) hub in Nagpur (2024) - creating thousands of maintenance engineering jobs.</p>
+          </div>
+          <div className="bg-white p-4 rounded border-l-4 border-amber-500">
+            <h5 className="font-semibold text-amber-700 mb-2">Boeing R&D Investment</h5>
+            <p className="text-amber-800 text-sm">Boeing invested $200M in Bengaluru R&D center - boosting aerospace engineering opportunities in India.</p>
           </div>
         </div>
       </div>

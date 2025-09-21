@@ -156,6 +156,9 @@ export const PostCertBenefits = () => {
         <div className="text-center">
           <DollarSign className="w-12 h-12 mx-auto mb-4" />
           <h3 className="text-2xl font-bold mb-2">ROI Spotlight</h3>
+          <p className="text-green-200 text-lg mb-4">
+            <strong>Certifications = faster placement + higher stability.</strong>
+          </p>
           <p className="text-green-200 text-lg mb-6">
             Aerospace Engineer roles show highest returns: 40% salary hike + 3.5x interview success rate
           </p>

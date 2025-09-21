@@ -209,6 +209,29 @@ export const InterviewSituation = () => {
         </CardContent>
       </Card>
 
+      {/* Certification Impact */}
+      <Card className="bg-gradient-to-r from-green-50 to-emerald-50 border-green-200 mb-8">
+        <CardContent className="p-8">
+          <div className="text-center">
+            <CheckCircle className="w-12 h-12 text-green-600 mx-auto mb-4" />
+            <h3 className="text-2xl font-bold text-green-900 mb-4">Certified vs Non-Certified Reality</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-green-100 p-6 rounded-lg">
+                <div className="text-4xl font-bold text-green-800">65%</div>
+                <div className="text-green-700">Certified Students Placement Success</div>
+              </div>
+              <div className="bg-red-100 p-6 rounded-lg">
+                <div className="text-4xl font-bold text-red-800">30%</div>
+                <div className="text-red-700">Non-Certified Students Success</div>
+              </div>
+            </div>
+            <p className="text-green-800 font-semibold mt-4">
+              <strong>Certified students placed faster, even from Tier-2 colleges.</strong>
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
       {/* Alert Section */}
       <Card className="bg-gradient-to-r from-red-50 to-orange-50 border-red-200">
         <CardContent className="p-8">

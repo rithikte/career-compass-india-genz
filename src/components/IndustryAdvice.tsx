@@ -165,6 +165,30 @@ const IndustryAdvice = () => {
           </CardContent>
         </Card>
 
+        {/* NEXT STEPS - PRACTICAL ADVICE */}
+        <Card className="bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-blue-500/20 border-blue-500/40">
+          <CardContent className="p-8 text-center space-y-6">
+            <BookOpen className="w-16 h-16 text-blue-500 mx-auto" />
+            <h3 className="text-3xl font-black text-blue-500">NEXT STEPS</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white/80 p-6 rounded-lg border border-blue-200">
+                <h4 className="text-xl font-bold text-blue-700 mb-3">If Serious About This Field:</h4>
+                <p className="text-blue-800 font-semibold">
+                  <strong>→ Start CAD + DGCA license early</strong>
+                </p>
+                <p className="text-blue-600 text-sm mt-2">Build practical skills from day one</p>
+              </div>
+              <div className="bg-white/80 p-6 rounded-lg border border-purple-200">
+                <h4 className="text-xl font-bold text-purple-700 mb-3">Career Reality:</h4>
+                <p className="text-purple-800 font-semibold">
+                  <strong>Placements at HAL/DRDO possible even from private colleges if skills strong</strong>
+                </p>
+                <p className="text-purple-600 text-sm mt-2">Skills matter more than college brand</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* CUTOFF REQUIREMENTS */}
         <div className="grid md:grid-cols-2 gap-6">
           <Card className="bg-gradient-to-br from-blue-500/10 to-blue-600/5 border-blue-500/30">

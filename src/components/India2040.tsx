@@ -193,6 +193,9 @@ export const India2040 = () => {
         <div className="text-center">
           <Flag className="w-12 h-12 mx-auto mb-4" />
           <h3 className="text-2xl font-bold mb-2">🇮🇳 Vision 2040 Highlights</h3>
+          <p className="text-orange-200 text-lg mb-4">
+            <strong>Global Benchmark:</strong> India CAGR 11% vs US 6%, China 9%
+          </p>
           <p className="text-orange-200 text-lg mb-6">
             India will become the world's 3rd largest aerospace economy
           </p>
