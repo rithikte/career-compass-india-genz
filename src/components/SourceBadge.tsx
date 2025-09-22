@@ -6,7 +6,7 @@ export default function SourceBadge({ href, label = "Source" }: { href: string; 
       rel="noreferrer"
       className="inline-flex items-center text-xs px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 transition-colors"
     >
-      {label} ↗
+      Source: {label} ↗
     </a>
   );
 }

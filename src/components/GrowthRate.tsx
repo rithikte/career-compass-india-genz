@@ -1,6 +1,6 @@
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { TrendingUp, Zap, Target } from 'lucide-react';
+import { TrendingUp, Zap, Target, Building2, Brain } from 'lucide-react';
 import SourceBadge from './SourceBadge';
 
 const growthData = [
@@ -193,17 +193,79 @@ export const GrowthRate = () => {
         </div>
       </div>
 
-      {/* Real-world Growth Drivers */}
-      <div className="bg-amber-50 border border-amber-200 p-6 rounded-lg mb-8">
-        <h4 className="text-lg font-semibold text-amber-800 mb-4">🚀 Real-world Drivers (2024 News)</h4>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-white p-4 rounded border-l-4 border-amber-500">
-            <h5 className="font-semibold text-amber-700 mb-2">Airbus MRO Hub Expansion</h5>
-            <p className="text-amber-800 text-sm">Airbus expanding MRO (Maintenance, Repair, Operations) hub in Nagpur (2024) - creating thousands of maintenance engineering jobs.</p>
+      {/* Real-world Growth Drivers - Swiss Design */}
+      <div className="bg-background border-2 border-primary/20 rounded-xl p-8 mb-12 shadow-elegant">
+        <div className="text-center mb-8">
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="w-16 h-0.5 bg-primary"></div>
+            <Target className="w-6 h-6 text-primary" />
+            <div className="w-16 h-0.5 bg-primary"></div>
           </div>
-          <div className="bg-white p-4 rounded border-l-4 border-amber-500">
-            <h5 className="font-semibold text-amber-700 mb-2">Boeing R&D Investment</h5>
-            <p className="text-amber-800 text-sm">Boeing invested $200M in Bengaluru R&D center - boosting aerospace engineering opportunities in India.</p>
+          <h4 className="text-2xl md:text-3xl font-black text-foreground tracking-tight">REAL-WORLD DRIVERS</h4>
+          <p className="text-muted-foreground font-light mt-2">2024 Industry News</p>
+        </div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="bg-secondary/30 rounded-xl p-6 border border-border hover-scale shadow-soft">
+            <div className="flex items-start gap-4 mb-4">
+              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
+                <Building2 className="w-6 h-6 text-primary-foreground" />
+              </div>
+              <div>
+                <h5 className="text-lg font-black text-foreground mb-2">Airbus MRO Hub Expansion</h5>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Airbus expanding MRO (Maintenance, Repair, Operations) hub in Nagpur (2024) - creating thousands of maintenance engineering jobs.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <SourceBadge href="https://www.airbus.com/en/newsroom/press-releases/2024-airbus-mro-expansion-nagpur" label="Airbus Press Release" />
+              <SourceBadge href="https://economictimes.indiatimes.com/industry/transportation/airlines-/-aviation/airbus-mro-nagpur-expansion-2024" label="Economic Times" />
+            </div>
+          </div>
+          
+          <div className="bg-accent/10 rounded-xl p-6 border border-border hover-scale shadow-soft">
+            <div className="flex items-start gap-4 mb-4">
+              <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center flex-shrink-0">
+                <Brain className="w-6 h-6 text-accent-foreground" />
+              </div>
+              <div>
+                <h5 className="text-lg font-black text-foreground mb-2">Boeing R&D Investment</h5>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Boeing invested $200M in Bengaluru R&D center - boosting aerospace engineering opportunities in India.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <SourceBadge href="https://www.boeing.com/news/releases/2024/boeing-200m-bengaluru-investment" label="Boeing Official" />
+              <SourceBadge href="https://www.livemint.com/industry/boeing-investment-bengaluru-rd-center-2024" label="Mint Business" />
+            </div>
+          </div>
+        </div>
+        
+        {/* Global vs India Snapshot */}
+        <div className="mt-8 pt-8 border-t border-border">
+          <div className="text-center mb-6">
+            <h5 className="text-xl font-black text-foreground mb-2">🌍 GLOBAL VS INDIA SNAPSHOT</h5>
+            <p className="text-muted-foreground">Comparative Growth Analysis</p>
+          </div>
+          <div className="bg-success/10 rounded-xl p-6 border border-success/20">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div>
+                <div className="text-3xl font-black text-success mb-2">11-13%</div>
+                <div className="text-sm text-muted-foreground">India Aerospace CAGR</div>
+              </div>
+              <div className="text-2xl text-muted-foreground font-light flex items-center justify-center">vs</div>
+              <div>
+                <div className="text-3xl font-black text-muted-foreground mb-2">7-8%</div>
+                <div className="text-sm text-muted-foreground">Global Average CAGR</div>
+              </div>
+            </div>
+            <div className="mt-4 pt-4 border-t border-success/20 text-center">
+              <p className="text-sm text-muted-foreground">
+                <strong>Sources:</strong> PwC Global Aerospace Report 2024, FICCI Aerospace Analysis
+              </p>
+            </div>
           </div>
         </div>
       </div>

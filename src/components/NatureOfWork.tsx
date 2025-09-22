@@ -3,96 +3,60 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Monitor, Building2, TestTube, Gamepad2, Users, Settings, Brain, Star, Calculator, Atom, User, UserCheck, Zap, Target, TrendingUp, ChevronRight, BarChart3, Activity, Clock, MapPin, ChevronDown, Users2, UserX } from 'lucide-react';
+
 const NatureOfWork = () => {
   const [selectedWork, setSelectedWork] = useState<number | null>(null);
+  
   const workTypes = [{
     icon: Brain,
     type: "Strategy",
     subtitle: "Think-Tank Roles",
     emoji: "🧠",
     explanation: "You do planning, analysis, or design thinking to improve systems or develop new products and ideas.",
-    breakdown: "70% Strategy – 30% Desk",
-    gradient: "from-slate-200 via-white to-slate-100",
-    lightBg: "bg-slate-50/80",
-    borderColor: "border-slate-200/50",
-    shadowColor: "shadow-slate-500/20"
+    breakdown: "70% Strategy – 30% Desk"
   }, {
     icon: Settings,
-    type: "Operations",
+    type: "Operations", 
     subtitle: "Back-End Execution",
     emoji: "⚙️",
     explanation: "You handle the working systems behind a company like supply, production, or delivery — mostly coordination work.",
-    breakdown: "60% Ops – 40% Desk",
-    gradient: "from-slate-200 via-white to-slate-100",
-    lightBg: "bg-slate-50/80",
-    borderColor: "border-slate-200/50",
-    shadowColor: "shadow-slate-500/20"
+    breakdown: "60% Ops – 40% Desk"
   }, {
     icon: Gamepad2,
     type: "Simulation",
     subtitle: "Virtual Modeling",
     emoji: "🎮",
     explanation: "You build and test virtual versions of machines or systems using simulation software before they're real.",
-    breakdown: "80% Simulation – 20% Field",
-    gradient: "from-slate-200 via-white to-slate-100",
-    lightBg: "bg-slate-50/80",
-    borderColor: "border-slate-200/50",
-    shadowColor: "shadow-slate-500/20"
+    breakdown: "80% Simulation – 20% Field"
   }, {
     icon: TestTube,
     type: "Lab/Equipment",
-    subtitle: "Research-Based",
+    subtitle: "Research-Based", 
     emoji: "🧪",
     explanation: "You work with machines, circuits, or samples inside a lab using tools and technical equipment.",
-    breakdown: "70% Lab – 30% Desk",
-    gradient: "from-slate-200 via-white to-slate-100",
-    lightBg: "bg-slate-50/80",
-    borderColor: "border-slate-200/50",
-    shadowColor: "shadow-slate-500/20"
+    breakdown: "70% Lab – 30% Desk"
   }, {
     icon: Monitor,
     type: "Desk-Based",
     subtitle: "Computer-Oriented",
     emoji: "🧑‍💻",
     explanation: "You work full-time on a computer using software tools, mostly sitting indoors in an office.",
-    breakdown: "90% Desk – 10% Meetings",
-    gradient: "from-slate-200 via-white to-slate-100",
-    lightBg: "bg-slate-50/80",
-    borderColor: "border-slate-200/50",
-    shadowColor: "shadow-slate-500/20"
+    breakdown: "90% Desk – 10% Meetings"
   }, {
     icon: Users,
     type: "Client-Facing",
     subtitle: "Communication-Heavy",
     emoji: "🤝",
     explanation: "You explain technical ideas to clients, give demos, or manage project discussions with teams.",
-    breakdown: "60% Client – 40% Strategy",
-    gradient: "from-slate-200 via-white to-slate-100",
-    lightBg: "bg-slate-50/80",
-    borderColor: "border-slate-200/50",
-    shadowColor: "shadow-slate-500/20"
+    breakdown: "60% Client – 40% Strategy"
   }, {
     icon: Building2,
     type: "On-Field",
     subtitle: "Site-Based",
-    emoji: "🏗️",
+    emoji: "🏗️", 
     explanation: "You go to real sites like factories, plants, or construction areas to check or fix machines and systems.",
-    breakdown: "80% Field – 20% Office",
-    gradient: "from-slate-200 via-white to-slate-100",
-    lightBg: "bg-slate-50/80",
-    borderColor: "border-slate-200/50",
-    shadowColor: "shadow-slate-500/20"
+    breakdown: "80% Field – 20% Office"
   }];
-  // Map work types to detailed role data
-  const workTypeMapping = {
-    "Strategy": 0,      // Strategy / Think-Tank
-    "Operations": 1,    // Operations / Back-End  
-    "Simulation": 2,    // Simulation / Virtual Modeling
-    "Lab/Equipment": 3, // Lab / Equipment-Based
-    "Desk-Based": 4,    // Desk-Based / Computer-Oriented
-    "Client-Facing": 5, // Client-Facing / Communication
-    "On-Field": 6       // Create separate entry for On-Field
-  };
 
   const detailedRoles = [{
     workType: "Strategy",
@@ -186,216 +150,217 @@ const NatureOfWork = () => {
     physicsLoad: 70,
     gradient: "from-orange-500 to-red-600"
   }];
+
   const getStarRating = (rating: number) => {
-    return Array.from({
-      length: 5
-    }, (_, i) => <Star key={i} className={`h-5 w-5 transition-all duration-300 ${i < Math.floor(rating) ? 'text-yellow-400 fill-yellow-400 drop-shadow-lg' : 'text-gray-300'}`} />);
+    return Array.from({ length: 5 }, (_, i) => 
+      <Star key={i} className={`h-4 w-4 transition-all duration-300 ${i < Math.floor(rating) ? 'text-warning fill-warning' : 'text-muted-foreground'}`} />
+    );
   };
+
   const getProgressGradient = (value: number) => {
-    if (value >= 80) return 'from-red-500 to-red-600';
-    if (value >= 60) return 'from-orange-500 to-orange-600';
-    if (value >= 40) return 'from-yellow-500 to-yellow-600';
-    return 'from-green-500 to-green-600';
+    if (value >= 80) return 'from-destructive to-destructive/80';
+    if (value >= 60) return 'from-warning to-warning/80';
+    if (value >= 40) return 'from-accent to-accent/80';
+    return 'from-success to-success/80';
   };
-  return <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
-      {/* Background Geometric Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 sm:top-20 right-10 sm:right-20 w-32 h-32 sm:w-48 sm:h-48 md:w-72 md:h-72 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 sm:bottom-20 left-10 sm:left-20 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-gradient-to-br from-orange-200/30 to-pink-200/30 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[600px] md:w-[800px] h-[400px] sm:h-[600px] md:h-[800px] bg-gradient-to-br from-indigo-100/20 to-purple-100/20 rounded-full blur-3xl"></div>
+
+  return (
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      {/* Swiss Grid Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-5">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-12">
         {/* Swiss Typography Header */}
-        
-
-        {/* Work Environment Types - Vertical Interactive Cards */}
-        <div className="mb-32">
-          {/* Header Layout - Responsive */}
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 mb-12 sm:mb-16 md:mb-20">
-            {/* Content Section */}
-            <div className="lg:col-span-3 space-y-4 sm:space-y-6 md:space-y-8">
-              <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mb-6 sm:mb-8 justify-center sm:justify-start">
-                <div className="w-10 sm:w-16 md:w-20 h-1 bg-gradient-to-r from-orange-500 to-pink-500"></div>
-                <Zap className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-orange-500" />
-                <div className="w-10 sm:w-16 md:w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500"></div>
-              </div>
-              
-              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-slate-800 tracking-tight leading-none mb-4 sm:mb-6 text-center lg:text-left">
-                WORK ENVIRONMENT
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-pink-500">
-                  TYPES
-                </span>
-              </h3>
-              
-              <div className="mb-4 text-center lg:text-left">
-                <p className="text-lg sm:text-xl md:text-2xl font-bold text-slate-700 mb-2">
-                  "From Your Desk to the Factory Floor"
-                </p>
-                <p className="text-base sm:text-lg text-orange-600 font-medium italic">
-                  Discover where your engineering career will take you daily
-                </p>
-              </div>
-              
-              <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed font-light max-w-2xl text-center lg:text-left mx-auto lg:mx-0">
-                Seven distinct career paths with interactive insights into industry statistics, 
-                growth potential, and work-life dynamics.
-              </p>
+        <div className="mb-24">
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="w-16 h-0.5 bg-primary"></div>
+              <Target className="w-6 h-6 text-primary" />
+              <div className="w-16 h-0.5 bg-primary"></div>
             </div>
             
-            {/* Visual Section - Hidden on small screens */}
-            <div className="hidden lg:block lg:col-span-2 relative">
-              <div className="sticky top-20">
-                <div className="relative w-full h-60 md:h-80 bg-gradient-to-br from-slate-50 via-white to-slate-100 rounded-3xl border border-slate-200/50 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-100/30 via-pink-100/30 to-purple-100/30"></div>
-                  
-                  <div className="absolute top-4 sm:top-8 right-4 sm:right-8 w-10 h-10 sm:w-16 sm:h-16 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full opacity-20 animate-pulse"></div>
-                  <div className="absolute bottom-6 sm:bottom-12 left-4 sm:left-8 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-2xl opacity-20 rotate-12"></div>
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 sm:w-32 sm:h-32 bg-gradient-to-br from-purple-400 to-violet-500 rounded-full opacity-10"></div>
-                  
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-orange-500 to-pink-500 rounded-2xl shadow-2xl">
-                      <div className="absolute inset-2 bg-white rounded-xl flex items-center justify-center">
-                        <Target className="h-6 w-6 sm:h-8 sm:w-8 text-slate-700" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <h1 className="text-5xl md:text-7xl font-black tracking-tight text-foreground mb-6">
+              WORK ENVIRONMENT
+              <br />
+              <span className="text-primary">TYPES</span>
+            </h1>
+            
+            <p className="text-xl font-light text-muted-foreground mb-8 leading-relaxed">
+              From Your Desk to the Factory Floor
+            </p>
+            
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Seven distinct career paths with interactive insights into industry statistics, 
+              growth potential, and work-life dynamics.
+            </p>
           </div>
+        </div>
 
-          {/* Interactive Vertical Cards */}
-          <div className="space-y-6">
+        {/* Work Environment Types - Responsive Grid */}
+        <div className="mb-32">
+          {/* Interactive Responsive Cards */}
+          <div className="space-y-8">
             {workTypes.map((work, index) => {
             const IconComponent = work.icon;
             const isSelected = selectedWork === index;
-            return <Card key={index} className={`group relative overflow-hidden border-2 transition-all duration-700 cursor-pointer transform hover:scale-[1.02]
-                    ${isSelected ? `${work.borderColor} bg-gradient-to-r ${work.gradient}/5 shadow-2xl scale-[1.02]` : 'border-slate-200/50 bg-white/80 hover:border-slate-300/50 shadow-xl hover:shadow-2xl'}`} onClick={() => setSelectedWork(isSelected ? null : index)}>
-                  {/* Background Gradient */}
-                  <div className={`absolute inset-0 bg-gradient-to-r ${work.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+            return <Card key={index} className={`group relative overflow-hidden border-2 transition-all duration-300 cursor-pointer hover-scale
+                    ${isSelected ? 'border-primary bg-primary/5 shadow-elegant' : 'border-border bg-card hover:border-primary/50 shadow-soft hover:shadow-elegant'}`} 
+                    onClick={() => setSelectedWork(isSelected ? null : index)}>
                   
-                  <CardContent className="p-8 relative z-10">
-                    {/* Main Content Row */}
-                    <div className="grid grid-cols-12 gap-6 items-center">
-                      {/* Icon & Emoji Section - 2 cols */}
-                      <div className="col-span-2 flex items-center gap-4">
-                        <div className="text-5xl filter drop-shadow-lg">{work.emoji}</div>
-                        <div className={`relative w-16 h-16 bg-gradient-to-br ${work.gradient} rounded-2xl shadow-xl ${isSelected ? 'rotate-12' : 'rotate-6 group-hover:rotate-12'} transition-transform duration-500`}>
-                          <div className="absolute inset-2 bg-white rounded-xl flex items-center justify-center">
-                            <IconComponent className="h-6 w-6 text-slate-700" />
-                          </div>
-                        </div>
-                      </div>
-                      
-                      {/* Title & Description - 4 cols */}
-                      <div className="col-span-4 space-y-3">
-                        <div>
-                          <h3 className="text-2xl font-black text-slate-800 tracking-tight mb-1">
+                  <CardContent className="p-6 md:p-8 relative z-10">
+                    {/* Mobile Layout (< md) */}
+                    <div className="block md:hidden space-y-6">
+                      {/* Mobile Header */}
+                      <div className="flex items-center gap-4">
+                        <div className="text-4xl">{work.emoji}</div>
+                        <div className="flex-1">
+                          <h3 className="text-xl font-black text-foreground tracking-tight mb-1">
                             {work.type.toUpperCase()}
                           </h3>
-                          <p className="text-sm font-medium text-slate-500 tracking-wider uppercase">
+                          <p className="text-sm font-medium text-muted-foreground tracking-wide uppercase">
                             {work.subtitle}
                           </p>
                         </div>
-                        <p className="text-slate-600 leading-relaxed font-light">
+                        <div className={`w-12 h-12 bg-primary rounded-xl flex items-center justify-center ${isSelected ? 'rotate-12' : 'rotate-6 group-hover:rotate-12'} transition-transform duration-300`}>
+                          <IconComponent className="h-6 w-6 text-primary-foreground" />
+                        </div>
+                      </div>
+                      
+                      {/* Mobile Description */}
+                      <p className="text-muted-foreground leading-relaxed">
+                        {work.explanation}
+                      </p>
+                      
+                      {/* Mobile Work Breakdown */}
+                      <div className="bg-secondary/50 rounded-xl p-4 border border-border">
+                        <Activity className="h-6 w-6 text-muted-foreground mx-auto mb-2" />
+                        <div className="text-lg font-black text-foreground text-center mb-1">{work.breakdown}</div>
+                        <div className="text-xs text-muted-foreground text-center">Work Distribution</div>
+                      </div>
+                      
+                      {/* Mobile Expand Arrow */}
+                      <div className="flex justify-center">
+                        <ChevronDown className={`h-6 w-6 text-muted-foreground transition-transform duration-300 ${isSelected ? 'rotate-180' : ''}`} />
+                      </div>
+                    </div>
+
+                    {/* Desktop Layout (>= md) */}
+                    <div className="hidden md:grid grid-cols-12 gap-6 items-center">
+                      {/* Icon & Emoji Section */}
+                      <div className="col-span-2 flex items-center gap-4">
+                        <div className="text-5xl">{work.emoji}</div>
+                        <div className={`w-16 h-16 bg-primary rounded-xl flex items-center justify-center ${isSelected ? 'rotate-12' : 'rotate-6 group-hover:rotate-12'} transition-transform duration-300 shadow-soft`}>
+                          <IconComponent className="h-6 w-6 text-primary-foreground" />
+                        </div>
+                      </div>
+                      
+                      {/* Title & Description */}
+                      <div className="col-span-4 space-y-3">
+                        <div>
+                          <h3 className="text-2xl font-black text-foreground tracking-tight mb-1">
+                            {work.type.toUpperCase()}
+                          </h3>
+                          <p className="text-sm font-medium text-muted-foreground tracking-wide uppercase">
+                            {work.subtitle}
+                          </p>
+                        </div>
+                        <p className="text-muted-foreground leading-relaxed">
                           {work.explanation}
                         </p>
                       </div>
                       
-                       {/* Work Breakdown - Centered */}
+                      {/* Work Breakdown */}
                       <div className="col-span-5 flex justify-center">
-                        <div className="text-center bg-slate-50/50 rounded-xl p-6 border border-slate-200/30 min-w-[300px]">
-                          <Activity className="h-8 w-8 text-slate-600 mx-auto mb-3" />
-                          <div className="text-2xl font-black text-slate-800 mb-2">{work.breakdown}</div>
-                          <div className="text-sm text-slate-500 font-medium">Work Distribution</div>
+                        <div className="text-center bg-secondary/50 rounded-xl p-6 border border-border min-w-[280px]">
+                          <Activity className="h-8 w-8 text-muted-foreground mx-auto mb-3" />
+                          <div className="text-2xl font-black text-foreground mb-2">{work.breakdown}</div>
+                          <div className="text-sm text-muted-foreground font-medium">Work Distribution</div>
                         </div>
                       </div>
                       
-                      {/* Expand Arrow - 1 col */}
+                      {/* Expand Arrow */}
                       <div className="col-span-1 flex justify-end">
-                        <ChevronRight className={`h-6 w-6 text-slate-400 transition-transform duration-300 ${isSelected ? 'rotate-90' : 'group-hover:translate-x-1'}`} />
+                        <ChevronRight className={`h-6 w-6 text-muted-foreground transition-transform duration-300 ${isSelected ? 'rotate-90' : 'group-hover:translate-x-1'}`} />
                       </div>
                     </div>
-                    
+
                     {/* Expanded Content - Gender-Specific Role Tables */}
                     {isSelected && (() => {
                       const roleData = detailedRoles.find(role => role.workType === work.type);
                       if (!roleData) return null;
                       
                       return (
-                        <div className="mt-8 pt-8 border-t border-slate-200/50">
+                        <div className="mt-8 pt-8 border-t border-border">
                           {/* Section Header */}
-                          <div className="flex items-center justify-center mb-8">
-                            <div className="flex items-center gap-4">
+                          <div className="text-center mb-8">
+                            <div className="flex items-center justify-center gap-4 mb-4">
                               <div className="text-3xl">{roleData.emoji}</div>
-                              <h4 className="text-2xl font-black text-slate-800 tracking-tight">
+                              <h4 className="text-xl md:text-2xl font-black text-foreground tracking-tight">
                                 {roleData.intensity}
                               </h4>
                               <div className="text-3xl">{roleData.emoji}</div>
                             </div>
-                          </div>
 
-                          {/* Industry Header */}
-                          <div className="text-center mb-8">
-                            <div className={`inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r ${roleData.gradient} rounded-full shadow-lg`}>
-                              <Target className="h-5 w-5 text-white" />
-                              <span className="text-white font-bold text-lg">{roleData.industry}</span>
+                            {/* Industry Badge */}
+                            <div className="inline-flex items-center gap-3 px-4 py-2 bg-primary rounded-full shadow-soft">
+                              <Target className="h-4 w-4 text-primary-foreground" />
+                              <span className="text-primary-foreground font-bold text-sm md:text-base">{roleData.industry}</span>
                             </div>
                           </div>
 
-                          {/* Gender-Specific Tables */}
-                          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                          {/* Responsive Tables Grid */}
+                          <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
                             {/* Men's Table */}
                             <div className="space-y-4">
                               <div className="flex items-center gap-3 mb-6">
-                                <Users2 className="h-6 w-6 text-blue-600" />
-                                <h5 className="text-xl font-black text-slate-800 tracking-tight">
-                                  MEN SPECIFIC CAREER ROLES
+                                <Users2 className="h-5 w-5 text-primary" />
+                                <h5 className="text-lg font-black text-foreground tracking-tight">
+                                  MEN SPECIFIC ROLES
                                 </h5>
                               </div>
                               
-                              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border border-blue-200/50 overflow-x-auto shadow-lg">
+                              <div className="bg-secondary/30 rounded-xl border border-border overflow-hidden shadow-soft">
                                 <Table>
                                   <TableHeader>
-                                    <TableRow className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-600">
-                                      <TableHead className="text-white font-bold">Criteria</TableHead>
-                                      <TableHead className="text-white font-bold">Details</TableHead>
+                                    <TableRow className="bg-primary hover:bg-primary">
+                                      <TableHead className="text-primary-foreground font-bold text-xs md:text-sm">Criteria</TableHead>
+                                      <TableHead className="text-primary-foreground font-bold text-xs md:text-sm">Details</TableHead>
                                     </TableRow>
                                   </TableHeader>
                                   <TableBody>
-                                    <TableRow className="hover:bg-blue-50/50">
-                                      <TableCell className="font-semibold text-slate-700">🧠 Work Nature</TableCell>
-                                      <TableCell className="font-medium">{roleData.intensity}</TableCell>
+                                    <TableRow className="hover:bg-secondary/50">
+                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">🧠 Work Nature</TableCell>
+                                      <TableCell className="font-medium text-xs md:text-sm">{roleData.intensity}</TableCell>
                                     </TableRow>
-                                    <TableRow className="hover:bg-blue-50/50">
-                                      <TableCell className="font-semibold text-slate-700">🎯 Industry</TableCell>
-                                      <TableCell className="font-medium">{roleData.industry}</TableCell>
+                                    <TableRow className="hover:bg-secondary/50">
+                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">🎯 Industry</TableCell>
+                                      <TableCell className="font-medium text-xs md:text-sm">{roleData.industry}</TableCell>
                                     </TableRow>
-                                    <TableRow className="hover:bg-blue-50/50">
-                                      <TableCell className="font-semibold text-slate-700">👨‍🔧 Role</TableCell>
-                                      <TableCell className="font-medium text-blue-700">{roleData.menRole}</TableCell>
+                                    <TableRow className="hover:bg-secondary/50">
+                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">👨‍🔧 Role</TableCell>
+                                      <TableCell className="font-medium text-primary text-xs md:text-sm">{roleData.menRole}</TableCell>
                                     </TableRow>
-                                    <TableRow className="hover:bg-blue-50/50">
-                                      <TableCell className="font-semibold text-slate-700">💡 Why It Suits</TableCell>
-                                      <TableCell className="font-medium">{roleData.menWhySuits}</TableCell>
+                                    <TableRow className="hover:bg-secondary/50">
+                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">💡 Why It Suits</TableCell>
+                                      <TableCell className="font-medium text-xs md:text-sm">{roleData.menWhySuits}</TableCell>
                                     </TableRow>
-                                    <TableRow className="hover:bg-blue-50/50">
-                                      <TableCell className="font-semibold text-slate-700">⭐ Alignment</TableCell>
+                                    <TableRow className="hover:bg-secondary/50">
+                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">⭐ Alignment</TableCell>
                                       <TableCell>
                                         <div className="flex items-center gap-2">
-                                          <span className="font-bold text-lg">{roleData.align}/10</span>
+                                          <span className="font-bold text-sm md:text-base">{roleData.align}/10</span>
                                           <div className="flex">{getStarRating(roleData.align)}</div>
                                         </div>
                                       </TableCell>
                                     </TableRow>
-                                    <TableRow className="hover:bg-blue-50/50">
-                                      <TableCell className="font-semibold text-slate-700">🔢 Math Load</TableCell>
+                                    <TableRow className="hover:bg-secondary/50">
+                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">🔢 Math Load</TableCell>
                                       <TableCell>
                                         <div className="flex items-center gap-3">
-                                          <span className="font-bold">{roleData.mathLoad}%</span>
-                                          <div className="flex-1 h-3 bg-slate-200 rounded-full overflow-hidden">
+                                          <span className="font-bold text-xs md:text-sm">{roleData.mathLoad}%</span>
+                                          <div className="flex-1 h-2 bg-secondary rounded-full overflow-hidden">
                                             <div 
                                               className={`h-full bg-gradient-to-r ${getProgressGradient(roleData.mathLoad)} transition-all duration-500`}
                                               style={{ width: `${roleData.mathLoad}%` }}
@@ -404,12 +369,12 @@ const NatureOfWork = () => {
                                         </div>
                                       </TableCell>
                                     </TableRow>
-                                    <TableRow className="hover:bg-blue-50/50">
-                                      <TableCell className="font-semibold text-slate-700">⚛️ Physics Load</TableCell>
+                                    <TableRow className="hover:bg-secondary/50">
+                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">⚛️ Physics Load</TableCell>
                                       <TableCell>
                                         <div className="flex items-center gap-3">
-                                          <span className="font-bold">{roleData.physicsLoad}%</span>
-                                          <div className="flex-1 h-3 bg-slate-200 rounded-full overflow-hidden">
+                                          <span className="font-bold text-xs md:text-sm">{roleData.physicsLoad}%</span>
+                                          <div className="flex-1 h-2 bg-secondary rounded-full overflow-hidden">
                                             <div 
                                               className={`h-full bg-gradient-to-r ${getProgressGradient(roleData.physicsLoad)} transition-all duration-500`}
                                               style={{ width: `${roleData.physicsLoad}%` }}
@@ -426,52 +391,52 @@ const NatureOfWork = () => {
                             {/* Women's Table */}
                             <div className="space-y-4">
                               <div className="flex items-center gap-3 mb-6">
-                                <UserCheck className="h-6 w-6 text-pink-600" />
-                                <h5 className="text-xl font-black text-slate-800 tracking-tight">
-                                  WOMEN SPECIFIC CAREER ROLES
+                                <UserCheck className="h-5 w-5 text-accent" />
+                                <h5 className="text-lg font-black text-foreground tracking-tight">
+                                  WOMEN SPECIFIC ROLES
                                 </h5>
                               </div>
                               
-                              <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl border border-pink-200/50 overflow-x-auto shadow-lg">
+                              <div className="bg-accent/10 rounded-xl border border-border overflow-hidden shadow-soft">
                                 <Table>
                                   <TableHeader>
-                                    <TableRow className="bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-500 hover:to-rose-600">
-                                      <TableHead className="text-white font-bold">Criteria</TableHead>
-                                      <TableHead className="text-white font-bold">Details</TableHead>
+                                    <TableRow className="bg-accent hover:bg-accent">
+                                      <TableHead className="text-accent-foreground font-bold text-xs md:text-sm">Criteria</TableHead>
+                                      <TableHead className="text-accent-foreground font-bold text-xs md:text-sm">Details</TableHead>
                                     </TableRow>
                                   </TableHeader>
                                   <TableBody>
-                                    <TableRow className="hover:bg-pink-50/50">
-                                      <TableCell className="font-semibold text-slate-700">🧠 Work Nature</TableCell>
-                                      <TableCell className="font-medium">{roleData.intensity}</TableCell>
+                                    <TableRow className="hover:bg-accent/5">
+                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">🧠 Work Nature</TableCell>
+                                      <TableCell className="font-medium text-xs md:text-sm">{roleData.intensity}</TableCell>
                                     </TableRow>
-                                    <TableRow className="hover:bg-pink-50/50">
-                                      <TableCell className="font-semibold text-slate-700">🎯 Industry</TableCell>
-                                      <TableCell className="font-medium">{roleData.industry}</TableCell>
+                                    <TableRow className="hover:bg-accent/5">
+                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">🎯 Industry</TableCell>
+                                      <TableCell className="font-medium text-xs md:text-sm">{roleData.industry}</TableCell>
                                     </TableRow>
-                                    <TableRow className="hover:bg-pink-50/50">
-                                      <TableCell className="font-semibold text-slate-700">👩‍💻 Role</TableCell>
-                                      <TableCell className="font-medium text-pink-700">{roleData.womenRole}</TableCell>
+                                    <TableRow className="hover:bg-accent/5">
+                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">👩‍💻 Role</TableCell>
+                                      <TableCell className="font-medium text-accent text-xs md:text-sm">{roleData.womenRole}</TableCell>
                                     </TableRow>
-                                    <TableRow className="hover:bg-pink-50/50">
-                                      <TableCell className="font-semibold text-slate-700">💡 Why It Suits</TableCell>
-                                      <TableCell className="font-medium">{roleData.womenWhySuits}</TableCell>
+                                    <TableRow className="hover:bg-accent/5">
+                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">💡 Why It Suits</TableCell>
+                                      <TableCell className="font-medium text-xs md:text-sm">{roleData.womenWhySuits}</TableCell>
                                     </TableRow>
-                                    <TableRow className="hover:bg-pink-50/50">
-                                      <TableCell className="font-semibold text-slate-700">⭐ Alignment</TableCell>
+                                    <TableRow className="hover:bg-accent/5">
+                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">⭐ Alignment</TableCell>
                                       <TableCell>
                                         <div className="flex items-center gap-2">
-                                          <span className="font-bold text-lg">{roleData.align}/10</span>
+                                          <span className="font-bold text-sm md:text-base">{roleData.align}/10</span>
                                           <div className="flex">{getStarRating(roleData.align)}</div>
                                         </div>
                                       </TableCell>
                                     </TableRow>
-                                    <TableRow className="hover:bg-pink-50/50">
-                                      <TableCell className="font-semibold text-slate-700">🔢 Math Load</TableCell>
+                                    <TableRow className="hover:bg-accent/5">
+                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">🔢 Math Load</TableCell>
                                       <TableCell>
                                         <div className="flex items-center gap-3">
-                                          <span className="font-bold">{roleData.mathLoad}%</span>
-                                          <div className="flex-1 h-3 bg-slate-200 rounded-full overflow-hidden">
+                                          <span className="font-bold text-xs md:text-sm">{roleData.mathLoad}%</span>
+                                          <div className="flex-1 h-2 bg-secondary rounded-full overflow-hidden">
                                             <div 
                                               className={`h-full bg-gradient-to-r ${getProgressGradient(roleData.mathLoad)} transition-all duration-500`}
                                               style={{ width: `${roleData.mathLoad}%` }}
@@ -480,12 +445,12 @@ const NatureOfWork = () => {
                                         </div>
                                       </TableCell>
                                     </TableRow>
-                                    <TableRow className="hover:bg-pink-50/50">
-                                      <TableCell className="font-semibold text-slate-700">⚛️ Physics Load</TableCell>
+                                    <TableRow className="hover:bg-accent/5">
+                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">⚛️ Physics Load</TableCell>
                                       <TableCell>
                                         <div className="flex items-center gap-3">
-                                          <span className="font-bold">{roleData.physicsLoad}%</span>
-                                          <div className="flex-1 h-3 bg-slate-200 rounded-full overflow-hidden">
+                                          <span className="font-bold text-xs md:text-sm">{roleData.physicsLoad}%</span>
+                                          <div className="flex-1 h-2 bg-secondary rounded-full overflow-hidden">
                                             <div 
                                               className={`h-full bg-gradient-to-r ${getProgressGradient(roleData.physicsLoad)} transition-all duration-500`}
                                               style={{ width: `${roleData.physicsLoad}%` }}
@@ -508,21 +473,21 @@ const NatureOfWork = () => {
           </div>
         </div>
 
-        {/* Detailed Roles Analysis - Swiss Card Design */}
-        <div>
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 mb-6">
-              <TrendingUp className="h-6 w-6 text-purple-500" />
-              <h3 className="text-3xl font-bold text-slate-800 tracking-wide">DETAILED ROLE ANALYSIS</h3>
-              <TrendingUp className="h-6 w-6 text-purple-500" />
-            </div>
-            <p className="text-lg text-slate-600 font-light">with Gender Alignment & Technical Requirements</p>
-            <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mt-4"></div>
+        {/* Instructions Section */}
+        <div className="text-center">
+          <div className="max-w-2xl mx-auto bg-secondary/30 rounded-xl p-8 border border-border">
+            <TrendingUp className="h-8 w-8 text-primary mx-auto mb-4" />
+            <h3 className="text-2xl font-black text-foreground mb-4">DETAILED ANALYSIS</h3>
+            <p className="text-muted-foreground mb-4">
+              Click on any work environment type above to view detailed role breakdowns, 
+              gender-specific career paths, and technical requirements.
+            </p>
+            <div className="w-16 h-0.5 bg-primary mx-auto"></div>
           </div>
-
-          
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default NatureOfWork;
