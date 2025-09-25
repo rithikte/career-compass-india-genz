@@ -16,10 +16,7 @@ export const BTechMechanical = () => {
           
           <div className="space-y-2 sm:space-y-3">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">Aviation - Industry</h1>
-            <div className="bg-white/20 rounded-lg p-3 sm:p-4 inline-block max-w-full">
-              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-yellow-300">⚡ Waves & Oscillations</h2>
-              <p className="text-sm sm:text-base md:text-lg opacity-90">The Foundation of Modern Aerospace</p>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -253,69 +250,8 @@ export const BTechMechanical = () => {
 
       {/* Why Waves & Oscillations Matter */}
       <Card className="border-2 border-primary/20">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-3 text-2xl">
-            <div className="p-2 bg-primary/10 rounded-lg">
-              <Zap className="h-6 w-6 text-primary" />
-            </div>
-            Why Waves & Oscillations Are Everything in Aerospace
-          </CardTitle>
-          <CardDescription className="text-lg font-semibold">
-            This isn't just physics theory - it's the core science behind every flying machine
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
-              <div className="flex items-center gap-2 mb-3">
-                <div className="p-2 bg-blue-100 rounded-lg">
-                  <Target className="h-5 w-5 text-blue-600" />
-                </div>
-                <h3 className="font-bold text-blue-900">Aircraft Stability</h3>
-              </div>
-              <p className="text-blue-800 text-sm font-medium">
-                Understanding vibrations keeps planes stable during turbulence and prevents dangerous oscillations
-              </p>
-            </div>
-
-            <div className="bg-green-50 rounded-lg p-4 border border-green-200">
-              <div className="flex items-center gap-2 mb-3">
-                <div className="p-2 bg-green-100 rounded-lg">
-                  <Cog className="h-5 w-5 text-green-600" />
-                </div>
-                <h3 className="font-bold text-green-900">Engine Optimization</h3>
-              </div>
-              <p className="text-green-800 text-sm font-medium">
-                Wave analysis reduces engine noise, improves fuel efficiency, and prevents mechanical failures
-              </p>
-            </div>
-
-            <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
-              <div className="flex items-center gap-2 mb-3">
-                <div className="p-2 bg-purple-100 rounded-lg">
-                  <Shield className="h-5 w-5 text-purple-600" />
-                </div>
-                <h3 className="font-bold text-purple-900">Safety Testing</h3>
-              </div>
-              <p className="text-purple-800 text-sm font-medium">
-                Oscillation testing ensures aircraft can handle extreme conditions before human lives depend on it
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-6 p-4 bg-gradient-to-r from-orange-50 to-red-50 rounded-lg border border-orange-200">
-            <div className="flex items-start gap-3">
-              <AlertTriangle className="h-6 w-6 text-orange-600 mt-1 flex-shrink-0" />
-              <div>
-                <h3 className="font-bold text-orange-900 mb-2">Reality Check:</h3>
-                <p className="text-orange-800">
-                  This isn't about memorizing formulas. You'll spend 4 years learning how wave physics saves lives and builds the future of flight. 
-                  <span className="font-semibold"> If you're not genuinely fascinated by how things work at this level, this degree will feel like torture.</span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </CardContent>
+        
+        
       </Card>
 
       {/* What This Field Demands - Reality Check */}
