@@ -107,21 +107,7 @@ export const BTechMechanical = () => {
           </div>
 
           {/* Key Insight */}
-          <div className="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-lg p-6 border-2 border-amber-200">
-            <div className="flex items-start gap-3">
-              <div className="p-2 bg-amber-100 rounded-lg flex-shrink-0">
-                <Brain className="h-6 w-6 text-amber-600" />
-              </div>
-              <div>
-                <h3 className="font-bold text-amber-900 text-lg mb-2">💡 Key Insight for Aviation Careers</h3>
-                <p className="text-amber-800 font-medium leading-relaxed">
-                  These subjects work together: <span className="font-bold">Math provides the tools, Physics provides the understanding</span>. 
-                  In aviation NVH (Noise, Vibration, Harshness), you'll use differential equations to model how aircraft structures vibrate, 
-                  Fourier analysis to break down complex vibration patterns, and thermodynamics to understand how temperature affects material behavior.
-                </p>
-              </div>
-            </div>
-          </div>
+          
         </CardContent>
       </Card>
 
