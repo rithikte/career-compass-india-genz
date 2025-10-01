@@ -1,19 +1,21 @@
-
 import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { Brain, AlertTriangle, Shield } from 'lucide-react';
 import SourceBadge from './SourceBadge';
-
-const aiImpactData = [
-  { timeframe: '5 Years', impact: 28, safe: 72, name: '5Y Impact' },
-  { timeframe: '10 Years', impact: 47, safe: 53, name: '10Y Impact' }
-];
-
+const aiImpactData = [{
+  timeframe: '5 Years',
+  impact: 28,
+  safe: 72,
+  name: '5Y Impact'
+}, {
+  timeframe: '10 Years',
+  impact: 47,
+  safe: 53,
+  name: '10Y Impact'
+}];
 const COLORS = ['#ef4444', '#10b981'];
-
 export const AIImpact = () => {
-  return (
-    <div className="space-y-6 sm:space-y-8">
+  return <div className="space-y-6 sm:space-y-8">
       <div className="text-center mb-8 sm:mb-12 px-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
           AI Impact on Jobs
@@ -29,29 +31,21 @@ export const AIImpact = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-        {aiImpactData.map((data, index) => (
-          <div key={data.timeframe} className="bg-white rounded-lg shadow-lg p-4 sm:p-6">
+        {aiImpactData.map((data, index) => <div key={data.timeframe} className="bg-white rounded-lg shadow-lg p-4 sm:p-6">
             <h3 className="text-xl sm:text-2xl font-bold text-center mb-4 sm:mb-6">{data.timeframe}</h3>
             <div className="h-48 sm:h-56 md:h-64">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                  <Pie
-                    data={[
-                      { name: 'AI Impact', value: data.impact },
-                      { name: 'Human Jobs', value: data.safe }
-                    ]}
-                    cx="50%"
-                    cy="50%"
-                    innerRadius={40}
-                    outerRadius={80}
-                    paddingAngle={5}
-                    dataKey="value"
-                  >
-                    {[data.impact, data.safe].map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={COLORS[index]} />
-                    ))}
+                  <Pie data={[{
+                name: 'AI Impact',
+                value: data.impact
+              }, {
+                name: 'Human Jobs',
+                value: data.safe
+              }]} cx="50%" cy="50%" innerRadius={40} outerRadius={80} paddingAngle={5} dataKey="value">
+                    {[data.impact, data.safe].map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index]} />)}
                   </Pie>
-                  <Tooltip formatter={(value) => `${value}%`} />
+                  <Tooltip formatter={value => `${value}%`} />
                 </PieChart>
               </ResponsiveContainer>
             </div>
@@ -59,8 +53,7 @@ export const AIImpact = () => {
               <div className="text-2xl sm:text-3xl font-bold text-red-600">{data.impact}%</div>
               <div className="text-sm sm:text-base text-gray-600">Jobs at Risk</div>
             </div>
-          </div>
-        ))}
+          </div>)}
       </div>
 
       <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
@@ -112,14 +105,7 @@ export const AIImpact = () => {
         </div>
       </div>
 
-      <div className="bg-gray-50 border-l-4 border-blue-500 p-6 rounded-lg mb-8">
-        <h4 className="text-lg font-semibold text-gray-800 mb-3">AI Replace Reports Source:</h4>
-        <ul className="text-gray-700 space-y-1">
-          <li>• NITI Aayog AI for All Reports</li>
-          <li>• World Economic Forum India Data</li>
-          <li>• Aviation Ministry's Civil Aviation Vision 2040</li>
-        </ul>
-      </div>
+      
 
       <div className="bg-blue-50 border border-blue-200 p-6 rounded-lg mb-8">
         <div className="flex items-start space-x-3">
@@ -157,6 +143,5 @@ export const AIImpact = () => {
           </p>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
