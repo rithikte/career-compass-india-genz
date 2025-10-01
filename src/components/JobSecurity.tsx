@@ -90,6 +90,91 @@ export const JobSecurity = () => {
         ))}
       </div>
 
+      <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">
+          Difference between Traditional Skills and AI-Enhanced Skill Career Durability
+        </h3>
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              <tr className="border-b-2 border-slate-300">
+                <th className="text-left py-4 px-4 text-slate-900 font-bold">Role</th>
+                <th className="text-center py-4 px-4 text-slate-900 font-bold">Traditional Skill</th>
+                <th className="text-center py-4 px-4 text-slate-900 font-bold">AI-Enhanced Skill</th>
+                <th className="text-center py-4 px-4 text-slate-900 font-bold">Career Durability Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-800">✈️ Aerospace Engineer</td>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-orange-100 text-orange-800 font-semibold px-3 py-1 rounded">7–8 yrs</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-green-100 text-green-800 font-semibold px-3 py-1 rounded">15–18 yrs</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className="text-2xl">⭐</span>
+                  <span className="font-bold text-green-600 ml-2">88%</span>
+                </td>
+              </tr>
+              <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-800">📡 Avionics Engineer</td>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-orange-100 text-orange-800 font-semibold px-3 py-1 rounded">6–7 yrs</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-green-100 text-green-800 font-semibold px-3 py-1 rounded">14–16 yrs</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className="text-2xl">⭐</span>
+                  <span className="font-bold text-green-600 ml-2">85%</span>
+                </td>
+              </tr>
+              <tr className="hover:bg-slate-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-800">🛠️ AME</td>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-orange-100 text-orange-800 font-semibold px-3 py-1 rounded">8–9 yrs</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-green-100 text-green-800 font-semibold px-3 py-1 rounded">16–20 yrs</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className="text-2xl">⭐</span>
+                  <span className="font-bold text-green-600 ml-2">90%</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          <div className="bg-red-50 border-l-4 border-red-500 p-5 rounded">
+            <div className="flex items-start space-x-3">
+              <span className="text-2xl">📉</span>
+              <div>
+                <h4 className="font-bold text-red-900 mb-2">📌 Traditional Skill</h4>
+                <p className="text-red-800 text-sm leading-relaxed">
+                  Shows how quickly skills lose value without continuous learning.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-green-50 border-l-4 border-green-500 p-5 rounded">
+            <div className="flex items-start space-x-3">
+              <span className="text-2xl">🚀</span>
+              <div>
+                <h4 className="font-bold text-green-900 mb-2">💡 AI-Enhanced Skill</h4>
+                <p className="text-green-800 text-sm leading-relaxed">
+                  Proves that learning new technologies can double your career life and job security.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white p-8 rounded-lg">
         <div className="text-center">
           <TrendingUp className="w-12 h-12 mx-auto mb-4" />

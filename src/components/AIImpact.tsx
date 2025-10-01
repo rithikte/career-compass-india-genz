@@ -63,6 +63,55 @@ export const AIImpact = () => {
         ))}
       </div>
 
+      <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">AI Impact on Job Roles</h3>
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              <tr className="border-b-2 border-slate-300">
+                <th className="text-left py-4 px-4 text-slate-900 font-bold">Job Role</th>
+                <th className="text-center py-4 px-4 text-slate-900 font-bold">AI Impact (5 Years)</th>
+                <th className="text-center py-4 px-4 text-slate-900 font-bold">AI Impact (10 Years)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-800">Aerospace Engineer</td>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-orange-100 text-orange-800 font-bold px-3 py-1 rounded">28%</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-red-100 text-red-800 font-bold px-3 py-1 rounded">38%</span>
+                </td>
+              </tr>
+              <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-800">Avionics Engineer</td>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-orange-100 text-orange-800 font-bold px-3 py-1 rounded">33%</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-red-100 text-red-800 font-bold px-3 py-1 rounded">43%</span>
+                </td>
+              </tr>
+              <tr className="hover:bg-slate-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-800">Aircraft Maintenance Engineer (AME)</td>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-orange-100 text-orange-800 font-bold px-3 py-1 rounded">30%</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-red-100 text-red-800 font-bold px-3 py-1 rounded">38%</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className="mt-6 text-center">
+          <p className="text-lg font-bold text-red-600">
+            ⚠️ Ignoring AI skills reduces hiring chances by 40%.
+          </p>
+        </div>
+      </div>
+
       <div className="bg-gray-50 border-l-4 border-blue-500 p-6 rounded-lg mb-8">
         <h4 className="text-lg font-semibold text-gray-800 mb-3">AI Replace Reports Source:</h4>
         <ul className="text-gray-700 space-y-1">
