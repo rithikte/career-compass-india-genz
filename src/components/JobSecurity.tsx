@@ -1,18 +1,25 @@
-
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Shield, AlertTriangle, TrendingUp } from 'lucide-react';
 import SourceBadge from './SourceBadge';
-
-const securityData = [
-  { role: 'Aerospace Engineer', withAI: 88, withoutAI: 52, shortName: 'Aerospace' },
-  { role: 'Avionics Engineer', withAI: 91, withoutAI: 45, shortName: 'Avionics' },
-  { role: 'Aircraft Maintenance Eng.', withAI: 79, withoutAI: 58, shortName: 'Maintenance' }
-];
-
+const securityData = [{
+  role: 'Aerospace Engineer',
+  withAI: 88,
+  withoutAI: 52,
+  shortName: 'Aerospace'
+}, {
+  role: 'Avionics Engineer',
+  withAI: 91,
+  withoutAI: 45,
+  shortName: 'Avionics'
+}, {
+  role: 'Aircraft Maintenance Eng.',
+  withAI: 79,
+  withoutAI: 58,
+  shortName: 'Maintenance'
+}];
 export const JobSecurity = () => {
-  return (
-    <div className="space-y-6 sm:space-y-8">
+  return <div className="space-y-6 sm:space-y-8">
       <div className="text-center mb-8 sm:mb-12 px-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
           Job Security Analysis
@@ -33,20 +40,18 @@ export const JobSecurity = () => {
         </h3>
         <div className="h-64 sm:h-80 md:h-96">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={securityData} margin={{ top: 20, right: 10, left: 10, bottom: 40 }}>
+            <BarChart data={securityData} margin={{
+            top: 20,
+            right: 10,
+            left: 10,
+            bottom: 40
+          }}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis 
-                dataKey="shortName" 
-                angle={-45}
-                textAnchor="end"
-                height={60}
-                fontSize={12}
-              />
+              <XAxis dataKey="shortName" angle={-45} textAnchor="end" height={60} fontSize={12} />
               <YAxis fontSize={12} />
-              <Tooltip 
-                formatter={(value, name) => [`${value}%`, name]}
-                labelStyle={{ color: '#1e293b' }}
-              />
+              <Tooltip formatter={(value, name) => [`${value}%`, name]} labelStyle={{
+              color: '#1e293b'
+            }} />
               <Bar dataKey="withAI" fill="#10b981" name="With AI Skills" radius={[4, 4, 0, 0]} />
               <Bar dataKey="withoutAI" fill="#ef4444" name="Without AI Skills" radius={[4, 4, 0, 0]} />
             </BarChart>
@@ -55,11 +60,7 @@ export const JobSecurity = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        {securityData.map((item, index) => (
-          <div
-            key={item.role}
-            className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
-          >
+        {securityData.map((item, index) => <div key={item.role} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
             <h3 className="text-lg font-bold text-slate-900 mb-4">{item.role}</h3>
             
             <div className="space-y-4">
@@ -86,14 +87,11 @@ export const JobSecurity = () => {
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          </div>)}
       </div>
 
       <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-        <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">
-          Difference between Traditional Skills and AI-Enhanced Skill Career Durability
-        </h3>
+        <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Difference between Learning Traditional Skills and AI-Enhanced Skill Career Durability</h3>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
@@ -198,6 +196,5 @@ export const JobSecurity = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
