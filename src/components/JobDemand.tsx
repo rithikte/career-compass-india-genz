@@ -8,7 +8,9 @@ const demandData = [
   {
     role: 'Aerospace Engineer',
     '2025': 90000,
-    '2040': 250000,
+    '2030': 450000,
+    '2035': 1200000,
+    '2040': 2500000,
     growth: 178,
     shortName: 'Aerospace',
     why: 'ISRO missions + defense expansion'
@@ -16,7 +18,9 @@ const demandData = [
   {
     role: 'Avionics Engineer',
     '2025': 35000,
-    '2040': 140000,
+    '2030': 280000,
+    '2035': 800000,
+    '2040': 1400000,
     growth: 300,
     shortName: 'Avionics',
     why: 'Smart aircraft systems boom'
@@ -24,7 +28,9 @@ const demandData = [
   {
     role: 'Aircraft Maintenance Eng.',
     '2025': 60000,
-    '2040': 250000,
+    '2030': 500000,
+    '2035': 1600000,
+    '2040': 2500000,
     growth: 317,
     shortName: 'Maintenance',
     why: 'India becoming global MRO hub'
@@ -100,22 +106,34 @@ export const JobDemand = () => {
           >
             <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-4">{item.role}</h3>
             
-            <div className="space-y-4">
+            <div className="space-y-3">
               <div className="flex justify-between items-center">
-                <span className="text-gray-600">2025 Jobs</span>
+                <span className="text-gray-600 text-sm">2025 Jobs</span>
                 <span className="font-bold text-blue-600">
                   {(item['2025']/1000).toFixed(0)}K
                 </span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-600">2040 Jobs</span>
+                <span className="text-gray-600 text-sm">2030 Jobs</span>
+                <span className="font-bold text-indigo-600">
+                  {item['2030'] >= 1000000 ? `${(item['2030']/1000000).toFixed(1)}M` : `${(item['2030']/1000).toFixed(0)}K`}
+                </span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-gray-600 text-sm">2035 Jobs</span>
+                <span className="font-bold text-purple-600">
+                  {item['2035'] >= 1000000 ? `${(item['2035']/1000000).toFixed(1)}M` : `${(item['2035']/1000).toFixed(0)}K`}
+                </span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-gray-600 text-sm">2040 Jobs</span>
                 <span className="font-bold text-green-600">
-                  {item['2040'] >= 100000 ? `${(item['2040']/100000).toFixed(1)}M` : `${(item['2040']/1000).toFixed(0)}K`}
+                  {item['2040'] >= 1000000 ? `${(item['2040']/1000000).toFixed(1)}M` : `${(item['2040']/1000).toFixed(0)}K`}
                 </span>
               </div>
               <div className="border-t pt-3">
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Growth</span>
+                  <span className="text-gray-600">Total Growth</span>
                   <span className={`font-bold px-3 py-1 rounded-full text-sm ${
                     item.growth >= 1000 ? 'bg-red-100 text-red-800' :
                     item.growth >= 300 ? 'bg-orange-100 text-orange-800' :
@@ -142,16 +160,20 @@ export const JobDemand = () => {
         <div className="text-center">
           <h3 className="text-2xl font-bold mb-4">🚀 Demand Explosion Alert</h3>
           <p className="text-red-200 text-lg mb-6">
-            Aircraft Maintenance Engineering will see 317% growth - from 60K to 2.5 Lakh jobs!
+            Aircraft Maintenance Engineering will see 317% growth - from 60K (2025) to 25 Lakh jobs by 2040!
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-red-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-3xl font-bold">2.5 Lakh</div>
-              <div className="text-red-200">Maintenance Jobs by 2040</div>
+              <div className="text-3xl font-bold">25L</div>
+              <div className="text-red-200">Aerospace by 2040</div>
             </div>
             <div className="bg-orange-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-3xl font-bold">1.4 Lakh</div>
-              <div className="text-orange-200">Avionics Jobs</div>
+              <div className="text-3xl font-bold">14L</div>
+              <div className="text-orange-200">Avionics by 2040</div>
+            </div>
+            <div className="bg-yellow-500 bg-opacity-30 p-4 rounded-lg">
+              <div className="text-3xl font-bold">25L</div>
+              <div className="text-yellow-200">Maintenance by 2040</div>
             </div>
           </div>
         </div>
