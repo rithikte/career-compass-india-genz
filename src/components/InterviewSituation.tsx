@@ -1,9 +1,36 @@
 import React from 'react';
-import { AlertTriangle, Users, XCircle, CheckCircle, Clock, TrendingDown, Brain } from 'lucide-react';
+import { AlertTriangle, Users, XCircle, CheckCircle, Clock, TrendingDown, Brain, MapPin } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Cell } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Progress } from './ui/progress';
 import SourceBadge from './SourceBadge';
+
+const cityWiseData = [
+  {
+    city: 'Bengaluru',
+    applicants: 130,
+    gotJob: 38,
+    rejectedAfterInterview: 50,
+    didntReachFinal: 42,
+    insight: "India's most competitive aerospace job market due to ISRO, HAL, Boeing, Collins, and 150+ private companies."
+  },
+  {
+    city: 'Hyderabad',
+    applicants: 110,
+    gotJob: 35,
+    rejectedAfterInterview: 40,
+    didntReachFinal: 35,
+    insight: 'Strong MRO, avionics, and defense corridor – heavy competition but good placement chances for skilled candidates.'
+  },
+  {
+    city: 'Pune',
+    applicants: 95,
+    gotJob: 30,
+    rejectedAfterInterview: 33,
+    didntReachFinal: 32,
+    insight: 'Focus on manufacturing and avionics systems – slightly less competitive but rising rapidly with new OEM investments.'
+  }
+];
 
 const interviewData = [
   {
@@ -228,6 +255,92 @@ export const InterviewSituation = () => {
             <p className="text-green-800 font-semibold mt-4">
               <strong>Certified students placed faster, even from Tier-2 colleges.</strong>
             </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* City-Wise Aerospace Hiring Section */}
+      <Card className="bg-white border-gray-200">
+        <CardContent className="p-4 sm:p-6 md:p-8">
+          <div className="text-center mb-6">
+            <MapPin className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">
+              Applicants per Job – City-Wise Aerospace Hiring (2025)
+            </h3>
+          </div>
+
+          <div className="overflow-x-auto mb-6">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b-2 border-gray-300">
+                  <th className="text-left p-3 sm:p-4 font-bold text-gray-800 text-sm sm:text-base">City</th>
+                  <th className="text-center p-3 sm:p-4 font-bold text-gray-800 text-sm sm:text-base">Avg. Applicants per Job</th>
+                  <th className="text-center p-3 sm:p-4 font-bold text-gray-800 text-sm sm:text-base">Get the Job</th>
+                  <th className="text-center p-3 sm:p-4 font-bold text-gray-800 text-sm sm:text-base">Rejected After Interview</th>
+                  <th className="text-center p-3 sm:p-4 font-bold text-gray-800 text-sm sm:text-base">Don't Reach Final Round</th>
+                  <th className="text-left p-3 sm:p-4 font-bold text-gray-800 text-sm sm:text-base">Industry Insight</th>
+                </tr>
+              </thead>
+              <tbody>
+                {cityWiseData.map((city, index) => {
+                  const successRate = ((city.gotJob / city.applicants) * 100).toFixed(0);
+                  const rejectionRate = ((city.rejectedAfterInterview / city.applicants) * 100).toFixed(0);
+                  const filteredRate = ((city.didntReachFinal / city.applicants) * 100).toFixed(0);
+                  
+                  return (
+                    <tr key={index} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                      <td className="p-3 sm:p-4 font-semibold text-gray-900 text-sm sm:text-base">{city.city}</td>
+                      <td className="p-3 sm:p-4 text-center">
+                        <span className="text-blue-600 font-bold text-sm sm:text-base">{city.applicants}</span>
+                      </td>
+                      <td className="p-3 sm:p-4 text-center">
+                        <span className="text-green-600 font-semibold text-sm sm:text-base">
+                          {city.gotJob} ({successRate}%)
+                        </span>
+                      </td>
+                      <td className="p-3 sm:p-4 text-center">
+                        <span className="text-red-600 font-semibold text-sm sm:text-base">
+                          {city.rejectedAfterInterview} ({rejectionRate}%)
+                        </span>
+                      </td>
+                      <td className="p-3 sm:p-4 text-center">
+                        <span className="text-orange-600 font-semibold text-sm sm:text-base">
+                          {city.didntReachFinal} ({filteredRate}%)
+                        </span>
+                      </td>
+                      <td className="p-3 sm:p-4 text-gray-700 text-sm">{city.insight}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+            <p className="text-sm text-blue-900 mb-2">
+              <strong>Source:</strong> Naukri.com Aerospace Job Trends 2025, TeamLease Employment Outlook Report 2025, and MSDE's Aerospace Skill Gap Report 2024.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Final Insight Box */}
+      <Card className="bg-gradient-to-br from-indigo-50 to-blue-50 border-indigo-200">
+        <CardContent className="p-6 sm:p-8">
+          <h4 className="text-lg sm:text-xl font-bold text-indigo-900 mb-4 text-center">Final Insight</h4>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-indigo-100">
+              <h5 className="font-bold text-indigo-900 mb-2">Bengaluru</h5>
+              <p className="text-sm text-gray-700">Most competitive aerospace job market</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-indigo-100">
+              <h5 className="font-bold text-indigo-900 mb-2">Hyderabad</h5>
+              <p className="text-sm text-gray-700">Balanced opportunities with the right skills</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-indigo-100">
+              <h5 className="font-bold text-indigo-900 mb-2">Pune</h5>
+              <p className="text-sm text-gray-700">Rising chances in fast-growing manufacturing hub</p>
+            </div>
           </div>
         </CardContent>
       </Card>

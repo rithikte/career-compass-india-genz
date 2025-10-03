@@ -1,6 +1,43 @@
 import React from 'react';
-import { TrendingUp, Users, Globe, Target, Flag, Award } from 'lucide-react';
+import { TrendingUp, Users, Globe, Target, Flag, Award, Plane } from 'lucide-react';
 import SourceBadge from './SourceBadge';
+
+const visionImpactData = [
+  {
+    icon: '🇮🇳',
+    projection: '70% of aircraft assembled in India by 2040',
+    source: 'Government "Vision 2040 for Civil Aviation"',
+    meaning: 'Massive demand for aerospace engineers and manufacturing talent'
+  },
+  {
+    icon: '🇮🇳',
+    projection: '90% of MRO done domestically by 2040',
+    source: 'Government "Vision 2040"',
+    meaning: 'Huge growth for AME careers and maintenance companies'
+  },
+  {
+    icon: '📈',
+    projection: 'Thousands of new aircraft needed in India over next 20 years',
+    source: 'Airbus Global Market Forecast',
+    meaning: 'Long-term hiring for design, testing, avionics, and production'
+  }
+];
+
+const careerImpacts = [
+  {
+    role: 'Aerospace Engineers',
+    description: 'will design the aircraft India flies and exports'
+  },
+  {
+    role: 'Avionics Engineers',
+    description: 'will build the systems that make them smart and safe'
+  },
+  {
+    role: 'Maintenance Engineers (AME)',
+    description: 'will keep them flying every single day'
+  }
+];
+
 const india2040Metrics = [{
   metric: 'GDP Contribution',
   current: '0.8%',
@@ -80,6 +117,61 @@ export const India2040 = () => {
           <SourceBadge href="https://www.niti.gov.in/reports" label="NITI Aayog Reports" />
           <SourceBadge href="https://www.vision2047.gov.in" label="Vision 2047 Portal" />
           <SourceBadge href="https://www.ey.com/en_in/aerospace-defense" label="EY India Research" />
+        </div>
+      </div>
+
+      {/* 2040 Impact Vision Section */}
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-gray-100">
+        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6 text-center">
+          🇮🇳 2040 Impact Vision
+        </h3>
+        
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse">
+            <thead>
+              <tr className="border-b-2 border-gray-300">
+                <th className="text-left p-3 sm:p-4 font-bold text-gray-800 text-sm sm:text-base">Key Projection</th>
+                <th className="text-left p-3 sm:p-4 font-bold text-gray-800 text-sm sm:text-base">Source</th>
+                <th className="text-left p-3 sm:p-4 font-bold text-gray-800 text-sm sm:text-base">Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              {visionImpactData.map((item, index) => (
+                <tr key={index} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <td className="p-3 sm:p-4">
+                    <div className="flex items-start gap-2">
+                      <span className="text-xl flex-shrink-0">{item.icon}</span>
+                      <span className="text-sm sm:text-base text-gray-800">{item.projection}</span>
+                    </div>
+                  </td>
+                  <td className="p-3 sm:p-4 text-sm sm:text-base text-gray-600">{item.source}</td>
+                  <td className="p-3 sm:p-4 text-sm sm:text-base text-gray-700 font-medium">{item.meaning}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* What You Will Help Build Section */}
+      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-blue-200">
+        <div className="text-center mb-6">
+          <Plane className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+          <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
+            What You Will Help Build
+          </h3>
+          <p className="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto mb-6">
+            These careers are not just jobs — they are part of India's long-term plan to become a global aviation power.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          {careerImpacts.map((career, index) => (
+            <div key={index} className="bg-white rounded-lg p-6 shadow-sm border border-blue-100">
+              <h4 className="text-lg font-bold text-blue-900 mb-2">{career.role}</h4>
+              <p className="text-gray-700">{career.description}</p>
+            </div>
+          ))}
         </div>
       </div>
 
