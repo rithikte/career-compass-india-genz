@@ -1,276 +1,214 @@
 import React from 'react';
-import { AlertTriangle, Users, XCircle, CheckCircle, Clock, TrendingDown, Brain } from 'lucide-react';
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Cell } from 'recharts';
+import { MapPin, CheckCircle, XCircle, TrendingUp, Building2 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Progress } from './ui/progress';
 import SourceBadge from './SourceBadge';
 
-const interviewData = [
+const cityData = [
   {
-    role: "Aircraft Maintenance Eng.",
-    applicants: 120,
-    gotJob: 45,
-    rejectedAfterInterview: 42,
-    didntReachFinal: 33,
-    rejectionReasons: "No DGCA certs, poor MRO tool skills"
+    city: 'Bengaluru',
+    avgApplicants: 130,
+    getJob: 38,
+    getJobPercent: 29,
+    rejectedAfterInterview: 50,
+    rejectedPercent: 38,
+    dontReachFinal: 42,
+    dontReachPercent: 33,
+    insight: "India's most competitive aerospace job market due to ISRO, HAL, Boeing, Collins, and 150+ private companies."
   },
   {
-    role: "Aerospace Engineer",
-    applicants: 100,
-    gotJob: 33,
+    city: 'Hyderabad',
+    avgApplicants: 110,
+    getJob: 35,
+    getJobPercent: 32,
+    rejectedAfterInterview: 40,
+    rejectedPercent: 36,
+    dontReachFinal: 35,
+    dontReachPercent: 32,
+    insight: "Strong MRO, avionics, and defense corridor – heavy competition but good placement chances for skilled candidates."
+  },
+  {
+    city: 'Pune',
+    avgApplicants: 95,
+    getJob: 30,
+    getJobPercent: 32,
     rejectedAfterInterview: 33,
-    didntReachFinal: 34,
-    rejectionReasons: "Lacking CAD/CFD, simulation knowledge"
-  },
-  {
-    role: "Avionics Engineer",
-    applicants: 110,
-    gotJob: 27,
-    rejectedAfterInterview: 44,
-    didntReachFinal: 39,
-    rejectionReasons: "No embedded/VHDL skills, weak circuit logic"
+    rejectedPercent: 35,
+    dontReachFinal: 32,
+    dontReachPercent: 33,
+    insight: "Focus on manufacturing and avionics systems – slightly less competitive but rising rapidly with new OEM investments."
   }
 ];
 
 export const InterviewSituation = () => {
-  // Transform data for chart visualization
-  const chartData = interviewData.map(item => ({
-    name: item.role.split(' ')[0], // Shortened name for chart
-    success: ((item.gotJob / item.applicants) * 100).toFixed(1),
-    rejection: ((item.rejectedAfterInterview / item.applicants) * 100).toFixed(1),
-    filtered: ((item.didntReachFinal / item.applicants) * 100).toFixed(1),
-  }));
-
-  const getSuccessRate = (gotJob: number, applicants: number) => (gotJob / applicants) * 100;
-
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 sm:space-y-8">
       {/* Header */}
-      <div className="text-center space-y-4 px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-          The Interview Reality Check
+      <div className="text-center mb-8 sm:mb-12 px-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Applicants per Job – City-Wise Aerospace Hiring (2025)
         </h2>
         <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-          What actually happens when 100+ students compete for aviation jobs
+          Understanding the competition and your chances in top aerospace cities
         </p>
         <div className="flex flex-wrap justify-center gap-2 mt-4">
-          <SourceBadge href="https://www.aicte-india.org/feedback/placement-statistics" label="AICTE Placement Data" />
-          <SourceBadge href="https://www.naukri.com/company-reviews/aerospace-companies" label="Naukri Reviews" />
-          <SourceBadge href="https://www.glassdoor.co.in/Interview/aerospace-engineer-interview-questions" label="Glassdoor Interviews" />
+          <SourceBadge href="https://www.naukri.com/aerospace-jobs" label="Naukri.com Aerospace Job Trends 2025" />
+          <SourceBadge href="https://www.teamlease.com" label="TeamLease Employment Outlook Report 2025" />
+          <SourceBadge href="https://msde.gov.in/reports" label="MSDE Aerospace Skill Gap Report 2024" />
         </div>
       </div>
 
-      {/* Overall Statistics */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
-        <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
-          <CardContent className="p-6 text-center">
-            <Users className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-blue-900">110</div>
-            <div className="text-sm text-blue-700">Avg Applicants per Job</div>
-          </CardContent>
-        </Card>
-        
-        <Card className="bg-gradient-to-br from-green-50 to-green-100 border-green-200">
-          <CardContent className="p-6 text-center">
-            <CheckCircle className="w-8 h-8 text-green-600 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-green-900">35</div>
-            <div className="text-sm text-green-700">Get the Job</div>
-          </CardContent>
-        </Card>
-        
-        <Card className="bg-gradient-to-br from-red-50 to-red-100 border-red-200">
-          <CardContent className="p-6 text-center">
-            <XCircle className="w-8 h-8 text-red-600 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-red-900">40</div>
-            <div className="text-sm text-red-700">Rejected After Interview</div>
-          </CardContent>
-        </Card>
-        
-        <Card className="bg-gradient-to-br from-orange-50 to-orange-100 border-orange-200">
-          <CardContent className="p-6 text-center">
-            <Clock className="w-8 h-8 text-orange-600 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-orange-900">35</div>
-            <div className="text-sm text-orange-700">Don't Reach Final Round</div>
-          </CardContent>
-        </Card>
+      {/* City Cards - Mobile */}
+      <div className="block lg:hidden space-y-4 px-4">
+        {cityData.map((city, index) => (
+          <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-all duration-300">
+            <CardHeader className="pb-4">
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center space-x-2">
+                  <MapPin className="w-5 h-5 text-blue-600" />
+                  <CardTitle className="text-xl font-bold text-slate-900">{city.city}</CardTitle>
+                </div>
+                <Building2 className="w-6 h-6 text-gray-400" />
+              </div>
+              <div className="text-sm text-gray-600">
+                <span className="font-semibold">Avg. Applicants per Job:</span>{' '}
+                <span className="text-lg font-bold text-red-600">{city.avgApplicants}</span>
+              </div>
+            </CardHeader>
+            
+            <CardContent className="space-y-4">
+              {/* Get the Job */}
+              <div className="bg-green-50 rounded-lg p-4">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-4 h-4 text-green-600" />
+                    <span className="text-sm font-semibold text-gray-900">Get the Job</span>
+                  </div>
+                  <span className="text-lg font-bold text-green-600">
+                    {city.getJob} ({city.getJobPercent}%)
+                  </span>
+                </div>
+              </div>
+
+              {/* Rejected After Interview */}
+              <div className="bg-red-50 rounded-lg p-4">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center space-x-2">
+                    <XCircle className="w-4 h-4 text-red-600" />
+                    <span className="text-sm font-semibold text-gray-900">Rejected After Interview</span>
+                  </div>
+                  <span className="text-lg font-bold text-red-600">
+                    {city.rejectedAfterInterview} ({city.rejectedPercent}%)
+                  </span>
+                </div>
+              </div>
+
+              {/* Don't Reach Final Round */}
+              <div className="bg-orange-50 rounded-lg p-4">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center space-x-2">
+                    <TrendingUp className="w-4 h-4 text-orange-600" />
+                    <span className="text-sm font-semibold text-gray-900">Don't Reach Final Round</span>
+                  </div>
+                  <span className="text-lg font-bold text-orange-600">
+                    {city.dontReachFinal} ({city.dontReachPercent}%)
+                  </span>
+                </div>
+              </div>
+
+              {/* Industry Insight */}
+              <div className="bg-blue-50 rounded-lg p-4">
+                <div className="text-xs font-semibold text-blue-900 mb-2">Industry Insight:</div>
+                <div className="text-sm text-blue-800 leading-relaxed">{city.insight}</div>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
       </div>
 
-      {/* Success Rate Chart */}
-      <Card className="p-4 sm:p-6">
-        <CardHeader>
-          <CardTitle className="text-center text-lg sm:text-xl font-bold text-gray-800">
-            Success Rate by Job Role
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="h-48 sm:h-56 md:h-64">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={chartData} margin={{ top: 10, right: 10, left: 0, bottom: 60 }}>
-                <XAxis 
-                  dataKey="name" 
-                  angle={-45}
-                  textAnchor="end"
-                  height={80}
-                  interval={0}
-                  fontSize={10}
-                />
-                <YAxis fontSize={10} />
-                <Bar dataKey="success" fill="#22c55e" radius={[4, 4, 0, 0]} />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-        </CardContent>
-      </Card>
+      {/* City Table - Desktop */}
+      <div className="hidden lg:block overflow-x-auto px-4">
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <table className="w-full border-collapse">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="text-left py-4 px-6 text-sm font-bold text-gray-900 border-b-2 border-gray-300">City</th>
+                <th className="text-center py-4 px-6 text-sm font-bold text-gray-900 border-b-2 border-gray-300">Avg. Applicants per Job</th>
+                <th className="text-center py-4 px-6 text-sm font-bold text-gray-900 border-b-2 border-gray-300">Get the Job</th>
+                <th className="text-center py-4 px-6 text-sm font-bold text-gray-900 border-b-2 border-gray-300">Rejected After Interview</th>
+                <th className="text-center py-4 px-6 text-sm font-bold text-gray-900 border-b-2 border-gray-300">Don't Reach Final Round</th>
+                <th className="text-left py-4 px-6 text-sm font-bold text-gray-900 border-b-2 border-gray-300">Industry Insight</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cityData.map((city, index) => (
+                <tr key={index} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <td className="py-4 px-6">
+                    <div className="flex items-center space-x-2">
+                      <MapPin className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                      <span className="text-sm font-bold text-slate-900">{city.city}</span>
+                    </div>
+                  </td>
+                  <td className="py-4 px-6 text-center">
+                    <span className="text-sm font-bold text-red-600">{city.avgApplicants}</span>
+                  </td>
+                  <td className="py-4 px-6 text-center">
+                    <div className="text-sm font-bold text-green-600">
+                      {city.getJob} ({city.getJobPercent}%)
+                    </div>
+                  </td>
+                  <td className="py-4 px-6 text-center">
+                    <div className="text-sm font-bold text-red-600">
+                      {city.rejectedAfterInterview} ({city.rejectedPercent}%)
+                    </div>
+                  </td>
+                  <td className="py-4 px-6 text-center">
+                    <div className="text-sm font-bold text-orange-600">
+                      {city.dontReachFinal} ({city.dontReachPercent}%)
+                    </div>
+                  </td>
+                  <td className="py-4 px-6">
+                    <span className="text-xs text-gray-700 leading-relaxed">{city.insight}</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-      {/* Individual Role Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        {interviewData.map((item, index) => {
-          const successRate = getSuccessRate(item.gotJob, item.applicants);
-          const rejectionRate = (item.rejectedAfterInterview / item.applicants) * 100;
-          const filteredRate = (item.didntReachFinal / item.applicants) * 100;
+      {/* Final Insight */}
+      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 sm:p-8 md:p-10 rounded-lg mx-4">
+        <div className="text-center">
+          <TrendingUp className="w-12 h-12 mx-auto mb-4" />
+          <h3 className="text-2xl sm:text-3xl font-bold mb-6">Final Insight</h3>
           
-          return (
-            <Card key={index} className="hover:shadow-lg transition-shadow">
-              <CardHeader className="pb-4">
-                <CardTitle className="text-lg font-semibold text-gray-800 leading-tight">
-                  {item.role}
-                </CardTitle>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <Users className="w-4 h-4" />
-                  <span>{item.applicants} applicants per 100 jobs</span>
-                </div>
-              </CardHeader>
-              
-              <CardContent className="space-y-4">
-                {/* Success Rate */}
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-green-600" />
-                      <span className="text-sm font-medium">Got Job</span>
-                    </div>
-                    <span className="text-lg font-bold text-green-600">
-                      {item.gotJob} ({successRate.toFixed(1)}%)
-                    </span>
-                  </div>
-                  <Progress value={successRate} className="h-2" />
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+            <div className="bg-white bg-opacity-10 rounded-lg p-6 backdrop-blur-sm border border-white border-opacity-20">
+              <MapPin className="w-8 h-8 mb-3 text-blue-200" />
+              <h4 className="text-lg font-bold mb-2">Bengaluru</h4>
+              <p className="text-blue-100 text-sm leading-relaxed">
+                The most competitive aerospace job market
+              </p>
+            </div>
 
-                {/* Rejection After Interview */}
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <XCircle className="w-4 h-4 text-red-600" />
-                      <span className="text-sm font-medium">Rejected</span>
-                    </div>
-                    <span className="text-lg font-bold text-red-600">
-                      {item.rejectedAfterInterview} ({rejectionRate.toFixed(1)}%)
-                    </span>
-                  </div>
-                  <Progress value={rejectionRate} className="h-2" />
-                </div>
+            <div className="bg-white bg-opacity-10 rounded-lg p-6 backdrop-blur-sm border border-white border-opacity-20">
+              <CheckCircle className="w-8 h-8 mb-3 text-green-200" />
+              <h4 className="text-lg font-bold mb-2">Hyderabad</h4>
+              <p className="text-blue-100 text-sm leading-relaxed">
+                Offers balanced opportunities with the right skills
+              </p>
+            </div>
 
-                {/* Didn't Reach Final */}
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-orange-600" />
-                      <span className="text-sm font-medium">Filtered Out</span>
-                    </div>
-                    <span className="text-lg font-bold text-orange-600">
-                      {item.didntReachFinal} ({filteredRate.toFixed(1)}%)
-                    </span>
-                  </div>
-                  <Progress value={filteredRate} className="h-2" />
-                </div>
-
-                {/* Rejection Reasons */}
-                <div className="mt-4 p-3 bg-gray-50 rounded-lg">
-                  <div className="text-xs font-medium text-gray-600 mb-1">Main Issues:</div>
-                  <div className="text-sm text-gray-800">{item.rejectionReasons}</div>
-                </div>
-              </CardContent>
-            </Card>
-          );
-        })}
-      </div>
-
-      {/* Source */}
-      <Card className="bg-blue-50 border-blue-200">
-        <CardContent className="p-6">
-          <div className="flex items-start gap-3">
-            <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-            <div>
-              <p className="text-sm text-blue-800">
-                <strong>Source:</strong> Data compiled from surveys, placement reports, and HR feedback from top Indian aviation and aerospace companies, including reports from AICTE, NSDC, and job portals like Naukri.com (2023-2025).
+            <div className="bg-white bg-opacity-10 rounded-lg p-6 backdrop-blur-sm border border-white border-opacity-20">
+              <TrendingUp className="w-8 h-8 mb-3 text-purple-200" />
+              <h4 className="text-lg font-bold mb-2">Pune</h4>
+              <p className="text-blue-100 text-sm leading-relaxed">
+                Provides rising chances in a fast-growing manufacturing hub
               </p>
             </div>
           </div>
-        </CardContent>
-      </Card>
-
-      {/* Certification Impact */}
-      <Card className="bg-gradient-to-r from-green-50 to-emerald-50 border-green-200 mb-8">
-        <CardContent className="p-8">
-          <div className="text-center">
-            <CheckCircle className="w-12 h-12 text-green-600 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-green-900 mb-4">Certified vs Non-Certified Reality</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-green-100 p-6 rounded-lg">
-                <div className="text-4xl font-bold text-green-800">65%</div>
-                <div className="text-green-700">Certified Students Placement Success</div>
-              </div>
-              <div className="bg-red-100 p-6 rounded-lg">
-                <div className="text-4xl font-bold text-red-800">30%</div>
-                <div className="text-red-700">Non-Certified Students Success</div>
-              </div>
-            </div>
-            <p className="text-green-800 font-semibold mt-4">
-              <strong>Certified students placed faster, even from Tier-2 colleges.</strong>
-            </p>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Alert Section */}
-      <Card className="bg-gradient-to-r from-red-50 to-orange-50 border-red-200">
-        <CardContent className="p-8">
-          <div className="flex items-start gap-4">
-            <div className="bg-red-100 p-3 rounded-full">
-              <AlertTriangle className="w-8 h-8 text-red-600" />
-            </div>
-            <div className="flex-1">
-              <h3 className="text-2xl font-bold text-red-900 mb-6">Why 70% Students Don't Get Jobs</h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-red-100">
-                  <div className="bg-red-100 p-3 rounded-full w-fit mb-4">
-                    <TrendingDown className="w-6 h-6 text-red-600" />
-                  </div>
-                  <h4 className="font-bold text-red-900 mb-2">No Real Skills</h4>
-                  <p className="text-red-800 text-sm">Just degrees, no hands-on tools or practical experience</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-red-100">
-                  <div className="bg-red-100 p-3 rounded-full w-fit mb-4">
-                    <Brain className="w-6 h-6 text-red-600" />
-                  </div>
-                  <h4 className="font-bold text-red-900 mb-2">No AI/Tech Awareness</h4>
-                  <p className="text-red-800 text-sm">They fear AI but don't know how to work with it</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-red-100">
-                  <div className="bg-red-100 p-3 rounded-full w-fit mb-4">
-                    <XCircle className="w-6 h-6 text-red-600" />
-                  </div>
-                  <h4 className="font-bold text-red-900 mb-2">Zero Industry Prep</h4>
-                  <p className="text-red-800 text-sm">No internships, certifications, or career clarity</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </div>
   );
 };
