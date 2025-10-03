@@ -146,6 +146,36 @@ const getLevelColor = (level: string) => {
   }
 };
 
+const universalCertifications = [
+  {
+    stage: 'Foundation',
+    course: 'AS9100D – Aerospace Quality Management System (QMS)',
+    provider: '(TÜV SÜD / BSI / SGS)',
+    duration: '1.5 months',
+    readiness: 'Builds foundation in aerospace quality & compliance',
+    subjectGain: '~20%',
+    whenToPursue: '1st Year (Sem 2) – after completing basic Physics/Math/Intro engineering'
+  },
+  {
+    stage: 'Specialization',
+    course: 'ICAO Safety Management System (SMS) + Human Factors',
+    provider: '(ICAO / IATA / CAAi)',
+    duration: '2 months',
+    readiness: 'Adds safety-first mindset & human factor awareness',
+    subjectGain: '~20%',
+    whenToPursue: '2nd Year (Sem 3) – alongside early core aviation/electronics subjects'
+  },
+  {
+    stage: 'Advanced',
+    course: 'Airworthiness & Certification Awareness (EASA Part-21 / DOA-POA Basics)',
+    provider: '(EASA / Sofema / CAAi)',
+    duration: '2.5 months',
+    readiness: 'Provides regulatory knowledge across design, avionics & maintenance',
+    subjectGain: '~15%',
+    whenToPursue: '2nd Year (Sem 4 end / summer break) – before entering 3rd year specialization'
+  }
+];
+
 export const CertificationStack = () => {
   return (
     <div className="space-y-6 sm:space-y-8">
@@ -161,6 +191,133 @@ export const CertificationStack = () => {
           <SourceBadge href="https://www.coursera.org/iit" label="IIT Coursera" />
           <SourceBadge href="https://dgca.gov.in/training" label="DGCA Training" />
         </div>
+      </div>
+
+      {/* Universal Certifications Section */}
+      <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 md:p-10 mb-8">
+        <div className="text-center mb-8">
+          <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
+            Universal Certifications
+          </h3>
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+            For Aerospace, Avionics, Aircraft Maintenance Engineering
+          </p>
+        </div>
+
+        {/* Universal Certifications Table - Mobile */}
+        <div className="block lg:hidden space-y-4 mb-8">
+          {universalCertifications.map((cert, index) => (
+            <div key={index} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+              <div className="flex items-center justify-between mb-3">
+                <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${getLevelColor(cert.stage)}`}>
+                  {cert.stage}
+                </span>
+                <span className="text-sm font-bold text-blue-600">{cert.duration}</span>
+              </div>
+              <h4 className="text-sm font-bold text-gray-900 mb-1">{cert.course}</h4>
+              <p className="text-xs text-gray-500 mb-3">{cert.provider}</p>
+              <div className="space-y-2 text-xs">
+                <div className="flex justify-between">
+                  <span className="text-gray-600 font-medium">Readiness:</span>
+                  <span className="text-gray-900">{cert.readiness}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600 font-medium">Subject Gain:</span>
+                  <span className="text-green-600 font-bold">{cert.subjectGain}</span>
+                </div>
+                <div className="pt-2 border-t">
+                  <span className="text-gray-600 font-medium block mb-1">When to Pursue:</span>
+                  <span className="text-gray-700">{cert.whenToPursue}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Universal Certifications Table - Desktop */}
+        <div className="hidden lg:block overflow-x-auto mb-8">
+          <table className="w-full border-collapse">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="text-left py-3 px-4 text-sm font-bold text-gray-900 border-b-2 border-gray-300">Stage</th>
+                <th className="text-left py-3 px-4 text-sm font-bold text-gray-900 border-b-2 border-gray-300">Course / Focus</th>
+                <th className="text-center py-3 px-4 text-sm font-bold text-gray-900 border-b-2 border-gray-300">Duration</th>
+                <th className="text-left py-3 px-4 text-sm font-bold text-gray-900 border-b-2 border-gray-300">Readiness After Completion</th>
+                <th className="text-center py-3 px-4 text-sm font-bold text-gray-900 border-b-2 border-gray-300">Subject Gain %</th>
+                <th className="text-left py-3 px-4 text-sm font-bold text-gray-900 border-b-2 border-gray-300">When to Pursue</th>
+              </tr>
+            </thead>
+            <tbody>
+              {universalCertifications.map((cert, index) => (
+                <tr key={index} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <td className="py-4 px-4">
+                    <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${getLevelColor(cert.stage)}`}>
+                      {cert.stage}
+                    </span>
+                  </td>
+                  <td className="py-4 px-4">
+                    <div>
+                      <div className="text-sm font-bold text-gray-900 mb-1">{cert.course}</div>
+                      <div className="text-xs text-gray-500">{cert.provider}</div>
+                    </div>
+                  </td>
+                  <td className="py-4 px-4 text-center">
+                    <span className="text-sm font-bold text-blue-600">{cert.duration}</span>
+                  </td>
+                  <td className="py-4 px-4">
+                    <span className="text-sm text-gray-700">{cert.readiness}</span>
+                  </td>
+                  <td className="py-4 px-4 text-center">
+                    <span className="text-sm font-bold text-green-600">{cert.subjectGain}</span>
+                  </td>
+                  <td className="py-4 px-4">
+                    <span className="text-xs text-gray-700 leading-relaxed">{cert.whenToPursue}</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Role Fitment Exam Section */}
+        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6 sm:p-8 border-2 border-blue-200">
+          <div className="flex items-start space-x-4">
+            <div className="flex-shrink-0">
+              <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                <Target className="w-6 h-6 text-white" />
+              </div>
+            </div>
+            <div className="flex-1">
+              <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+                Role Fitment Exam
+              </h4>
+              <div className="space-y-3 text-sm sm:text-base text-gray-700 leading-relaxed">
+                <p>
+                  ✅ After you smash the 3 Universal Certs, you'll take a <span className="font-bold">Role Fitment Exam</span>.
+                </p>
+                <p>
+                  ✅ This test isn't about marks — it's about showing you where you truly shine: <span className="font-bold">Aerospace, Avionics, or AME</span>.
+                </p>
+                <p>
+                  ✅ No more guesswork, no more pressure — just a career path that matches your real skills + strengths.
+                </p>
+                <p>
+                  ✅ And once you know your fit, you'll dive into <span className="font-bold">3 Job-Role Specific Certifications</span> — making you <span className="font-bold text-green-600">100% job-ready</span> before college placements.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Role-Specific Certifications Section */}
+      <div className="text-center mb-8 px-4">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+          Job-Role Specific Certifications
+        </h3>
+        <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+          After identifying your ideal role, complete these specialized certifications
+        </p>
       </div>
 
       {certificationPaths.map((path, pathIndex) => (
