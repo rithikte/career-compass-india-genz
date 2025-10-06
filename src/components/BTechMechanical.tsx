@@ -260,73 +260,110 @@ export const BTechMechanical = () => {
         
       </Card>
 
-      {/* What You'll Study in College */}
-      <Card className="border-2 border-blue-200">
-        <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50">
-          <CardTitle className="flex items-center gap-3 text-2xl text-blue-900">
-            <div className="p-2 bg-blue-100 rounded-lg">
-              <BookOpen className="h-6 w-6 text-blue-600" />
+      {/* What You'll Study in College - B.Tech Mechanical (Aviation Industry Focus) */}
+      <Card className="border-2 border-primary/20">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-3 text-2xl">
+            <div className="p-2 bg-primary/10 rounded-lg">
+              <BookOpen className="h-6 w-6 text-primary" />
             </div>
-            What You'll Study in College (Related to Waves & Oscillations)
+            What You'll Study in College – B.Tech Mechanical (Aviation Industry Focus)
           </CardTitle>
-          
+          <CardDescription className="text-lg font-semibold">
+            Year-by-year curriculum breakdown with real-world aviation applications
+          </CardDescription>
         </CardHeader>
         <CardContent className="p-6">
-          {/* Year-wise curriculum table */}
-          <div className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4">
-              <div className="grid grid-cols-2 gap-4 font-bold text-lg">
-                <div>Year</div>
-                <div>Subjects You'll Touch</div>
+          <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
+            <div className="bg-gradient-to-r from-primary to-secondary text-white p-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-bold text-sm md:text-base">
+                <div className="flex items-center gap-2">
+                  <Clock className="h-5 w-5" />
+                  <span>Year</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <BookOpen className="h-5 w-5" />
+                  <span>Subjects You'll Study</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Brain className="h-5 w-5" />
+                  <span>What You'll Learn (Simple English)</span>
+                </div>
               </div>
             </div>
             
             <div className="divide-y divide-gray-200">
-              <div className="grid grid-cols-2 gap-4 p-4 hover:bg-gray-50">
-                <div className="font-bold text-blue-600 text-lg">1st Year</div>
-                <div className="text-gray-700 rounded-md">
-                  <strong>Engineering Physics</strong> – Basics of waves, vibrations, resonance (how things shake or vibrate)
+              {/* 1st Year */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 hover:bg-gray-50 transition-colors">
+                <div className="font-bold text-blue-600 text-lg flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-sm">1</div>
+                  <span>1st Year</span>
+                </div>
+                <div className="space-y-2">
+                  <div className="font-semibold text-gray-900">Engineering Physics & Basics of Mechanics</div>
+                  <div className="font-semibold text-gray-900">Engineering Mathematics I & II</div>
+                  <div className="font-semibold text-gray-900">Engineering Graphics & Workshop</div>
+                </div>
+                <div className="space-y-2 text-gray-700 text-sm md:text-base">
+                  <p>Learn the fundamentals of motion, forces, vibrations, and energy – how and why things move, shake, or fly.</p>
+                  <p className="pt-2">Use calculus and equations to solve problems about speed, acceleration, pressure, and flight dynamics.</p>
+                  <p className="pt-2">Understand aircraft part design, shapes, and manufacturing basics.</p>
                 </div>
               </div>
-              
-              <div className="grid grid-cols-2 gap-4 p-4 hover:bg-gray-50">
-                <div className="font-bold text-green-600 text-lg">2nd Year</div>
-                <div className="text-gray-700 rounded-md">
-                  <strong>Strength of Materials</strong> – How materials behave when they vibrate or face repeated stress
+
+              {/* 2nd Year */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 hover:bg-gray-50 transition-colors">
+                <div className="font-bold text-green-600 text-lg flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-sm">2</div>
+                  <span>2nd Year</span>
+                </div>
+                <div className="space-y-2">
+                  <div className="font-semibold text-gray-900">Strength of Materials</div>
+                  <div className="font-semibold text-gray-900">Fluid Mechanics</div>
+                  <div className="font-semibold text-gray-900">Thermodynamics</div>
+                </div>
+                <div className="space-y-2 text-gray-700 text-sm md:text-base">
+                  <p>Study how wings, fuselage, and engine parts handle stress and vibration without breaking.</p>
+                  <p className="pt-2">Learn how air flows around aircraft, how lift and drag work, and how fuel or hydraulic systems move fluids.</p>
+                  <p className="pt-2">Explore how heat, energy, and propulsion power jet engines and turbines.</p>
                 </div>
               </div>
-              
-              <div className="grid grid-cols-2 gap-4 p-4 hover:bg-gray-50">
-                <div className="font-bold text-purple-600 text-lg">3rd Year</div>
-                <div className="text-gray-700 rounded-md">
-                  <strong>Vibrations & Dynamics</strong> – How engines, wings, and moving parts oscillate (vibrate) during flight
+
+              {/* 3rd Year */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 hover:bg-gray-50 transition-colors">
+                <div className="font-bold text-purple-600 text-lg flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-sm">3</div>
+                  <span>3rd Year</span>
+                </div>
+                <div className="space-y-2">
+                  <div className="font-semibold text-gray-900">Machine Dynamics & Vibrations</div>
+                  <div className="font-semibold text-gray-900">Heat Transfer & Applied Thermodynamics</div>
+                  <div className="font-semibold text-gray-900">Aerodynamics & Flight Mechanics</div>
+                </div>
+                <div className="space-y-2 text-gray-700 text-sm md:text-base">
+                  <p>Understand how rotating engines, landing gears, and moving parts vibrate and how to control them.</p>
+                  <p className="pt-2">Study how temperature is managed in jet engines, cooling systems, and aircraft cabins.</p>
+                  <p className="pt-2">Dive into how aircraft fly, how pressure forces act, and how designs affect performance.</p>
                 </div>
               </div>
-              
-              <div className="grid grid-cols-2 gap-4 p-4 hover:bg-gray-50">
-                <div className="font-bold text-orange-600 text-lg">4th Year</div>
-                <div className="text-gray-700 rounded-md">
-                  <strong>Aero-mechanical Electives</strong> (if available) – Sound vibration control, aircraft structure response, fatigue analysis
+
+              {/* 4th Year */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 hover:bg-gray-50 transition-colors">
+                <div className="font-bold text-orange-600 text-lg flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-sm">4</div>
+                  <span>4th Year</span>
+                </div>
+                <div className="space-y-2">
+                  <div className="font-semibold text-gray-900">Aero-Mechanical Design Electives</div>
+                  <div className="font-semibold text-gray-900">Project & Internship</div>
+                </div>
+                <div className="space-y-2 text-gray-700 text-sm md:text-base">
+                  <p>Specialize in aircraft structure response, noise & vibration reduction, and fatigue testing.</p>
+                  <p className="pt-2">Apply everything you learned by designing, analyzing, or testing aircraft systems in real-world projects.</p>
                 </div>
               </div>
             </div>
           </div>
-
-          {/* Important Reality Check */}
-          <div className="mt-6 p-6 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg border-2 border-yellow-200">
-            <div className="flex items-start gap-3">
-              <AlertTriangle className="h-7 w-7 text-yellow-600 mt-1 flex-shrink-0" />
-              <div>
-                <h3 className="font-bold text-yellow-900 text-lg mb-3">Critical Reality Check:</h3>
-                <p className="text-yellow-800 text-base font-medium leading-relaxed">
-                  In B.Tech Mechanical Engineering, you'll learn only <span className="font-bold text-orange-700">20–30% about Waves & Oscillations</span> — enough to understand the basics, but not enough to get an aviation job directly unless you do extra certifications and projects.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Important Quote */}
-          
         </CardContent>
       </Card>
 
