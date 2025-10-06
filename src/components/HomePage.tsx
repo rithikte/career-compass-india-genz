@@ -318,87 +318,87 @@ export const HomePage = () => {
         </div>
 
         {/* Statistics Section with Animated Counters */}
-        <div className="mb-20 relative">
+        <div className="mb-12 sm:mb-16 md:mb-20 relative px-2 sm:px-4">
           {/* Background Pattern */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-50/50 via-purple-50/50 to-cyan-50/50 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-50/50 via-purple-50/50 to-cyan-50/50 rounded-2xl sm:rounded-3xl"></div>
           
-          <div className="relative z-10 text-center mb-16 py-16">
-            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-xl border border-blue-200/50 rounded-full px-6 py-2 mb-8">
-              <TrendingUp className="w-5 h-5 text-blue-500" />
-              <span className="text-sm font-semibold text-blue-600">Live Statistics</span>
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+          <div className="relative z-10 text-center mb-8 sm:mb-12 md:mb-16 py-8 sm:py-12 md:py-16">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-xl border border-blue-200/50 rounded-full px-4 sm:px-6 py-2 mb-4 sm:mb-6 md:mb-8">
+              <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500" />
+              <span className="text-xs sm:text-sm font-semibold text-blue-600">Live Statistics</span>
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full animate-pulse"></div>
             </div>
             
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-4 sm:mb-6 leading-tight px-4">
               Trusted by <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Thousands</span>
               <br />
               Across India
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-4">
               Join the revolution in career guidance and degree selection with our proven track record
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 mb-16 relative z-10">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4 lg:gap-6 mb-12 sm:mb-16 relative z-10 px-2 sm:px-0">
             {animatedStats.map((stat, index) => {
             const Icon = stat.icon;
             return <div key={index} className="text-center group animate-fade-in" style={{
               animationDelay: `${index * 150}ms`
             }}>
-                  <div className="relative bg-white/90 backdrop-blur-xl rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/50 group-hover:scale-110 group-hover:-translate-y-2 overflow-hidden">
+                  <div className="relative bg-white/90 backdrop-blur-xl rounded-2xl p-3 sm:p-4 md:p-5 lg:p-6 shadow-lg hover:shadow-xl transition-all duration-500 border border-white/50 group-hover:scale-105 group-hover:-translate-y-1 overflow-hidden">
                     {/* Gradient Background */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
                     
                     {/* Icon */}
-                    <div className={`inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br ${stat.gradient} mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon className="w-6 h-6 text-white" />
+                    <div className={`inline-flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-xl bg-gradient-to-br ${stat.gradient} mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                     </div>
                     
                     {/* Animated Counter */}
-                    <div className={`text-4xl font-black bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-3 group-hover:scale-105 transition-transform duration-300`}>
+                    <div className={`text-xl sm:text-2xl md:text-2xl lg:text-3xl font-black bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-1 sm:mb-2 group-hover:scale-105 transition-transform duration-300`}>
                       {stat.value.toLocaleString()}+
                     </div>
                     
                     {/* Labels */}
-                    <div className="text-base font-bold text-gray-800 mb-1">{stat.label}</div>
-                    <div className="text-sm text-gray-600 font-medium">{stat.sublabel}</div>
+                    <div className="text-xs sm:text-sm md:text-base font-bold text-gray-800 mb-0.5 sm:mb-1">{stat.label}</div>
+                    <div className="text-xs sm:text-xs md:text-sm text-gray-600 font-medium">{stat.sublabel}</div>
                     
                     {/* Decorative Elements */}
-                    <div className="absolute top-3 right-3 w-8 h-8 bg-gradient-to-br from-white/20 to-white/5 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
-                    <div className="absolute bottom-3 left-3 w-4 h-4 bg-gradient-to-br from-white/10 to-white/5 rounded-full group-hover:scale-150 transition-transform duration-300"></div>
+                    <div className="absolute top-2 right-2 w-6 h-6 bg-gradient-to-br from-white/20 to-white/5 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
+                    <div className="absolute bottom-2 left-2 w-3 h-3 bg-gradient-to-br from-white/10 to-white/5 rounded-full group-hover:scale-150 transition-transform duration-300"></div>
                   </div>
                 </div>;
           })}
           </div>
           
           {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center items-center gap-8 relative z-10">
-            <div className="bg-white/90 backdrop-blur-xl rounded-2xl px-6 py-3 shadow-lg border border-green-200/50 flex items-center gap-3">
-              <Shield className="w-6 h-6 text-green-500" />
-              <span className="font-bold text-gray-800">Government Approved</span>
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+          <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 relative z-10 px-2 sm:px-4">
+            <div className="bg-white/90 backdrop-blur-xl rounded-xl sm:rounded-2xl px-3 sm:px-4 md:px-6 py-2 sm:py-3 shadow-lg border border-green-200/50 flex items-center gap-2 sm:gap-3">
+              <Shield className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-green-500 flex-shrink-0" />
+              <span className="font-bold text-gray-800 text-xs sm:text-sm md:text-base">Government Approved</span>
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full animate-pulse flex-shrink-0"></div>
             </div>
-            <div className="bg-white/90 backdrop-blur-xl rounded-2xl px-6 py-3 shadow-lg border border-blue-200/50 flex items-center gap-3">
-              <Zap className="w-6 h-6 text-blue-500" />
-              <span className="font-bold text-gray-800">AI-Verified Data</span>
-              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+            <div className="bg-white/90 backdrop-blur-xl rounded-xl sm:rounded-2xl px-3 sm:px-4 md:px-6 py-2 sm:py-3 shadow-lg border border-blue-200/50 flex items-center gap-2 sm:gap-3">
+              <Zap className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-blue-500 flex-shrink-0" />
+              <span className="font-bold text-gray-800 text-xs sm:text-sm md:text-base">AI-Verified Data</span>
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-pulse flex-shrink-0"></div>
             </div>
-            <div className="bg-white/90 backdrop-blur-xl rounded-2xl px-6 py-3 shadow-lg border border-purple-200/50 flex items-center gap-3">
-              <Users className="w-6 h-6 text-purple-500" />
-              <span className="font-bold text-gray-800">Real Student Reviews</span>
-              <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+            <div className="bg-white/90 backdrop-blur-xl rounded-xl sm:rounded-2xl px-3 sm:px-4 md:px-6 py-2 sm:py-3 shadow-lg border border-purple-200/50 flex items-center gap-2 sm:gap-3">
+              <Users className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-purple-500 flex-shrink-0" />
+              <span className="font-bold text-gray-800 text-xs sm:text-sm md:text-base">Real Student Reviews</span>
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-purple-500 rounded-full animate-pulse flex-shrink-0"></div>
             </div>
           </div>
         </div>
 
         {/* Call to Action */}
-        <div className="text-center">
-          <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-12 py-6 text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+        <div className="text-center px-4">
+          <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 text-sm sm:text-base md:text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full sm:w-auto">
             Explore Career Paths
-            <ArrowRight className="w-5 h-5 ml-2" />
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
           </Button>
           
-          <p className="text-gray-500 mt-6 text-sm">
+          <p className="text-gray-500 mt-4 sm:mt-6 text-xs sm:text-sm">
             Start your journey towards the perfect degree and career alignment
           </p>
         </div>
