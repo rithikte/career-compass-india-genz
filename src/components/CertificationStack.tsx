@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CheckCircle, Clock, Target, Award } from 'lucide-react';
+import { CheckCircle, Clock, Target, Award, AlertTriangle } from 'lucide-react';
 import SourceBadge from './SourceBadge';
 
 const certificationPaths = [
@@ -190,6 +190,33 @@ export const CertificationStack = () => {
           <SourceBadge href="https://nptel.ac.in/courses" label="NPTEL Courses" />
           <SourceBadge href="https://www.coursera.org/iit" label="IIT Coursera" />
           <SourceBadge href="https://dgca.gov.in/training" label="DGCA Training" />
+        </div>
+      </div>
+
+      {/* Critical Reality Check Section */}
+      <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-lg p-6 sm:p-8 border-2 border-red-300 mb-8">
+        <div className="flex items-start space-x-4">
+          <div className="flex-shrink-0">
+            <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+              <AlertTriangle className="w-6 h-6 text-white" />
+            </div>
+          </div>
+          <div className="flex-1">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+              Critical Reality Check
+            </h3>
+            <div className="space-y-3 text-sm sm:text-base text-gray-700 leading-relaxed">
+              <p className="flex items-start">
+                <span className="text-red-600 font-bold mr-2">•</span>
+                <span>
+                  In <span className="font-bold">B.Tech Mechanical Engineering</span>, you'll learn only{" "}
+                  <span className="font-bold text-red-600">38-45%</span> (typical syllabus range, varies by university) 
+                  enough to understand the basics, but <span className="font-bold underline">not enough to get an aviation job directly</span>{" "}
+                  unless you do <span className="font-bold text-green-600">extra certifications and projects</span>.
+                </span>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
