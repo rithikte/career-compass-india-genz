@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
 import { Button } from './ui/button';
-import { ChevronDown, ChevronRight, Check, Search } from 'lucide-react';
+import { ChevronDown, ChevronRight, Check } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
-import { Input } from './ui/input';
 
 interface CareerExplorerProps {
   open: boolean;
@@ -80,12 +79,8 @@ const physicsTopics: Topic[] = [
   { id: 8, title: 'Biomolecules', subtopics: 'Proteins, Enzymes, Carbohydrates' },
 ];
 
-const degrees = ['B.Tech – Degree', 'B.Sc – Degree', 'M.Tech – Degree', 'MBA – Degree'];
-
 export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChange }) => {
-  const [step, setStep] = useState(0);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedDegree, setSelectedDegree] = useState<string>('');
+  const [step, setStep] = useState(1);
   const [selectedStream, setSelectedStream] = useState<string>('');
   const [selectedCombination, setSelectedCombination] = useState<string>('');
   const [selectedBiologyTopics, setSelectedBiologyTopics] = useState<number[]>([]);
@@ -93,14 +88,8 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
   const [selectedPhysicsTopics, setSelectedPhysicsTopics] = useState<number[]>([]);
   const [expandedSections, setExpandedSections] = useState<string[]>([]);
 
-  const filteredDegrees = degrees.filter(degree =>
-    degree.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
   const resetState = () => {
-    setStep(0);
-    setSearchQuery('');
-    setSelectedDegree('');
+    setStep(1);
     setSelectedStream('');
     setSelectedCombination('');
     setSelectedBiologyTopics([]);
@@ -152,25 +141,13 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
     );
   };
 
-  const handleStep0Next = () => {
-    if (selectedDegree) {
-      setStep(1);
-    }
-  };
-
   const handleStep1Next = () => {
-    if (selectedStream) {
+    if (selectedStream && selectedCombination) {
       setStep(2);
     }
   };
 
-  const handleStep2Next = () => {
-    if (selectedCombination) {
-      setStep(3);
-    }
-  };
-
-  const handleStep3Submit = () => {
+  const handleStep2Submit = () => {
     // Check if required topics are selected based on the stream
     const biologyRequired = selectedStream !== 'MPC' ? 4 : 0;
     const chemistryRequired = 3;
@@ -183,7 +160,6 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
     ) {
       // Submit logic here
       console.log('Submitted:', {
-        degree: selectedDegree,
         stream: selectedStream,
         combination: selectedCombination,
         biology: selectedBiologyTopics,
@@ -199,76 +175,15 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            {step === 0 && 'Select Your Domain'}
-            {step === 1 && 'Choose Your Stream'}
-            {step === 2 && 'Select Percentage Distribution'}
-            {step === 3 && 'Select Core Topics'}
+            {step === 1 ? 'Choose Your Stream' : 'Select Core Topics'}
           </DialogTitle>
         </DialogHeader>
-
-        {step === 0 && (
-          <div className="space-y-6 py-4">
-            {/* Search Bar */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Search Your Degree</h3>
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                <Input
-                  type="text"
-                  placeholder="Search for degrees..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 h-12 text-base border-2 focus:border-primary"
-                />
-              </div>
-            </div>
-
-            {/* Domain Selection */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Select Domain</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {filteredDegrees.map((degree) => (
-                  <Card
-                    key={degree}
-                    className={`cursor-pointer transition-all hover:shadow-md ${
-                      selectedDegree === degree
-                        ? 'border-2 border-primary bg-gradient-elegant shadow-elegant'
-                        : 'hover:border-primary/50'
-                    }`}
-                    onClick={() => setSelectedDegree(degree)}
-                  >
-                    <CardContent className="p-6">
-                      <div className="flex items-center justify-between">
-                        <h4 className="text-lg font-semibold text-gray-900">{degree}</h4>
-                        {selectedDegree === degree && (
-                          <Check className="w-6 h-6 text-primary flex-shrink-0" />
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            {/* Next Button */}
-            <div className="flex justify-end pt-4">
-              <Button
-                onClick={handleStep0Next}
-                disabled={!selectedDegree}
-                className="bg-gradient-primary text-white font-semibold px-8 py-3 rounded-xl hover:shadow-elegant disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                Next Step
-                <ChevronRight className="w-5 h-5 ml-2" />
-              </Button>
-            </div>
-          </div>
-        )}
 
         {step === 1 && (
           <div className="space-y-6 py-4">
             {/* Stream Selection */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Choose Your Stream</h3>
+              <h3 className="text-lg font-semibold text-gray-900">Select Stream</h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {['MPC', 'BIPC', 'MBIPC'].map((stream) => (
                   <Button
@@ -276,11 +191,12 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
                     variant={selectedStream === stream ? 'default' : 'outline'}
                     className={`h-20 text-lg font-semibold transition-all ${
                       selectedStream === stream
-                        ? 'bg-gradient-primary text-white shadow-elegant'
-                        : 'hover:border-primary hover:bg-gradient-elegant'
+                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                        : 'hover:border-blue-500 hover:bg-blue-50'
                     }`}
                     onClick={() => {
                       setSelectedStream(stream);
+                      setSelectedCombination('');
                     }}
                   >
                     {stream}
@@ -289,12 +205,53 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
               </div>
             </div>
 
+            {/* Combination Selection */}
+            {selectedStream && (
+              <div className="space-y-4 animate-fade-in">
+                <h3 className="text-lg font-semibold text-gray-900">Select Percentage Distribution</h3>
+                <div className="grid grid-cols-1 gap-3">
+                  {subjectCombinations[selectedStream].map((combo) => (
+                    <Card
+                      key={combo.id}
+                      className={`cursor-pointer transition-all hover:shadow-md ${
+                        selectedCombination === combo.id
+                          ? 'border-2 border-blue-500 bg-blue-50'
+                          : 'hover:border-blue-300'
+                      }`}
+                      onClick={() => setSelectedCombination(combo.id)}
+                    >
+                      <CardContent className="p-4">
+                        <div className="flex items-center justify-between">
+                          <div className="flex-1">
+                            <h4 className="font-semibold text-gray-900 mb-2">{combo.label}</h4>
+                            <div className="flex flex-wrap gap-2">
+                              {combo.percentages.map((pct, idx) => (
+                                <span
+                                  key={idx}
+                                  className="px-3 py-1 bg-white rounded-full text-sm font-medium text-gray-700 border border-gray-200"
+                                >
+                                  {pct}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                          {selectedCombination === combo.id && (
+                            <Check className="w-6 h-6 text-blue-600 ml-4 flex-shrink-0" />
+                          )}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Next Button */}
             <div className="flex justify-end pt-4">
               <Button
                 onClick={handleStep1Next}
-                disabled={!selectedStream}
-                className="bg-gradient-primary text-white font-semibold px-8 py-3 rounded-xl hover:shadow-elegant disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled={!selectedStream || !selectedCombination}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-8 py-3 rounded-xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Next Step
                 <ChevronRight className="w-5 h-5 ml-2" />
@@ -304,61 +261,6 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
         )}
 
         {step === 2 && (
-          <div className="space-y-6 py-4">
-            {/* Combination Selection */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Select Percentage Distribution for {selectedStream}</h3>
-              <div className="grid grid-cols-1 gap-3">
-                {subjectCombinations[selectedStream].map((combo) => (
-                  <Card
-                    key={combo.id}
-                    className={`cursor-pointer transition-all hover:shadow-md ${
-                      selectedCombination === combo.id
-                        ? 'border-2 border-primary bg-gradient-elegant shadow-soft'
-                        : 'hover:border-primary/50'
-                    }`}
-                    onClick={() => setSelectedCombination(combo.id)}
-                  >
-                    <CardContent className="p-4">
-                      <div className="flex items-center justify-between">
-                        <div className="flex-1">
-                          <h4 className="font-semibold text-gray-900 mb-2">{combo.label}</h4>
-                          <div className="flex flex-wrap gap-2">
-                            {combo.percentages.map((pct, idx) => (
-                              <span
-                                key={idx}
-                                className="px-3 py-1 bg-background rounded-full text-sm font-medium text-gray-700 border border-border"
-                              >
-                                {pct}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                        {selectedCombination === combo.id && (
-                          <Check className="w-6 h-6 text-primary ml-4 flex-shrink-0" />
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            {/* Next Button */}
-            <div className="flex justify-end pt-4">
-              <Button
-                onClick={handleStep2Next}
-                disabled={!selectedCombination}
-                className="bg-gradient-primary text-white font-semibold px-8 py-3 rounded-xl hover:shadow-elegant disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                Next Step
-                <ChevronRight className="w-5 h-5 ml-2" />
-              </Button>
-            </div>
-          </div>
-        )}
-
-        {step === 3 && (
           <div className="space-y-6 py-4">
             {/* Biology Topics (if not MPC) */}
             {selectedStream !== 'MPC' && (
@@ -522,19 +424,19 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
             <div className="flex justify-between pt-4">
               <Button
                 variant="outline"
-                onClick={() => setStep(2)}
+                onClick={() => setStep(1)}
                 className="px-6 py-3 rounded-xl font-semibold"
               >
                 Back
               </Button>
               <Button
-                onClick={handleStep3Submit}
+                onClick={handleStep2Submit}
                 disabled={
                   (selectedStream !== 'MPC' ? selectedBiologyTopics.length !== 4 : false) ||
                   selectedChemistryTopics.length !== 3 ||
                   selectedPhysicsTopics.length !== 2
                 }
-                className="bg-gradient-primary text-white font-semibold px-8 py-3 rounded-xl hover:shadow-elegant disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-8 py-3 rounded-xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Submit
               </Button>
