@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MapPin, ArrowRight, Target, Filter, Award, Building2, ChevronDown, Sparkles, TrendingUp, Users, Shield, BookOpen, Zap } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
+import { CareerExplorer } from './CareerExplorer';
 const indianStates = ['Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal', 'Delhi', 'Jammu and Kashmir', 'Ladakh'];
 const workflowStages = [{
   stage: '01',
@@ -44,6 +45,7 @@ export const HomePage = () => {
   const [selectedState, setSelectedState] = useState('');
   const [isStateDropdownOpen, setIsStateDropdownOpen] = useState(false);
   const [animatedStats, setAnimatedStats] = useState([]);
+  const [isCareerExplorerOpen, setIsCareerExplorerOpen] = useState(false);
   useEffect(() => {
     // Animate stats when component mounts
     const timer = setTimeout(() => {
@@ -273,7 +275,10 @@ export const HomePage = () => {
                 
                 
                 
-                <Button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 rounded-xl text-sm sm:text-base">
+                <Button 
+                  onClick={() => setIsCareerExplorerOpen(true)}
+                  className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 rounded-xl text-sm sm:text-base"
+                >
                   Explore Career
                 </Button>
               </CardContent>
@@ -410,5 +415,8 @@ export const HomePage = () => {
         <div className="absolute top-40 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
         <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 w-72 h-72 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-2000"></div>
       </div>
+
+      {/* Career Explorer Modal */}
+      <CareerExplorer open={isCareerExplorerOpen} onOpenChange={setIsCareerExplorerOpen} />
     </div>;
 };
