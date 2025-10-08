@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
 import { Button } from './ui/button';
-import { ChevronDown, ChevronRight, Check, Search } from 'lucide-react';
+import { ChevronDown, ChevronRight, Check, Search, Star } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Input } from './ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 
 interface CareerExplorerProps {
   open: boolean;
@@ -22,9 +23,16 @@ interface SubjectCombination {
 }
 
 interface Topic {
-  id: number;
+  id: string;
   title: string;
   subtopics: string;
+}
+
+interface DepthLevel {
+  stars: number;
+  label: string;
+  topics: Topic[];
+  pickCount: number;
 }
 
 const domains: Domain[] = [
@@ -54,42 +62,105 @@ const subjectCombinations: Record<string, SubjectCombination[]> = {
   ],
 };
 
-const biologyTopics: Topic[] = [
-  { id: 1, title: 'Cell Structure & Functions', subtopics: 'Cell Organelles, Plasma Membrane, Nucleus, Mitochondria, Ribosomes' },
-  { id: 2, title: 'Human Anatomy & Physiology', subtopics: 'Circulatory System, Nervous System, Respiratory System, Excretory System' },
-  { id: 3, title: 'Genetics & Molecular Biology', subtopics: 'DNA, RNA, Replication, Transcription, Protein Synthesis' },
-  { id: 4, title: 'Microbiology & Immunology', subtopics: 'Bacteria, Viruses, Fungi, Immunity' },
-  { id: 5, title: 'Molecular Genetics', subtopics: 'DNA, RNA, Genes, Replication, Protein Synthesis' },
-  { id: 6, title: 'Cell Biology', subtopics: 'Cell Organelles, Mitosis, Meiosis' },
-  { id: 7, title: 'Biotechnology', subtopics: 'Cloning, PCR, Recombinant DNA' },
-  { id: 8, title: 'Biomolecules', subtopics: 'Carbohydrates, Proteins, Lipids, Enzymes' },
-  { id: 9, title: 'Plant Physiology', subtopics: 'Photosynthesis, Respiration, Transpiration, Mineral Nutrition' },
-  { id: 10, title: 'Soil Biology', subtopics: 'Soil Microbes, Nitrogen Cycle, Mycorrhiza' },
-  { id: 11, title: 'Crop Science', subtopics: 'Plant Growth, Plant Hormones, Plant Diseases' },
-  { id: 12, title: 'Ecology', subtopics: 'Ecosystems, Food Chains, Biodiversity' },
+const biologyDepthLevels: DepthLevel[] = [
+  {
+    stars: 4,
+    label: 'Very Deep',
+    pickCount: 1,
+    topics: [
+      { id: 'bio-vd-1', title: 'Cell Structure & Functions', subtopics: 'Cell Organelles, Plasma Membrane, Nucleus, Mitochondria, Ribosomes' },
+      { id: 'bio-vd-2', title: 'Human Anatomy & Physiology', subtopics: 'Circulatory System, Nervous System, Respiratory System, Excretory System' },
+      { id: 'bio-vd-3', title: 'Genetics & Molecular Biology', subtopics: 'DNA, RNA, Replication, Transcription, Protein Synthesis' },
+    ],
+  },
+  {
+    stars: 4,
+    label: 'Deep',
+    pickCount: 1,
+    topics: [
+      { id: 'bio-d-1', title: 'Microbiology & Immunology', subtopics: 'Bacteria, Viruses, Fungi, Immunity' },
+      { id: 'bio-d-2', title: 'Molecular Genetics', subtopics: 'DNA, RNA, Genes, Replication, Protein Synthesis' },
+      { id: 'bio-d-3', title: 'Cell Biology', subtopics: 'Cell Organelles, Mitosis, Meiosis' },
+    ],
+  },
+  {
+    stars: 3,
+    label: 'Moderate-Deep',
+    pickCount: 1,
+    topics: [
+      { id: 'bio-md-1', title: 'Biotechnology', subtopics: 'Cloning, PCR, Recombinant DNA' },
+      { id: 'bio-md-2', title: 'Biomolecules', subtopics: 'Carbohydrates, Proteins, Lipids, Enzymes' },
+      { id: 'bio-md-3', title: 'Plant Physiology', subtopics: 'Photosynthesis, Respiration, Transpiration, Mineral Nutrition' },
+    ],
+  },
+  {
+    stars: 2,
+    label: 'Moderate',
+    pickCount: 0,
+    topics: [
+      { id: 'bio-m-1', title: 'Soil Biology', subtopics: 'Soil Microbes, Nitrogen Cycle, Mycorrhiza' },
+      { id: 'bio-m-2', title: 'Crop Science', subtopics: 'Plant Growth, Plant Hormones, Plant Diseases' },
+      { id: 'bio-m-3', title: 'Ecology', subtopics: 'Ecosystems, Food Chains, Biodiversity' },
+    ],
+  },
 ];
 
-const chemistryTopics: Topic[] = [
-  { id: 1, title: 'Environmental Chemistry', subtopics: 'Fertilizers, Pesticides, Green Chemistry' },
-  { id: 2, title: 'Organic Chemistry', subtopics: 'Carbohydrates, Plant Secondary Compounds' },
-  { id: 3, title: 'Soil Chemistry', subtopics: 'Acids, Bases, pH, Nutrient Cycles' },
-  { id: 4, title: 'Water Chemistry', subtopics: 'pH, Dissolved Oxygen, Salinity' },
-  { id: 5, title: 'Biomolecules', subtopics: 'Proteins, Lipids, Carbohydrates' },
-  { id: 6, title: 'Organic Chemistry - Advanced', subtopics: 'Hormones, Vitamins' },
-  { id: 7, title: 'Biomolecules - Dairy', subtopics: 'Proteins (Casein), Carbohydrates, Fats' },
-  { id: 8, title: 'Enzymes', subtopics: 'Enzyme Action in Milk Processing' },
-  { id: 9, title: 'Analytical Chemistry', subtopics: 'pH, Nutrient Testing' },
+const chemistryDepthLevels: DepthLevel[] = [
+  {
+    stars: 4,
+    label: 'Very Deep',
+    pickCount: 1,
+    topics: [
+      { id: 'chem-vd-1', title: 'Environmental Chemistry', subtopics: 'Fertilizers, Pesticides, Green Chemistry' },
+      { id: 'chem-vd-2', title: 'Organic Chemistry', subtopics: 'Carbohydrates, Plant Secondary Compounds' },
+      { id: 'chem-vd-3', title: 'Soil Chemistry', subtopics: 'Acids, Bases, pH, Nutrient Cycles' },
+    ],
+  },
+  {
+    stars: 3,
+    label: 'Moderate-Deep',
+    pickCount: 0,
+    topics: [
+      { id: 'chem-md-1', title: 'Water Chemistry', subtopics: 'pH, Dissolved Oxygen, Salinity' },
+      { id: 'chem-md-2', title: 'Biomolecules', subtopics: 'Proteins, Lipids, Carbohydrates' },
+      { id: 'chem-md-3', title: 'Organic Chemistry - Advanced', subtopics: 'Hormones, Vitamins' },
+    ],
+  },
+  {
+    stars: 3,
+    label: 'Moderate-Deep',
+    pickCount: 0,
+    topics: [
+      { id: 'chem-md-4', title: 'Biomolecules - Dairy', subtopics: 'Proteins (Casein), Carbohydrates, Fats' },
+      { id: 'chem-md-5', title: 'Enzymes', subtopics: 'Enzyme Action in Milk Processing' },
+      { id: 'chem-md-6', title: 'Analytical Chemistry', subtopics: 'pH, Nutrient Testing' },
+    ],
+  },
 ];
 
-const physicsTopics: Topic[] = [
-  { id: 1, title: 'Heat', subtopics: 'Pasteurization, Cooling' },
-  { id: 2, title: 'Fluids', subtopics: 'Milk Flow, Mixing' },
-  { id: 3, title: 'Fluids - Advanced', subtopics: 'Archimedes\' Principle, Pressure, Flow of Liquids' },
-  { id: 4, title: 'Heat - Thermal Properties', subtopics: 'Heating, Cooling, Thermal Properties of Water' },
-  { id: 5, title: 'Fluid Mechanics', subtopics: 'Flow of Liquids, Bernoulli\'s Theorem' },
-  { id: 6, title: 'Heat - Environmental', subtopics: 'Heat, Temperature, Greenhouse Effect' },
-  { id: 7, title: 'Organic Chemistry', subtopics: 'Functional Groups, Biomolecules' },
-  { id: 8, title: 'Biomolecules', subtopics: 'Proteins, Enzymes, Carbohydrates' },
+const physicsDepthLevels: DepthLevel[] = [
+  {
+    stars: 4,
+    label: 'Very Deep',
+    pickCount: 1,
+    topics: [
+      { id: 'phys-vd-1', title: 'Heat', subtopics: 'Pasteurization, Cooling' },
+      { id: 'phys-vd-2', title: 'Fluids', subtopics: 'Milk Flow, Mixing' },
+      { id: 'phys-vd-3', title: 'Fluids - Advanced', subtopics: 'Archimedes\' Principle, Pressure, Flow of Liquids' },
+      { id: 'phys-vd-4', title: 'Heat - Thermal Properties', subtopics: 'Heating, Cooling, Thermal Properties of Water' },
+    ],
+  },
+  {
+    stars: 2,
+    label: 'Moderate',
+    pickCount: 0,
+    topics: [
+      { id: 'phys-m-1', title: 'Fluid Mechanics', subtopics: 'Flow of Liquids, Bernoulli\'s Theorem' },
+      { id: 'phys-m-2', title: 'Heat - Environmental', subtopics: 'Heat, Temperature, Greenhouse Effect' },
+      { id: 'phys-m-3', title: 'Organic Chemistry', subtopics: 'Functional Groups, Biomolecules' },
+      { id: 'phys-m-4', title: 'Biomolecules', subtopics: 'Proteins, Enzymes, Carbohydrates' },
+    ],
+  },
 ];
 
 export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChange }) => {
@@ -98,10 +169,10 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
   const [selectedStream, setSelectedStream] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedCombination, setSelectedCombination] = useState<string>('');
-  const [selectedBiologyTopics, setSelectedBiologyTopics] = useState<number[]>([]);
-  const [selectedChemistryTopics, setSelectedChemistryTopics] = useState<number[]>([]);
-  const [selectedPhysicsTopics, setSelectedPhysicsTopics] = useState<number[]>([]);
-  const [expandedSections, setExpandedSections] = useState<string[]>([]);
+  const [selectedBiologyTopics, setSelectedBiologyTopics] = useState<Record<number, string>>({});
+  const [selectedChemistryTopics, setSelectedChemistryTopics] = useState<Record<number, string>>({});
+  const [selectedPhysicsTopics, setSelectedPhysicsTopics] = useState<Record<number, string>>({});
+  const [expandedSections, setExpandedSections] = useState<string[]>(['biology', 'chemistry', 'physics']);
 
   const resetState = () => {
     setStep(1);
@@ -109,9 +180,9 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
     setSelectedStream('');
     setSearchQuery('');
     setSelectedCombination('');
-    setSelectedBiologyTopics([]);
-    setSelectedChemistryTopics([]);
-    setSelectedPhysicsTopics([]);
+    setSelectedBiologyTopics({});
+    setSelectedChemistryTopics({});
+    setSelectedPhysicsTopics({});
     setExpandedSections([]);
   };
 
@@ -128,34 +199,25 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
     );
   };
 
-  const toggleBiologyTopic = (id: number) => {
-    setSelectedBiologyTopics(prev =>
-      prev.includes(id)
-        ? prev.filter(t => t !== id)
-        : prev.length < 4
-        ? [...prev, id]
-        : prev
-    );
+  const handleBiologySelection = (levelIndex: number, topicId: string) => {
+    setSelectedBiologyTopics(prev => ({
+      ...prev,
+      [levelIndex]: topicId,
+    }));
   };
 
-  const toggleChemistryTopic = (id: number) => {
-    setSelectedChemistryTopics(prev =>
-      prev.includes(id)
-        ? prev.filter(t => t !== id)
-        : prev.length < 3
-        ? [...prev, id]
-        : prev
-    );
+  const handleChemistrySelection = (levelIndex: number, topicId: string) => {
+    setSelectedChemistryTopics(prev => ({
+      ...prev,
+      [levelIndex]: topicId,
+    }));
   };
 
-  const togglePhysicsTopic = (id: number) => {
-    setSelectedPhysicsTopics(prev =>
-      prev.includes(id)
-        ? prev.filter(t => t !== id)
-        : prev.length < 2
-        ? [...prev, id]
-        : prev
-    );
+  const handlePhysicsSelection = (levelIndex: number, topicId: string) => {
+    setSelectedPhysicsTopics(prev => ({
+      ...prev,
+      [levelIndex]: topicId,
+    }));
   };
 
   const handleStep1Next = () => {
@@ -183,15 +245,15 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
   };
 
   const handleStep5Submit = () => {
-    const biologyRequired = selectedStream !== 'MPC' ? 4 : 0;
-    const chemistryRequired = 3;
-    const physicsRequired = 2;
+    const biologyLevelsRequired = selectedStream !== 'MPC' ? biologyDepthLevels.filter(l => l.pickCount > 0).length : 0;
+    const chemistryLevelsRequired = chemistryDepthLevels.filter(l => l.pickCount > 0).length;
+    const physicsLevelsRequired = physicsDepthLevels.filter(l => l.pickCount > 0).length;
 
-    if (
-      selectedBiologyTopics.length === biologyRequired &&
-      selectedChemistryTopics.length === chemistryRequired &&
-      selectedPhysicsTopics.length === physicsRequired
-    ) {
+    const biologyFilled = Object.keys(selectedBiologyTopics).length === biologyLevelsRequired;
+    const chemistryFilled = Object.keys(selectedChemistryTopics).length === chemistryLevelsRequired;
+    const physicsFilled = Object.keys(selectedPhysicsTopics).length === physicsLevelsRequired;
+
+    if (biologyFilled && chemistryFilled && physicsFilled) {
       console.log('Submitted:', {
         domain: selectedDomain,
         stream: selectedStream,
@@ -440,19 +502,14 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
 
         {step === 5 && (
           <div className="space-y-6 py-4">
-            {/* Biology Topics (if not MPC) */}
+            {/* Biology Subject Depth */}
             {selectedStream !== 'MPC' && (
-              <div className="space-y-3">
+              <div className="space-y-4">
                 <button
                   onClick={() => toggleSection('biology')}
                   className="w-full flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl hover:border-green-400 transition-all"
                 >
-                  <div className="flex items-center gap-3">
-                    <span className="text-lg font-bold text-gray-900">Biology (55–60%)</span>
-                    <span className="px-3 py-1 bg-white rounded-full text-sm font-medium text-gray-700">
-                      Pick 4 topics ({selectedBiologyTopics.length}/4)
-                    </span>
-                  </div>
+                  <span className="text-lg font-bold text-gray-900">Biology Subject Depth</span>
                   <ChevronDown
                     className={`w-5 h-5 text-gray-600 transition-transform ${
                       expandedSections.includes('biology') ? 'rotate-180' : ''
@@ -461,51 +518,64 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
                 </button>
 
                 {expandedSections.includes('biology') && (
-                  <div className="grid grid-cols-1 gap-2 pl-4 animate-fade-in">
-                    {biologyTopics.map((topic) => (
-                      <Card
-                        key={topic.id}
-                        className={`cursor-pointer transition-all ${
-                          selectedBiologyTopics.includes(topic.id)
-                            ? 'border-2 border-green-500 bg-green-50'
-                            : 'hover:border-green-300'
-                        } ${
-                          !selectedBiologyTopics.includes(topic.id) && selectedBiologyTopics.length >= 4
-                            ? 'opacity-50 cursor-not-allowed'
-                            : ''
-                        }`}
-                        onClick={() => toggleBiologyTopic(topic.id)}
-                      >
-                        <CardContent className="p-3">
-                          <div className="flex items-start justify-between gap-3">
-                            <div className="flex-1 min-w-0">
-                              <h4 className="font-semibold text-gray-900 mb-1 text-sm">{topic.title}</h4>
-                              <p className="text-xs text-gray-600 line-clamp-2">{topic.subtopics}</p>
-                            </div>
-                            {selectedBiologyTopics.includes(topic.id) && (
-                              <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
-                            )}
+                  <div className="space-y-4 pl-4 animate-fade-in">
+                    {biologyDepthLevels.map((level, levelIndex) => (
+                      <div key={levelIndex} className="space-y-2">
+                        <div className="flex items-center gap-2">
+                          <div className="flex">
+                            {[...Array(level.stars)].map((_, i) => (
+                              <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                            ))}
                           </div>
-                        </CardContent>
-                      </Card>
+                          <span className="text-sm font-semibold text-gray-700">({level.label})</span>
+                          {level.pickCount > 0 && (
+                            <span className="text-xs text-gray-500">Dropdown pick {level.pickCount}</span>
+                          )}
+                        </div>
+                        
+                        {level.pickCount > 0 ? (
+                          <Select
+                            value={selectedBiologyTopics[levelIndex] || ''}
+                            onValueChange={(value) => handleBiologySelection(levelIndex, value)}
+                          >
+                            <SelectTrigger className="w-full bg-white border-2 border-green-200 hover:border-green-400 transition-all">
+                              <SelectValue placeholder="Select a topic..." />
+                            </SelectTrigger>
+                            <SelectContent className="bg-white z-50">
+                              {level.topics.map((topic) => (
+                                <SelectItem key={topic.id} value={topic.id} className="cursor-pointer">
+                                  <div>
+                                    <div className="font-semibold text-sm">{topic.title}</div>
+                                    <div className="text-xs text-gray-500">{topic.subtopics}</div>
+                                  </div>
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                        ) : (
+                          <div className="space-y-2">
+                            {level.topics.map((topic) => (
+                              <div key={topic.id} className="p-3 bg-white border border-gray-200 rounded-lg">
+                                <div className="font-medium text-sm text-gray-900">{topic.title}</div>
+                                <div className="text-xs text-gray-500 mt-1">{topic.subtopics}</div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     ))}
                   </div>
                 )}
               </div>
             )}
 
-            {/* Chemistry Topics */}
-            <div className="space-y-3">
+            {/* Chemistry Subject Depth */}
+            <div className="space-y-4">
               <button
                 onClick={() => toggleSection('chemistry')}
                 className="w-full flex items-center justify-between p-4 bg-gradient-to-r from-orange-50 to-amber-50 border-2 border-orange-200 rounded-xl hover:border-orange-400 transition-all"
               >
-                <div className="flex items-center gap-3">
-                  <span className="text-lg font-bold text-gray-900">Chemistry (25–30%)</span>
-                  <span className="px-3 py-1 bg-white rounded-full text-sm font-medium text-gray-700">
-                    Pick 3 topics ({selectedChemistryTopics.length}/3)
-                  </span>
-                </div>
+                <span className="text-lg font-bold text-gray-900">Chemistry Subject Depth</span>
                 <ChevronDown
                   className={`w-5 h-5 text-gray-600 transition-transform ${
                     expandedSections.includes('chemistry') ? 'rotate-180' : ''
@@ -514,50 +584,63 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
               </button>
 
               {expandedSections.includes('chemistry') && (
-                <div className="grid grid-cols-1 gap-2 pl-4 animate-fade-in">
-                  {chemistryTopics.map((topic) => (
-                    <Card
-                      key={topic.id}
-                      className={`cursor-pointer transition-all ${
-                        selectedChemistryTopics.includes(topic.id)
-                          ? 'border-2 border-orange-500 bg-orange-50'
-                          : 'hover:border-orange-300'
-                      } ${
-                        !selectedChemistryTopics.includes(topic.id) && selectedChemistryTopics.length >= 3
-                          ? 'opacity-50 cursor-not-allowed'
-                          : ''
-                      }`}
-                      onClick={() => toggleChemistryTopic(topic.id)}
-                    >
-                      <CardContent className="p-3">
-                        <div className="flex items-start justify-between gap-3">
-                          <div className="flex-1 min-w-0">
-                            <h4 className="font-semibold text-gray-900 mb-1 text-sm">{topic.title}</h4>
-                            <p className="text-xs text-gray-600 line-clamp-2">{topic.subtopics}</p>
-                          </div>
-                          {selectedChemistryTopics.includes(topic.id) && (
-                            <Check className="w-5 h-5 text-orange-600 flex-shrink-0" />
-                          )}
+                <div className="space-y-4 pl-4 animate-fade-in">
+                  {chemistryDepthLevels.map((level, levelIndex) => (
+                    <div key={levelIndex} className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <div className="flex">
+                          {[...Array(level.stars)].map((_, i) => (
+                            <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                          ))}
                         </div>
-                      </CardContent>
-                    </Card>
+                        <span className="text-sm font-semibold text-gray-700">({level.label})</span>
+                        {level.pickCount > 0 && (
+                          <span className="text-xs text-gray-500">Dropdown pick {level.pickCount}</span>
+                        )}
+                      </div>
+                      
+                      {level.pickCount > 0 ? (
+                        <Select
+                          value={selectedChemistryTopics[levelIndex] || ''}
+                          onValueChange={(value) => handleChemistrySelection(levelIndex, value)}
+                        >
+                          <SelectTrigger className="w-full bg-white border-2 border-orange-200 hover:border-orange-400 transition-all">
+                            <SelectValue placeholder="Select a topic..." />
+                          </SelectTrigger>
+                          <SelectContent className="bg-white z-50">
+                            {level.topics.map((topic) => (
+                              <SelectItem key={topic.id} value={topic.id} className="cursor-pointer">
+                                <div>
+                                  <div className="font-semibold text-sm">{topic.title}</div>
+                                  <div className="text-xs text-gray-500">{topic.subtopics}</div>
+                                </div>
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      ) : (
+                        <div className="space-y-2">
+                          {level.topics.map((topic) => (
+                            <div key={topic.id} className="p-3 bg-white border border-gray-200 rounded-lg">
+                              <div className="font-medium text-sm text-gray-900">{topic.title}</div>
+                              <div className="text-xs text-gray-500 mt-1">{topic.subtopics}</div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   ))}
                 </div>
               )}
             </div>
 
-            {/* Physics Topics */}
-            <div className="space-y-3">
+            {/* Physics Subject Depth */}
+            <div className="space-y-4">
               <button
                 onClick={() => toggleSection('physics')}
                 className="w-full flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-cyan-50 border-2 border-blue-200 rounded-xl hover:border-blue-400 transition-all"
               >
-                <div className="flex items-center gap-3">
-                  <span className="text-lg font-bold text-gray-900">Physics (15%)</span>
-                  <span className="px-3 py-1 bg-white rounded-full text-sm font-medium text-gray-700">
-                    Pick 2 topics ({selectedPhysicsTopics.length}/2)
-                  </span>
-                </div>
+                <span className="text-lg font-bold text-gray-900">Physics Subject Depth</span>
                 <ChevronDown
                   className={`w-5 h-5 text-gray-600 transition-transform ${
                     expandedSections.includes('physics') ? 'rotate-180' : ''
@@ -566,33 +649,51 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
               </button>
 
               {expandedSections.includes('physics') && (
-                <div className="grid grid-cols-1 gap-2 pl-4 animate-fade-in">
-                  {physicsTopics.map((topic) => (
-                    <Card
-                      key={topic.id}
-                      className={`cursor-pointer transition-all ${
-                        selectedPhysicsTopics.includes(topic.id)
-                          ? 'border-2 border-blue-500 bg-blue-50'
-                          : 'hover:border-blue-300'
-                      } ${
-                        !selectedPhysicsTopics.includes(topic.id) && selectedPhysicsTopics.length >= 2
-                          ? 'opacity-50 cursor-not-allowed'
-                          : ''
-                      }`}
-                      onClick={() => togglePhysicsTopic(topic.id)}
-                    >
-                      <CardContent className="p-3">
-                        <div className="flex items-start justify-between gap-3">
-                          <div className="flex-1 min-w-0">
-                            <h4 className="font-semibold text-gray-900 mb-1 text-sm">{topic.title}</h4>
-                            <p className="text-xs text-gray-600 line-clamp-2">{topic.subtopics}</p>
-                          </div>
-                          {selectedPhysicsTopics.includes(topic.id) && (
-                            <Check className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                          )}
+                <div className="space-y-4 pl-4 animate-fade-in">
+                  {physicsDepthLevels.map((level, levelIndex) => (
+                    <div key={levelIndex} className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <div className="flex">
+                          {[...Array(level.stars)].map((_, i) => (
+                            <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                          ))}
                         </div>
-                      </CardContent>
-                    </Card>
+                        <span className="text-sm font-semibold text-gray-700">({level.label})</span>
+                        {level.pickCount > 0 && (
+                          <span className="text-xs text-gray-500">Dropdown pick {level.pickCount}</span>
+                        )}
+                      </div>
+                      
+                      {level.pickCount > 0 ? (
+                        <Select
+                          value={selectedPhysicsTopics[levelIndex] || ''}
+                          onValueChange={(value) => handlePhysicsSelection(levelIndex, value)}
+                        >
+                          <SelectTrigger className="w-full bg-white border-2 border-blue-200 hover:border-blue-400 transition-all">
+                            <SelectValue placeholder="Select a topic..." />
+                          </SelectTrigger>
+                          <SelectContent className="bg-white z-50">
+                            {level.topics.map((topic) => (
+                              <SelectItem key={topic.id} value={topic.id} className="cursor-pointer">
+                                <div>
+                                  <div className="font-semibold text-sm">{topic.title}</div>
+                                  <div className="text-xs text-gray-500">{topic.subtopics}</div>
+                                </div>
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      ) : (
+                        <div className="space-y-2">
+                          {level.topics.map((topic) => (
+                            <div key={topic.id} className="p-3 bg-white border border-gray-200 rounded-lg">
+                              <div className="font-medium text-sm text-gray-900">{topic.title}</div>
+                              <div className="text-xs text-gray-500 mt-1">{topic.subtopics}</div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   ))}
                 </div>
               )}
@@ -610,9 +711,11 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
               <Button
                 onClick={handleStep5Submit}
                 disabled={
-                  (selectedStream !== 'MPC' ? selectedBiologyTopics.length !== 4 : false) ||
-                  selectedChemistryTopics.length !== 3 ||
-                  selectedPhysicsTopics.length !== 2
+                  (selectedStream !== 'MPC' 
+                    ? Object.keys(selectedBiologyTopics).length !== biologyDepthLevels.filter(l => l.pickCount > 0).length
+                    : false) ||
+                  Object.keys(selectedChemistryTopics).length !== chemistryDepthLevels.filter(l => l.pickCount > 0).length ||
+                  Object.keys(selectedPhysicsTopics).length !== physicsDepthLevels.filter(l => l.pickCount > 0).length
                 }
                 className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-8 py-3 rounded-xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
