@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
 import { Button } from './ui/button';
-import { ChevronDown, ChevronRight, Check, Search } from 'lucide-react';
+import { ChevronDown, ChevronRight, Check } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
-import { Input } from './ui/input';
 
 interface CareerExplorerProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-}
-
-interface Domain {
-  id: string;
-  label: string;
 }
 
 interface SubjectCombination {
@@ -26,13 +20,6 @@ interface Topic {
   title: string;
   subtopics: string;
 }
-
-const domains: Domain[] = [
-  { id: 'btech', label: 'B.Tech – Degree' },
-  { id: 'bsc', label: 'B.Sc – Degree' },
-  { id: 'diploma', label: 'Diploma' },
-  { id: 'integrated', label: 'Integrated Course' },
-];
 
 const subjectCombinations: Record<string, SubjectCombination[]> = {
   MPC: [
@@ -94,9 +81,7 @@ const physicsTopics: Topic[] = [
 
 export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChange }) => {
   const [step, setStep] = useState(1);
-  const [selectedDomain, setSelectedDomain] = useState<string>('');
   const [selectedStream, setSelectedStream] = useState<string>('');
-  const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedCombination, setSelectedCombination] = useState<string>('');
   const [selectedBiologyTopics, setSelectedBiologyTopics] = useState<number[]>([]);
   const [selectedChemistryTopics, setSelectedChemistryTopics] = useState<number[]>([]);
@@ -105,9 +90,7 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
 
   const resetState = () => {
     setStep(1);
-    setSelectedDomain('');
     setSelectedStream('');
-    setSearchQuery('');
     setSelectedCombination('');
     setSelectedBiologyTopics([]);
     setSelectedChemistryTopics([]);
@@ -159,30 +142,13 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
   };
 
   const handleStep1Next = () => {
-    if (selectedDomain) {
+    if (selectedStream && selectedCombination) {
       setStep(2);
     }
   };
 
-  const handleStep2Next = () => {
-    if (selectedStream) {
-      setStep(3);
-    }
-  };
-
-  const handleStep3Next = () => {
-    if (searchQuery.trim()) {
-      setStep(4);
-    }
-  };
-
-  const handleStep4Next = () => {
-    if (selectedCombination) {
-      setStep(5);
-    }
-  };
-
-  const handleStep5Submit = () => {
+  const handleStep2Submit = () => {
+    // Check if required topics are selected based on the stream
     const biologyRequired = selectedStream !== 'MPC' ? 4 : 0;
     const chemistryRequired = 3;
     const physicsRequired = 2;
@@ -192,10 +158,9 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
       selectedChemistryTopics.length === chemistryRequired &&
       selectedPhysicsTopics.length === physicsRequired
     ) {
+      // Submit logic here
       console.log('Submitted:', {
-        domain: selectedDomain,
         stream: selectedStream,
-        degree: searchQuery,
         combination: selectedCombination,
         biology: selectedBiologyTopics,
         chemistry: selectedChemistryTopics,
@@ -205,167 +170,47 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
     }
   };
 
-  const getStepTitle = () => {
-    switch (step) {
-      case 1:
-        return 'Select Domain';
-      case 2:
-        return 'Choose Your Stream';
-      case 3:
-        return 'Search Your Degree';
-      case 4:
-        return 'Select Percentage Distribution';
-      case 5:
-        return 'Select Core Topics';
-      default:
-        return '';
-    }
-  };
-
   return (
     <Dialog open={open} onOpenChange={handleClose}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            {getStepTitle()}
+            {step === 1 ? 'Choose Your Stream' : 'Select Core Topics'}
           </DialogTitle>
         </DialogHeader>
 
-        {/* Step 1: Domain Selection */}
         {step === 1 && (
           <div className="space-y-6 py-4">
+            {/* Stream Selection */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Domain: Wished Degree</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {domains.map((domain) => (
-                  <Card
-                    key={domain.id}
-                    className={`cursor-pointer transition-all hover:shadow-md ${
-                      selectedDomain === domain.id
-                        ? 'border-2 border-blue-500 bg-blue-50'
-                        : 'hover:border-blue-300'
-                    }`}
-                    onClick={() => setSelectedDomain(domain.id)}
-                  >
-                    <CardContent className="p-6">
-                      <div className="flex items-center justify-between">
-                        <h4 className="text-lg font-semibold text-gray-900">{domain.label}</h4>
-                        {selectedDomain === domain.id && (
-                          <Check className="w-6 h-6 text-blue-600 flex-shrink-0" />
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex justify-end pt-4">
-              <Button
-                onClick={handleStep1Next}
-                disabled={!selectedDomain}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-8 py-3 rounded-xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                Next Step
-                <ChevronRight className="w-5 h-5 ml-2" />
-              </Button>
-            </div>
-          </div>
-        )}
-
-        {/* Step 2: Stream Selection */}
-        {step === 2 && (
-          <div className="space-y-6 py-4">
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Choose Your Stream</h3>
+              <h3 className="text-lg font-semibold text-gray-900">Select Stream</h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {['MPC', 'BIPC', 'MBIPC'].map((stream) => (
-                  <Card
+                  <Button
                     key={stream}
-                    className={`cursor-pointer transition-all hover:shadow-md ${
+                    variant={selectedStream === stream ? 'default' : 'outline'}
+                    className={`h-20 text-lg font-semibold transition-all ${
                       selectedStream === stream
-                        ? 'border-2 border-blue-500 bg-blue-50'
-                        : 'hover:border-blue-300'
+                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                        : 'hover:border-blue-500 hover:bg-blue-50'
                     }`}
-                    onClick={() => setSelectedStream(stream)}
+                    onClick={() => {
+                      setSelectedStream(stream);
+                      setSelectedCombination('');
+                    }}
                   >
-                    <CardContent className="p-6">
-                      <div className="flex items-center justify-between">
-                        <h4 className="text-xl font-bold text-gray-900">{stream}</h4>
-                        {selectedStream === stream && (
-                          <Check className="w-6 h-6 text-blue-600 flex-shrink-0" />
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
+                    {stream}
+                  </Button>
                 ))}
               </div>
             </div>
 
-            <div className="flex justify-between pt-4">
-              <Button
-                variant="outline"
-                onClick={() => setStep(1)}
-                className="px-6 py-3 rounded-xl font-semibold"
-              >
-                Back
-              </Button>
-              <Button
-                onClick={handleStep2Next}
-                disabled={!selectedStream}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-8 py-3 rounded-xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                Next Step
-                <ChevronRight className="w-5 h-5 ml-2" />
-              </Button>
-            </div>
-          </div>
-        )}
-
-        {/* Step 3: Degree Search */}
-        {step === 3 && (
-          <div className="space-y-6 py-4">
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Search Your Degree</h3>
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <Input
-                  type="text"
-                  placeholder="Enter degree name (e.g., Computer Science, Mechanical Engineering)"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 py-6 text-base"
-                />
-              </div>
-            </div>
-
-            <div className="flex justify-between pt-4">
-              <Button
-                variant="outline"
-                onClick={() => setStep(2)}
-                className="px-6 py-3 rounded-xl font-semibold"
-              >
-                Back
-              </Button>
-              <Button
-                onClick={handleStep3Next}
-                disabled={!searchQuery.trim()}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-8 py-3 rounded-xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                Next Step
-                <ChevronRight className="w-5 h-5 ml-2" />
-              </Button>
-            </div>
-          </div>
-        )}
-
-        {/* Step 4: Percentage Distribution */}
-        {step === 4 && selectedStream && (
-          <div className="space-y-6 py-4">
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Select Percentage Distribution</h3>
-              <div className="grid grid-cols-1 gap-3">
-                {subjectCombinations[selectedStream].map((combo) => (
+            {/* Combination Selection */}
+            {selectedStream && (
+              <div className="space-y-4 animate-fade-in">
+                <h3 className="text-lg font-semibold text-gray-900">Select Percentage Distribution</h3>
+                <div className="grid grid-cols-1 gap-3">
+                  {subjectCombinations[selectedStream].map((combo) => (
                     <Card
                       key={combo.id}
                       className={`cursor-pointer transition-all hover:shadow-md ${
@@ -395,22 +240,17 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
                           )}
                         </div>
                       </CardContent>
-                  </Card>
-                ))}
+                    </Card>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
-            <div className="flex justify-between pt-4">
+            {/* Next Button */}
+            <div className="flex justify-end pt-4">
               <Button
-                variant="outline"
-                onClick={() => setStep(3)}
-                className="px-6 py-3 rounded-xl font-semibold"
-              >
-                Back
-              </Button>
-              <Button
-                onClick={handleStep4Next}
-                disabled={!selectedCombination}
+                onClick={handleStep1Next}
+                disabled={!selectedStream || !selectedCombination}
                 className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-8 py-3 rounded-xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Next Step
@@ -420,8 +260,7 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
           </div>
         )}
 
-        {/* Step 5: Core Topics Selection */}
-        {step === 5 && (
+        {step === 2 && (
           <div className="space-y-6 py-4">
             {/* Biology Topics (if not MPC) */}
             {selectedStream !== 'MPC' && (
@@ -585,13 +424,13 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
             <div className="flex justify-between pt-4">
               <Button
                 variant="outline"
-                onClick={() => setStep(4)}
+                onClick={() => setStep(1)}
                 className="px-6 py-3 rounded-xl font-semibold"
               >
                 Back
               </Button>
               <Button
-                onClick={handleStep5Submit}
+                onClick={handleStep2Submit}
                 disabled={
                   (selectedStream !== 'MPC' ? selectedBiologyTopics.length !== 4 : false) ||
                   selectedChemistryTopics.length !== 3 ||
