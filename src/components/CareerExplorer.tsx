@@ -286,18 +286,18 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
 
   return (
     <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="w-[95vw] max-w-[95vw] sm:max-w-2xl lg:max-w-4xl xl:max-w-5xl max-h-[90vh] overflow-y-auto p-4 sm:p-6">
         <DialogHeader>
-          <DialogTitle className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <DialogTitle className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             {getStepTitle()}
           </DialogTitle>
         </DialogHeader>
 
         {step === 1 && (
-          <div className="space-y-6 py-4">
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Select Domain</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="space-y-4 sm:space-y-6 py-2 sm:py-4">
+            <div className="space-y-3 sm:space-y-4">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900">Select Domain</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {domains.map((domain) => (
                   <Card
                     key={domain.id}
@@ -308,11 +308,11 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
                     }`}
                     onClick={() => setSelectedDomain(domain.id)}
                   >
-                    <CardContent className="p-6">
-                      <div className="flex items-center justify-between">
-                        <h4 className="font-semibold text-gray-900 text-lg">{domain.label}</h4>
+                    <CardContent className="p-4 sm:p-6">
+                      <div className="flex items-center justify-between gap-2">
+                        <h4 className="font-semibold text-gray-900 text-sm sm:text-base lg:text-lg">{domain.label}</h4>
                         {selectedDomain === domain.id && (
-                          <Check className="w-6 h-6 text-blue-600 flex-shrink-0" />
+                          <Check className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 flex-shrink-0" />
                         )}
                       </div>
                     </CardContent>
@@ -321,29 +321,29 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
               </div>
             </div>
 
-            <div className="flex justify-end pt-4">
+            <div className="flex justify-end pt-2 sm:pt-4">
               <Button
                 onClick={handleStep1Next}
                 disabled={!selectedDomain}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-8 py-3 rounded-xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
               >
                 Next Step
-                <ChevronRight className="w-5 h-5 ml-2" />
+                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
               </Button>
             </div>
           </div>
         )}
 
         {step === 2 && (
-          <div className="space-y-6 py-4">
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Select Stream</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="space-y-4 sm:space-y-6 py-2 sm:py-4">
+            <div className="space-y-3 sm:space-y-4">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900">Select Stream</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                 {['MPC', 'BIPC', 'MBIPC'].map((stream) => (
                   <Button
                     key={stream}
                     variant={selectedStream === stream ? 'default' : 'outline'}
-                    className={`h-20 text-lg font-semibold transition-all ${
+                    className={`h-16 sm:h-20 text-base sm:text-lg font-semibold transition-all ${
                       selectedStream === stream
                         ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
                         : 'hover:border-blue-500 hover:bg-blue-50'
@@ -356,73 +356,73 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
               </div>
             </div>
 
-            <div className="flex justify-between pt-4">
+            <div className="flex flex-col sm:flex-row justify-between gap-3 pt-2 sm:pt-4">
               <Button
                 variant="outline"
                 onClick={() => setStep(1)}
-                className="px-6 py-3 rounded-xl font-semibold"
+                className="w-full sm:w-auto px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-base"
               >
                 Back
               </Button>
               <Button
                 onClick={handleStep2Next}
                 disabled={!selectedStream}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-8 py-3 rounded-xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
               >
                 Next Step
-                <ChevronRight className="w-5 h-5 ml-2" />
+                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
               </Button>
             </div>
           </div>
         )}
 
         {step === 3 && (
-          <div className="space-y-6 py-4">
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Search Your Degree</h3>
+          <div className="space-y-4 sm:space-y-6 py-2 sm:py-4">
+            <div className="space-y-3 sm:space-y-4">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900">Search Your Degree</h3>
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
                 <Input
                   type="text"
                   placeholder="Enter degree name..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 h-14 text-lg border-2 focus:border-blue-500 rounded-xl"
+                  className="pl-9 sm:pl-10 h-12 sm:h-14 text-sm sm:text-base lg:text-lg border-2 focus:border-blue-500 rounded-xl"
                 />
               </div>
             </div>
 
-            <div className="flex justify-between pt-4">
+            <div className="flex flex-col sm:flex-row justify-between gap-3 pt-2 sm:pt-4">
               <Button
                 variant="outline"
                 onClick={() => setStep(2)}
-                className="px-6 py-3 rounded-xl font-semibold"
+                className="w-full sm:w-auto px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-base"
               >
                 Back
               </Button>
               <Button
                 onClick={handleStep3Next}
                 disabled={!searchQuery.trim()}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-8 py-3 rounded-xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
               >
                 Next Step
-                <ChevronRight className="w-5 h-5 ml-2" />
+                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
               </Button>
             </div>
           </div>
         )}
 
         {step === 4 && (
-          <div className="space-y-6 py-4">
+          <div className="space-y-4 sm:space-y-6 py-2 sm:py-4">
             {/* Stream Selection */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Select Stream</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="space-y-3 sm:space-y-4">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900">Select Stream</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                 {['MPC', 'BIPC', 'MBIPC'].map((stream) => (
                   <Button
                     key={stream}
                     variant={selectedStream === stream ? 'default' : 'outline'}
-                    className={`h-20 text-lg font-semibold transition-all ${
+                    className={`h-16 sm:h-20 text-base sm:text-lg font-semibold transition-all ${
                       selectedStream === stream
                         ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
                         : 'hover:border-blue-500 hover:bg-blue-50'
@@ -440,9 +440,9 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
 
             {/* Combination Selection */}
             {selectedStream && (
-              <div className="space-y-4 animate-fade-in">
-                <h3 className="text-lg font-semibold text-gray-900">Select Percentage Distribution</h3>
-                <div className="grid grid-cols-1 gap-3">
+              <div className="space-y-3 sm:space-y-4 animate-fade-in">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-900">Select Percentage Distribution</h3>
+                <div className="grid grid-cols-1 gap-2.5 sm:gap-3">
                   {subjectCombinations[selectedStream].map((combo) => (
                     <Card
                       key={combo.id}
@@ -453,15 +453,15 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
                       }`}
                       onClick={() => setSelectedCombination(combo.id)}
                     >
-                      <CardContent className="p-4">
-                        <div className="flex items-center justify-between">
-                          <div className="flex-1">
-                            <h4 className="font-semibold text-gray-900 mb-2">{combo.label}</h4>
-                            <div className="flex flex-wrap gap-2">
+                      <CardContent className="p-3 sm:p-4">
+                        <div className="flex items-center justify-between gap-2">
+                          <div className="flex-1 min-w-0">
+                            <h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">{combo.label}</h4>
+                            <div className="flex flex-wrap gap-1.5 sm:gap-2">
                               {combo.percentages.map((pct, idx) => (
                                 <span
                                   key={idx}
-                                  className="px-3 py-1 bg-white rounded-full text-sm font-medium text-gray-700 border border-gray-200"
+                                  className="px-2 sm:px-3 py-0.5 sm:py-1 bg-white rounded-full text-xs sm:text-sm font-medium text-gray-700 border border-gray-200"
                                 >
                                   {pct}
                                 </span>
@@ -469,7 +469,7 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
                             </div>
                           </div>
                           {selectedCombination === combo.id && (
-                            <Check className="w-6 h-6 text-blue-600 ml-4 flex-shrink-0" />
+                            <Check className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 flex-shrink-0" />
                           )}
                         </div>
                       </CardContent>
@@ -480,54 +480,54 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
             )}
 
             {/* Next Button */}
-            <div className="flex justify-between pt-4">
+            <div className="flex flex-col sm:flex-row justify-between gap-3 pt-2 sm:pt-4">
               <Button
                 variant="outline"
                 onClick={() => setStep(3)}
-                className="px-6 py-3 rounded-xl font-semibold"
+                className="w-full sm:w-auto px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-base"
               >
                 Back
               </Button>
               <Button
                 onClick={handleStep4Next}
                 disabled={!selectedStream || !selectedCombination}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-8 py-3 rounded-xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
               >
                 Next Step
-                <ChevronRight className="w-5 h-5 ml-2" />
+                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
               </Button>
             </div>
           </div>
         )}
 
         {step === 5 && (
-          <div className="space-y-6 py-4">
+          <div className="space-y-4 sm:space-y-6 py-2 sm:py-4">
             {/* Biology Subject Depth */}
             {selectedStream !== 'MPC' && (
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 <button
                   onClick={() => toggleSection('biology')}
-                  className="w-full flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl hover:border-green-400 transition-all"
+                  className="w-full flex items-center justify-between p-3 sm:p-4 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl hover:border-green-400 transition-all"
                 >
-                  <span className="text-lg font-bold text-gray-900">Biology Subject Depth</span>
+                  <span className="text-base sm:text-lg font-bold text-gray-900">Biology Subject Depth</span>
                   <ChevronDown
-                    className={`w-5 h-5 text-gray-600 transition-transform ${
+                    className={`w-4 h-4 sm:w-5 sm:h-5 text-gray-600 transition-transform ${
                       expandedSections.includes('biology') ? 'rotate-180' : ''
                     }`}
                   />
                 </button>
 
                 {expandedSections.includes('biology') && (
-                  <div className="space-y-4 pl-4 animate-fade-in">
+                  <div className="space-y-3 sm:space-y-4 pl-2 sm:pl-4 animate-fade-in">
                     {biologyDepthLevels.map((level, levelIndex) => (
                       <div key={levelIndex} className="space-y-2">
-                        <div className="flex items-center gap-2">
+                        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                           <div className="flex">
                             {[...Array(level.stars)].map((_, i) => (
-                              <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                              <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-amber-400 text-amber-400" />
                             ))}
                           </div>
-                          <span className="text-sm font-semibold text-gray-700">({level.label})</span>
+                          <span className="text-xs sm:text-sm font-semibold text-gray-700">({level.label})</span>
                           {level.pickCount > 0 && (
                             <span className="text-xs text-gray-500">Dropdown pick {level.pickCount}</span>
                           )}
@@ -538,15 +538,15 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
                             value={selectedBiologyTopics[levelIndex] || ''}
                             onValueChange={(value) => handleBiologySelection(levelIndex, value)}
                           >
-                            <SelectTrigger className="w-full bg-white border-2 border-green-200 hover:border-green-400 transition-all">
+                            <SelectTrigger className="w-full bg-white border-2 border-green-200 hover:border-green-400 transition-all h-auto min-h-[2.5rem] sm:min-h-[3rem]">
                               <SelectValue placeholder="Select a topic..." />
                             </SelectTrigger>
-                            <SelectContent className="bg-white z-50">
+                            <SelectContent className="bg-white z-[100] max-w-[calc(100vw-2rem)] sm:max-w-lg">
                               {level.topics.map((topic) => (
                                 <SelectItem key={topic.id} value={topic.id} className="cursor-pointer">
-                                  <div>
-                                    <div className="font-semibold text-sm">{topic.title}</div>
-                                    <div className="text-xs text-gray-500">{topic.subtopics}</div>
+                                  <div className="py-1">
+                                    <div className="font-semibold text-xs sm:text-sm">{topic.title}</div>
+                                    <div className="text-[10px] sm:text-xs text-gray-500 mt-0.5 leading-relaxed">{topic.subtopics}</div>
                                   </div>
                                 </SelectItem>
                               ))}
@@ -555,9 +555,9 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
                         ) : (
                           <div className="space-y-2">
                             {level.topics.map((topic) => (
-                              <div key={topic.id} className="p-3 bg-white border border-gray-200 rounded-lg">
-                                <div className="font-medium text-sm text-gray-900">{topic.title}</div>
-                                <div className="text-xs text-gray-500 mt-1">{topic.subtopics}</div>
+                              <div key={topic.id} className="p-2.5 sm:p-3 bg-white border border-gray-200 rounded-lg">
+                                <div className="font-medium text-xs sm:text-sm text-gray-900">{topic.title}</div>
+                                <div className="text-[10px] sm:text-xs text-gray-500 mt-1 leading-relaxed">{topic.subtopics}</div>
                               </div>
                             ))}
                           </div>
@@ -570,30 +570,30 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
             )}
 
             {/* Chemistry Subject Depth */}
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               <button
                 onClick={() => toggleSection('chemistry')}
-                className="w-full flex items-center justify-between p-4 bg-gradient-to-r from-orange-50 to-amber-50 border-2 border-orange-200 rounded-xl hover:border-orange-400 transition-all"
+                className="w-full flex items-center justify-between p-3 sm:p-4 bg-gradient-to-r from-orange-50 to-amber-50 border-2 border-orange-200 rounded-xl hover:border-orange-400 transition-all"
               >
-                <span className="text-lg font-bold text-gray-900">Chemistry Subject Depth</span>
+                <span className="text-base sm:text-lg font-bold text-gray-900">Chemistry Subject Depth</span>
                 <ChevronDown
-                  className={`w-5 h-5 text-gray-600 transition-transform ${
+                  className={`w-4 h-4 sm:w-5 sm:h-5 text-gray-600 transition-transform ${
                     expandedSections.includes('chemistry') ? 'rotate-180' : ''
                   }`}
                 />
               </button>
 
               {expandedSections.includes('chemistry') && (
-                <div className="space-y-4 pl-4 animate-fade-in">
+                <div className="space-y-3 sm:space-y-4 pl-2 sm:pl-4 animate-fade-in">
                   {chemistryDepthLevels.map((level, levelIndex) => (
                     <div key={levelIndex} className="space-y-2">
-                      <div className="flex items-center gap-2">
+                      <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                         <div className="flex">
                           {[...Array(level.stars)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                            <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-amber-400 text-amber-400" />
                           ))}
                         </div>
-                        <span className="text-sm font-semibold text-gray-700">({level.label})</span>
+                        <span className="text-xs sm:text-sm font-semibold text-gray-700">({level.label})</span>
                         {level.pickCount > 0 && (
                           <span className="text-xs text-gray-500">Dropdown pick {level.pickCount}</span>
                         )}
@@ -604,15 +604,15 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
                           value={selectedChemistryTopics[levelIndex] || ''}
                           onValueChange={(value) => handleChemistrySelection(levelIndex, value)}
                         >
-                          <SelectTrigger className="w-full bg-white border-2 border-orange-200 hover:border-orange-400 transition-all">
+                          <SelectTrigger className="w-full bg-white border-2 border-orange-200 hover:border-orange-400 transition-all h-auto min-h-[2.5rem] sm:min-h-[3rem]">
                             <SelectValue placeholder="Select a topic..." />
                           </SelectTrigger>
-                          <SelectContent className="bg-white z-50">
+                          <SelectContent className="bg-white z-[100] max-w-[calc(100vw-2rem)] sm:max-w-lg">
                             {level.topics.map((topic) => (
                               <SelectItem key={topic.id} value={topic.id} className="cursor-pointer">
-                                <div>
-                                  <div className="font-semibold text-sm">{topic.title}</div>
-                                  <div className="text-xs text-gray-500">{topic.subtopics}</div>
+                                <div className="py-1">
+                                  <div className="font-semibold text-xs sm:text-sm">{topic.title}</div>
+                                  <div className="text-[10px] sm:text-xs text-gray-500 mt-0.5 leading-relaxed">{topic.subtopics}</div>
                                 </div>
                               </SelectItem>
                             ))}
@@ -621,9 +621,9 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
                       ) : (
                         <div className="space-y-2">
                           {level.topics.map((topic) => (
-                            <div key={topic.id} className="p-3 bg-white border border-gray-200 rounded-lg">
-                              <div className="font-medium text-sm text-gray-900">{topic.title}</div>
-                              <div className="text-xs text-gray-500 mt-1">{topic.subtopics}</div>
+                            <div key={topic.id} className="p-2.5 sm:p-3 bg-white border border-gray-200 rounded-lg">
+                              <div className="font-medium text-xs sm:text-sm text-gray-900">{topic.title}</div>
+                              <div className="text-[10px] sm:text-xs text-gray-500 mt-1 leading-relaxed">{topic.subtopics}</div>
                             </div>
                           ))}
                         </div>
@@ -635,30 +635,30 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
             </div>
 
             {/* Physics Subject Depth */}
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               <button
                 onClick={() => toggleSection('physics')}
-                className="w-full flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-cyan-50 border-2 border-blue-200 rounded-xl hover:border-blue-400 transition-all"
+                className="w-full flex items-center justify-between p-3 sm:p-4 bg-gradient-to-r from-blue-50 to-cyan-50 border-2 border-blue-200 rounded-xl hover:border-blue-400 transition-all"
               >
-                <span className="text-lg font-bold text-gray-900">Physics Subject Depth</span>
+                <span className="text-base sm:text-lg font-bold text-gray-900">Physics Subject Depth</span>
                 <ChevronDown
-                  className={`w-5 h-5 text-gray-600 transition-transform ${
+                  className={`w-4 h-4 sm:w-5 sm:h-5 text-gray-600 transition-transform ${
                     expandedSections.includes('physics') ? 'rotate-180' : ''
                   }`}
                 />
               </button>
 
               {expandedSections.includes('physics') && (
-                <div className="space-y-4 pl-4 animate-fade-in">
+                <div className="space-y-3 sm:space-y-4 pl-2 sm:pl-4 animate-fade-in">
                   {physicsDepthLevels.map((level, levelIndex) => (
                     <div key={levelIndex} className="space-y-2">
-                      <div className="flex items-center gap-2">
+                      <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                         <div className="flex">
                           {[...Array(level.stars)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                            <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-amber-400 text-amber-400" />
                           ))}
                         </div>
-                        <span className="text-sm font-semibold text-gray-700">({level.label})</span>
+                        <span className="text-xs sm:text-sm font-semibold text-gray-700">({level.label})</span>
                         {level.pickCount > 0 && (
                           <span className="text-xs text-gray-500">Dropdown pick {level.pickCount}</span>
                         )}
@@ -669,15 +669,15 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
                           value={selectedPhysicsTopics[levelIndex] || ''}
                           onValueChange={(value) => handlePhysicsSelection(levelIndex, value)}
                         >
-                          <SelectTrigger className="w-full bg-white border-2 border-blue-200 hover:border-blue-400 transition-all">
+                          <SelectTrigger className="w-full bg-white border-2 border-blue-200 hover:border-blue-400 transition-all h-auto min-h-[2.5rem] sm:min-h-[3rem]">
                             <SelectValue placeholder="Select a topic..." />
                           </SelectTrigger>
-                          <SelectContent className="bg-white z-50">
+                          <SelectContent className="bg-white z-[100] max-w-[calc(100vw-2rem)] sm:max-w-lg">
                             {level.topics.map((topic) => (
                               <SelectItem key={topic.id} value={topic.id} className="cursor-pointer">
-                                <div>
-                                  <div className="font-semibold text-sm">{topic.title}</div>
-                                  <div className="text-xs text-gray-500">{topic.subtopics}</div>
+                                <div className="py-1">
+                                  <div className="font-semibold text-xs sm:text-sm">{topic.title}</div>
+                                  <div className="text-[10px] sm:text-xs text-gray-500 mt-0.5 leading-relaxed">{topic.subtopics}</div>
                                 </div>
                               </SelectItem>
                             ))}
@@ -686,9 +686,9 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
                       ) : (
                         <div className="space-y-2">
                           {level.topics.map((topic) => (
-                            <div key={topic.id} className="p-3 bg-white border border-gray-200 rounded-lg">
-                              <div className="font-medium text-sm text-gray-900">{topic.title}</div>
-                              <div className="text-xs text-gray-500 mt-1">{topic.subtopics}</div>
+                            <div key={topic.id} className="p-2.5 sm:p-3 bg-white border border-gray-200 rounded-lg">
+                              <div className="font-medium text-xs sm:text-sm text-gray-900">{topic.title}</div>
+                              <div className="text-[10px] sm:text-xs text-gray-500 mt-1 leading-relaxed">{topic.subtopics}</div>
                             </div>
                           ))}
                         </div>
@@ -700,11 +700,11 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
             </div>
 
             {/* Submit Button */}
-            <div className="flex justify-between pt-4">
+            <div className="flex flex-col sm:flex-row justify-between gap-3 pt-2 sm:pt-4">
               <Button
                 variant="outline"
                 onClick={() => setStep(4)}
-                className="px-6 py-3 rounded-xl font-semibold"
+                className="w-full sm:w-auto px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-base"
               >
                 Back
               </Button>
@@ -717,7 +717,7 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
                   Object.keys(selectedChemistryTopics).length !== chemistryDepthLevels.filter(l => l.pickCount > 0).length ||
                   Object.keys(selectedPhysicsTopics).length !== physicsDepthLevels.filter(l => l.pickCount > 0).length
                 }
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-8 py-3 rounded-xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
               >
                 Submit
               </Button>
