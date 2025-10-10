@@ -6,40 +6,34 @@ import { CareerExplorer } from './CareerExplorer';
 const indianStates = ['Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal', 'Delhi', 'Jammu and Kashmir', 'Ladakh'];
 const workflowStages = [{
   stage: '01',
-  title: 'Choose Stream',
-  description: 'Select your preferred academic stream',
+  title: 'Choose Your Stream',
+  description: 'Pick Subjects You Enjoy',
   icon: Target,
   color: 'from-blue-500 to-cyan-500'
 }, {
   stage: '02',
-  title: 'Choose Core Topic',
-  description: 'Pick your area of specialization',
+  title: 'Pick the Core Topics',
+  description: 'Pick the Core Topics You\'re Interested In',
   icon: Filter,
   color: 'from-purple-500 to-pink-500'
 }, {
   stage: '03',
-  title: 'Core Topic Analysis',
-  description: 'Deep dive into subject expertise',
+  title: 'Behind every click',
+  description: 'Science calculates the perfect fit',
   icon: Award,
   color: 'from-green-500 to-emerald-500'
 }, {
   stage: '04',
-  title: 'Accuracy Filtration',
-  description: 'AI-powered precision matching',
+  title: 'Get Your 2 Best-Fit',
+  description: 'Degrees & Industries',
   icon: Target,
   color: 'from-orange-500 to-red-500'
 }, {
   stage: '05',
-  title: 'Best Aligned Degrees',
-  description: 'Top 2 perfect degree matches',
+  title: 'See The Careers',
+  description: 'You\'re Made For and the Growth Ahead',
   icon: Award,
   color: 'from-indigo-500 to-purple-500'
-}, {
-  stage: '06',
-  title: 'Industry Alignment',
-  description: 'Matching industries for your degree',
-  icon: Building2,
-  color: 'from-teal-500 to-blue-500'
 }];
 export const HomePage = () => {
   const [selectedState, setSelectedState] = useState('');
@@ -50,21 +44,21 @@ export const HomePage = () => {
     // Animate stats when component mounts
     const timer = setTimeout(() => {
       setAnimatedStats([{
-        value: 1247,
+        value: 247,
         label: 'Colleges',
         sublabel: 'Collaborated',
         gradient: 'from-blue-600 to-cyan-600',
         icon: Shield
       }, {
-        value: 856,
+        value: 156,
         label: 'Institutes',
-        sublabel: 'Collaborated',
+        sublabel: 'Partnered',
         gradient: 'from-purple-600 to-pink-600',
         icon: Building2
       }, {
-        value: 342,
-        label: 'Online',
-        sublabel: 'Institutes',
+        value: 142,
+        label: 'Online Institutes',
+        sublabel: 'Listed',
         gradient: 'from-green-600 to-emerald-600',
         icon: BookOpen
       }, {
@@ -74,21 +68,21 @@ export const HomePage = () => {
         gradient: 'from-orange-600 to-red-600',
         icon: Award
       }, {
-        value: 467,
+        value: 117,
         label: 'Industries',
         sublabel: 'Covered',
         gradient: 'from-indigo-600 to-purple-600',
         icon: TrendingUp
       }, {
-        value: 2834,
+        value: 834,
         label: 'Job Roles',
-        sublabel: 'Men & Women',
+        sublabel: 'Covered',
         gradient: 'from-teal-600 to-blue-600',
         icon: Users
       }, {
         value: 15678,
-        label: 'Happy',
-        sublabel: 'Students',
+        label: 'Students',
+        sublabel: 'Guided',
         gradient: 'from-pink-600 to-rose-600',
         icon: Sparkles
       }]);
@@ -156,57 +150,44 @@ export const HomePage = () => {
           <div className="absolute -top-8 sm:-top-10 right-1/3 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rotate-45 animate-float delay-500"></div>
           <div className="absolute top-8 sm:top-10 left-1/6 w-8 h-8 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full animate-float delay-1000"></div>
           
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200/50 rounded-full px-4 sm:px-6 py-2 mb-6 sm:mb-8 animate-fade-in">
-            <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-blue-500" />
-            <span className="text-xs sm:text-sm font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              India's Most Advanced Career Platform
-            </span>
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black text-gray-900 mb-6 sm:mb-8 leading-[0.9] tracking-tight">
-            <div className="relative inline-block group">
-              <span className="relative z-10">A </span>
-              <span className="relative z-10 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent animate-gradient-x">
-                Game Changer
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 mb-6 sm:mb-8 leading-tight tracking-tight px-4">
+            <span className="relative inline-block">
+              India's 1st{' '}
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
+                AI-Powered Platform
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-cyan-600/10 blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </div>
-            <br />
-            <span className="relative inline-block group">
-              in Degree Selection
-              <div className="absolute -bottom-2 sm:-bottom-4 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
             </span>
             <br />
-            <span className="relative inline-block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate-pulse">
-              Like Never Before
+            <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+              That Maps Your Future from the
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+              Subjects You Love
             </span>
           </h1>
           
           <div className="max-w-4xl mx-auto mb-8 sm:mb-12 px-4">
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 font-medium leading-relaxed mb-4 sm:mb-6 animate-fade-in delay-300">
-              Navigate your academic future with <span className="text-blue-600 font-semibold">purpose</span>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 font-semibold leading-relaxed mb-4 sm:mb-6 animate-fade-in delay-300">
+              From subjects you love to a future you deserve — made possible for the first time in India.
             </p>
-            <p className="text-base sm:text-lg text-gray-500 leading-relaxed animate-fade-in delay-500">
-              Our AI-powered platform analyzes your interests, aligns them with market trends, 
-              and guides you to the perfect degree and career path with unmatched accuracy.
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 font-medium leading-relaxed mb-6 sm:mb-8 animate-fade-in delay-500">
+              Powered by AI. Backed by Research. Built for India
+            </p>
+            <p className="text-base sm:text-lg text-gray-600 leading-relaxed animate-fade-in delay-700">
+              We built career mapping on science, Just verified data that connects your subjects to your future.
             </p>
           </div>
 
-          {/* Trust indicators */}
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 sm:gap-8 mb-8 sm:mb-12 animate-fade-in delay-700">
-            <div className="flex items-center gap-2 text-gray-600">
+          {/* Trust indicators with NEP and Skill India */}
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 sm:gap-6 mb-8 sm:mb-12 animate-fade-in delay-900 px-4">
+            <div className="bg-white/90 backdrop-blur-xl rounded-xl px-4 sm:px-6 py-2 sm:py-3 shadow-lg border border-green-200/50 flex items-center gap-2">
               <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" />
-              <span className="font-semibold text-sm sm:text-base">100% Secure</span>
+              <span className="font-semibold text-xs sm:text-sm text-gray-700">Aligned with India's National Education Policy (NEP 2020)</span>
             </div>
-            <div className="flex items-center gap-2 text-gray-600">
-              <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-purple-500" />
-              <span className="font-semibold text-sm sm:text-base">AI-Powered</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-600">
-              <Users className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500" />
-              <span className="font-semibold text-sm sm:text-base">Built for Gen Z</span>
+            <div className="bg-white/90 backdrop-blur-xl rounded-xl px-4 sm:px-6 py-2 sm:py-3 shadow-lg border border-blue-200/50 flex items-center gap-2">
+              <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500" />
+              <span className="font-semibold text-xs sm:text-sm text-gray-700">Aligned with India's Skill India Mission</span>
             </div>
           </div>
         </div>
@@ -217,7 +198,7 @@ export const HomePage = () => {
             How Our Platform Works
           </h2>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
             {workflowStages.map((stage, index) => {
             const Icon = stage.icon;
             return <Card key={stage.stage} className="relative overflow-hidden group hover:shadow-xl transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
@@ -262,60 +243,75 @@ export const HomePage = () => {
 
         {/* Platform Workflows */}
         <div className="mb-12 sm:mb-20 px-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-3 sm:mb-4">
+            Built for India's New Education Era
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            {/* Explore Career Workflow */}
+            {/* Start My Degree Journey */}
             <Card className="relative overflow-hidden group hover:shadow-xl transition-all duration-300 border-0 bg-white/90 backdrop-blur-sm">
               <CardContent className="p-6 sm:p-8">
-                <div className="text-center mb-4 sm:mb-6">
+                <div className="text-left mb-4 sm:mb-6">
                   <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 mb-3 sm:mb-4">
                     <Target className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Explore Career</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Start My Degree Journey</h3>
+                  <p className="text-sm sm:text-base text-gray-600 mb-2">
+                    <span className="font-semibold">For:</span> Students after Inter / +2
+                  </p>
+                  <p className="text-xs sm:text-sm text-gray-500">
+                    Find the right degree and career path from the subjects you love.
+                  </p>
                 </div>
-                
-                
                 
                 <Button 
                   onClick={() => setIsCareerExplorerOpen(true)}
                   className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 rounded-xl text-sm sm:text-base"
                 >
-                  Explore Career
+                  Start My Degree Journey
                 </Button>
               </CardContent>
             </Card>
 
-            {/* Wished Degree Workflow */}
+            {/* Plan My Career Path */}
             <Card className="relative overflow-hidden group hover:shadow-xl transition-all duration-300 border-0 bg-white/90 backdrop-blur-sm">
               <CardContent className="p-6 sm:p-8">
-                <div className="text-center mb-4 sm:mb-6">
+                <div className="text-left mb-4 sm:mb-6">
                   <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 mb-3 sm:mb-4">
                     <Award className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Wished Degree</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Plan My Career Path</h3>
+                  <p className="text-sm sm:text-base text-gray-600 mb-2">
+                    <span className="font-semibold">For:</span> Students already in a degree
+                  </p>
+                  <p className="text-xs sm:text-sm text-gray-500">
+                    Explore top career options and industries for your course.
+                  </p>
                 </div>
                 
-                
-                
                 <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 rounded-xl text-sm sm:text-base">
-                  Wished Degree
+                  Plan My Career Path
                 </Button>
               </CardContent>
             </Card>
 
-            {/* Government Jobs Workflow */}
+            {/* Explore Government Opportunities */}
             <Card className="relative overflow-hidden group hover:shadow-xl transition-all duration-300 border-0 bg-white/90 backdrop-blur-sm md:col-span-2 lg:col-span-1">
               <CardContent className="p-6 sm:p-8">
-                <div className="text-center mb-4 sm:mb-6">
+                <div className="text-left mb-4 sm:mb-6">
                   <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 mb-3 sm:mb-4">
                     <Building2 className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Government Jobs</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Explore Government Opportunities</h3>
+                  <p className="text-sm sm:text-base text-gray-600 mb-2">
+                    <span className="font-semibold">For:</span> Students looking for Govt jobs after degree
+                  </p>
+                  <p className="text-xs sm:text-sm text-gray-500">
+                    See government exams and jobs that match your degree.
+                  </p>
                 </div>
                 
-                
-                
                 <Button className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-3 rounded-xl text-sm sm:text-base">
-                  Government Jobs
+                  Explore Government Opportunities
                 </Button>
               </CardContent>
             </Card>
@@ -380,33 +376,12 @@ export const HomePage = () => {
           <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 relative z-10 px-2 sm:px-4">
             <div className="bg-white/90 backdrop-blur-xl rounded-xl sm:rounded-2xl px-3 sm:px-4 md:px-6 py-2 sm:py-3 shadow-lg border border-green-200/50 flex items-center gap-2 sm:gap-3">
               <Shield className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-green-500 flex-shrink-0" />
-              <span className="font-bold text-gray-800 text-xs sm:text-sm md:text-base">Government Approved</span>
+              <span className="font-bold text-gray-800 text-xs sm:text-sm md:text-base">100% Secure & Privacy-Protected Platform</span>
               <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full animate-pulse flex-shrink-0"></div>
-            </div>
-            <div className="bg-white/90 backdrop-blur-xl rounded-xl sm:rounded-2xl px-3 sm:px-4 md:px-6 py-2 sm:py-3 shadow-lg border border-blue-200/50 flex items-center gap-2 sm:gap-3">
-              <Zap className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-blue-500 flex-shrink-0" />
-              <span className="font-bold text-gray-800 text-xs sm:text-sm md:text-base">AI-Verified Data</span>
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-pulse flex-shrink-0"></div>
-            </div>
-            <div className="bg-white/90 backdrop-blur-xl rounded-xl sm:rounded-2xl px-3 sm:px-4 md:px-6 py-2 sm:py-3 shadow-lg border border-purple-200/50 flex items-center gap-2 sm:gap-3">
-              <Users className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-purple-500 flex-shrink-0" />
-              <span className="font-bold text-gray-800 text-xs sm:text-sm md:text-base">Real Student Reviews</span>
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-purple-500 rounded-full animate-pulse flex-shrink-0"></div>
             </div>
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center px-4">
-          <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 text-sm sm:text-base md:text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full sm:w-auto">
-            Explore Career Paths
-            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
-          </Button>
-          
-          <p className="text-gray-500 mt-4 sm:mt-6 text-xs sm:text-sm">
-            Start your journey towards the perfect degree and career alignment
-          </p>
-        </div>
       </div>
 
       {/* Background Elements */}
