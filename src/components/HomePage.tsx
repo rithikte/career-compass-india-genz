@@ -296,33 +296,46 @@ export const HomePage = () => {
           </div>
 
           {/* Tablet & Mobile Linear Layout */}
-          <div className="lg:hidden space-y-6">
-            {[
-              { icon: Target, title: 'Choose Your Stream', desc: 'Pick Subjects You Enjoy', color: 'from-blue-500 to-cyan-500' },
-              { icon: Filter, title: 'Pick the Core Topics', desc: 'Topics You\'re Interested In', color: 'from-purple-500 to-pink-500' },
-              { icon: Zap, title: 'Behind every click', desc: 'Science calculates the perfect fit', color: 'from-green-500 to-emerald-500' },
-              { icon: Award, title: 'Get Your 2 Best-Fit', desc: 'Degrees & Industries', color: 'from-orange-500 to-red-500' },
-              { icon: TrendingUp, title: 'See The Careers', desc: 'You\'re Made For & Growth Ahead', color: 'from-indigo-500 to-purple-600' },
-              { icon: BookOpen, title: 'Science-Backed', desc: 'Verified Data & Research', color: 'from-teal-500 to-blue-500' },
-            ].map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <div key={index} className="flex items-center gap-4 sm:gap-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
-                  <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br ${item.color} flex items-center justify-center flex-shrink-0 shadow-lg`}>
-                    <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-bold text-gray-900 text-base sm:text-lg mb-1">{item.title}</h3>
-                    <p className="text-sm sm:text-base text-gray-600">{item.desc}</p>
-                  </div>
-                  {index < 5 && (
-                    <div className="hidden sm:block">
-                      <ArrowRight className="w-5 h-5 text-gray-400" />
+          <div className="lg:hidden relative max-w-2xl mx-auto">
+            {/* Vertical connecting line */}
+            <div className="absolute left-8 sm:left-10 top-16 bottom-16 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-indigo-500 opacity-30"></div>
+            
+            <div className="space-y-8 sm:space-y-10">
+              {[
+                { icon: Target, title: 'Choose Your Stream', desc: 'Pick Subjects You Enjoy', color: 'from-blue-500 to-cyan-500', step: '01' },
+                { icon: Filter, title: 'Pick the Core Topics', desc: 'Topics You\'re Interested In', color: 'from-purple-500 to-pink-500', step: '02' },
+                { icon: Zap, title: 'Behind every click', desc: 'Science calculates the perfect fit', color: 'from-green-500 to-emerald-500', step: '03' },
+                { icon: Award, title: 'Get Your 2 Best-Fit', desc: 'Degrees & Industries', color: 'from-orange-500 to-red-500', step: '04' },
+                { icon: TrendingUp, title: 'See The Careers', desc: 'You\'re Made For & Growth Ahead', color: 'from-indigo-500 to-purple-600', step: '05' },
+                { icon: BookOpen, title: 'Science-Backed', desc: 'Verified Data & Research', color: 'from-teal-500 to-blue-500', step: '06' },
+              ].map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <div key={index} className="relative">
+                    {/* Connection dot */}
+                    <div className="absolute left-8 sm:left-10 top-8 sm:top-10 w-3 h-3 bg-white rounded-full border-4 border-current z-10" 
+                         style={{ color: item.color.split(' ')[1] }}></div>
+                    
+                    <div className="flex items-start gap-4 sm:gap-6 ml-20 sm:ml-24 bg-white/95 backdrop-blur-sm rounded-3xl p-4 sm:p-6 shadow-lg border border-gray-100 hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 group">
+                      {/* Icon */}
+                      <div className={`relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center flex-shrink-0 shadow-xl group-hover:scale-110 transition-transform duration-300`}>
+                        <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                        {/* Step number badge */}
+                        <div className="absolute -top-2 -right-2 w-6 h-6 sm:w-7 sm:h-7 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-gray-100">
+                          <span className="text-xs font-bold text-gray-700">{item.step}</span>
+                        </div>
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-bold text-gray-900 text-base sm:text-lg mb-2 leading-tight">{item.title}</h3>
+                        <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{item.desc}</p>
+                      </div>
                     </div>
-                  )}
-                </div>
-              );
-            })}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
 
