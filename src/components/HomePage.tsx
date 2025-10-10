@@ -192,51 +192,97 @@ export const HomePage = () => {
           </div>
         </div>
 
-        {/* Workflow Diagram */}
+        {/* Workflow Diagram - Swiss Design */}
         <div className="mb-12 sm:mb-20 px-4">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-8 sm:mb-16">
-            How Our Platform Works
-          </h2>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
-            {workflowStages.map((stage, index) => {
-            const Icon = stage.icon;
-            return <Card key={stage.stage} className="relative overflow-hidden group hover:shadow-xl transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
-                  <CardContent className="p-4 sm:p-6 lg:p-8">
-                    {/* Stage Number */}
-                    <div className={`absolute top-0 right-0 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${stage.color} opacity-10 rounded-bl-3xl`}></div>
-                    <div className="relative">
-                      <div className={`inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${stage.color} mb-4 sm:mb-6`}>
-                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                      </div>
-                      
-                      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-                        <span className={`text-xl sm:text-2xl font-bold bg-gradient-to-r ${stage.color} bg-clip-text text-transparent`}>
-                          {stage.stage}
-                        </span>
-                        <h3 className="text-lg sm:text-xl font-bold text-gray-900">{stage.title}</h3>
-                      </div>
-                      
-                      <p className="text-gray-600 leading-relaxed font-medium text-sm sm:text-base">{stage.description}</p>
+          <div className="max-w-7xl mx-auto">
+            {/* Header with Swiss Typography */}
+            <div className="mb-12 sm:mb-20">
+              <div className="flex items-center gap-4 sm:gap-6 mb-6 sm:mb-8">
+                <div className="w-1 h-16 sm:h-20 bg-foreground"></div>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground tracking-tight">
+                  How the Platform Works
+                </h2>
+              </div>
+            </div>
+            
+            {/* Swiss Grid Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
+              {workflowStages.map((stage, index) => {
+                const Icon = stage.icon;
+                const isEven = index % 2 === 0;
+                
+                return (
+                  <div 
+                    key={stage.stage} 
+                    className={`
+                      lg:col-span-${index === 2 ? '12' : '6'}
+                      ${index === 2 ? 'lg:my-8' : ''}
+                      border-l-4 border-foreground
+                      ${index < workflowStages.length - 1 ? 'border-b' : ''}
+                      border-border
+                      p-6 sm:p-8 lg:p-10 xl:p-12
+                      group
+                      hover:bg-accent/5 transition-all duration-300
+                      relative
+                    `}
+                  >
+                    {/* Stage Number - Large Swiss Style */}
+                    <div className="absolute top-4 sm:top-6 right-4 sm:right-6 opacity-5 pointer-events-none">
+                      <span className="text-[120px] sm:text-[150px] lg:text-[180px] font-black leading-none">
+                        {stage.stage}
+                      </span>
                     </div>
                     
-                    {/* Connection Arrow */}
-                    {index < workflowStages.length - 1 && <div className="hidden lg:block absolute -right-3 sm:-right-4 top-1/2 transform -translate-y-1/2 z-10">
-                        <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white rounded-full border-3 sm:border-4 border-blue-200 flex items-center justify-center">
-                          <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 text-blue-500" />
+                    <div className="relative z-10">
+                      {/* Minimal Icon Container */}
+                      <div className="mb-6 sm:mb-8">
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 border-2 border-foreground flex items-center justify-center group-hover:bg-foreground transition-colors duration-300">
+                          <Icon className="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-foreground group-hover:text-background transition-colors duration-300" />
                         </div>
-                      </div>}
-                  </CardContent>
-                </Card>;
-          })}
-          </div>
-
-          {/* Flow Lines for Mobile */}
-          <div className="lg:hidden flex justify-center">
-            <div className="flex flex-col items-center gap-2 sm:gap-4">
-              {Array.from({
-              length: workflowStages.length - 1
-            }).map((_, index) => <div key={index} className="w-1 h-6 sm:h-8 bg-gradient-to-b from-blue-300 to-purple-300 rounded-full"></div>)}
+                      </div>
+                      
+                      {/* Stage Number Label */}
+                      <div className="mb-3 sm:mb-4">
+                        <span className="text-sm sm:text-base font-mono font-semibold text-muted-foreground tracking-wider">
+                          {stage.stage}
+                        </span>
+                      </div>
+                      
+                      {/* Title */}
+                      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
+                        {stage.title}
+                      </h3>
+                      
+                      {/* Description */}
+                      <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+                        {stage.description}
+                      </p>
+                      
+                      {/* Geometric Accent */}
+                      <div className="mt-6 sm:mt-8 flex gap-2">
+                        <div className="w-12 h-1 bg-foreground"></div>
+                        <div className="w-6 h-1 bg-foreground/50"></div>
+                        <div className="w-3 h-1 bg-foreground/25"></div>
+                      </div>
+                    </div>
+                    
+                    {/* Connection Arrow - Minimalist */}
+                    {index < workflowStages.length - 1 && index !== 2 && (
+                      <div className="hidden lg:flex absolute bottom-6 right-6 items-center gap-2">
+                        <div className="w-12 h-[2px] bg-foreground/30"></div>
+                        <ArrowRight className="w-5 h-5 text-foreground/30" />
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+            
+            {/* Bottom Accent Line */}
+            <div className="mt-12 sm:mt-16 flex items-center gap-2">
+              <div className="flex-1 h-[2px] bg-foreground/10"></div>
+              <div className="w-8 h-8 border-2 border-foreground"></div>
+              <div className="flex-1 h-[2px] bg-foreground/10"></div>
             </div>
           </div>
         </div>
