@@ -192,52 +192,137 @@ export const HomePage = () => {
           </div>
         </div>
 
-        {/* Workflow Diagram */}
+        {/* Workflow Diagram - Circular Layout */}
         <div className="mb-12 sm:mb-20 px-4">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-8 sm:mb-16">
-            How Our Platform Works
+            How the Platform Works
           </h2>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
-            {workflowStages.map((stage, index) => {
-            const Icon = stage.icon;
-            return <Card key={stage.stage} className="relative overflow-hidden group hover:shadow-xl transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
-                  <CardContent className="p-4 sm:p-6 lg:p-8">
-                    {/* Stage Number */}
-                    <div className={`absolute top-0 right-0 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${stage.color} opacity-10 rounded-bl-3xl`}></div>
-                    <div className="relative">
-                      <div className={`inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${stage.color} mb-4 sm:mb-6`}>
-                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                      </div>
-                      
-                      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-                        <span className={`text-xl sm:text-2xl font-bold bg-gradient-to-r ${stage.color} bg-clip-text text-transparent`}>
-                          {stage.stage}
-                        </span>
-                        <h3 className="text-lg sm:text-xl font-bold text-gray-900">{stage.title}</h3>
-                      </div>
-                      
-                      <p className="text-gray-600 leading-relaxed font-medium text-sm sm:text-base">{stage.description}</p>
-                    </div>
-                    
-                    {/* Connection Arrow */}
-                    {index < workflowStages.length - 1 && <div className="hidden lg:block absolute -right-3 sm:-right-4 top-1/2 transform -translate-y-1/2 z-10">
-                        <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white rounded-full border-3 sm:border-4 border-blue-200 flex items-center justify-center">
-                          <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 text-blue-500" />
-                        </div>
-                      </div>}
-                  </CardContent>
-                </Card>;
-          })}
+          {/* Desktop Circular Layout */}
+          <div className="hidden lg:block relative max-w-5xl mx-auto">
+            <div className="relative w-full aspect-square max-w-[800px] mx-auto">
+              {/* Dashed Circle Border */}
+              <div className="absolute inset-0 rounded-full border-4 border-dashed border-cyan-300/40"></div>
+              
+              {/* Center Element */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                <div className="w-48 h-48 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-2xl">
+                  <div className="text-center text-white px-6">
+                    <Sparkles className="w-16 h-16 mx-auto mb-3" />
+                    <p className="font-bold text-lg leading-tight">AI-Powered Career Mapping</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Workflow Items Positioned in Circle */}
+              {/* Item 1 - Top */}
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-xl border-4 border-white">
+                    <Target className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="text-center bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-lg border border-cyan-100 min-w-[200px]">
+                    <p className="font-bold text-gray-900 text-sm mb-1">Choose Your Stream</p>
+                    <p className="text-xs text-gray-600">Pick Subjects You Enjoy</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Item 2 - Top Right */}
+              <div className="absolute top-[15%] right-[5%] transform translate-x-1/4">
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-xl border-4 border-white">
+                    <Filter className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="text-center bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-lg border border-purple-100 min-w-[200px]">
+                    <p className="font-bold text-gray-900 text-sm mb-1">Pick the Core Topics</p>
+                    <p className="text-xs text-gray-600">Topics You're Interested In</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Item 3 - Right */}
+              <div className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2">
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center shadow-xl border-4 border-white">
+                    <Zap className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="text-center bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-lg border border-green-100 min-w-[200px]">
+                    <p className="font-bold text-gray-900 text-sm mb-1">Behind every click</p>
+                    <p className="text-xs text-gray-600">Science calculates the perfect fit</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Item 4 - Bottom Right */}
+              <div className="absolute bottom-[15%] right-[5%] transform translate-x-1/4">
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center shadow-xl border-4 border-white">
+                    <Award className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="text-center bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-lg border border-orange-100 min-w-[200px]">
+                    <p className="font-bold text-gray-900 text-sm mb-1">Get Your 2 Best-Fit</p>
+                    <p className="text-xs text-gray-600">Degrees & Industries</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Item 5 - Bottom */}
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2">
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-xl border-4 border-white">
+                    <TrendingUp className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="text-center bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-lg border border-indigo-100 min-w-[200px]">
+                    <p className="font-bold text-gray-900 text-sm mb-1">See The Careers</p>
+                    <p className="text-xs text-gray-600">You're Made For & Growth Ahead</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Item 6 - Left */}
+              <div className="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-teal-500 to-blue-500 flex items-center justify-center shadow-xl border-4 border-white">
+                    <BookOpen className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="text-center bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-lg border border-teal-100 min-w-[200px]">
+                    <p className="font-bold text-gray-900 text-sm mb-1">Science-Backed</p>
+                    <p className="text-xs text-gray-600">Verified Data & Research</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Flow Lines for Mobile */}
-          <div className="lg:hidden flex justify-center">
-            <div className="flex flex-col items-center gap-2 sm:gap-4">
-              {Array.from({
-              length: workflowStages.length - 1
-            }).map((_, index) => <div key={index} className="w-1 h-6 sm:h-8 bg-gradient-to-b from-blue-300 to-purple-300 rounded-full"></div>)}
-            </div>
+          {/* Tablet & Mobile Linear Layout */}
+          <div className="lg:hidden space-y-6">
+            {[
+              { icon: Target, title: 'Choose Your Stream', desc: 'Pick Subjects You Enjoy', color: 'from-blue-500 to-cyan-500' },
+              { icon: Filter, title: 'Pick the Core Topics', desc: 'Topics You\'re Interested In', color: 'from-purple-500 to-pink-500' },
+              { icon: Zap, title: 'Behind every click', desc: 'Science calculates the perfect fit', color: 'from-green-500 to-emerald-500' },
+              { icon: Award, title: 'Get Your 2 Best-Fit', desc: 'Degrees & Industries', color: 'from-orange-500 to-red-500' },
+              { icon: TrendingUp, title: 'See The Careers', desc: 'You\'re Made For & Growth Ahead', color: 'from-indigo-500 to-purple-600' },
+              { icon: BookOpen, title: 'Science-Backed', desc: 'Verified Data & Research', color: 'from-teal-500 to-blue-500' },
+            ].map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div key={index} className="flex items-center gap-4 sm:gap-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                  <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br ${item.color} flex items-center justify-center flex-shrink-0 shadow-lg`}>
+                    <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-bold text-gray-900 text-base sm:text-lg mb-1">{item.title}</h3>
+                    <p className="text-sm sm:text-base text-gray-600">{item.desc}</p>
+                  </div>
+                  {index < 5 && (
+                    <div className="hidden sm:block">
+                      <ArrowRight className="w-5 h-5 text-gray-400" />
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
 
