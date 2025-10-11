@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MapPin, ArrowRight, Target, Filter, Award, Building2, ChevronDown, Sparkles, TrendingUp, Users, Shield, BookOpen, Zap } from 'lucide-react';
+import { MapPin, ArrowRight, Target, Filter, Award, Building2, ChevronDown, Sparkles, TrendingUp, Users, Shield, BookOpen, Zap, Instagram, Twitter, Linkedin } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { CareerExplorer } from './CareerExplorer';
@@ -101,18 +101,18 @@ export const HomePage = () => {
       {/* Hero Section with Enhanced Vertical Spacing */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-16 sm:pb-24 relative z-10">
         
-        {/* Top-Right State Selector - Asymmetric Balance */}
-        <div className="absolute top-4 sm:top-8 right-4 sm:right-8 z-30">
+        {/* Centered State Selector */}
+        <div className="flex justify-center mb-8 sm:mb-12 z-30">
           <div className="relative group">
-            <button onClick={() => setIsStateDropdownOpen(!isStateDropdownOpen)} className="magnetic-container flex items-center gap-2 bg-white/95 backdrop-blur-xl rounded-full shadow-layer-2 border border-border/50 hover:shadow-layer-3 hover:scale-105 transition-all duration-300 my-0 py-[11px] mx-[171px] px-[111px]">
+            <button onClick={() => setIsStateDropdownOpen(!isStateDropdownOpen)} className="magnetic-container flex items-center gap-2 bg-white/95 backdrop-blur-xl rounded-full shadow-layer-2 border border-border/50 hover:shadow-layer-3 hover:scale-105 transition-all duration-300 px-6 py-3">
               <MapPin className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-foreground max-w-[100px] truncate">
+              <span className="text-sm font-medium text-foreground">
                 {selectedState || 'Select State'}
               </span>
               <ChevronDown className={`w-3 h-3 text-muted-foreground transition-transform duration-300 ${isStateDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
             
-            {isStateDropdownOpen && <div className="absolute top-full mt-2 right-0 bg-white/95 backdrop-blur-xl rounded-2xl shadow-layer-3 border border-border/50 max-h-64 overflow-y-auto z-50 animate-spring-up min-w-[200px]">
+            {isStateDropdownOpen && <div className="absolute top-full mt-2 left-1/2 transform -translate-x-1/2 bg-white/95 backdrop-blur-xl rounded-2xl shadow-layer-3 border border-border/50 max-h-64 overflow-y-auto z-50 animate-spring-up min-w-[200px]">
                 <div className="p-2">
                   {indianStates.map(state => <button key={state} onClick={() => {
                 setSelectedState(state);
@@ -456,6 +456,25 @@ export const HomePage = () => {
               <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
             </div>
           </div>
+        </div>
+
+        {/* Social Media Links */}
+        <div className="flex justify-center gap-6 py-8 relative z-10">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="magnetic-container group">
+            <div className="w-12 h-12 rounded-full bg-white/95 backdrop-blur-xl shadow-layer-2 border border-border/50 flex items-center justify-center hover:shadow-layer-3 hover:scale-110 transition-all duration-300">
+              <Instagram className="w-5 h-5 text-foreground group-hover:text-primary transition-colors" />
+            </div>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="magnetic-container group">
+            <div className="w-12 h-12 rounded-full bg-white/95 backdrop-blur-xl shadow-layer-2 border border-border/50 flex items-center justify-center hover:shadow-layer-3 hover:scale-110 transition-all duration-300">
+              <Twitter className="w-5 h-5 text-foreground group-hover:text-primary transition-colors" />
+            </div>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="magnetic-container group">
+            <div className="w-12 h-12 rounded-full bg-white/95 backdrop-blur-xl shadow-layer-2 border border-border/50 flex items-center justify-center hover:shadow-layer-3 hover:scale-110 transition-all duration-300">
+              <Linkedin className="w-5 h-5 text-foreground group-hover:text-primary transition-colors" />
+            </div>
+          </a>
         </div>
 
       </div>
