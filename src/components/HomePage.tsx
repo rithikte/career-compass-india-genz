@@ -3,9 +3,7 @@ import { MapPin, ArrowRight, Target, Filter, Award, Building2, ChevronDown, Spar
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { CareerExplorer } from './CareerExplorer';
-
 const indianStates = ['Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal', 'Delhi', 'Jammu and Kashmir', 'Ladakh'];
-
 const workflowStages = [{
   stage: '01',
   title: 'Choose Your Stream',
@@ -37,13 +35,11 @@ const workflowStages = [{
   icon: Award,
   color: 'from-indigo-500 to-purple-500'
 }];
-
 export const HomePage = () => {
   const [selectedState, setSelectedState] = useState('');
   const [isStateDropdownOpen, setIsStateDropdownOpen] = useState(false);
   const [animatedStats, setAnimatedStats] = useState([]);
   const [isCareerExplorerOpen, setIsCareerExplorerOpen] = useState(false);
-
   useEffect(() => {
     // Animate stats when component mounts
     const timer = setTimeout(() => {
@@ -93,12 +89,13 @@ export const HomePage = () => {
     }, 500);
     return () => clearTimeout(timer);
   }, []);
-
   return <div className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50/30 min-h-screen overflow-hidden">
       {/* Subtle Background Elements - Reduced Visual Noise */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float-gentle"></div>
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-float-gentle" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-float-gentle" style={{
+        animationDelay: '2s'
+      }}></div>
       </div>
 
       {/* Hero Section with Enhanced Vertical Spacing */}
@@ -107,10 +104,7 @@ export const HomePage = () => {
         {/* Top-Right State Selector - Asymmetric Balance */}
         <div className="absolute top-4 sm:top-8 right-4 sm:right-8 z-30">
           <div className="relative group">
-            <button 
-              onClick={() => setIsStateDropdownOpen(!isStateDropdownOpen)} 
-              className="magnetic-container flex items-center gap-2 bg-white/95 backdrop-blur-xl px-4 py-2 rounded-full shadow-layer-2 border border-border/50 hover:shadow-layer-3 hover:scale-105 transition-all duration-300"
-            >
+            <button onClick={() => setIsStateDropdownOpen(!isStateDropdownOpen)} className="magnetic-container flex items-center gap-2 bg-white/95 backdrop-blur-xl px-4 py-2 rounded-full shadow-layer-2 border border-border/50 hover:shadow-layer-3 hover:scale-105 transition-all duration-300">
               <MapPin className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-foreground max-w-[100px] truncate">
                 {selectedState || 'Select State'}
@@ -118,24 +112,16 @@ export const HomePage = () => {
               <ChevronDown className={`w-3 h-3 text-muted-foreground transition-transform duration-300 ${isStateDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
             
-            {isStateDropdownOpen && (
-              <div className="absolute top-full mt-2 right-0 bg-white/95 backdrop-blur-xl rounded-2xl shadow-layer-3 border border-border/50 max-h-64 overflow-y-auto z-50 animate-spring-up min-w-[200px]">
+            {isStateDropdownOpen && <div className="absolute top-full mt-2 right-0 bg-white/95 backdrop-blur-xl rounded-2xl shadow-layer-3 border border-border/50 max-h-64 overflow-y-auto z-50 animate-spring-up min-w-[200px]">
                 <div className="p-2">
-                  {indianStates.map((state) => (
-                    <button
-                      key={state}
-                      onClick={() => {
-                        setSelectedState(state);
-                        setIsStateDropdownOpen(false);
-                      }}
-                      className="w-full text-left px-3 py-2 hover:bg-accent/10 text-foreground rounded-lg transition-all duration-200 text-sm font-medium"
-                    >
+                  {indianStates.map(state => <button key={state} onClick={() => {
+                setSelectedState(state);
+                setIsStateDropdownOpen(false);
+              }} className="w-full text-left px-3 py-2 hover:bg-accent/10 text-foreground rounded-lg transition-all duration-200 text-sm font-medium">
                       {state}
-                    </button>
-                  ))}
+                    </button>)}
                 </div>
-              </div>
-            )}
+              </div>}
           </div>
         </div>
 
@@ -143,8 +129,13 @@ export const HomePage = () => {
         <div className="text-center mb-16 sm:mb-24 relative px-4 mt-12 sm:mt-0">
           {/* Minimal Floating Shapes - Only 3 */}
           <div className="absolute -top-20 left-1/4 w-24 h-24 bg-primary/10 rounded-full animate-float-gentle blur-sm will-change-transform"></div>
-          <div className="absolute top-10 right-1/3 w-16 h-16 bg-accent/10 animate-float-gentle will-change-transform" style={{clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)', animationDelay: '1s'}}></div>
-          <div className="absolute bottom-1/4 left-1/5 w-12 h-32 bg-primary/8 animate-float-gentle" style={{animationDelay: '1.5s'}}></div>
+          <div className="absolute top-10 right-1/3 w-16 h-16 bg-accent/10 animate-float-gentle will-change-transform" style={{
+          clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)',
+          animationDelay: '1s'
+        }}></div>
+          <div className="absolute bottom-1/4 left-1/5 w-12 h-32 bg-primary/8 animate-float-gentle" style={{
+          animationDelay: '1.5s'
+        }}></div>
           
           {/* Headline - Mostly Black with ONE Gradient Word */}
           <h1 className="headline-interactive text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight tracking-tight px-4 mb-10 sm:mb-12">
@@ -200,9 +191,7 @@ export const HomePage = () => {
           <div className="flex justify-center animate-scroll-bounce mt-16">
             <div className="magnetic-container flex flex-col items-center gap-2 text-muted-foreground cursor-pointer hover:text-primary transition-colors group">
               <span className="text-sm font-semibold">Explore More</span>
-              <div className="w-6 h-10 border-2 border-current rounded-full flex items-start justify-center p-2 group-hover:border-primary transition-colors">
-                <div className="w-1 h-2 bg-current rounded-full animate-scroll-bounce"></div>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -304,17 +293,39 @@ export const HomePage = () => {
 
           {/* Tablet & Mobile Linear Layout */}
           <div className="lg:hidden space-y-6">
-            {[
-              { icon: Target, title: 'Choose Your Stream', desc: 'Pick Subjects You Enjoy', color: 'from-blue-500 to-cyan-500' },
-              { icon: Filter, title: 'Pick the Core Topics', desc: 'Topics You\'re Interested In', color: 'from-purple-500 to-pink-500' },
-              { icon: Zap, title: 'Behind every click', desc: 'Science calculates the perfect fit', color: 'from-green-500 to-emerald-500' },
-              { icon: Award, title: 'Get Your 2 Best-Fit', desc: 'Degrees & Industries', color: 'from-orange-500 to-red-500' },
-              { icon: TrendingUp, title: 'See The Careers', desc: 'You\'re Made For & Growth Ahead', color: 'from-indigo-500 to-purple-600' },
-              { icon: BookOpen, title: 'Science-Backed', desc: 'Verified Data & Research', color: 'from-teal-500 to-blue-500' },
-            ].map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <div key={index} className="magnetic-container flex items-center gap-4 sm:gap-6 bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-layer-2 border border-border hover:shadow-layer-3 transition-all duration-300">
+            {[{
+            icon: Target,
+            title: 'Choose Your Stream',
+            desc: 'Pick Subjects You Enjoy',
+            color: 'from-blue-500 to-cyan-500'
+          }, {
+            icon: Filter,
+            title: 'Pick the Core Topics',
+            desc: 'Topics You\'re Interested In',
+            color: 'from-purple-500 to-pink-500'
+          }, {
+            icon: Zap,
+            title: 'Behind every click',
+            desc: 'Science calculates the perfect fit',
+            color: 'from-green-500 to-emerald-500'
+          }, {
+            icon: Award,
+            title: 'Get Your 2 Best-Fit',
+            desc: 'Degrees & Industries',
+            color: 'from-orange-500 to-red-500'
+          }, {
+            icon: TrendingUp,
+            title: 'See The Careers',
+            desc: 'You\'re Made For & Growth Ahead',
+            color: 'from-indigo-500 to-purple-600'
+          }, {
+            icon: BookOpen,
+            title: 'Science-Backed',
+            desc: 'Verified Data & Research',
+            color: 'from-teal-500 to-blue-500'
+          }].map((item, index) => {
+            const Icon = item.icon;
+            return <div key={index} className="magnetic-container flex items-center gap-4 sm:gap-6 bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-layer-2 border border-border hover:shadow-layer-3 transition-all duration-300">
                   <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br ${item.color} flex items-center justify-center flex-shrink-0 shadow-layer-1`}>
                     <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                   </div>
@@ -322,9 +333,8 @@ export const HomePage = () => {
                     <h3 className="font-bold text-foreground text-base sm:text-lg mb-1">{item.title}</h3>
                     <p className="text-sm sm:text-base text-muted-foreground">{item.desc}</p>
                   </div>
-                </div>
-              );
-            })}
+                </div>;
+          })}
           </div>
         </div>
 
@@ -350,10 +360,7 @@ export const HomePage = () => {
                   </p>
                 </div>
                 
-                <Button 
-                  onClick={() => setIsCareerExplorerOpen(true)}
-                  className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 rounded-xl hover:scale-105 transition-transform duration-300"
-                >
+                <Button onClick={() => setIsCareerExplorerOpen(true)} className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 rounded-xl hover:scale-105 transition-transform duration-300">
                   Start My Degree Journey
                 </Button>
               </CardContent>
