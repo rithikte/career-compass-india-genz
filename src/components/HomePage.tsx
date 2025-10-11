@@ -3,8 +3,6 @@ import { MapPin, ArrowRight, Target, Filter, Award, Building2, ChevronDown, Spar
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { CareerExplorer } from './CareerExplorer';
-import { LampContainer } from './ui/lamp';
-import { motion } from 'framer-motion';
 const indianStates = ['Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal', 'Delhi', 'Jammu and Kashmir', 'Ladakh'];
 const workflowStages = [{
   stage: '01',
@@ -91,40 +89,8 @@ export const HomePage = () => {
     }, 500);
     return () => clearTimeout(timer);
   }, []);
-  return <div className="relative overflow-hidden">
-      {/* Lamp Hero Section */}
-      <LampContainer className="min-h-[600px] sm:min-h-[700px]">
-        <motion.div
-          initial={{ opacity: 0.5, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-          className="mt-8 text-center"
-        >
-          <h1 className="bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-transparent">
-            India's 1st AI-Powered <br className="hidden sm:block" /> Career Mapping Platform
-          </h1>
-          <p className="mt-6 text-slate-300 text-base sm:text-lg md:text-xl max-w-2xl mx-auto px-4">
-            From subjects you love to a future you deserve — made possible for the first time in India
-          </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center px-4">
-            <Button 
-              onClick={() => setIsCareerExplorerOpen(true)}
-              size="lg"
-              className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold px-8 py-6 text-lg rounded-full shadow-xl"
-            >
-              Start Your Journey
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-          </div>
-        </motion.div>
-      </LampContainer>
-
-      {/* Main Content Section */}
-      <div className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50 min-h-screen overflow-hidden">
+  return <div className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50 min-h-screen overflow-hidden">
+      {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 pb-12 sm:pb-20">
         {/* Floating Trust Badges */}
         <div className="absolute top-4 sm:top-8 left-4 sm:left-8 z-20 animate-float">
@@ -503,15 +469,14 @@ export const HomePage = () => {
 
       </div>
 
-        {/* Background Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
-          <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 w-72 h-72 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-2000"></div>
-        </div>
-
-        {/* Career Explorer Modal */}
-        <CareerExplorer open={isCareerExplorerOpen} onOpenChange={setIsCareerExplorerOpen} />
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
+        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 w-72 h-72 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-2000"></div>
       </div>
+
+      {/* Career Explorer Modal */}
+      <CareerExplorer open={isCareerExplorerOpen} onOpenChange={setIsCareerExplorerOpen} />
     </div>;
 };
