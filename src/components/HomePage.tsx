@@ -90,22 +90,29 @@ export const HomePage = () => {
     return () => clearTimeout(timer);
   }, []);
   return <div className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50 min-h-screen overflow-hidden">
+      {/* Animated Background Gradient Orbs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float-enhanced"></div>
+        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-float-enhanced delay-1000"></div>
+        <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-float-enhanced delay-500"></div>
+      </div>
+
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 pb-12 sm:pb-20">
-        {/* Floating Trust Badges */}
-        <div className="absolute top-4 sm:top-8 left-4 sm:left-8 z-20 animate-float">
-          <div className="bg-white/90 backdrop-blur-xl rounded-2xl px-3 sm:px-4 py-2 shadow-lg border border-blue-100 flex items-center gap-2">
-            <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 pb-12 sm:pb-20 relative z-10">
+        {/* Floating Trust Badges with Enhanced Animations */}
+        <div className="absolute top-4 sm:top-8 left-4 sm:left-8 z-20 animate-slide-up-fade">
+          <div className="bg-white/90 backdrop-blur-xl rounded-2xl px-3 sm:px-4 py-2 shadow-elegant border border-success/20 flex items-center gap-2 hover:shadow-glow hover:scale-105 transition-all duration-300 cursor-pointer group">
+            <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-success animate-scale-pulse" />
             <span className="text-xs sm:text-sm font-semibold text-gray-700">Trusted Platform</span>
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-success rounded-full animate-glow-pulse"></div>
           </div>
         </div>
 
-        <div className="absolute top-4 sm:top-8 right-4 sm:right-8 z-20 animate-float delay-1000">
-          <div className="bg-white/90 backdrop-blur-xl rounded-2xl px-3 sm:px-4 py-2 shadow-lg border border-purple-100 flex items-center gap-2">
-            <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-purple-500" />
+        <div className="absolute top-4 sm:top-8 right-4 sm:right-8 z-20 animate-slide-up-fade delay-200">
+          <div className="bg-white/90 backdrop-blur-xl rounded-2xl px-3 sm:px-4 py-2 shadow-elegant border border-accent/20 flex items-center gap-2 hover:shadow-glow hover:scale-105 transition-all duration-300 cursor-pointer group">
+            <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-accent animate-scale-pulse" />
             <span className="text-xs sm:text-sm font-semibold text-gray-700">AI Powered</span>
-            <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-accent rounded-full animate-glow-pulse"></div>
           </div>
         </div>
 
@@ -143,51 +150,89 @@ export const HomePage = () => {
           </div>
         </div>
 
-        {/* Main Hero Section with Animated Typography */}
+        {/* Main Hero Section with Enhanced Animated Typography */}
         <div className="text-center mb-12 sm:mb-20 relative px-4">
-          {/* Floating geometric shapes */}
-          <div className="absolute -top-16 sm:-top-20 left-1/4 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full animate-float"></div>
-          <div className="absolute -top-8 sm:-top-10 right-1/3 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rotate-45 animate-float delay-500"></div>
-          <div className="absolute top-8 sm:top-10 left-1/6 w-8 h-8 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full animate-float delay-1000"></div>
+          {/* Enhanced Floating geometric shapes with varied animations */}
+          <div className="absolute -top-16 sm:-top-20 left-1/4 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full animate-float-enhanced blur-sm will-change-transform"></div>
+          <div className="absolute -top-8 sm:-top-10 right-1/3 w-12 h-12 sm:w-20 sm:h-20 bg-gradient-to-br from-accent/15 to-primary/15 animate-float-enhanced delay-500 will-change-transform" style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}></div>
+          <div className="absolute top-8 sm:top-10 left-1/6 w-8 h-8 sm:w-16 sm:h-16 bg-gradient-to-br from-accent-light/20 to-accent/20 rounded-full animate-float-enhanced delay-1000 blur-sm will-change-transform"></div>
+          <div className="absolute top-1/3 right-1/4 w-10 h-10 sm:w-14 sm:h-14 bg-gradient-to-br from-primary-light/15 to-primary/15 rotate-12 animate-float-enhanced delay-700" style={{ clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)' }}></div>
+          <div className="absolute bottom-1/4 left-1/5 w-6 h-20 sm:w-8 sm:h-28 bg-gradient-to-br from-accent/10 to-primary/10 animate-rotate-slow"></div>
+          
+          {/* Particle effects */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {[...Array(8)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-1 h-1 bg-primary/30 rounded-full animate-float-enhanced"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${i * 0.3}s`,
+                  animationDuration: `${4 + Math.random() * 4}s`
+                }}
+              ></div>
+            ))}
+          </div>
           
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 mb-6 sm:mb-8 leading-tight tracking-tight px-4">
-            <span className="relative inline-block">
+            <span className="relative inline-block animate-slide-up-fade will-change-transform">
               India's 1st{' '}
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
-                AI-Powered Platform
+              <span className="relative inline-block">
+                <span className="text-shimmer bg-gradient-to-r from-primary via-accent to-primary-light bg-clip-text text-transparent bg-[length:200%_auto]">
+                  AI-Powered Platform
+                </span>
+                <span className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-accent/20 blur-xl -z-10 animate-glow-pulse"></span>
               </span>
             </span>
             <br />
-            <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+            <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl animate-slide-up-fade delay-300 inline-block will-change-transform">
               That Maps Your Future from the
             </span>
             <br />
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Subjects You Love
+            <span className="relative inline-block animate-slide-up-fade delay-500 will-change-transform">
+              <span className="bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent">
+                Subjects You Love
+              </span>
+              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-accent/0 via-accent to-accent/0 animate-shimmer"></span>
             </span>
           </h1>
           
           <div className="max-w-4xl mx-auto mb-8 sm:mb-12 px-4">
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 font-semibold leading-relaxed mb-4 sm:mb-6 animate-fade-in delay-300">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 font-semibold leading-relaxed mb-4 sm:mb-6 animate-slide-up-fade delay-600 will-change-transform">
               From subjects you love to a future you deserve — made possible for the first time in India.
             </p>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 font-medium leading-relaxed mb-6 sm:mb-8 animate-fade-in delay-500">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 font-medium leading-relaxed mb-6 sm:mb-8 animate-slide-up-fade delay-800 will-change-transform">
               Powered by AI. Backed by Research. Built for India
             </p>
-            <p className="text-base sm:text-lg text-gray-600 leading-relaxed animate-fade-in delay-700">
+            <p className="text-base sm:text-lg text-gray-600 leading-relaxed animate-slide-up-fade delay-1000 will-change-transform">
               We built career mapping on science, Just verified data that connects your subjects to your future.
             </p>
           </div>
 
-          {/* Trust indicators with NEP and Skill India */}
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 sm:gap-6 mb-8 sm:mb-12 animate-fade-in delay-900 px-4">
-            <div className="bg-white/90 backdrop-blur-xl rounded-xl px-4 sm:px-6 py-2 sm:py-3 shadow-lg border border-green-200/50 flex items-center gap-2">
-              <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" />
-              <span className="font-semibold text-xs sm:text-sm text-gray-700">Aligned with India's National Education Policy (NEP 2020)</span>
+          {/* Enhanced Trust indicators with NEP and Skill India */}
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 sm:gap-6 mb-8 sm:mb-12 px-4">
+            <div className="relative group animate-fade-in-scale delay-1200">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-success to-success-foreground rounded-xl opacity-20 group-hover:opacity-40 blur transition-all duration-300"></div>
+              <div className="relative bg-white/90 backdrop-blur-xl rounded-xl px-4 sm:px-6 py-2 sm:py-3 shadow-elegant border border-success/30 flex items-center gap-2 hover:shadow-glow hover:scale-105 transition-all duration-300 cursor-pointer">
+                <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-success animate-bounce-subtle" />
+                <span className="font-semibold text-xs sm:text-sm text-gray-700">Aligned with India's National Education Policy (NEP 2020)</span>
+              </div>
             </div>
-            <div className="bg-white/90 backdrop-blur-xl rounded-xl px-4 sm:px-6 py-2 sm:py-3 shadow-lg border border-blue-200/50 flex items-center gap-2">
-              <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500" />
-              <span className="font-semibold text-xs sm:text-sm text-gray-700">Aligned with India's Skill India Mission</span>
+            <div className="relative group animate-fade-in-scale delay-1500">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-xl opacity-20 group-hover:opacity-40 blur transition-all duration-300"></div>
+              <div className="relative bg-white/90 backdrop-blur-xl rounded-xl px-4 sm:px-6 py-2 sm:py-3 shadow-elegant border border-primary/30 flex items-center gap-2 hover:shadow-glow hover:scale-105 transition-all duration-300 cursor-pointer">
+                <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-primary animate-bounce-subtle" />
+                <span className="font-semibold text-xs sm:text-sm text-gray-700">Aligned with India's Skill India Mission</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Scroll Indicator */}
+          <div className="flex justify-center animate-bounce-subtle delay-1500 mt-12">
+            <div className="flex flex-col items-center gap-2 text-muted-foreground cursor-pointer hover:text-primary transition-colors">
+              <span className="text-sm font-medium">Explore More</span>
+              <ChevronDown className="w-6 h-6 animate-bounce-subtle" />
             </div>
           </div>
         </div>
