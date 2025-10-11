@@ -24,16 +24,19 @@ const publicSectorData = [
 const privateSectorData = [
   {
     role: 'Aerospace Engineer',
+    companyCount: '120-150+',
     companies: ['TATA Advanced Systems', 'L&T Defence', 'Godrej Aerospace', 'Mahindra Aerospace', 'Dynamatic Tech', 'Aequs Aerospace'],
     locations: ['Bengaluru', 'Mumbai', 'Pune', 'Hyderabad']
   },
   {
     role: 'Avionics Engineer',
+    companyCount: '60-80+',
     companies: ['Accord Software & Systems', 'TATA Avionics', 'Paras Defence', 'Alpha Design', 'Kaynes Tech', 'Avionics R&D Startups'],
     locations: ['Bengaluru', 'Chennai', 'Hyderabad', 'Pune']
   },
   {
     role: 'Aircraft Maintenance Engineer',
+    companyCount: '130-160+',
     companies: ['Air Works Group', 'Indamer MRO', 'GMR Aero Technic', 'Max MRO', 'AI Engineering Services', 'Star Air'],
     locations: ['Delhi', 'Mumbai', 'Bengaluru', 'Chennai']
   }
@@ -148,9 +151,14 @@ export const HiringCompanies = () => {
               key={item.role}
               className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="flex items-center mb-4 sm:mb-6">
-                <Building className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600 mr-2 sm:mr-3 flex-shrink-0" />
-                <h3 className="text-lg sm:text-xl font-bold text-slate-900">{item.role}</h3>
+              <div className="flex items-center justify-between mb-4 sm:mb-6">
+                <div className="flex items-center">
+                  <Building className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600 mr-2 sm:mr-3 flex-shrink-0" />
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-900">{item.role}</h3>
+                </div>
+                <div className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap">
+                  {item.companyCount} Companies
+                </div>
               </div>
 
               <div className="mb-4 sm:mb-6">
