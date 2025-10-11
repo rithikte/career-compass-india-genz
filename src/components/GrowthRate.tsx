@@ -126,26 +126,32 @@ export const GrowthRate = () => {
             </LineChart>
           </ResponsiveContainer>
         </div>
-        <div className="bg-white mt-8 rounded-xl p-6 sm:p-8 max-w-3xl mx-auto border border-slate-200 shadow-sm">
-          <h4 className="font-semibold block mb-6 text-slate-500 text-xs uppercase tracking-wider">Understanding Growth Index</h4>
-          <div className="flex flex-col gap-4 text-sm sm:text-base">
+        <div className="bg-blue-50 mt-8 rounded p-4 max-w-2xl mx-auto border border-blue-200">
+          <span className="font-bold block mb-4 text-blue-900 text-lg text-center w-full mx-px">How to understand it easily:</span>
+          <div className="flex flex-col gap-3 text-base sm:text-lg">
             <div className="flex items-baseline gap-2">
-              <span className="font-bold text-slate-900 bg-slate-50 rounded px-2 py-1 min-w-[100px]">
+              <span className="font-bold text-blue-900" style={{
+              minWidth: 100
+            }}>
                 0
               </span>
-              <span className="text-slate-600 font-medium">= Same number of jobs as today</span>
+              <span className="text-blue-900 font-normal">= Same number of jobs as today</span>
             </div>
             <div className="flex items-baseline gap-2">
-              <span className="font-bold text-slate-900 bg-slate-50 rounded px-2 py-1 min-w-[100px]">
+              <span className="font-bold text-green-900" style={{
+              minWidth: 100
+            }}>
                 200
               </span>
-              <span className="text-slate-600 font-medium">= Double the jobs!</span>
+              <span className="text-green-900 font-normal">= Double the jobs!</span>
             </div>
             <div className="flex items-baseline gap-2">
-              <span className="font-bold text-slate-900 bg-slate-50 rounded px-2 py-1 min-w-[100px]">
+              <span className="font-bold text-yellow-900" style={{
+              minWidth: 100
+            }}>
                 Bigger number
               </span>
-              <span className="text-slate-600 font-medium">= More job chances for you in future!</span>
+              <span className="text-yellow-900 font-normal">= More job chances for you in future!</span>
             </div>
           </div>
         </div>
