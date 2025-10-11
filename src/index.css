@@ -172,24 +172,51 @@
     animation: pulseElegant 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
-  /* Staggered animation delays */
-  .delay-100 { animation-delay: 0.1s; }
-  .delay-200 { animation-delay: 0.2s; }
-  .delay-300 { animation-delay: 0.3s; }
-  .delay-400 { animation-delay: 0.4s; }
-  .delay-500 { animation-delay: 0.5s; }
-  .delay-600 { animation-delay: 0.6s; }
-  .delay-700 { animation-delay: 0.7s; }
-  .delay-800 { animation-delay: 0.8s; }
-  .delay-900 { animation-delay: 0.9s; }
-  .delay-1000 { animation-delay: 1s; }
-  .delay-1200 { animation-delay: 1.2s; }
-  .delay-1500 { animation-delay: 1.5s; }
+  /* Swiss Design Animation Utilities */
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
 
-  /* Performance optimizations */
+  /* Magnetic cursor effect */
+  .magnetic-container {
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  /* Interactive headline with hover glow */
+  .headline-interactive {
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: default;
+  }
+
+  .headline-interactive:hover {
+    transform: scale(1.02);
+    text-shadow: 0 0 40px rgba(99, 102, 241, 0.3);
+  }
+
+  /* Layered shadow system */
+  .shadow-layer-1 { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04); }
+  .shadow-layer-2 { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04); }
+  .shadow-layer-3 { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.04); }
+
+  /* Performance & Accessibility */
   .will-change-transform { will-change: transform; }
   .will-change-opacity { will-change: opacity; }
-  .gpu-accelerated { transform: translateZ(0); }
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 
   /* Shimmer text effect */
   .text-shimmer {
