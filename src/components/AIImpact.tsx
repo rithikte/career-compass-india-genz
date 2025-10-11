@@ -125,7 +125,7 @@ export const AIImpact = () => {
               <p className="text-gray-700">
                 Companies still hiring but only for students who are skilled and know the latest tools.
               </p>
-              <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-4 sm:p-6 rounded-lg border-l-4 border-green-500 mt-4">
+              <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-4 sm:p-6 border-l-4 border-green-500 mt-4 rounded-full mx-0 my-[15px] px-[35px] py-[10px]">
                 <h5 className="font-bold text-green-800 mb-3 text-lg">Solution:</h5>
                 <p className="text-green-800 mb-2 text-base font-semibold">
                   Upskill + Certify + Know Your Role → You get hired.
