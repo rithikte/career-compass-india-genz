@@ -120,7 +120,7 @@ export const AIImpact = () => {
               <p className="text-gray-700">
                 Companies still hiring but only for students who are skilled and know the latest tools.
               </p>
-              <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 mt-6 border-t-4 border-success">
+              <div className="mt-6 pt-6 border-t border-gray-200">
                 <div className="flex items-start space-x-4">
                   <Shield className="w-8 h-8 text-success flex-shrink-0 mt-1" />
                   <div className="flex-1">
