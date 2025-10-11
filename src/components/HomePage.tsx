@@ -104,7 +104,7 @@ export const HomePage = () => {
         {/* Top-Right State Selector - Asymmetric Balance */}
         <div className="absolute top-4 sm:top-8 right-4 sm:right-8 z-30">
           <div className="relative group">
-            <button onClick={() => setIsStateDropdownOpen(!isStateDropdownOpen)} className="magnetic-container flex items-center gap-2 bg-white/95 backdrop-blur-xl px-4 py-2 rounded-full shadow-layer-2 border border-border/50 hover:shadow-layer-3 hover:scale-105 transition-all duration-300">
+            <button onClick={() => setIsStateDropdownOpen(!isStateDropdownOpen)} className="magnetic-container flex items-center gap-2 bg-white/95 backdrop-blur-xl rounded-full shadow-layer-2 border border-border/50 hover:shadow-layer-3 hover:scale-105 transition-all duration-300 my-0 py-[11px] mx-[171px] px-[111px]">
               <MapPin className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-foreground max-w-[100px] truncate">
                 {selectedState || 'Select State'}
@@ -189,10 +189,7 @@ export const HomePage = () => {
 
           {/* Enhanced Scroll Indicator */}
           <div className="flex justify-center animate-scroll-bounce mt-16">
-            <div className="magnetic-container flex flex-col items-center gap-2 text-muted-foreground cursor-pointer hover:text-primary transition-colors group">
-              <span className="text-sm font-semibold">Explore More</span>
-              
-            </div>
+            
           </div>
         </div>
 
@@ -348,16 +345,14 @@ export const HomePage = () => {
             <Card className="magnetic-container relative overflow-hidden group hover:shadow-layer-3 transition-all duration-300 border-0 bg-white/95 backdrop-blur-sm shadow-layer-2">
               <CardContent className="p-8">
                 <div className="text-left mb-6">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 mb-4 shadow-layer-1">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 mb-4 shadow-layer-1 mx-[111px]">
                     <Target className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-2">Start My Degree Journey</h3>
                   <p className="text-base text-muted-foreground mb-2">
                     <span className="font-semibold">For:</span> Students after Inter / +2
                   </p>
-                  <p className="text-sm text-muted-foreground">
-                    Find the right degree and career path from the subjects you love.
-                  </p>
+                  
                 </div>
                 
                 <Button onClick={() => setIsCareerExplorerOpen(true)} className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 rounded-xl hover:scale-105 transition-transform duration-300">
@@ -370,16 +365,14 @@ export const HomePage = () => {
             <Card className="magnetic-container relative overflow-hidden group hover:shadow-layer-3 transition-all duration-300 border-0 bg-white/95 backdrop-blur-sm shadow-layer-2">
               <CardContent className="p-8">
                 <div className="text-left mb-6">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 mb-4 shadow-layer-1">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 mb-4 shadow-layer-1 mx-[111px]">
                     <Award className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-2">Plan My Career Path</h3>
                   <p className="text-base text-muted-foreground mb-2">
                     <span className="font-semibold">For:</span> Students already in a degree
                   </p>
-                  <p className="text-sm text-muted-foreground">
-                    Explore top career options and industries for your course.
-                  </p>
+                  
                 </div>
                 
                 <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 rounded-xl hover:scale-105 transition-transform duration-300">
@@ -392,16 +385,14 @@ export const HomePage = () => {
             <Card className="magnetic-container relative overflow-hidden group hover:shadow-layer-3 transition-all duration-300 border-0 bg-white/95 backdrop-blur-sm md:col-span-2 lg:col-span-1 shadow-layer-2">
               <CardContent className="p-8">
                 <div className="text-left mb-6">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 mb-4 shadow-layer-1">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 mb-4 shadow-layer-1 mx-[111px]">
                     <Building2 className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-2">Explore Government Opportunities</h3>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">Govt Opportunities</h3>
                   <p className="text-base text-muted-foreground mb-2">
                     <span className="font-semibold">For:</span> Students looking for Govt jobs after degree
                   </p>
-                  <p className="text-sm text-muted-foreground">
-                    See government exams and jobs that match your degree.
-                  </p>
+                  
                 </div>
                 
                 <Button className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-3 rounded-xl hover:scale-105 transition-transform duration-300">
