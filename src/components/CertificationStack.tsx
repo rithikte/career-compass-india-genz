@@ -316,16 +316,13 @@ export const CertificationStack = () => {
               </h4>
               <div className="space-y-3 text-base text-gray-700 leading-relaxed">
                 <p>
-                  ✅ After you smash the 3 Universal Certs, you'll take a <span className="font-bold">Role Fitment Exam</span>.
+                  Finish your 3 Universal Certs, then take the <span className="font-bold">Role Fitment Test</span> — it shows whether you fit best in <span className="font-bold">Aerospace, Avionics, or AME</span>.
                 </p>
                 <p>
-                  ✅ This test isn't about marks — it's about showing you where you truly shine: <span className="font-bold">Aerospace, Avionics, or AME</span>.
+                  This test isn't about marks — it's about showing you where you truly shine.
                 </p>
                 <p>
-                  ✅ No more guesswork, no more pressure — just a career path that matches your real skills + strengths.
-                </p>
-                <p>
-                  ✅ And once you know your fit, you'll dive into <span className="font-bold">3 Job-Role Specific Certifications</span> — making you <span className="font-bold text-green-600">100% job-ready</span> before college placements.
+                  Next, complete the Fit job-role certifications and be <span className="font-bold text-green-600">100% job-ready</span> before placements.
                 </p>
               </div>
             </div>
