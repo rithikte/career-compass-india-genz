@@ -13,15 +13,19 @@ const aiImpactData = [{
   safe: 53,
   name: '10Y Impact'
 }];
-const COLORS = ['#ef4444', '#10b981'];
+const COLORS = ['#0f172a', '#94a3b8'];
 export const AIImpact = () => {
   return <div className="space-y-6 sm:space-y-8">
       <div className="text-center mb-8 sm:mb-12 px-4">
+        <div className="inline-flex items-center gap-2 mb-4">
+          <Brain className="w-5 h-5 text-slate-400" />
+          <span className="text-xs uppercase tracking-wider font-semibold text-slate-500">AI Impact Analysis</span>
+        </div>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">AI Impact on Aerospace Jobs</h2>
-        <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+        <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">
           Automation timeline and job security analysis
         </p>
-        <div className="flex flex-wrap justify-center gap-2 mt-4">
+        <div className="flex flex-wrap justify-center gap-2 mt-6">
           <SourceBadge href="https://www.mckinsey.com/featured-insights/artificial-intelligence/the-age-of-ai" label="McKinsey AI Report" />
           <SourceBadge href="https://www.weforum.org/reports/the-future-of-jobs-report-2023" label="WEF Jobs Report" />
           <SourceBadge href="https://www.pwc.com/gx/en/issues/artificial-intelligence/ai-and-workforce-evolution" label="PwC AI Workforce" />
@@ -29,8 +33,10 @@ export const AIImpact = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-        {aiImpactData.map((data, index) => <div key={data.timeframe} className="bg-white rounded-lg shadow-lg p-4 sm:p-6">
-            <h3 className="text-xl sm:text-2xl font-bold text-center mb-4 sm:mb-6">{data.timeframe}</h3>
+        {aiImpactData.map((data, index) => <div key={data.timeframe} className="bg-white border border-slate-200 rounded-xl shadow-sm p-6 sm:p-8">
+            <div className="text-center mb-6">
+              <span className="text-xs uppercase tracking-wider font-semibold text-slate-500">{data.timeframe} Projection</span>
+            </div>
             <div className="h-48 sm:h-56 md:h-64">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
@@ -47,84 +53,88 @@ export const AIImpact = () => {
                 </PieChart>
               </ResponsiveContainer>
             </div>
-            <div className="text-center mt-4">
-              <div className="text-2xl sm:text-3xl font-bold text-red-600">{data.impact}%</div>
-              <div className="text-sm sm:text-base text-gray-600">Jobs at Risk</div>
+            <div className="text-center mt-6 space-y-2">
+              <div className="text-3xl sm:text-4xl font-bold text-slate-900">{data.impact}%</div>
+              <div className="text-sm text-slate-600 font-medium">Tasks at Risk of Automation</div>
             </div>
           </div>)}
       </div>
 
-      <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-        <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">AI Impact on Job Roles</h3>
+      <div className="bg-white border border-slate-200 rounded-xl shadow-sm p-6 sm:p-8 mb-8">
+        <div className="text-center mb-8">
+          <span className="text-xs uppercase tracking-wider font-semibold text-slate-500">Role-Specific Analysis</span>
+          <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mt-2">AI Impact on Job Roles</h3>
+        </div>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b-2 border-slate-300">
-                <th className="text-left py-4 px-4 text-slate-900 font-bold">Job Role</th>
-                <th className="text-center py-4 px-4 text-slate-900 font-bold">AI Impact (5 Years)</th>
-                <th className="text-center py-4 px-4 text-slate-900 font-bold">AI Impact (10 Years)</th>
+              <tr className="border-b border-slate-200">
+                <th className="text-left py-4 px-4 text-slate-600 font-semibold text-sm uppercase tracking-wider">Job Role</th>
+                <th className="text-center py-4 px-4 text-slate-600 font-semibold text-sm uppercase tracking-wider">5 Years</th>
+                <th className="text-center py-4 px-4 text-slate-600 font-semibold text-sm uppercase tracking-wider">10 Years</th>
               </tr>
             </thead>
             <tbody>
-              <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
-                <td className="py-4 px-4 font-medium text-slate-800">Aerospace Engineer</td>
+              <tr className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-900">Aerospace Engineer</td>
                 <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-orange-100 text-orange-800 font-bold px-3 py-1 rounded">28%</span>
+                  <span className="inline-block bg-slate-100 text-slate-900 font-bold px-3 py-1 rounded">28%</span>
                 </td>
                 <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-red-100 text-red-800 font-bold px-3 py-1 rounded">38%</span>
+                  <span className="inline-block bg-slate-900 text-white font-bold px-3 py-1 rounded">38%</span>
                 </td>
               </tr>
-              <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
-                <td className="py-4 px-4 font-medium text-slate-800">Avionics Engineer</td>
+              <tr className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-900">Avionics Engineer</td>
                 <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-orange-100 text-orange-800 font-bold px-3 py-1 rounded">33%</span>
+                  <span className="inline-block bg-slate-100 text-slate-900 font-bold px-3 py-1 rounded">33%</span>
                 </td>
                 <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-red-100 text-red-800 font-bold px-3 py-1 rounded">43%</span>
+                  <span className="inline-block bg-slate-900 text-white font-bold px-3 py-1 rounded">43%</span>
                 </td>
               </tr>
               <tr className="hover:bg-slate-50 transition-colors">
-                <td className="py-4 px-4 font-medium text-slate-800">Aircraft Maintenance Engineer (AME)</td>
+                <td className="py-4 px-4 font-medium text-slate-900">Aircraft Maintenance Engineer (AME)</td>
                 <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-orange-100 text-orange-800 font-bold px-3 py-1 rounded">30%</span>
+                  <span className="inline-block bg-slate-100 text-slate-900 font-bold px-3 py-1 rounded">30%</span>
                 </td>
                 <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-red-100 text-red-800 font-bold px-3 py-1 rounded">38%</span>
+                  <span className="inline-block bg-slate-900 text-white font-bold px-3 py-1 rounded">38%</span>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
-        <div className="mt-6 text-center">
-          <p className="text-lg font-bold text-red-600">
-            ⚠️ Ignoring AI skills reduces hiring chances by 40%.
-          </p>
-        </div>
       </div>
 
       
 
-      <div className="bg-blue-50 border border-blue-200 p-6 rounded-lg mb-8">
-        <div className="flex items-start space-x-3">
-          <AlertTriangle className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
-          <div>
-            <h4 className="text-xl font-bold text-blue-900 mb-3">What's Really Happening:</h4>
-            <p className="text-blue-800 text-lg mb-4">
-              <strong>AI is replacing tasks, not engineers. Skilled graduates remain essential.</strong>
-            </p>
-            <p className="text-blue-800 text-lg mb-4">
-              AI is not killing jobs — it's killing <strong>unskilled jobs</strong>.
-            </p>
-            <p className="text-blue-700 mb-4">
-              Companies still hiring but only for students who are skilled and know the latest tools.
-            </p>
-            <div className="bg-white p-4 rounded border-l-4 border-green-500">
-              <h5 className="font-semibold text-green-800 mb-2">Solution:</h5>
-              <p className="text-green-700 mb-2">
-                <strong>Upskill + Certify + Know Your Role → You get hired.</strong>
+      <div className="bg-white border border-slate-200 rounded-xl shadow-sm p-6 sm:p-8 mb-8 max-w-3xl mx-auto">
+        <div className="flex items-start gap-4">
+          <AlertTriangle className="w-5 h-5 text-slate-400 mt-1 flex-shrink-0" />
+          <div className="space-y-6">
+            <div>
+              <span className="text-xs uppercase tracking-wider font-semibold text-slate-500">Reality Check</span>
+              <h4 className="text-lg font-bold text-slate-900 mt-2 mb-4">What's Really Happening:</h4>
+              <div className="space-y-3 text-slate-600">
+                <p className="font-medium text-slate-900">
+                  AI is replacing tasks, not engineers. Skilled graduates remain essential.
+                </p>
+                <p>
+                  AI is not killing jobs — it's killing <span className="font-semibold text-slate-900">unskilled jobs</span>.
+                </p>
+                <p>
+                  Companies still hiring but only for students who are skilled and know the latest tools.
+                </p>
+              </div>
+            </div>
+            
+            <div className="bg-slate-50 p-6 rounded-lg border-l-4 border-slate-900">
+              <span className="text-xs uppercase tracking-wider font-semibold text-slate-500">Solution Path</span>
+              <p className="text-slate-900 font-bold text-lg mt-2 mb-3">
+                Upskill + Certify + Know Your Role → You get hired.
               </p>
-              <p className="text-green-600 font-medium">
+              <p className="text-slate-600 font-medium">
                 90% Companies Expecting Certifications to Get Job in 2-3 Attempts
               </p>
             </div>
@@ -132,12 +142,13 @@ export const AIImpact = () => {
         </div>
       </div>
 
-      <div className="bg-gradient-to-r from-orange-600 to-red-600 text-white p-8 rounded-lg">
-        <div className="text-center">
-          <Brain className="w-12 h-12 mx-auto mb-4" />
-          <h3 className="text-2xl font-bold mb-2">AI Disruption Alert</h3>
-          <p className="text-orange-200 text-lg">
-            47% of aerospace jobs will be impacted by AI in 10 years. Upskill now to stay relevant!
+      <div className="bg-slate-900 text-white p-8 rounded-xl border border-slate-800">
+        <div className="text-center max-w-2xl mx-auto">
+          <Shield className="w-10 h-10 mx-auto mb-4 text-slate-400" />
+          <span className="text-xs uppercase tracking-wider font-semibold text-slate-400 block mb-3">Key Insight</span>
+          <h3 className="text-xl sm:text-2xl font-bold mb-3">Stay Ahead of Automation</h3>
+          <p className="text-slate-300 text-base sm:text-lg">
+            47% of aerospace tasks will be impacted by AI in 10 years. Upskill now to stay relevant and secure your career.
           </p>
         </div>
       </div>
