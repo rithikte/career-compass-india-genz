@@ -24,19 +24,16 @@ const publicSectorData = [
 const privateSectorData = [
   {
     role: 'Aerospace Engineer',
-    companyCount: '120–150+',
     companies: ['TATA Advanced Systems', 'L&T Defence', 'Godrej Aerospace', 'Mahindra Aerospace', 'Dynamatic Tech', 'Aequs Aerospace'],
     locations: ['Bengaluru', 'Mumbai', 'Pune', 'Hyderabad']
   },
   {
     role: 'Avionics Engineer',
-    companyCount: '60–80+',
     companies: ['Accord Software & Systems', 'TATA Avionics', 'Paras Defence', 'Alpha Design', 'Kaynes Tech', 'Avionics R&D Startups'],
     locations: ['Bengaluru', 'Chennai', 'Hyderabad', 'Pune']
   },
   {
     role: 'Aircraft Maintenance Engineer',
-    companyCount: '130–160+',
     companies: ['Air Works Group', 'Indamer MRO', 'GMR Aero Technic', 'Max MRO', 'AI Engineering Services', 'Star Air'],
     locations: ['Delhi', 'Mumbai', 'Bengaluru', 'Chennai']
   }
@@ -145,71 +142,51 @@ export const HiringCompanies = () => {
 
       {/* Private Sector Tab */}
       {activeTab === 'private' && (
-        <div className="space-y-6">
-          <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-6 rounded-lg mb-8">
-            <div className="text-center">
-              <Briefcase className="w-10 h-10 mx-auto mb-3" />
-              <h3 className="text-2xl font-bold mb-2">Private Sector & Startup Ecosystem</h3>
-              <p className="text-purple-200 text-lg">
-                1000+ private companies and startups across aerospace sectors in India
-              </p>
-            </div>
-          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+          {privateSectorData.map((item, index) => (
+            <div
+              key={item.role}
+              className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300"
+            >
+              <div className="flex items-center mb-4 sm:mb-6">
+                <Building className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600 mr-2 sm:mr-3 flex-shrink-0" />
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900">{item.role}</h3>
+              </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {privateSectorData.map((item, index) => (
-              <div
-                key={item.role}
-                className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-l-4 border-purple-500"
-              >
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center">
-                    <Users className="w-6 h-6 text-purple-600 mr-3" />
-                    <h3 className="text-xl font-bold text-slate-900">{item.role}</h3>
-                  </div>
-                  <div className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-bold">
-                    {item.companyCount} Companies
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">
-                    Example Companies & Startups
-                  </h4>
-                  <div className="grid grid-cols-1 gap-2">
-                    {item.companies.map((company, idx) => (
-                      <div
-                        key={company}
-                        className="bg-gradient-to-r from-purple-50 to-pink-50 p-3 rounded-lg hover:from-purple-100 hover:to-pink-100 transition-colors duration-200"
-                      >
-                        <div className="font-semibold text-slate-800 text-sm flex items-center">
-                          <span className="text-green-600 mr-2">✅</span>
-                          {company}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="border-t pt-4">
-                  <div className="flex items-center mb-2">
-                    <MapPin className="w-4 h-4 text-gray-500 mr-2" />
-                    <span className="text-sm font-semibold text-gray-700">Key Locations</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {item.locations.map((location) => (
-                      <span
-                        key={location}
-                        className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm"
-                      >
-                        {location}
-                      </span>
-                    ))}
-                  </div>
+              <div className="mb-4 sm:mb-6">
+                <h4 className="text-xs sm:text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">
+                  Top Hiring Companies
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                  {item.companies.map((company, idx) => (
+                    <div
+                      key={company}
+                      className="bg-gradient-to-r from-blue-50 to-indigo-50 p-2 sm:p-3 rounded-lg text-center hover:from-blue-100 hover:to-indigo-100 transition-colors duration-200"
+                    >
+                      <div className="font-semibold text-slate-800 text-sm sm:text-base">{company}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
+
+              <div className="border-t pt-4">
+                <div className="flex items-center mb-2">
+                  <MapPin className="w-4 h-4 text-gray-500 mr-2" />
+                  <span className="text-sm font-semibold text-gray-700">Primary Locations</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {item.locations.map((location) => (
+                    <span
+                      key={location}
+                      className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                    >
+                      {location}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       )}
 
