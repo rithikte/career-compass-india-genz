@@ -178,12 +178,12 @@ const universalCertifications = [
 
 export const CertificationStack = () => {
   return (
-    <div className="space-y-6 sm:space-y-8">
-      <div className="text-center mb-8 sm:mb-12 px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+    <div className="space-y-8">
+      <div className="text-center mb-12">
+        <h2 className="text-4xl font-bold text-slate-900 mb-4">
           Certification Stack Roadmap
         </h2>
-        <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+        <p className="text-xl text-gray-600">
           Your path from 0% to 100% job readiness
         </p>
         <div className="flex flex-wrap justify-center gap-2 mt-4">
@@ -194,18 +194,16 @@ export const CertificationStack = () => {
       </div>
 
       {/* Critical Reality Check Section */}
-      <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-lg p-6 sm:p-8 border-2 border-red-300 mb-8">
+      <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-8 border-l-4 border-red-600">
         <div className="flex items-start space-x-4">
           <div className="flex-shrink-0">
-            <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
-              <AlertTriangle className="w-6 h-6 text-white" />
-            </div>
+            <AlertTriangle className="w-8 h-8 text-red-600" />
           </div>
           <div className="flex-1">
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">
               Critical Reality Check
             </h3>
-            <div className="space-y-3 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-3 text-base text-gray-700 leading-relaxed">
               <p className="flex items-start">
                 <span className="text-red-600 font-bold mr-2">•</span>
                 <span>
@@ -307,18 +305,16 @@ export const CertificationStack = () => {
         </div>
 
         {/* Role Fitment Exam Section */}
-        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6 sm:p-8 border-2 border-blue-200">
+        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6 sm:p-8 border-l-4 border-blue-600">
           <div className="flex items-start space-x-4">
             <div className="flex-shrink-0">
-              <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
-                <Target className="w-6 h-6 text-white" />
-              </div>
+              <Target className="w-8 h-8 text-blue-600" />
             </div>
             <div className="flex-1">
-              <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+              <h4 className="text-2xl font-bold text-slate-900 mb-4">
                 Role Fitment Exam
               </h4>
-              <div className="space-y-3 text-sm sm:text-base text-gray-700 leading-relaxed">
+              <div className="space-y-3 text-base text-gray-700 leading-relaxed">
                 <p>
                   ✅ After you smash the 3 Universal Certs, you'll take a <span className="font-bold">Role Fitment Exam</span>.
                 </p>
@@ -338,11 +334,11 @@ export const CertificationStack = () => {
       </div>
 
       {/* Role-Specific Certifications Section */}
-      <div className="text-center mb-8 px-4">
-        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+      <div className="text-center mb-8">
+        <h3 className="text-3xl font-bold text-slate-900 mb-3">
           Job-Role Specific Certifications
         </h3>
-        <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
           After identifying your ideal role, complete these specialized certifications
         </p>
       </div>
