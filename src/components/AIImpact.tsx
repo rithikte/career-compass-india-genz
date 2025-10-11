@@ -120,14 +120,19 @@ export const AIImpact = () => {
               <p className="text-gray-700">
                 Companies still hiring but only for students who are skilled and know the latest tools.
               </p>
-              <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-4 sm:p-6 rounded-lg border-l-4 border-green-500 mt-4">
-                <h5 className="font-bold text-green-800 mb-3 text-lg">Solution:</h5>
-                <p className="text-green-800 mb-2 text-base font-semibold">
-                  Upskill + Certify + Know Your Role → You get hired.
-                </p>
-                <p className="text-green-700 font-medium">
-                  90% Companies Expecting Certifications to Get Job in 2-3 Attempts
-                </p>
+              <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 mt-6 border-t-4 border-success">
+                <div className="flex items-start space-x-4">
+                  <Shield className="w-8 h-8 text-success flex-shrink-0 mt-1" />
+                  <div className="flex-1">
+                    <h5 className="text-2xl font-bold text-slate-900 mb-4">Solution:</h5>
+                    <p className="text-lg font-bold text-slate-900 mb-3">
+                      Upskill + Certify + Know Your Role → You get hired.
+                    </p>
+                    <p className="text-base text-gray-700 font-medium">
+                      90% Companies Expecting Certifications to Get Job in 2-3 Attempts
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
