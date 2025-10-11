@@ -98,8 +98,8 @@ export const AIImpact = () => {
         </div>
         <div className="mt-6">
           <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-lg p-4 sm:p-6 border-l-4 border-red-600">
-            <div className="flex items-start space-x-3">
-              <AlertTriangle className="w-6 h-6 text-red-600 mt-1 flex-shrink-0" />
+            <div className="flex items-center justify-center space-x-3">
+              <AlertTriangle className="w-6 h-6 text-red-600 flex-shrink-0" />
               <p className="text-base sm:text-lg font-bold text-red-800">
                 Ignoring AI skills reduces hiring chances by 40%.
               </p>
