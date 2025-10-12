@@ -116,7 +116,7 @@ export const GrowthRate = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="space-y-3">
               <div className="text-center">
-                <div className="font-semibold text-slate-700 mb-2">👨‍💼 Today</div>
+                <div className="font-semibold text-slate-700 mb-2">Today</div>
                 <div className="text-3xl font-bold text-slate-700">30k+</div>
                 <div className="text-sm text-slate-600">Jobs</div>
               </div>
@@ -130,7 +130,7 @@ export const GrowthRate = () => {
             
             <div className="space-y-3">
               <div className="text-center">
-                <div className="font-semibold text-blue-700 mb-2">👨‍💼 10 Years</div>
+                <div className="font-semibold text-blue-700 mb-2">10 Years</div>
                 <div className="text-3xl font-bold text-blue-700">78k+</div>
                 <div className="text-sm text-blue-600">Jobs</div>
               </div>
@@ -144,7 +144,7 @@ export const GrowthRate = () => {
             
             <div className="space-y-3">
               <div className="text-center">
-                <div className="font-semibold text-green-700 mb-2">👨‍💼 15 Years</div>
+                <div className="font-semibold text-green-700 mb-2">15 Years</div>
                 <div className="text-3xl font-bold text-green-700">1M+</div>
                 <div className="text-sm text-green-600">Jobs</div>
               </div>
