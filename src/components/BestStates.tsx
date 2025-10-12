@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, TrendingUp, Building, AlertTriangle } from 'lucide-react';
 import SourceBadge from './SourceBadge';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 
 const statesData = [
   {
@@ -155,11 +156,13 @@ export const BestStates = () => {
           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
             Average New Job Openings Per Year
           </h3>
-          <p className="text-emerald-100 text-sm sm:text-base">
+          <p className="text-emerald-100 text-sm sm:text-base mb-4">
             Expected ~3,400–4,400 new openings annually across India
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+        
+        {/* Summary Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-6">
           <div className="bg-white bg-opacity-20 rounded-lg p-4 text-center backdrop-blur-sm">
             <div className="text-2xl sm:text-3xl font-bold mb-1">1,800–2,200</div>
             <div className="text-emerald-100 text-sm font-medium">AME Jobs/Year</div>
@@ -171,6 +174,60 @@ export const BestStates = () => {
           <div className="bg-white bg-opacity-20 rounded-lg p-4 text-center backdrop-blur-sm">
             <div className="text-2xl sm:text-3xl font-bold mb-1">1,000–1,400</div>
             <div className="text-emerald-100 text-sm font-medium">Aerospace Eng Jobs/Year</div>
+          </div>
+        </div>
+
+        {/* State-wise Breakdown Table */}
+        <div className="bg-white rounded-lg shadow-xl overflow-hidden">
+          <div className="overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow className="bg-emerald-600 hover:bg-emerald-600">
+                  <TableHead className="text-white font-bold text-center">State</TableHead>
+                  <TableHead className="text-white font-bold text-center">AME Jobs/Year</TableHead>
+                  <TableHead className="text-white font-bold text-center">Avionics Jobs/Year</TableHead>
+                  <TableHead className="text-white font-bold text-center">Aerospace Eng Jobs/Year</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow className="hover:bg-emerald-50">
+                  <TableCell className="font-semibold text-gray-900 text-center">Karnataka (KA)</TableCell>
+                  <TableCell className="text-center text-blue-700 font-semibold">540–660</TableCell>
+                  <TableCell className="text-center text-indigo-700 font-semibold">180–240</TableCell>
+                  <TableCell className="text-center text-purple-700 font-semibold">300–420</TableCell>
+                </TableRow>
+                <TableRow className="hover:bg-emerald-50">
+                  <TableCell className="font-semibold text-gray-900 text-center">Tamil Nadu (TN)</TableCell>
+                  <TableCell className="text-center text-blue-700 font-semibold">396–484</TableCell>
+                  <TableCell className="text-center text-indigo-700 font-semibold">132–176</TableCell>
+                  <TableCell className="text-center text-purple-700 font-semibold">220–308</TableCell>
+                </TableRow>
+                <TableRow className="hover:bg-emerald-50">
+                  <TableCell className="font-semibold text-gray-900 text-center">Maharashtra (MH)</TableCell>
+                  <TableCell className="text-center text-blue-700 font-semibold">324–396</TableCell>
+                  <TableCell className="text-center text-indigo-700 font-semibold">108–144</TableCell>
+                  <TableCell className="text-center text-purple-700 font-semibold">180–252</TableCell>
+                </TableRow>
+                <TableRow className="hover:bg-emerald-50">
+                  <TableCell className="font-semibold text-gray-900 text-center">Telangana (TS)</TableCell>
+                  <TableCell className="text-center text-blue-700 font-semibold">360–440</TableCell>
+                  <TableCell className="text-center text-indigo-700 font-semibold">120–160</TableCell>
+                  <TableCell className="text-center text-purple-700 font-semibold">200–280</TableCell>
+                </TableRow>
+                <TableRow className="hover:bg-emerald-50">
+                  <TableCell className="font-semibold text-gray-900 text-center">Andhra Pradesh (AP)</TableCell>
+                  <TableCell className="text-center text-blue-700 font-semibold">180–220</TableCell>
+                  <TableCell className="text-center text-indigo-700 font-semibold">60–80</TableCell>
+                  <TableCell className="text-center text-purple-700 font-semibold">100–140</TableCell>
+                </TableRow>
+                <TableRow className="bg-emerald-100 hover:bg-emerald-200 border-t-2 border-emerald-600">
+                  <TableCell className="font-bold text-gray-900 text-center text-base">All-India Total</TableCell>
+                  <TableCell className="text-center text-blue-800 font-bold text-base">≈1,800–2,200</TableCell>
+                  <TableCell className="text-center text-indigo-800 font-bold text-base">≈600–800</TableCell>
+                  <TableCell className="text-center text-purple-800 font-bold text-base">≈1,000–1,400</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
           </div>
         </div>
       </div>
