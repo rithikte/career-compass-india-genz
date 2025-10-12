@@ -23,26 +23,22 @@ const growthData = [{
 }];
 
 // Generate growth projection data with real job numbers
-const projectionData = [
-  {
-    role: 'Aerospace Engineer',
-    Today: 10000,
-    'In 10 Years': 23674,
-    'In 15 Years': 30000,
-  },
-  {
-    role: 'Avionics Engineer',
-    Today: 8000,
-    'In 10 Years': 20526,
-    'In 15 Years': 28000,
-  },
-  {
-    role: 'Aircraft Maintenance',
-    Today: 12000,
-    'In 10 Years': 34000,
-    'In 15 Years': 45000,
-  }
-];
+const projectionData = [{
+  role: 'Aerospace Engineer',
+  Today: 10000,
+  'In 10 Years': 23674,
+  'In 15 Years': 30000
+}, {
+  role: 'Avionics Engineer',
+  Today: 8000,
+  'In 10 Years': 20526,
+  'In 15 Years': 28000
+}, {
+  role: 'Aircraft Maintenance',
+  Today: 12000,
+  'In 10 Years': 34000,
+  'In 15 Years': 45000
+}];
 export const GrowthRate = () => {
   return <div className="space-y-8">
       <div className="text-center mb-12">
@@ -125,31 +121,37 @@ export const GrowthRate = () => {
                 <div className="text-sm text-slate-600">Jobs</div>
               </div>
               <div className="relative h-12 bg-slate-200 rounded-lg overflow-hidden">
-                <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-slate-400 to-slate-500 rounded-lg" style={{ width: '30%' }}></div>
+                <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-slate-400 to-slate-500 rounded-lg" style={{
+                width: '30%'
+              }}></div>
                 <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-sm">30k+</div>
               </div>
             </div>
             
             <div className="space-y-3">
               <div className="text-center">
-                <div className="font-semibold text-blue-700 mb-2">👨‍💼 In 10 Years</div>
+                <div className="font-semibold text-blue-700 mb-2">👨‍💼 10 Years</div>
                 <div className="text-3xl font-bold text-blue-700">78k+</div>
                 <div className="text-sm text-blue-600">Jobs</div>
               </div>
               <div className="relative h-12 bg-blue-100 rounded-lg overflow-hidden">
-                <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-blue-400 to-blue-500 rounded-lg" style={{ width: '65%' }}></div>
+                <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-blue-400 to-blue-500 rounded-lg" style={{
+                width: '65%'
+              }}></div>
                 <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-sm">78k+</div>
               </div>
             </div>
             
             <div className="space-y-3">
               <div className="text-center">
-                <div className="font-semibold text-green-700 mb-2">👨‍💼 In 15 Years</div>
+                <div className="font-semibold text-green-700 mb-2">👨‍💼 15 Years</div>
                 <div className="text-3xl font-bold text-green-700">1M+</div>
                 <div className="text-sm text-green-600">Jobs</div>
               </div>
               <div className="relative h-12 bg-green-100 rounded-lg overflow-hidden">
-                <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-green-400 to-green-500 rounded-lg" style={{ width: '100%' }}></div>
+                <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-green-400 to-green-500 rounded-lg" style={{
+                width: '100%'
+              }}></div>
                 <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-sm">1M+</div>
               </div>
             </div>
@@ -163,27 +165,12 @@ export const GrowthRate = () => {
           <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-20 group-hover:opacity-30 blur transition-all duration-300"></div>
           <div className="relative bg-white/95 backdrop-blur-xl rounded-2xl p-6 sm:p-8 shadow-elegant border border-primary/30">
             <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-2xl">📈</span>
-              </div>
+              
               <div className="flex-1">
-                <h4 className="font-bold text-foreground text-xl mb-4">What This Means For You</h4>
-                <div className="space-y-3 text-muted-foreground">
-                  <div className="flex items-baseline gap-2">
-                    <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0 mt-2"></div>
-                    <p><strong className="text-foreground">Today:</strong> <strong>30k+</strong> Jobs</p>
-                  </div>
-                  <div className="flex items-baseline gap-2">
-                    <div className="w-2 h-2 rounded-full bg-accent flex-shrink-0 mt-2"></div>
-                    <p><strong className="text-foreground">In 10 Years:</strong> <strong>78k+</strong> Jobs</p>
-                  </div>
-                  <div className="flex items-baseline gap-2">
-                    <div className="w-2 h-2 rounded-full bg-success flex-shrink-0 mt-2"></div>
-                    <p><strong className="text-foreground">In 15 Years:</strong> <strong>1M+</strong> Jobs</p>
-                  </div>
-                </div>
+                
+                
                 <div className="mt-6 pt-4 border-t border-border">
-                  <p className="font-bold text-foreground text-lg flex items-center gap-2">
+                  <p className="font-bold text-foreground text-lg flex items-center gap-2 my-0 mx-0 py-0 px-[111px]">
                     <span className="text-2xl">🎯</span>
                     More jobs = Better chances for you to get hired!
                   </p>
@@ -198,19 +185,18 @@ export const GrowthRate = () => {
             <BarChart data={projectionData}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="role" />
-              <YAxis 
-                label={{
-                  value: "Number of Jobs",
-                  angle: -90,
-                  position: "insideLeft",
-                  style: { textAnchor: "middle" }
-                }}
-                tickFormatter={v => `${(v / 1000).toFixed(0)}k`}
-              />
-              <Tooltip 
-                formatter={(value: number) => [`${value.toLocaleString()} jobs`, '']}
-                contentStyle={{ borderRadius: 8, fontWeight: 'bold' }}
-              />
+              <YAxis label={{
+              value: "Number of Jobs",
+              angle: -90,
+              position: "insideLeft",
+              style: {
+                textAnchor: "middle"
+              }
+            }} tickFormatter={v => `${(v / 1000).toFixed(0)}k`} />
+              <Tooltip formatter={(value: number) => [`${value.toLocaleString()} jobs`, '']} contentStyle={{
+              borderRadius: 8,
+              fontWeight: 'bold'
+            }} />
               <Legend />
               <Bar dataKey="Today" fill="#94a3b8" />
               <Bar dataKey="In 10 Years" fill="#3b82f6" />
