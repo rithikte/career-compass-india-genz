@@ -117,18 +117,41 @@ export const GrowthRate = () => {
         
         <div className="bg-gradient-to-r from-slate-50 to-blue-50 p-6 rounded-lg mb-8">
           <h4 className="text-center font-bold text-slate-900 mb-4 text-xl">Visual Job Growth</h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="text-center">
-              <div className="font-semibold text-slate-700 mb-3">👨‍💼 Today:</div>
-              <div className="text-4xl font-bold text-slate-700 mb-2">30k+</div>
-              <div className="text-sm text-slate-600">Jobs</div>
-              <div className="mt-4 bg-slate-400 h-8 rounded-lg mx-auto" style={{ width: '120px' }}></div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="space-y-3">
+              <div className="text-center">
+                <div className="font-semibold text-slate-700 mb-2">👨‍💼 Today</div>
+                <div className="text-3xl font-bold text-slate-700">30k+</div>
+                <div className="text-sm text-slate-600">Jobs</div>
+              </div>
+              <div className="relative h-12 bg-slate-200 rounded-lg overflow-hidden">
+                <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-slate-400 to-slate-500 rounded-lg" style={{ width: '30%' }}></div>
+                <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-sm">30k+</div>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="font-semibold text-green-700 mb-3">👨‍💼 In 15 Years:</div>
-              <div className="text-4xl font-bold text-green-700 mb-2">1M+</div>
-              <div className="text-sm text-green-600">Jobs</div>
-              <div className="mt-4 bg-green-500 h-8 rounded-lg mx-auto" style={{ width: '280px' }}></div>
+            
+            <div className="space-y-3">
+              <div className="text-center">
+                <div className="font-semibold text-blue-700 mb-2">👨‍💼 In 10 Years</div>
+                <div className="text-3xl font-bold text-blue-700">78k+</div>
+                <div className="text-sm text-blue-600">Jobs</div>
+              </div>
+              <div className="relative h-12 bg-blue-100 rounded-lg overflow-hidden">
+                <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-blue-400 to-blue-500 rounded-lg" style={{ width: '65%' }}></div>
+                <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-sm">78k+</div>
+              </div>
+            </div>
+            
+            <div className="space-y-3">
+              <div className="text-center">
+                <div className="font-semibold text-green-700 mb-2">👨‍💼 In 15 Years</div>
+                <div className="text-3xl font-bold text-green-700">1M+</div>
+                <div className="text-sm text-green-600">Jobs</div>
+              </div>
+              <div className="relative h-12 bg-green-100 rounded-lg overflow-hidden">
+                <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-green-400 to-green-500 rounded-lg" style={{ width: '100%' }}></div>
+                <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-sm">1M+</div>
+              </div>
             </div>
           </div>
           <p className="text-center mt-6 text-lg font-bold text-green-700">
