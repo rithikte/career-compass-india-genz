@@ -32,33 +32,33 @@ export const AIImpact = () => {
         <div className="flex items-start gap-4 mb-6">
           <Brain className="w-10 h-10 sm:w-12 sm:h-12 text-blue-600 flex-shrink-0" />
           <div>
-            <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">AI Impact on Aerospace Industry</h3>
+            <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">AI Impact on Indian Aerospace Industry</h3>
             <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-              Artificial Intelligence is revolutionizing aerospace with predictive maintenance, autonomous flight systems, 
-              and smart manufacturing. From design optimization to quality control, AI is becoming integral to every aspect 
-              of the industry.
+              AI is transforming India's aerospace sector with predictive maintenance, autonomous systems, 
+              and smart manufacturing. Indian companies like HAL, DRDO, and private players are rapidly adopting 
+              AI for design optimization, quality control, and defense applications.
             </p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md">
-            <div className="text-3xl sm:text-4xl font-bold text-blue-600 mb-2">$25B+</div>
-            <div className="text-sm sm:text-base text-gray-700 font-medium">AI Investment in Aerospace by 2030</div>
+            <div className="text-3xl sm:text-4xl font-bold text-blue-600 mb-2">₹23,000 Cr+</div>
+            <div className="text-sm sm:text-base text-gray-700 font-medium">India's AI Aerospace Market by 2030 ($2.8B)</div>
           </div>
           <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md">
-            <div className="text-3xl sm:text-4xl font-bold text-indigo-600 mb-2">67%</div>
-            <div className="text-sm sm:text-base text-gray-700 font-medium">Companies Adopting AI Tools by 2026</div>
+            <div className="text-3xl sm:text-4xl font-bold text-indigo-600 mb-2">60%</div>
+            <div className="text-sm sm:text-base text-gray-700 font-medium">Indian Aerospace Leaders Adopting AI</div>
           </div>
           <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md">
-            <div className="text-3xl sm:text-4xl font-bold text-purple-600 mb-2">3x</div>
-            <div className="text-sm sm:text-base text-gray-700 font-medium">Faster Design with AI Optimization</div>
+            <div className="text-3xl sm:text-4xl font-bold text-purple-600 mb-2">2x</div>
+            <div className="text-sm sm:text-base text-gray-700 font-medium">Market Growth 2024 to 2030</div>
           </div>
         </div>
 
         <div className="mt-6 p-4 bg-blue-100 rounded-lg border-l-4 border-blue-600">
           <p className="text-base sm:text-lg font-semibold text-slate-900">
-            💡 Engineers with AI skills earn 35-50% more than those without
+            💡 Indian engineers with AI skills earn 35-50% more in aerospace companies
           </p>
         </div>
       </div>
