@@ -115,33 +115,30 @@ export const GrowthRate = () => {
           Yes! See how many more jobs will be available over time
         </p>
         
-        <div className="h-96 mb-8">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={projectionData}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="role" />
-              <YAxis 
-                label={{
-                  value: "Number of Jobs",
-                  angle: -90,
-                  position: "insideLeft",
-                  style: { textAnchor: "middle" }
-                }}
-                tickFormatter={v => `${(v / 1000).toFixed(0)}k`}
-              />
-              <Tooltip 
-                formatter={(value: number) => [`${value.toLocaleString()} jobs`, '']}
-                contentStyle={{ borderRadius: 8, fontWeight: 'bold' }}
-              />
-              <Legend />
-              <Bar dataKey="Today" fill="#94a3b8" />
-              <Bar dataKey="In 10 Years" fill="#3b82f6" />
-              <Bar dataKey="In 15 Years" fill="#10b981" />
-            </BarChart>
-          </ResponsiveContainer>
+        <div className="bg-gradient-to-r from-slate-50 to-blue-50 p-6 rounded-lg mb-8">
+          <h4 className="text-center font-bold text-slate-900 mb-4 text-xl">Visual Job Growth</h4>
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <span className="font-semibold text-slate-700">👨‍💼 Today:</span>
+              <div className="flex items-center space-x-2">
+                <div className="bg-slate-400 h-6 w-32 rounded"></div>
+                <span className="text-sm font-medium text-slate-700">30,000 jobs</span>
+              </div>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="font-semibold text-green-700">👨‍💼 In 15 Years:</span>
+              <div className="flex items-center space-x-2">
+                <div className="bg-green-500 h-6 w-80 rounded"></div>
+                <span className="text-sm font-medium text-green-700">103,000 jobs</span>
+              </div>
+            </div>
+          </div>
+          <p className="text-center mt-6 text-lg font-bold text-green-700">
+            🎯 Your chances of getting hired MORE THAN TRIPLE!
+          </p>
         </div>
 
-        <div className="relative group max-w-3xl mx-auto">
+        <div className="relative group max-w-3xl mx-auto mb-8">
           <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-20 group-hover:opacity-30 blur transition-all duration-300"></div>
           <div className="relative bg-white/95 backdrop-blur-xl rounded-2xl p-6 sm:p-8 shadow-elegant border border-primary/30">
             <div className="flex items-start gap-4">
@@ -175,27 +172,30 @@ export const GrowthRate = () => {
           </div>
         </div>
 
-        <div className="mt-8 bg-gradient-to-r from-slate-50 to-blue-50 p-6 rounded-lg">
-          <h4 className="text-center font-bold text-slate-900 mb-4 text-xl">Visual Job Growth</h4>
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <span className="font-semibold text-slate-700">👨‍💼 Today:</span>
-              <div className="flex items-center space-x-2">
-                <div className="bg-slate-400 h-6 w-32 rounded"></div>
-                <span className="text-sm font-medium text-slate-700">30,000 jobs</span>
-              </div>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="font-semibold text-green-700">👨‍💼 In 15 Years:</span>
-              <div className="flex items-center space-x-2">
-                <div className="bg-green-500 h-6 w-80 rounded"></div>
-                <span className="text-sm font-medium text-green-700">103,000 jobs</span>
-              </div>
-            </div>
-          </div>
-          <p className="text-center mt-6 text-lg font-bold text-green-700">
-            🎯 Your chances of getting hired MORE THAN TRIPLE!
-          </p>
+        <div className="h-96 mb-8">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={projectionData}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="role" />
+              <YAxis 
+                label={{
+                  value: "Number of Jobs",
+                  angle: -90,
+                  position: "insideLeft",
+                  style: { textAnchor: "middle" }
+                }}
+                tickFormatter={v => `${(v / 1000).toFixed(0)}k`}
+              />
+              <Tooltip 
+                formatter={(value: number) => [`${value.toLocaleString()} jobs`, '']}
+                contentStyle={{ borderRadius: 8, fontWeight: 'bold' }}
+              />
+              <Legend />
+              <Bar dataKey="Today" fill="#94a3b8" />
+              <Bar dataKey="In 10 Years" fill="#3b82f6" />
+              <Bar dataKey="In 15 Years" fill="#10b981" />
+            </BarChart>
+          </ResponsiveContainer>
         </div>
       </div>
 
