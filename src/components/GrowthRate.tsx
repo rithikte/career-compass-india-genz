@@ -121,7 +121,7 @@ export const GrowthRate = () => {
                 <div className="text-sm text-slate-600">Jobs</div>
               </div>
               <div className="relative h-12 bg-slate-200 rounded-lg overflow-hidden">
-                <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-slate-400 to-slate-500 rounded-lg" style={{
+                <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-slate-400 to-slate-500 rounded-lg transition-all duration-1000 ease-out animate-in" style={{
                 width: '30%'
               }}></div>
                 <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-sm">30k+</div>
@@ -135,7 +135,7 @@ export const GrowthRate = () => {
                 <div className="text-sm text-blue-600">Jobs</div>
               </div>
               <div className="relative h-12 bg-blue-100 rounded-lg overflow-hidden">
-                <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-blue-400 to-blue-500 rounded-lg" style={{
+                <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-blue-400 to-blue-500 rounded-lg transition-all duration-1500 ease-out animate-in delay-300" style={{
                 width: '65%'
               }}></div>
                 <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-sm">78k+</div>
@@ -149,7 +149,7 @@ export const GrowthRate = () => {
                 <div className="text-sm text-green-600">Jobs</div>
               </div>
               <div className="relative h-12 bg-green-100 rounded-lg overflow-hidden">
-                <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-green-400 to-green-500 rounded-lg" style={{
+                <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-green-400 to-green-500 rounded-lg transition-all duration-2000 ease-out animate-in delay-600" style={{
                 width: '100%'
               }}></div>
                 <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-sm">1M+</div>
@@ -184,9 +184,9 @@ export const GrowthRate = () => {
               fontWeight: 'bold'
             }} />
               <Legend />
-              <Bar dataKey="Today" fill="#94a3b8" />
-              <Bar dataKey="In 10 Years" fill="#3b82f6" />
-              <Bar dataKey="In 15 Years" fill="#10b981" />
+              <Bar dataKey="Today" fill="#94a3b8" animationDuration={1000} animationBegin={0} />
+              <Bar dataKey="In 10 Years" fill="#3b82f6" animationDuration={1000} animationBegin={300} />
+              <Bar dataKey="In 15 Years" fill="#10b981" animationDuration={1000} animationBegin={600} />
             </BarChart>
           </ResponsiveContainer>
         </div>
