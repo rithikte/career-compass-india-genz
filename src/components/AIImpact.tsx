@@ -28,6 +28,41 @@ export const AIImpact = () => {
         </div>
       </div>
 
+      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 sm:p-8 mb-8 border-2 border-blue-200">
+        <div className="flex items-start gap-4 mb-6">
+          <Brain className="w-10 h-10 sm:w-12 sm:h-12 text-blue-600 flex-shrink-0" />
+          <div>
+            <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">AI Impact on Aerospace Industry</h3>
+            <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+              Artificial Intelligence is revolutionizing aerospace with predictive maintenance, autonomous flight systems, 
+              and smart manufacturing. From design optimization to quality control, AI is becoming integral to every aspect 
+              of the industry.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md">
+            <div className="text-3xl sm:text-4xl font-bold text-blue-600 mb-2">$25B+</div>
+            <div className="text-sm sm:text-base text-gray-700 font-medium">AI Investment in Aerospace by 2030</div>
+          </div>
+          <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md">
+            <div className="text-3xl sm:text-4xl font-bold text-indigo-600 mb-2">67%</div>
+            <div className="text-sm sm:text-base text-gray-700 font-medium">Companies Adopting AI Tools by 2026</div>
+          </div>
+          <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md">
+            <div className="text-3xl sm:text-4xl font-bold text-purple-600 mb-2">3x</div>
+            <div className="text-sm sm:text-base text-gray-700 font-medium">Faster Design with AI Optimization</div>
+          </div>
+        </div>
+
+        <div className="mt-6 p-4 bg-blue-100 rounded-lg border-l-4 border-blue-600">
+          <p className="text-base sm:text-lg font-semibold text-slate-900">
+            💡 Engineers with AI skills earn 35-50% more than those without
+          </p>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
         {aiImpactData.map((data, index) => <div key={data.timeframe} className="bg-white rounded-lg shadow-lg p-4 sm:p-6">
             <h3 className="text-xl sm:text-2xl font-bold text-center mb-4 sm:mb-6">{data.timeframe}</h3>
