@@ -443,11 +443,11 @@ export const HomePage = () => {
           </div>
           
           {/* Trust Indicator */}
-          <div className="flex justify-center items-center relative z-10 my-0 px-4 py-0 w-full">
-            <div className="magnetic-container bg-white/95 backdrop-blur-xl rounded-2xl shadow-layer-2 border border-success/30 flex items-center gap-2 sm:gap-3 px-3 sm:px-4 md:px-5 py-2 max-w-full">
-              <Shield className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-success flex-shrink-0" />
-              <span className="font-bold text-foreground text-xs sm:text-sm md:text-base whitespace-nowrap">100% Secure & Privacy-Protected Platform</span>
-              <div className="w-2 h-2 bg-success rounded-full animate-pulse flex-shrink-0"></div>
+          <div className="flex justify-center relative z-10 my-0 px-0 py-0 mx-[300px]">
+            <div className="magnetic-container bg-white/95 backdrop-blur-xl rounded-2xl shadow-layer-2 border border-success/30 flex items-center gap-3 mx-0 px-[10px] py-[7px] my-0">
+              <Shield className="w-6 h-6 text-success" />
+              <span className="font-bold text-foreground mx-0">100% Secure & Privacy-Protected Platform</span>
+              <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
             </div>
           </div>
         </div>
