@@ -141,19 +141,36 @@ export const GrowthRate = () => {
           </ResponsiveContainer>
         </div>
 
-        <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg max-w-3xl mx-auto">
-          <div className="flex items-start space-x-3">
-            <span className="text-3xl">📈</span>
-            <div>
-              <h4 className="font-bold text-blue-900 text-lg mb-3">What This Means For You</h4>
-              <div className="space-y-2 text-blue-800">
-                <p><strong>Today:</strong> There are 30,000 aerospace jobs in India</p>
-                <p><strong>In 10 Years:</strong> There will be 78,000+ jobs (160% more!)</p>
-                <p><strong>In 15 Years:</strong> There will be 103,000+ jobs (240% more!)</p>
+        <div className="relative group max-w-3xl mx-auto">
+          <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-20 group-hover:opacity-30 blur transition-all duration-300"></div>
+          <div className="relative bg-white/95 backdrop-blur-xl rounded-2xl p-6 sm:p-8 shadow-elegant border border-primary/30">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                <span className="text-2xl">📈</span>
               </div>
-              <p className="mt-4 font-semibold text-blue-900 text-lg">
-                🎯 More jobs = Better chances for you to get hired!
-              </p>
+              <div className="flex-1">
+                <h4 className="font-bold text-foreground text-xl mb-4">What This Means For You</h4>
+                <div className="space-y-3 text-muted-foreground">
+                  <div className="flex items-baseline gap-2">
+                    <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0 mt-2"></div>
+                    <p><strong className="text-foreground">Today:</strong> There are 30,000 aerospace jobs in India</p>
+                  </div>
+                  <div className="flex items-baseline gap-2">
+                    <div className="w-2 h-2 rounded-full bg-accent flex-shrink-0 mt-2"></div>
+                    <p><strong className="text-foreground">In 10 Years:</strong> There will be 78,000+ jobs (160% more!)</p>
+                  </div>
+                  <div className="flex items-baseline gap-2">
+                    <div className="w-2 h-2 rounded-full bg-success flex-shrink-0 mt-2"></div>
+                    <p><strong className="text-foreground">In 15 Years:</strong> There will be 103,000+ jobs (240% more!)</p>
+                  </div>
+                </div>
+                <div className="mt-6 pt-4 border-t border-border">
+                  <p className="font-bold text-foreground text-lg flex items-center gap-2">
+                    <span className="text-2xl">🎯</span>
+                    More jobs = Better chances for you to get hired!
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
