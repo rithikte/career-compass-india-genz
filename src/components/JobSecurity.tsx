@@ -91,14 +91,17 @@ export const JobSecurity = () => {
       </div>
 
       <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-        <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Difference between Learning Traditional Skills and AI-Enhanced Skill Career Durability</h3>
+        <h3 className="text-2xl font-bold text-slate-900 mb-4 text-center">How Long Will Your Skills Stay Relevant?</h3>
+        <p className="text-center text-gray-600 mb-6 max-w-2xl mx-auto">
+          Your skills can become outdated fast. Here's how learning AI can double your career lifespan.
+        </p>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
               <tr className="border-b-2 border-slate-300">
                 <th className="text-left py-4 px-4 text-slate-900 font-bold">Role</th>
-                <th className="text-center py-4 px-4 text-slate-900 font-bold">Traditional Skill</th>
-                <th className="text-center py-4 px-4 text-slate-900 font-bold">AI-Enhanced Skill</th>
+                <th className="text-center py-4 px-4 text-slate-900 font-bold">Skills Become Outdated In</th>
+                <th className="text-center py-4 px-4 text-slate-900 font-bold">Skills Stay Relevant For</th>
                 <th className="text-center py-4 px-4 text-slate-900 font-bold">Career Durability Score</th>
               </tr>
             </thead>
@@ -146,14 +149,26 @@ export const JobSecurity = () => {
           </table>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+        <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg mt-6">
+          <div className="flex items-start space-x-3">
+            <span className="text-3xl">💡</span>
+            <div>
+              <h4 className="font-bold text-blue-900 text-lg mb-2">The Difference</h4>
+              <p className="text-blue-800 text-base">
+                Learning AI doubles how long your skills stay valuable — from 7 years to 16 years on average.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
           <div className="bg-red-50 border-l-4 border-red-500 p-5 rounded">
             <div className="flex items-start space-x-3">
-              <span className="text-2xl">📉</span>
+              <span className="text-2xl">⚠️</span>
               <div>
-                <h4 className="font-bold text-red-900 mb-2">📌 Traditional Skill</h4>
+                <h4 className="font-bold text-red-900 mb-2">Without AI Skills</h4>
                 <p className="text-red-800 text-sm leading-relaxed">
-                  Shows how quickly skills lose value without continuous learning.
+                  Your technical knowledge becomes outdated in just 6-9 years. Companies won't hire engineers with outdated skills.
                 </p>
               </div>
             </div>
@@ -161,11 +176,11 @@ export const JobSecurity = () => {
           
           <div className="bg-green-50 border-l-4 border-green-500 p-5 rounded">
             <div className="flex items-start space-x-3">
-              <span className="text-2xl">🚀</span>
+              <span className="text-2xl">✅</span>
               <div>
-                <h4 className="font-bold text-green-900 mb-2">💡 AI-Enhanced Skill</h4>
+                <h4 className="font-bold text-green-900 mb-2">With AI Skills</h4>
                 <p className="text-green-800 text-sm leading-relaxed">
-                  Proves that learning new technologies can double your career life and job security.
+                  Your skills stay valuable for 14-20 years. You stay employable and grow your career faster.
                 </p>
               </div>
             </div>
