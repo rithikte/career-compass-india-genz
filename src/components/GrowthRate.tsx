@@ -55,54 +55,6 @@ export const GrowthRate = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-        {growthData.map((item, index) => <div key={item.role} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-bold text-slate-900">{item.role}</h3>
-              <span className={`px-3 py-1 rounded-full text-xs font-semibold ${item.cagr >= 15 ? 'bg-green-100 text-green-800' : item.cagr >= 10 ? 'bg-yellow-100 text-yellow-800' : 'bg-blue-100 text-blue-800'}`}>
-                {item.trend}
-              </span>
-            </div>
-
-            <div className="text-center mb-4">
-              <div className="text-4xl font-bold" style={{
-            color: item.color
-          }}>
-                {item.cagr}%
-              </div>
-              <div className="text-sm text-gray-600">Annual Growth Rate</div>
-            </div>
-
-            <div className="bg-gray-50 p-4 rounded-lg mb-4">
-              <div className="flex items-start">
-                <Zap className="w-4 h-4 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
-                <p className="text-sm text-gray-700">{item.reason}</p>
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">5 Years</span>
-                <span className="font-semibold text-green-600">
-                  +{Math.round((Math.pow(1 + item.cagr / 100, 5) - 1) * 100)}%
-                </span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">10 Years</span>
-                <span className="font-semibold text-green-600">
-                  +{Math.round((Math.pow(1 + item.cagr / 100, 10) - 1) * 100)}%
-                </span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">15 Years</span>
-                <span className="font-semibold text-green-600">
-                  +{Math.round((Math.pow(1 + item.cagr / 100, 15) - 1) * 100)}%
-                </span>
-              </div>
-            </div>
-          </div>)}
-      </div>
-
       <div className="bg-white rounded-lg shadow-lg p-8">
         <h3 className="text-3xl font-bold text-slate-900 mb-2 text-center">
           Will There Be More Jobs in the Future?
@@ -190,6 +142,54 @@ export const GrowthRate = () => {
             </BarChart>
           </ResponsiveContainer>
         </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+        {growthData.map((item, index) => <div key={item.role} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-lg font-bold text-slate-900">{item.role}</h3>
+              <span className={`px-3 py-1 rounded-full text-xs font-semibold ${item.cagr >= 15 ? 'bg-green-100 text-green-800' : item.cagr >= 10 ? 'bg-yellow-100 text-yellow-800' : 'bg-blue-100 text-blue-800'}`}>
+                {item.trend}
+              </span>
+            </div>
+
+            <div className="text-center mb-4">
+              <div className="text-4xl font-bold" style={{
+            color: item.color
+          }}>
+                {item.cagr}%
+              </div>
+              <div className="text-sm text-gray-600">Annual Growth Rate</div>
+            </div>
+
+            <div className="bg-gray-50 p-4 rounded-lg mb-4">
+              <div className="flex items-start">
+                <Zap className="w-4 h-4 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
+                <p className="text-sm text-gray-700">{item.reason}</p>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-600">5 Years</span>
+                <span className="font-semibold text-green-600">
+                  +{Math.round((Math.pow(1 + item.cagr / 100, 5) - 1) * 100)}%
+                </span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-600">10 Years</span>
+                <span className="font-semibold text-green-600">
+                  +{Math.round((Math.pow(1 + item.cagr / 100, 10) - 1) * 100)}%
+                </span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-600">15 Years</span>
+                <span className="font-semibold text-green-600">
+                  +{Math.round((Math.pow(1 + item.cagr / 100, 15) - 1) * 100)}%
+                </span>
+              </div>
+            </div>
+          </div>)}
       </div>
 
       <div className="bg-gradient-to-r from-green-600 to-teal-600 text-white p-8 rounded-lg">
