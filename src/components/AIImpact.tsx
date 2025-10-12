@@ -34,9 +34,7 @@ export const AIImpact = () => {
           <div>
             <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">AI Impact on Indian Aerospace Industry</h3>
             <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-              AI is transforming India's aerospace sector with predictive maintenance, autonomous systems, 
-              and smart manufacturing. Indian companies like HAL, DRDO, and private players are rapidly adopting 
-              AI for design optimization, quality control, and defense applications.
+              AI is changing how India makes aircraft and spacecraft. Companies like HAL and DRDO are using AI to design better, check quality, and build faster.
             </p>
           </div>
         </div>
