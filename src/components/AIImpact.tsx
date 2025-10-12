@@ -17,7 +17,7 @@ const COLORS = ['#ef4444', '#10b981'];
 export const AIImpact = () => {
   return <div className="space-y-8">
       <div className="text-center mb-8 sm:mb-12 px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">AI Impact on Aerospace Jobs</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">AI Impact on Aerospace</h2>
         <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
           Automation timeline and job security analysis
         </p>
@@ -25,39 +25,6 @@ export const AIImpact = () => {
           <SourceBadge href="https://www.mckinsey.com/featured-insights/artificial-intelligence/the-age-of-ai" label="McKinsey AI Report" />
           <SourceBadge href="https://www.weforum.org/reports/the-future-of-jobs-report-2023" label="WEF Jobs Report" />
           <SourceBadge href="https://www.pwc.com/gx/en/issues/artificial-intelligence/ai-and-workforce-evolution" label="PwC AI Workforce" />
-        </div>
-      </div>
-
-      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 sm:p-8 mb-8 border-2 border-blue-200">
-        <div className="flex items-start gap-4 mb-6">
-          <Brain className="w-10 h-10 sm:w-12 sm:h-12 text-blue-600 flex-shrink-0" />
-          <div>
-            <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">AI Impact on Indian Aerospace Industry</h3>
-            <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-              AI is changing how India makes aircraft and spacecraft. Companies like HAL and DRDO are using AI to design better, check quality, and build faster.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-          <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md">
-            <div className="text-3xl sm:text-4xl font-bold text-blue-600 mb-2">₹23,000 Cr+</div>
-            <div className="text-sm sm:text-base text-gray-700 font-medium">India's AI Aerospace Market by 2030 ($2.8B)</div>
-          </div>
-          <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md">
-            <div className="text-3xl sm:text-4xl font-bold text-indigo-600 mb-2">60%</div>
-            <div className="text-sm sm:text-base text-gray-700 font-medium">Indian Aerospace Leaders Adopting AI</div>
-          </div>
-          <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md">
-            <div className="text-3xl sm:text-4xl font-bold text-purple-600 mb-2">2x</div>
-            <div className="text-sm sm:text-base text-gray-700 font-medium">Market Growth 2024 to 2030</div>
-          </div>
-        </div>
-
-        <div className="mt-6 p-4 bg-blue-100 rounded-lg border-l-4 border-blue-600">
-          <p className="text-base sm:text-lg font-semibold text-slate-900">
-            💡 Indian engineers with AI skills earn 35-50% more in aerospace companies
-          </p>
         </div>
       </div>
 
