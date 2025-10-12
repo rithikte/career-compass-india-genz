@@ -153,15 +153,15 @@ export const GrowthRate = () => {
                 <div className="space-y-3 text-muted-foreground">
                   <div className="flex items-baseline gap-2">
                     <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0 mt-2"></div>
-                    <p><strong className="text-foreground">Today:</strong> 30k+ Jobs</p>
+                    <p><strong className="text-foreground">Today:</strong> <strong>30k+</strong> Jobs</p>
                   </div>
                   <div className="flex items-baseline gap-2">
                     <div className="w-2 h-2 rounded-full bg-accent flex-shrink-0 mt-2"></div>
-                    <p><strong className="text-foreground">In 10 Years:</strong> 78k+ Jobs</p>
+                    <p><strong className="text-foreground">In 10 Years:</strong> <strong>78k+</strong> Jobs</p>
                   </div>
                   <div className="flex items-baseline gap-2">
                     <div className="w-2 h-2 rounded-full bg-success flex-shrink-0 mt-2"></div>
-                    <p><strong className="text-foreground">In 15 Years:</strong> 1M+ Jobs</p>
+                    <p><strong className="text-foreground">In 15 Years:</strong> <strong>1M+</strong> Jobs</p>
                   </div>
                 </div>
                 <div className="mt-6 pt-4 border-t border-border">
