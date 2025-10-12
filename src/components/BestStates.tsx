@@ -20,6 +20,11 @@ const statesData = [
       avionics: '1:12 to 1:18',
       ame: '1:4 to 1:7'
     },
+    newJobsPerYear: {
+      ame: '540–660',
+      avionics: '180–240',
+      aerospace: '300–420'
+    },
     growth: 'High'
   },
   {
@@ -38,6 +43,11 @@ const statesData = [
       aerospace: '1:10 to 1:15',
       avionics: '1:15 to 1:20',
       ame: '1:5 to 1:9'
+    },
+    newJobsPerYear: {
+      ame: '360–440',
+      avionics: '120–160',
+      aerospace: '200–280'
     },
     growth: 'High'
   },
@@ -58,6 +68,11 @@ const statesData = [
       avionics: '1:13 to 1:18',
       ame: '1:5 to 1:8'
     },
+    newJobsPerYear: {
+      ame: '324–396',
+      avionics: '108–144',
+      aerospace: '180–252'
+    },
     growth: 'Medium'
   },
   {
@@ -77,6 +92,11 @@ const statesData = [
       avionics: '1:14 to 1:19',
       ame: '1:4 to 1:7'
     },
+    newJobsPerYear: {
+      ame: '396–484',
+      avionics: '132–176',
+      aerospace: '220–308'
+    },
     growth: 'Medium'
   },
   {
@@ -95,6 +115,11 @@ const statesData = [
       aerospace: '1:11 to 1:16',
       avionics: '1:16 to 1:22',
       ame: '1:5 to 1:9'
+    },
+    newJobsPerYear: {
+      ame: '180–220',
+      avionics: '60–80',
+      aerospace: '100–140'
     },
     growth: 'High'
   }
@@ -120,6 +145,33 @@ export const BestStates = () => {
           <SourceBadge href="https://www.karnataka.gov.in/aerospace" label="Karnataka Aerospace" />
           <SourceBadge href="https://www.telanganatoday.com/aerospace-clusters" label="Telangana Policy" />
           <SourceBadge href="https://www.maharashtra.gov.in/industrial-development" label="Maharashtra Govt" />
+        </div>
+      </div>
+
+      {/* Average New Jobs Opening Per Year */}
+      <div className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-lg shadow-lg p-6 sm:p-8 mb-8 animate-fade-in">
+        <div className="text-center mb-6">
+          <TrendingUp className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3" />
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
+            Average New Job Openings Per Year
+          </h3>
+          <p className="text-emerald-100 text-sm sm:text-base">
+            Expected ~3,400–4,400 new openings annually across India
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+          <div className="bg-white bg-opacity-20 rounded-lg p-4 text-center backdrop-blur-sm">
+            <div className="text-2xl sm:text-3xl font-bold mb-1">1,800–2,200</div>
+            <div className="text-emerald-100 text-sm font-medium">AME Jobs/Year</div>
+          </div>
+          <div className="bg-white bg-opacity-20 rounded-lg p-4 text-center backdrop-blur-sm">
+            <div className="text-2xl sm:text-3xl font-bold mb-1">600–800</div>
+            <div className="text-emerald-100 text-sm font-medium">Avionics Jobs/Year</div>
+          </div>
+          <div className="bg-white bg-opacity-20 rounded-lg p-4 text-center backdrop-blur-sm">
+            <div className="text-2xl sm:text-3xl font-bold mb-1">1,000–1,400</div>
+            <div className="text-emerald-100 text-sm font-medium">Aerospace Eng Jobs/Year</div>
+          </div>
         </div>
       </div>
 
@@ -197,6 +249,24 @@ export const BestStates = () => {
                 <div className="flex justify-between">
                   <span className="text-gray-600">AME:</span>
                   <span className="font-semibold text-orange-700">{state.jobRatio.ame}</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-green-50 p-3 rounded-lg mb-4 border border-green-200">
+              <div className="text-xs font-semibold text-gray-700 mb-2">New Jobs/Year:</div>
+              <div className="space-y-1 text-xs">
+                <div className="flex justify-between">
+                  <span className="text-gray-600">AME:</span>
+                  <span className="font-semibold text-green-700">{state.newJobsPerYear.ame}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Avionics:</span>
+                  <span className="font-semibold text-green-700">{state.newJobsPerYear.avionics}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Aerospace Eng:</span>
+                  <span className="font-semibold text-green-700">{state.newJobsPerYear.aerospace}</span>
                 </div>
               </div>
             </div>
