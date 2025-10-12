@@ -343,13 +343,11 @@ export const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {/* Start My Degree Journey */}
             <Card className="magnetic-container relative overflow-hidden group hover:shadow-layer-3 transition-all duration-300 border-0 bg-white/95 backdrop-blur-sm shadow-layer-2">
-              <CardContent className="p-8">
+              <CardContent className="p-8 my-0 px-[30px]">
                 <div className="text-left mb-6">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 mb-4 shadow-layer-1 mx-[111px]">
-                    <Target className="w-8 h-8 text-white" />
-                  </div>
+                  
                   <h3 className="text-2xl font-bold text-foreground mb-2">Start My Degree Journey</h3>
-                  <p className="text-base text-muted-foreground mb-2">
+                  <p className="text-base text-muted-foreground mb-2 mx-[40px]">
                     <span className="font-semibold">For:</span> Students after Inter / +2
                   </p>
                   
@@ -365,11 +363,9 @@ export const HomePage = () => {
             <Card className="magnetic-container relative overflow-hidden group hover:shadow-layer-3 transition-all duration-300 border-0 bg-white/95 backdrop-blur-sm shadow-layer-2">
               <CardContent className="p-8">
                 <div className="text-left mb-6">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 mb-4 shadow-layer-1 mx-[111px]">
-                    <Award className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-2">Plan My Career Path</h3>
-                  <p className="text-base text-muted-foreground mb-2">
+                  
+                  <h3 className="text-2xl font-bold text-foreground mb-2 my-0 mx-[25px]">Plan My Career Path</h3>
+                  <p className="text-base text-muted-foreground mb-2 mx-[25px]">
                     <span className="font-semibold">For:</span> Students already in a degree
                   </p>
                   
@@ -385,10 +381,8 @@ export const HomePage = () => {
             <Card className="magnetic-container relative overflow-hidden group hover:shadow-layer-3 transition-all duration-300 border-0 bg-white/95 backdrop-blur-sm md:col-span-2 lg:col-span-1 shadow-layer-2">
               <CardContent className="p-8">
                 <div className="text-left mb-6">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 mb-4 shadow-layer-1 mx-[111px]">
-                    <Building2 className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-2">Govt Opportunities</h3>
+                  
+                  <h3 className="text-2xl font-bold text-foreground mb-2 mx-[30px]">Govt Opportunities</h3>
                   <p className="text-base text-muted-foreground mb-2">
                     <span className="font-semibold">For:</span> Students looking for Govt jobs after degree
                   </p>
@@ -449,10 +443,10 @@ export const HomePage = () => {
           </div>
           
           {/* Trust Indicator */}
-          <div className="flex justify-center relative z-10">
-            <div className="magnetic-container bg-white/95 backdrop-blur-xl rounded-2xl px-6 py-3 shadow-layer-2 border border-success/30 flex items-center gap-3">
+          <div className="flex justify-center relative z-10 my-0 px-0 py-0 mx-[300px]">
+            <div className="magnetic-container bg-white/95 backdrop-blur-xl rounded-2xl shadow-layer-2 border border-success/30 flex items-center gap-3 mx-0 px-[10px] py-[7px] my-0">
               <Shield className="w-6 h-6 text-success" />
-              <span className="font-bold text-foreground">100% Secure & Privacy-Protected Platform</span>
+              <span className="font-bold text-foreground mx-0">100% Secure & Privacy-Protected Platform</span>
               <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
             </div>
           </div>
