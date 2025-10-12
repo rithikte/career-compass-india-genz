@@ -163,21 +163,7 @@ export const GrowthRate = () => {
 
         <div className="relative group max-w-3xl mx-auto mb-8">
           <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-20 group-hover:opacity-30 blur transition-all duration-300"></div>
-          <div className="relative bg-white/95 backdrop-blur-xl rounded-2xl p-6 sm:p-8 shadow-elegant border border-primary/30">
-            <div className="flex items-start gap-4">
-              
-              <div className="flex-1">
-                
-                
-                <div className="mt-6 pt-4 border-t border-border">
-                  <p className="font-bold text-foreground text-lg flex items-center gap-2 my-0 mx-0 py-0 px-[111px]">
-                    <span className="text-2xl">🎯</span>
-                    More jobs = Better chances for you to get hired!
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </div>
 
         <div className="h-96 mb-8">
