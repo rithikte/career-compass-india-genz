@@ -117,20 +117,18 @@ export const GrowthRate = () => {
         
         <div className="bg-gradient-to-r from-slate-50 to-blue-50 p-6 rounded-lg mb-8">
           <h4 className="text-center font-bold text-slate-900 mb-4 text-xl">Visual Job Growth</h4>
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <span className="font-semibold text-slate-700">👨‍💼 Today:</span>
-              <div className="flex items-center space-x-2">
-                <div className="bg-slate-400 h-6 w-32 rounded"></div>
-                <span className="text-sm font-medium text-slate-700">30,000 jobs</span>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="text-center">
+              <div className="font-semibold text-slate-700 mb-3">👨‍💼 Today:</div>
+              <div className="text-4xl font-bold text-slate-700 mb-2">30k+</div>
+              <div className="text-sm text-slate-600">Jobs</div>
+              <div className="mt-4 bg-slate-400 h-8 rounded-lg mx-auto" style={{ width: '120px' }}></div>
             </div>
-            <div className="flex items-center justify-between">
-              <span className="font-semibold text-green-700">👨‍💼 In 15 Years:</span>
-              <div className="flex items-center space-x-2">
-                <div className="bg-green-500 h-6 w-80 rounded"></div>
-                <span className="text-sm font-medium text-green-700">103,000 jobs</span>
-              </div>
+            <div className="text-center">
+              <div className="font-semibold text-green-700 mb-3">👨‍💼 In 15 Years:</div>
+              <div className="text-4xl font-bold text-green-700 mb-2">1M+</div>
+              <div className="text-sm text-green-600">Jobs</div>
+              <div className="mt-4 bg-green-500 h-8 rounded-lg mx-auto" style={{ width: '280px' }}></div>
             </div>
           </div>
           <p className="text-center mt-6 text-lg font-bold text-green-700">
