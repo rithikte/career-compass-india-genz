@@ -101,71 +101,29 @@ export const AIImpact = () => {
             <tbody>
               <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
                 <td className="py-4 px-4 font-medium text-slate-800">Aerospace Engineer</td>
-                <td className="py-4 px-4">
-                  <div className="flex items-center gap-2">
-                    <div className="flex-1 h-8 bg-gray-200 rounded-full overflow-hidden">
-                      <div className="h-full flex">
-                        <div className="bg-red-500 h-full flex items-center justify-center text-white text-sm font-bold animate-scale-in" style={{width: '28%'}}>28%</div>
-                        <div className="bg-green-500 h-full animate-scale-in" style={{width: '72%'}}></div>
-                      </div>
-                    </div>
-                  </div>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-orange-100 text-orange-800 font-bold px-3 py-1 rounded">28%</span>
                 </td>
-                <td className="py-4 px-4">
-                  <div className="flex items-center gap-2">
-                    <div className="flex-1 h-8 bg-gray-200 rounded-full overflow-hidden">
-                      <div className="h-full flex">
-                        <div className="bg-red-500 h-full flex items-center justify-center text-white text-sm font-bold animate-scale-in" style={{width: '38%'}}>38%</div>
-                        <div className="bg-green-500 h-full animate-scale-in" style={{width: '62%'}}></div>
-                      </div>
-                    </div>
-                  </div>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-red-100 text-red-800 font-bold px-3 py-1 rounded">38%</span>
                 </td>
               </tr>
               <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
                 <td className="py-4 px-4 font-medium text-slate-800">Avionics Engineer</td>
-                <td className="py-4 px-4">
-                  <div className="flex items-center gap-2">
-                    <div className="flex-1 h-8 bg-gray-200 rounded-full overflow-hidden">
-                      <div className="h-full flex">
-                        <div className="bg-red-500 h-full flex items-center justify-center text-white text-sm font-bold animate-scale-in" style={{width: '33%'}}>33%</div>
-                        <div className="bg-green-500 h-full animate-scale-in" style={{width: '67%'}}></div>
-                      </div>
-                    </div>
-                  </div>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-orange-100 text-orange-800 font-bold px-3 py-1 rounded">33%</span>
                 </td>
-                <td className="py-4 px-4">
-                  <div className="flex items-center gap-2">
-                    <div className="flex-1 h-8 bg-gray-200 rounded-full overflow-hidden">
-                      <div className="h-full flex">
-                        <div className="bg-red-500 h-full flex items-center justify-center text-white text-sm font-bold animate-scale-in" style={{width: '43%'}}>43%</div>
-                        <div className="bg-green-500 h-full animate-scale-in" style={{width: '57%'}}></div>
-                      </div>
-                    </div>
-                  </div>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-red-100 text-red-800 font-bold px-3 py-1 rounded">43%</span>
                 </td>
               </tr>
               <tr className="hover:bg-gray-50 transition-colors">
                 <td className="py-4 px-4 font-medium text-slate-800">Aircraft Maintenance Engineer (AME)</td>
-                <td className="py-4 px-4">
-                  <div className="flex items-center gap-2">
-                    <div className="flex-1 h-8 bg-gray-200 rounded-full overflow-hidden">
-                      <div className="h-full flex">
-                        <div className="bg-red-500 h-full flex items-center justify-center text-white text-sm font-bold animate-scale-in" style={{width: '30%'}}>30%</div>
-                        <div className="bg-green-500 h-full animate-scale-in" style={{width: '70%'}}></div>
-                      </div>
-                    </div>
-                  </div>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-orange-100 text-orange-800 font-bold px-3 py-1 rounded">30%</span>
                 </td>
-                <td className="py-4 px-4">
-                  <div className="flex items-center gap-2">
-                    <div className="flex-1 h-8 bg-gray-200 rounded-full overflow-hidden">
-                      <div className="h-full flex">
-                        <div className="bg-red-500 h-full flex items-center justify-center text-white text-sm font-bold animate-scale-in" style={{width: '38%'}}>38%</div>
-                        <div className="bg-green-500 h-full animate-scale-in" style={{width: '62%'}}></div>
-                      </div>
-                    </div>
-                  </div>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-red-100 text-red-800 font-bold px-3 py-1 rounded">38%</span>
                 </td>
               </tr>
             </tbody>
