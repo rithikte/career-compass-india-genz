@@ -89,46 +89,150 @@ export const AIImpact = () => {
 
       <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-8">
         <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6 text-center">AI Impact on Job Roles</h3>
-        <div className="overflow-x-auto">
-          <table className="w-full">
-            <thead>
-              <tr className="border-b-2 border-gray-200">
-                <th className="text-left py-4 px-4 text-slate-900 font-bold">Job Role</th>
-                <th className="text-center py-4 px-4 text-slate-900 font-bold">AI Impact (5 Years)</th>
-                <th className="text-center py-4 px-4 text-slate-900 font-bold">AI Impact (10 Years)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                <td className="py-4 px-4 font-medium text-slate-800">Aerospace Engineer</td>
-                <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-orange-100 text-orange-800 font-bold px-3 py-1 rounded">28%</span>
-                </td>
-                <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-red-100 text-red-800 font-bold px-3 py-1 rounded">38%</span>
-                </td>
-              </tr>
-              <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                <td className="py-4 px-4 font-medium text-slate-800">Avionics Engineer</td>
-                <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-orange-100 text-orange-800 font-bold px-3 py-1 rounded">33%</span>
-                </td>
-                <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-red-100 text-red-800 font-bold px-3 py-1 rounded">43%</span>
-                </td>
-              </tr>
-              <tr className="hover:bg-gray-50 transition-colors">
-                <td className="py-4 px-4 font-medium text-slate-800">Aircraft Maintenance Engineer (AME)</td>
-                <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-orange-100 text-orange-800 font-bold px-3 py-1 rounded">30%</span>
-                </td>
-                <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-red-100 text-red-800 font-bold px-3 py-1 rounded">38%</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        
+        <div className="space-y-8">
+          {/* Aerospace Engineer */}
+          <div>
+            <h4 className="font-bold text-slate-800 mb-3">Aerospace Engineer</h4>
+            <div className="space-y-3">
+              <div>
+                <div className="flex justify-between text-sm mb-1">
+                  <span className="text-gray-600">5 Years</span>
+                  <span className="text-gray-600">28% Impact</span>
+                </div>
+                <div className="h-8 bg-gray-100 rounded-full overflow-hidden flex">
+                  <div 
+                    className="h-full bg-red-500 animate-scale-in transition-all duration-1000 flex items-center justify-end pr-2"
+                    style={{ width: '28%' }}
+                  >
+                    <span className="text-white text-xs font-bold">28%</span>
+                  </div>
+                  <div 
+                    className="h-full bg-green-500 animate-scale-in transition-all duration-1000 flex items-center justify-start pl-2"
+                    style={{ width: '72%' }}
+                  >
+                    <span className="text-white text-xs font-bold">72% Safe</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="flex justify-between text-sm mb-1">
+                  <span className="text-gray-600">10 Years</span>
+                  <span className="text-gray-600">38% Impact</span>
+                </div>
+                <div className="h-8 bg-gray-100 rounded-full overflow-hidden flex">
+                  <div 
+                    className="h-full bg-red-500 animate-scale-in transition-all duration-1000 flex items-center justify-end pr-2"
+                    style={{ width: '38%' }}
+                  >
+                    <span className="text-white text-xs font-bold">38%</span>
+                  </div>
+                  <div 
+                    className="h-full bg-green-500 animate-scale-in transition-all duration-1000 flex items-center justify-start pl-2"
+                    style={{ width: '62%' }}
+                  >
+                    <span className="text-white text-xs font-bold">62% Safe</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Avionics Engineer */}
+          <div>
+            <h4 className="font-bold text-slate-800 mb-3">Avionics Engineer</h4>
+            <div className="space-y-3">
+              <div>
+                <div className="flex justify-between text-sm mb-1">
+                  <span className="text-gray-600">5 Years</span>
+                  <span className="text-gray-600">33% Impact</span>
+                </div>
+                <div className="h-8 bg-gray-100 rounded-full overflow-hidden flex">
+                  <div 
+                    className="h-full bg-red-500 animate-scale-in transition-all duration-1000 flex items-center justify-end pr-2"
+                    style={{ width: '33%' }}
+                  >
+                    <span className="text-white text-xs font-bold">33%</span>
+                  </div>
+                  <div 
+                    className="h-full bg-green-500 animate-scale-in transition-all duration-1000 flex items-center justify-start pl-2"
+                    style={{ width: '67%' }}
+                  >
+                    <span className="text-white text-xs font-bold">67% Safe</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="flex justify-between text-sm mb-1">
+                  <span className="text-gray-600">10 Years</span>
+                  <span className="text-gray-600">43% Impact</span>
+                </div>
+                <div className="h-8 bg-gray-100 rounded-full overflow-hidden flex">
+                  <div 
+                    className="h-full bg-red-500 animate-scale-in transition-all duration-1000 flex items-center justify-end pr-2"
+                    style={{ width: '43%' }}
+                  >
+                    <span className="text-white text-xs font-bold">43%</span>
+                  </div>
+                  <div 
+                    className="h-full bg-green-500 animate-scale-in transition-all duration-1000 flex items-center justify-start pl-2"
+                    style={{ width: '57%' }}
+                  >
+                    <span className="text-white text-xs font-bold">57% Safe</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Aircraft Maintenance Engineer */}
+          <div>
+            <h4 className="font-bold text-slate-800 mb-3">Aircraft Maintenance Engineer (AME)</h4>
+            <div className="space-y-3">
+              <div>
+                <div className="flex justify-between text-sm mb-1">
+                  <span className="text-gray-600">5 Years</span>
+                  <span className="text-gray-600">30% Impact</span>
+                </div>
+                <div className="h-8 bg-gray-100 rounded-full overflow-hidden flex">
+                  <div 
+                    className="h-full bg-red-500 animate-scale-in transition-all duration-1000 flex items-center justify-end pr-2"
+                    style={{ width: '30%' }}
+                  >
+                    <span className="text-white text-xs font-bold">30%</span>
+                  </div>
+                  <div 
+                    className="h-full bg-green-500 animate-scale-in transition-all duration-1000 flex items-center justify-start pl-2"
+                    style={{ width: '70%' }}
+                  >
+                    <span className="text-white text-xs font-bold">70% Safe</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="flex justify-between text-sm mb-1">
+                  <span className="text-gray-600">10 Years</span>
+                  <span className="text-gray-600">38% Impact</span>
+                </div>
+                <div className="h-8 bg-gray-100 rounded-full overflow-hidden flex">
+                  <div 
+                    className="h-full bg-red-500 animate-scale-in transition-all duration-1000 flex items-center justify-end pr-2"
+                    style={{ width: '38%' }}
+                  >
+                    <span className="text-white text-xs font-bold">38%</span>
+                  </div>
+                  <div 
+                    className="h-full bg-green-500 animate-scale-in transition-all duration-1000 flex items-center justify-start pl-2"
+                    style={{ width: '62%' }}
+                  >
+                    <span className="text-white text-xs font-bold">62% Safe</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div className="mt-6 text-center">
           <p className="text-base sm:text-lg font-bold text-red-600">
             ⚠️ Ignoring AI skills reduces hiring chances by 40%.
