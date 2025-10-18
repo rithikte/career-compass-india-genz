@@ -35,7 +35,7 @@ const newCompaniesGrowthData = [
       "2040": "13–14"
     },
     trend: "Steady Entry",
-    reason: "Make in India 2.0, FDI liberalization, and global supply chain diversification driving established companies to set up operations in India",
+    reason: "Global supply chain shift",
     description: "Established international companies entering Indian market"
   },
   {
@@ -49,7 +49,7 @@ const newCompaniesGrowthData = [
       "2040": "11–13"
     },
     trend: "Rapid Growth",
-    reason: "Government incentives, drone sector boom, AI integration in aviation, and growing MRO ecosystem creating fertile ground for new startups",
+    reason: "Drone and AI boom",
     description: "Aviation, avionics/AI, MRO-tech startups emerging in India"
   }
 ];
@@ -341,28 +341,6 @@ export const GrowthRate = () => {
                 ))}
               </div>
 
-              {/* Cumulative projections */}
-              <div className="space-y-2 pt-4 border-t border-gray-200">
-                <div className="text-xs font-semibold text-gray-500 mb-2">CUMULATIVE GROWTH</div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-600">5 Years</span>
-                  <span className="font-semibold text-green-600">
-                    +{Math.round((Math.pow(1 + item.baseCAGR / 100, 5) - 1) * 100)}%
-                  </span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-600">10 Years</span>
-                  <span className="font-semibold text-green-600">
-                    +{Math.round((Math.pow(1 + item.baseCAGR / 100, 10) - 1) * 100)}%
-                  </span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-600">15 Years</span>
-                  <span className="font-semibold text-green-600">
-                    +{Math.round((Math.pow(1 + item.baseCAGR / 100, 15) - 1) * 100)}%
-                  </span>
-                </div>
-              </div>
             </div>
           ))}
         </div>
