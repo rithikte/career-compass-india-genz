@@ -4,29 +4,29 @@ import { TrendingUp, Users, Briefcase } from 'lucide-react';
 import SourceBadge from './SourceBadge';
 const demandData = [{
   role: 'Aerospace Engineer',
-  '2025': 90000,
-  '2030': 450000,
-  '2035': 1200000,
-  '2040': 2500000,
-  growth: 178,
+  '2025': 1200,
+  '2030': 1450,
+  '2035': 1700,
+  '2040': 1900,
+  growth: 58,
   shortName: 'Aerospace',
   why: 'ISRO missions + defense expansion'
 }, {
   role: 'Avionics Engineer',
-  '2025': 35000,
-  '2030': 280000,
-  '2035': 800000,
-  '2040': 1400000,
-  growth: 300,
+  '2025': 700,
+  '2030': 800,
+  '2035': 950,
+  '2040': 1050,
+  growth: 50,
   shortName: 'Avionics',
   why: 'Smart aircraft systems boom'
 }, {
   role: 'Aircraft Maintenance Eng.',
-  '2025': 60000,
-  '2030': 500000,
-  '2035': 1600000,
-  '2040': 2500000,
-  growth: 317,
+  '2025': 2000,
+  '2030': 2400,
+  '2035': 2800,
+  '2040': 3000,
+  growth: 50,
   shortName: 'Maintenance',
   why: 'India becoming global MRO hub'
 }];
@@ -37,10 +37,10 @@ export const JobDemand = () => {
   return <div className="space-y-8">
       <div className="text-center mb-8 sm:mb-12 px-4">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-          Job Demand Forecast
+          New Hires Per Year Forecast
         </h2>
         <p className="text-lg sm:text-xl text-gray-600">
-          2025 vs 2040 • Market Explosion Analysis
+          2025 vs 2040 • Annual Hiring Growth Analysis
         </p>
         <div className="flex flex-wrap justify-center gap-2 mt-4">
           <SourceBadge href="https://www.assocham.org/reports/aerospace-defence-in-india" label="ASSOCHAM Report" />
@@ -52,13 +52,13 @@ export const JobDemand = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8">
         <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 sm:p-6 rounded-lg text-center my-[11px] mx-0 py-[40px]">
           
-          <div className="text-2xl sm:text-3xl font-bold">{(totalJobs2025 / 1000).toFixed(0)}K</div>
-          <div className="text-blue-200 text-sm sm:text-base">Jobs in 2025</div>
+          <div className="text-2xl sm:text-3xl font-bold">{totalJobs2025.toLocaleString()}</div>
+          <div className="text-blue-200 text-sm sm:text-base">New Hires in 2025</div>
         </div>
         <div className="bg-gradient-to-r from-green-600 to-green-700 text-white p-4 sm:p-6 rounded-lg text-center py-[40px] my-[11px]">
           
-          <div className="text-2xl sm:text-3xl font-bold">{(totalJobs2040 / 1000).toFixed(0)}K</div>
-          <div className="text-green-200 text-sm sm:text-base">Jobs in 2040</div>
+          <div className="text-2xl sm:text-3xl font-bold">{totalJobs2040.toLocaleString()}</div>
+          <div className="text-green-200 text-sm sm:text-base">New Hires in 2040</div>
         </div>
         <div className="bg-gradient-to-r from-purple-600 to-purple-700 text-white p-4 sm:p-6 rounded-lg text-center sm:col-span-2 lg:col-span-1 py-[40px] my-[11px]">
           
@@ -69,7 +69,7 @@ export const JobDemand = () => {
 
       <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8">
         <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6 text-center">
-          Job Demand Comparison: 2025 vs 2040
+          Annual New Hires: 2025 vs 2040
         </h3>
         <div className="h-64 sm:h-80 lg:h-96 mb-4 sm:mb-6">
           <ResponsiveContainer width="100%" height="100%">
@@ -81,8 +81,8 @@ export const JobDemand = () => {
           }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="shortName" />
-              <YAxis tickFormatter={value => `${value / 1000}K`} />
-              <Tooltip formatter={(value: number, name: string) => [`${(value / 1000).toFixed(0)}K jobs`, name]} labelStyle={{
+              <YAxis tickFormatter={value => value.toLocaleString()} />
+              <Tooltip formatter={(value: number, name: string) => [`${value.toLocaleString()} hires/year`, name]} labelStyle={{
               color: '#1e293b'
             }} />
               <Bar dataKey="2025" fill="#3b82f6" name="2025" radius={[4, 4, 0, 0]} />
@@ -98,27 +98,27 @@ export const JobDemand = () => {
             
             <div className="space-y-3">
               <div className="flex justify-between items-center">
-                <span className="text-gray-600 text-sm">2025 Jobs</span>
+                <span className="text-gray-600 text-sm">2025 Hires/Year</span>
                 <span className="font-bold text-blue-600">
-                  {(item['2025'] / 1000).toFixed(0)}K
+                  {item['2025'].toLocaleString()}
                 </span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-600 text-sm">2030 Jobs</span>
+                <span className="text-gray-600 text-sm">2030 Hires/Year</span>
                 <span className="font-bold text-indigo-600">
-                  {item['2030'] >= 1000000 ? `${(item['2030'] / 1000000).toFixed(1)}M` : `${(item['2030'] / 1000).toFixed(0)}K`}
+                  {item['2030'].toLocaleString()}
                 </span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-600 text-sm">2035 Jobs</span>
+                <span className="text-gray-600 text-sm">2035 Hires/Year</span>
                 <span className="font-bold text-purple-600">
-                  {item['2035'] >= 1000000 ? `${(item['2035'] / 1000000).toFixed(1)}M` : `${(item['2035'] / 1000).toFixed(0)}K`}
+                  {item['2035'].toLocaleString()}
                 </span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-600 text-sm">2040 Jobs</span>
+                <span className="text-gray-600 text-sm">2040 Hires/Year</span>
                 <span className="font-bold text-green-600">
-                  {item['2040'] >= 1000000 ? `${(item['2040'] / 1000000).toFixed(1)}M` : `${(item['2040'] / 1000).toFixed(0)}K`}
+                  {item['2040'].toLocaleString()}
                 </span>
               </div>
               <div className="border-t pt-3">
@@ -140,22 +140,22 @@ export const JobDemand = () => {
 
       <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white p-8 rounded-lg">
         <div className="text-center">
-          <h3 className="text-2xl font-bold mb-4">🚀 Demand Explosion Alert</h3>
+          <h3 className="text-2xl font-bold mb-4">🚀 Annual Hiring Growth Alert</h3>
           <p className="text-red-200 text-lg mb-6">
-            Aircraft Maintenance Engineering will see 317% growth - from 60K (2025) to 25 Lakh jobs by 2040!
+            Aircraft Maintenance Engineering will see 50% growth - from 2,000 (2025) to 3,000 new hires per year by 2040!
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-red-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-3xl font-bold">25L</div>
-              <div className="text-red-200">Aerospace by 2040</div>
+              <div className="text-3xl font-bold">1,900</div>
+              <div className="text-red-200">Aerospace hires/yr by 2040</div>
             </div>
             <div className="bg-orange-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-3xl font-bold">14L</div>
-              <div className="text-orange-200">Avionics by 2040</div>
+              <div className="text-3xl font-bold">1,050</div>
+              <div className="text-orange-200">Avionics hires/yr by 2040</div>
             </div>
             <div className="bg-yellow-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-3xl font-bold">25L</div>
-              <div className="text-yellow-200">Maintenance by 2040</div>
+              <div className="text-3xl font-bold">3,000</div>
+              <div className="text-yellow-200">Maintenance hires/yr by 2040</div>
             </div>
           </div>
         </div>
