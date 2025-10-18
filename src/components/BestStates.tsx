@@ -6,7 +6,7 @@ const statesData = [{
   state: 'Karnataka',
   city: 'Bengaluru',
   description: 'Largest aerospace hub',
-  companies: 120,
+  companies: 150,
   marketShare: '~30%',
   aerospaceJobs: 32000,
   avionicsJobs: 13000,
@@ -29,7 +29,7 @@ const statesData = [{
   state: 'Telangana',
   city: 'Hyderabad',
   description: 'Avionics & defense cluster',
-  companies: 75,
+  companies: 80,
   marketShare: '~18%',
   aerospaceJobs: 13000,
   avionicsJobs: 10000,
@@ -52,7 +52,7 @@ const statesData = [{
   state: 'Maharashtra',
   city: 'Pune, Mumbai, Nagpur',
   description: 'Manufacturing & MRO hubs',
-  companies: 95,
+  companies: 100,
   marketShare: '~20%',
   aerospaceJobs: 11000,
   avionicsJobs: 6000,
@@ -75,7 +75,7 @@ const statesData = [{
   state: 'Tamil Nadu',
   city: 'Chennai',
   description: 'Maintenance & aero parks',
-  companies: 65,
+  companies: 70,
   marketShare: '~14%',
   aerospaceJobs: 9000,
   avionicsJobs: 2000,
@@ -95,17 +95,17 @@ const statesData = [{
   },
   growth: 'Medium'
 }, {
-  state: 'Andhra Pradesh',
-  city: 'Emerging clusters',
-  description: 'Strong govt support',
-  companies: 45,
+  state: 'Delhi NCR',
+  city: 'Delhi, Gurgaon, Noida',
+  description: 'MRO & defense services',
+  companies: 50,
   marketShare: '~8%',
   aerospaceJobs: 5000,
   avionicsJobs: 2000,
   ameJobs: 3500,
   totalJobs: 10500,
   jobShare: '~5%',
-  topCompanies: ['Govt projects', 'Defense'],
+  topCompanies: ['Defense MRO', 'Aviation Services'],
   jobRatio: {
     aerospace: '1:11 to 1:16',
     avionics: '1:16 to 1:22',
@@ -116,7 +116,7 @@ const statesData = [{
     avionics: '60–80',
     aerospace: '100–140'
   },
-  growth: 'High'
+  growth: 'Medium'
 }];
 export const BestStates = () => {
   // Calculate totals for stats in alert
@@ -205,7 +205,7 @@ export const BestStates = () => {
                   <TableCell className="text-center text-purple-700 font-semibold">200–280</TableCell>
                 </TableRow>
                 <TableRow className="hover:bg-emerald-50">
-                  <TableCell className="font-semibold text-gray-900 text-center">Andhra Pradesh (AP)</TableCell>
+                  <TableCell className="font-semibold text-gray-900 text-center">Delhi NCR</TableCell>
                   <TableCell className="text-center text-blue-700 font-semibold">180–220</TableCell>
                   <TableCell className="text-center text-indigo-700 font-semibold">60–80</TableCell>
                   <TableCell className="text-center text-purple-700 font-semibold">100–140</TableCell>
