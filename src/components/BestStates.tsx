@@ -401,6 +401,66 @@ export const BestStates = () => {
         </div>
       </div>
 
+      {/* Job Share by Each State */}
+      <div className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg shadow-lg p-6 sm:p-8 mb-8 animate-fade-in">
+        <div className="text-center mb-6">
+          <MapPin className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3" />
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
+            Job Share by Each State
+          </h3>
+          <p className="text-cyan-100 text-sm sm:text-base mb-4">
+            Percentage distribution of aerospace jobs across states
+          </p>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-xl overflow-hidden">
+          <div className="overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow className="bg-cyan-600 hover:bg-cyan-600">
+                  <TableHead className="text-white font-bold text-center">State</TableHead>
+                  <TableHead className="text-white font-bold text-center">AME Job Share</TableHead>
+                  <TableHead className="text-white font-bold text-center">Avionics Job Share</TableHead>
+                  <TableHead className="text-white font-bold text-center">Aerospace Eng. Job Share</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow className="hover:bg-cyan-50">
+                  <TableCell className="font-semibold text-gray-900 text-center">Karnataka</TableCell>
+                  <TableCell className="text-center text-blue-700 font-bold text-lg">~30%</TableCell>
+                  <TableCell className="text-center text-indigo-700 font-bold text-lg">~30%</TableCell>
+                  <TableCell className="text-center text-purple-700 font-bold text-lg">~30%</TableCell>
+                </TableRow>
+                <TableRow className="hover:bg-cyan-50">
+                  <TableCell className="font-semibold text-gray-900 text-center">Tamil Nadu</TableCell>
+                  <TableCell className="text-center text-blue-700 font-bold text-lg">~22%</TableCell>
+                  <TableCell className="text-center text-indigo-700 font-bold text-lg">~22%</TableCell>
+                  <TableCell className="text-center text-purple-700 font-bold text-lg">~22%</TableCell>
+                </TableRow>
+                <TableRow className="hover:bg-cyan-50">
+                  <TableCell className="font-semibold text-gray-900 text-center">Maharashtra</TableCell>
+                  <TableCell className="text-center text-blue-700 font-bold text-lg">~18%</TableCell>
+                  <TableCell className="text-center text-indigo-700 font-bold text-lg">~18%</TableCell>
+                  <TableCell className="text-center text-purple-700 font-bold text-lg">~18%</TableCell>
+                </TableRow>
+                <TableRow className="hover:bg-cyan-50">
+                  <TableCell className="font-semibold text-gray-900 text-center">Telangana</TableCell>
+                  <TableCell className="text-center text-blue-700 font-bold text-lg">~20%</TableCell>
+                  <TableCell className="text-center text-indigo-700 font-bold text-lg">~20%</TableCell>
+                  <TableCell className="text-center text-purple-700 font-bold text-lg">~20%</TableCell>
+                </TableRow>
+                <TableRow className="hover:bg-cyan-50">
+                  <TableCell className="font-semibold text-gray-900 text-center">Andhra Pradesh</TableCell>
+                  <TableCell className="text-center text-blue-700 font-bold text-lg">~10%</TableCell>
+                  <TableCell className="text-center text-indigo-700 font-bold text-lg">~10%</TableCell>
+                  <TableCell className="text-center text-purple-700 font-bold text-lg">~10%</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </div>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
         {statesData.map((state, index) => <div key={state.state} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100">
             <div className="flex items-center justify-between mb-4">
