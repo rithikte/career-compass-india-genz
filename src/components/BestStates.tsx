@@ -232,15 +232,15 @@ export const BestStates = () => {
         </div>
       </div>
 
-      {/* Future Projections Table */}
+      {/* New Job Openings based on New Companies */}
       <div className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg shadow-lg p-6 sm:p-8 mb-8 animate-fade-in">
         <div className="text-center mb-6">
           <TrendingUp className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3" />
           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
-            New Job Openings Projections
+            New Job Openings based on New Companies Opening
           </h3>
           <p className="text-blue-100 text-sm sm:text-base mb-4">
-            Expected growth in annual job openings across India
+            Job growth driven by new suppliers and startups entering the market
           </p>
         </div>
 
@@ -249,30 +249,34 @@ export const BestStates = () => {
             <Table>
               <TableHeader>
                 <TableRow className="bg-blue-600 hover:bg-blue-600">
-                  <TableHead className="text-white font-bold text-center">Year</TableHead>
-                  <TableHead className="text-white font-bold text-center">AME Jobs/Year</TableHead>
-                  <TableHead className="text-white font-bold text-center">Avionics Jobs/Year</TableHead>
-                  <TableHead className="text-white font-bold text-center">Aerospace Eng Jobs/Year</TableHead>
+                  <TableHead className="text-white font-bold text-center">Year (Combined new entrants)</TableHead>
+                  <TableHead className="text-white font-bold text-center">Total new jobs (3 roles)</TableHead>
+                  <TableHead className="text-white font-bold text-center">AME</TableHead>
+                  <TableHead className="text-white font-bold text-center">Avionics</TableHead>
+                  <TableHead className="text-white font-bold text-center">Aerospace Eng.</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 <TableRow className="hover:bg-blue-50">
-                  <TableCell className="font-bold text-gray-900 text-center text-base">2030</TableCell>
-                  <TableCell className="text-center text-blue-700 font-semibold">2,200–2,600</TableCell>
-                  <TableCell className="text-center text-indigo-700 font-semibold">700–900</TableCell>
-                  <TableCell className="text-center text-purple-700 font-semibold">1,200–1,700</TableCell>
+                  <TableCell className="font-bold text-gray-900 text-center text-sm">2030<br/><span className="text-xs font-normal text-gray-600">(40–60 suppliers; 120–180 startups)</span></TableCell>
+                  <TableCell className="text-center text-emerald-700 font-semibold">~1,600 – 4,600</TableCell>
+                  <TableCell className="text-center text-blue-700 font-semibold">~650 – 2,000</TableCell>
+                  <TableCell className="text-center text-indigo-700 font-semibold">~400 – 1,400</TableCell>
+                  <TableCell className="text-center text-purple-700 font-semibold">~400 – 1,200</TableCell>
                 </TableRow>
                 <TableRow className="hover:bg-blue-50">
-                  <TableCell className="font-bold text-gray-900 text-center text-base">2035</TableCell>
-                  <TableCell className="text-center text-blue-700 font-semibold">2,600–3,000</TableCell>
-                  <TableCell className="text-center text-indigo-700 font-semibold">850–1,050</TableCell>
-                  <TableCell className="text-center text-purple-700 font-semibold">1,400–2,000</TableCell>
+                  <TableCell className="font-bold text-gray-900 text-center text-sm">2035<br/><span className="text-xs font-normal text-gray-600">(80–120; 250–350)</span></TableCell>
+                  <TableCell className="text-center text-emerald-700 font-semibold">~3,300 – 9,000</TableCell>
+                  <TableCell className="text-center text-blue-700 font-semibold">~1,300 – 3,800</TableCell>
+                  <TableCell className="text-center text-indigo-700 font-semibold">~800 – 2,700</TableCell>
+                  <TableCell className="text-center text-purple-700 font-semibold">~800 – 2,500</TableCell>
                 </TableRow>
                 <TableRow className="hover:bg-blue-50">
-                  <TableCell className="font-bold text-gray-900 text-center text-base">2040</TableCell>
-                  <TableCell className="text-center text-blue-700 font-semibold">2,800–3,200</TableCell>
-                  <TableCell className="text-center text-indigo-700 font-semibold">950–1,150</TableCell>
-                  <TableCell className="text-center text-purple-700 font-semibold">1,600–2,200</TableCell>
+                  <TableCell className="font-bold text-gray-900 text-center text-sm">2040<br/><span className="text-xs font-normal text-gray-600">(150–200; 400–500)</span></TableCell>
+                  <TableCell className="text-center text-emerald-700 font-semibold">~5,750 – 14,000</TableCell>
+                  <TableCell className="text-center text-blue-700 font-semibold">~2,300 – 5,800</TableCell>
+                  <TableCell className="text-center text-indigo-700 font-semibold">~1,400 – 4,700</TableCell>
+                  <TableCell className="text-center text-purple-700 font-semibold">~1,400 – 3,500</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
