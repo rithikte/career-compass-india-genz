@@ -22,6 +22,38 @@ const growthData = [{
   color: '#8b5cf6'
 }];
 
+// New Companies Growth Data
+const newCompaniesGrowthData = [
+  {
+    category: "Foreign/Tier-1/2 Companies",
+    icon: Building2,
+    color: "#3b82f6",
+    baseCAGR: 14,
+    rates: {
+      "2030": "15",
+      "2035": "14–16",
+      "2040": "13–14"
+    },
+    trend: "Steady Entry",
+    reason: "Global supply chain shift",
+    description: "Established international companies entering Indian market"
+  },
+  {
+    category: "Startups (Aviation/Avionics/AI/MRO-tech)",
+    icon: Brain,
+    color: "#a855f7",
+    baseCAGR: 11,
+    rates: {
+      "2030": "14–16",
+      "2035": "7–10",
+      "2040": "11–13"
+    },
+    trend: "Rapid Growth",
+    reason: "Drone and AI boom",
+    description: "Aviation, avionics/AI, MRO-tech startups emerging in India"
+  }
+];
+
 // Generate growth projection data with real job numbers
 const projectionData = [{
   role: 'Aerospace Engineer',
@@ -87,7 +119,9 @@ export const GrowthRate = () => {
                 <div className="text-sm text-blue-600">Jobs</div>
               </div>
               <div className="relative h-12 bg-blue-100 rounded-lg overflow-hidden">
-                
+                <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-blue-400 to-blue-500 rounded-lg transition-all duration-1500 ease-out animate-in delay-300" style={{
+                width: '65%'
+              }}></div>
                 <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-sm">78k+</div>
               </div>
             </div>
@@ -142,7 +176,17 @@ export const GrowthRate = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+        <div className="text-center mb-8">
+          <h3 className="text-3xl font-bold text-slate-900 mb-2">
+            Jobs Growth Rate by 2040
+          </h3>
+          <p className="text-gray-600">
+            Annual growth rates and projections for aerospace careers
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
         {growthData.map((item, index) => <div key={item.role} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-bold text-slate-900">{item.role}</h3>
@@ -169,25 +213,26 @@ export const GrowthRate = () => {
 
             <div className="space-y-2">
               <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">5 Years</span>
+                <span className="text-sm text-gray-600">2030</span>
                 <span className="font-semibold text-green-600">
                   +{Math.round((Math.pow(1 + item.cagr / 100, 5) - 1) * 100)}%
                 </span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">10 Years</span>
+                <span className="text-sm text-gray-600">2035</span>
                 <span className="font-semibold text-green-600">
                   +{Math.round((Math.pow(1 + item.cagr / 100, 10) - 1) * 100)}%
                 </span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">15 Years</span>
+                <span className="text-sm text-gray-600">2040</span>
                 <span className="font-semibold text-green-600">
                   +{Math.round((Math.pow(1 + item.cagr / 100, 15) - 1) * 100)}%
                 </span>
               </div>
             </div>
           </div>)}
+        </div>
       </div>
 
       <div className="bg-gradient-to-r from-green-600 to-teal-600 text-white p-8 rounded-lg">
@@ -244,6 +289,71 @@ export const GrowthRate = () => {
               </p>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* New Companies Growth Rate by 2040 - Enhanced */}
+      <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+        <div className="text-center mb-8">
+          <div className="flex items-center justify-center mb-3">
+            <Building2 className="w-7 h-7 text-indigo-600 mr-2" />
+            <h3 className="text-3xl font-bold text-slate-900">New Companies Growth Rate by 2040</h3>
+          </div>
+          <p className="text-gray-600">
+            How fast new aerospace companies are entering the Indian market
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {newCompaniesGrowthData.map((item) => (
+            <div key={item.category} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
+              {/* Header with badge */}
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center">
+                  <item.icon className="w-6 h-6 mr-2" style={{color: item.color}} />
+                  <h4 className="text-lg font-bold text-slate-900">{item.category}</h4>
+                </div>
+                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                  item.baseCAGR >= 13 ? 'bg-green-100 text-green-800' : 
+                  item.baseCAGR >= 10 ? 'bg-yellow-100 text-yellow-800' : 
+                  'bg-blue-100 text-blue-800'
+                }`}>
+                  {item.trend}
+                </span>
+              </div>
+
+              {/* Description */}
+              <p className="text-sm text-gray-600 mb-4">{item.description}</p>
+
+              {/* Central CAGR */}
+              <div className="text-center mb-4">
+                <div className="text-4xl font-bold" style={{color: item.color}}>
+                  {item.baseCAGR}%
+                </div>
+                <div className="text-sm text-gray-600">Average Annual Growth Rate</div>
+              </div>
+
+              {/* Reason box */}
+              <div className="bg-gray-50 p-4 rounded-lg mb-4">
+                <div className="flex items-start">
+                  <Zap className="w-4 h-4 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <p className="text-sm text-gray-700">{item.reason}</p>
+                </div>
+              </div>
+
+              {/* Year breakdown */}
+              <div className="space-y-3 mb-4">
+                <div className="text-xs font-semibold text-gray-500">ANNUAL GROWTH BY YEAR</div>
+                {Object.entries(item.rates).map(([year, rate]) => (
+                  <div key={year} className="flex justify-between items-center">
+                    <span className="text-sm text-gray-600">{year}</span>
+                    <span className="font-semibold" style={{color: item.color}}>{rate}%</span>
+                  </div>
+                ))}
+              </div>
+
+            </div>
+          ))}
         </div>
       </div>
 
