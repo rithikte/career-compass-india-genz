@@ -1,6 +1,6 @@
 import React from 'react';
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, BarChart, Bar, XAxis, YAxis, Legend } from 'recharts';
-import { Brain, AlertTriangle, Shield, TrendingUp, AlertCircle } from 'lucide-react';
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
+import { Brain, AlertTriangle, Shield } from 'lucide-react';
 import SourceBadge from './SourceBadge';
 const aiImpactData = [{
   timeframe: '5 Years',
@@ -87,169 +87,52 @@ export const AIImpact = () => {
           </div>)}
       </div>
 
-      <div className="bg-gradient-to-br from-orange-500 to-red-600 rounded-xl p-6 sm:p-8 mb-8 animate-fade-in">
-        <div className="flex justify-center mb-4">
-          <AlertTriangle className="w-12 h-12 text-white" />
+      <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-8">
+        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6 text-center">AI Impact on Job Roles</h3>
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              <tr className="border-b-2 border-gray-200">
+                <th className="text-left py-4 px-4 text-slate-900 font-bold">Job Role</th>
+                <th className="text-center py-4 px-4 text-slate-900 font-bold">AI Impact (5 Years)</th>
+                <th className="text-center py-4 px-4 text-slate-900 font-bold">AI Impact (10 Years)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-800">Aerospace Engineer</td>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-orange-100 text-orange-800 font-bold px-3 py-1 rounded">28%</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-red-100 text-red-800 font-bold px-3 py-1 rounded">38%</span>
+                </td>
+              </tr>
+              <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-800">Avionics Engineer</td>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-orange-100 text-orange-800 font-bold px-3 py-1 rounded">33%</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-red-100 text-red-800 font-bold px-3 py-1 rounded">43%</span>
+                </td>
+              </tr>
+              <tr className="hover:bg-gray-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-800">Aircraft Maintenance Engineer (AME)</td>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-orange-100 text-orange-800 font-bold px-3 py-1 rounded">30%</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className="inline-block bg-red-100 text-red-800 font-bold px-3 py-1 rounded">38%</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 text-center">AI Impact on Job Roles</h3>
-        
-        {/* Key Metrics Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-white border-opacity-30">
-            <div className="flex items-center gap-3 mb-2">
-              <TrendingUp className="w-6 h-6 text-white" />
-              <div className="text-sm text-white opacity-90">5-Year Average</div>
-            </div>
-            <div className="text-3xl sm:text-4xl font-bold text-white">30%</div>
-            <div className="text-sm text-white opacity-80 mt-1">Jobs at Risk</div>
-          </div>
-          
-          <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-white border-opacity-30">
-            <div className="flex items-center gap-3 mb-2">
-              <AlertCircle className="w-6 h-6 text-white" />
-              <div className="text-sm text-white opacity-90">10-Year Average</div>
-            </div>
-            <div className="text-3xl sm:text-4xl font-bold text-white">40%</div>
-            <div className="text-sm text-white opacity-80 mt-1">Jobs at Risk</div>
-          </div>
-          
-          <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-white border-opacity-30">
-            <div className="flex items-center gap-3 mb-2">
-              <AlertTriangle className="w-6 h-6 text-white" />
-              <div className="text-sm text-white opacity-90">Highest Risk</div>
-            </div>
-            <div className="text-2xl sm:text-3xl font-bold text-white">43%</div>
-            <div className="text-sm text-white opacity-80 mt-1">Avionics by 2030</div>
-          </div>
-        </div>
-
-        {/* Chart and Table Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Bar Chart */}
-          <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-white border-opacity-30">
-            <h4 className="text-lg font-bold text-white mb-4 text-center">Impact Comparison</h4>
-            <div className="h-64">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart 
-                  data={[
-                    { role: 'Aerospace', fiveYear: 28, tenYear: 38 },
-                    { role: 'Avionics', fiveYear: 33, tenYear: 43 },
-                    { role: 'AME', fiveYear: 30, tenYear: 38 }
-                  ]}
-                  layout="vertical"
-                  margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-                >
-                  <XAxis type="number" stroke="#fff" />
-                  <YAxis dataKey="role" type="category" stroke="#fff" width={80} />
-                  <Tooltip 
-                    contentStyle={{ backgroundColor: 'rgba(0,0,0,0.8)', border: 'none', borderRadius: '8px' }}
-                    labelStyle={{ color: '#fff' }}
-                  />
-                  <Legend wrapperStyle={{ color: '#fff' }} />
-                  <Bar dataKey="fiveYear" fill="#fb923c" name="5 Years" radius={[0, 4, 4, 0]} />
-                  <Bar dataKey="tenYear" fill="#dc2626" name="10 Years" radius={[0, 4, 4, 0]} />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-          </div>
-
-          {/* Enhanced Table */}
-          <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-white border-opacity-30">
-            <h4 className="text-lg font-bold text-white mb-4 text-center">Detailed Breakdown</h4>
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b-2 border-white border-opacity-30">
-                    <th className="text-left py-3 px-2 text-white font-bold text-sm">Role</th>
-                    <th className="text-center py-3 px-2 text-white font-bold text-sm">5Y</th>
-                    <th className="text-center py-3 px-2 text-white font-bold text-sm">10Y</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-white border-opacity-20 hover:bg-white hover:bg-opacity-10 transition-colors">
-                    <td className="py-3 px-2 font-medium text-white text-sm">Aerospace Engineer</td>
-                    <td className="text-center py-3 px-2">
-                      <div className="space-y-1">
-                        <span className="inline-block bg-orange-500 text-white font-bold px-2 py-1 rounded text-sm">28%</span>
-                        <div className="w-full bg-white bg-opacity-20 rounded-full h-1.5">
-                          <div className="bg-orange-400 h-1.5 rounded-full" style={{ width: '28%' }}></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="text-center py-3 px-2">
-                      <div className="space-y-1">
-                        <span className="inline-block bg-red-600 text-white font-bold px-2 py-1 rounded text-sm">38%</span>
-                        <div className="w-full bg-white bg-opacity-20 rounded-full h-1.5">
-                          <div className="bg-red-500 h-1.5 rounded-full" style={{ width: '38%' }}></div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="border-b border-white border-opacity-20 hover:bg-white hover:bg-opacity-10 transition-colors">
-                    <td className="py-3 px-2 font-medium text-white text-sm">Avionics Engineer</td>
-                    <td className="text-center py-3 px-2">
-                      <div className="space-y-1">
-                        <span className="inline-block bg-orange-500 text-white font-bold px-2 py-1 rounded text-sm">33%</span>
-                        <div className="w-full bg-white bg-opacity-20 rounded-full h-1.5">
-                          <div className="bg-orange-400 h-1.5 rounded-full" style={{ width: '33%' }}></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="text-center py-3 px-2">
-                      <div className="space-y-1">
-                        <span className="inline-block bg-red-600 text-white font-bold px-2 py-1 rounded text-sm">43%</span>
-                        <div className="w-full bg-white bg-opacity-20 rounded-full h-1.5">
-                          <div className="bg-red-500 h-1.5 rounded-full" style={{ width: '43%' }}></div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-white hover:bg-opacity-10 transition-colors">
-                    <td className="py-3 px-2 font-medium text-white text-sm">AME</td>
-                    <td className="text-center py-3 px-2">
-                      <div className="space-y-1">
-                        <span className="inline-block bg-orange-500 text-white font-bold px-2 py-1 rounded text-sm">30%</span>
-                        <div className="w-full bg-white bg-opacity-20 rounded-full h-1.5">
-                          <div className="bg-orange-400 h-1.5 rounded-full" style={{ width: '30%' }}></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="text-center py-3 px-2">
-                      <div className="space-y-1">
-                        <span className="inline-block bg-red-600 text-white font-bold px-2 py-1 rounded text-sm">38%</span>
-                        <div className="w-full bg-white bg-opacity-20 rounded-full h-1.5">
-                          <div className="bg-red-500 h-1.5 rounded-full" style={{ width: '38%' }}></div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        {/* Comparison Callout */}
-        <div className="mt-8 bg-white rounded-lg p-6 shadow-lg">
-          <div className="flex items-start gap-4">
-            <Shield className="w-10 h-10 text-green-600 flex-shrink-0" />
-            <div>
-              <h4 className="text-xl font-bold text-slate-900 mb-3">AI Skills Make the Difference</h4>
-              <div className="space-y-2">
-                <p className="text-lg">
-                  <span className="font-bold text-green-600">With AI Skills:</span>
-                  <span className="text-slate-800"> 72% job security in 5 years</span>
-                </p>
-                <p className="text-lg">
-                  <span className="font-bold text-red-600">Without AI Skills:</span>
-                  <span className="text-slate-800"> Only 60% security</span>
-                </p>
-                <p className="text-base text-orange-600 font-bold mt-4">
-                  ⚠️ Ignoring AI skills reduces hiring chances by 40%
-                </p>
-              </div>
-            </div>
-          </div>
+        <div className="mt-6 text-center">
+          <p className="text-base sm:text-lg font-bold text-red-600">
+            ⚠️ Ignoring AI skills reduces hiring chances by 40%.
+          </p>
         </div>
       </div>
 
