@@ -273,6 +273,27 @@ export const HiringCompanies = () => {
             </TableBody>
           </Table>
         </div>
+
+        <div className="mt-6 bg-blue-50 rounded-lg p-4 sm:p-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <h4 className="font-bold text-slate-900 mb-2">
+                Suppliers (foreign / tier-1/2):
+              </h4>
+              <p className="text-sm text-gray-700">
+                Established companies that make parts or systems for aircraft
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold text-slate-900 mb-2">
+                Startups (aviation, avionics/AI, MRO-tech):
+              </h4>
+              <p className="text-sm text-gray-700">
+                Newer, smaller firms that build specific products or software
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
