@@ -341,7 +341,7 @@ export const BestStates = () => {
             </div>
 
             <div className="bg-yellow-50 p-3 rounded-lg mb-4 border border-yellow-200">
-              <div className="text-xs font-semibold text-gray-700 mb-2">Job:Applicant Ratio:</div>
+              <div className="text-xs font-semibold text-gray-700 mb-2">Job:Application Ratio:</div>
               <div className="space-y-1 text-xs">
                 <div className="flex justify-between">
                   <span className="text-gray-600">Aerospace:</span>
