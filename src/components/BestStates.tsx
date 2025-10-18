@@ -139,6 +139,72 @@ export const BestStates = () => {
         </div>
       </div>
 
+      {/* Top 5 States by Companies and Market Share */}
+      <div className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-lg shadow-lg p-6 sm:p-8 mb-8 animate-fade-in">
+        <div className="text-center mb-6">
+          <Building className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3" />
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
+            Top 5 States by Number of Companies (2025)
+          </h3>
+          <p className="text-purple-100 text-sm sm:text-base mb-4">
+            Aerospace, Avionics, and Aircraft Maintenance Companies with Market Share
+          </p>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-xl overflow-hidden">
+          <div className="overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow className="bg-purple-600 hover:bg-purple-600">
+                  <TableHead className="text-white font-bold text-center">Rank</TableHead>
+                  <TableHead className="text-white font-bold text-center">State</TableHead>
+                  <TableHead className="text-white font-bold text-center">Number of Companies</TableHead>
+                  <TableHead className="text-white font-bold text-center">Market Share</TableHead>
+                  <TableHead className="text-white font-bold text-left">Key Sectors/Notes</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow className="hover:bg-purple-50">
+                  <TableCell className="font-bold text-gray-900 text-center">1</TableCell>
+                  <TableCell className="font-semibold text-gray-900 text-center">Karnataka</TableCell>
+                  <TableCell className="text-center text-indigo-700 font-semibold">120–150+</TableCell>
+                  <TableCell className="text-center text-purple-700 font-bold">~30%</TableCell>
+                  <TableCell className="text-gray-700">Largest aerospace hub (Bengaluru) and private startups, ISRO, HAL, TATA, L&T</TableCell>
+                </TableRow>
+                <TableRow className="hover:bg-purple-50">
+                  <TableCell className="font-bold text-gray-900 text-center">2</TableCell>
+                  <TableCell className="font-semibold text-gray-900 text-center">Telangana</TableCell>
+                  <TableCell className="text-center text-indigo-700 font-semibold">70–80+</TableCell>
+                  <TableCell className="text-center text-purple-700 font-bold">~18%</TableCell>
+                  <TableCell className="text-gray-700">Strong avionics & aerospace presence in Hyderabad, defense manufacturing cluster</TableCell>
+                </TableRow>
+                <TableRow className="hover:bg-purple-50">
+                  <TableCell className="font-bold text-gray-900 text-center">3</TableCell>
+                  <TableCell className="font-semibold text-gray-900 text-center">Maharashtra</TableCell>
+                  <TableCell className="text-center text-indigo-700 font-semibold">90–100+</TableCell>
+                  <TableCell className="text-center text-purple-700 font-bold">~20%</TableCell>
+                  <TableCell className="text-gray-700">Manufacturing and MRO clusters in Pune, Mumbai, Nagpur, Tata, L&T, GKN</TableCell>
+                </TableRow>
+                <TableRow className="hover:bg-purple-50">
+                  <TableCell className="font-bold text-gray-900 text-center">4</TableCell>
+                  <TableCell className="font-semibold text-gray-900 text-center">Tamil Nadu</TableCell>
+                  <TableCell className="text-center text-indigo-700 font-semibold">60–70+</TableCell>
+                  <TableCell className="text-center text-purple-700 font-bold">~14%</TableCell>
+                  <TableCell className="text-gray-700">Major aircraft maintenance and avionics hubs in Chennai, aero parks</TableCell>
+                </TableRow>
+                <TableRow className="hover:bg-purple-50">
+                  <TableCell className="font-bold text-gray-900 text-center">5</TableCell>
+                  <TableCell className="font-semibold text-gray-900 text-center">Delhi NCR</TableCell>
+                  <TableCell className="text-center text-indigo-700 font-semibold">40–50+</TableCell>
+                  <TableCell className="text-center text-purple-700 font-bold">~8%</TableCell>
+                  <TableCell className="text-gray-700">MRO services, defense manufacturing, aviation service companies</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </div>
+        </div>
+      </div>
+
       {/* Average New Jobs Opening Per Year */}
       <div className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-lg shadow-lg p-6 sm:p-8 mb-8 animate-fade-in">
         <div className="text-center mb-6">
