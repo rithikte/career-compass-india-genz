@@ -249,6 +249,85 @@ export const GrowthRate = () => {
         </div>
       </div>
 
+      {/* New Companies Growth Rate by 2040 */}
+      <div className="bg-white rounded-lg shadow-lg p-8">
+        <div className="text-center mb-8">
+          <div className="flex items-center justify-center mb-3">
+            <Building2 className="w-7 h-7 text-indigo-600 mr-2" />
+            <h3 className="text-3xl font-bold text-slate-900">New Companies Growth Rate by 2040</h3>
+          </div>
+          <p className="text-gray-600">
+            How fast new aerospace companies are entering the Indian market
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Foreign/Tier-1/2 Companies */}
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6 border-2 border-blue-200">
+            <div className="flex items-center mb-4">
+              <Building2 className="w-6 h-6 text-blue-600 mr-2" />
+              <h4 className="text-xl font-bold text-slate-900">New Foreign/Tier-1/2 Companies</h4>
+            </div>
+            <p className="text-sm text-gray-600 mb-6">
+              Established international companies entering Indian market
+            </p>
+            
+            <div className="space-y-4">
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="flex justify-between items-center">
+                  <span className="text-lg font-semibold text-slate-700">2030</span>
+                  <span className="text-2xl font-bold text-blue-600">15%</span>
+                </div>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="flex justify-between items-center">
+                  <span className="text-lg font-semibold text-slate-700">2035 (Combined)</span>
+                  <span className="text-2xl font-bold text-blue-600">14–16%</span>
+                </div>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="flex justify-between items-center">
+                  <span className="text-lg font-semibold text-slate-700">2040 (Combined)</span>
+                  <span className="text-2xl font-bold text-blue-600">13–14%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Startups */}
+          <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-6 border-2 border-purple-200">
+            <div className="flex items-center mb-4">
+              <Brain className="w-6 h-6 text-purple-600 mr-2" />
+              <h4 className="text-xl font-bold text-slate-900">Startups</h4>
+            </div>
+            <p className="text-sm text-gray-600 mb-6">
+              Aviation, avionics/AI, MRO-tech startups emerging in India
+            </p>
+            
+            <div className="space-y-4">
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="flex justify-between items-center">
+                  <span className="text-lg font-semibold text-slate-700">2030</span>
+                  <span className="text-2xl font-bold text-purple-600">14–16%</span>
+                </div>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="flex justify-between items-center">
+                  <span className="text-lg font-semibold text-slate-700">2035 (Combined)</span>
+                  <span className="text-2xl font-bold text-purple-600">7–10%</span>
+                </div>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="flex justify-between items-center">
+                  <span className="text-lg font-semibold text-slate-700">2040 (Combined)</span>
+                  <span className="text-2xl font-bold text-purple-600">11–13%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Comprehensive Source Documentation */}
       
     </div>
