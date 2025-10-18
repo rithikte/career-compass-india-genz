@@ -2,139 +2,129 @@ import React from 'react';
 import { MapPin, TrendingUp, Building, AlertTriangle } from 'lucide-react';
 import SourceBadge from './SourceBadge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
-
-const statesData = [
-  {
-    state: 'Karnataka',
-    city: 'Bengaluru',
-    description: 'Largest aerospace hub',
-    companies: 120,
-    marketShare: '~30%',
-    aerospaceJobs: 32000,
-    avionicsJobs: 13000,
-    ameJobs: 20000,
-    totalJobs: 65000,
-    jobShare: '~31%',
-    topCompanies: ['ISRO', 'HAL', 'TATA', 'L&T'],
-    jobRatio: {
-      aerospace: '1:8 to 1:12',
-      avionics: '1:12 to 1:18',
-      ame: '1:4 to 1:7'
-    },
-    newJobsPerYear: {
-      ame: '540–660',
-      avionics: '180–240',
-      aerospace: '300–420'
-    },
-    growth: 'High'
+const statesData = [{
+  state: 'Karnataka',
+  city: 'Bengaluru',
+  description: 'Largest aerospace hub',
+  companies: 120,
+  marketShare: '~30%',
+  aerospaceJobs: 32000,
+  avionicsJobs: 13000,
+  ameJobs: 20000,
+  totalJobs: 65000,
+  jobShare: '~31%',
+  topCompanies: ['ISRO', 'HAL', 'TATA', 'L&T'],
+  jobRatio: {
+    aerospace: '1:8 to 1:12',
+    avionics: '1:12 to 1:18',
+    ame: '1:4 to 1:7'
   },
-  {
-    state: 'Telangana',
-    city: 'Hyderabad',
-    description: 'Avionics & defense cluster',
-    companies: 75,
-    marketShare: '~18%',
-    aerospaceJobs: 13000,
-    avionicsJobs: 10000,
-    ameJobs: 6000,
-    totalJobs: 29000,
-    jobShare: '~14%',
-    topCompanies: ['Boeing', 'Cyient', 'DRDO'],
-    jobRatio: {
-      aerospace: '1:10 to 1:15',
-      avionics: '1:15 to 1:20',
-      ame: '1:5 to 1:9'
-    },
-    newJobsPerYear: {
-      ame: '360–440',
-      avionics: '120–160',
-      aerospace: '200–280'
-    },
-    growth: 'High'
+  newJobsPerYear: {
+    ame: '540–660',
+    avionics: '180–240',
+    aerospace: '300–420'
   },
-  {
-    state: 'Maharashtra',
-    city: 'Pune, Mumbai, Nagpur',
-    description: 'Manufacturing & MRO hubs',
-    companies: 95,
-    marketShare: '~20%',
-    aerospaceJobs: 11000,
-    avionicsJobs: 6000,
-    ameJobs: 9000,
-    totalJobs: 26000,
-    jobShare: '~12%',
-    topCompanies: ['Tata', 'L&T', 'GKN', 'Mahindra'],
-    jobRatio: {
-      aerospace: '1:9 to 1:14',
-      avionics: '1:13 to 1:18',
-      ame: '1:5 to 1:8'
-    },
-    newJobsPerYear: {
-      ame: '324–396',
-      avionics: '108–144',
-      aerospace: '180–252'
-    },
-    growth: 'Medium'
+  growth: 'High'
+}, {
+  state: 'Telangana',
+  city: 'Hyderabad',
+  description: 'Avionics & defense cluster',
+  companies: 75,
+  marketShare: '~18%',
+  aerospaceJobs: 13000,
+  avionicsJobs: 10000,
+  ameJobs: 6000,
+  totalJobs: 29000,
+  jobShare: '~14%',
+  topCompanies: ['Boeing', 'Cyient', 'DRDO'],
+  jobRatio: {
+    aerospace: '1:10 to 1:15',
+    avionics: '1:15 to 1:20',
+    ame: '1:5 to 1:9'
   },
-  {
-    state: 'Tamil Nadu',
-    city: 'Chennai',
-    description: 'Maintenance & aero parks',
-    companies: 65,
-    marketShare: '~14%',
-    aerospaceJobs: 9000,
-    avionicsJobs: 2000,
-    ameJobs: 10000,
-    totalJobs: 21000,
-    jobShare: '~10%',
-    topCompanies: ['Airbus', 'Boeing', 'Collins'],
-    jobRatio: {
-      aerospace: '1:10 to 1:14',
-      avionics: '1:14 to 1:19',
-      ame: '1:4 to 1:7'
-    },
-    newJobsPerYear: {
-      ame: '396–484',
-      avionics: '132–176',
-      aerospace: '220–308'
-    },
-    growth: 'Medium'
+  newJobsPerYear: {
+    ame: '360–440',
+    avionics: '120–160',
+    aerospace: '200–280'
   },
-  {
-    state: 'Andhra Pradesh',
-    city: 'Emerging clusters',
-    description: 'Strong govt support',
-    companies: 45,
-    marketShare: '~8%',
-    aerospaceJobs: 5000,
-    avionicsJobs: 2000,
-    ameJobs: 3500,
-    totalJobs: 10500,
-    jobShare: '~5%',
-    topCompanies: ['Govt projects', 'Defense'],
-    jobRatio: {
-      aerospace: '1:11 to 1:16',
-      avionics: '1:16 to 1:22',
-      ame: '1:5 to 1:9'
-    },
-    newJobsPerYear: {
-      ame: '180–220',
-      avionics: '60–80',
-      aerospace: '100–140'
-    },
-    growth: 'High'
-  }
-];
-
+  growth: 'High'
+}, {
+  state: 'Maharashtra',
+  city: 'Pune, Mumbai, Nagpur',
+  description: 'Manufacturing & MRO hubs',
+  companies: 95,
+  marketShare: '~20%',
+  aerospaceJobs: 11000,
+  avionicsJobs: 6000,
+  ameJobs: 9000,
+  totalJobs: 26000,
+  jobShare: '~12%',
+  topCompanies: ['Tata', 'L&T', 'GKN', 'Mahindra'],
+  jobRatio: {
+    aerospace: '1:9 to 1:14',
+    avionics: '1:13 to 1:18',
+    ame: '1:5 to 1:8'
+  },
+  newJobsPerYear: {
+    ame: '324–396',
+    avionics: '108–144',
+    aerospace: '180–252'
+  },
+  growth: 'Medium'
+}, {
+  state: 'Tamil Nadu',
+  city: 'Chennai',
+  description: 'Maintenance & aero parks',
+  companies: 65,
+  marketShare: '~14%',
+  aerospaceJobs: 9000,
+  avionicsJobs: 2000,
+  ameJobs: 10000,
+  totalJobs: 21000,
+  jobShare: '~10%',
+  topCompanies: ['Airbus', 'Boeing', 'Collins'],
+  jobRatio: {
+    aerospace: '1:10 to 1:14',
+    avionics: '1:14 to 1:19',
+    ame: '1:4 to 1:7'
+  },
+  newJobsPerYear: {
+    ame: '396–484',
+    avionics: '132–176',
+    aerospace: '220–308'
+  },
+  growth: 'Medium'
+}, {
+  state: 'Andhra Pradesh',
+  city: 'Emerging clusters',
+  description: 'Strong govt support',
+  companies: 45,
+  marketShare: '~8%',
+  aerospaceJobs: 5000,
+  avionicsJobs: 2000,
+  ameJobs: 3500,
+  totalJobs: 10500,
+  jobShare: '~5%',
+  topCompanies: ['Govt projects', 'Defense'],
+  jobRatio: {
+    aerospace: '1:11 to 1:16',
+    avionics: '1:16 to 1:22',
+    ame: '1:5 to 1:9'
+  },
+  newJobsPerYear: {
+    ame: '180–220',
+    avionics: '60–80',
+    aerospace: '100–140'
+  },
+  growth: 'High'
+}];
 export const BestStates = () => {
   // Calculate totals for stats in alert
   const total = statesData.reduce((sum, state) => sum + state.totalJobs, 0);
   const unfilled = 68000;
   const filled = total - unfilled;
   const skillGapPercent = 39;
-
-  return (
-    <div className="space-y-6 sm:space-y-8">
+  return <div className="space-y-6 sm:space-y-8">
       <div className="text-center mb-8 sm:mb-12 px-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
           Best States in India for Jobs
@@ -232,16 +222,14 @@ export const BestStates = () => {
         </div>
       </div>
 
-      {/* New Job Openings based on New Companies */}
+      {/* Future Projections Table */}
       <div className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg shadow-lg p-6 sm:p-8 mb-8 animate-fade-in">
         <div className="text-center mb-6">
           <TrendingUp className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3" />
           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
-            New Job Openings based on New Companies Opening
+            New Job Openings Projections
           </h3>
-          <p className="text-blue-100 text-sm sm:text-base mb-4">
-            Job growth driven by new suppliers and startups entering the market
-          </p>
+          <p className="text-blue-100 text-sm sm:text-base mb-4">when this projected Companies & startups Open they Create Extra 1 time New Jobs </p>
         </div>
 
         <div className="bg-white rounded-lg shadow-xl overflow-hidden">
@@ -249,34 +237,30 @@ export const BestStates = () => {
             <Table>
               <TableHeader>
                 <TableRow className="bg-blue-600 hover:bg-blue-600">
-                  <TableHead className="text-white font-bold text-center">Year (Combined new entrants)</TableHead>
-                  <TableHead className="text-white font-bold text-center">Total new jobs (3 roles)</TableHead>
-                  <TableHead className="text-white font-bold text-center">AME</TableHead>
-                  <TableHead className="text-white font-bold text-center">Avionics</TableHead>
-                  <TableHead className="text-white font-bold text-center">Aerospace Eng.</TableHead>
+                  <TableHead className="text-white font-bold text-center">Year</TableHead>
+                  <TableHead className="text-white font-bold text-center">AME Jobs/Year</TableHead>
+                  <TableHead className="text-white font-bold text-center">Avionics Jobs/Year</TableHead>
+                  <TableHead className="text-white font-bold text-center">Aerospace Eng Jobs/Year</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 <TableRow className="hover:bg-blue-50">
-                  <TableCell className="font-bold text-gray-900 text-center text-sm">2030<br/><span className="text-xs font-normal text-gray-600">(40–60 suppliers; 120–180 startups)</span></TableCell>
-                  <TableCell className="text-center text-emerald-700 font-semibold">~1,600 – 4,600</TableCell>
-                  <TableCell className="text-center text-blue-700 font-semibold">~650 – 2,000</TableCell>
-                  <TableCell className="text-center text-indigo-700 font-semibold">~400 – 1,400</TableCell>
-                  <TableCell className="text-center text-purple-700 font-semibold">~400 – 1,200</TableCell>
+                  <TableCell className="font-bold text-gray-900 text-center text-base">2030</TableCell>
+                  <TableCell className="text-center text-blue-700 font-semibold">(40–60 companies; 120–180 startups)</TableCell>
+                  <TableCell className="text-center text-indigo-700 font-semibold">700–900</TableCell>
+                  <TableCell className="text-center text-purple-700 font-semibold">1,200–1,700</TableCell>
                 </TableRow>
                 <TableRow className="hover:bg-blue-50">
-                  <TableCell className="font-bold text-gray-900 text-center text-sm">2035<br/><span className="text-xs font-normal text-gray-600">(80–120; 250–350)</span></TableCell>
-                  <TableCell className="text-center text-emerald-700 font-semibold">~3,300 – 9,000</TableCell>
-                  <TableCell className="text-center text-blue-700 font-semibold">~1,300 – 3,800</TableCell>
-                  <TableCell className="text-center text-indigo-700 font-semibold">~800 – 2,700</TableCell>
-                  <TableCell className="text-center text-purple-700 font-semibold">~800 – 2,500</TableCell>
+                  <TableCell className="font-bold text-gray-900 text-center text-base">2035</TableCell>
+                  <TableCell className="text-center text-blue-700 font-semibold">2,600–3,000</TableCell>
+                  <TableCell className="text-center text-indigo-700 font-semibold">850–1,050</TableCell>
+                  <TableCell className="text-center text-purple-700 font-semibold">1,400–2,000</TableCell>
                 </TableRow>
                 <TableRow className="hover:bg-blue-50">
-                  <TableCell className="font-bold text-gray-900 text-center text-sm">2040<br/><span className="text-xs font-normal text-gray-600">(150–200; 400–500)</span></TableCell>
-                  <TableCell className="text-center text-emerald-700 font-semibold">~5,750 – 14,000</TableCell>
-                  <TableCell className="text-center text-blue-700 font-semibold">~2,300 – 5,800</TableCell>
-                  <TableCell className="text-center text-indigo-700 font-semibold">~1,400 – 4,700</TableCell>
-                  <TableCell className="text-center text-purple-700 font-semibold">~1,400 – 3,500</TableCell>
+                  <TableCell className="font-bold text-gray-900 text-center text-base">2040</TableCell>
+                  <TableCell className="text-center text-blue-700 font-semibold">2,800–3,200</TableCell>
+                  <TableCell className="text-center text-indigo-700 font-semibold">950–1,150</TableCell>
+                  <TableCell className="text-center text-purple-700 font-semibold">1,600–2,200</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
@@ -285,19 +269,13 @@ export const BestStates = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
-        {statesData.map((state, index) => (
-          <div
-            key={state.state}
-            className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100"
-          >
+        {statesData.map((state, index) => <div key={state.state} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center">
                 <MapPin className="w-6 h-6 text-indigo-600 mr-3" />
                 <h3 className="text-xl font-bold text-slate-900">{state.state}</h3>
               </div>
-              <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                state.growth === 'High' ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'
-              }`}>
+              <span className={`px-3 py-1 rounded-full text-xs font-semibold ${state.growth === 'High' ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'}`}>
                 {state.growth} Growth
               </span>
             </div>
@@ -318,7 +296,7 @@ export const BestStates = () => {
               </div>
               <div className="flex items-center justify-between border-t pt-2">
                 <span className="text-sm text-gray-600">Total Jobs (2026)</span>
-                <span className="font-bold text-green-600">{(state.totalJobs/1000).toFixed(0)}K</span>
+                <span className="font-bold text-green-600">{(state.totalJobs / 1000).toFixed(0)}K</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-sm text-gray-600">Job Share</span>
@@ -330,15 +308,15 @@ export const BestStates = () => {
               <div className="text-xs font-semibold text-gray-700 mb-2">Job Distribution:</div>
               <div className="grid grid-cols-3 gap-2 text-center text-xs">
                 <div>
-                  <div className="font-bold text-blue-700">{(state.aerospaceJobs/1000).toFixed(0)}K</div>
+                  <div className="font-bold text-blue-700">{(state.aerospaceJobs / 1000).toFixed(0)}K</div>
                   <div className="text-gray-600">Aerospace</div>
                 </div>
                 <div>
-                  <div className="font-bold text-indigo-700">{(state.avionicsJobs/1000).toFixed(0)}K</div>
+                  <div className="font-bold text-indigo-700">{(state.avionicsJobs / 1000).toFixed(0)}K</div>
                   <div className="text-gray-600">Avionics</div>
                 </div>
                 <div>
-                  <div className="font-bold text-purple-700">{(state.ameJobs/1000).toFixed(0)}K</div>
+                  <div className="font-bold text-purple-700">{(state.ameJobs / 1000).toFixed(0)}K</div>
                   <div className="text-gray-600">AME</div>
                 </div>
               </div>
@@ -383,18 +361,12 @@ export const BestStates = () => {
             <div>
               <div className="text-sm font-semibold text-gray-700 mb-2">Top Companies</div>
               <div className="flex flex-wrap gap-2">
-                {state.topCompanies.map((company) => (
-                  <span
-                    key={company}
-                    className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs"
-                  >
+                {state.topCompanies.map(company => <span key={company} className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
                     {company}
-                  </span>
-                ))}
+                  </span>)}
               </div>
             </div>
-          </div>
-        ))}
+          </div>)}
       </div>
 
       {/* Jobs Unfilled Alert */}
@@ -449,6 +421,5 @@ export const BestStates = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
