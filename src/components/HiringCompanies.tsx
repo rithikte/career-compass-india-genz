@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Building, MapPin, TrendingUp, Users, Briefcase } from 'lucide-react';
 import SourceBadge from './SourceBadge';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 
 const publicSectorData = [
   {
@@ -223,6 +224,54 @@ export const HiringCompanies = () => {
               <div className="text-purple-200">Salary Range</div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Company Growth Projections */}
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 mt-8">
+        <div className="text-center mb-6">
+          <div className="flex items-center justify-center mb-3">
+            <Briefcase className="w-6 h-6 sm:w-7 sm:h-7 text-indigo-600 mr-2" />
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
+              Company Growth Projections in India
+            </h3>
+          </div>
+          <p className="text-sm sm:text-base text-gray-600">
+            How many companies & startups will realistically add in India
+          </p>
+        </div>
+
+        <div className="overflow-x-auto">
+          <Table>
+            <TableHeader>
+              <TableRow className="bg-gradient-to-r from-blue-50 to-indigo-50">
+                <TableHead className="font-bold text-slate-900 text-center">Year</TableHead>
+                <TableHead className="font-bold text-slate-900 text-center">
+                  New Foreign/Tier-1/2 Suppliers<br />Expanding/Entering
+                </TableHead>
+                <TableHead className="font-bold text-slate-900 text-center">
+                  New Indian Startups<br />(Aviation, Avionics/AI, MRO-tech)
+                </TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow className="hover:bg-blue-50 transition-colors">
+                <TableCell className="font-semibold text-center text-indigo-700">2030</TableCell>
+                <TableCell className="text-center font-medium">+40–60</TableCell>
+                <TableCell className="text-center font-medium">+120–180</TableCell>
+              </TableRow>
+              <TableRow className="hover:bg-blue-50 transition-colors">
+                <TableCell className="font-semibold text-center text-indigo-700">2035 (Combined)</TableCell>
+                <TableCell className="text-center font-medium">+80–120</TableCell>
+                <TableCell className="text-center font-medium">+250–350</TableCell>
+              </TableRow>
+              <TableRow className="hover:bg-blue-50 transition-colors">
+                <TableCell className="font-semibold text-center text-indigo-700">2040 (Combined)</TableCell>
+                <TableCell className="text-center font-medium">+150–200</TableCell>
+                <TableCell className="text-center font-medium">+400–500</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
         </div>
       </div>
     </div>
