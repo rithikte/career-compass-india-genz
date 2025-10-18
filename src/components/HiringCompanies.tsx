@@ -1,53 +1,39 @@
-
 import React, { useState } from 'react';
 import { Building, MapPin, TrendingUp, Users, Briefcase } from 'lucide-react';
 import SourceBadge from './SourceBadge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
-
-const publicSectorData = [
-  {
-    role: 'Aerospace Engineer',
-    companies: ['HAL', 'Boeing India', 'Airbus India', 'ISRO', 'DRDO'],
-    locations: ['Bengaluru', 'Mumbai', 'Hyderabad']
-  },
-  {
-    role: 'Avionics Engineer',
-    companies: ['BEL', 'Collins Aerospace', 'Honeywell', 'L&T', 'Tata Advanced'],
-    locations: ['Bengaluru', 'Pune', 'Chennai']
-  },
-  {
-    role: 'Aircraft Maintenance Eng.',
-    companies: ['Indigo', 'SpiceJet', 'Air India', 'Lufthansa Technik', 'GMR'],
-    locations: ['Delhi', 'Mumbai', 'Bengaluru']
-  }
-];
-
-const privateSectorData = [
-  {
-    role: 'Aerospace Engineer',
-    companyCount: '120-150+',
-    companies: ['TATA Advanced Systems', 'L&T Defence', 'Godrej Aerospace', 'Mahindra Aerospace', 'Dynamatic Tech', 'Aequs Aerospace'],
-    locations: ['Bengaluru', 'Mumbai', 'Pune', 'Hyderabad']
-  },
-  {
-    role: 'Avionics Engineer',
-    companyCount: '60-80+',
-    companies: ['Accord Software & Systems', 'TATA Avionics', 'Paras Defence', 'Alpha Design', 'Kaynes Tech', 'Avionics R&D Startups'],
-    locations: ['Bengaluru', 'Chennai', 'Hyderabad', 'Pune']
-  },
-  {
-    role: 'Aircraft Maintenance Engineer',
-    companyCount: '130-160+',
-    companies: ['Air Works Group', 'Indamer MRO', 'GMR Aero Technic', 'Max MRO', 'AI Engineering Services', 'Star Air'],
-    locations: ['Delhi', 'Mumbai', 'Bengaluru', 'Chennai']
-  }
-];
-
+const publicSectorData = [{
+  role: 'Aerospace Engineer',
+  companies: ['HAL', 'Boeing India', 'Airbus India', 'ISRO', 'DRDO'],
+  locations: ['Bengaluru', 'Mumbai', 'Hyderabad']
+}, {
+  role: 'Avionics Engineer',
+  companies: ['BEL', 'Collins Aerospace', 'Honeywell', 'L&T', 'Tata Advanced'],
+  locations: ['Bengaluru', 'Pune', 'Chennai']
+}, {
+  role: 'Aircraft Maintenance Eng.',
+  companies: ['Indigo', 'SpiceJet', 'Air India', 'Lufthansa Technik', 'GMR'],
+  locations: ['Delhi', 'Mumbai', 'Bengaluru']
+}];
+const privateSectorData = [{
+  role: 'Aerospace Engineer',
+  companyCount: '120-150+',
+  companies: ['TATA Advanced Systems', 'L&T Defence', 'Godrej Aerospace', 'Mahindra Aerospace', 'Dynamatic Tech', 'Aequs Aerospace'],
+  locations: ['Bengaluru', 'Mumbai', 'Pune', 'Hyderabad']
+}, {
+  role: 'Avionics Engineer',
+  companyCount: '60-80+',
+  companies: ['Accord Software & Systems', 'TATA Avionics', 'Paras Defence', 'Alpha Design', 'Kaynes Tech', 'Avionics R&D Startups'],
+  locations: ['Bengaluru', 'Chennai', 'Hyderabad', 'Pune']
+}, {
+  role: 'Aircraft Maintenance Engineer',
+  companyCount: '130-160+',
+  companies: ['Air Works Group', 'Indamer MRO', 'GMR Aero Technic', 'Max MRO', 'AI Engineering Services', 'Star Air'],
+  locations: ['Delhi', 'Mumbai', 'Bengaluru', 'Chennai']
+}];
 export const HiringCompanies = () => {
   const [activeTab, setActiveTab] = useState<'public' | 'private'>('public');
-
-  return (
-    <div className="space-y-8">
+  return <div className="space-y-8">
       <div className="text-center mb-8 sm:mb-12 px-4">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
           Who Will Hire Me?
@@ -65,27 +51,13 @@ export const HiringCompanies = () => {
       {/* Tab Navigation */}
       <div className="flex justify-center mb-6 sm:mb-8 px-4">
         <div className="bg-gray-100 p-1 rounded-lg flex flex-col sm:flex-row w-full sm:w-auto">
-          <button
-            onClick={() => setActiveTab('public')}
-            className={`px-4 sm:px-6 py-3 rounded-md font-semibold transition-all duration-200 mb-1 sm:mb-0 ${
-              activeTab === 'public'
-                ? 'bg-white text-indigo-600 shadow-sm'
-                : 'text-gray-600 hover:text-indigo-600'
-            }`}
-          >
+          <button onClick={() => setActiveTab('public')} className={`px-4 sm:px-6 py-3 rounded-md font-semibold transition-all duration-200 mb-1 sm:mb-0 ${activeTab === 'public' ? 'bg-white text-indigo-600 shadow-sm' : 'text-gray-600 hover:text-indigo-600'}`}>
             <div className="flex items-center justify-center space-x-2">
               <Building className="w-4 sm:w-5 h-4 sm:h-5" />
               <span className="text-sm sm:text-base">Public Sector & MNCs</span>
             </div>
           </button>
-          <button
-            onClick={() => setActiveTab('private')}
-            className={`px-4 sm:px-6 py-3 rounded-md font-semibold transition-all duration-200 ${
-              activeTab === 'private'
-                ? 'bg-white text-indigo-600 shadow-sm'
-                : 'text-gray-600 hover:text-indigo-600'
-            }`}
-          >
+          <button onClick={() => setActiveTab('private')} className={`px-4 sm:px-6 py-3 rounded-md font-semibold transition-all duration-200 ${activeTab === 'private' ? 'bg-white text-indigo-600 shadow-sm' : 'text-gray-600 hover:text-indigo-600'}`}>
             <div className="flex items-center justify-center space-x-2">
               <Users className="w-4 sm:w-5 h-4 sm:h-5" />
               <span className="text-sm sm:text-base">Private Sector & Startups</span>
@@ -95,13 +67,8 @@ export const HiringCompanies = () => {
       </div>
 
       {/* Public Sector Tab */}
-      {activeTab === 'public' && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-          {publicSectorData.map((item, index) => (
-            <div
-              key={item.role}
-              className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300"
-            >
+      {activeTab === 'public' && <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+          {publicSectorData.map((item, index) => <div key={item.role} className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300">
               <div className="flex items-center mb-4 sm:mb-6">
                 <Building className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600 mr-2 sm:mr-3 flex-shrink-0" />
                 <h3 className="text-lg sm:text-xl font-bold text-slate-900">{item.role}</h3>
@@ -112,14 +79,9 @@ export const HiringCompanies = () => {
                   Top Hiring Companies
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
-                  {item.companies.map((company, idx) => (
-                    <div
-                      key={company}
-                      className="bg-gradient-to-r from-blue-50 to-indigo-50 p-2 sm:p-3 rounded-lg text-center hover:from-blue-100 hover:to-indigo-100 transition-colors duration-200"
-                    >
+                  {item.companies.map((company, idx) => <div key={company} className="bg-gradient-to-r from-blue-50 to-indigo-50 p-2 sm:p-3 rounded-lg text-center hover:from-blue-100 hover:to-indigo-100 transition-colors duration-200">
                       <div className="font-semibold text-slate-800 text-sm sm:text-base">{company}</div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
 
@@ -129,29 +91,17 @@ export const HiringCompanies = () => {
                   <span className="text-sm font-semibold text-gray-700">Primary Locations</span>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {item.locations.map((location) => (
-                    <span
-                      key={location}
-                      className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
-                    >
+                  {item.locations.map(location => <span key={location} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
                       {location}
-                    </span>
-                  ))}
+                    </span>)}
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      )}
+            </div>)}
+        </div>}
 
       {/* Private Sector Tab */}
-      {activeTab === 'private' && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-          {privateSectorData.map((item, index) => (
-            <div
-              key={item.role}
-              className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300"
-            >
+      {activeTab === 'private' && <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+          {privateSectorData.map((item, index) => <div key={item.role} className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300">
               <div className="flex items-center justify-between mb-4 sm:mb-6">
                 <div className="flex items-center">
                   <Building className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600 mr-2 sm:mr-3 flex-shrink-0" />
@@ -167,14 +117,9 @@ export const HiringCompanies = () => {
                   Top Hiring Companies
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
-                  {item.companies.map((company, idx) => (
-                    <div
-                      key={company}
-                      className="bg-gradient-to-r from-blue-50 to-indigo-50 p-2 sm:p-3 rounded-lg text-center hover:from-blue-100 hover:to-indigo-100 transition-colors duration-200"
-                    >
+                  {item.companies.map((company, idx) => <div key={company} className="bg-gradient-to-r from-blue-50 to-indigo-50 p-2 sm:p-3 rounded-lg text-center hover:from-blue-100 hover:to-indigo-100 transition-colors duration-200">
                       <div className="font-semibold text-slate-800 text-sm sm:text-base">{company}</div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
 
@@ -184,20 +129,13 @@ export const HiringCompanies = () => {
                   <span className="text-sm font-semibold text-gray-700">Primary Locations</span>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {item.locations.map((location) => (
-                    <span
-                      key={location}
-                      className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
-                    >
+                  {item.locations.map(location => <span key={location} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
                       {location}
-                    </span>
-                  ))}
+                    </span>)}
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      )}
+            </div>)}
+        </div>}
 
       <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-8 rounded-lg">
         <div className="text-center">
@@ -232,9 +170,7 @@ export const HiringCompanies = () => {
         <div className="text-center mb-6">
           <div className="flex items-center justify-center mb-3">
             <Briefcase className="w-6 h-6 sm:w-7 sm:h-7 text-indigo-600 mr-2" />
-            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
-              Company Growth Projections in India
-            </h3>
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">Company Growth Projections by 2040</h3>
           </div>
           <p className="text-sm sm:text-base text-gray-600">
             How many companies & startups will realistically add in India
@@ -277,17 +213,13 @@ export const HiringCompanies = () => {
         <div className="mt-6 bg-blue-50 rounded-lg p-4 sm:p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <h4 className="font-bold text-slate-900 mb-2">
-                Suppliers (foreign / tier-1/2):
-              </h4>
+              <h4 className="font-bold text-slate-900 mb-2">Suppliers (foreign / tier-1/2)</h4>
               <p className="text-sm text-gray-700">
                 Established companies that make parts or systems for aircraft
               </p>
             </div>
             <div>
-              <h4 className="font-bold text-slate-900 mb-2">
-                Startups (aviation, avionics/AI, MRO-tech):
-              </h4>
+              <h4 className="font-bold text-slate-900 mb-2">Startups (aviation, avionics/AI, MRO-tech)</h4>
               <p className="text-sm text-gray-700">
                 Newer, smaller firms that build specific products or software
               </p>
@@ -295,6 +227,5 @@ export const HiringCompanies = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
