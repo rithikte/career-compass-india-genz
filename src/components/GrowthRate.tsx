@@ -22,6 +22,38 @@ const growthData = [{
   color: '#8b5cf6'
 }];
 
+// New Companies Growth Data
+const newCompaniesGrowthData = [
+  {
+    category: "Foreign/Tier-1/2 Companies",
+    icon: Building2,
+    color: "#3b82f6",
+    baseCAGR: 14,
+    rates: {
+      "2030": "15",
+      "2035": "14–16",
+      "2040": "13–14"
+    },
+    trend: "Steady Entry",
+    reason: "Make in India 2.0, FDI liberalization, and global supply chain diversification driving established companies to set up operations in India",
+    description: "Established international companies entering Indian market"
+  },
+  {
+    category: "Startups (Aviation/Avionics/AI/MRO-tech)",
+    icon: Brain,
+    color: "#a855f7",
+    baseCAGR: 11,
+    rates: {
+      "2030": "14–16",
+      "2035": "7–10",
+      "2040": "11–13"
+    },
+    trend: "Rapid Growth",
+    reason: "Government incentives, drone sector boom, AI integration in aviation, and growing MRO ecosystem creating fertile ground for new startups",
+    description: "Aviation, avionics/AI, MRO-tech startups emerging in India"
+  }
+];
+
 // Generate growth projection data with real job numbers
 const projectionData = [{
   role: 'Aerospace Engineer',
@@ -249,8 +281,8 @@ export const GrowthRate = () => {
         </div>
       </div>
 
-      {/* New Companies Growth Rate by 2040 */}
-      <div className="bg-white rounded-lg shadow-lg p-8">
+      {/* New Companies Growth Rate by 2040 - Enhanced */}
+      <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-3">
             <Building2 className="w-7 h-7 text-indigo-600 mr-2" />
@@ -262,69 +294,77 @@ export const GrowthRate = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Foreign/Tier-1/2 Companies */}
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6 border-2 border-blue-200">
-            <div className="flex items-center mb-4">
-              <Building2 className="w-6 h-6 text-blue-600 mr-2" />
-              <h4 className="text-xl font-bold text-slate-900">New Foreign/Tier-1/2 Companies</h4>
-            </div>
-            <p className="text-sm text-gray-600 mb-6">
-              Established international companies entering Indian market
-            </p>
-            
-            <div className="space-y-4">
-              <div className="bg-white rounded-lg p-4 shadow-sm">
-                <div className="flex justify-between items-center">
-                  <span className="text-lg font-semibold text-slate-700">2030</span>
-                  <span className="text-2xl font-bold text-blue-600">15%</span>
+          {newCompaniesGrowthData.map((item) => (
+            <div key={item.category} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
+              {/* Header with badge */}
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center">
+                  <item.icon className="w-6 h-6 mr-2" style={{color: item.color}} />
+                  <h4 className="text-lg font-bold text-slate-900">{item.category}</h4>
                 </div>
+                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                  item.baseCAGR >= 13 ? 'bg-green-100 text-green-800' : 
+                  item.baseCAGR >= 10 ? 'bg-yellow-100 text-yellow-800' : 
+                  'bg-blue-100 text-blue-800'
+                }`}>
+                  {item.trend}
+                </span>
               </div>
-              <div className="bg-white rounded-lg p-4 shadow-sm">
-                <div className="flex justify-between items-center">
-                  <span className="text-lg font-semibold text-slate-700">2035 (Combined)</span>
-                  <span className="text-2xl font-bold text-blue-600">14–16%</span>
-                </div>
-              </div>
-              <div className="bg-white rounded-lg p-4 shadow-sm">
-                <div className="flex justify-between items-center">
-                  <span className="text-lg font-semibold text-slate-700">2040 (Combined)</span>
-                  <span className="text-2xl font-bold text-blue-600">13–14%</span>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          {/* Startups */}
-          <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-6 border-2 border-purple-200">
-            <div className="flex items-center mb-4">
-              <Brain className="w-6 h-6 text-purple-600 mr-2" />
-              <h4 className="text-xl font-bold text-slate-900">Startups</h4>
+              {/* Description */}
+              <p className="text-sm text-gray-600 mb-4">{item.description}</p>
+
+              {/* Central CAGR */}
+              <div className="text-center mb-4">
+                <div className="text-4xl font-bold" style={{color: item.color}}>
+                  {item.baseCAGR}%
+                </div>
+                <div className="text-sm text-gray-600">Average Annual Growth Rate</div>
+              </div>
+
+              {/* Reason box */}
+              <div className="bg-gray-50 p-4 rounded-lg mb-4">
+                <div className="flex items-start">
+                  <Zap className="w-4 h-4 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <p className="text-sm text-gray-700">{item.reason}</p>
+                </div>
+              </div>
+
+              {/* Year breakdown */}
+              <div className="space-y-3 mb-4">
+                <div className="text-xs font-semibold text-gray-500">ANNUAL GROWTH BY YEAR</div>
+                {Object.entries(item.rates).map(([year, rate]) => (
+                  <div key={year} className="flex justify-between items-center">
+                    <span className="text-sm text-gray-600">{year}</span>
+                    <span className="font-semibold" style={{color: item.color}}>{rate}%</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Cumulative projections */}
+              <div className="space-y-2 pt-4 border-t border-gray-200">
+                <div className="text-xs font-semibold text-gray-500 mb-2">CUMULATIVE GROWTH</div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">5 Years</span>
+                  <span className="font-semibold text-green-600">
+                    +{Math.round((Math.pow(1 + item.baseCAGR / 100, 5) - 1) * 100)}%
+                  </span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">10 Years</span>
+                  <span className="font-semibold text-green-600">
+                    +{Math.round((Math.pow(1 + item.baseCAGR / 100, 10) - 1) * 100)}%
+                  </span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">15 Years</span>
+                  <span className="font-semibold text-green-600">
+                    +{Math.round((Math.pow(1 + item.baseCAGR / 100, 15) - 1) * 100)}%
+                  </span>
+                </div>
+              </div>
             </div>
-            <p className="text-sm text-gray-600 mb-6">
-              Aviation, avionics/AI, MRO-tech startups emerging in India
-            </p>
-            
-            <div className="space-y-4">
-              <div className="bg-white rounded-lg p-4 shadow-sm">
-                <div className="flex justify-between items-center">
-                  <span className="text-lg font-semibold text-slate-700">2030</span>
-                  <span className="text-2xl font-bold text-purple-600">14–16%</span>
-                </div>
-              </div>
-              <div className="bg-white rounded-lg p-4 shadow-sm">
-                <div className="flex justify-between items-center">
-                  <span className="text-lg font-semibold text-slate-700">2035 (Combined)</span>
-                  <span className="text-2xl font-bold text-purple-600">7–10%</span>
-                </div>
-              </div>
-              <div className="bg-white rounded-lg p-4 shadow-sm">
-                <div className="flex justify-between items-center">
-                  <span className="text-lg font-semibold text-slate-700">2040 (Combined)</span>
-                  <span className="text-2xl font-bold text-purple-600">11–13%</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
