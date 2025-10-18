@@ -176,7 +176,17 @@ export const GrowthRate = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+        <div className="text-center mb-8">
+          <h3 className="text-3xl font-bold text-slate-900 mb-2">
+            Jobs Growth Rate by 2040
+          </h3>
+          <p className="text-gray-600">
+            Annual growth rates and projections for aerospace careers
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
         {growthData.map((item, index) => <div key={item.role} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-bold text-slate-900">{item.role}</h3>
@@ -203,25 +213,26 @@ export const GrowthRate = () => {
 
             <div className="space-y-2">
               <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">5 Years</span>
+                <span className="text-sm text-gray-600">2030</span>
                 <span className="font-semibold text-green-600">
                   +{Math.round((Math.pow(1 + item.cagr / 100, 5) - 1) * 100)}%
                 </span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">10 Years</span>
+                <span className="text-sm text-gray-600">2035</span>
                 <span className="font-semibold text-green-600">
                   +{Math.round((Math.pow(1 + item.cagr / 100, 10) - 1) * 100)}%
                 </span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">15 Years</span>
+                <span className="text-sm text-gray-600">2040</span>
                 <span className="font-semibold text-green-600">
                   +{Math.round((Math.pow(1 + item.cagr / 100, 15) - 1) * 100)}%
                 </span>
               </div>
             </div>
           </div>)}
+        </div>
       </div>
 
       <div className="bg-gradient-to-r from-green-600 to-teal-600 text-white p-8 rounded-lg">
