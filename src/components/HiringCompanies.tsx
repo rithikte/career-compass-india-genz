@@ -170,7 +170,7 @@ export const HiringCompanies = () => {
         <div className="text-center mb-6">
           <div className="flex items-center justify-center mb-3">
             <Briefcase className="w-6 h-6 sm:w-7 sm:h-7 text-indigo-600 mr-2" />
-            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">Company Growth Projections by 2040</h3>
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">New Company Growth Projections by 2040</h3>
           </div>
           <p className="text-sm sm:text-base text-gray-600">
             How many companies & startups will realistically add in India
