@@ -203,7 +203,7 @@ export const BTechMechanical = () => {
       </Card>
 
       {/* Engineering Subjects Intensity Across 4 Years */}
-      <Card>
+      <Card className="border-2 border-primary/20">
         <CardHeader>
           <CardTitle className="flex items-center gap-3 text-2xl">
             <div className="p-2 bg-primary/10 rounded-lg">
@@ -343,7 +343,7 @@ export const BTechMechanical = () => {
       </Card>
 
       {/* What You'll Study in College - B.Tech Mechanical (Aviation Industry Focus) */}
-      <Card>
+      <Card className="border-2 border-primary/20">
         <CardHeader>
           <CardTitle className="flex items-center gap-3 text-2xl">
             <div className="p-2 bg-primary/10 rounded-lg">
