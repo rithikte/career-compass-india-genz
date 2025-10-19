@@ -305,9 +305,9 @@ export const BTechMechanical = () => {
                   <div className="font-semibold text-gray-900">Engineering Graphics & Workshop</div>
                 </div>
                 <div className="space-y-2 text-gray-700 text-sm md:text-base">
-                  <p>Learn the fundamentals of motion, forces, vibrations, and energy – how and why things move, shake, or fly.</p>
-                  <p className="pt-2">Use calculus and equations to solve problems about speed, acceleration, pressure, and flight dynamics.</p>
-                  <p className="pt-2">Understand aircraft part design, shapes, and manufacturing basics.</p>
+                  <p>How things move, shake, and fly (motion, forces, vibrations, energy).</p>
+                  <p className="pt-2">Use math to calculate speed, acceleration, pressure, and flight.</p>
+                  <p className="pt-2">How aircraft parts are shaped and made (design + manufacturing basics).</p>
                 </div>
               </div>
 
@@ -323,9 +323,9 @@ export const BTechMechanical = () => {
                   <div className="font-semibold text-gray-900">Thermodynamics</div>
                 </div>
                 <div className="space-y-2 text-gray-700 text-sm md:text-base">
-                  <p>Study how wings, fuselage, and engine parts handle stress and vibration without breaking.</p>
-                  <p className="pt-2">Learn how air flows around aircraft, how lift and drag work, and how fuel or hydraulic systems move fluids.</p>
-                  <p className="pt-2">Explore how heat, energy, and propulsion power jet engines and turbines.</p>
+                  <p>Strong & safe parts: How wings, body, and engines handle stress and vibration without breaking.</p>
+                  <p className="pt-2">Air & fluids: How air creates lift/drag and how fuel/hydraulic fluids move.</p>
+                  <p className="pt-2">Heat & power: How heat and energy make jet engines and turbines work.</p>
                 </div>
               </div>
 
@@ -341,9 +341,9 @@ export const BTechMechanical = () => {
                   <div className="font-semibold text-gray-900">Aerodynamics & Flight Mechanics</div>
                 </div>
                 <div className="space-y-2 text-gray-700 text-sm md:text-base">
-                  <p>Understand how rotating engines, landing gears, and moving parts vibrate and how to control them.</p>
-                  <p className="pt-2">Study how temperature is managed in jet engines, cooling systems, and aircraft cabins.</p>
-                  <p className="pt-2">Dive into how aircraft fly, how pressure forces act, and how designs affect performance.</p>
+                  <p>Vibrations & control: How engines, landing gear, and moving parts shake—and how we reduce it.</p>
+                  <p className="pt-2">Temperature control: How we cool jet engines and keep cabins comfortable.</p>
+                  <p className="pt-2">Flight & forces: How planes fly, how pressure acts, and how design changes performance.</p>
                 </div>
               </div>
 
@@ -358,8 +358,8 @@ export const BTechMechanical = () => {
                   <div className="font-semibold text-gray-900">Project & Internship</div>
                 </div>
                 <div className="space-y-2 text-gray-700 text-sm md:text-base">
-                  <p>Specialize in aircraft structure response, noise & vibration reduction, and fatigue testing.</p>
-                  <p className="pt-2">Apply everything you learned by designing, analyzing, or testing aircraft systems in real-world projects.</p>
+                  <p>Focus areas: aircraft strength, noise & vibration control, fatigue testing.</p>
+                  <p className="pt-2">Do real work: design, analyze, and test aircraft systems on real projects.</p>
                 </div>
               </div>
             </div>
