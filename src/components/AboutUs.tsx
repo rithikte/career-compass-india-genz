@@ -44,19 +44,19 @@ const AboutUs = () => {
   return (
     <div className="space-y-8">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-primary via-primary/80 to-secondary text-white rounded-2xl p-8 overflow-hidden">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
-        <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
+      <div className="relative bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 border-2 border-primary/10 rounded-2xl p-8 overflow-hidden">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-16 translate-x-16"></div>
+        <div className="absolute bottom-0 left-0 w-24 h-24 bg-accent/5 rounded-full translate-y-12 -translate-x-12"></div>
         
         <div className="relative text-center space-y-6">
-          <div className="inline-flex items-center gap-3 bg-white/20 rounded-full px-6 py-2">
-            <MapPin className="h-6 w-6" />
-            <span className="font-semibold text-base">About Undergraduate Maps</span>
+          <div className="inline-flex items-center gap-3 bg-white border border-primary/20 rounded-full px-6 py-2">
+            <MapPin className="h-6 w-6 text-primary" />
+            <span className="font-semibold text-base text-slate-900">About Undergraduate Maps</span>
           </div>
           
           <div className="space-y-3">
-            <h1 className="text-4xl md:text-5xl font-bold">Revolutionizing Career Guidance</h1>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-900">Revolutionizing Career Guidance</h1>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               India's first AI-powered platform that maps every degree to real career outcomes, 
               giving students clarity and parents confidence.
             </p>
