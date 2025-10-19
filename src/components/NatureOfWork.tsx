@@ -2,55 +2,48 @@ import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Monitor, Building2, TestTube, Gamepad2, Users, Settings, Brain, Star, Target, TrendingUp, ChevronRight, Activity, ChevronDown } from 'lucide-react';
+import { Star, Target, TrendingUp, ChevronRight, Activity, ChevronDown } from 'lucide-react';
 
 const NatureOfWork = () => {
   const [selectedWork, setSelectedWork] = useState<number | null>(null);
   
   const workTypes = [{
-    icon: Brain,
     type: "Strategy",
     subtitle: "Think-Tank Roles",
     emoji: "🧠",
     explanation: "You do planning, analysis, or design thinking to improve systems or develop new products and ideas.",
     breakdown: "70% Strategy – 30% Desk"
   }, {
-    icon: Settings,
     type: "Operations", 
     subtitle: "Back-End Execution",
     emoji: "⚙️",
     explanation: "You handle the working systems behind a company like supply, production, or delivery — mostly coordination work.",
     breakdown: "60% Ops – 40% Desk"
   }, {
-    icon: Gamepad2,
     type: "Simulation",
     subtitle: "Virtual Modeling",
     emoji: "🎮",
     explanation: "You build and test virtual versions of machines or systems using simulation software before they're real.",
     breakdown: "80% Simulation – 20% Field"
   }, {
-    icon: TestTube,
     type: "Lab/Equipment",
     subtitle: "Research-Based", 
     emoji: "🧪",
     explanation: "You work with machines, circuits, or samples inside a lab using tools and technical equipment.",
     breakdown: "70% Lab – 30% Desk"
   }, {
-    icon: Monitor,
     type: "Desk-Based",
     subtitle: "Computer-Oriented",
     emoji: "🧑‍💻",
     explanation: "You work full-time on a computer using software tools, mostly sitting indoors in an office.",
     breakdown: "90% Desk – 10% Meetings"
   }, {
-    icon: Users,
     type: "Client-Facing",
     subtitle: "Communication-Heavy",
     emoji: "🤝",
     explanation: "You explain technical ideas to clients, give demos, or manage project discussions with teams.",
     breakdown: "60% Client – 40% Strategy"
   }, {
-    icon: Building2,
     type: "On-Field",
     subtitle: "Site-Based",
     emoji: "🏗️", 
@@ -189,7 +182,6 @@ const NatureOfWork = () => {
           {/* Interactive Responsive Cards */}
           <div className="space-y-8">
             {workTypes.map((work, index) => {
-            const IconComponent = work.icon;
             const isSelected = selectedWork === index;
             return <Card key={index} className={`group relative overflow-hidden border-2 transition-all duration-300 cursor-pointer hover-scale
                     ${isSelected ? 'border-primary/20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 shadow-xl' : 'border-primary/10 bg-white hover:border-primary/30 hover:shadow-lg'}`} 
@@ -200,7 +192,7 @@ const NatureOfWork = () => {
                     <div className="block md:hidden space-y-6">
                       {/* Mobile Header */}
                       <div className="flex items-center gap-4">
-                        <div className="text-4xl">{work.emoji}</div>
+                        <div className="text-5xl">{work.emoji}</div>
                         <div className="flex-1">
                           <h3 className="text-xl font-black text-foreground tracking-tight mb-1">
                             {work.type.toUpperCase()}
@@ -208,9 +200,6 @@ const NatureOfWork = () => {
                           <p className="text-sm font-medium text-muted-foreground tracking-wide uppercase">
                             {work.subtitle}
                           </p>
-                        </div>
-                        <div className={`w-12 h-12 bg-primary rounded-xl flex items-center justify-center ${isSelected ? 'rotate-12' : 'rotate-6 group-hover:rotate-12'} transition-transform duration-300`}>
-                          <IconComponent className="h-6 w-6 text-primary-foreground" />
                         </div>
                       </div>
                       
@@ -234,16 +223,13 @@ const NatureOfWork = () => {
 
                     {/* Desktop Layout (>= md) */}
                     <div className="hidden md:grid grid-cols-12 gap-6 items-center">
-                      {/* Icon & Emoji Section */}
-                      <div className="col-span-2 flex items-center gap-4">
-                        <div className="text-5xl">{work.emoji}</div>
-                        <div className={`w-16 h-16 bg-primary rounded-xl flex items-center justify-center ${isSelected ? 'rotate-12' : 'rotate-6 group-hover:rotate-12'} transition-transform duration-300 shadow-soft`}>
-                          <IconComponent className="h-6 w-6 text-primary-foreground" />
-                        </div>
+                      {/* Emoji Section */}
+                      <div className="col-span-1 flex items-center justify-center">
+                        <div className="text-6xl">{work.emoji}</div>
                       </div>
                       
                       {/* Title & Description */}
-                      <div className="col-span-4 space-y-3">
+                      <div className="col-span-5 space-y-3">
                         <div>
                           <h3 className="text-2xl font-black text-foreground tracking-tight mb-1">
                             {work.type.toUpperCase()}
