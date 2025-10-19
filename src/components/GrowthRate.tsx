@@ -39,7 +39,7 @@ const newCompaniesGrowthData = [
     description: "Established international companies entering Indian market"
   },
   {
-    category: "Startups (Aviation/Avionics/AI/MRO-tech)",
+    category: "Startups",
     icon: Brain,
     color: "#a855f7",
     baseCAGR: 11,
