@@ -259,19 +259,16 @@ export const GrowthRate = () => {
         </div>
       </div>
 
-      {/* Real-world Growth Drivers - Swiss Design */}
+      {/* Combined Section */}
       <div className="bg-background border-2 border-primary/20 rounded-xl p-8 mb-12 shadow-elegant">
         
-        
-        
-        
         {/* Global vs India Snapshot */}
-        <div className="mt-8 pt-8 border-t border-border">
+        <div className="mb-8">
           <div className="text-center mb-6">
             <h5 className="text-xl font-black text-foreground mb-2">🌍 GLOBAL VS INDIA SNAPSHOT</h5>
             <p className="text-muted-foreground">Comparative Growth Analysis</p>
           </div>
-          <div className="bg-success/10 rounded-xl p-6 border border-success/20">
+          <div className="rounded-xl p-6 border border-border">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div>
                 <div className="text-3xl font-black text-success mb-2">11-13%</div>
@@ -283,17 +280,16 @@ export const GrowthRate = () => {
                 <div className="text-sm text-muted-foreground">Global Average CAGR</div>
               </div>
             </div>
-            <div className="mt-4 pt-4 border-t border-success/20 text-center">
+            <div className="mt-4 pt-4 border-t border-border text-center">
               <p className="text-sm text-muted-foreground">
                 <strong>Sources:</strong> PwC Global Aerospace Report 2024, FICCI Aerospace Analysis
               </p>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* New Companies Growth Rate by 2040 - Enhanced */}
-      <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+        {/* New Companies Growth Rate by 2040 */}
+        <div className="pt-8 border-t border-border">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-3">
             <Building2 className="w-7 h-7 text-indigo-600 mr-2" />
@@ -355,6 +351,7 @@ export const GrowthRate = () => {
             </div>
           ))}
         </div>
+      </div>
       </div>
 
       {/* Comprehensive Source Documentation */}
