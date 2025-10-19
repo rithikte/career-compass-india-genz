@@ -406,45 +406,60 @@ export const BTechMechanical = () => {
       </Card>
 
       {/* Decision Point - Are You Ready? */}
-      <div className="grid md:grid-cols-2 gap-8">
-        {/* Not Ready */}
-        <Card className="border-2 border-red-300">
-          <CardHeader className="bg-red-50">
-            <CardTitle className="flex items-center gap-3 text-red-900">
-              <XCircle className="h-6 w-6 text-red-600" />
-              If You're NOT Ready...
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="p-6">
-            <div className="space-y-3 text-red-800">
-              <p className="text-base font-medium">❌ You'll pass exams but fail in labs</p>
-              <p className="font-medium">❌ You'll blame professors when you struggle</p>
-              <p className="font-medium">❌ You'll copy assignments without understanding</p>
-              <p className="font-medium">❌ You'll graduate but feel lost in interviews</p>
-              <p className="font-bold mt-4">Result: Wasted 4 years and frustrated with engineering</p>
+      <Card className="border-2 border-primary/20">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-3 text-2xl">
+            <div className="p-2 bg-primary/10 rounded-lg">
+              <AlertTriangle className="h-6 w-6 text-primary" />
             </div>
-          </CardContent>
-        </Card>
+            Decision Point - Are You Ready?
+          </CardTitle>
+          <CardDescription className="text-lg font-semibold">
+            Two paths ahead - choose wisely based on your commitment level
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="p-6">
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Not Ready */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-red-100 rounded-lg">
+                  <XCircle className="h-6 w-6 text-red-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">If You're NOT Ready...</h3>
+              </div>
+              <div className="space-y-3 bg-red-50 p-4 rounded-lg border border-red-200">
+                <p className="text-base font-medium text-gray-800">❌ You'll pass exams but fail in labs</p>
+                <p className="font-medium text-gray-800">❌ You'll blame professors when you struggle</p>
+                <p className="font-medium text-gray-800">❌ You'll copy assignments without understanding</p>
+                <p className="font-medium text-gray-800">❌ You'll graduate but feel lost in interviews</p>
+                <div className="mt-4 pt-4 border-t border-red-300">
+                  <p className="font-bold text-red-900">Result: Wasted 4 years and frustrated with engineering</p>
+                </div>
+              </div>
+            </div>
 
-        {/* Ready */}
-        <Card className="border-2 border-green-300">
-          <CardHeader className="bg-green-50">
-            <CardTitle className="flex items-center gap-3 text-green-900">
-              <CheckCircle className="h-6 w-6 text-green-600" />
-              If You ARE Ready...
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="p-6">
-            <div className="space-y-3 text-green-800">
-              <p className="font-medium">✅ You'll enjoy solving complex problems</p>
-              <p className="font-medium">✅ You'll build strong technical skills</p>
-              <p className="font-medium">✅ You'll understand what you're learning</p>
-              <p className="font-medium">✅ You'll be job-ready from any college</p>
-              <p className="font-bold mt-4">Result: Strong engineer ready for ISRO, HAL, or aerospace startups</p>
+            {/* Ready */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-green-100 rounded-lg">
+                  <CheckCircle className="h-6 w-6 text-green-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">If You ARE Ready...</h3>
+              </div>
+              <div className="space-y-3 bg-green-50 p-4 rounded-lg border border-green-200">
+                <p className="font-medium text-gray-800">✅ You'll enjoy solving complex problems</p>
+                <p className="font-medium text-gray-800">✅ You'll build strong technical skills</p>
+                <p className="font-medium text-gray-800">✅ You'll understand what you're learning</p>
+                <p className="font-medium text-gray-800">✅ You'll be job-ready from any college</p>
+                <div className="mt-4 pt-4 border-t border-green-300">
+                  <p className="font-bold text-green-900">Result: Strong engineer ready for ISRO, HAL, or aerospace startups</p>
+                </div>
+              </div>
             </div>
-          </CardContent>
-        </Card>
-      </div>
+          </div>
+        </CardContent>
+      </Card>
 
       {/* Final Call to Action */}
       <Card className="bg-gradient-to-br from-primary via-primary to-secondary text-white border-0">
