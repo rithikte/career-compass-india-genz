@@ -108,6 +108,100 @@ export const BTechMechanical = () => {
         </CardContent>
       </Card>
 
+      {/* What You'll Actually Learn */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-3 text-2xl">
+            <div className="p-2 bg-primary/10 rounded-lg">
+              <BookOpen className="h-6 w-6 text-primary" />
+            </div>
+            What You'll Actually Master in 4 Years
+          </CardTitle>
+          <CardDescription className="text-lg font-semibold">
+            Real skills that aerospace companies need - not just theory
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Core Sciences</h3>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  <span><strong>Advanced Physics:</strong> Wave mechanics, fluid dynamics, thermodynamics for real aircraft systems</span>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span><strong>Engineering Mathematics:</strong> Complex analysis, differential equations that solve real flight problems</span>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-purple-50 rounded-lg">
+                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                  <span><strong>Materials Science:</strong> How metals behave under extreme stress, heat, and vibration</span>
+                </div>
+              </div>
+            </div>
+
+            
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Decision Point - Are You Ready? */}
+      <Card className="border-2 border-primary/20">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-3 text-2xl">
+            <div className="p-2 bg-primary/10 rounded-lg">
+              <AlertTriangle className="h-6 w-6 text-primary" />
+            </div>
+            Decision Point - Are You Ready?
+          </CardTitle>
+          <CardDescription className="text-lg font-semibold">
+            Two paths ahead - choose wisely based on your commitment level
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="p-6">
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Not Ready */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-red-100 rounded-lg">
+                  <XCircle className="h-6 w-6 text-red-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">If You're NOT Ready...</h3>
+              </div>
+              <div className="space-y-3 bg-red-50 p-4 rounded-lg border border-red-200">
+                <p className="text-base font-medium text-gray-800">❌ You'll pass exams but fail in labs</p>
+                <p className="font-medium text-gray-800">❌ You'll blame professors when you struggle</p>
+                <p className="font-medium text-gray-800">❌ You'll copy assignments without understanding</p>
+                <p className="font-medium text-gray-800">❌ You'll graduate but feel lost in interviews</p>
+                <div className="mt-4 pt-4 border-t border-red-300">
+                  <p className="font-bold text-red-900">Result: Wasted 4 years and frustrated with engineering</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Ready */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-green-100 rounded-lg">
+                  <CheckCircle className="h-6 w-6 text-green-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">If You ARE Ready...</h3>
+              </div>
+              <div className="space-y-3 bg-green-50 p-4 rounded-lg border border-green-200">
+                <p className="font-medium text-gray-800">✅ You'll enjoy solving complex problems</p>
+                <p className="font-medium text-gray-800">✅ You'll build strong technical skills</p>
+                <p className="font-medium text-gray-800">✅ You'll understand what you're learning</p>
+                <p className="font-medium text-gray-800">✅ You'll be job-ready from any college</p>
+                <div className="mt-4 pt-4 border-t border-green-300">
+                  <p className="font-bold text-green-900">Result: Strong engineer ready for ISRO, HAL, or aerospace startups</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
       {/* Engineering Subjects Intensity Across 4 Years */}
       <Card className="border-2 border-primary/20">
         <CardHeader>
@@ -248,18 +342,6 @@ export const BTechMechanical = () => {
         </CardContent>
       </Card>
 
-      {/* Why Waves & Oscillations Matter */}
-      <Card className="border-2 border-primary/20">
-        
-        
-      </Card>
-
-      {/* What This Field Demands - Reality Check */}
-      <Card className="border-2 border-red-200">
-        
-        
-      </Card>
-
       {/* What You'll Study in College - B.Tech Mechanical (Aviation Industry Focus) */}
       <Card className="border-2 border-primary/20">
         <CardHeader>
@@ -360,100 +442,6 @@ export const BTechMechanical = () => {
                 <div className="space-y-2 text-gray-700 text-sm md:text-base">
                   <p>Focus areas: aircraft strength, noise & vibration control, fatigue testing.</p>
                   <p className="pt-2">Do real work: design, analyze, and test aircraft systems on real projects.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* What You'll Actually Learn */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-3 text-2xl">
-            <div className="p-2 bg-primary/10 rounded-lg">
-              <BookOpen className="h-6 w-6 text-primary" />
-            </div>
-            What You'll Actually Master in 4 Years
-          </CardTitle>
-          <CardDescription className="text-lg font-semibold">
-            Real skills that aerospace companies need - not just theory
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Core Sciences</h3>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  <span><strong>Advanced Physics:</strong> Wave mechanics, fluid dynamics, thermodynamics for real aircraft systems</span>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span><strong>Engineering Mathematics:</strong> Complex analysis, differential equations that solve real flight problems</span>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-purple-50 rounded-lg">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                  <span><strong>Materials Science:</strong> How metals behave under extreme stress, heat, and vibration</span>
-                </div>
-              </div>
-            </div>
-
-            
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Decision Point - Are You Ready? */}
-      <Card className="border-2 border-primary/20">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-3 text-2xl">
-            <div className="p-2 bg-primary/10 rounded-lg">
-              <AlertTriangle className="h-6 w-6 text-primary" />
-            </div>
-            Decision Point - Are You Ready?
-          </CardTitle>
-          <CardDescription className="text-lg font-semibold">
-            Two paths ahead - choose wisely based on your commitment level
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="p-6">
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Not Ready */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-red-100 rounded-lg">
-                  <XCircle className="h-6 w-6 text-red-600" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">If You're NOT Ready...</h3>
-              </div>
-              <div className="space-y-3 bg-red-50 p-4 rounded-lg border border-red-200">
-                <p className="text-base font-medium text-gray-800">❌ You'll pass exams but fail in labs</p>
-                <p className="font-medium text-gray-800">❌ You'll blame professors when you struggle</p>
-                <p className="font-medium text-gray-800">❌ You'll copy assignments without understanding</p>
-                <p className="font-medium text-gray-800">❌ You'll graduate but feel lost in interviews</p>
-                <div className="mt-4 pt-4 border-t border-red-300">
-                  <p className="font-bold text-red-900">Result: Wasted 4 years and frustrated with engineering</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Ready */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-green-100 rounded-lg">
-                  <CheckCircle className="h-6 w-6 text-green-600" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">If You ARE Ready...</h3>
-              </div>
-              <div className="space-y-3 bg-green-50 p-4 rounded-lg border border-green-200">
-                <p className="font-medium text-gray-800">✅ You'll enjoy solving complex problems</p>
-                <p className="font-medium text-gray-800">✅ You'll build strong technical skills</p>
-                <p className="font-medium text-gray-800">✅ You'll understand what you're learning</p>
-                <p className="font-medium text-gray-800">✅ You'll be job-ready from any college</p>
-                <div className="mt-4 pt-4 border-t border-green-300">
-                  <p className="font-bold text-green-900">Result: Strong engineer ready for ISRO, HAL, or aerospace startups</p>
                 </div>
               </div>
             </div>
