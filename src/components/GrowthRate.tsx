@@ -50,7 +50,7 @@ const newCompaniesGrowthData = [
     },
     trend: "Rapid Growth",
     reason: "Drone and AI boom",
-    description: "Aviation, avionics/AI, MRO-tech startups emerging in India"
+    description: "Newer, smaller firms that build specific products or software"
   }
 ];
 
