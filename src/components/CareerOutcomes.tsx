@@ -26,8 +26,7 @@ const careerData = [
     ],
     entry: 5.75,
     mid: 11.5,
-    senior: 20,
-    icon: '✈️'
+    senior: 20
   },
   {
     role: 'Avionics Engineer',
@@ -41,8 +40,7 @@ const careerData = [
     ],
     entry: 6.5,
     mid: 12.5,
-    senior: 19,
-    icon: '🛩️'
+    senior: 19
   },
   {
     role: 'Aircraft Maintenance Engineer',
@@ -56,8 +54,7 @@ const careerData = [
     ],
     entry: 5,
     mid: 8,
-    senior: 14,
-    icon: '🔧'
+    senior: 14
   }
 ];
 
@@ -188,12 +185,9 @@ export const CareerOutcomes = () => {
             key={career.role}
             className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col gap-2"
           >
-            <div className="flex items-start sm:items-center mb-3">
-              <span className="text-2xl sm:text-3xl mr-2 sm:mr-3 flex-shrink-0">{career.icon}</span>
-              <div className="min-w-0">
-                <h3 className="text-lg sm:text-xl font-bold text-slate-900 leading-tight">{career.role}</h3>
-                <p className="text-xs sm:text-sm text-gray-600 leading-tight">{career.duties}</p>
-              </div>
+            <div className="mb-3">
+              <h3 className="text-lg sm:text-xl font-bold text-slate-900 leading-tight">{career.role}</h3>
+              <p className="text-xs sm:text-sm text-gray-600 leading-tight">{career.duties}</p>
             </div>
             
             {/* Detailed Career Levels Table */}

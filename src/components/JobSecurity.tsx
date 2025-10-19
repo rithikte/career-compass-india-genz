@@ -107,7 +107,7 @@ export const JobSecurity = () => {
             </thead>
             <tbody>
               <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
-                <td className="py-4 px-4 font-medium text-slate-800">✈️ Aerospace Engineer</td>
+                <td className="py-4 px-4 font-medium text-slate-800">Aerospace Engineer</td>
                 <td className="text-center py-4 px-4">
                   <span className="text-base font-bold text-slate-900">7–8 yrs</span>
                 </td>
@@ -119,7 +119,7 @@ export const JobSecurity = () => {
                 </td>
               </tr>
               <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
-                <td className="py-4 px-4 font-medium text-slate-800">📡 Avionics Engineer</td>
+                <td className="py-4 px-4 font-medium text-slate-800">Avionics Engineer</td>
                 <td className="text-center py-4 px-4">
                   <span className="font-bold text-slate-900">6–7 yrs</span>
                 </td>
@@ -131,7 +131,7 @@ export const JobSecurity = () => {
                 </td>
               </tr>
               <tr className="hover:bg-slate-50 transition-colors">
-                <td className="py-4 px-4 font-medium text-slate-800">🛠️ AME</td>
+                <td className="py-4 px-4 font-medium text-slate-800">AME</td>
                 <td className="text-center py-4 px-4">
                   <span className="font-bold text-slate-900">8–9 yrs</span>
                 </td>
