@@ -154,7 +154,7 @@ export const AIImpact = () => {
               <p className="text-gray-800 text-base sm:text-lg">
                 AI is not killing jobs — it's killing <strong>unskilled jobs</strong>.
               </p>
-              <p className="text-gray-700">
+              <p className="text-gray-700 font-medium">
                 Companies still hiring but only for students who are skilled and know the latest tools.
               </p>
             </div>
