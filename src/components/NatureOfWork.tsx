@@ -10,50 +10,42 @@ const NatureOfWork = () => {
   const workTypes = [{
     type: "Strategy",
     subtitle: "Think-Tank Roles",
-    emoji: "🧠",
     explanation: "You do planning, analysis, or design thinking to improve systems or develop new products and ideas.",
     breakdown: "70% Strategy – 30% Desk"
   }, {
     type: "Operations", 
     subtitle: "Back-End Execution",
-    emoji: "⚙️",
     explanation: "You handle the working systems behind a company like supply, production, or delivery — mostly coordination work.",
     breakdown: "60% Ops – 40% Desk"
   }, {
     type: "Simulation",
     subtitle: "Virtual Modeling",
-    emoji: "🎮",
     explanation: "You build and test virtual versions of machines or systems using simulation software before they're real.",
     breakdown: "80% Simulation – 20% Field"
   }, {
     type: "Lab/Equipment",
     subtitle: "Research-Based", 
-    emoji: "🧪",
     explanation: "You work with machines, circuits, or samples inside a lab using tools and technical equipment.",
     breakdown: "70% Lab – 30% Desk"
   }, {
     type: "Desk-Based",
     subtitle: "Computer-Oriented",
-    emoji: "🧑‍💻",
     explanation: "You work full-time on a computer using software tools, mostly sitting indoors in an office.",
     breakdown: "90% Desk – 10% Meetings"
   }, {
     type: "Client-Facing",
     subtitle: "Communication-Heavy",
-    emoji: "🤝",
     explanation: "You explain technical ideas to clients, give demos, or manage project discussions with teams.",
     breakdown: "60% Client – 40% Strategy"
   }, {
     type: "On-Field",
     subtitle: "Site-Based",
-    emoji: "🏗️", 
     explanation: "You go to real sites like factories, plants, or construction areas to check or fix machines and systems.",
     breakdown: "80% Field – 20% Office"
   }];
 
   const detailedRoles = [{
     workType: "Strategy",
-    emoji: "🧠",
     intensity: "Strategy / Think-Tank",
     industry: "📊 Product R&D + Simulation Strategy",
     role: "Mechanical R&D Strategy Analyst",
@@ -64,7 +56,6 @@ const NatureOfWork = () => {
     gradient: "from-indigo-500 to-purple-600"
   }, {
     workType: "Operations",
-    emoji: "⚙️",
     intensity: "Operations / Back-End",
     industry: "🏭 Supply Chain Optimization (Engineering)",
     role: "Mechanical Systems Optimization Engineer",
@@ -75,7 +66,6 @@ const NatureOfWork = () => {
     gradient: "from-yellow-500 to-orange-600"
   }, {
     workType: "Simulation",
-    emoji: "🎮",
     intensity: "Simulation / Virtual Modeling",
     industry: "🧠 Digital Twin & System Modeling",
     role: "Digital Twin Systems Developer",
@@ -86,7 +76,6 @@ const NatureOfWork = () => {
     gradient: "from-purple-500 to-violet-600"
   }, {
     workType: "Lab/Equipment",
-    emoji: "🧪",
     intensity: "Lab / Equipment-Based",
     industry: "🤖 Mechatronics Testing & Robotics Labs",
     role: "Automation Testing Engineer",
@@ -97,7 +86,6 @@ const NatureOfWork = () => {
     gradient: "from-green-500 to-emerald-600"
   }, {
     workType: "Desk-Based",
-    emoji: "🧑‍💻",
     intensity: "Desk-Based / Computer-Oriented",
     industry: "💻 CAD & Simulation Engineering",
     role: "CAE Engineer (Computer-Aided Engineering)",
@@ -108,7 +96,6 @@ const NatureOfWork = () => {
     gradient: "from-blue-500 to-indigo-600"
   }, {
     workType: "Client-Facing",
-    emoji: "🤝",
     intensity: "Client-Facing / Communication",
     industry: "🏢 Techno-Commercial Mechanical Solutions",
     role: "Simulation Strategy Consultant",
@@ -119,7 +106,6 @@ const NatureOfWork = () => {
     gradient: "from-pink-500 to-rose-600"
   }, {
     workType: "On-Field",
-    emoji: "🏗️",
     intensity: "On-Field / Site-Based",
     industry: "🏭 Manufacturing & Construction Sites",
     role: "Site Engineering Supervisor",
@@ -191,16 +177,13 @@ const NatureOfWork = () => {
                     {/* Mobile Layout (< md) */}
                     <div className="block md:hidden space-y-6">
                       {/* Mobile Header */}
-                      <div className="flex items-center gap-4">
-                        <div className="text-5xl">{work.emoji}</div>
-                        <div className="flex-1">
-                          <h3 className="text-xl font-black text-foreground tracking-tight mb-1">
-                            {work.type.toUpperCase()}
-                          </h3>
-                          <p className="text-sm font-medium text-muted-foreground tracking-wide uppercase">
-                            {work.subtitle}
-                          </p>
-                        </div>
+                      <div className="space-y-2">
+                        <h3 className="text-xl font-black text-foreground tracking-tight">
+                          {work.type.toUpperCase()}
+                        </h3>
+                        <p className="text-sm font-medium text-muted-foreground tracking-wide uppercase">
+                          {work.subtitle}
+                        </p>
                       </div>
                       
                       {/* Mobile Description */}
@@ -223,13 +206,8 @@ const NatureOfWork = () => {
 
                     {/* Desktop Layout (>= md) */}
                     <div className="hidden md:grid grid-cols-12 gap-6 items-center">
-                      {/* Emoji Section */}
-                      <div className="col-span-1 flex items-center justify-center">
-                        <div className="text-6xl">{work.emoji}</div>
-                      </div>
-                      
                       {/* Title & Description */}
-                      <div className="col-span-5 space-y-3">
+                      <div className="col-span-6 space-y-3">
                         <div>
                           <h3 className="text-2xl font-black text-foreground tracking-tight mb-1">
                             {work.type.toUpperCase()}
@@ -267,13 +245,9 @@ const NatureOfWork = () => {
                         <div className="mt-8 pt-8 border-t border-border">
                           {/* Section Header */}
                           <div className="text-center mb-8">
-                            <div className="flex items-center justify-center gap-4 mb-4">
-                              <div className="text-3xl">{roleData.emoji}</div>
-                              <h4 className="text-xl md:text-2xl font-black text-slate-900 tracking-tight">
-                                {roleData.intensity}
-                              </h4>
-                              <div className="text-3xl">{roleData.emoji}</div>
-                            </div>
+                            <h4 className="text-xl md:text-2xl font-black text-slate-900 tracking-tight mb-4">
+                              {roleData.intensity}
+                            </h4>
 
                             {/* Industry Badge */}
                             <div className="inline-flex items-center gap-3 px-6 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full shadow-lg">
