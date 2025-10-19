@@ -245,6 +245,40 @@ export const BTechMechanical = () => {
               </div>
             </div>
           </div>
+
+          {/* Chemistry Topics Table */}
+          <div className="mt-8">
+            <div className="flex items-center gap-3 mb-4">
+              <Brain className="h-6 w-6 text-purple-600" />
+              <h3 className="text-xl font-bold text-gray-900">Chemistry Topics</h3>
+            </div>
+            <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
+              <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-4">
+                <div className="grid grid-cols-4 gap-4 font-bold text-sm">
+                  <div>Chemistry Topic</div>
+                  <div>Sems Covered</div>
+                  <div>Intensity Peak (%)</div>
+                  <div>Core Usage in Aviation Industry</div>
+                </div>
+              </div>
+              
+              <div className="divide-y divide-gray-200">
+                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900">Thermodynamics (Chemistry)</div>
+                  <div className="text-gray-700">Sem 2–4</div>
+                  <div className="font-bold text-red-600">70%</div>
+                  <div className="text-gray-700 text-sm">Jet fuel combustion, energy efficiency, material heat resistance</div>
+                </div>
+                
+                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900">Environmental Chemistry</div>
+                  <div className="text-gray-700">Sem 5–7</div>
+                  <div className="font-bold text-green-600">60%</div>
+                  <div className="text-gray-700 text-sm">Sustainable aviation fuels, emission control, hydrogen propulsion research</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </CardContent>
       </Card>
 
