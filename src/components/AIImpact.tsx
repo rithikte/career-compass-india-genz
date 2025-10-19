@@ -106,28 +106,28 @@ export const AIImpact = () => {
               <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
                 <td className="py-4 px-4 font-medium text-slate-800">Aerospace Engineer</td>
                 <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-orange-100 text-orange-800 font-bold px-3 py-1 rounded">28%</span>
+                  <span className="font-bold text-slate-900">28%</span>
                 </td>
                 <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-red-100 text-red-800 font-bold px-3 py-1 rounded">38%</span>
+                  <span className="font-bold text-slate-900">38%</span>
                 </td>
               </tr>
               <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
                 <td className="py-4 px-4 font-medium text-slate-800">Avionics Engineer</td>
                 <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-orange-100 text-orange-800 font-bold px-3 py-1 rounded">33%</span>
+                  <span className="font-bold text-slate-900">33%</span>
                 </td>
                 <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-red-100 text-red-800 font-bold px-3 py-1 rounded">43%</span>
+                  <span className="font-bold text-slate-900">43%</span>
                 </td>
               </tr>
               <tr className="hover:bg-gray-50 transition-colors">
                 <td className="py-4 px-4 font-medium text-slate-800">Aircraft Maintenance Engineer (AME)</td>
                 <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-orange-100 text-orange-800 font-bold px-3 py-1 rounded">30%</span>
+                  <span className="font-bold text-slate-900">30%</span>
                 </td>
                 <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-red-100 text-red-800 font-bold px-3 py-1 rounded">38%</span>
+                  <span className="font-bold text-slate-900">38%</span>
                 </td>
               </tr>
             </tbody>
