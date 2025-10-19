@@ -109,40 +109,37 @@ export const JobSecurity = () => {
               <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
                 <td className="py-4 px-4 font-medium text-slate-800">✈️ Aerospace Engineer</td>
                 <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-orange-100 text-orange-800 px-3 py-1 rounded text-base font-bold">7–8 yrs</span>
+                  <span className="text-base font-bold text-slate-900">7–8 yrs</span>
                 </td>
                 <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded font-bold">15–18 yrs</span>
+                  <span className="font-bold text-slate-900">15–18 yrs</span>
                 </td>
                 <td className="text-center py-4 px-4">
-                  <span className="text-2xl">⭐</span>
-                  <span className="font-bold text-green-600 ml-2">88%</span>
+                  <span className="font-bold text-green-600">88%</span>
                 </td>
               </tr>
               <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
                 <td className="py-4 px-4 font-medium text-slate-800">📡 Avionics Engineer</td>
                 <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-orange-100 text-orange-800 px-3 py-1 rounded font-bold">6–7 yrs</span>
+                  <span className="font-bold text-slate-900">6–7 yrs</span>
                 </td>
                 <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded font-bold">14–16 yrs</span>
+                  <span className="font-bold text-slate-900">14–16 yrs</span>
                 </td>
                 <td className="text-center py-4 px-4">
-                  <span className="text-2xl">⭐</span>
-                  <span className="font-bold text-green-600 ml-2">85%</span>
+                  <span className="font-bold text-green-600">85%</span>
                 </td>
               </tr>
               <tr className="hover:bg-slate-50 transition-colors">
                 <td className="py-4 px-4 font-medium text-slate-800">🛠️ AME</td>
                 <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-orange-100 text-orange-800 px-3 py-1 rounded font-bold">8–9 yrs</span>
+                  <span className="font-bold text-slate-900">8–9 yrs</span>
                 </td>
                 <td className="text-center py-4 px-4">
-                  <span className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded font-bold">16–20 yrs</span>
+                  <span className="font-bold text-slate-900">16–20 yrs</span>
                 </td>
                 <td className="text-center py-4 px-4">
-                  <span className="text-2xl">⭐</span>
-                  <span className="font-bold text-green-600 ml-2">90%</span>
+                  <span className="font-bold text-green-600">90%</span>
                 </td>
               </tr>
             </tbody>
