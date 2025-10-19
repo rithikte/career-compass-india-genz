@@ -59,38 +59,37 @@ const Login = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-primary-light/5 to-accent-light/10 flex items-center justify-center p-4 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 flex items-center justify-center p-4 relative overflow-hidden">
       <Seo title="Login — Undergraduate Maps" description="Sign in to explore career outcomes and pick the right degree for your future." />
       {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-accent/15 to-primary-light/15 rounded-full blur-3xl animate-float delay-1000"></div>
-        <div className="absolute top-1/2 left-1/3 w-32 h-32 bg-primary/10 rounded-full blur-2xl animate-pulse-elegant"></div>
+        <div className="absolute top-20 left-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float-gentle"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-float-gentle" style={{ animationDelay: '2s' }}></div>
       </div>
 
       <div className="w-full max-w-6xl grid lg:grid-cols-2 gap-8 items-center relative z-10">
         {/* Left Side - Infographics */}
         <div className="hidden lg:block space-y-8 animate-fade-in">
           <div className="text-center space-y-6">
-            <h1 className="text-6xl font-bold bg-gradient-to-r from-primary via-accent to-primary-light bg-clip-text text-transparent animate-gradient-x">
+            <h1 className="text-5xl lg:text-6xl font-bold text-slate-900">
               Good To See You
             </h1>
-            <p className="text-xl text-muted-foreground/80 font-medium">
+            <p className="text-xl text-gray-600 font-medium">
               Welcome back to your engineering journey
             </p>
-            <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full"></div>
           </div>
 
           {/* Stats Grid */}
           <div className="grid grid-cols-3 gap-4">
             {stats.map((stat, index) => (
-              <Card key={index} className="text-center p-6 bg-gradient-to-br from-card via-card to-primary/5 border-primary/20 hover:border-primary/40 shadow-soft hover:shadow-elegant transition-all duration-500 hover-scale hover-glow">
+              <Card key={index} className="text-center p-6 bg-white border-slate-200 hover:border-indigo-300 hover:shadow-lg transition-all duration-300">
                 <div className="flex flex-col items-center space-y-3">
-                  <div className="p-4 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 animate-glow">
-                    <stat.icon className="h-7 w-7 text-primary" />
+                  <div className="p-3 rounded-full bg-gradient-to-br from-blue-50 to-indigo-50">
+                    <stat.icon className="h-6 w-6 text-indigo-600" />
                   </div>
-                  <div className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">{stat.value}</div>
-                  <div className="text-sm font-medium text-muted-foreground">{stat.label}</div>
+                  <div className="text-3xl font-bold text-slate-900">{stat.value}</div>
+                  <div className="text-sm font-medium text-gray-600">{stat.label}</div>
                 </div>
               </Card>
             ))}
@@ -98,15 +97,14 @@ const Login = () => {
 
           {/* Visual Elements */}
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/30 via-accent/20 to-primary-light/30 rounded-3xl blur-3xl animate-pulse-elegant"></div>
-            <Card className="relative p-8 bg-gradient-to-br from-card/90 via-card to-primary/5 border-primary/30 backdrop-blur-sm shadow-elegant">
+            <Card className="relative p-8 bg-white border-slate-200 shadow-lg">
               <div className="flex items-center space-x-6">
-                <div className="p-5 rounded-full bg-gradient-to-br from-primary to-accent shadow-glow animate-glow">
-                  <ArrowRight className="h-8 w-8 text-white" />
+                <div className="p-4 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600">
+                  <ArrowRight className="h-7 w-7 text-white" />
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Continue Your Journey</h3>
-                  <p className="text-muted-foreground font-medium">Pick up where you left off and achieve your goals</p>
+                  <h3 className="text-2xl font-bold text-slate-900">Continue Your Journey</h3>
+                  <p className="text-gray-600 font-medium">Pick up where you left off and achieve your goals</p>
                 </div>
               </div>
             </Card>
@@ -115,20 +113,20 @@ const Login = () => {
 
         {/* Right Side - Login Form */}
         <div className="w-full max-w-md mx-auto animate-scale-in">
-          <Card className="shadow-elegant border-primary/20 bg-gradient-to-br from-card/95 via-card to-primary/5 backdrop-blur-sm">
+          <Card className="shadow-lg border-slate-200 bg-white">
             <CardHeader className="text-center space-y-6 pb-8">
-              <CardTitle className="text-4xl font-bold bg-gradient-to-r from-primary via-accent to-primary-light bg-clip-text text-transparent">Welcome Back</CardTitle>
-              <CardDescription className="text-lg font-medium text-muted-foreground/80">
+              <CardTitle className="text-4xl font-bold text-slate-900">Welcome Back</CardTitle>
+              <CardDescription className="text-lg font-medium text-gray-600">
                 Sign in to continue your learning journey
               </CardDescription>
-              <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+              <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full"></div>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Email or Mobile */}
                 <div className="space-y-3">
-                  <Label htmlFor="emailOrMobile" className="flex items-center space-x-2 text-sm font-semibold text-primary">
-                    <Mail className="h-4 w-4" />
+                  <Label htmlFor="emailOrMobile" className="flex items-center space-x-2 text-sm font-semibold text-slate-700">
+                    <Mail className="h-4 w-4 text-indigo-600" />
                     <span>Email or Mobile Number</span>
                   </Label>
                   <Input
@@ -138,15 +136,15 @@ const Login = () => {
                     placeholder="Enter your email or mobile number"
                     value={formData.emailOrMobile}
                     onChange={handleInputChange}
-                    className="h-12 border-primary/30 bg-background/50 backdrop-blur-sm focus:border-primary focus:ring-primary/20 transition-all duration-300 focus:scale-[1.02] hover:border-primary/50"
+                    className="h-12 border-slate-300 focus:border-indigo-500 focus:ring-indigo-500/20 transition-all duration-300"
                     required
                   />
                 </div>
 
                 {/* Password */}
                 <div className="space-y-3">
-                  <Label htmlFor="password" className="flex items-center space-x-2 text-sm font-semibold text-primary">
-                    <Lock className="h-4 w-4" />
+                  <Label htmlFor="password" className="flex items-center space-x-2 text-sm font-semibold text-slate-700">
+                    <Lock className="h-4 w-4 text-indigo-600" />
                     <span>Password</span>
                   </Label>
                   <div className="relative">
@@ -157,13 +155,13 @@ const Login = () => {
                       placeholder="Enter your password"
                       value={formData.password}
                       onChange={handleInputChange}
-                      className="h-12 pr-12 border-primary/30 bg-background/50 backdrop-blur-sm focus:border-primary focus:ring-primary/20 transition-all duration-300 focus:scale-[1.02] hover:border-primary/50"
+                      className="h-12 pr-12 border-slate-300 focus:border-indigo-500 focus:ring-indigo-500/20 transition-all duration-300"
                       required
                     />
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-4 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-primary transition-colors p-1 rounded-md hover:bg-primary/10"
+                      className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-indigo-600 transition-colors p-1 rounded-md hover:bg-indigo-50"
                     >
                       {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                     </button>
@@ -173,7 +171,7 @@ const Login = () => {
                 {/* Login Button */}
                 <Button 
                   type="submit" 
-                  className="w-full text-lg py-6 mt-8 bg-gradient-to-r from-primary via-accent to-primary-light hover:from-primary-dark hover:to-accent shadow-elegant hover:shadow-glow transition-all duration-500 hover:scale-[1.02] font-semibold"
+                  className="w-full text-lg py-6 mt-8 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
                   disabled={isLoading}
                 >
                   {isLoading ? (
@@ -192,16 +190,16 @@ const Login = () => {
                 {/* Additional Links */}
                 <div className="space-y-6 text-center pt-4">
                   <div className="text-sm">
-                    <button type="button" className="text-primary hover:text-accent transition-colors font-medium hover:underline">
+                    <button type="button" className="text-indigo-600 hover:text-indigo-700 transition-colors font-medium hover:underline">
                       Forgot Password?
                     </button>
                   </div>
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-sm text-gray-600">
                     Don't have an account?{' '}
                     <button 
                       type="button" 
                       onClick={() => navigate('/signup')}
-                      className="text-primary hover:text-accent transition-colors font-semibold hover:underline"
+                      className="text-indigo-600 hover:text-indigo-700 transition-colors font-semibold hover:underline"
                     >
                       Sign Up Here
                     </button>
@@ -214,13 +212,13 @@ const Login = () => {
           {/* Mobile Stats */}
           <div className="lg:hidden mt-8 grid grid-cols-3 gap-4">
             {stats.map((stat, index) => (
-              <Card key={index} className="text-center p-4 bg-gradient-to-br from-card to-primary/5 border-primary/20 shadow-soft hover:shadow-elegant transition-all duration-300 hover-scale">
+              <Card key={index} className="text-center p-4 bg-white border-slate-200 hover:shadow-lg transition-all duration-300">
                 <div className="flex flex-col items-center space-y-2">
-                  <div className="p-2 rounded-full bg-gradient-to-br from-primary/20 to-accent/20">
-                    <stat.icon className="h-5 w-5 text-primary" />
+                  <div className="p-2 rounded-full bg-gradient-to-br from-blue-50 to-indigo-50">
+                    <stat.icon className="h-5 w-5 text-indigo-600" />
                   </div>
-                  <div className="text-lg font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">{stat.value}</div>
-                  <div className="text-xs font-medium text-muted-foreground">{stat.label}</div>
+                  <div className="text-lg font-bold text-slate-900">{stat.value}</div>
+                  <div className="text-xs font-medium text-gray-600">{stat.label}</div>
                 </div>
               </Card>
             ))}
