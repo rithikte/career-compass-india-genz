@@ -249,7 +249,7 @@ export const GrowthRate = () => {
             </div>
             <div className="text-2xl text-muted-foreground font-light flex items-center justify-center">vs</div>
             <div>
-              <div className="text-3xl font-black text-muted-foreground mb-2">7-8%</div>
+              <div className="text-3xl font-black text-success mb-2">7-8%</div>
               <div className="text-sm text-muted-foreground">Global Average CAGR</div>
             </div>
           </div>
