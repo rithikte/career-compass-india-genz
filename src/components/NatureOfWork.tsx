@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Monitor, Building2, TestTube, Gamepad2, Users, Settings, Brain, Star, Calculator, Atom, User, UserCheck, Zap, Target, TrendingUp, ChevronRight, BarChart3, Activity, Clock, MapPin, ChevronDown, Users2, UserX } from 'lucide-react';
+import { Monitor, Building2, TestTube, Gamepad2, Users, Settings, Brain, Star, Target, TrendingUp, ChevronRight, Activity, ChevronDown } from 'lucide-react';
 
 const NatureOfWork = () => {
   const [selectedWork, setSelectedWork] = useState<number | null>(null);
@@ -63,10 +63,8 @@ const NatureOfWork = () => {
     emoji: "🧠",
     intensity: "Strategy / Think-Tank",
     industry: "📊 Product R&D + Simulation Strategy",
-    menRole: "Mechanical R&D Strategy Analyst",
-    womenRole: "Simulation Data Research Associate",
-    menWhySuits: "Big-picture modeling + field insights",
-    womenWhySuits: "Deep research & analytical desk work",
+    role: "Mechanical R&D Strategy Analyst",
+    whySuits: "Big-picture modeling + field insights",
     align: 9.0,
     mathLoad: 85,
     physicsLoad: 60,
@@ -76,10 +74,8 @@ const NatureOfWork = () => {
     emoji: "⚙️",
     intensity: "Operations / Back-End",
     industry: "🏭 Supply Chain Optimization (Engineering)",
-    menRole: "Mechanical Systems Optimization Engineer",
-    womenRole: "Plant Data Operations Analyst",
-    menWhySuits: "Live system flow optimization",
-    womenWhySuits: "Stable coordination, process monitoring",
+    role: "Mechanical Systems Optimization Engineer",
+    whySuits: "Live system flow optimization",
     align: 8.2,
     mathLoad: 80,
     physicsLoad: 40,
@@ -89,10 +85,8 @@ const NatureOfWork = () => {
     emoji: "🎮",
     intensity: "Simulation / Virtual Modeling",
     industry: "🧠 Digital Twin & System Modeling",
-    menRole: "Digital Twin Systems Developer",
-    womenRole: "Model-Based Simulation Specialist",
-    menWhySuits: "Coding + model testing with partial site check",
-    womenWhySuits: "Pure software-based modeling",
+    role: "Digital Twin Systems Developer",
+    whySuits: "Coding + model testing with partial site check",
     align: 10.0,
     mathLoad: 90,
     physicsLoad: 75,
@@ -102,10 +96,8 @@ const NatureOfWork = () => {
     emoji: "🧪",
     intensity: "Lab / Equipment-Based",
     industry: "🤖 Mechatronics Testing & Robotics Labs",
-    menRole: "Automation Testing Engineer",
-    womenRole: "Control Systems Lab Analyst",
-    menWhySuits: "Robotics + hardware calibration",
-    womenWhySuits: "Sensor tuning & equipment-focused lab work",
+    role: "Automation Testing Engineer",
+    whySuits: "Robotics + hardware calibration",
     align: 8.8,
     mathLoad: 70,
     physicsLoad: 80,
@@ -115,10 +107,8 @@ const NatureOfWork = () => {
     emoji: "🧑‍💻",
     intensity: "Desk-Based / Computer-Oriented",
     industry: "💻 CAD & Simulation Engineering",
-    menRole: "CAE Engineer (Computer-Aided Engineering)",
-    womenRole: "3D CAD Simulation Designer",
-    menWhySuits: "Full simulation & test validation",
-    womenWhySuits: "Calm setup with creative CAD modeling",
+    role: "CAE Engineer (Computer-Aided Engineering)",
+    whySuits: "Full simulation & test validation",
     align: 9.5,
     mathLoad: 85,
     physicsLoad: 60,
@@ -128,10 +118,8 @@ const NatureOfWork = () => {
     emoji: "🤝",
     intensity: "Client-Facing / Communication",
     industry: "🏢 Techno-Commercial Mechanical Solutions",
-    menRole: "Simulation Strategy Consultant",
-    womenRole: "Mechanical Forecast Analyst",
-    menWhySuits: "On-site delivery + client explanations",
-    womenWhySuits: "Strategy planning + client report analysis",
+    role: "Simulation Strategy Consultant",
+    whySuits: "On-site delivery + client explanations",
     align: 6.8,
     mathLoad: 60,
     physicsLoad: 30,
@@ -141,10 +129,8 @@ const NatureOfWork = () => {
     emoji: "🏗️",
     intensity: "On-Field / Site-Based",
     industry: "🏭 Manufacturing & Construction Sites",
-    menRole: "Site Engineering Supervisor",
-    womenRole: "Project Coordination Specialist",
-    menWhySuits: "Physical site management + equipment handling",
-    womenWhySuits: "Site documentation + team coordination",
+    role: "Site Engineering Supervisor",
+    whySuits: "Physical site management + equipment handling",
     align: 7.5,
     mathLoad: 65,
     physicsLoad: 70,
@@ -206,7 +192,7 @@ const NatureOfWork = () => {
             const IconComponent = work.icon;
             const isSelected = selectedWork === index;
             return <Card key={index} className={`group relative overflow-hidden border-2 transition-all duration-300 cursor-pointer hover-scale
-                    ${isSelected ? 'border-primary bg-primary/5 shadow-elegant' : 'border-border bg-card hover:border-primary/50 shadow-soft hover:shadow-elegant'}`} 
+                    ${isSelected ? 'border-primary/20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 shadow-xl' : 'border-primary/10 bg-white hover:border-primary/30 hover:shadow-lg'}`} 
                     onClick={() => setSelectedWork(isSelected ? null : index)}>
                   
                   <CardContent className="p-6 md:p-8 relative z-10">
@@ -234,10 +220,10 @@ const NatureOfWork = () => {
                       </p>
                       
                       {/* Mobile Work Breakdown */}
-                      <div className="bg-secondary/50 rounded-xl p-4 border border-border">
-                        <Activity className="h-6 w-6 text-muted-foreground mx-auto mb-2" />
-                        <div className="text-lg font-black text-foreground text-center mb-1">{work.breakdown}</div>
-                        <div className="text-xs text-muted-foreground text-center">Work Distribution</div>
+                      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 border-2 border-primary/10">
+                        <Activity className="h-6 w-6 text-primary mx-auto mb-2" />
+                        <div className="text-lg font-black text-slate-900 text-center mb-1">{work.breakdown}</div>
+                        <div className="text-xs text-gray-600 text-center">Work Distribution</div>
                       </div>
                       
                       {/* Mobile Expand Arrow */}
@@ -273,10 +259,10 @@ const NatureOfWork = () => {
                       
                       {/* Work Breakdown */}
                       <div className="col-span-5 flex justify-center">
-                        <div className="text-center bg-secondary/50 rounded-xl p-6 border border-border min-w-[280px]">
-                          <Activity className="h-8 w-8 text-muted-foreground mx-auto mb-3" />
-                          <div className="text-2xl font-black text-foreground mb-2">{work.breakdown}</div>
-                          <div className="text-sm text-muted-foreground font-medium">Work Distribution</div>
+                        <div className="text-center bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border-2 border-primary/10 min-w-[280px]">
+                          <Activity className="h-8 w-8 text-primary mx-auto mb-3" />
+                          <div className="text-2xl font-black text-slate-900 mb-2">{work.breakdown}</div>
+                          <div className="text-sm text-gray-600 font-medium">Work Distribution</div>
                         </div>
                       </div>
                       
@@ -297,164 +283,87 @@ const NatureOfWork = () => {
                           <div className="text-center mb-8">
                             <div className="flex items-center justify-center gap-4 mb-4">
                               <div className="text-3xl">{roleData.emoji}</div>
-                              <h4 className="text-xl md:text-2xl font-black text-foreground tracking-tight">
+                              <h4 className="text-xl md:text-2xl font-black text-slate-900 tracking-tight">
                                 {roleData.intensity}
                               </h4>
                               <div className="text-3xl">{roleData.emoji}</div>
                             </div>
 
                             {/* Industry Badge */}
-                            <div className="inline-flex items-center gap-3 px-4 py-2 bg-primary rounded-full shadow-soft">
-                              <Target className="h-4 w-4 text-primary-foreground" />
-                              <span className="text-primary-foreground font-bold text-sm md:text-base">{roleData.industry}</span>
+                            <div className="inline-flex items-center gap-3 px-6 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full shadow-lg">
+                              <Target className="h-4 w-4 text-white" />
+                              <span className="text-white font-bold text-sm md:text-base">{roleData.industry}</span>
                             </div>
                           </div>
 
-                          {/* Responsive Tables Grid */}
-                          <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
-                            {/* Men's Table */}
+                          {/* Role Details Table */}
+                          <div className="max-w-3xl mx-auto">
                             <div className="space-y-4">
                               <div className="flex items-center gap-3 mb-6">
-                                <Users2 className="h-5 w-5 text-primary" />
-                                <h5 className="text-lg font-black text-foreground tracking-tight">
-                                  MEN SPECIFIC ROLES
+                                <Target className="h-5 w-5 text-primary" />
+                                <h5 className="text-lg font-black text-slate-900 tracking-tight">
+                                  KEY ROLE DETAILS
                                 </h5>
                               </div>
                               
-                              <div className="bg-secondary/30 rounded-xl border border-border overflow-hidden shadow-soft">
+                              <div className="bg-white rounded-xl border-2 border-primary/20 overflow-hidden shadow-xl">
                                 <Table>
                                   <TableHeader>
-                                    <TableRow className="bg-primary hover:bg-primary">
-                                      <TableHead className="text-primary-foreground font-bold text-xs md:text-sm">Criteria</TableHead>
-                                      <TableHead className="text-primary-foreground font-bold text-xs md:text-sm">Details</TableHead>
+                                    <TableRow className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700">
+                                      <TableHead className="text-white font-bold text-xs md:text-sm">Criteria</TableHead>
+                                      <TableHead className="text-white font-bold text-xs md:text-sm">Details</TableHead>
                                     </TableRow>
                                   </TableHeader>
                                   <TableBody>
-                                    <TableRow className="hover:bg-secondary/50">
-                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">🧠 Work Nature</TableCell>
-                                      <TableCell className="font-medium text-xs md:text-sm">{roleData.intensity}</TableCell>
+                                    <TableRow className="hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50">
+                                      <TableCell className="font-semibold text-slate-900 text-xs md:text-sm">🧠 Work Nature</TableCell>
+                                      <TableCell className="font-medium text-gray-700 text-xs md:text-sm">{roleData.intensity}</TableCell>
                                     </TableRow>
-                                    <TableRow className="hover:bg-secondary/50">
-                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">🎯 Industry</TableCell>
-                                      <TableCell className="font-medium text-xs md:text-sm">{roleData.industry}</TableCell>
+                                    <TableRow className="hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50">
+                                      <TableCell className="font-semibold text-slate-900 text-xs md:text-sm">🎯 Industry</TableCell>
+                                      <TableCell className="font-medium text-gray-700 text-xs md:text-sm">{roleData.industry}</TableCell>
                                     </TableRow>
-                                    <TableRow className="hover:bg-secondary/50">
-                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">👨‍🔧 Role</TableCell>
-                                      <TableCell className="font-medium text-primary text-xs md:text-sm">{roleData.menRole}</TableCell>
+                                    <TableRow className="hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50">
+                                      <TableCell className="font-semibold text-slate-900 text-xs md:text-sm">👨‍💼 Role</TableCell>
+                                      <TableCell className="font-medium text-indigo-600 text-xs md:text-sm">{roleData.role}</TableCell>
                                     </TableRow>
-                                    <TableRow className="hover:bg-secondary/50">
-                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">💡 Why It Suits</TableCell>
-                                      <TableCell className="font-medium text-xs md:text-sm">{roleData.menWhySuits}</TableCell>
+                                    <TableRow className="hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50">
+                                      <TableCell className="font-semibold text-slate-900 text-xs md:text-sm">💡 Why It Suits</TableCell>
+                                      <TableCell className="font-medium text-gray-700 text-xs md:text-sm">{roleData.whySuits}</TableCell>
                                     </TableRow>
-                                    <TableRow className="hover:bg-secondary/50">
-                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">⭐ Alignment</TableCell>
+                                    <TableRow className="hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50">
+                                      <TableCell className="font-semibold text-slate-900 text-xs md:text-sm">⭐ Alignment</TableCell>
                                       <TableCell>
                                         <div className="flex items-center gap-2">
-                                          <span className="font-bold text-sm md:text-base">{roleData.align}/10</span>
+                                          <span className="font-bold text-sm md:text-base text-slate-900">{roleData.align}/10</span>
                                           <div className="flex">{getStarRating(roleData.align)}</div>
                                         </div>
                                       </TableCell>
                                     </TableRow>
-                                    <TableRow className="hover:bg-secondary/50">
-                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">🔢 Math Load</TableCell>
+                                    <TableRow className="hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50">
+                                      <TableCell className="font-semibold text-slate-900 text-xs md:text-sm">🔢 Math Load</TableCell>
                                       <TableCell>
                                         <div className="flex items-center gap-3">
-                                          <span className="font-bold text-xs md:text-sm">{roleData.mathLoad}%</span>
-                                          <div className="flex-1 h-2 bg-secondary rounded-full overflow-hidden">
+                                          <span className="font-bold text-xs md:text-sm text-slate-900">{roleData.mathLoad}%</span>
+                                          <div className="flex-1 h-2 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-full overflow-hidden border border-primary/10">
                                             <div 
-                                              className={`h-full bg-gradient-to-r ${getProgressGradient(roleData.mathLoad)} transition-all duration-500`}
-                                              style={{ width: `${roleData.mathLoad}%` }}
-                                            ></div>
+                              className={`h-full bg-gradient-to-r ${getProgressGradient(roleData.mathLoad)} transition-all duration-500`}
+                              style={{ width: `${roleData.mathLoad}%` }}
+                            ></div>
                                           </div>
                                         </div>
                                       </TableCell>
                                     </TableRow>
-                                    <TableRow className="hover:bg-secondary/50">
-                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">⚛️ Physics Load</TableCell>
+                                    <TableRow className="hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50">
+                                      <TableCell className="font-semibold text-slate-900 text-xs md:text-sm">⚛️ Physics Load</TableCell>
                                       <TableCell>
                                         <div className="flex items-center gap-3">
-                                          <span className="font-bold text-xs md:text-sm">{roleData.physicsLoad}%</span>
-                                          <div className="flex-1 h-2 bg-secondary rounded-full overflow-hidden">
+                                          <span className="font-bold text-xs md:text-sm text-slate-900">{roleData.physicsLoad}%</span>
+                                          <div className="flex-1 h-2 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-full overflow-hidden border border-primary/10">
                                             <div 
-                                              className={`h-full bg-gradient-to-r ${getProgressGradient(roleData.physicsLoad)} transition-all duration-500`}
-                                              style={{ width: `${roleData.physicsLoad}%` }}
-                                            ></div>
-                                          </div>
-                                        </div>
-                                      </TableCell>
-                                    </TableRow>
-                                  </TableBody>
-                                </Table>
-                              </div>
-                            </div>
-
-                            {/* Women's Table */}
-                            <div className="space-y-4">
-                              <div className="flex items-center gap-3 mb-6">
-                                <UserCheck className="h-5 w-5 text-accent" />
-                                <h5 className="text-lg font-black text-foreground tracking-tight">
-                                  WOMEN SPECIFIC ROLES
-                                </h5>
-                              </div>
-                              
-                              <div className="bg-accent/10 rounded-xl border border-border overflow-hidden shadow-soft">
-                                <Table>
-                                  <TableHeader>
-                                    <TableRow className="bg-accent hover:bg-accent">
-                                      <TableHead className="text-accent-foreground font-bold text-xs md:text-sm">Criteria</TableHead>
-                                      <TableHead className="text-accent-foreground font-bold text-xs md:text-sm">Details</TableHead>
-                                    </TableRow>
-                                  </TableHeader>
-                                  <TableBody>
-                                    <TableRow className="hover:bg-accent/5">
-                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">🧠 Work Nature</TableCell>
-                                      <TableCell className="font-medium text-xs md:text-sm">{roleData.intensity}</TableCell>
-                                    </TableRow>
-                                    <TableRow className="hover:bg-accent/5">
-                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">🎯 Industry</TableCell>
-                                      <TableCell className="font-medium text-xs md:text-sm">{roleData.industry}</TableCell>
-                                    </TableRow>
-                                    <TableRow className="hover:bg-accent/5">
-                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">👩‍💻 Role</TableCell>
-                                      <TableCell className="font-medium text-accent text-xs md:text-sm">{roleData.womenRole}</TableCell>
-                                    </TableRow>
-                                    <TableRow className="hover:bg-accent/5">
-                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">💡 Why It Suits</TableCell>
-                                      <TableCell className="font-medium text-xs md:text-sm">{roleData.womenWhySuits}</TableCell>
-                                    </TableRow>
-                                    <TableRow className="hover:bg-accent/5">
-                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">⭐ Alignment</TableCell>
-                                      <TableCell>
-                                        <div className="flex items-center gap-2">
-                                          <span className="font-bold text-sm md:text-base">{roleData.align}/10</span>
-                                          <div className="flex">{getStarRating(roleData.align)}</div>
-                                        </div>
-                                      </TableCell>
-                                    </TableRow>
-                                    <TableRow className="hover:bg-accent/5">
-                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">🔢 Math Load</TableCell>
-                                      <TableCell>
-                                        <div className="flex items-center gap-3">
-                                          <span className="font-bold text-xs md:text-sm">{roleData.mathLoad}%</span>
-                                          <div className="flex-1 h-2 bg-secondary rounded-full overflow-hidden">
-                                            <div 
-                                              className={`h-full bg-gradient-to-r ${getProgressGradient(roleData.mathLoad)} transition-all duration-500`}
-                                              style={{ width: `${roleData.mathLoad}%` }}
-                                            ></div>
-                                          </div>
-                                        </div>
-                                      </TableCell>
-                                    </TableRow>
-                                    <TableRow className="hover:bg-accent/5">
-                                      <TableCell className="font-semibold text-foreground text-xs md:text-sm">⚛️ Physics Load</TableCell>
-                                      <TableCell>
-                                        <div className="flex items-center gap-3">
-                                          <span className="font-bold text-xs md:text-sm">{roleData.physicsLoad}%</span>
-                                          <div className="flex-1 h-2 bg-secondary rounded-full overflow-hidden">
-                                            <div 
-                                              className={`h-full bg-gradient-to-r ${getProgressGradient(roleData.physicsLoad)} transition-all duration-500`}
-                                              style={{ width: `${roleData.physicsLoad}%` }}
-                                            ></div>
+                              className={`h-full bg-gradient-to-r ${getProgressGradient(roleData.physicsLoad)} transition-all duration-500`}
+                              style={{ width: `${roleData.physicsLoad}%` }}
+                            ></div>
                                           </div>
                                         </div>
                                       </TableCell>
@@ -475,14 +384,14 @@ const NatureOfWork = () => {
 
         {/* Instructions Section */}
         <div className="text-center">
-          <div className="max-w-2xl mx-auto bg-secondary/30 rounded-xl p-8 border border-border">
+          <div className="max-w-2xl mx-auto bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 border-2 border-primary/20">
             <TrendingUp className="h-8 w-8 text-primary mx-auto mb-4" />
-            <h3 className="text-2xl font-black text-foreground mb-4">DETAILED ANALYSIS</h3>
-            <p className="text-muted-foreground mb-4">
+            <h3 className="text-2xl font-black text-slate-900 mb-4">DETAILED ANALYSIS</h3>
+            <p className="text-gray-600 mb-4">
               Click on any work environment type above to view detailed role breakdowns, 
-              gender-specific career paths, and technical requirements.
+              career paths, and technical requirements.
             </p>
-            <div className="w-16 h-0.5 bg-primary mx-auto"></div>
+            <div className="w-16 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto"></div>
           </div>
         </div>
       </div>
