@@ -210,34 +210,6 @@ export const HiringCompanies = () => {
           </Table>
         </div>
 
-        <div className="mt-6 bg-blue-50 rounded-lg p-4 sm:p-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <h4 className="font-bold text-slate-900 mb-2">Suppliers (foreign / tier-1/2)</h4>
-              <p className="text-sm text-gray-700 mb-3">
-                Established companies that make parts or systems for aircraft
-              </p>
-              <div className="text-sm text-gray-700 space-y-1">
-                <div className="font-semibold text-indigo-700 mb-2">Growth Rates:</div>
-                <div>• 2030 → 2035: <span className="font-semibold">~15%</span></div>
-                <div>• 2035 → 2040: <span className="font-semibold">~11–13%</span></div>
-                <div>• 2030 → 2040: <span className="font-semibold">~13–14%</span></div>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold text-slate-900 mb-2">Startups (aviation, avionics/AI, MRO-tech)</h4>
-              <p className="text-sm text-gray-700 mb-3">
-                Newer, smaller firms that build specific products or software
-              </p>
-              <div className="text-sm text-gray-700 space-y-1">
-                <div className="font-semibold text-indigo-700 mb-2">Growth Rates:</div>
-                <div>• 2030 → 2035: <span className="font-semibold">~14–16%</span></div>
-                <div>• 2035 → 2040: <span className="font-semibold">~7–10%</span></div>
-                <div>• 2030 → 2040: <span className="font-semibold">~11–13%</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>;
 };
