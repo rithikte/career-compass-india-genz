@@ -143,7 +143,7 @@ export const AIImpact = () => {
       
 
       <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-8">
-        <div className="flex items-start space-x-3 sm:space-x-4">
+        <div className="flex items-start space-x-3 sm:space-x-4 mb-6">
           <AlertTriangle className="w-6 h-6 sm:w-8 sm:h-8 text-orange-600 mt-1 flex-shrink-0" />
           <div className="flex-1">
             <h4 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4">What's Really Happening:</h4>
@@ -157,20 +157,21 @@ export const AIImpact = () => {
               <p className="text-gray-700">
                 Companies still hiring but only for students who are skilled and know the latest tools.
               </p>
-              <div className="mt-6 pt-6 border-t border-gray-200">
-                <div className="flex items-start space-x-4">
-                  <Shield className="w-8 h-8 text-success flex-shrink-0 mt-1" />
-                  <div className="flex-1">
-                    <h5 className="text-2xl font-bold text-slate-900 mb-4">Solution:</h5>
-                    <p className="text-lg font-bold text-slate-900 mb-3">
-                      Upskill + Certify + Know Your Role → You get hired.
-                    </p>
-                    <p className="text-base text-gray-700 font-medium">
-                      90% Companies Expecting Certifications to Get Job in 2-3 Attempts
-                    </p>
-                  </div>
-                </div>
-              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="pt-6 border-t border-gray-200">
+          <div className="flex items-start space-x-3 sm:space-x-4">
+            <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-success flex-shrink-0 mt-1" />
+            <div className="flex-1">
+              <h5 className="text-2xl font-bold text-slate-900 mb-4">Solution:</h5>
+              <p className="text-lg font-bold text-slate-900 mb-3">
+                Upskill + Certify + Know Your Role → You get hired.
+              </p>
+              <p className="text-base text-gray-700 font-medium">
+                90% Companies Expecting Certifications to Get Job in 2-3 Attempts
+              </p>
             </div>
           </div>
         </div>
