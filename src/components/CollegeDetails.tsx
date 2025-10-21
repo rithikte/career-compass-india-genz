@@ -301,7 +301,7 @@ const CollegeDetails = () => {
           <h4 className="font-semibold mb-3">Top Recruiting Companies:</h4>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
             {placementCompanies.map((company, index) => (
-              <Badge key={index} variant="secondary" className="p-2 text-center">
+              <Badge key={index} variant="primary" className="p-2 text-center">
                 {company}
               </Badge>
             ))}
@@ -655,13 +655,13 @@ const CollegeDetails = () => {
           Join us in shaping the next generation of aerospace and mechanical engineers
         </p>
         <div className="flex flex-wrap justify-center gap-4">
-          <Badge variant="secondary" className="px-4 py-2 text-base">
+          <Badge variant="success" className="px-4 py-2 text-base">
             Industry-Ready Curriculum
           </Badge>
-          <Badge variant="secondary" className="px-4 py-2 text-base">
+          <Badge variant="success" className="px-4 py-2 text-base">
             100% Placement Support
           </Badge>
-          <Badge variant="secondary" className="px-4 py-2 text-base">
+          <Badge variant="success" className="px-4 py-2 text-base">
             World-Class Faculty
           </Badge>
         </div>
