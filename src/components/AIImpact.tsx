@@ -13,7 +13,7 @@ const aiImpactData = [{
   safe: 53,
   name: '10Y Impact'
 }];
-const COLORS = ['#ef4444', '#10b981'];
+const COLORS = ['hsl(0 72% 51%)', 'hsl(142 76% 42%)'];
 export const AIImpact = () => {
   return <div className="space-y-8">
       <div className="text-center mb-8 sm:mb-12 px-4">
@@ -29,12 +29,12 @@ export const AIImpact = () => {
       </div>
 
       <div className="mb-8">
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-t-xl p-6 sm:p-8">
+        <div className="bg-gradient-primary rounded-t-xl p-6 sm:p-8">
           <div className="flex items-start gap-4">
             <Brain className="w-10 h-10 sm:w-12 sm:h-12 text-white flex-shrink-0" />
             <div>
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">AI Impact on Indian Aerospace Industry</h3>
-              <p className="text-base sm:text-lg text-blue-50 leading-relaxed">
+              <p className="text-base sm:text-lg text-white/90 leading-relaxed">
                 AI is changing how India makes aircraft and spacecraft. Companies like HAL and DRDO are using AI to design better, check quality, and build faster.
               </p>
             </div>
@@ -43,17 +43,17 @@ export const AIImpact = () => {
 
         <div className="bg-white rounded-b-xl shadow-xl p-6 sm:p-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-6">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-4 sm:p-6 border-2 border-blue-200">
-              <div className="text-3xl sm:text-4xl font-bold text-blue-600 mb-2">₹23,000 Cr+</div>
-              <div className="text-sm sm:text-base text-gray-700 font-medium">India's AI Aerospace Market by 2030 ($2.8B)</div>
+            <div className="bg-primary-light rounded-lg p-4 sm:p-6 border-2 border-primary/20">
+              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">₹23,000 Cr+</div>
+              <div className="text-sm sm:text-base text-foreground font-medium">India's AI Aerospace Market by 2030 ($2.8B)</div>
             </div>
-            <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-lg p-4 sm:p-6 border-2 border-indigo-200">
-              <div className="text-3xl sm:text-4xl font-bold text-indigo-600 mb-2">60%</div>
-              <div className="text-sm sm:text-base text-gray-700 font-medium">Indian Aerospace Leaders Adopting AI</div>
+            <div className="bg-primary-light rounded-lg p-4 sm:p-6 border-2 border-primary/20">
+              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">60%</div>
+              <div className="text-sm sm:text-base text-foreground font-medium">Indian Aerospace Leaders Adopting AI</div>
             </div>
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-4 sm:p-6 border-2 border-purple-200">
-              <div className="text-3xl sm:text-4xl font-bold text-purple-600 mb-2">2x</div>
-              <div className="text-sm sm:text-base text-gray-700 font-medium">Market Growth 2024 to 2030</div>
+            <div className="bg-accent-light rounded-lg p-4 sm:p-6 border-2 border-accent/20">
+              <div className="text-3xl sm:text-4xl font-bold text-accent mb-2">2x</div>
+              <div className="text-sm sm:text-base text-foreground font-medium">Market Growth 2024 to 2030</div>
             </div>
           </div>
 
@@ -177,11 +177,11 @@ export const AIImpact = () => {
         </div>
       </div>
 
-      <div className="bg-gradient-to-r from-orange-600 to-red-600 text-white p-6 sm:p-8 rounded-lg">
+      <div className="bg-gradient-accent text-white p-6 sm:p-8 rounded-lg">
         <div className="text-center">
           <Shield className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-4" />
           <h3 className="text-xl sm:text-2xl font-bold mb-2">AI Disruption Alert</h3>
-          <p className="text-orange-100 text-base sm:text-lg">
+          <p className="text-white/90 text-base sm:text-lg">
             47% of aerospace jobs will be impacted by AI in 10 years. Upskill now to stay relevant!
           </p>
         </div>

@@ -7,19 +7,19 @@ const growthData = [{
   cagr: 9,
   reason: 'ISRO, Skyroot, defense aircraft growth',
   trend: 'Steady Growth',
-  color: '#3b82f6'
+  color: 'hsl(238 90% 60%)'
 }, {
   role: 'Avionics Engineer',
   cagr: 11,
   reason: 'Embedded systems demand',
   trend: 'High Growth',
-  color: '#6366f1'
+  color: 'hsl(238 85% 50%)'
 }, {
   role: 'Aircraft Maintenance Eng.',
   cagr: 13.5,
   reason: 'India becoming global MRO hub',
   trend: 'Boom',
-  color: '#8b5cf6'
+  color: 'hsl(275 85% 65%)'
 }];
 
 // New Companies Growth Data
@@ -27,7 +27,7 @@ const newCompaniesGrowthData = [
   {
     category: "Foreign/Tier-1/2 Companies",
     icon: Building2,
-    color: "#3b82f6",
+    color: "hsl(238 90% 60%)",
     baseCAGR: 14,
     rates: {
       "2030": "15",
@@ -41,7 +41,7 @@ const newCompaniesGrowthData = [
   {
     category: "Startups",
     icon: Brain,
-    color: "#a855f7",
+    color: "hsl(275 85% 65%)",
     baseCAGR: 11,
     rates: {
       "2030": "14–16",

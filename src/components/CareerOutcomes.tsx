@@ -66,9 +66,9 @@ const mapToBarData = (career: typeof careerData[0]) => [
 ];
 
 const LEVEL_COLORS = {
-  Entry: '#3b82f6',   // blue-500
-  Mid: '#6366f1',     // indigo-500
-  Senior: '#8b5cf6',  // purple-500
+  Entry: 'hsl(238 90% 60%)',
+  Mid: 'hsl(238 85% 50%)',
+  Senior: 'hsl(275 85% 65%)',
 };
 
 const VerticalBarChart = ({ data }: { data: { level: string, salary: number }[] }) => {
@@ -131,17 +131,17 @@ const VerticalBarChart = ({ data }: { data: { level: string, salary: number }[] 
 
 const EntryMidSeniorCard = ({ entry, mid, senior }: { entry: number; mid: number; senior: number }) => (
   <div className="grid grid-cols-3 gap-4 text-center mt-2 mb-2">
-    <div className="bg-blue-50 p-2 rounded-lg shadow">
-      <div className="text-base font-bold text-blue-800">₹{entry}L</div>
-      <div className="text-xs text-blue-600 font-semibold">Entry</div>
+    <div className="bg-primary-light p-2 rounded-lg shadow">
+      <div className="text-base font-bold text-primary">₹{entry}L</div>
+      <div className="text-xs text-primary font-semibold">Entry</div>
     </div>
-    <div className="bg-indigo-50 p-2 rounded-lg shadow">
-      <div className="text-base font-bold text-indigo-800">₹{mid}L</div>
-      <div className="text-xs text-indigo-600 font-semibold">Mid</div>
+    <div className="bg-primary-light p-2 rounded-lg shadow">
+      <div className="text-base font-bold text-primary">₹{mid}L</div>
+      <div className="text-xs text-primary font-semibold">Mid</div>
     </div>
-    <div className="bg-purple-50 p-2 rounded-lg shadow">
-      <div className="text-base font-bold text-purple-800">₹{senior}L+</div>
-      <div className="text-xs text-purple-600 font-semibold">Senior</div>
+    <div className="bg-accent-light p-2 rounded-lg shadow">
+      <div className="text-base font-bold text-accent">₹{senior}L+</div>
+      <div className="text-xs text-accent font-semibold">Senior</div>
     </div>
   </div>
 );
@@ -164,16 +164,16 @@ export const CareerOutcomes = () => {
       </div>
 
       {/* Important Notice */}
-      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4 sm:p-6 border-2 border-blue-300 mb-6">
+      <div className="bg-gradient-subtle rounded-lg p-4 sm:p-6 border-2 border-primary/30 mb-6">
         <div className="flex items-start space-x-3">
           <div className="flex-shrink-0">
-            <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+            <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
               <Info className="w-5 h-5 text-white" />
             </div>
           </div>
           <div className="flex-1">
-            <p className="text-sm sm:text-base text-gray-800 font-semibold">
-              <span className="text-blue-600">⚠️ Important:</span> Figures vary by city, company tier, and specialization.
+            <p className="text-sm sm:text-base text-foreground font-semibold">
+              <span className="text-primary">⚠️ Important:</span> Figures vary by city, company tier, and specialization.
             </p>
           </div>
         </div>
@@ -234,22 +234,22 @@ export const CareerOutcomes = () => {
           </div>
         ))}
       </div>
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4 sm:p-6 lg:p-8 rounded-lg mt-6 sm:mt-10">
+      <div className="bg-gradient-primary text-white p-4 sm:p-6 lg:p-8 rounded-lg mt-6 sm:mt-10">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           <div className="text-center">
             <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2" />
             <div className="text-xl sm:text-2xl font-bold">15-20%</div>
-            <div className="text-blue-200 text-sm sm:text-base">Average Growth</div>
+            <div className="text-white/80 text-sm sm:text-base">Average Growth</div>
           </div>
           <div className="text-center">
             <Briefcase className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2" />
             <div className="text-xl sm:text-2xl font-bold">3</div>
-            <div className="text-blue-200 text-sm sm:text-base">Career Paths</div>
+            <div className="text-white/80 text-sm sm:text-base">Career Paths</div>
           </div>
           <div className="text-center">
             <Users className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2" />
             <div className="text-xl sm:text-2xl font-bold">64L+</div>
-            <div className="text-blue-200 text-sm sm:text-base">Jobs by 2040</div>
+            <div className="text-white/80 text-sm sm:text-base">Jobs by 2040</div>
           </div>
         </div>
       </div>

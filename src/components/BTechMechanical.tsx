@@ -129,7 +129,7 @@ export const BTechMechanical = () => {
               <h3 className="text-xl font-bold text-gray-900">Math Topics</h3>
             </div>
             <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
-              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4">
+              <div className="bg-gradient-primary text-white p-4">
                 <div className="grid grid-cols-4 gap-4 font-bold text-sm">
                   <div>Math Topic</div>
                   <div>Sems Covered</div>
@@ -191,7 +191,7 @@ export const BTechMechanical = () => {
               <h3 className="text-xl font-bold text-gray-900">Physics Topics</h3>
             </div>
             <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
-              <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white p-4">
+              <div className="bg-gradient-success text-white p-4">
                 <div className="grid grid-cols-4 gap-4 font-bold text-sm">
                   <div>Physics Topic</div>
                   <div>Sems Covered</div>
@@ -253,7 +253,7 @@ export const BTechMechanical = () => {
               <h3 className="text-xl font-bold text-gray-900">Chemistry Topics</h3>
             </div>
             <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
-              <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-4">
+              <div className="bg-gradient-accent text-white p-4">
                 <div className="grid grid-cols-4 gap-4 font-bold text-sm">
                   <div>Chemistry Topic</div>
                   <div>Sems Covered</div>

@@ -28,9 +28,9 @@ const skillGapData = [
 ];
 
 const getGapColor = (gap: number) => {
-  if (gap <= 25) return 'bg-green-500';
-  if (gap <= 35) return 'bg-yellow-500';
-  return 'bg-red-500';
+  if (gap <= 25) return 'bg-success';
+  if (gap <= 35) return 'bg-warning';
+  return 'bg-destructive';
 };
 
 const getPriorityColor = (priority: string) => {
@@ -63,20 +63,20 @@ export const SkillGap = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8">
-        <div className="bg-gradient-to-r from-red-600 to-red-700 text-white p-6 rounded-lg text-center">
+        <div className="bg-gradient-accent text-white p-6 rounded-lg text-center">
           <AlertTriangle className="w-12 h-12 mx-auto mb-4" />
           <div className="text-3xl font-bold">{avgGap}%</div>
-          <div className="text-red-200">Average Skill Gap</div>
+          <div className="text-white/80">Average Skill Gap</div>
         </div>
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-6 rounded-lg text-center">
+        <div className="bg-gradient-primary text-white p-6 rounded-lg text-center">
           <TrendingUp className="w-12 h-12 mx-auto mb-4" />
           <div className="text-3xl font-bold">6-12</div>
-          <div className="text-blue-200">Months to Bridge</div>
+          <div className="text-white/80">Months to Bridge</div>
         </div>
-        <div className="bg-gradient-to-r from-green-600 to-green-700 text-white p-6 rounded-lg text-center">
+        <div className="bg-gradient-success text-white p-6 rounded-lg text-center">
           <CheckCircle className="w-12 h-12 mx-auto mb-4" />
           <div className="text-3xl font-bold">85%</div>
-          <div className="text-green-200">Success Rate</div>
+          <div className="text-white/80">Success Rate</div>
         </div>
       </div>
 
@@ -139,25 +139,25 @@ export const SkillGap = () => {
         </div>
       </div>
 
-      <div className="bg-gradient-to-r from-orange-600 to-red-600 text-white p-8 rounded-lg">
+      <div className="bg-gradient-accent text-white p-8 rounded-lg">
         <div className="text-center">
           <AlertTriangle className="w-12 h-12 mx-auto mb-4" />
           <h3 className="text-2xl font-bold mb-2">Critical Skills Alert</h3>
-          <p className="text-orange-200 text-lg mb-6">
+          <p className="text-white/90 text-lg mb-6">
             Avionics Engineering has the highest skill gap at 40% - immediate action needed!
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-red-500 bg-opacity-30 p-4 rounded-lg">
+            <div className="bg-white/20 p-4 rounded-lg">
               <div className="text-2xl font-bold">40%</div>
-              <div className="text-red-200">Avionics Gap</div>
+              <div className="text-white/80">Avionics Gap</div>
             </div>
-            <div className="bg-red-500 bg-opacity-30 p-4 rounded-lg">
+            <div className="bg-white/20 p-4 rounded-lg">
               <div className="text-2xl font-bold">34%</div>
-              <div className="text-red-200">Aerospace Gap</div>
+              <div className="text-white/80">Aerospace Gap</div>
             </div>
-            <div className="bg-red-500 bg-opacity-30 p-4 rounded-lg">
+            <div className="bg-white/20 p-4 rounded-lg">
               <div className="text-2xl font-bold">25%</div>
-              <div className="text-red-200">Maintenance Gap</div>
+              <div className="text-white/80">Maintenance Gap</div>
             </div>
           </div>
         </div>

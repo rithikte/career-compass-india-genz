@@ -52,8 +52,8 @@ export const JobSecurity = () => {
               <Tooltip formatter={(value, name) => [`${value}%`, name]} labelStyle={{
               color: '#1e293b'
             }} />
-              <Bar dataKey="withAI" fill="#10b981" name="With AI Skills" radius={[4, 4, 0, 0]} />
-              <Bar dataKey="withoutAI" fill="#ef4444" name="Without AI Skills" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="withAI" fill="hsl(142 76% 42%)" name="With AI Skills" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="withoutAI" fill="hsl(0 72% 51%)" name="Without AI Skills" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -185,25 +185,25 @@ export const JobSecurity = () => {
         </div>
       </div>
 
-      <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white p-8 rounded-lg">
+      <div className="bg-gradient-success text-white p-8 rounded-lg">
         <div className="text-center">
           <TrendingUp className="w-12 h-12 mx-auto mb-4" />
           <h3 className="text-2xl font-bold mb-2">The AI Skills Advantage</h3>
-          <p className="text-green-200 text-lg mb-6">
+          <p className="text-white/90 text-lg mb-6">
             <strong>AI-trained engineers have 30-45% higher security.</strong> Professionals with AI skills have significantly better job security across all aerospace roles.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-green-500 bg-opacity-30 p-4 rounded-lg">
+            <div className="bg-white/20 p-4 rounded-lg">
               <div className="text-2xl font-bold">91%</div>
-              <div className="text-green-200">Avionics Engineers with AI</div>
+              <div className="text-white/80">Avionics Engineers with AI</div>
             </div>
-            <div className="bg-blue-500 bg-opacity-30 p-4 rounded-lg">
+            <div className="bg-white/20 p-4 rounded-lg">
               <div className="text-2xl font-bold">88%</div>
-              <div className="text-blue-200">Aerospace Engineers with AI</div>
+              <div className="text-white/80">Aerospace Engineers with AI</div>
             </div>
-            <div className="bg-indigo-500 bg-opacity-30 p-4 rounded-lg">
+            <div className="bg-white/20 p-4 rounded-lg">
               <div className="text-2xl font-bold">79%</div>
-              <div className="text-indigo-200">Maintenance Engineers with AI</div>
+              <div className="text-white/80">Maintenance Engineers with AI</div>
             </div>
           </div>
         </div>
