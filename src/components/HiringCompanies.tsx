@@ -180,12 +180,12 @@ export const HiringCompanies = () => {
         <div className="overflow-x-auto">
           <Table>
             <TableHeader>
-              <TableRow className="bg-gradient-to-r from-blue-50 to-indigo-50">
-                <TableHead className="font-bold text-slate-900 text-center">Year</TableHead>
-                <TableHead className="font-bold text-slate-900 text-center">
+              <TableRow className="bg-gradient-to-r from-blue-50 to-indigo-100 shadow-sm border-b-2 border-blue-200">
+                <TableHead className="text-blue-700 font-bold text-center">Year</TableHead>
+                <TableHead className="text-blue-700 font-bold text-center">
                   New Foreign/Tier-1/2 Suppliers<br />Expanding/Entering
                 </TableHead>
-                <TableHead className="font-bold text-slate-900 text-center">
+                <TableHead className="text-blue-700 font-bold text-center">
                   New Indian Startups<br />(Aviation, Avionics/AI, MRO-tech)
                 </TableHead>
               </TableRow>

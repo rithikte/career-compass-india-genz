@@ -87,12 +87,12 @@ export const SkillGap = () => {
         <div className="overflow-x-auto">
           <Table>
           <TableHeader>
-            <TableRow>
-              <TableHead>Job Role</TableHead>
-              <TableHead>Current Skills</TableHead>
-              <TableHead>Required Skills</TableHead>
-              <TableHead>Gap %</TableHead>
-              <TableHead>Priority</TableHead>
+            <TableRow className="bg-gradient-to-r from-slate-50 to-slate-100 shadow-sm border-b-2 border-slate-200">
+              <TableHead className="text-slate-700 font-bold">Job Role</TableHead>
+              <TableHead className="text-slate-700 font-bold">Current Skills</TableHead>
+              <TableHead className="text-slate-700 font-bold">Required Skills</TableHead>
+              <TableHead className="text-slate-700 font-bold">Gap %</TableHead>
+              <TableHead className="text-slate-700 font-bold">Priority</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>

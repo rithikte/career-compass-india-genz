@@ -269,9 +269,9 @@ const NatureOfWork = () => {
                               <div className="bg-white rounded-xl border-2 border-primary/20 overflow-hidden shadow-xl">
                                 <Table>
                                   <TableHeader>
-                                    <TableRow className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700">
-                                      <TableHead className="text-white font-bold text-xs md:text-sm">Criteria</TableHead>
-                                      <TableHead className="text-white font-bold text-xs md:text-sm">Details</TableHead>
+                                    <TableRow className="bg-gradient-to-r from-indigo-50 via-purple-50 to-purple-100 hover:from-indigo-100 hover:to-purple-200 shadow-sm border-b-2 border-purple-200">
+                                      <TableHead className="text-indigo-700 font-bold text-xs md:text-sm">Criteria</TableHead>
+                                      <TableHead className="text-indigo-700 font-bold text-xs md:text-sm">Details</TableHead>
                                     </TableRow>
                                   </TableHeader>
                                   <TableBody>
