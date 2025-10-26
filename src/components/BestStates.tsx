@@ -154,12 +154,12 @@ export const BestStates = () => {
         <div className="overflow-x-auto">
           <Table>
             <TableHeader>
-              <TableRow className="bg-gradient-to-r from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 shadow-sm border-b-2 border-purple-200">
-                <TableHead className="text-purple-700 font-bold text-center">Rank</TableHead>
-                <TableHead className="text-purple-700 font-bold text-center">State</TableHead>
-                <TableHead className="text-purple-700 font-bold text-center">Number of Companies</TableHead>
-                <TableHead className="text-purple-700 font-bold text-center">Market Share</TableHead>
-                <TableHead className="text-purple-700 font-bold text-left">Key Sectors/Notes</TableHead>
+              <TableRow className="bg-gradient-to-r from-purple-50 to-indigo-50 hover:from-purple-100 hover:to-indigo-100 shadow-sm border-b-2 border-indigo-100">
+                <TableHead className="text-indigo-600 font-bold text-center">Rank</TableHead>
+                <TableHead className="text-indigo-600 font-bold text-center">State</TableHead>
+                <TableHead className="text-indigo-600 font-bold text-center">Number of Companies</TableHead>
+                <TableHead className="text-indigo-600 font-bold text-center">Market Share</TableHead>
+                <TableHead className="text-indigo-600 font-bold text-left">Key Sectors/Notes</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -234,11 +234,11 @@ export const BestStates = () => {
         <div className="overflow-x-auto">
           <Table>
             <TableHeader>
-              <TableRow className="bg-gradient-to-r from-emerald-50 to-emerald-100 hover:from-emerald-100 hover:to-emerald-200 shadow-sm border-b-2 border-emerald-200">
-                <TableHead className="text-emerald-700 font-bold text-center">State</TableHead>
-                <TableHead className="text-emerald-700 font-bold text-center">AME Jobs/Year</TableHead>
-                <TableHead className="text-emerald-700 font-bold text-center">Avionics Jobs/Year</TableHead>
-                <TableHead className="text-emerald-700 font-bold text-center">Aerospace Eng Jobs/Year</TableHead>
+              <TableRow className="bg-gradient-to-r from-emerald-50 to-teal-50 hover:from-emerald-100 hover:to-teal-100 shadow-sm border-b-2 border-teal-100">
+                <TableHead className="text-teal-600 font-bold text-center">State</TableHead>
+                <TableHead className="text-teal-600 font-bold text-center">AME Jobs/Year</TableHead>
+                <TableHead className="text-teal-600 font-bold text-center">Avionics Jobs/Year</TableHead>
+                <TableHead className="text-teal-600 font-bold text-center">Aerospace Eng Jobs/Year</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -296,12 +296,12 @@ export const BestStates = () => {
         <div className="overflow-x-auto">
           <Table>
             <TableHeader>
-              <TableRow className="bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 shadow-sm border-b-2 border-blue-200">
-                <TableHead className="text-blue-700 font-bold text-center">Year (Combined new entrants)</TableHead>
-                <TableHead className="text-blue-700 font-bold text-center">Total new jobs (3 roles)</TableHead>
-                <TableHead className="text-blue-700 font-bold text-center">AME</TableHead>
-                <TableHead className="text-blue-700 font-bold text-center">Avionics</TableHead>
-                <TableHead className="text-blue-700 font-bold text-center">Aerospace Eng.</TableHead>
+              <TableRow className="bg-gradient-to-r from-blue-50 to-sky-50 hover:from-blue-100 hover:to-sky-100 shadow-sm border-b-2 border-sky-100">
+                <TableHead className="text-sky-600 font-bold text-center">Year (Combined new entrants)</TableHead>
+                <TableHead className="text-sky-600 font-bold text-center">Total new jobs (3 roles)</TableHead>
+                <TableHead className="text-sky-600 font-bold text-center">AME</TableHead>
+                <TableHead className="text-sky-600 font-bold text-center">Avionics</TableHead>
+                <TableHead className="text-sky-600 font-bold text-center">Aerospace Eng.</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -349,11 +349,11 @@ export const BestStates = () => {
         <div className="overflow-x-auto">
           <Table>
             <TableHeader>
-              <TableRow className="bg-gradient-to-r from-orange-50 to-orange-100 hover:from-orange-100 hover:to-orange-200 shadow-sm border-b-2 border-orange-200">
-                <TableHead className="text-orange-700 font-bold text-center">State</TableHead>
-                <TableHead className="text-orange-700 font-bold text-center">AME (apps per job)</TableHead>
-                <TableHead className="text-orange-700 font-bold text-center">Avionics</TableHead>
-                <TableHead className="text-orange-700 font-bold text-center">Aerospace Eng.</TableHead>
+              <TableRow className="bg-gradient-to-r from-orange-50 to-amber-50 hover:from-orange-100 hover:to-amber-100 shadow-sm border-b-2 border-amber-100">
+                <TableHead className="text-amber-600 font-bold text-center">State</TableHead>
+                <TableHead className="text-amber-600 font-bold text-center">AME (apps per job)</TableHead>
+                <TableHead className="text-amber-600 font-bold text-center">Avionics</TableHead>
+                <TableHead className="text-amber-600 font-bold text-center">Aerospace Eng.</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -407,11 +407,11 @@ export const BestStates = () => {
         <div className="overflow-x-auto">
           <Table>
             <TableHeader>
-              <TableRow className="bg-gradient-to-r from-cyan-50 to-cyan-100 hover:from-cyan-100 hover:to-cyan-200 shadow-sm border-b-2 border-cyan-200">
-                <TableHead className="text-cyan-700 font-bold text-center">State</TableHead>
-                <TableHead className="text-cyan-700 font-bold text-center">AME Job Share</TableHead>
-                <TableHead className="text-cyan-700 font-bold text-center">Avionics Job Share</TableHead>
-                <TableHead className="text-cyan-700 font-bold text-center">Aerospace Eng. Job Share</TableHead>
+              <TableRow className="bg-gradient-to-r from-cyan-50 to-blue-50 hover:from-cyan-100 hover:to-blue-100 shadow-sm border-b-2 border-blue-100">
+                <TableHead className="text-blue-600 font-bold text-center">State</TableHead>
+                <TableHead className="text-blue-600 font-bold text-center">AME Job Share</TableHead>
+                <TableHead className="text-blue-600 font-bold text-center">Avionics Job Share</TableHead>
+                <TableHead className="text-blue-600 font-bold text-center">Aerospace Eng. Job Share</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
