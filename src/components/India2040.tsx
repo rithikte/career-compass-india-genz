@@ -129,10 +129,10 @@ export const India2040 = () => {
         <div className="overflow-x-auto">
           <table className="w-full border-collapse">
             <thead>
-              <tr className="border-b-2 border-gray-300">
-                <th className="text-left p-3 sm:p-4 font-bold text-gray-800 text-sm sm:text-base">Key Projection</th>
-                <th className="text-left p-3 sm:p-4 font-bold text-gray-800 text-sm sm:text-base">Source</th>
-                <th className="text-left p-3 sm:p-4 font-bold text-gray-800 text-sm sm:text-base">Meaning</th>
+              <tr className="bg-gradient-to-r from-indigo-50 to-indigo-100 hover:from-indigo-100 hover:to-indigo-200 transition-all duration-200 shadow-sm border-b-2 border-indigo-200">
+                <th className="text-left p-3 sm:p-4 font-bold text-indigo-700 text-sm sm:text-base">Key Projection</th>
+                <th className="text-left p-3 sm:p-4 font-bold text-indigo-700 text-sm sm:text-base">Source</th>
+                <th className="text-left p-3 sm:p-4 font-bold text-indigo-700 text-sm sm:text-base">Meaning</th>
               </tr>
             </thead>
             <tbody>
