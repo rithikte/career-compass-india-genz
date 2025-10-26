@@ -140,7 +140,59 @@ export const AIImpact = () => {
         </div>
       </div>
 
-      
+      <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-8">
+        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6 text-center">Cause of Impact</h3>
+        
+        <div className="space-y-6">
+          <div className="border-l-4 border-indigo-500 bg-indigo-50 p-4 sm:p-6 rounded-r-lg">
+            <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-3">Aerospace Engineer</h4>
+            <div className="space-y-3">
+              <div>
+                <span className="font-semibold text-indigo-700">5-year impact:</span>
+                <p className="text-gray-700 mt-1">Partial automation. Engineers still essential for oversight and certification.</p>
+              </div>
+              <div>
+                <span className="font-semibold text-indigo-700">10-year impact:</span>
+                <p className="text-gray-700 mt-1">Structural shift. Routine, repetitive, and documentation-heavy tasks get automated; roles evolve toward system supervision, AI-model validation, and integration oversight.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-l-4 border-blue-500 bg-blue-50 p-4 sm:p-6 rounded-r-lg">
+            <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-3">Avionics Engineer</h4>
+            <div className="space-y-3">
+              <div>
+                <span className="font-semibold text-blue-700">5-year impact:</span>
+                <p className="text-gray-700 mt-1">AI will handle most system checks and flight data analysis, while engineers watch and verify.</p>
+              </div>
+              <div>
+                <span className="font-semibold text-blue-700">10-year impact:</span>
+                <p className="text-gray-700 mt-1">Smart, self-learning avionics will do much of the troubleshooting automatically, reducing manual work.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-l-4 border-teal-500 bg-teal-50 p-4 sm:p-6 rounded-r-lg">
+            <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-3">Aircraft Maintenance Engineer (AME)</h4>
+            <div className="space-y-3">
+              <div>
+                <span className="font-semibold text-teal-700">5-year impact:</span>
+                <p className="text-gray-700 mt-1">AI and sensors will spot faults early, so engineers spend less time on manual checks.</p>
+              </div>
+              <div>
+                <span className="font-semibold text-teal-700">10-year impact:</span>
+                <p className="text-gray-700 mt-1">Robots and smart systems will do most inspections and small repairs, while engineers handle data-based maintenance work.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 p-4 bg-amber-50 border-l-4 border-amber-600 rounded-r-lg">
+            <p className="text-base sm:text-lg font-bold text-amber-900">
+              ⚠️ Caution: Job count may reduce slightly, but value of human-AI hybrid engineers will rise. Adapt or be replaced.
+            </p>
+          </div>
+        </div>
+      </div>
 
       <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-8">
         <div className="flex items-start space-x-3 sm:space-x-4 mb-6">
