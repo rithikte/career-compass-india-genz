@@ -121,35 +121,32 @@ export const India2040 = () => {
       </div>
 
       {/* 2040 Impact Vision Section */}
-      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-gray-100">
-        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6 text-center">
-          🇮🇳 2040 Impact Vision
-        </h3>
+      <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-indigo-200">
+        <div className="text-center mb-6">
+          <div className="text-4xl mb-4">🇮🇳</div>
+          <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
+            2040 Impact Vision
+          </h3>
+          <p className="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto mb-6">
+            India's strategic roadmap to become a global aerospace powerhouse
+          </p>
+        </div>
         
-        <div className="overflow-x-auto">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr className="bg-gradient-to-r from-indigo-50 to-indigo-100 hover:from-indigo-100 hover:to-indigo-200 transition-all duration-200 shadow-sm border-b-2 border-indigo-200">
-                <th className="text-left p-3 sm:p-4 font-bold text-indigo-700 text-sm sm:text-base">Key Projection</th>
-                <th className="text-left p-3 sm:p-4 font-bold text-indigo-700 text-sm sm:text-base">Source</th>
-                <th className="text-left p-3 sm:p-4 font-bold text-indigo-700 text-sm sm:text-base">Meaning</th>
-              </tr>
-            </thead>
-            <tbody>
-              {visionImpactData.map((item, index) => (
-                <tr key={index} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                  <td className="p-3 sm:p-4">
-                    <div className="flex items-start gap-2">
-                      <span className="text-xl flex-shrink-0">{item.icon}</span>
-                      <span className="text-sm sm:text-base text-gray-800">{item.projection}</span>
-                    </div>
-                  </td>
-                  <td className="p-3 sm:p-4 text-sm sm:text-base text-gray-600">{item.source}</td>
-                  <td className="p-3 sm:p-4 text-sm sm:text-base text-gray-700 font-medium">{item.meaning}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
+          {visionImpactData.map((item, index) => (
+            <div key={index} className="bg-white rounded-lg p-6 shadow-sm border border-indigo-100 hover:shadow-md transition-shadow">
+              <div className="text-3xl mb-4">{item.icon}</div>
+              <h4 className="text-base sm:text-lg font-bold text-indigo-900 mb-3">{item.projection}</h4>
+              <div className="mb-4">
+                <div className="text-xs font-semibold text-gray-500 mb-1">SOURCE</div>
+                <p className="text-sm text-gray-600">{item.source}</p>
+              </div>
+              <div className="bg-indigo-50 p-3 rounded-lg border-l-4 border-indigo-500">
+                <div className="text-xs font-semibold text-indigo-700 mb-1">CAREER IMPACT</div>
+                <p className="text-sm text-gray-700 font-medium">{item.meaning}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
