@@ -140,66 +140,208 @@ export const BestStates = () => {
       </div>
 
       {/* Top 5 States by Companies and Market Share */}
-      <div className="bg-white rounded-lg shadow-xl overflow-hidden mb-8 animate-fade-in">
-        <div className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white text-center p-6 sm:p-8">
-          <Building className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3" />
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
-            Top 5 States by Number of Companies (2025)
-          </h3>
-          <p className="text-purple-100 text-sm sm:text-base">
+      <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+        <div className="text-center mb-8">
+          <div className="flex items-center justify-center mb-3">
+            <Building className="w-7 h-7 text-purple-600 mr-2" />
+            <h3 className="text-3xl font-bold text-slate-900">Top 5 States by Number of Companies (2025)</h3>
+          </div>
+          <p className="text-gray-600">
             Aerospace, Avionics, and Aircraft Maintenance Companies with Market Share
           </p>
         </div>
 
-        <div className="overflow-x-auto">
-          <Table>
-            <TableHeader>
-              <TableRow className="bg-gradient-to-r from-purple-50 to-indigo-50 hover:from-purple-100 hover:to-indigo-100 shadow-sm border-b-2 border-indigo-100">
-                <TableHead className="text-indigo-600 font-bold text-center">Rank</TableHead>
-                <TableHead className="text-indigo-600 font-bold text-center">State</TableHead>
-                <TableHead className="text-indigo-600 font-bold text-center">Number of Companies</TableHead>
-                <TableHead className="text-indigo-600 font-bold text-center">Market Share</TableHead>
-                <TableHead className="text-indigo-600 font-bold text-left">Key Sectors/Notes</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              <TableRow className="hover:bg-purple-50">
-                <TableCell className="font-bold text-gray-900 text-center">1</TableCell>
-                <TableCell className="font-semibold text-gray-900 text-center">Karnataka</TableCell>
-                <TableCell className="text-center text-indigo-700 font-semibold">120–150+</TableCell>
-                <TableCell className="text-center text-purple-700 font-bold">~30%</TableCell>
-                <TableCell className="text-gray-700">Largest aerospace hub (Bengaluru) and private startups, ISRO, HAL, TATA, L&T</TableCell>
-              </TableRow>
-              <TableRow className="hover:bg-purple-50">
-                <TableCell className="font-bold text-gray-900 text-center">2</TableCell>
-                <TableCell className="font-semibold text-gray-900 text-center">Telangana</TableCell>
-                <TableCell className="text-center text-indigo-700 font-semibold">70–80+</TableCell>
-                <TableCell className="text-center text-purple-700 font-bold">~18%</TableCell>
-                <TableCell className="text-gray-700">Strong avionics & aerospace presence in Hyderabad, defense manufacturing cluster</TableCell>
-              </TableRow>
-              <TableRow className="hover:bg-purple-50">
-                <TableCell className="font-bold text-gray-900 text-center">3</TableCell>
-                <TableCell className="font-semibold text-gray-900 text-center">Maharashtra</TableCell>
-                <TableCell className="text-center text-indigo-700 font-semibold">90–100+</TableCell>
-                <TableCell className="text-center text-purple-700 font-bold">~20%</TableCell>
-                <TableCell className="text-gray-700">Manufacturing and MRO clusters in Pune, Mumbai, Nagpur, Tata, L&T, GKN</TableCell>
-              </TableRow>
-              <TableRow className="hover:bg-purple-50">
-                <TableCell className="font-bold text-gray-900 text-center">4</TableCell>
-                <TableCell className="font-semibold text-gray-900 text-center">Tamil Nadu</TableCell>
-                <TableCell className="text-center text-indigo-700 font-semibold">60–70+</TableCell>
-                <TableCell className="text-center text-purple-700 font-bold">~14%</TableCell>
-                <TableCell className="text-gray-700">Major aircraft maintenance and avionics hubs in Chennai, aero parks</TableCell>
-              </TableRow>
-              <TableRow className="hover:bg-purple-50">
-                <TableCell className="font-bold text-gray-900 text-center">5</TableCell>
-                <TableCell className="font-semibold text-gray-900 text-center">Delhi NCR</TableCell>
-                <TableCell className="text-center text-indigo-700 font-semibold">40–50+</TableCell>
-                <TableCell className="text-center text-purple-700 font-bold">~8%</TableCell>
-                <TableCell className="text-gray-700">MRO services, defense manufacturing, aviation service companies</TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Karnataka - Rank 1 */}
+          <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center">
+                <span className="text-2xl font-bold text-purple-600 mr-2">#1</span>
+                <h4 className="text-lg font-bold text-slate-900">Karnataka</h4>
+              </div>
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">
+                Leader
+              </span>
+            </div>
+
+            <p className="text-sm text-gray-600 mb-4">Largest aerospace hub (Bengaluru) and private startups</p>
+
+            <div className="text-center mb-4">
+              <div className="text-4xl font-bold text-purple-600">
+                120–150+
+              </div>
+              <div className="text-sm text-gray-600">Number of Companies</div>
+            </div>
+
+            <div className="bg-gray-50 p-4 rounded-lg mb-4">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-semibold text-gray-700">Market Share</span>
+                <span className="text-2xl font-bold text-purple-600">~30%</span>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <div className="text-xs font-semibold text-gray-500">TOP COMPANIES</div>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-2 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded">ISRO</span>
+                <span className="px-2 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded">HAL</span>
+                <span className="px-2 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded">TATA</span>
+                <span className="px-2 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded">L&T</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Maharashtra - Rank 2 */}
+          <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center">
+                <span className="text-2xl font-bold text-indigo-600 mr-2">#2</span>
+                <h4 className="text-lg font-bold text-slate-900">Maharashtra</h4>
+              </div>
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-800">
+                Strong
+              </span>
+            </div>
+
+            <p className="text-sm text-gray-600 mb-4">Manufacturing and MRO clusters in Pune, Mumbai, Nagpur</p>
+
+            <div className="text-center mb-4">
+              <div className="text-4xl font-bold text-indigo-600">
+                90–100+
+              </div>
+              <div className="text-sm text-gray-600">Number of Companies</div>
+            </div>
+
+            <div className="bg-gray-50 p-4 rounded-lg mb-4">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-semibold text-gray-700">Market Share</span>
+                <span className="text-2xl font-bold text-indigo-600">~20%</span>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <div className="text-xs font-semibold text-gray-500">TOP COMPANIES</div>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-2 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded">Tata</span>
+                <span className="px-2 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded">L&T</span>
+                <span className="px-2 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded">GKN</span>
+                <span className="px-2 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded">Mahindra</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Telangana - Rank 3 */}
+          <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center">
+                <span className="text-2xl font-bold text-blue-600 mr-2">#3</span>
+                <h4 className="text-lg font-bold text-slate-900">Telangana</h4>
+              </div>
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-800">
+                Growing
+              </span>
+            </div>
+
+            <p className="text-sm text-gray-600 mb-4">Strong avionics & aerospace presence in Hyderabad</p>
+
+            <div className="text-center mb-4">
+              <div className="text-4xl font-bold text-blue-600">
+                70–80+
+              </div>
+              <div className="text-sm text-gray-600">Number of Companies</div>
+            </div>
+
+            <div className="bg-gray-50 p-4 rounded-lg mb-4">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-semibold text-gray-700">Market Share</span>
+                <span className="text-2xl font-bold text-blue-600">~18%</span>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <div className="text-xs font-semibold text-gray-500">TOP COMPANIES</div>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded">Boeing</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded">Cyient</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded">DRDO</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Tamil Nadu - Rank 4 */}
+          <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center">
+                <span className="text-2xl font-bold text-teal-600 mr-2">#4</span>
+                <h4 className="text-lg font-bold text-slate-900">Tamil Nadu</h4>
+              </div>
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800">
+                Emerging
+              </span>
+            </div>
+
+            <p className="text-sm text-gray-600 mb-4">Major aircraft maintenance and avionics hubs in Chennai</p>
+
+            <div className="text-center mb-4">
+              <div className="text-4xl font-bold text-teal-600">
+                60–70+
+              </div>
+              <div className="text-sm text-gray-600">Number of Companies</div>
+            </div>
+
+            <div className="bg-gray-50 p-4 rounded-lg mb-4">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-semibold text-gray-700">Market Share</span>
+                <span className="text-2xl font-bold text-teal-600">~14%</span>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <div className="text-xs font-semibold text-gray-500">TOP COMPANIES</div>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-2 py-1 bg-teal-50 text-teal-700 text-xs font-medium rounded">Airbus</span>
+                <span className="px-2 py-1 bg-teal-50 text-teal-700 text-xs font-medium rounded">Boeing</span>
+                <span className="px-2 py-1 bg-teal-50 text-teal-700 text-xs font-medium rounded">Collins</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Delhi NCR - Rank 5 */}
+          <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center">
+                <span className="text-2xl font-bold text-cyan-600 mr-2">#5</span>
+                <h4 className="text-lg font-bold text-slate-900">Delhi NCR</h4>
+              </div>
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800">
+                Steady
+              </span>
+            </div>
+
+            <p className="text-sm text-gray-600 mb-4">MRO services, defense manufacturing, aviation services</p>
+
+            <div className="text-center mb-4">
+              <div className="text-4xl font-bold text-cyan-600">
+                40–50+
+              </div>
+              <div className="text-sm text-gray-600">Number of Companies</div>
+            </div>
+
+            <div className="bg-gray-50 p-4 rounded-lg mb-4">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-semibold text-gray-700">Market Share</span>
+                <span className="text-2xl font-bold text-cyan-600">~8%</span>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <div className="text-xs font-semibold text-gray-500">KEY SECTORS</div>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-2 py-1 bg-cyan-50 text-cyan-700 text-xs font-medium rounded">Defense MRO</span>
+                <span className="px-2 py-1 bg-cyan-50 text-cyan-700 text-xs font-medium rounded">Aviation Services</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
