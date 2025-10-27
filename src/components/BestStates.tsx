@@ -426,52 +426,131 @@ export const BestStates = () => {
       </div>
 
       {/* Future Projections Table */}
-      <div className="bg-white rounded-lg shadow-xl overflow-hidden mb-8 animate-fade-in">
-        <div className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-center p-6 sm:p-8">
-          <TrendingUp className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3" />
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
-            New Job Openings based on New Companies Opening
-          </h3>
-          <p className="text-blue-100 text-sm sm:text-base">when this projected Companies & startups Open they Create Extra 1 time New Jobs </p>
+      <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+        <div className="text-center mb-8">
+          <div className="flex items-center justify-center mb-3">
+            <TrendingUp className="w-7 h-7 text-blue-600 mr-2" />
+            <h3 className="text-3xl font-bold text-slate-900">New Job Openings based on New Companies Opening</h3>
+          </div>
+          <p className="text-gray-600">
+            When these projected companies & startups open, they create extra one-time new jobs
+          </p>
         </div>
 
-        <div className="overflow-x-auto">
-          <Table>
-            <TableHeader>
-              <TableRow className="bg-gradient-to-r from-blue-50 to-sky-50 hover:from-blue-100 hover:to-sky-100 shadow-sm border-b-2 border-sky-100">
-                <TableHead className="text-sky-600 font-bold text-center">Year (Combined new entrants)</TableHead>
-                <TableHead className="text-sky-600 font-bold text-center">Total new jobs (3 roles)</TableHead>
-                <TableHead className="text-sky-600 font-bold text-center">AME</TableHead>
-                <TableHead className="text-sky-600 font-bold text-center">Avionics</TableHead>
-                <TableHead className="text-sky-600 font-bold text-center">Aerospace Eng.</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              <TableRow className="hover:bg-blue-50">
-                <TableCell className="font-bold text-gray-900 text-center text-base">2030 (40–60 suppliers; 120–180 startups)</TableCell>
-                <TableCell className="text-center text-blue-700 font-semibold">~1,600 – 4,600</TableCell>
-                <TableCell className="text-center text-indigo-700 font-semibold">~650 – 2,000</TableCell>
-                <TableCell className="text-center text-purple-700 font-semibold">~400 – 1,400</TableCell>
-                <TableCell className="text-center text-teal-700 font-semibold">~400 – 1,200</TableCell>
-              </TableRow>
-              <TableRow className="hover:bg-blue-50">
-                <TableCell className="font-bold text-gray-900 text-center text-base">2035 (80–120; 250–350)</TableCell>
-                <TableCell className="text-center text-blue-700 font-semibold">~3,300 – 9,000</TableCell>
-                <TableCell className="text-center text-indigo-700 font-semibold">~1,300 – 3,800</TableCell>
-                <TableCell className="text-center text-purple-700 font-semibold">~800 – 2,700</TableCell>
-                <TableCell className="text-center text-teal-700 font-semibold">~800 – 2,500</TableCell>
-              </TableRow>
-              <TableRow className="hover:bg-blue-50">
-                <TableCell className="font-bold text-gray-900 text-center text-base">2040 (150–200; 400–500)</TableCell>
-                <TableCell className="text-center text-blue-700 font-semibold">~5,750 – 14,000</TableCell>
-                <TableCell className="text-center text-indigo-700 font-semibold">~2,300 – 5,800</TableCell>
-                <TableCell className="text-center text-purple-700 font-semibold">~1,400 – 4,700</TableCell>
-                <TableCell className="text-center text-teal-700 font-semibold">~1,400 – 3,500</TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* 2030 Card */}
+          <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
+            <div className="flex items-center justify-between mb-4">
+              <h4 className="text-lg font-bold text-slate-900">2030</h4>
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800">
+                Near Term
+              </span>
+            </div>
+
+            <p className="text-sm text-gray-600 mb-4">40–60 suppliers; 120–180 startups entering market</p>
+
+            <div className="text-center mb-4">
+              <div className="text-4xl font-bold text-blue-600">
+                1,600–4,600
+              </div>
+              <div className="text-sm text-gray-600">Total New Jobs</div>
+            </div>
+
+            <div className="bg-gray-50 p-4 rounded-lg mb-4">
+              <div className="text-xs font-semibold text-gray-500 mb-2">JOB BREAKDOWN</div>
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">AME</span>
+                  <span className="font-semibold text-indigo-600">650–2,000</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">Avionics</span>
+                  <span className="font-semibold text-purple-600">400–1,400</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">Aerospace Eng.</span>
+                  <span className="font-semibold text-teal-600">400–1,200</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 2035 Card */}
+          <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
+            <div className="flex items-center justify-between mb-4">
+              <h4 className="text-lg font-bold text-slate-900">2035</h4>
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-800">
+                Mid Term
+              </span>
+            </div>
+
+            <p className="text-sm text-gray-600 mb-4">80–120 suppliers; 250–350 startups expanding presence</p>
+
+            <div className="text-center mb-4">
+              <div className="text-4xl font-bold text-blue-600">
+                3,300–9,000
+              </div>
+              <div className="text-sm text-gray-600">Total New Jobs</div>
+            </div>
+
+            <div className="bg-gray-50 p-4 rounded-lg mb-4">
+              <div className="text-xs font-semibold text-gray-500 mb-2">JOB BREAKDOWN</div>
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">AME</span>
+                  <span className="font-semibold text-indigo-600">1,300–3,800</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">Avionics</span>
+                  <span className="font-semibold text-purple-600">800–2,700</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">Aerospace Eng.</span>
+                  <span className="font-semibold text-teal-600">800–2,500</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 2040 Card */}
+          <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
+            <div className="flex items-center justify-between mb-4">
+              <h4 className="text-lg font-bold text-slate-900">2040</h4>
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">
+                Long Term
+              </span>
+            </div>
+
+            <p className="text-sm text-gray-600 mb-4">150–200 suppliers; 400–500 startups full ecosystem</p>
+
+            <div className="text-center mb-4">
+              <div className="text-4xl font-bold text-blue-600">
+                5,750–14,000
+              </div>
+              <div className="text-sm text-gray-600">Total New Jobs</div>
+            </div>
+
+            <div className="bg-gray-50 p-4 rounded-lg mb-4">
+              <div className="text-xs font-semibold text-gray-500 mb-2">JOB BREAKDOWN</div>
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">AME</span>
+                  <span className="font-semibold text-indigo-600">2,300–5,800</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">Avionics</span>
+                  <span className="font-semibold text-purple-600">1,400–4,700</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">Aerospace Eng.</span>
+                  <span className="font-semibold text-teal-600">1,400–3,500</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
 
       {/* No. of Applications for each Job Role */}
       <div className="bg-white rounded-lg shadow-xl overflow-hidden mb-8 animate-fade-in">
