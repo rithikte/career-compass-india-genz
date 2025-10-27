@@ -439,123 +439,111 @@ export const BestStates = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* 2030 Card */}
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 border-2 border-blue-100 hover:border-blue-200">
-            <div className="flex items-center justify-between mb-6">
-              <h4 className="text-2xl font-bold text-slate-900">2030</h4>
-              <span className="px-4 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-md">
+          <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
+            <div className="flex items-center justify-between mb-4">
+              <h4 className="text-lg font-bold text-slate-900">2030</h4>
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800">
                 Near Term
               </span>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4 mb-6 border border-blue-100">
-              <p className="text-sm text-slate-700 font-medium leading-relaxed">
-                <span className="font-bold text-blue-600">40–60</span> suppliers • <span className="font-bold text-indigo-600">120–180</span> startups entering market
-              </p>
-            </div>
+            <p className="text-sm text-gray-600 mb-4">40–60 suppliers; 120–180 startups entering market</p>
 
-            <div className="text-center mb-6 bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-md border border-blue-100">
-              <div className="text-5xl font-extrabold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-2">
+            <div className="text-center mb-4">
+              <div className="text-4xl font-bold text-blue-600">
                 1,600–4,600
               </div>
-              <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">Total New Jobs</div>
+              <div className="text-sm text-gray-600">Total New Jobs</div>
             </div>
 
-            <div className="bg-white/90 backdrop-blur-sm p-5 rounded-xl shadow-md border border-blue-100">
-              <div className="text-xs font-bold text-slate-500 mb-3 uppercase tracking-wider">Job Breakdown</div>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center p-2 bg-indigo-50 rounded-lg">
-                  <span className="text-sm font-semibold text-slate-700">AME</span>
-                  <span className="font-bold text-indigo-600">650–2,000</span>
+            <div className="bg-gray-50 p-4 rounded-lg mb-4">
+              <div className="text-xs font-semibold text-gray-500 mb-2">JOB BREAKDOWN</div>
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">AME</span>
+                  <span className="font-semibold text-indigo-600">650–2,000</span>
                 </div>
-                <div className="flex justify-between items-center p-2 bg-purple-50 rounded-lg">
-                  <span className="text-sm font-semibold text-slate-700">Avionics</span>
-                  <span className="font-bold text-purple-600">400–1,400</span>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">Avionics</span>
+                  <span className="font-semibold text-purple-600">400–1,400</span>
                 </div>
-                <div className="flex justify-between items-center p-2 bg-teal-50 rounded-lg">
-                  <span className="text-sm font-semibold text-slate-700">Aerospace Eng.</span>
-                  <span className="font-bold text-teal-600">400–1,200</span>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">Aerospace Eng.</span>
+                  <span className="font-semibold text-teal-600">400–1,200</span>
                 </div>
               </div>
             </div>
           </div>
 
           {/* 2035 Card */}
-          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 border-2 border-amber-100 hover:border-amber-200">
-            <div className="flex items-center justify-between mb-6">
-              <h4 className="text-2xl font-bold text-slate-900">2035</h4>
-              <span className="px-4 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-md">
+          <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
+            <div className="flex items-center justify-between mb-4">
+              <h4 className="text-lg font-bold text-slate-900">2035</h4>
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-800">
                 Mid Term
               </span>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4 mb-6 border border-amber-100">
-              <p className="text-sm text-slate-700 font-medium leading-relaxed">
-                <span className="font-bold text-amber-600">80–120</span> suppliers • <span className="font-bold text-orange-600">250–350</span> startups expanding presence
-              </p>
-            </div>
+            <p className="text-sm text-gray-600 mb-4">80–120 suppliers; 250–350 startups expanding presence</p>
 
-            <div className="text-center mb-6 bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-md border border-amber-100">
-              <div className="text-5xl font-extrabold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent mb-2">
+            <div className="text-center mb-4">
+              <div className="text-4xl font-bold text-blue-600">
                 3,300–9,000
               </div>
-              <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">Total New Jobs</div>
+              <div className="text-sm text-gray-600">Total New Jobs</div>
             </div>
 
-            <div className="bg-white/90 backdrop-blur-sm p-5 rounded-xl shadow-md border border-amber-100">
-              <div className="text-xs font-bold text-slate-500 mb-3 uppercase tracking-wider">Job Breakdown</div>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center p-2 bg-indigo-50 rounded-lg">
-                  <span className="text-sm font-semibold text-slate-700">AME</span>
-                  <span className="font-bold text-indigo-600">1,300–3,800</span>
+            <div className="bg-gray-50 p-4 rounded-lg mb-4">
+              <div className="text-xs font-semibold text-gray-500 mb-2">JOB BREAKDOWN</div>
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">AME</span>
+                  <span className="font-semibold text-indigo-600">1,300–3,800</span>
                 </div>
-                <div className="flex justify-between items-center p-2 bg-purple-50 rounded-lg">
-                  <span className="text-sm font-semibold text-slate-700">Avionics</span>
-                  <span className="font-bold text-purple-600">800–2,700</span>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">Avionics</span>
+                  <span className="font-semibold text-purple-600">800–2,700</span>
                 </div>
-                <div className="flex justify-between items-center p-2 bg-teal-50 rounded-lg">
-                  <span className="text-sm font-semibold text-slate-700">Aerospace Eng.</span>
-                  <span className="font-bold text-teal-600">800–2,500</span>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">Aerospace Eng.</span>
+                  <span className="font-semibold text-teal-600">800–2,500</span>
                 </div>
               </div>
             </div>
           </div>
 
           {/* 2040 Card */}
-          <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 border-2 border-emerald-100 hover:border-emerald-200">
-            <div className="flex items-center justify-between mb-6">
-              <h4 className="text-2xl font-bold text-slate-900">2040</h4>
-              <span className="px-4 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-md">
+          <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
+            <div className="flex items-center justify-between mb-4">
+              <h4 className="text-lg font-bold text-slate-900">2040</h4>
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">
                 Long Term
               </span>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4 mb-6 border border-emerald-100">
-              <p className="text-sm text-slate-700 font-medium leading-relaxed">
-                <span className="font-bold text-emerald-600">150–200</span> suppliers • <span className="font-bold text-teal-600">400–500</span> startups full ecosystem
-              </p>
-            </div>
+            <p className="text-sm text-gray-600 mb-4">150–200 suppliers; 400–500 startups full ecosystem</p>
 
-            <div className="text-center mb-6 bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-md border border-emerald-100">
-              <div className="text-5xl font-extrabold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-2">
+            <div className="text-center mb-4">
+              <div className="text-4xl font-bold text-blue-600">
                 5,750–14,000
               </div>
-              <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">Total New Jobs</div>
+              <div className="text-sm text-gray-600">Total New Jobs</div>
             </div>
 
-            <div className="bg-white/90 backdrop-blur-sm p-5 rounded-xl shadow-md border border-emerald-100">
-              <div className="text-xs font-bold text-slate-500 mb-3 uppercase tracking-wider">Job Breakdown</div>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center p-2 bg-indigo-50 rounded-lg">
-                  <span className="text-sm font-semibold text-slate-700">AME</span>
-                  <span className="font-bold text-indigo-600">2,300–5,800</span>
+            <div className="bg-gray-50 p-4 rounded-lg mb-4">
+              <div className="text-xs font-semibold text-gray-500 mb-2">JOB BREAKDOWN</div>
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">AME</span>
+                  <span className="font-semibold text-indigo-600">2,300–5,800</span>
                 </div>
-                <div className="flex justify-between items-center p-2 bg-purple-50 rounded-lg">
-                  <span className="text-sm font-semibold text-slate-700">Avionics</span>
-                  <span className="font-bold text-purple-600">1,400–4,700</span>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">Avionics</span>
+                  <span className="font-semibold text-purple-600">1,400–4,700</span>
                 </div>
-                <div className="flex justify-between items-center p-2 bg-teal-50 rounded-lg">
-                  <span className="text-sm font-semibold text-slate-700">Aerospace Eng.</span>
-                  <span className="font-bold text-teal-600">1,400–3,500</span>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">Aerospace Eng.</span>
+                  <span className="font-semibold text-teal-600">1,400–3,500</span>
                 </div>
               </div>
             </div>
