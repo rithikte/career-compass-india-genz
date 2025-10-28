@@ -2,6 +2,7 @@ import React from 'react';
 import { MapPin, TrendingUp, Building, AlertTriangle } from 'lucide-react';
 import SourceBadge from './SourceBadge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line, Area, AreaChart } from 'recharts';
 const statesData = [{
   state: 'Karnataka',
   city: 'Bengaluru',
@@ -343,6 +344,38 @@ export const BestStates = () => {
             </div>
           </div>
         </div>
+
+        {/* Chart for Companies by State */}
+        <div className="mt-8 bg-gradient-to-br from-gray-50 to-white p-6 rounded-lg border border-gray-200">
+          <h4 className="text-xl font-bold text-slate-900 mb-6 text-center">Companies & Market Share Comparison</h4>
+          <ResponsiveContainer width="100%" height={350}>
+            <BarChart
+              data={[
+                { state: 'Karnataka', companies: 150, marketShare: 30 },
+                { state: 'Maharashtra', companies: 100, marketShare: 20 },
+                { state: 'Telangana', companies: 80, marketShare: 18 },
+                { state: 'Tamil Nadu', companies: 70, marketShare: 14 },
+                { state: 'Delhi NCR', companies: 50, marketShare: 8 }
+              ]}
+              margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+              <XAxis dataKey="state" tick={{ fill: '#475569', fontSize: 12 }} />
+              <YAxis yAxisId="left" tick={{ fill: '#475569', fontSize: 12 }} label={{ value: 'Number of Companies', angle: -90, position: 'insideLeft', style: { fill: '#475569' } }} />
+              <YAxis yAxisId="right" orientation="right" tick={{ fill: '#475569', fontSize: 12 }} label={{ value: 'Market Share (%)', angle: 90, position: 'insideRight', style: { fill: '#475569' } }} />
+              <Tooltip 
+                contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', border: '1px solid #e5e7eb', borderRadius: '8px' }}
+                labelStyle={{ fontWeight: 'bold', color: '#1e293b' }}
+              />
+              <Legend wrapperStyle={{ paddingTop: '20px' }} />
+              <Bar yAxisId="left" dataKey="companies" fill="#8b5cf6" name="Number of Companies" radius={[8, 8, 0, 0]} />
+              <Bar yAxisId="right" dataKey="marketShare" fill="#06b6d4" name="Market Share (%)" radius={[8, 8, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+          <p className="text-sm text-gray-600 text-center mt-4 italic">
+            Karnataka leads with the highest number of companies and market share
+          </p>
+        </div>
       </div>
 
       {/* Average New Jobs Opening Per Year */}
@@ -422,6 +455,38 @@ export const BestStates = () => {
               </TableRow>
             </TableBody>
           </Table>
+        </div>
+
+        {/* Chart for Average New Jobs Per Year */}
+        <div className="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-lg border border-emerald-200">
+          <h4 className="text-xl font-bold text-slate-900 mb-6 text-center">Job Openings Distribution by State & Role</h4>
+          <ResponsiveContainer width="100%" height={400}>
+            <BarChart
+              data={[
+                { state: 'Karnataka', AME: 600, Avionics: 210, Aerospace: 360 },
+                { state: 'Tamil Nadu', AME: 440, Avionics: 154, Aerospace: 264 },
+                { state: 'Maharashtra', AME: 360, Avionics: 126, Aerospace: 216 },
+                { state: 'Telangana', AME: 400, Avionics: 140, Aerospace: 240 },
+                { state: 'Delhi NCR', AME: 200, Avionics: 70, Aerospace: 120 }
+              ]}
+              margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" stroke="#d1fae5" />
+              <XAxis dataKey="state" tick={{ fill: '#047857', fontSize: 12 }} />
+              <YAxis tick={{ fill: '#047857', fontSize: 12 }} label={{ value: 'Jobs Per Year', angle: -90, position: 'insideLeft', style: { fill: '#047857' } }} />
+              <Tooltip 
+                contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', border: '1px solid #a7f3d0', borderRadius: '8px' }}
+                labelStyle={{ fontWeight: 'bold', color: '#065f46' }}
+              />
+              <Legend wrapperStyle={{ paddingTop: '20px' }} />
+              <Bar dataKey="AME" fill="#3b82f6" name="AME Jobs/Year" radius={[8, 8, 0, 0]} />
+              <Bar dataKey="Avionics" fill="#6366f1" name="Avionics Jobs/Year" radius={[8, 8, 0, 0]} />
+              <Bar dataKey="Aerospace" fill="#8b5cf6" name="Aerospace Eng Jobs/Year" radius={[8, 8, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+          <p className="text-sm text-gray-600 text-center mt-4 italic">
+            Karnataka offers the highest job openings across all three roles
+          </p>
         </div>
       </div>
 
@@ -549,6 +614,50 @@ export const BestStates = () => {
             </div>
           </div>
         </div>
+
+        {/* Chart for Future Job Projections */}
+        <div className="mt-8 bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg border border-blue-200">
+          <h4 className="text-xl font-bold text-slate-900 mb-6 text-center">Job Growth Trajectory (2030-2040)</h4>
+          <ResponsiveContainer width="100%" height={400}>
+            <AreaChart
+              data={[
+                { year: '2030', AME: 2000, Avionics: 1400, Aerospace: 1200, Total: 4600 },
+                { year: '2035', AME: 3800, Avionics: 2700, Aerospace: 2500, Total: 9000 },
+                { year: '2040', AME: 5800, Avionics: 4700, Aerospace: 3500, Total: 14000 }
+              ]}
+              margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+            >
+              <defs>
+                <linearGradient id="colorAME" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#6366f1" stopOpacity={0.8}/>
+                  <stop offset="95%" stopColor="#6366f1" stopOpacity={0.1}/>
+                </linearGradient>
+                <linearGradient id="colorAvionics" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#8b5cf6" stopOpacity={0.8}/>
+                  <stop offset="95%" stopColor="#8b5cf6" stopOpacity={0.1}/>
+                </linearGradient>
+                <linearGradient id="colorAerospace" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#14b8a6" stopOpacity={0.8}/>
+                  <stop offset="95%" stopColor="#14b8a6" stopOpacity={0.1}/>
+                </linearGradient>
+              </defs>
+              <CartesianGrid strokeDasharray="3 3" stroke="#dbeafe" />
+              <XAxis dataKey="year" tick={{ fill: '#1e40af', fontSize: 12 }} />
+              <YAxis tick={{ fill: '#1e40af', fontSize: 12 }} label={{ value: 'Number of Jobs', angle: -90, position: 'insideLeft', style: { fill: '#1e40af' } }} />
+              <Tooltip 
+                contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', border: '1px solid #bfdbfe', borderRadius: '8px' }}
+                labelStyle={{ fontWeight: 'bold', color: '#1e3a8a' }}
+              />
+              <Legend wrapperStyle={{ paddingTop: '20px' }} />
+              <Area type="monotone" dataKey="AME" stroke="#6366f1" fillOpacity={1} fill="url(#colorAME)" name="AME Jobs" />
+              <Area type="monotone" dataKey="Avionics" stroke="#8b5cf6" fillOpacity={1} fill="url(#colorAvionics)" name="Avionics Jobs" />
+              <Area type="monotone" dataKey="Aerospace" stroke="#14b8a6" fillOpacity={1} fill="url(#colorAerospace)" name="Aerospace Eng Jobs" />
+            </AreaChart>
+          </ResponsiveContainer>
+          <p className="text-sm text-gray-600 text-center mt-4 italic">
+            Exponential growth expected across all roles with AME jobs leading the expansion
+          </p>
+        </div>
       </div>
 
 
@@ -668,6 +777,38 @@ export const BestStates = () => {
               </TableRow>
             </TableBody>
           </Table>
+        </div>
+
+        {/* Chart for Job Share by State */}
+        <div className="bg-gradient-to-br from-cyan-50 to-blue-50 p-6 rounded-lg border border-cyan-200">
+          <h4 className="text-xl font-bold text-slate-900 mb-6 text-center">Job Share Distribution Across States</h4>
+          <ResponsiveContainer width="100%" height={400}>
+            <PieChart>
+              <Pie
+                data={[
+                  { name: 'Karnataka', value: 30, fill: '#8b5cf6' },
+                  { name: 'Tamil Nadu', value: 22, fill: '#06b6d4' },
+                  { name: 'Telangana', value: 20, fill: '#3b82f6' },
+                  { name: 'Maharashtra', value: 18, fill: '#6366f1' },
+                  { name: 'Andhra Pradesh', value: 10, fill: '#14b8a6' }
+                ]}
+                cx="50%"
+                cy="50%"
+                labelLine={true}
+                label={({ name, value }) => `${name}: ${value}%`}
+                outerRadius={130}
+                dataKey="value"
+              >
+              </Pie>
+              <Tooltip 
+                contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', border: '1px solid #bae6fd', borderRadius: '8px' }}
+                formatter={(value) => `${value}%`}
+              />
+            </PieChart>
+          </ResponsiveContainer>
+          <p className="text-sm text-gray-600 text-center mt-4 italic">
+            Karnataka and Tamil Nadu together account for more than 50% of aerospace jobs in India
+          </p>
         </div>
       </div>
 
