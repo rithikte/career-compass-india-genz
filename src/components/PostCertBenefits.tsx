@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { TrendingUp, Users, Briefcase, DollarSign } from 'lucide-react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from 'recharts';
 import SourceBadge from './SourceBadge';
 
 const benefitsData = [
@@ -95,98 +94,6 @@ export const PostCertBenefits = () => {
             <div className="text-sm opacity-90">{metric.description}</div>
           </div>
         ))}
-      </div>
-
-      {/* Benefits Comparison Chart */}
-      <div className="mb-8">
-        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 text-center">Benefits Comparison Across Roles</h3>
-        <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-lg p-4 sm:p-6">
-          <ResponsiveContainer width="100%" height={350}>
-            <BarChart
-              data={benefitsData.map(item => ({
-                role: item.role.replace('Aircraft Maintenance Eng.', 'AME'),
-                'Promotion Boost': item.promotionBoost,
-                'Salary Hike': item.salaryHike,
-                'Interview Boost': item.interviewBoost * 10
-              }))}
-              margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
-            >
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
-              <XAxis 
-                dataKey="role" 
-                angle={-20}
-                textAnchor="end"
-                height={80}
-                tick={{ fill: 'hsl(var(--foreground))' }}
-                axisLine={{ stroke: 'hsl(var(--border))' }}
-              />
-              <YAxis 
-                label={{ value: 'Percentage (%)', angle: -90, position: 'insideLeft', fill: 'hsl(var(--foreground))' }}
-                tick={{ fill: 'hsl(var(--foreground))' }}
-                axisLine={{ stroke: 'hsl(var(--border))' }}
-              />
-              <Tooltip 
-                contentStyle={{ 
-                  backgroundColor: 'hsl(var(--background))',
-                  border: '1px solid hsl(var(--border))',
-                  borderRadius: '8px'
-                }}
-                formatter={(value, name) => {
-                  if (name === 'Interview Boost') return `${(value as number / 10).toFixed(1)}x`;
-                  return `${value}%`;
-                }}
-              />
-              <Legend wrapperStyle={{ paddingTop: '20px' }} />
-              <Bar dataKey="Promotion Boost" fill="hsl(142 76% 36%)" radius={[8, 8, 0, 0]} />
-              <Bar dataKey="Salary Hike" fill="hsl(221 83% 53%)" radius={[8, 8, 0, 0]} />
-              <Bar dataKey="Interview Boost" fill="hsl(262 83% 58%)" radius={[8, 8, 0, 0]} />
-            </BarChart>
-          </ResponsiveContainer>
-          <p className="text-sm text-slate-600 text-center mt-4">*Interview Boost values scaled (×10) for visibility</p>
-        </div>
-      </div>
-
-      {/* Salary Before vs After Chart */}
-      <div className="mb-8">
-        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 text-center">Salary Impact: Before vs After Certification</h3>
-        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-4 sm:p-6">
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart
-              data={benefitsData.map(item => ({
-                role: item.role.replace('Aircraft Maintenance Eng.', 'AME'),
-                'Before': parseFloat(item.details.before.replace('₹', '').replace('L entry level', '')),
-                'After': parseFloat(item.details.after.replace('₹', '').replace('L starting salary', ''))
-              }))}
-              margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
-            >
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
-              <XAxis 
-                dataKey="role"
-                angle={-20}
-                textAnchor="end"
-                height={80}
-                tick={{ fill: 'hsl(var(--foreground))' }}
-                axisLine={{ stroke: 'hsl(var(--border))' }}
-              />
-              <YAxis 
-                label={{ value: 'Salary (₹ Lakhs)', angle: -90, position: 'insideLeft', fill: 'hsl(var(--foreground))' }}
-                tick={{ fill: 'hsl(var(--foreground))' }}
-                axisLine={{ stroke: 'hsl(var(--border))' }}
-              />
-              <Tooltip 
-                contentStyle={{ 
-                  backgroundColor: 'hsl(var(--background))',
-                  border: '1px solid hsl(var(--border))',
-                  borderRadius: '8px'
-                }}
-                formatter={(value) => `₹${value}L`}
-              />
-              <Legend wrapperStyle={{ paddingTop: '20px' }} />
-              <Bar dataKey="Before" fill="hsl(0 72% 51%)" radius={[8, 8, 0, 0]} />
-              <Bar dataKey="After" fill="hsl(142 76% 36%)" radius={[8, 8, 0, 0]} />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
