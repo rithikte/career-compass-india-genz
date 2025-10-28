@@ -1,5 +1,5 @@
 import React from 'react';
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend } from 'recharts';
 import { Brain, AlertTriangle, Shield } from 'lucide-react';
 import SourceBadge from './SourceBadge';
 const aiImpactData = [{
@@ -133,6 +133,49 @@ export const AIImpact = () => {
             </tbody>
           </table>
         </div>
+        
+        <div className="mt-8">
+          <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-4 text-center">AI Impact Comparison Chart</h4>
+          <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-lg p-4 sm:p-6">
+            <ResponsiveContainer width="100%" height={300}>
+              <BarChart
+                data={[
+                  { role: 'Aerospace', '5 Years': 28, '10 Years': 38 },
+                  { role: 'Avionics', '5 Years': 33, '10 Years': 43 },
+                  { role: 'AME', '5 Years': 30, '10 Years': 38 }
+                ]}
+                margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
+                <XAxis 
+                  dataKey="role" 
+                  tick={{ fill: 'hsl(var(--foreground))' }}
+                  axisLine={{ stroke: 'hsl(var(--border))' }}
+                />
+                <YAxis 
+                  label={{ value: 'AI Impact (%)', angle: -90, position: 'insideLeft', fill: 'hsl(var(--foreground))' }}
+                  tick={{ fill: 'hsl(var(--foreground))' }}
+                  axisLine={{ stroke: 'hsl(var(--border))' }}
+                />
+                <Tooltip 
+                  contentStyle={{ 
+                    backgroundColor: 'hsl(var(--background))',
+                    border: '1px solid hsl(var(--border))',
+                    borderRadius: '8px'
+                  }}
+                  formatter={(value) => `${value}%`}
+                />
+                <Legend 
+                  wrapperStyle={{ paddingTop: '20px' }}
+                  iconType="rect"
+                />
+                <Bar dataKey="5 Years" fill="hsl(221 83% 53%)" radius={[8, 8, 0, 0]} />
+                <Bar dataKey="10 Years" fill="hsl(0 72% 51%)" radius={[8, 8, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
         <div className="mt-6 text-center">
           <p className="text-base sm:text-lg font-bold text-red-600">
             ⚠️ Ignoring AI skills reduces hiring chances by 40%.
