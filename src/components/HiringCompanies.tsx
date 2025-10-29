@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Building, MapPin, TrendingUp, Users, Briefcase } from 'lucide-react';
+import { Building, MapPin, TrendingUp, Users, Briefcase, Zap, Building2, Rocket } from 'lucide-react';
 import SourceBadge from './SourceBadge';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 const publicSectorData = [{
   role: 'Aerospace Engineer',
   companies: ['HAL', 'Boeing India', 'Airbus India', 'ISRO', 'DRDO'],
@@ -165,51 +164,112 @@ export const HiringCompanies = () => {
         </div>
       </div>
 
-      {/* Company Growth Projections */}
-      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 mt-8">
-        <div className="text-center mb-6">
-          <div className="flex items-center justify-center mb-3">
-            <Briefcase className="w-6 h-6 sm:w-7 sm:h-7 text-indigo-600 mr-2" />
-            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">New Company Growth Projections by 2040</h3>
-          </div>
+      {/* Jobs Growth Rate by 2040 */}
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 mt-8 border border-gray-100">
+        <div className="text-center mb-8">
+          <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
+            Jobs Growth Rate by 2040
+          </h3>
           <p className="text-sm sm:text-base text-gray-600">
-            How many companies & startups will realistically add in India
+            How fast new aerospace companies are entering the Indian market
           </p>
         </div>
 
-        <div className="overflow-x-auto">
-          <Table>
-            <TableHeader>
-              <TableRow className="bg-gradient-to-r from-blue-50 to-indigo-100 shadow-sm border-b-2 border-blue-200">
-                <TableHead className="text-blue-700 font-bold text-center">Year</TableHead>
-                <TableHead className="text-blue-700 font-bold text-center">
-                  New Foreign/Tier-1/2 Suppliers<br />Expanding/Entering
-                </TableHead>
-                <TableHead className="text-blue-700 font-bold text-center">
-                  New Indian Startups<br />(Aviation, Avionics/AI, MRO-tech)
-                </TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              <TableRow className="hover:bg-blue-50 transition-colors">
-                <TableCell className="font-semibold text-center text-indigo-700">2030</TableCell>
-                <TableCell className="text-center font-medium">+40–60</TableCell>
-                <TableCell className="text-center font-medium">+120–180</TableCell>
-              </TableRow>
-              <TableRow className="hover:bg-blue-50 transition-colors">
-                <TableCell className="font-semibold text-center text-indigo-700">2035 (Combined)</TableCell>
-                <TableCell className="text-center font-medium">+80–120</TableCell>
-                <TableCell className="text-center font-medium">+250–350</TableCell>
-              </TableRow>
-              <TableRow className="hover:bg-blue-50 transition-colors">
-                <TableCell className="font-semibold text-center text-indigo-700">2040 (Combined)</TableCell>
-                <TableCell className="text-center font-medium">+150–200</TableCell>
-                <TableCell className="text-center font-medium">+400–500</TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Foreign/Tier-1/2 Companies Card */}
+          <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center">
+                <Building2 className="w-6 h-6 mr-2 text-indigo-600" />
+                <h4 className="text-lg font-bold text-slate-900">Foreign/Tier-1/2 Companies</h4>
+              </div>
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">
+                Steady Entry
+              </span>
+            </div>
 
+            <p className="text-sm text-gray-600 mb-4">
+              Established international companies entering Indian market
+            </p>
+
+            <div className="text-center mb-4">
+              <div className="text-4xl font-bold text-indigo-600">
+                14%
+              </div>
+              <div className="text-sm text-gray-600">Average Annual Growth Rate</div>
+            </div>
+
+            <div className="bg-gray-50 p-4 rounded-lg mb-4">
+              <div className="flex items-start">
+                <Zap className="w-4 h-4 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
+                <p className="text-sm text-gray-700">Global supply chain shift</p>
+              </div>
+            </div>
+
+            <div className="space-y-3 mb-4">
+              <div className="text-xs font-semibold text-gray-500">ANNUAL GROWTH BY YEAR</div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-600">2030</span>
+                <span className="font-semibold text-indigo-600">15%</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-600">2035</span>
+                <span className="font-semibold text-indigo-600">14–16%</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-600">2040</span>
+                <span className="font-semibold text-indigo-600">13–14%</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Startups Card */}
+          <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center">
+                <Rocket className="w-6 h-6 mr-2 text-purple-600" />
+                <h4 className="text-lg font-bold text-slate-900">Startups</h4>
+              </div>
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-800">
+                Rapid Growth
+              </span>
+            </div>
+
+            <p className="text-sm text-gray-600 mb-4">
+              Newer, smaller firms that build specific products or software
+            </p>
+
+            <div className="text-center mb-4">
+              <div className="text-4xl font-bold text-purple-600">
+                11%
+              </div>
+              <div className="text-sm text-gray-600">Average Annual Growth Rate</div>
+            </div>
+
+            <div className="bg-gray-50 p-4 rounded-lg mb-4">
+              <div className="flex items-start">
+                <Zap className="w-4 h-4 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
+                <p className="text-sm text-gray-700">Drone and AI boom</p>
+              </div>
+            </div>
+
+            <div className="space-y-3 mb-4">
+              <div className="text-xs font-semibold text-gray-500">ANNUAL GROWTH BY YEAR</div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-600">2030</span>
+                <span className="font-semibold text-purple-600">14–16%</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-600">2035</span>
+                <span className="font-semibold text-purple-600">7–10%</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-600">2040</span>
+                <span className="font-semibold text-purple-600">11–13%</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>;
 };
