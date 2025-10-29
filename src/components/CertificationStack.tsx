@@ -197,10 +197,7 @@ export const CertificationStack = () => {
       <div className="relative overflow-hidden bg-gradient-to-br from-red-50 via-orange-50 to-red-50 rounded-xl shadow-xl p-6 sm:p-8 mb-8 border-2 border-red-200">
         <div className="absolute top-0 right-0 w-32 h-32 bg-red-100/30 rounded-full -translate-y-16 translate-x-16"></div>
         <div className="absolute bottom-0 left-0 w-24 h-24 bg-orange-100/30 rounded-full translate-y-12 -translate-x-12"></div>
-        <div className="relative flex items-start space-x-4">
-          <div className="flex-shrink-0 bg-gradient-to-br from-red-500 to-orange-600 p-3 rounded-lg shadow-lg">
-            <AlertTriangle className="w-8 h-8 text-white" />
-          </div>
+        <div className="relative flex items-start">
           <div className="flex-1">
             <h3 className="text-2xl font-bold bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent mb-4">
               Critical Reality Check
