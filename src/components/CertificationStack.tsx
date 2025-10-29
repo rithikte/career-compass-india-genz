@@ -303,26 +303,58 @@ export const CertificationStack = () => {
           </table>
         </div>
 
-        {/* Role Fitment Exam Section */}
-        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6 sm:p-8 border-l-4 border-blue-600">
-          <div className="flex items-start space-x-4">
-            <div className="flex-shrink-0">
-              <Target className="w-8 h-8 text-blue-600" />
+        {/* Role Fitment Exam Section - Swiss Design */}
+        <div className="bg-white border-2 border-black rounded-none p-8 sm:p-12 relative overflow-hidden">
+          {/* Swiss Design Red Accent Bar */}
+          <div className="absolute left-0 top-0 w-2 h-full bg-red-600"></div>
+          
+          {/* Grid-based Layout */}
+          <div className="grid grid-cols-12 gap-6">
+            {/* Left Column - Number/Icon */}
+            <div className="col-span-12 sm:col-span-2 flex items-start justify-center sm:justify-start">
+              <div className="w-16 h-16 border-4 border-black flex items-center justify-center">
+                <span className="text-3xl font-black">✓</span>
+              </div>
             </div>
-            <div className="flex-1">
-              <h4 className="text-2xl font-bold text-slate-900 mb-4">
-                Role Fitment Exam
-              </h4>
-              <div className="space-y-3 text-base text-gray-700 leading-relaxed">
-                <p>
-                  Finish your 3 Universal Certs, then take the <span className="font-bold">Role Fitment Test</span> — it shows whether you fit best in <span className="font-bold">Aerospace, Avionics, or AME</span>.
-                </p>
-                <p>
-                  This test isn't about marks — it's about showing you where you truly shine.
-                </p>
-                <p>
-                  Next, complete the Fit job-role certifications and be <span className="font-bold text-green-600">100% job-ready</span> before placements.
-                </p>
+            
+            {/* Right Column - Content */}
+            <div className="col-span-12 sm:col-span-10 space-y-6">
+              {/* Swiss Typography Header */}
+              <div className="space-y-2">
+                <div className="text-xs uppercase tracking-[0.3em] font-bold text-gray-500">
+                  CRITICAL STEP
+                </div>
+                <h4 className="text-4xl sm:text-5xl font-black text-black leading-tight tracking-tight">
+                  Role Fitment Exam
+                </h4>
+              </div>
+              
+              {/* Content Grid */}
+              <div className="grid grid-cols-1 gap-4 text-base leading-relaxed">
+                <div className="border-l-4 border-red-600 pl-4">
+                  <p className="text-black font-medium">
+                    Finish your 3 Universal Certs, then take the <span className="font-black">Role Fitment Test</span> — it shows whether you fit best in <span className="font-black">Aerospace, Avionics, or AME</span>.
+                  </p>
+                </div>
+                
+                <div className="pl-4">
+                  <p className="text-gray-700">
+                    This test isn't about marks — it's about showing you where you truly shine.
+                  </p>
+                </div>
+                
+                <div className="bg-black text-white p-4">
+                  <p className="font-bold">
+                    Next, complete the Fit job-role certifications and be <span className="text-red-600">100% job-ready</span> before placements.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Swiss Grid Element */}
+              <div className="flex items-center space-x-4 pt-4 border-t-2 border-gray-300">
+                <div className="w-12 h-12 bg-red-600"></div>
+                <div className="flex-1 h-0.5 bg-gray-300"></div>
+                <div className="text-xs font-bold tracking-widest">PROCEED</div>
               </div>
             </div>
           </div>
