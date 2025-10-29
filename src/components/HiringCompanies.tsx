@@ -106,7 +106,7 @@ export const HiringCompanies = () => {
                   <Building className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600 mr-2 sm:mr-3 flex-shrink-0" />
                   <h3 className="text-lg sm:text-xl font-bold text-slate-900">{item.role}</h3>
                 </div>
-                <div className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap">
+                <div className="bg-indigo-100 text-red-600 px-3 py-1 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap">
                   {item.companyCount} Companies
                 </div>
               </div>
