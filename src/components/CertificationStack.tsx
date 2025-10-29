@@ -194,20 +194,22 @@ export const CertificationStack = () => {
       </div>
 
       {/* Critical Reality Check Section */}
-      <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-8 border-l-4 border-red-600">
-        <div className="flex items-start space-x-4">
-          <div className="flex-shrink-0">
-            <AlertTriangle className="w-8 h-8 text-red-600" />
+      <div className="relative overflow-hidden bg-gradient-to-br from-red-50 via-orange-50 to-red-50 rounded-xl shadow-xl p-6 sm:p-8 mb-8 border-2 border-red-200">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-red-100/30 rounded-full -translate-y-16 translate-x-16"></div>
+        <div className="absolute bottom-0 left-0 w-24 h-24 bg-orange-100/30 rounded-full translate-y-12 -translate-x-12"></div>
+        <div className="relative flex items-start space-x-4">
+          <div className="flex-shrink-0 bg-gradient-to-br from-red-500 to-orange-600 p-3 rounded-lg shadow-lg">
+            <AlertTriangle className="w-8 h-8 text-white" />
           </div>
           <div className="flex-1">
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent mb-4">
               Critical Reality Check
             </h3>
-            <div className="space-y-3 text-base text-gray-700 leading-relaxed">
-              <p className="flex items-start">
-                <span className="text-red-600 font-bold mr-2">•</span>
+            <div className="space-y-3 text-base text-slate-800 leading-relaxed">
+              <p className="flex items-start bg-white/60 backdrop-blur-sm rounded-lg p-4 shadow-sm border border-red-100">
+                <span className="text-red-600 font-bold mr-2 text-xl">•</span>
                 <span>
-                  In <span className="font-bold">B.Tech Mechanical Engineering</span>, you'll learn only{" "}
+                  In <span className="font-bold text-slate-900">B.Tech Mechanical Engineering</span>, you'll learn only{" "}
                   <span className="font-bold text-red-600">38-45%</span> (typical syllabus range, varies by university) 
                   enough to understand the basics, but <span className="font-bold underline">not enough to get an aviation job directly</span>{" "}
                   unless you do <span className="font-bold text-green-600">extra certifications and projects</span>.
