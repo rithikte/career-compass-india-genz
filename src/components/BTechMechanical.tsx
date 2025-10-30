@@ -307,38 +307,42 @@ export const BTechMechanical = () => {
             Year-by-year curriculum breakdown with real-world aviation applications
           </CardDescription>
         </CardHeader>
-        <CardContent className="p-6">
-          <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
-            <div className="bg-gradient-to-r from-primary to-secondary text-white p-4">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-bold text-sm md:text-base">
-                <div className="flex items-center gap-2">
-                  <Clock className="h-5 w-5" />
+        <CardContent className="p-4 sm:p-6">
+          {/* Mobile: Individual Cards, Desktop: Enhanced Table */}
+          
+          {/* Desktop & Tablet View - Hidden on Mobile */}
+          <div className="hidden md:block overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700 bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-800 shadow-lg">
+            <div className="bg-gradient-to-r from-primary via-primary/90 to-secondary text-white p-4 lg:p-6">
+              <div className="grid grid-cols-12 gap-4 font-bold text-sm lg:text-base">
+                <div className="col-span-2 flex items-center gap-2">
+                  <Clock className="h-5 w-5 lg:h-6 lg:w-6" />
                   <span>Year</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <BookOpen className="h-5 w-5" />
+                <div className="col-span-5 flex items-center gap-2">
+                  <BookOpen className="h-5 w-5 lg:h-6 lg:w-6" />
                   <span>Subjects You'll Study</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Brain className="h-5 w-5" />
-                  <span>What You'll Learn (Simple English)</span>
+                <div className="col-span-5 flex items-center gap-2">
+                  <Brain className="h-5 w-5 lg:h-6 lg:w-6" />
+                  <span>What You'll Learn</span>
                 </div>
               </div>
             </div>
             
-            <div className="divide-y divide-gray-200">
+            <div className="divide-y divide-slate-200 dark:divide-slate-700">
               {/* 1st Year */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 hover:bg-gray-50 transition-colors">
-                <div className="font-bold text-blue-600 text-lg flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-sm">1</div>
-                  <span>1st Year</span>
+              <div className="grid grid-cols-12 gap-4 p-4 lg:p-6 hover:bg-primary/5 dark:hover:bg-primary/10 transition-all duration-300 group">
+                <div className="col-span-2 flex items-center gap-3">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-lg lg:text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    1
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <div className="font-semibold text-gray-900">Engineering Physics & Basics of Mechanics</div>
-                  <div className="font-semibold text-gray-900">Engineering Mathematics I & II</div>
-                  <div className="font-semibold text-gray-900">Engineering Graphics & Workshop</div>
+                <div className="col-span-5 space-y-2">
+                  <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm lg:text-base">Engineering Physics & Basics of Mechanics</div>
+                  <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm lg:text-base">Engineering Mathematics I & II</div>
+                  <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm lg:text-base">Engineering Graphics & Workshop</div>
                 </div>
-                <div className="space-y-2 text-gray-700 text-sm md:text-base">
+                <div className="col-span-5 space-y-2 text-slate-700 dark:text-slate-300 text-sm lg:text-base">
                   <p>How things move, shake, and fly (motion, forces, vibrations, energy).</p>
                   <p className="pt-2">Use math to calculate speed, acceleration, pressure, and flight.</p>
                   <p className="pt-2">How aircraft parts are shaped and made (design + manufacturing basics).</p>
@@ -346,17 +350,18 @@ export const BTechMechanical = () => {
               </div>
 
               {/* 2nd Year */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 hover:bg-gray-50 transition-colors">
-                <div className="font-bold text-green-600 text-lg flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-sm">2</div>
-                  <span>2nd Year</span>
+              <div className="grid grid-cols-12 gap-4 p-4 lg:p-6 hover:bg-primary/5 dark:hover:bg-primary/10 transition-all duration-300 group">
+                <div className="col-span-2 flex items-center gap-3">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-white font-bold text-lg lg:text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    2
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <div className="font-semibold text-gray-900">Strength of Materials</div>
-                  <div className="font-semibold text-gray-900">Fluid Mechanics</div>
-                  <div className="font-semibold text-gray-900">Thermodynamics</div>
+                <div className="col-span-5 space-y-2">
+                  <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm lg:text-base">Strength of Materials</div>
+                  <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm lg:text-base">Fluid Mechanics</div>
+                  <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm lg:text-base">Thermodynamics</div>
                 </div>
-                <div className="space-y-2 text-gray-700 text-sm md:text-base">
+                <div className="col-span-5 space-y-2 text-slate-700 dark:text-slate-300 text-sm lg:text-base">
                   <p>Strong & safe parts: How wings, body, and engines handle stress and vibration without breaking.</p>
                   <p className="pt-2">Air & fluids: How air creates lift/drag and how fuel/hydraulic fluids move.</p>
                   <p className="pt-2">Heat & power: How heat and energy make jet engines and turbines work.</p>
@@ -364,17 +369,18 @@ export const BTechMechanical = () => {
               </div>
 
               {/* 3rd Year */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 hover:bg-gray-50 transition-colors">
-                <div className="font-bold text-purple-600 text-lg flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-sm">3</div>
-                  <span>3rd Year</span>
+              <div className="grid grid-cols-12 gap-4 p-4 lg:p-6 hover:bg-primary/5 dark:hover:bg-primary/10 transition-all duration-300 group">
+                <div className="col-span-2 flex items-center gap-3">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg lg:text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    3
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <div className="font-semibold text-gray-900">Machine Dynamics & Vibrations</div>
-                  <div className="font-semibold text-gray-900">Heat Transfer & Applied Thermodynamics</div>
-                  <div className="font-semibold text-gray-900">Aerodynamics & Flight Mechanics</div>
+                <div className="col-span-5 space-y-2">
+                  <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm lg:text-base">Machine Dynamics & Vibrations</div>
+                  <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm lg:text-base">Heat Transfer & Applied Thermodynamics</div>
+                  <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm lg:text-base">Aerodynamics & Flight Mechanics</div>
                 </div>
-                <div className="space-y-2 text-gray-700 text-sm md:text-base">
+                <div className="col-span-5 space-y-2 text-slate-700 dark:text-slate-300 text-sm lg:text-base">
                   <p>Vibrations & control: How engines, landing gear, and moving parts shake—and how we reduce it.</p>
                   <p className="pt-2">Temperature control: How we cool jet engines and keep cabins comfortable.</p>
                   <p className="pt-2">Flight & forces: How planes fly, how pressure acts, and how design changes performance.</p>
@@ -382,18 +388,156 @@ export const BTechMechanical = () => {
               </div>
 
               {/* 4th Year */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 hover:bg-gray-50 transition-colors">
-                <div className="font-bold text-orange-600 text-lg flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-sm">4</div>
-                  <span>4th Year</span>
+              <div className="grid grid-cols-12 gap-4 p-4 lg:p-6 hover:bg-primary/5 dark:hover:bg-primary/10 transition-all duration-300 group">
+                <div className="col-span-2 flex items-center gap-3">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white font-bold text-lg lg:text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    4
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <div className="font-semibold text-gray-900">Aero-Mechanical Design Electives</div>
-                  <div className="font-semibold text-gray-900">Project & Internship</div>
+                <div className="col-span-5 space-y-2">
+                  <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm lg:text-base">Aero-Mechanical Design Electives</div>
+                  <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm lg:text-base">Project & Internship</div>
                 </div>
-                <div className="space-y-2 text-gray-700 text-sm md:text-base">
+                <div className="col-span-5 space-y-2 text-slate-700 dark:text-slate-300 text-sm lg:text-base">
                   <p>Focus areas: aircraft strength, noise & vibration control, fatigue testing.</p>
                   <p className="pt-2">Do real work: design, analyze, and test aircraft systems on real projects.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile View - Individual Cards */}
+          <div className="md:hidden space-y-4">
+            {/* 1st Year Card */}
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-full -translate-y-16 translate-x-16"></div>
+              
+              <div className="relative p-5 space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                    1
+                  </div>
+                  <div className="font-bold text-xl text-slate-900 dark:text-slate-100">1st Year</div>
+                </div>
+                
+                <div className="space-y-3">
+                  <div className="flex items-start gap-2">
+                    <BookOpen className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <div className="space-y-2">
+                      <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm">Engineering Physics & Basics of Mechanics</div>
+                      <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm">Engineering Mathematics I & II</div>
+                      <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm">Engineering Graphics & Workshop</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-2 pt-2 border-t border-slate-200 dark:border-slate-700">
+                    <Brain className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <div className="space-y-2 text-slate-700 dark:text-slate-300 text-sm">
+                      <p>How things move, shake, and fly (motion, forces, vibrations, energy).</p>
+                      <p>Use math to calculate speed, acceleration, pressure, and flight.</p>
+                      <p>How aircraft parts are shaped and made (design + manufacturing basics).</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 2nd Year Card */}
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-500/20 to-green-600/20 rounded-full -translate-y-16 translate-x-16"></div>
+              
+              <div className="relative p-5 space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                    2
+                  </div>
+                  <div className="font-bold text-xl text-slate-900 dark:text-slate-100">2nd Year</div>
+                </div>
+                
+                <div className="space-y-3">
+                  <div className="flex items-start gap-2">
+                    <BookOpen className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <div className="space-y-2">
+                      <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm">Strength of Materials</div>
+                      <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm">Fluid Mechanics</div>
+                      <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm">Thermodynamics</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-2 pt-2 border-t border-slate-200 dark:border-slate-700">
+                    <Brain className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <div className="space-y-2 text-slate-700 dark:text-slate-300 text-sm">
+                      <p>Strong & safe parts: How wings, body, and engines handle stress and vibration without breaking.</p>
+                      <p>Air & fluids: How air creates lift/drag and how fuel/hydraulic fluids move.</p>
+                      <p>Heat & power: How heat and energy make jet engines and turbines work.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 3rd Year Card */}
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/20 to-purple-600/20 rounded-full -translate-y-16 translate-x-16"></div>
+              
+              <div className="relative p-5 space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                    3
+                  </div>
+                  <div className="font-bold text-xl text-slate-900 dark:text-slate-100">3rd Year</div>
+                </div>
+                
+                <div className="space-y-3">
+                  <div className="flex items-start gap-2">
+                    <BookOpen className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <div className="space-y-2">
+                      <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm">Machine Dynamics & Vibrations</div>
+                      <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm">Heat Transfer & Applied Thermodynamics</div>
+                      <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm">Aerodynamics & Flight Mechanics</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-2 pt-2 border-t border-slate-200 dark:border-slate-700">
+                    <Brain className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <div className="space-y-2 text-slate-700 dark:text-slate-300 text-sm">
+                      <p>Vibrations & control: How engines, landing gear, and moving parts shake—and how we reduce it.</p>
+                      <p>Temperature control: How we cool jet engines and keep cabins comfortable.</p>
+                      <p>Flight & forces: How planes fly, how pressure acts, and how design changes performance.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 4th Year Card */}
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-full -translate-y-16 translate-x-16"></div>
+              
+              <div className="relative p-5 space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                    4
+                  </div>
+                  <div className="font-bold text-xl text-slate-900 dark:text-slate-100">4th Year</div>
+                </div>
+                
+                <div className="space-y-3">
+                  <div className="flex items-start gap-2">
+                    <BookOpen className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <div className="space-y-2">
+                      <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm">Aero-Mechanical Design Electives</div>
+                      <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm">Project & Internship</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-2 pt-2 border-t border-slate-200 dark:border-slate-700">
+                    <Brain className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <div className="space-y-2 text-slate-700 dark:text-slate-300 text-sm">
+                      <p>Focus areas: aircraft strength, noise & vibration control, fatigue testing.</p>
+                      <p>Do real work: design, analyze, and test aircraft systems on real projects.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
