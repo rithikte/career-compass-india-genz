@@ -218,19 +218,12 @@ export const CertificationStack = () => {
       </div>
 
       {/* Universal Certifications Section */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 rounded-2xl shadow-xl p-6 sm:p-8 md:p-10 mb-8 border border-purple-200/50">
-        {/* Decorative Background Elements */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl -translate-y-32 translate-x-32"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-200/20 rounded-full blur-3xl translate-y-32 -translate-x-32"></div>
-        
-        <div className="relative text-center mb-10">
-          <div className="inline-block px-4 py-1.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-xs font-bold text-white mb-4 shadow-lg">
-            FOUNDATION CERTIFICATIONS
-          </div>
-          <h3 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-900 via-purple-900 to-pink-900 bg-clip-text text-transparent mb-4">
+      <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 md:p-10 mb-8">
+        <div className="text-center mb-8">
+          <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
             Universal Certifications
           </h3>
-          <p className="text-base sm:text-lg text-slate-700 max-w-3xl mx-auto font-medium">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
             For Aerospace, Avionics, Aircraft Maintenance Engineering
           </p>
         </div>
@@ -238,27 +231,27 @@ export const CertificationStack = () => {
         {/* Universal Certifications Table - Mobile */}
         <div className="block lg:hidden space-y-4 mb-8">
           {universalCertifications.map((cert, index) => (
-            <div key={index} className="relative bg-white/80 backdrop-blur-sm rounded-xl p-5 border border-purple-200/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="flex items-center justify-between mb-4">
-                <span className={`inline-block px-4 py-1.5 rounded-full text-xs font-bold shadow-md ${getLevelColor(cert.stage)}`}>
+            <div key={index} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+              <div className="flex items-center justify-between mb-3">
+                <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${getLevelColor(cert.stage)}`}>
                   {cert.stage}
                 </span>
-                <span className="text-sm font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">{cert.duration}</span>
+                <span className="text-sm font-bold text-blue-600">{cert.duration}</span>
               </div>
-              <h4 className="text-sm font-bold text-slate-900 mb-2 leading-tight">{cert.course}</h4>
-              <p className="text-xs text-slate-600 mb-4 font-medium">{cert.provider}</p>
-              <div className="space-y-3 text-xs">
-                <div className="flex justify-between items-center bg-slate-50 rounded-lg p-2">
-                  <span className="text-slate-600 font-semibold">Readiness:</span>
-                  <span className="text-slate-900 font-bold">{cert.readiness}</span>
+              <h4 className="text-sm font-bold text-gray-900 mb-1">{cert.course}</h4>
+              <p className="text-xs text-gray-500 mb-3">{cert.provider}</p>
+              <div className="space-y-2 text-xs">
+                <div className="flex justify-between">
+                  <span className="text-gray-600 font-medium">Readiness:</span>
+                  <span className="text-gray-900">{cert.readiness}</span>
                 </div>
-                <div className="flex justify-between items-center bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-2">
-                  <span className="text-slate-600 font-semibold">Subject Gain:</span>
-                  <span className="text-green-700 font-bold text-sm">{cert.subjectGain}</span>
+                <div className="flex justify-between">
+                  <span className="text-gray-600 font-medium">Subject Gain:</span>
+                  <span className="text-green-600 font-bold">{cert.subjectGain}</span>
                 </div>
-                <div className="pt-3 border-t border-purple-200/50">
-                  <span className="text-slate-700 font-semibold block mb-2">When to Pursue:</span>
-                  <span className="text-slate-600 leading-relaxed">{cert.whenToPursue}</span>
+                <div className="pt-2 border-t">
+                  <span className="text-gray-600 font-medium block mb-1">When to Pursue:</span>
+                  <span className="text-gray-700">{cert.whenToPursue}</span>
                 </div>
               </div>
             </div>
@@ -267,49 +260,47 @@ export const CertificationStack = () => {
 
         {/* Universal Certifications Table - Desktop */}
         <div className="hidden lg:block overflow-x-auto mb-8">
-          <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-purple-200/50 overflow-hidden">
-            <table className="w-full border-collapse">
-              <thead>
-                <tr className="bg-gradient-to-r from-blue-600 to-purple-600">
-                  <th className="text-left py-4 px-5 text-sm font-bold text-white">Stage</th>
-                  <th className="text-left py-4 px-5 text-sm font-bold text-white">Course / Focus</th>
-                  <th className="text-center py-4 px-5 text-sm font-bold text-white">Duration</th>
-                  <th className="text-left py-4 px-5 text-sm font-bold text-white">Readiness After Completion</th>
-                  <th className="text-center py-4 px-5 text-sm font-bold text-white">Subject Gain %</th>
-                  <th className="text-left py-4 px-5 text-sm font-bold text-white">When to Pursue</th>
+          <table className="w-full border-collapse">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="text-left py-3 px-4 text-sm font-bold text-gray-900 border-b-2 border-gray-300">Stage</th>
+                <th className="text-left py-3 px-4 text-sm font-bold text-gray-900 border-b-2 border-gray-300">Course / Focus</th>
+                <th className="text-center py-3 px-4 text-sm font-bold text-gray-900 border-b-2 border-gray-300">Duration</th>
+                <th className="text-left py-3 px-4 text-sm font-bold text-gray-900 border-b-2 border-gray-300">Readiness After Completion</th>
+                <th className="text-center py-3 px-4 text-sm font-bold text-gray-900 border-b-2 border-gray-300">Subject Gain %</th>
+                <th className="text-left py-3 px-4 text-sm font-bold text-gray-900 border-b-2 border-gray-300">When to Pursue</th>
+              </tr>
+            </thead>
+            <tbody>
+              {universalCertifications.map((cert, index) => (
+                <tr key={index} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <td className="py-4 px-4">
+                    <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${getLevelColor(cert.stage)}`}>
+                      {cert.stage}
+                    </span>
+                  </td>
+                  <td className="py-4 px-4">
+                    <div>
+                      <div className="text-sm font-bold text-gray-900 mb-1">{cert.course}</div>
+                      <div className="text-xs text-gray-500">{cert.provider}</div>
+                    </div>
+                  </td>
+                  <td className="py-4 px-4 text-center">
+                    <span className="text-sm font-bold text-blue-600">{cert.duration}</span>
+                  </td>
+                  <td className="py-4 px-4">
+                    <span className="text-sm text-gray-700">{cert.readiness}</span>
+                  </td>
+                  <td className="py-4 px-4 text-center">
+                    <span className="text-sm font-bold text-green-600">{cert.subjectGain}</span>
+                  </td>
+                  <td className="py-4 px-4">
+                    <span className="text-xs text-gray-700 leading-relaxed">{cert.whenToPursue}</span>
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                {universalCertifications.map((cert, index) => (
-                  <tr key={index} className="border-b border-purple-200/30 hover:bg-blue-50/50 transition-colors">
-                    <td className="py-5 px-5">
-                      <span className={`inline-block px-4 py-1.5 rounded-full text-xs font-bold shadow-md ${getLevelColor(cert.stage)}`}>
-                        {cert.stage}
-                      </span>
-                    </td>
-                    <td className="py-5 px-5">
-                      <div>
-                        <div className="text-sm font-bold text-slate-900 mb-1.5">{cert.course}</div>
-                        <div className="text-xs text-slate-600 font-medium">{cert.provider}</div>
-                      </div>
-                    </td>
-                    <td className="py-5 px-5 text-center">
-                      <span className="inline-block px-3 py-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-bold rounded-lg shadow-md">{cert.duration}</span>
-                    </td>
-                    <td className="py-5 px-5">
-                      <span className="text-sm text-slate-700 font-medium">{cert.readiness}</span>
-                    </td>
-                    <td className="py-5 px-5 text-center">
-                      <span className="inline-block px-3 py-1 bg-gradient-to-r from-green-500 to-emerald-500 text-white text-sm font-bold rounded-lg shadow-md">{cert.subjectGain}</span>
-                    </td>
-                    <td className="py-5 px-5">
-                      <span className="text-xs text-slate-700 leading-relaxed font-medium">{cert.whenToPursue}</span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+              ))}
+            </tbody>
+          </table>
         </div>
 
         {/* Role Fitment Exam Section */}
