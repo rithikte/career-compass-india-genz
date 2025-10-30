@@ -304,7 +304,7 @@ export const CertificationStack = () => {
         </div>
 
         {/* Role Fitment Exam Section */}
-        <div className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 rounded-2xl shadow-2xl p-8 sm:p-10 border border-blue-400/20">
+        <div className="relative overflow-hidden bg-gradient-to-br from-slate-700 via-blue-700 to-purple-700 rounded-2xl shadow-2xl p-8 sm:p-10 border border-blue-400/20">
           {/* Decorative Elements */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl"></div>
