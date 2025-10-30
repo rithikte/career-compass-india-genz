@@ -304,24 +304,33 @@ export const CertificationStack = () => {
         </div>
 
         {/* Role Fitment Exam Section */}
-        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6 sm:p-8 border-l-4 border-blue-600">
-          <div className="flex items-start space-x-4">
+        <div className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 rounded-2xl shadow-2xl p-8 sm:p-10 border border-blue-400/20">
+          {/* Decorative Elements */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl"></div>
+          
+          <div className="relative flex items-start space-x-6">
             <div className="flex-shrink-0">
-              <Target className="w-8 h-8 text-blue-600" />
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/50">
+                <Target className="w-8 h-8 text-white" />
+              </div>
             </div>
             <div className="flex-1">
-              <h4 className="text-2xl font-bold text-slate-900 mb-4">
+              <div className="inline-block px-4 py-1 bg-blue-500/20 border border-blue-400/30 rounded-full text-xs font-bold text-blue-300 mb-4 backdrop-blur-sm">
+                NEXT CRITICAL STEP
+              </div>
+              <h4 className="text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight">
                 Role Fitment Exam
               </h4>
-              <div className="space-y-3 text-base text-gray-700 leading-relaxed">
-                <p>
-                  Finish your 3 Universal Certs, then take the <span className="font-bold">Role Fitment Test</span> — it shows whether you fit best in <span className="font-bold">Aerospace, Avionics, or AME</span>.
+              <div className="space-y-4 text-base sm:text-lg text-blue-100 leading-relaxed">
+                <p className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
+                  Finish your 3 Universal Certs, then take the <span className="font-bold text-white">Role Fitment Test</span> — it shows whether you fit best in <span className="font-bold text-blue-300">Aerospace, Avionics, or AME</span>.
                 </p>
-                <p>
-                  This test isn't about marks — it's about showing you where you truly shine.
+                <p className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
+                  This test isn't about marks — it's about showing you where you <span className="font-bold text-white">truly shine</span>.
                 </p>
-                <p>
-                  Next, complete the Fit job-role certifications and be <span className="font-bold text-green-600">100% job-ready</span> before placements.
+                <p className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-sm rounded-lg p-4 border border-green-400/30">
+                  Next, complete the Fit job-role certifications and be <span className="font-bold text-green-300 text-xl">100% job-ready</span> before placements.
                 </p>
               </div>
             </div>
