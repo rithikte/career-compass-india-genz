@@ -1,4 +1,4 @@
-import { AlertTriangle, CheckCircle, XCircle, Zap, Heart, Target, Trophy, BookOpen, Clock, Users, TrendingDown, TrendingUp, Brain, Lightbulb, Shield, Flame } from 'lucide-react';
+import { AlertTriangle, CheckCircle, XCircle, Zap, Heart, Target, Trophy, BookOpen, Clock, Users, TrendingDown, TrendingUp, Brain, Lightbulb, Shield, Flame, GraduationCap, FileText, UserCheck, Edit3, PenTool, Award, Calendar, FileCheck } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import SourceBadge from './SourceBadge';
 
@@ -216,6 +216,143 @@ const IndustryAdvice = () => {
                   Placements at HAL/DRDO possible even from private colleges if skills strong
                 </p>
                 <p className="text-gray-600 text-sm">Skills matter more than college brand</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* ADMISSION PROCESS */}
+        <Card className="bg-white rounded-2xl shadow-lg border-2 border-gray-200">
+          <CardHeader>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="p-2 bg-green-100 rounded-lg">
+                <GraduationCap className="w-6 h-6 text-green-600" />
+              </div>
+              <CardTitle className="text-2xl sm:text-3xl">Admission Process</CardTitle>
+            </div>
+            <CardDescription className="text-lg font-semibold">Step-by-step guide to secure your admission</CardDescription>
+          </CardHeader>
+          <CardContent className="p-6">
+            <div className="space-y-4">
+              {/* Step 1 */}
+              <div className="flex gap-4 items-start p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border-2 border-blue-200 hover:shadow-md transition-shadow">
+                <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">1</div>
+                <div className="flex-1">
+                  <h4 className="font-bold text-lg text-slate-900 mb-2 flex items-center gap-2">
+                    <BookOpen className="w-5 h-5 text-blue-600" />
+                    Finish +2 (MPC Stream)
+                  </h4>
+                  <p className="text-slate-700">You must take Maths, Physics, Chemistry in Intermediate.</p>
+                </div>
+              </div>
+
+              {/* Step 2 */}
+              <div className="flex gap-4 items-start p-4 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border-2 border-purple-200 hover:shadow-md transition-shadow">
+                <div className="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">2</div>
+                <div className="flex-1">
+                  <h4 className="font-bold text-lg text-slate-900 mb-2 flex items-center gap-2">
+                    <Edit3 className="w-5 h-5 text-purple-600" />
+                    Write Entrance Exam
+                  </h4>
+                  <ul className="text-slate-700 space-y-1 list-disc list-inside">
+                    <li><strong>TG students:</strong> TS EAPCET</li>
+                    <li><strong>Optional:</strong> JEE Main for NITs, IIITs, and top private colleges</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Step 3 */}
+              <div className="flex gap-4 items-start p-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border-2 border-green-200 hover:shadow-md transition-shadow">
+                <div className="flex-shrink-0 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-lg">3</div>
+                <div className="flex-1">
+                  <h4 className="font-bold text-lg text-slate-900 mb-2 flex items-center gap-2">
+                    <UserCheck className="w-5 h-5 text-green-600" />
+                    Check Eligibility
+                  </h4>
+                  <ul className="text-slate-700 space-y-1 list-disc list-inside">
+                    <li>45% or more in PCM (40% for reserved categories)</li>
+                    <li>Must be a local student of TG (for state quota)</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Step 4 */}
+              <div className="flex gap-4 items-start p-4 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl border-2 border-orange-200 hover:shadow-md transition-shadow">
+                <div className="flex-shrink-0 w-10 h-10 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold text-lg">4</div>
+                <div className="flex-1">
+                  <h4 className="font-bold text-lg text-slate-900 mb-2 flex items-center gap-2">
+                    <FileText className="w-5 h-5 text-orange-600" />
+                    Apply Online
+                  </h4>
+                  <p className="text-slate-700">Fill EAPCET form → Upload photo/sign → Pay fee → Select exam center.</p>
+                </div>
+              </div>
+
+              {/* Step 5 */}
+              <div className="flex gap-4 items-start p-4 bg-gradient-to-br from-red-50 to-rose-50 rounded-xl border-2 border-red-200 hover:shadow-md transition-shadow">
+                <div className="flex-shrink-0 w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-lg">5</div>
+                <div className="flex-1">
+                  <h4 className="font-bold text-lg text-slate-900 mb-2 flex items-center gap-2">
+                    <Brain className="w-5 h-5 text-red-600" />
+                    Prepare for Exam
+                  </h4>
+                  <p className="text-slate-700">Focus on Maths (most weightage), then Physics, Chemistry. Use previous papers & mock tests for speed and accuracy.</p>
+                </div>
+              </div>
+
+              {/* Step 6 */}
+              <div className="flex gap-4 items-start p-4 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl border-2 border-cyan-200 hover:shadow-md transition-shadow">
+                <div className="flex-shrink-0 w-10 h-10 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold text-lg">6</div>
+                <div className="flex-1">
+                  <h4 className="font-bold text-lg text-slate-900 mb-2 flex items-center gap-2">
+                    <PenTool className="w-5 h-5 text-cyan-600" />
+                    Write Exam & Get Rank
+                  </h4>
+                  <p className="text-slate-700">After results, download Rank Card.</p>
+                </div>
+              </div>
+
+              {/* Step 7 */}
+              <div className="flex gap-4 items-start p-4 bg-gradient-to-br from-violet-50 to-purple-50 rounded-xl border-2 border-violet-200 hover:shadow-md transition-shadow">
+                <div className="flex-shrink-0 w-10 h-10 bg-violet-600 text-white rounded-full flex items-center justify-center font-bold text-lg">7</div>
+                <div className="flex-1">
+                  <h4 className="font-bold text-lg text-slate-900 mb-2 flex items-center gap-2">
+                    <Users className="w-5 h-5 text-violet-600" />
+                    Attend Counselling
+                  </h4>
+                  <ul className="text-slate-700 space-y-1 list-disc list-inside">
+                    <li>Pay counselling fee online</li>
+                    <li>Verify certificates (online/offline)</li>
+                    <li>Choose colleges and branches (web options)</li>
+                    <li>Wait for seat allotment</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Step 8 */}
+              <div className="flex gap-4 items-start p-4 bg-gradient-to-br from-teal-50 to-green-50 rounded-xl border-2 border-teal-200 hover:shadow-md transition-shadow">
+                <div className="flex-shrink-0 w-10 h-10 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold text-lg">8</div>
+                <div className="flex-1">
+                  <h4 className="font-bold text-lg text-slate-900 mb-2 flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-teal-600" />
+                    Confirm Admission
+                  </h4>
+                  <p className="text-slate-700">Once seat allotted → pay college fee → report to college with documents.</p>
+                </div>
+              </div>
+
+              {/* Step 9 */}
+              <div className="flex gap-4 items-start p-4 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl border-2 border-amber-200 hover:shadow-md transition-shadow">
+                <div className="flex-shrink-0 w-10 h-10 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-lg">9</div>
+                <div className="flex-1">
+                  <h4 className="font-bold text-lg text-slate-900 mb-2 flex items-center gap-2">
+                    <FileCheck className="w-5 h-5 text-amber-600" />
+                    Submit Documents & Join
+                  </h4>
+                  <p className="text-slate-700 mb-2">Carry originals + photocopies:</p>
+                  <p className="text-slate-700">Aadhar, 10th & Inter marks, TC, EAPCET rank card, income & caste certificate (if any).</p>
+                  <p className="text-slate-700 font-semibold mt-2">Join the College on the Date of Opening</p>
+                </div>
               </div>
             </div>
           </CardContent>
