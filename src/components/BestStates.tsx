@@ -791,22 +791,22 @@ export const BestStates = () => {
                 <PieChart>
                   <Pie
                     data={[
-                      { name: 'Karnataka', value: 42.5, fill: '#8b5cf6' },
-                      { name: 'Tamil Nadu', value: 20, fill: '#06b6d4' },
-                      { name: 'Telangana', value: 18, fill: '#3b82f6' },
-                      { name: 'Maharashtra', value: 13.5, fill: '#6366f1' },
-                      { name: 'Andhra Pradesh', value: 4.5, fill: '#14b8a6' }
+                      { name: 'Karnataka', abbr: 'KA', value: 42.5, fill: '#8b5cf6' },
+                      { name: 'Tamil Nadu', abbr: 'TN', value: 20, fill: '#06b6d4' },
+                      { name: 'Telangana', abbr: 'TS', value: 18, fill: '#3b82f6' },
+                      { name: 'Maharashtra', abbr: 'MH', value: 13.5, fill: '#6366f1' },
+                      { name: 'Andhra Pradesh', abbr: 'AP', value: 4.5, fill: '#14b8a6' }
                     ]}
                     cx="50%"
                     cy="50%"
                     labelLine={false}
-                    label={({ name, value }) => `${name.split(' ')[0]}: ${value}%`}
-                    outerRadius={80}
+                    label={({ abbr, value }) => `${abbr}: ${value}%`}
+                    outerRadius={85}
                     dataKey="value"
                   />
                   <Tooltip 
                     contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', border: '1px solid #bae6fd', borderRadius: '8px' }}
-                    formatter={(value) => `${value}%`}
+                    formatter={(value, name, props) => [`${value}%`, props.payload.name]}
                   />
                 </PieChart>
               </ResponsiveContainer>
@@ -819,22 +819,22 @@ export const BestStates = () => {
                 <PieChart>
                   <Pie
                     data={[
-                      { name: 'Karnataka', value: 34, fill: '#8b5cf6' },
-                      { name: 'Telangana', value: 30, fill: '#3b82f6' },
-                      { name: 'Tamil Nadu', value: 14, fill: '#06b6d4' },
-                      { name: 'Maharashtra', value: 14, fill: '#6366f1' },
-                      { name: 'Andhra Pradesh', value: 5, fill: '#14b8a6' }
+                      { name: 'Karnataka', abbr: 'KA', value: 34, fill: '#8b5cf6' },
+                      { name: 'Telangana', abbr: 'TS', value: 30, fill: '#3b82f6' },
+                      { name: 'Tamil Nadu', abbr: 'TN', value: 14, fill: '#06b6d4' },
+                      { name: 'Maharashtra', abbr: 'MH', value: 14, fill: '#6366f1' },
+                      { name: 'Andhra Pradesh', abbr: 'AP', value: 5, fill: '#14b8a6' }
                     ]}
                     cx="50%"
                     cy="50%"
                     labelLine={false}
-                    label={({ name, value }) => `${name.split(' ')[0]}: ${value}%`}
-                    outerRadius={80}
+                    label={({ abbr, value }) => `${abbr}: ${value}%`}
+                    outerRadius={85}
                     dataKey="value"
                   />
                   <Tooltip 
                     contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', border: '1px solid #bae6fd', borderRadius: '8px' }}
-                    formatter={(value) => `${value}%`}
+                    formatter={(value, name, props) => [`${value}%`, props.payload.name]}
                   />
                 </PieChart>
               </ResponsiveContainer>
@@ -847,22 +847,22 @@ export const BestStates = () => {
                 <PieChart>
                   <Pie
                     data={[
-                      { name: 'Telangana', value: 36, fill: '#3b82f6' },
-                      { name: 'Maharashtra', value: 30, fill: '#6366f1' },
-                      { name: 'Karnataka', value: 18, fill: '#8b5cf6' },
-                      { name: 'Tamil Nadu', value: 10, fill: '#06b6d4' },
-                      { name: 'Andhra Pradesh', value: 5, fill: '#14b8a6' }
+                      { name: 'Telangana', abbr: 'TS', value: 36, fill: '#3b82f6' },
+                      { name: 'Maharashtra', abbr: 'MH', value: 30, fill: '#6366f1' },
+                      { name: 'Karnataka', abbr: 'KA', value: 18, fill: '#8b5cf6' },
+                      { name: 'Tamil Nadu', abbr: 'TN', value: 10, fill: '#06b6d4' },
+                      { name: 'Andhra Pradesh', abbr: 'AP', value: 5, fill: '#14b8a6' }
                     ]}
                     cx="50%"
                     cy="50%"
                     labelLine={false}
-                    label={({ name, value }) => `${name.split(' ')[0]}: ${value}%`}
-                    outerRadius={80}
+                    label={({ abbr, value }) => `${abbr}: ${value}%`}
+                    outerRadius={85}
                     dataKey="value"
                   />
                   <Tooltip 
                     contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', border: '1px solid #bae6fd', borderRadius: '8px' }}
-                    formatter={(value) => `${value}%`}
+                    formatter={(value, name, props) => [`${value}%`, props.payload.name]}
                   />
                 </PieChart>
               </ResponsiveContainer>
