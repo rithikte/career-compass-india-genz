@@ -747,67 +747,130 @@ export const BestStates = () => {
             <TableBody>
               <TableRow className="hover:bg-cyan-50">
                 <TableCell className="font-semibold text-gray-900 text-center">Karnataka</TableCell>
-                <TableCell className="text-center text-blue-700 font-bold text-lg">~30%</TableCell>
-                <TableCell className="text-center text-indigo-700 font-bold text-lg">~30%</TableCell>
-                <TableCell className="text-center text-purple-700 font-bold text-lg">~30%</TableCell>
+                <TableCell className="text-center text-blue-700 font-bold text-lg">16–20%</TableCell>
+                <TableCell className="text-center text-indigo-700 font-bold text-lg">32–36%</TableCell>
+                <TableCell className="text-center text-purple-700 font-bold text-lg">40–45%</TableCell>
               </TableRow>
               <TableRow className="hover:bg-cyan-50">
                 <TableCell className="font-semibold text-gray-900 text-center">Tamil Nadu</TableCell>
-                <TableCell className="text-center text-blue-700 font-bold text-lg">~22%</TableCell>
-                <TableCell className="text-center text-indigo-700 font-bold text-lg">~22%</TableCell>
-                <TableCell className="text-center text-purple-700 font-bold text-lg">~22%</TableCell>
-              </TableRow>
-              <TableRow className="hover:bg-cyan-50">
-                <TableCell className="font-semibold text-gray-900 text-center">Maharashtra</TableCell>
-                <TableCell className="text-center text-blue-700 font-bold text-lg">~18%</TableCell>
-                <TableCell className="text-center text-indigo-700 font-bold text-lg">~18%</TableCell>
-                <TableCell className="text-center text-purple-700 font-bold text-lg">~18%</TableCell>
+                <TableCell className="text-center text-blue-700 font-bold text-lg">8–12%</TableCell>
+                <TableCell className="text-center text-indigo-700 font-bold text-lg">12–16%</TableCell>
+                <TableCell className="text-center text-purple-700 font-bold text-lg">18–22%</TableCell>
               </TableRow>
               <TableRow className="hover:bg-cyan-50">
                 <TableCell className="font-semibold text-gray-900 text-center">Telangana</TableCell>
-                <TableCell className="text-center text-blue-700 font-bold text-lg">~20%</TableCell>
-                <TableCell className="text-center text-indigo-700 font-bold text-lg">~20%</TableCell>
-                <TableCell className="text-center text-purple-700 font-bold text-lg">~20%</TableCell>
+                <TableCell className="text-center text-blue-700 font-bold text-lg">34–38%</TableCell>
+                <TableCell className="text-center text-indigo-700 font-bold text-lg">28–32%</TableCell>
+                <TableCell className="text-center text-purple-700 font-bold text-lg">16–20%</TableCell>
+              </TableRow>
+              <TableRow className="hover:bg-cyan-50">
+                <TableCell className="font-semibold text-gray-900 text-center">Maharashtra</TableCell>
+                <TableCell className="text-center text-blue-700 font-bold text-lg">28–32%</TableCell>
+                <TableCell className="text-center text-indigo-700 font-bold text-lg">12–16%</TableCell>
+                <TableCell className="text-center text-purple-700 font-bold text-lg">12–15%</TableCell>
               </TableRow>
               <TableRow className="hover:bg-cyan-50">
                 <TableCell className="font-semibold text-gray-900 text-center">Andhra Pradesh</TableCell>
-                <TableCell className="text-center text-blue-700 font-bold text-lg">~10%</TableCell>
-                <TableCell className="text-center text-indigo-700 font-bold text-lg">~10%</TableCell>
-                <TableCell className="text-center text-purple-700 font-bold text-lg">~10%</TableCell>
+                <TableCell className="text-center text-blue-700 font-bold text-lg">4–6%</TableCell>
+                <TableCell className="text-center text-indigo-700 font-bold text-lg">4–6%</TableCell>
+                <TableCell className="text-center text-purple-700 font-bold text-lg">3–6%</TableCell>
               </TableRow>
             </TableBody>
           </Table>
         </div>
 
-        {/* Chart for Job Share by State */}
+        {/* Charts for Job Share by State - Three Separate Pie Charts */}
         <div className="bg-gradient-to-br from-cyan-50 to-blue-50 p-6 rounded-lg border border-cyan-200">
           <h4 className="text-xl font-bold text-slate-900 mb-6 text-center">Job Share Distribution Across States</h4>
-          <ResponsiveContainer width="100%" height={400}>
-            <PieChart>
-              <Pie
-                data={[
-                  { name: 'Karnataka', value: 30, fill: '#8b5cf6' },
-                  { name: 'Tamil Nadu', value: 22, fill: '#06b6d4' },
-                  { name: 'Telangana', value: 20, fill: '#3b82f6' },
-                  { name: 'Maharashtra', value: 18, fill: '#6366f1' },
-                  { name: 'Andhra Pradesh', value: 10, fill: '#14b8a6' }
-                ]}
-                cx="50%"
-                cy="50%"
-                labelLine={true}
-                label={({ name, value }) => `${name}: ${value}%`}
-                outerRadius={130}
-                dataKey="value"
-              >
-              </Pie>
-              <Tooltip 
-                contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', border: '1px solid #bae6fd', borderRadius: '8px' }}
-                formatter={(value) => `${value}%`}
-              />
-            </PieChart>
-          </ResponsiveContainer>
-          <p className="text-sm text-gray-600 text-center mt-4 italic">
-            Karnataka and Tamil Nadu together account for more than 50% of aerospace jobs in India
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Aerospace Engineer Chart */}
+            <div className="bg-white p-4 rounded-lg shadow-sm">
+              <h5 className="text-lg font-bold text-purple-700 mb-4 text-center">Aerospace Engineer</h5>
+              <ResponsiveContainer width="100%" height={300}>
+                <PieChart>
+                  <Pie
+                    data={[
+                      { name: 'Karnataka', value: 42.5, fill: '#8b5cf6' },
+                      { name: 'Tamil Nadu', value: 20, fill: '#06b6d4' },
+                      { name: 'Telangana', value: 18, fill: '#3b82f6' },
+                      { name: 'Maharashtra', value: 13.5, fill: '#6366f1' },
+                      { name: 'Andhra Pradesh', value: 4.5, fill: '#14b8a6' }
+                    ]}
+                    cx="50%"
+                    cy="50%"
+                    labelLine={false}
+                    label={({ name, value }) => `${name.split(' ')[0]}: ${value}%`}
+                    outerRadius={80}
+                    dataKey="value"
+                  />
+                  <Tooltip 
+                    contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', border: '1px solid #bae6fd', borderRadius: '8px' }}
+                    formatter={(value) => `${value}%`}
+                  />
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+
+            {/* Avionics Engineer Chart */}
+            <div className="bg-white p-4 rounded-lg shadow-sm">
+              <h5 className="text-lg font-bold text-indigo-700 mb-4 text-center">Avionics Engineer</h5>
+              <ResponsiveContainer width="100%" height={300}>
+                <PieChart>
+                  <Pie
+                    data={[
+                      { name: 'Karnataka', value: 34, fill: '#8b5cf6' },
+                      { name: 'Telangana', value: 30, fill: '#3b82f6' },
+                      { name: 'Tamil Nadu', value: 14, fill: '#06b6d4' },
+                      { name: 'Maharashtra', value: 14, fill: '#6366f1' },
+                      { name: 'Andhra Pradesh', value: 5, fill: '#14b8a6' }
+                    ]}
+                    cx="50%"
+                    cy="50%"
+                    labelLine={false}
+                    label={({ name, value }) => `${name.split(' ')[0]}: ${value}%`}
+                    outerRadius={80}
+                    dataKey="value"
+                  />
+                  <Tooltip 
+                    contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', border: '1px solid #bae6fd', borderRadius: '8px' }}
+                    formatter={(value) => `${value}%`}
+                  />
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+
+            {/* AME Chart */}
+            <div className="bg-white p-4 rounded-lg shadow-sm">
+              <h5 className="text-lg font-bold text-blue-700 mb-4 text-center">Aircraft Maintenance Eng.</h5>
+              <ResponsiveContainer width="100%" height={300}>
+                <PieChart>
+                  <Pie
+                    data={[
+                      { name: 'Telangana', value: 36, fill: '#3b82f6' },
+                      { name: 'Maharashtra', value: 30, fill: '#6366f1' },
+                      { name: 'Karnataka', value: 18, fill: '#8b5cf6' },
+                      { name: 'Tamil Nadu', value: 10, fill: '#06b6d4' },
+                      { name: 'Andhra Pradesh', value: 5, fill: '#14b8a6' }
+                    ]}
+                    cx="50%"
+                    cy="50%"
+                    labelLine={false}
+                    label={({ name, value }) => `${name.split(' ')[0]}: ${value}%`}
+                    outerRadius={80}
+                    dataKey="value"
+                  />
+                  <Tooltip 
+                    contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', border: '1px solid #bae6fd', borderRadius: '8px' }}
+                    formatter={(value) => `${value}%`}
+                  />
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
+
+          <p className="text-sm text-gray-600 text-center mt-6 italic">
+            Job distribution varies significantly by role - Karnataka leads in Aerospace & Avionics, while Telangana dominates AME positions
           </p>
         </div>
       </div>
