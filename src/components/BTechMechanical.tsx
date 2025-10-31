@@ -141,44 +141,44 @@ export const BTechMechanical = () => {
               <div className="divide-y divide-gray-200">
                 <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
                   <div className="font-semibold text-gray-900">Calculus (Diff + Int)</div>
-                  <div className="text-gray-700">Sem 1–4</div>
+                  <div className="text-gray-700 rounded-md">Sem 1–4</div>
                   <div className="font-bold text-blue-600">90%</div>
-                  <div className="text-gray-700 text-sm">Thermo, Fluids, Vibrations, HMT</div>
+                  <div className="text-gray-700 text-sm rounded-md">Thermo, Fluids, Vibrations, HMT</div>
                 </div>
                 
                 <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
                   <div className="font-semibold text-gray-900">Differential Equations</div>
-                  <div className="text-gray-700">Sem 2–5</div>
+                  <div className="text-gray-700 rounded-md">Sem 2–5</div>
                   <div className="font-bold text-green-600">85%</div>
-                  <div className="text-gray-700 text-sm">Vibration, Dynamics, FEM</div>
+                  <div className="text-gray-700 text-sm rounded-md">Vibration, Dynamics, FEM</div>
                 </div>
                 
                 <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
                   <div className="font-semibold text-gray-900">Linear Algebra / Matrices</div>
-                  <div className="text-gray-700">Sem 1, 3, 6</div>
+                  <div className="text-gray-700 rounded-md">Sem 1, 3, 6</div>
                   <div className="font-bold text-purple-600">75%</div>
-                  <div className="text-gray-700 text-sm">FEA, Design, System Modeling</div>
+                  <div className="text-gray-700 text-sm rounded-md">FEA, Design, System Modeling</div>
                 </div>
                 
                 <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
                   <div className="font-semibold text-gray-900">Fourier/Laplace</div>
-                  <div className="text-gray-700">Sem 4–7</div>
+                  <div className="text-gray-700 rounded-md">Sem 4–7</div>
                   <div className="font-bold text-orange-600">70%</div>
-                  <div className="text-gray-700 text-sm">Signal systems, control</div>
+                  <div className="text-gray-700 text-sm rounded-md">Signal systems, control</div>
                 </div>
                 
                 <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
                   <div className="font-semibold text-gray-900">Optimization / OR</div>
-                  <div className="text-gray-700">Sem 5–6</div>
+                  <div className="text-gray-700 rounded-md">Sem 5–6</div>
                   <div className="font-bold text-yellow-600">60%</div>
-                  <div className="text-gray-700 text-sm">Manufacturing, Project planning</div>
+                  <div className="text-gray-700 text-sm rounded-md">Manufacturing, Project planning</div>
                 </div>
                 
                 <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
                   <div className="font-semibold text-gray-900">Probability & Stats</div>
-                  <div className="text-gray-700">Sem 5, 6</div>
+                  <div className="text-gray-700 rounded-md">Sem 5, 6</div>
                   <div className="font-bold text-red-600">50%</div>
-                  <div className="text-gray-700 text-sm">Quality control, failure analysis</div>
+                  <div className="text-gray-700 text-sm rounded-md">Quality control, failure analysis</div>
                 </div>
               </div>
             </div>
@@ -333,7 +333,7 @@ export const BTechMechanical = () => {
               {/* 1st Year */}
               <div className="grid grid-cols-12 gap-4 p-4 lg:p-6 hover:bg-primary/5 dark:hover:bg-primary/10 transition-all duration-300 group">
                 <div className="col-span-2 flex items-center gap-3">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-lg lg:text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-lg lg:text-xl shadow-lg group-hover:scale-110 transition-transform duration-300 rounded-sm">
                     1
                   </div>
                 </div>
@@ -343,16 +343,16 @@ export const BTechMechanical = () => {
                   <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm lg:text-base">Engineering Graphics & Workshop</div>
                 </div>
                 <div className="col-span-5 space-y-2 text-slate-700 dark:text-slate-300 text-sm lg:text-base">
-                  <p>How things move, shake, and fly (motion, forces, vibrations, energy).</p>
-                  <p className="pt-2">Use math to calculate speed, acceleration, pressure, and flight.</p>
-                  <p className="pt-2">How aircraft parts are shaped and made (design + manufacturing basics).</p>
+                  <p className="text-base font-medium">How things move, shake, and fly (motion, forces, vibrations, energy).</p>
+                  <p className="pt-2 font-medium">Use math to calculate speed, acceleration, pressure, and flight.</p>
+                  <p className="pt-2 font-medium">How aircraft parts are shaped and made (design + manufacturing basics).</p>
                 </div>
               </div>
 
               {/* 2nd Year */}
               <div className="grid grid-cols-12 gap-4 p-4 lg:p-6 hover:bg-primary/5 dark:hover:bg-primary/10 transition-all duration-300 group">
                 <div className="col-span-2 flex items-center gap-3">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-white font-bold text-lg lg:text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-white font-bold text-lg lg:text-xl shadow-lg group-hover:scale-110 transition-transform duration-300 rounded-sm">
                     2
                   </div>
                 </div>
@@ -362,16 +362,16 @@ export const BTechMechanical = () => {
                   <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm lg:text-base">Thermodynamics</div>
                 </div>
                 <div className="col-span-5 space-y-2 text-slate-700 dark:text-slate-300 text-sm lg:text-base">
-                  <p>Strong & safe parts: How wings, body, and engines handle stress and vibration without breaking.</p>
-                  <p className="pt-2">Air & fluids: How air creates lift/drag and how fuel/hydraulic fluids move.</p>
-                  <p className="pt-2">Heat & power: How heat and energy make jet engines and turbines work.</p>
+                  <p className="font-semibold">Strong & safe parts: How wings, body, and engines handle stress and vibration without breaking.</p>
+                  <p className="pt-2 font-medium">Air & fluids: How air creates lift/drag and how fuel/hydraulic fluids move.</p>
+                  <p className="pt-2 font-medium">Heat & power: How heat and energy make jet engines and turbines work.</p>
                 </div>
               </div>
 
               {/* 3rd Year */}
               <div className="grid grid-cols-12 gap-4 p-4 lg:p-6 hover:bg-primary/5 dark:hover:bg-primary/10 transition-all duration-300 group">
                 <div className="col-span-2 flex items-center gap-3">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg lg:text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg lg:text-xl shadow-lg group-hover:scale-110 transition-transform duration-300 rounded-sm">
                     3
                   </div>
                 </div>
@@ -381,16 +381,16 @@ export const BTechMechanical = () => {
                   <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm lg:text-base">Aerodynamics & Flight Mechanics</div>
                 </div>
                 <div className="col-span-5 space-y-2 text-slate-700 dark:text-slate-300 text-sm lg:text-base">
-                  <p>Vibrations & control: How engines, landing gear, and moving parts shake—and how we reduce it.</p>
-                  <p className="pt-2">Temperature control: How we cool jet engines and keep cabins comfortable.</p>
-                  <p className="pt-2">Flight & forces: How planes fly, how pressure acts, and how design changes performance.</p>
+                  <p className="font-medium">Vibrations & control: How engines, landing gear, and moving parts shake—and how we reduce it.</p>
+                  <p className="pt-2 font-medium">Temperature control: How we cool jet engines and keep cabins comfortable.</p>
+                  <p className="pt-2 font-medium">Flight & forces: How planes fly, how pressure acts, and how design changes performance.</p>
                 </div>
               </div>
 
               {/* 4th Year */}
               <div className="grid grid-cols-12 gap-4 p-4 lg:p-6 hover:bg-primary/5 dark:hover:bg-primary/10 transition-all duration-300 group">
                 <div className="col-span-2 flex items-center gap-3">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white font-bold text-lg lg:text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white font-bold text-lg lg:text-xl shadow-lg group-hover:scale-110 transition-transform duration-300 rounded-sm">
                     4
                   </div>
                 </div>
@@ -399,8 +399,8 @@ export const BTechMechanical = () => {
                   <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm lg:text-base">Project & Internship</div>
                 </div>
                 <div className="col-span-5 space-y-2 text-slate-700 dark:text-slate-300 text-sm lg:text-base">
-                  <p>Focus areas: aircraft strength, noise & vibration control, fatigue testing.</p>
-                  <p className="pt-2">Do real work: design, analyze, and test aircraft systems on real projects.</p>
+                  <p className="font-medium">Focus areas: aircraft strength, noise & vibration control, fatigue testing.</p>
+                  <p className="pt-2 font-medium">Do real work: design, analyze, and test aircraft systems on real projects.</p>
                 </div>
               </div>
             </div>
