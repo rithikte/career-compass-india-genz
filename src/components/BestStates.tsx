@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, TrendingUp, Building, AlertTriangle } from 'lucide-react';
+import { MapPin, TrendingUp, Building, AlertTriangle, Plane, Cpu, Wrench } from 'lucide-react';
 import SourceBadge from './SourceBadge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line, Area, AreaChart } from 'recharts';
@@ -722,156 +722,302 @@ export const BestStates = () => {
         </div>
       </div>
 
-      {/* Job Share by Each State */}
+      {/* State-Wise Market Share */}
       <div className="bg-white rounded-lg shadow-xl overflow-hidden mb-8 animate-fade-in">
         <div className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-center p-6 sm:p-8">
           <MapPin className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3" />
           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
-            Job Share by Each State
+            State-Wise Market Share
           </h3>
           <p className="text-cyan-100 text-sm sm:text-base">
-            Percentage distribution of aerospace jobs across states
+            Understanding regional dominance and why opportunities cluster in specific states
           </p>
         </div>
 
-        <div className="overflow-x-auto">
-          <Table>
-            <TableHeader>
-              <TableRow className="bg-gradient-to-r from-cyan-50 to-blue-50 hover:from-cyan-100 hover:to-blue-100 shadow-sm border-b-2 border-blue-100">
-                <TableHead className="text-blue-600 font-bold text-center">State</TableHead>
-                <TableHead className="text-blue-600 font-bold text-center">AME Job Share</TableHead>
-                <TableHead className="text-blue-600 font-bold text-center">Avionics Job Share</TableHead>
-                <TableHead className="text-blue-600 font-bold text-center">Aerospace Eng. Job Share</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              <TableRow className="hover:bg-cyan-50">
-                <TableCell className="font-semibold text-gray-900 text-center">Karnataka</TableCell>
-                <TableCell className="text-center text-blue-700 font-bold text-lg">16–20%</TableCell>
-                <TableCell className="text-center text-indigo-700 font-bold text-lg">32–36%</TableCell>
-                <TableCell className="text-center text-purple-700 font-bold text-lg">40–45%</TableCell>
-              </TableRow>
-              <TableRow className="hover:bg-cyan-50">
-                <TableCell className="font-semibold text-gray-900 text-center">Tamil Nadu</TableCell>
-                <TableCell className="text-center text-blue-700 font-bold text-lg">8–12%</TableCell>
-                <TableCell className="text-center text-indigo-700 font-bold text-lg">12–16%</TableCell>
-                <TableCell className="text-center text-purple-700 font-bold text-lg">18–22%</TableCell>
-              </TableRow>
-              <TableRow className="hover:bg-cyan-50">
-                <TableCell className="font-semibold text-gray-900 text-center">Telangana</TableCell>
-                <TableCell className="text-center text-blue-700 font-bold text-lg">34–38%</TableCell>
-                <TableCell className="text-center text-indigo-700 font-bold text-lg">28–32%</TableCell>
-                <TableCell className="text-center text-purple-700 font-bold text-lg">16–20%</TableCell>
-              </TableRow>
-              <TableRow className="hover:bg-cyan-50">
-                <TableCell className="font-semibold text-gray-900 text-center">Maharashtra</TableCell>
-                <TableCell className="text-center text-blue-700 font-bold text-lg">28–32%</TableCell>
-                <TableCell className="text-center text-indigo-700 font-bold text-lg">12–16%</TableCell>
-                <TableCell className="text-center text-purple-700 font-bold text-lg">12–15%</TableCell>
-              </TableRow>
-              <TableRow className="hover:bg-cyan-50">
-                <TableCell className="font-semibold text-gray-900 text-center">Andhra Pradesh</TableCell>
-                <TableCell className="text-center text-blue-700 font-bold text-lg">4–6%</TableCell>
-                <TableCell className="text-center text-indigo-700 font-bold text-lg">4–6%</TableCell>
-                <TableCell className="text-center text-purple-700 font-bold text-lg">3–6%</TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </div>
-
-        {/* Charts for Job Share by State - Three Separate Pie Charts */}
-        <div className="bg-gradient-to-br from-cyan-50 to-blue-50 p-6 rounded-lg border border-cyan-200">
-          <h4 className="text-xl font-bold text-slate-900 mb-6 text-center">Job Share Distribution Across States</h4>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Aerospace Engineer Chart */}
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-              <h5 className="text-lg font-bold text-purple-700 mb-4 text-center">Aerospace Engineer</h5>
-              <ResponsiveContainer width="100%" height={300}>
-                <PieChart>
-                  <Pie
-                    data={[
-                      { name: 'Karnataka', abbr: 'KA', value: 42.5, fill: '#8b5cf6' },
-                      { name: 'Tamil Nadu', abbr: 'TN', value: 20, fill: '#06b6d4' },
-                      { name: 'Telangana', abbr: 'TS', value: 18, fill: '#3b82f6' },
-                      { name: 'Maharashtra', abbr: 'MH', value: 13.5, fill: '#6366f1' },
-                      { name: 'Andhra Pradesh', abbr: 'AP', value: 4.5, fill: '#14b8a6' }
-                    ]}
-                    cx="50%"
-                    cy="50%"
-                    labelLine={false}
-                    label={({ abbr, value }) => `${abbr}: ${value}%`}
-                    outerRadius={85}
-                    dataKey="value"
-                  />
-                  <Tooltip 
-                    contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', border: '1px solid #bae6fd', borderRadius: '8px' }}
-                    formatter={(value, name, props) => [`${value}%`, props.payload.name]}
-                  />
-                </PieChart>
-              </ResponsiveContainer>
+        <div className="p-6 sm:p-8 space-y-10">
+          {/* Aerospace Engineer Section */}
+          <div>
+            <div className="bg-gradient-to-r from-purple-600 to-purple-500 p-4 rounded-t-lg">
+              <h4 className="text-xl sm:text-2xl font-bold text-white flex items-center justify-center gap-2">
+                <Plane className="w-6 h-6" />
+                Aerospace Engineer
+              </h4>
+              <p className="text-purple-100 text-sm text-center mt-1">(design / structures / systems)</p>
             </div>
-
-            {/* Avionics Engineer Chart */}
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-              <h5 className="text-lg font-bold text-indigo-700 mb-4 text-center">Avionics Engineer</h5>
-              <ResponsiveContainer width="100%" height={300}>
-                <PieChart>
-                  <Pie
-                    data={[
-                      { name: 'Karnataka', abbr: 'KA', value: 34, fill: '#8b5cf6' },
-                      { name: 'Telangana', abbr: 'TS', value: 30, fill: '#3b82f6' },
-                      { name: 'Tamil Nadu', abbr: 'TN', value: 14, fill: '#06b6d4' },
-                      { name: 'Maharashtra', abbr: 'MH', value: 14, fill: '#6366f1' },
-                      { name: 'Andhra Pradesh', abbr: 'AP', value: 5, fill: '#14b8a6' }
-                    ]}
-                    cx="50%"
-                    cy="50%"
-                    labelLine={false}
-                    label={({ abbr, value }) => `${abbr}: ${value}%`}
-                    outerRadius={85}
-                    dataKey="value"
-                  />
-                  <Tooltip 
-                    contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', border: '1px solid #bae6fd', borderRadius: '8px' }}
-                    formatter={(value, name, props) => [`${value}%`, props.payload.name]}
-                  />
-                </PieChart>
-              </ResponsiveContainer>
-            </div>
-
-            {/* AME Chart */}
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-              <h5 className="text-lg font-bold text-blue-700 mb-4 text-center">Aircraft Maintenance Eng.</h5>
-              <ResponsiveContainer width="100%" height={300}>
-                <PieChart>
-                  <Pie
-                    data={[
-                      { name: 'Telangana', abbr: 'TS', value: 36, fill: '#3b82f6' },
-                      { name: 'Maharashtra', abbr: 'MH', value: 30, fill: '#6366f1' },
-                      { name: 'Karnataka', abbr: 'KA', value: 18, fill: '#8b5cf6' },
-                      { name: 'Tamil Nadu', abbr: 'TN', value: 10, fill: '#06b6d4' },
-                      { name: 'Andhra Pradesh', abbr: 'AP', value: 5, fill: '#14b8a6' }
-                    ]}
-                    cx="50%"
-                    cy="50%"
-                    labelLine={false}
-                    label={({ abbr, value }) => `${abbr}: ${value}%`}
-                    outerRadius={85}
-                    dataKey="value"
-                  />
-                  <Tooltip 
-                    contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', border: '1px solid #bae6fd', borderRadius: '8px' }}
-                    formatter={(value, name, props) => [`${value}%`, props.payload.name]}
-                  />
-                </PieChart>
-              </ResponsiveContainer>
+            <div className="bg-white p-6 rounded-b-lg shadow-lg border-l-2 border-r-2 border-b-2 border-purple-300 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="border-l-4 border-purple-600 bg-purple-50 p-4 rounded-lg hover:shadow-md transition-all">
+                <div className="flex items-start justify-between mb-2">
+                  <h5 className="font-bold text-gray-900 text-lg">Karnataka</h5>
+                  <span className="text-2xl font-bold text-purple-700">40–45%</span>
+                </div>
+                <p className="text-sm text-gray-700">
+                  HAL + dense OEM/Tier-1/R&D base; state leads India's aerospace exports.
+                </p>
+              </div>
+              <div className="border-l-4 border-cyan-600 bg-cyan-50 p-4 rounded-lg hover:shadow-md transition-all">
+                <div className="flex items-start justify-between mb-2">
+                  <h5 className="font-bold text-gray-900 text-lg">Tamil Nadu</h5>
+                  <span className="text-2xl font-bold text-cyan-700">18–22%</span>
+                </div>
+                <p className="text-sm text-gray-700">
+                  TN Defence Industrial Corridor (5 nodes) + large MSME base scaling into aero.
+                </p>
+              </div>
+              <div className="border-l-4 border-blue-600 bg-blue-50 p-4 rounded-lg hover:shadow-md transition-all">
+                <div className="flex items-start justify-between mb-2">
+                  <h5 className="font-bold text-gray-900 text-lg">Telangana</h5>
+                  <span className="text-2xl font-bold text-blue-700">16–20%</span>
+                </div>
+                <p className="text-sm text-gray-700">
+                  Hyderabad A&D cluster (25+ large firms, 1,000+ MSMEs).
+                </p>
+              </div>
+              <div className="border-l-4 border-indigo-600 bg-indigo-50 p-4 rounded-lg hover:shadow-md transition-all">
+                <div className="flex items-start justify-between mb-2">
+                  <h5 className="font-bold text-gray-900 text-lg">Maharashtra</h5>
+                  <span className="text-2xl font-bold text-indigo-700">12–15%</span>
+                </div>
+                <p className="text-sm text-gray-700">
+                  HAL Nashik + Nagpur MIHAN aero manufacturing/MRO ecosystem.
+                </p>
+              </div>
+              <div className="border-l-4 border-teal-600 bg-teal-50 p-4 rounded-lg hover:shadow-md transition-all">
+                <div className="flex items-start justify-between mb-2">
+                  <h5 className="font-bold text-gray-900 text-lg">Andhra Pradesh</h5>
+                  <span className="text-2xl font-bold text-teal-700">3–6%</span>
+                </div>
+                <p className="text-sm text-gray-700">
+                  New but real: JK Maini Global Aerospace facility (≈1,400 direct jobs by 2027).
+                </p>
+              </div>
             </div>
           </div>
 
-          <p className="text-sm text-gray-600 text-center mt-6 italic">
-            Job distribution varies significantly by role - Karnataka leads in Aerospace & Avionics, while Telangana dominates AME positions
-          </p>
+          {/* Avionics Engineer Section */}
+          <div>
+            <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 p-4 rounded-t-lg">
+              <h4 className="text-xl sm:text-2xl font-bold text-white flex items-center justify-center gap-2">
+                <Cpu className="w-6 h-6" />
+                Avionics Engineer
+              </h4>
+              <p className="text-indigo-100 text-sm text-center mt-1">(aircraft systems, integration, line/base support)</p>
+            </div>
+            <div className="bg-white p-6 rounded-b-lg shadow-lg border-l-2 border-r-2 border-b-2 border-indigo-300 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="border-l-4 border-purple-600 bg-purple-50 p-4 rounded-lg hover:shadow-md transition-all">
+                <div className="flex items-start justify-between mb-2">
+                  <h5 className="font-bold text-gray-900 text-lg">Karnataka</h5>
+                  <span className="text-2xl font-bold text-purple-700">32–36%</span>
+                </div>
+                <p className="text-sm text-gray-700">
+                  Long-standing avionics & embedded hubs (RTX/Collins, Honeywell) + HAL ecosystem.
+                </p>
+              </div>
+              <div className="border-l-4 border-blue-600 bg-blue-50 p-4 rounded-lg hover:shadow-md transition-all">
+                <div className="flex items-start justify-between mb-2">
+                  <h5 className="font-bold text-gray-900 text-lg">Telangana</h5>
+                  <span className="text-2xl font-bold text-blue-700">28–32%</span>
+                </div>
+                <p className="text-sm text-gray-700">
+                  Hyderabad hosts RTX/Collins, P&W training presence, and strong A&D supply chain.
+                </p>
+              </div>
+              <div className="border-l-4 border-cyan-600 bg-cyan-50 p-4 rounded-lg hover:shadow-md transition-all">
+                <div className="flex items-start justify-between mb-2">
+                  <h5 className="font-bold text-gray-900 text-lg">Tamil Nadu</h5>
+                  <span className="text-2xl font-bold text-cyan-700">12–16%</span>
+                </div>
+                <p className="text-sm text-gray-700">
+                  Corridor MSMEs moving up the value chain into avionics sub-systems.
+                </p>
+              </div>
+              <div className="border-l-4 border-indigo-600 bg-indigo-50 p-4 rounded-lg hover:shadow-md transition-all">
+                <div className="flex items-start justify-between mb-2">
+                  <h5 className="font-bold text-gray-900 text-lg">Maharashtra</h5>
+                  <span className="text-2xl font-bold text-indigo-700">12–16%</span>
+                </div>
+                <p className="text-sm text-gray-700">
+                  Nashik (HAL) and MIHAN suppliers; avionics labs co-located with MRO/manufacturing.
+                </p>
+              </div>
+              <div className="border-l-4 border-teal-600 bg-teal-50 p-4 rounded-lg hover:shadow-md transition-all">
+                <div className="flex items-start justify-between mb-2">
+                  <h5 className="font-bold text-gray-900 text-lg">Andhra Pradesh</h5>
+                  <span className="text-2xl font-bold text-teal-700">4–6%</span>
+                </div>
+                <p className="text-sm text-gray-700">
+                  Early-stage; Space City/Tirupati + new aerospace manufacturing create future demand.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* AME Section */}
+          <div>
+            <div className="bg-gradient-to-r from-blue-600 to-blue-500 p-4 rounded-t-lg">
+              <h4 className="text-xl sm:text-2xl font-bold text-white flex items-center justify-center gap-2">
+                <Wrench className="w-6 h-6" />
+                Aircraft Maintenance Engineer (AME)
+              </h4>
+              <p className="text-blue-100 text-sm text-center mt-1">(base/line MRO, heavy checks)</p>
+            </div>
+            <div className="bg-white p-6 rounded-b-lg shadow-lg border-l-2 border-r-2 border-b-2 border-blue-300 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="border-l-4 border-blue-600 bg-blue-50 p-4 rounded-lg hover:shadow-md transition-all">
+                <div className="flex items-start justify-between mb-2">
+                  <h5 className="font-bold text-gray-900 text-lg">Telangana</h5>
+                  <span className="text-2xl font-bold text-blue-700">34–38%</span>
+                </div>
+                <p className="text-sm text-gray-700">
+                  GMR Aero Technic hub (EASA/FAA approvals; 9+ narrow-body bays + paint/wide-body).
+                </p>
+              </div>
+              <div className="border-l-4 border-indigo-600 bg-indigo-50 p-4 rounded-lg hover:shadow-md transition-all">
+                <div className="flex items-start justify-between mb-2">
+                  <h5 className="font-bold text-gray-900 text-lg">Maharashtra</h5>
+                  <span className="text-2xl font-bold text-indigo-700">28–32%</span>
+                </div>
+                <p className="text-sm text-gray-700">
+                  AIESL MIHAN Nagpur + Indamer/Adani JV; multi-hangar capacity, expansion underway.
+                </p>
+              </div>
+              <div className="border-l-4 border-purple-600 bg-purple-50 p-4 rounded-lg hover:shadow-md transition-all">
+                <div className="flex items-start justify-between mb-2">
+                  <h5 className="font-bold text-gray-900 text-lg">Karnataka</h5>
+                  <span className="text-2xl font-bold text-purple-700">16–20%</span>
+                </div>
+                <p className="text-sm text-gray-700">
+                  Bengaluru airline/defence fleets serviced via HAL/AIESL footprint and BLR ecosystem.
+                </p>
+              </div>
+              <div className="border-l-4 border-cyan-600 bg-cyan-50 p-4 rounded-lg hover:shadow-md transition-all">
+                <div className="flex items-start justify-between mb-2">
+                  <h5 className="font-bold text-gray-900 text-lg">Tamil Nadu</h5>
+                  <span className="text-2xl font-bold text-cyan-700">8–12%</span>
+                </div>
+                <p className="text-sm text-gray-700">
+                  Corridor attracting airline support vendors; smaller MRO presence today.
+                </p>
+              </div>
+              <div className="border-l-4 border-teal-600 bg-teal-50 p-4 rounded-lg hover:shadow-md transition-all">
+                <div className="flex items-start justify-between mb-2">
+                  <h5 className="font-bold text-gray-900 text-lg">Andhra Pradesh</h5>
+                  <span className="text-2xl font-bold text-teal-700">4–6%</span>
+                </div>
+                <p className="text-sm text-gray-700">
+                  Policy push + upcoming clusters; limited operational MRO headcount today.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Visual Distribution Charts */}
+          <div className="bg-gradient-to-br from-slate-50 to-blue-50 p-6 rounded-lg border-2 border-slate-200 shadow-lg">
+            <h4 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6 text-center">Market Share Distribution by Role</h4>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {/* Aerospace Engineer Chart */}
+              <div className="bg-white p-4 rounded-lg shadow-md border border-purple-200">
+                <h5 className="text-lg font-bold text-purple-700 mb-4 text-center">Aerospace Engineer</h5>
+                <ResponsiveContainer width="100%" height={280}>
+                  <PieChart>
+                    <Pie
+                      data={[
+                        { name: 'Karnataka', value: 42.5, fill: '#9333ea' },
+                        { name: 'Tamil Nadu', value: 20, fill: '#0891b2' },
+                        { name: 'Telangana', value: 18, fill: '#2563eb' },
+                        { name: 'Maharashtra', value: 13.5, fill: '#4f46e5' },
+                        { name: 'Andhra Pradesh', value: 4.5, fill: '#0d9488' }
+                      ]}
+                      cx="50%"
+                      cy="50%"
+                      labelLine={false}
+                      label={({ name, value }) => `${value}%`}
+                      outerRadius={75}
+                      dataKey="value"
+                    />
+                    <Tooltip 
+                      contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.98)', border: '1px solid #e5e7eb', borderRadius: '8px', padding: '8px' }}
+                      formatter={(value, name) => [`${value}%`, name]}
+                    />
+                    <Legend 
+                      verticalAlign="bottom" 
+                      height={36}
+                      formatter={(value) => <span className="text-xs">{value}</span>}
+                    />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+
+              {/* Avionics Engineer Chart */}
+              <div className="bg-white p-4 rounded-lg shadow-md border border-indigo-200">
+                <h5 className="text-lg font-bold text-indigo-700 mb-4 text-center">Avionics Engineer</h5>
+                <ResponsiveContainer width="100%" height={280}>
+                  <PieChart>
+                    <Pie
+                      data={[
+                        { name: 'Karnataka', value: 34, fill: '#9333ea' },
+                        { name: 'Telangana', value: 30, fill: '#2563eb' },
+                        { name: 'Tamil Nadu', value: 14, fill: '#0891b2' },
+                        { name: 'Maharashtra', value: 14, fill: '#4f46e5' },
+                        { name: 'Andhra Pradesh', value: 5, fill: '#0d9488' }
+                      ]}
+                      cx="50%"
+                      cy="50%"
+                      labelLine={false}
+                      label={({ name, value }) => `${value}%`}
+                      outerRadius={75}
+                      dataKey="value"
+                    />
+                    <Tooltip 
+                      contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.98)', border: '1px solid #e5e7eb', borderRadius: '8px', padding: '8px' }}
+                      formatter={(value, name) => [`${value}%`, name]}
+                    />
+                    <Legend 
+                      verticalAlign="bottom" 
+                      height={36}
+                      formatter={(value) => <span className="text-xs">{value}</span>}
+                    />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+
+              {/* AME Chart */}
+              <div className="bg-white p-4 rounded-lg shadow-md border border-blue-200">
+                <h5 className="text-lg font-bold text-blue-700 mb-4 text-center">Aircraft Maintenance Eng.</h5>
+                <ResponsiveContainer width="100%" height={280}>
+                  <PieChart>
+                    <Pie
+                      data={[
+                        { name: 'Telangana', value: 36, fill: '#2563eb' },
+                        { name: 'Maharashtra', value: 30, fill: '#4f46e5' },
+                        { name: 'Karnataka', value: 18, fill: '#9333ea' },
+                        { name: 'Tamil Nadu', value: 10, fill: '#0891b2' },
+                        { name: 'Andhra Pradesh', value: 5, fill: '#0d9488' }
+                      ]}
+                      cx="50%"
+                      cy="50%"
+                      labelLine={false}
+                      label={({ name, value }) => `${value}%`}
+                      outerRadius={75}
+                      dataKey="value"
+                    />
+                    <Tooltip 
+                      contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.98)', border: '1px solid #e5e7eb', borderRadius: '8px', padding: '8px' }}
+                      formatter={(value, name) => [`${value}%`, name]}
+                    />
+                    <Legend 
+                      verticalAlign="bottom" 
+                      height={36}
+                      formatter={(value) => <span className="text-xs">{value}</span>}
+                    />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+
+            <p className="text-sm text-gray-600 text-center mt-6 italic">
+              Regional strengths vary by specialization: Karnataka dominates design roles, Telangana leads in maintenance, while emerging clusters grow in AP
+            </p>
+          </div>
         </div>
       </div>
 
