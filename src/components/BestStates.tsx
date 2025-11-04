@@ -734,177 +734,328 @@ export const BestStates = () => {
           </p>
         </div>
 
-        <div className="p-6 sm:p-8 space-y-10">
+        <div className="p-6 sm:p-8 space-y-12">
           {/* Aerospace Engineer Section */}
-          <div>
-            <div className="bg-gradient-to-r from-purple-600 to-purple-500 p-4 rounded-t-lg">
-              <h4 className="text-xl sm:text-2xl font-bold text-white flex items-center justify-center gap-2">
-                <Plane className="w-6 h-6" />
-                Aerospace Engineer
-              </h4>
-              <p className="text-purple-100 text-sm text-center mt-1">(design / structures / systems)</p>
-            </div>
-            <div className="bg-white p-6 rounded-b-lg shadow-lg border-l-2 border-r-2 border-b-2 border-purple-300 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <div className="border-l-4 border-purple-600 bg-purple-50 p-4 rounded-lg hover:shadow-md transition-all">
-                <div className="flex items-start justify-between mb-2">
-                  <h5 className="font-bold text-gray-900 text-lg">Karnataka</h5>
-                  <span className="text-2xl font-bold text-purple-700">40–45%</span>
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-blue-600/10 rounded-2xl blur-xl"></div>
+            <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden border border-purple-100">
+              <div className="bg-gradient-to-br from-purple-600 via-purple-500 to-blue-600 p-6 sm:p-8 text-center relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20"></div>
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full -ml-16 -mb-16"></div>
+                <div className="relative z-10">
+                  <Plane className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 text-white" />
+                  <h4 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+                    Aerospace Engineer
+                  </h4>
+                  <p className="text-purple-100 text-sm sm:text-base">(design / structures / systems)</p>
                 </div>
-                <p className="text-sm text-gray-700">
-                  HAL + dense OEM/Tier-1/R&D base; state leads India's aerospace exports.
-                </p>
               </div>
-              <div className="border-l-4 border-cyan-600 bg-cyan-50 p-4 rounded-lg hover:shadow-md transition-all">
-                <div className="flex items-start justify-between mb-2">
-                  <h5 className="font-bold text-gray-900 text-lg">Tamil Nadu</h5>
-                  <span className="text-2xl font-bold text-cyan-700">18–22%</span>
+              
+              <div className="p-6 sm:p-8 space-y-4">
+                {/* Karnataka */}
+                <div className="group bg-gradient-to-br from-purple-50 to-white p-5 sm:p-6 rounded-xl hover:shadow-xl transition-all duration-300 border border-purple-200 hover:border-purple-400">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3 gap-2">
+                    <h5 className="text-xl sm:text-2xl font-bold text-gray-900">Karnataka</h5>
+                    <div className="flex items-center gap-2">
+                      <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                        40–45%
+                      </div>
+                      <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                        #1
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-3 mb-3 overflow-hidden">
+                    <div className="bg-gradient-to-r from-purple-600 to-blue-600 h-full rounded-full animate-fade-in" style={{ width: '42.5%' }}></div>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">
+                    HAL + dense OEM/Tier-1/R&D base; state leads India's aerospace exports.
+                  </p>
                 </div>
-                <p className="text-sm text-gray-700">
-                  TN Defence Industrial Corridor (5 nodes) + large MSME base scaling into aero.
-                </p>
-              </div>
-              <div className="border-l-4 border-blue-600 bg-blue-50 p-4 rounded-lg hover:shadow-md transition-all">
-                <div className="flex items-start justify-between mb-2">
-                  <h5 className="font-bold text-gray-900 text-lg">Telangana</h5>
-                  <span className="text-2xl font-bold text-blue-700">16–20%</span>
+
+                {/* Tamil Nadu */}
+                <div className="group bg-gradient-to-br from-cyan-50 to-white p-5 sm:p-6 rounded-xl hover:shadow-xl transition-all duration-300 border border-cyan-200 hover:border-cyan-400">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3 gap-2">
+                    <h5 className="text-xl sm:text-2xl font-bold text-gray-900">Tamil Nadu</h5>
+                    <div className="flex items-center gap-2">
+                      <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+                        18–22%
+                      </div>
+                      <div className="w-10 h-10 bg-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                        #2
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-3 mb-3 overflow-hidden">
+                    <div className="bg-gradient-to-r from-cyan-600 to-blue-600 h-full rounded-full animate-fade-in" style={{ width: '20%' }}></div>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">
+                    TN Defence Industrial Corridor (5 nodes) + large MSME base scaling into aero.
+                  </p>
                 </div>
-                <p className="text-sm text-gray-700">
-                  Hyderabad A&D cluster (25+ large firms, 1,000+ MSMEs).
-                </p>
-              </div>
-              <div className="border-l-4 border-indigo-600 bg-indigo-50 p-4 rounded-lg hover:shadow-md transition-all">
-                <div className="flex items-start justify-between mb-2">
-                  <h5 className="font-bold text-gray-900 text-lg">Maharashtra</h5>
-                  <span className="text-2xl font-bold text-indigo-700">12–15%</span>
+
+                {/* Telangana */}
+                <div className="group bg-gradient-to-br from-blue-50 to-white p-5 sm:p-6 rounded-xl hover:shadow-xl transition-all duration-300 border border-blue-200 hover:border-blue-400">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3 gap-2">
+                    <h5 className="text-xl sm:text-2xl font-bold text-gray-900">Telangana</h5>
+                    <div className="flex items-center gap-2">
+                      <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                        16–20%
+                      </div>
+                      <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                        #3
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-3 mb-3 overflow-hidden">
+                    <div className="bg-gradient-to-r from-blue-600 to-indigo-600 h-full rounded-full animate-fade-in" style={{ width: '18%' }}></div>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">
+                    Hyderabad A&D cluster (25+ large firms, 1,000+ MSMEs).
+                  </p>
                 </div>
-                <p className="text-sm text-gray-700">
-                  HAL Nashik + Nagpur MIHAN aero manufacturing/MRO ecosystem.
-                </p>
-              </div>
-              <div className="border-l-4 border-teal-600 bg-teal-50 p-4 rounded-lg hover:shadow-md transition-all">
-                <div className="flex items-start justify-between mb-2">
-                  <h5 className="font-bold text-gray-900 text-lg">Andhra Pradesh</h5>
-                  <span className="text-2xl font-bold text-teal-700">3–6%</span>
+
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {/* Maharashtra */}
+                  <div className="group bg-gradient-to-br from-indigo-50 to-white p-4 sm:p-5 rounded-xl hover:shadow-lg transition-all duration-300 border border-indigo-200 hover:border-indigo-400">
+                    <div className="flex items-center justify-between mb-2">
+                      <h5 className="text-lg sm:text-xl font-bold text-gray-900">Maharashtra</h5>
+                      <div className="text-2xl sm:text-3xl font-black text-indigo-600">12–15%</div>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2 mb-2 overflow-hidden">
+                      <div className="bg-indigo-600 h-full rounded-full" style={{ width: '13.5%' }}></div>
+                    </div>
+                    <p className="text-sm text-gray-700">
+                      HAL Nashik + Nagpur MIHAN aero manufacturing/MRO ecosystem.
+                    </p>
+                  </div>
+
+                  {/* Andhra Pradesh */}
+                  <div className="group bg-gradient-to-br from-teal-50 to-white p-4 sm:p-5 rounded-xl hover:shadow-lg transition-all duration-300 border border-teal-200 hover:border-teal-400">
+                    <div className="flex items-center justify-between mb-2">
+                      <h5 className="text-lg sm:text-xl font-bold text-gray-900">Andhra Pradesh</h5>
+                      <div className="text-2xl sm:text-3xl font-black text-teal-600">3–6%</div>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2 mb-2 overflow-hidden">
+                      <div className="bg-teal-600 h-full rounded-full" style={{ width: '4.5%' }}></div>
+                    </div>
+                    <p className="text-sm text-gray-700">
+                      New but real: JK Maini Global Aerospace facility (≈1,400 direct jobs by 2027).
+                    </p>
+                  </div>
                 </div>
-                <p className="text-sm text-gray-700">
-                  New but real: JK Maini Global Aerospace facility (≈1,400 direct jobs by 2027).
-                </p>
               </div>
             </div>
           </div>
 
           {/* Avionics Engineer Section */}
-          <div>
-            <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 p-4 rounded-t-lg">
-              <h4 className="text-xl sm:text-2xl font-bold text-white flex items-center justify-center gap-2">
-                <Cpu className="w-6 h-6" />
-                Avionics Engineer
-              </h4>
-              <p className="text-indigo-100 text-sm text-center mt-1">(aircraft systems, integration, line/base support)</p>
-            </div>
-            <div className="bg-white p-6 rounded-b-lg shadow-lg border-l-2 border-r-2 border-b-2 border-indigo-300 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <div className="border-l-4 border-purple-600 bg-purple-50 p-4 rounded-lg hover:shadow-md transition-all">
-                <div className="flex items-start justify-between mb-2">
-                  <h5 className="font-bold text-gray-900 text-lg">Karnataka</h5>
-                  <span className="text-2xl font-bold text-purple-700">32–36%</span>
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 to-purple-600/10 rounded-2xl blur-xl"></div>
+            <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden border border-indigo-100">
+              <div className="bg-gradient-to-br from-indigo-600 via-indigo-500 to-purple-600 p-6 sm:p-8 text-center relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20"></div>
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full -ml-16 -mb-16"></div>
+                <div className="relative z-10">
+                  <Cpu className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 text-white" />
+                  <h4 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+                    Avionics Engineer
+                  </h4>
+                  <p className="text-indigo-100 text-sm sm:text-base">(aircraft systems, integration, line/base support)</p>
                 </div>
-                <p className="text-sm text-gray-700">
-                  Long-standing avionics & embedded hubs (RTX/Collins, Honeywell) + HAL ecosystem.
-                </p>
               </div>
-              <div className="border-l-4 border-blue-600 bg-blue-50 p-4 rounded-lg hover:shadow-md transition-all">
-                <div className="flex items-start justify-between mb-2">
-                  <h5 className="font-bold text-gray-900 text-lg">Telangana</h5>
-                  <span className="text-2xl font-bold text-blue-700">28–32%</span>
+              
+              <div className="p-6 sm:p-8 space-y-4">
+                {/* Karnataka */}
+                <div className="group bg-gradient-to-br from-purple-50 to-white p-5 sm:p-6 rounded-xl hover:shadow-xl transition-all duration-300 border border-purple-200 hover:border-purple-400">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3 gap-2">
+                    <h5 className="text-xl sm:text-2xl font-bold text-gray-900">Karnataka</h5>
+                    <div className="flex items-center gap-2">
+                      <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                        32–36%
+                      </div>
+                      <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                        #1
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-3 mb-3 overflow-hidden">
+                    <div className="bg-gradient-to-r from-purple-600 to-indigo-600 h-full rounded-full animate-fade-in" style={{ width: '34%' }}></div>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">
+                    Long-standing avionics & embedded hubs (RTX/Collins, Honeywell) + HAL ecosystem.
+                  </p>
                 </div>
-                <p className="text-sm text-gray-700">
-                  Hyderabad hosts RTX/Collins, P&W training presence, and strong A&D supply chain.
-                </p>
-              </div>
-              <div className="border-l-4 border-cyan-600 bg-cyan-50 p-4 rounded-lg hover:shadow-md transition-all">
-                <div className="flex items-start justify-between mb-2">
-                  <h5 className="font-bold text-gray-900 text-lg">Tamil Nadu</h5>
-                  <span className="text-2xl font-bold text-cyan-700">12–16%</span>
+
+                {/* Telangana */}
+                <div className="group bg-gradient-to-br from-blue-50 to-white p-5 sm:p-6 rounded-xl hover:shadow-xl transition-all duration-300 border border-blue-200 hover:border-blue-400">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3 gap-2">
+                    <h5 className="text-xl sm:text-2xl font-bold text-gray-900">Telangana</h5>
+                    <div className="flex items-center gap-2">
+                      <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                        28–32%
+                      </div>
+                      <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                        #2
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-3 mb-3 overflow-hidden">
+                    <div className="bg-gradient-to-r from-blue-600 to-cyan-600 h-full rounded-full animate-fade-in" style={{ width: '30%' }}></div>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">
+                    Hyderabad hosts RTX/Collins, P&W training presence, and strong A&D supply chain.
+                  </p>
                 </div>
-                <p className="text-sm text-gray-700">
-                  Corridor MSMEs moving up the value chain into avionics sub-systems.
-                </p>
-              </div>
-              <div className="border-l-4 border-indigo-600 bg-indigo-50 p-4 rounded-lg hover:shadow-md transition-all">
-                <div className="flex items-start justify-between mb-2">
-                  <h5 className="font-bold text-gray-900 text-lg">Maharashtra</h5>
-                  <span className="text-2xl font-bold text-indigo-700">12–16%</span>
+
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {/* Tamil Nadu */}
+                  <div className="group bg-gradient-to-br from-cyan-50 to-white p-4 sm:p-5 rounded-xl hover:shadow-lg transition-all duration-300 border border-cyan-200 hover:border-cyan-400">
+                    <div className="flex items-center justify-between mb-2">
+                      <h5 className="text-lg sm:text-xl font-bold text-gray-900">Tamil Nadu</h5>
+                      <div className="text-2xl sm:text-3xl font-black text-cyan-600">12–16%</div>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2 mb-2 overflow-hidden">
+                      <div className="bg-cyan-600 h-full rounded-full" style={{ width: '14%' }}></div>
+                    </div>
+                    <p className="text-sm text-gray-700">
+                      Corridor MSMEs moving up the value chain into avionics sub-systems.
+                    </p>
+                  </div>
+
+                  {/* Maharashtra */}
+                  <div className="group bg-gradient-to-br from-indigo-50 to-white p-4 sm:p-5 rounded-xl hover:shadow-lg transition-all duration-300 border border-indigo-200 hover:border-indigo-400">
+                    <div className="flex items-center justify-between mb-2">
+                      <h5 className="text-lg sm:text-xl font-bold text-gray-900">Maharashtra</h5>
+                      <div className="text-2xl sm:text-3xl font-black text-indigo-600">12–16%</div>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2 mb-2 overflow-hidden">
+                      <div className="bg-indigo-600 h-full rounded-full" style={{ width: '14%' }}></div>
+                    </div>
+                    <p className="text-sm text-gray-700">
+                      Nashik (HAL) and MIHAN suppliers; avionics labs co-located with MRO/manufacturing.
+                    </p>
+                  </div>
+
+                  {/* Andhra Pradesh */}
+                  <div className="group bg-gradient-to-br from-teal-50 to-white p-4 sm:p-5 rounded-xl hover:shadow-lg transition-all duration-300 border border-teal-200 hover:border-teal-400">
+                    <div className="flex items-center justify-between mb-2">
+                      <h5 className="text-lg sm:text-xl font-bold text-gray-900">Andhra Pradesh</h5>
+                      <div className="text-2xl sm:text-3xl font-black text-teal-600">4–6%</div>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2 mb-2 overflow-hidden">
+                      <div className="bg-teal-600 h-full rounded-full" style={{ width: '5%' }}></div>
+                    </div>
+                    <p className="text-sm text-gray-700">
+                      Early-stage; Space City/Tirupati + new aerospace manufacturing create future demand.
+                    </p>
+                  </div>
                 </div>
-                <p className="text-sm text-gray-700">
-                  Nashik (HAL) and MIHAN suppliers; avionics labs co-located with MRO/manufacturing.
-                </p>
-              </div>
-              <div className="border-l-4 border-teal-600 bg-teal-50 p-4 rounded-lg hover:shadow-md transition-all">
-                <div className="flex items-start justify-between mb-2">
-                  <h5 className="font-bold text-gray-900 text-lg">Andhra Pradesh</h5>
-                  <span className="text-2xl font-bold text-teal-700">4–6%</span>
-                </div>
-                <p className="text-sm text-gray-700">
-                  Early-stage; Space City/Tirupati + new aerospace manufacturing create future demand.
-                </p>
               </div>
             </div>
           </div>
 
           {/* AME Section */}
-          <div>
-            <div className="bg-gradient-to-r from-blue-600 to-blue-500 p-4 rounded-t-lg">
-              <h4 className="text-xl sm:text-2xl font-bold text-white flex items-center justify-center gap-2">
-                <Wrench className="w-6 h-6" />
-                Aircraft Maintenance Engineer (AME)
-              </h4>
-              <p className="text-blue-100 text-sm text-center mt-1">(base/line MRO, heavy checks)</p>
-            </div>
-            <div className="bg-white p-6 rounded-b-lg shadow-lg border-l-2 border-r-2 border-b-2 border-blue-300 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <div className="border-l-4 border-blue-600 bg-blue-50 p-4 rounded-lg hover:shadow-md transition-all">
-                <div className="flex items-start justify-between mb-2">
-                  <h5 className="font-bold text-gray-900 text-lg">Telangana</h5>
-                  <span className="text-2xl font-bold text-blue-700">34–38%</span>
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-cyan-600/10 rounded-2xl blur-xl"></div>
+            <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden border border-blue-100">
+              <div className="bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-600 p-6 sm:p-8 text-center relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20"></div>
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full -ml-16 -mb-16"></div>
+                <div className="relative z-10">
+                  <Wrench className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 text-white" />
+                  <h4 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+                    Aircraft Maintenance Engineer (AME)
+                  </h4>
+                  <p className="text-blue-100 text-sm sm:text-base">(base/line MRO, heavy checks)</p>
                 </div>
-                <p className="text-sm text-gray-700">
-                  GMR Aero Technic hub (EASA/FAA approvals; 9+ narrow-body bays + paint/wide-body).
-                </p>
               </div>
-              <div className="border-l-4 border-indigo-600 bg-indigo-50 p-4 rounded-lg hover:shadow-md transition-all">
-                <div className="flex items-start justify-between mb-2">
-                  <h5 className="font-bold text-gray-900 text-lg">Maharashtra</h5>
-                  <span className="text-2xl font-bold text-indigo-700">28–32%</span>
+              
+              <div className="p-6 sm:p-8 space-y-4">
+                {/* Telangana */}
+                <div className="group bg-gradient-to-br from-blue-50 to-white p-5 sm:p-6 rounded-xl hover:shadow-xl transition-all duration-300 border border-blue-200 hover:border-blue-400">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3 gap-2">
+                    <h5 className="text-xl sm:text-2xl font-bold text-gray-900">Telangana</h5>
+                    <div className="flex items-center gap-2">
+                      <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                        34–38%
+                      </div>
+                      <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                        #1
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-3 mb-3 overflow-hidden">
+                    <div className="bg-gradient-to-r from-blue-600 to-cyan-600 h-full rounded-full animate-fade-in" style={{ width: '36%' }}></div>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">
+                    GMR Aero Technic hub (EASA/FAA approvals; 9+ narrow-body bays + paint/wide-body).
+                  </p>
                 </div>
-                <p className="text-sm text-gray-700">
-                  AIESL MIHAN Nagpur + Indamer/Adani JV; multi-hangar capacity, expansion underway.
-                </p>
-              </div>
-              <div className="border-l-4 border-purple-600 bg-purple-50 p-4 rounded-lg hover:shadow-md transition-all">
-                <div className="flex items-start justify-between mb-2">
-                  <h5 className="font-bold text-gray-900 text-lg">Karnataka</h5>
-                  <span className="text-2xl font-bold text-purple-700">16–20%</span>
+
+                {/* Maharashtra */}
+                <div className="group bg-gradient-to-br from-indigo-50 to-white p-5 sm:p-6 rounded-xl hover:shadow-xl transition-all duration-300 border border-indigo-200 hover:border-indigo-400">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3 gap-2">
+                    <h5 className="text-xl sm:text-2xl font-bold text-gray-900">Maharashtra</h5>
+                    <div className="flex items-center gap-2">
+                      <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                        28–32%
+                      </div>
+                      <div className="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                        #2
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-3 mb-3 overflow-hidden">
+                    <div className="bg-gradient-to-r from-indigo-600 to-purple-600 h-full rounded-full animate-fade-in" style={{ width: '30%' }}></div>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">
+                    AIESL MIHAN Nagpur + Indamer/Adani JV; multi-hangar capacity, expansion underway.
+                  </p>
                 </div>
-                <p className="text-sm text-gray-700">
-                  Bengaluru airline/defence fleets serviced via HAL/AIESL footprint and BLR ecosystem.
-                </p>
-              </div>
-              <div className="border-l-4 border-cyan-600 bg-cyan-50 p-4 rounded-lg hover:shadow-md transition-all">
-                <div className="flex items-start justify-between mb-2">
-                  <h5 className="font-bold text-gray-900 text-lg">Tamil Nadu</h5>
-                  <span className="text-2xl font-bold text-cyan-700">8–12%</span>
+
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {/* Karnataka */}
+                  <div className="group bg-gradient-to-br from-purple-50 to-white p-4 sm:p-5 rounded-xl hover:shadow-lg transition-all duration-300 border border-purple-200 hover:border-purple-400">
+                    <div className="flex items-center justify-between mb-2">
+                      <h5 className="text-lg sm:text-xl font-bold text-gray-900">Karnataka</h5>
+                      <div className="text-2xl sm:text-3xl font-black text-purple-600">16–20%</div>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2 mb-2 overflow-hidden">
+                      <div className="bg-purple-600 h-full rounded-full" style={{ width: '18%' }}></div>
+                    </div>
+                    <p className="text-sm text-gray-700">
+                      Bengaluru airline/defence fleets serviced via HAL/AIESL footprint and BLR ecosystem.
+                    </p>
+                  </div>
+
+                  {/* Tamil Nadu */}
+                  <div className="group bg-gradient-to-br from-cyan-50 to-white p-4 sm:p-5 rounded-xl hover:shadow-lg transition-all duration-300 border border-cyan-200 hover:border-cyan-400">
+                    <div className="flex items-center justify-between mb-2">
+                      <h5 className="text-lg sm:text-xl font-bold text-gray-900">Tamil Nadu</h5>
+                      <div className="text-2xl sm:text-3xl font-black text-cyan-600">8–12%</div>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2 mb-2 overflow-hidden">
+                      <div className="bg-cyan-600 h-full rounded-full" style={{ width: '10%' }}></div>
+                    </div>
+                    <p className="text-sm text-gray-700">
+                      Corridor attracting airline support vendors; smaller MRO presence today.
+                    </p>
+                  </div>
+
+                  {/* Andhra Pradesh */}
+                  <div className="group bg-gradient-to-br from-teal-50 to-white p-4 sm:p-5 rounded-xl hover:shadow-lg transition-all duration-300 border border-teal-200 hover:border-teal-400">
+                    <div className="flex items-center justify-between mb-2">
+                      <h5 className="text-lg sm:text-xl font-bold text-gray-900">Andhra Pradesh</h5>
+                      <div className="text-2xl sm:text-3xl font-black text-teal-600">4–6%</div>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2 mb-2 overflow-hidden">
+                      <div className="bg-teal-600 h-full rounded-full" style={{ width: '5%' }}></div>
+                    </div>
+                    <p className="text-sm text-gray-700">
+                      Policy push + upcoming clusters; limited operational MRO headcount today.
+                    </p>
+                  </div>
                 </div>
-                <p className="text-sm text-gray-700">
-                  Corridor attracting airline support vendors; smaller MRO presence today.
-                </p>
-              </div>
-              <div className="border-l-4 border-teal-600 bg-teal-50 p-4 rounded-lg hover:shadow-md transition-all">
-                <div className="flex items-start justify-between mb-2">
-                  <h5 className="font-bold text-gray-900 text-lg">Andhra Pradesh</h5>
-                  <span className="text-2xl font-bold text-teal-700">4–6%</span>
-                </div>
-                <p className="text-sm text-gray-700">
-                  Policy push + upcoming clusters; limited operational MRO headcount today.
-                </p>
               </div>
             </div>
           </div>
