@@ -756,13 +756,8 @@ export const BestStates = () => {
                 <div className="group bg-gradient-to-br from-purple-50 to-white p-5 sm:p-6 rounded-xl hover:shadow-xl transition-all duration-300 border border-purple-200 hover:border-purple-400">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3 gap-2">
                     <h5 className="text-xl sm:text-2xl font-bold text-gray-900">Karnataka</h5>
-                    <div className="flex items-center gap-2">
-                      <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                        40–45%
-                      </div>
-                      <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                        #1
-                      </div>
+                    <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                      40–45%
                     </div>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3 mb-3 overflow-hidden">
@@ -777,13 +772,8 @@ export const BestStates = () => {
                 <div className="group bg-gradient-to-br from-cyan-50 to-white p-5 sm:p-6 rounded-xl hover:shadow-xl transition-all duration-300 border border-cyan-200 hover:border-cyan-400">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3 gap-2">
                     <h5 className="text-xl sm:text-2xl font-bold text-gray-900">Tamil Nadu</h5>
-                    <div className="flex items-center gap-2">
-                      <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-                        18–22%
-                      </div>
-                      <div className="w-10 h-10 bg-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                        #2
-                      </div>
+                    <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+                      18–22%
                     </div>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3 mb-3 overflow-hidden">
@@ -798,13 +788,8 @@ export const BestStates = () => {
                 <div className="group bg-gradient-to-br from-blue-50 to-white p-5 sm:p-6 rounded-xl hover:shadow-xl transition-all duration-300 border border-blue-200 hover:border-blue-400">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3 gap-2">
                     <h5 className="text-xl sm:text-2xl font-bold text-gray-900">Telangana</h5>
-                    <div className="flex items-center gap-2">
-                      <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                        16–20%
-                      </div>
-                      <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                        #3
-                      </div>
+                    <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                      16–20%
                     </div>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3 mb-3 overflow-hidden">
@@ -869,13 +854,8 @@ export const BestStates = () => {
                 <div className="group bg-gradient-to-br from-purple-50 to-white p-5 sm:p-6 rounded-xl hover:shadow-xl transition-all duration-300 border border-purple-200 hover:border-purple-400">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3 gap-2">
                     <h5 className="text-xl sm:text-2xl font-bold text-gray-900">Karnataka</h5>
-                    <div className="flex items-center gap-2">
-                      <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                        32–36%
-                      </div>
-                      <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                        #1
-                      </div>
+                    <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                      32–36%
                     </div>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3 mb-3 overflow-hidden">
@@ -890,13 +870,8 @@ export const BestStates = () => {
                 <div className="group bg-gradient-to-br from-blue-50 to-white p-5 sm:p-6 rounded-xl hover:shadow-xl transition-all duration-300 border border-blue-200 hover:border-blue-400">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3 gap-2">
                     <h5 className="text-xl sm:text-2xl font-bold text-gray-900">Telangana</h5>
-                    <div className="flex items-center gap-2">
-                      <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                        28–32%
-                      </div>
-                      <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                        #2
-                      </div>
+                    <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                      28–32%
                     </div>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3 mb-3 overflow-hidden">
@@ -975,13 +950,8 @@ export const BestStates = () => {
                 <div className="group bg-gradient-to-br from-blue-50 to-white p-5 sm:p-6 rounded-xl hover:shadow-xl transition-all duration-300 border border-blue-200 hover:border-blue-400">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3 gap-2">
                     <h5 className="text-xl sm:text-2xl font-bold text-gray-900">Telangana</h5>
-                    <div className="flex items-center gap-2">
-                      <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                        34–38%
-                      </div>
-                      <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                        #1
-                      </div>
+                    <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                      34–38%
                     </div>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3 mb-3 overflow-hidden">
@@ -996,13 +966,8 @@ export const BestStates = () => {
                 <div className="group bg-gradient-to-br from-indigo-50 to-white p-5 sm:p-6 rounded-xl hover:shadow-xl transition-all duration-300 border border-indigo-200 hover:border-indigo-400">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3 gap-2">
                     <h5 className="text-xl sm:text-2xl font-bold text-gray-900">Maharashtra</h5>
-                    <div className="flex items-center gap-2">
-                      <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                        28–32%
-                      </div>
-                      <div className="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                        #2
-                      </div>
+                    <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                      28–32%
                     </div>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3 mb-3 overflow-hidden">
