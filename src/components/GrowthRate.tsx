@@ -23,36 +23,33 @@ const growthData = [{
 }];
 
 // New Companies Growth Data
-const newCompaniesGrowthData = [
-  {
-    category: "Foreign/Tier-1/2 Companies",
-    icon: Building2,
-    color: "hsl(238 90% 60%)",
-    baseCAGR: 14,
-    rates: {
-      "2030": "15",
-      "2035": "14–16",
-      "2040": "13–14"
-    },
-    trend: "Steady Entry",
-    reason: "Global supply chain shift",
-    description: "Established international companies entering Indian market"
+const newCompaniesGrowthData = [{
+  category: "Foreign/Tier-1/2 Companies",
+  icon: Building2,
+  color: "hsl(238 90% 60%)",
+  baseCAGR: 14,
+  rates: {
+    "2030": "15",
+    "2035": "14–16",
+    "2040": "13–14"
   },
-  {
-    category: "Startups",
-    icon: Brain,
-    color: "hsl(275 85% 65%)",
-    baseCAGR: 11,
-    rates: {
-      "2030": "14–16",
-      "2035": "7–10",
-      "2040": "11–13"
-    },
-    trend: "Rapid Growth",
-    reason: "Drone and AI boom",
-    description: "Newer, smaller firms that build specific products or software"
-  }
-];
+  trend: "Steady Entry",
+  reason: "Global supply chain shift",
+  description: "Established international companies entering Indian market"
+}, {
+  category: "Startups",
+  icon: Brain,
+  color: "hsl(275 85% 65%)",
+  baseCAGR: 11,
+  rates: {
+    "2030": "14–16",
+    "2035": "7–10",
+    "2040": "11–13"
+  },
+  trend: "Rapid Growth",
+  reason: "Drone and AI boom",
+  description: "Newer, smaller firms that build specific products or software"
+}];
 
 // Generate growth projection data with real job numbers
 const projectionData = [{
@@ -108,8 +105,8 @@ export const GrowthRate = () => {
 
             <div className="text-center mb-4">
               <div className="text-4xl font-bold" style={{
-            color: item.color
-          }}>
+              color: item.color
+            }}>
                 {item.cagr}%
               </div>
               <div className="text-sm text-gray-600">Annual Growth Rate</div>
@@ -150,7 +147,7 @@ export const GrowthRate = () => {
       <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
         <div className="text-center mb-6">
           <h5 className="text-xl font-black text-foreground mb-2">🌍 GLOBAL VS INDIA SNAPSHOT</h5>
-          <p className="text-muted-foreground">Comparative Growth Analysis</p>
+          <p className="text-muted-foreground">CAGR = the average yearly growth</p>
         </div>
         <div className="rounded-xl p-6 border border-gray-200">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
@@ -185,19 +182,16 @@ export const GrowthRate = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {newCompaniesGrowthData.map((item) => (
-            <div key={item.category} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
+          {newCompaniesGrowthData.map(item => <div key={item.category} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
               {/* Header with badge */}
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center">
-                  <item.icon className="w-6 h-6 mr-2" style={{color: item.color}} />
+                  <item.icon className="w-6 h-6 mr-2" style={{
+                color: item.color
+              }} />
                   <h4 className="text-lg font-bold text-slate-900">{item.category}</h4>
                 </div>
-                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                  item.baseCAGR >= 13 ? 'bg-green-100 text-green-800' : 
-                  item.baseCAGR >= 10 ? 'bg-yellow-100 text-yellow-800' : 
-                  'bg-blue-100 text-blue-800'
-                }`}>
+                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${item.baseCAGR >= 13 ? 'bg-green-100 text-green-800' : item.baseCAGR >= 10 ? 'bg-yellow-100 text-yellow-800' : 'bg-blue-100 text-blue-800'}`}>
                   {item.trend}
                 </span>
               </div>
@@ -207,7 +201,9 @@ export const GrowthRate = () => {
 
               {/* Central CAGR */}
               <div className="text-center mb-4">
-                <div className="text-4xl font-bold" style={{color: item.color}}>
+                <div className="text-4xl font-bold" style={{
+              color: item.color
+            }}>
                   {item.baseCAGR}%
                 </div>
                 <div className="text-sm text-gray-600">Average Annual Growth Rate</div>
@@ -224,16 +220,15 @@ export const GrowthRate = () => {
               {/* Year breakdown */}
               <div className="space-y-3 mb-4">
                 <div className="text-xs font-semibold text-gray-500">ANNUAL GROWTH BY YEAR</div>
-                {Object.entries(item.rates).map(([year, rate]) => (
-                  <div key={year} className="flex justify-between items-center">
+                {Object.entries(item.rates).map(([year, rate]) => <div key={year} className="flex justify-between items-center">
                     <span className="text-sm text-gray-600">{year}</span>
-                    <span className="font-semibold" style={{color: item.color}}>{rate}%</span>
-                  </div>
-                ))}
+                    <span className="font-semibold" style={{
+                color: item.color
+              }}>{rate}%</span>
+                  </div>)}
               </div>
 
-            </div>
-          ))}
+            </div>)}
         </div>
       </div>
 
