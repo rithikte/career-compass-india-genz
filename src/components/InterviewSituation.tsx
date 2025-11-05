@@ -78,26 +78,88 @@ export const InterviewSituation = () => {
       
 
       {/* Success Rate Chart */}
-      <Card className="p-4 sm:p-6">
+      <Card className="p-4 sm:p-6 bg-gradient-to-br from-blue-50 to-purple-50 border-2">
         <CardHeader>
-          <CardTitle className="text-center text-lg sm:text-xl font-bold text-gray-800">
-            Success Rate by Job Role
+          <CardTitle className="text-center text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
+            Interview Outcome Breakdown by Role
           </CardTitle>
+          <p className="text-center text-sm text-gray-600">Percentage distribution of applicants across different outcomes</p>
         </CardHeader>
         <CardContent>
-          <div className="h-48 sm:h-56 md:h-64">
+          <div className="h-64 sm:h-72 md:h-80">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={chartData} margin={{
-              top: 10,
-              right: 10,
-              left: 0,
-              bottom: 60
-            }}>
-                <XAxis dataKey="name" angle={-45} textAnchor="end" height={80} interval={0} fontSize={10} />
-                <YAxis fontSize={10} />
-                <Bar dataKey="success" fill="#22c55e" radius={[4, 4, 0, 0]} />
+              <BarChart 
+                data={chartData} 
+                margin={{
+                  top: 20,
+                  right: 30,
+                  left: 20,
+                  bottom: 60
+                }}
+              >
+                <defs>
+                  <linearGradient id="successGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#22c55e" stopOpacity={0.8}/>
+                    <stop offset="100%" stopColor="#16a34a" stopOpacity={0.9}/>
+                  </linearGradient>
+                  <linearGradient id="rejectionGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#ef4444" stopOpacity={0.8}/>
+                    <stop offset="100%" stopColor="#dc2626" stopOpacity={0.9}/>
+                  </linearGradient>
+                  <linearGradient id="filteredGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#f97316" stopOpacity={0.8}/>
+                    <stop offset="100%" stopColor="#ea580c" stopOpacity={0.9}/>
+                  </linearGradient>
+                </defs>
+                <XAxis 
+                  dataKey="name" 
+                  angle={-45} 
+                  textAnchor="end" 
+                  height={80} 
+                  interval={0} 
+                  fontSize={12}
+                  fontWeight={600}
+                  stroke="#64748b"
+                />
+                <YAxis 
+                  fontSize={12}
+                  fontWeight={500}
+                  stroke="#64748b"
+                  label={{ value: 'Percentage (%)', angle: -90, position: 'insideLeft', style: { fontSize: 12, fontWeight: 600 } }}
+                />
+                <Bar dataKey="success" fill="url(#successGradient)" radius={[8, 8, 0, 0]} maxBarSize={60}>
+                  {chartData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} />
+                  ))}
+                </Bar>
+                <Bar dataKey="rejection" fill="url(#rejectionGradient)" radius={[8, 8, 0, 0]} maxBarSize={60}>
+                  {chartData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} />
+                  ))}
+                </Bar>
+                <Bar dataKey="filtered" fill="url(#filteredGradient)" radius={[8, 8, 0, 0]} maxBarSize={60}>
+                  {chartData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} />
+                  ))}
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
+          </div>
+          
+          {/* Legend */}
+          <div className="flex flex-wrap justify-center gap-6 mt-6">
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 rounded bg-gradient-to-br from-green-500 to-green-600"></div>
+              <span className="text-sm font-semibold text-gray-700">Got Job</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 rounded bg-gradient-to-br from-red-500 to-red-600"></div>
+              <span className="text-sm font-semibold text-gray-700">Rejected After Interview</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 rounded bg-gradient-to-br from-orange-500 to-orange-600"></div>
+              <span className="text-sm font-semibold text-gray-700">Filtered Out Early</span>
+            </div>
           </div>
         </CardContent>
       </Card>
