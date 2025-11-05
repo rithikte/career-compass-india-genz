@@ -260,69 +260,124 @@ export const InterviewSituation = () => {
       </Card>
 
       {/* City-Wise Aerospace Hiring Section */}
-      <Card className="bg-white border-gray-200">
-        <CardContent className="p-4 sm:p-6 md:p-8">
-          <div className="text-center mb-6">
-            <MapPin className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">
-              Applicants per Job – City-Wise Aerospace Hiring (2025)
-            </h3>
+      <div className="space-y-6">
+        <div className="text-center space-y-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-4">
+            <MapPin className="w-8 h-8 text-white" />
           </div>
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            City-Wise Aerospace Hiring (2025)
+          </h3>
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+            Applicants per Job Competition Across India's Top Aerospace Hubs
+          </p>
+        </div>
 
-          <div className="overflow-x-auto mb-6">
-            <table className="w-full border-collapse">
-              <thead>
-                <tr className="border-b-2 border-gray-300">
-                  <th className="text-left p-3 sm:p-4 font-bold text-gray-800 text-sm sm:text-base">City</th>
-                  <th className="text-center p-3 sm:p-4 font-bold text-gray-800 text-sm sm:text-base">Avg. Applicants per Job</th>
-                  <th className="text-center p-3 sm:p-4 font-bold text-gray-800 text-sm sm:text-base">Get the Job</th>
-                  <th className="text-center p-3 sm:p-4 font-bold text-gray-800 text-sm sm:text-base">Rejected After Interview</th>
-                  <th className="text-center p-3 sm:p-4 font-bold text-gray-800 text-sm sm:text-base">Don't Reach Final Round</th>
-                  <th className="text-left p-3 sm:p-4 font-bold text-gray-800 text-sm sm:text-base">Industry Insight</th>
-                </tr>
-              </thead>
-              <tbody>
-                {cityWiseData.map((city, index) => {
-                  const successRate = ((city.gotJob / city.applicants) * 100).toFixed(0);
-                  const rejectionRate = ((city.rejectedAfterInterview / city.applicants) * 100).toFixed(0);
-                  const filteredRate = ((city.didntReachFinal / city.applicants) * 100).toFixed(0);
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {cityWiseData.map((city, index) => {
+            const successRate = ((city.gotJob / city.applicants) * 100);
+            const rejectionRate = ((city.rejectedAfterInterview / city.applicants) * 100);
+            const filteredRate = ((city.didntReachFinal / city.applicants) * 100);
+            
+            return (
+              <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-blue-300 overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-600" />
+                
+                <CardHeader className="pb-4">
+                  <div className="flex items-center justify-between mb-4">
+                    <CardTitle className="text-2xl font-bold text-gray-900">
+                      {city.city}
+                    </CardTitle>
+                    <div className="bg-gradient-to-br from-blue-50 to-purple-50 px-4 py-2 rounded-xl border border-blue-200">
+                      <div className="text-sm text-gray-600 font-medium">Total Applicants</div>
+                      <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        {city.applicants}
+                      </div>
+                    </div>
+                  </div>
                   
-                  return (
-                    <tr key={index} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                      <td className="p-3 sm:p-4 font-semibold text-gray-900 text-sm sm:text-base">{city.city}</td>
-                      <td className="p-3 sm:p-4 text-center">
-                        <span className="text-blue-600 font-bold text-sm sm:text-base">{city.applicants}</span>
-                      </td>
-                      <td className="p-3 sm:p-4 text-center">
-                        <span className="text-green-600 font-semibold text-sm sm:text-base">
-                          {city.gotJob} ({successRate}%)
-                        </span>
-                      </td>
-                      <td className="p-3 sm:p-4 text-center">
-                        <span className="text-red-600 font-semibold text-sm sm:text-base">
-                          {city.rejectedAfterInterview} ({rejectionRate}%)
-                        </span>
-                      </td>
-                      <td className="p-3 sm:p-4 text-center">
-                        <span className="text-orange-600 font-semibold text-sm sm:text-base">
-                          {city.didntReachFinal} ({filteredRate}%)
-                        </span>
-                      </td>
-                      <td className="p-3 sm:p-4 text-gray-700 text-sm">{city.insight}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
+                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-4 rounded-xl border border-blue-100">
+                    <p className="text-sm text-gray-700 leading-relaxed">
+                      {city.insight}
+                    </p>
+                  </div>
+                </CardHeader>
 
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
-            <p className="text-sm text-blue-900 mb-2">
-              <strong>Source:</strong> Naukri.com Aerospace Job Trends 2025, TeamLease Employment Outlook Report 2025, and MSDE's Aerospace Skill Gap Report 2024.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+                <CardContent className="space-y-4">
+                  {/* Got Job */}
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <CheckCircle className="w-5 h-5 text-green-600" />
+                        <span className="text-sm font-semibold text-gray-700">Got the Job</span>
+                      </div>
+                      <span className="text-lg font-bold text-green-600">
+                        {city.gotJob} <span className="text-sm">({successRate.toFixed(0)}%)</span>
+                      </span>
+                    </div>
+                    <div className="relative h-3 bg-gray-100 rounded-full overflow-hidden">
+                      <div 
+                        className="absolute inset-y-0 left-0 bg-gradient-to-r from-green-500 to-green-600 rounded-full transition-all duration-500"
+                        style={{ width: `${successRate}%` }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Rejected After Interview */}
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <XCircle className="w-5 h-5 text-red-600" />
+                        <span className="text-sm font-semibold text-gray-700">Rejected After Interview</span>
+                      </div>
+                      <span className="text-lg font-bold text-red-600">
+                        {city.rejectedAfterInterview} <span className="text-sm">({rejectionRate.toFixed(0)}%)</span>
+                      </span>
+                    </div>
+                    <div className="relative h-3 bg-gray-100 rounded-full overflow-hidden">
+                      <div 
+                        className="absolute inset-y-0 left-0 bg-gradient-to-r from-red-500 to-red-600 rounded-full transition-all duration-500"
+                        style={{ width: `${rejectionRate}%` }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Didn't Reach Final */}
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <Clock className="w-5 h-5 text-orange-600" />
+                        <span className="text-sm font-semibold text-gray-700">Filtered Out Early</span>
+                      </div>
+                      <span className="text-lg font-bold text-orange-600">
+                        {city.didntReachFinal} <span className="text-sm">({filteredRate.toFixed(0)}%)</span>
+                      </span>
+                    </div>
+                    <div className="relative h-3 bg-gray-100 rounded-full overflow-hidden">
+                      <div 
+                        className="absolute inset-y-0 left-0 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full transition-all duration-500"
+                        style={{ width: `${filteredRate}%` }}
+                      />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+
+        {/* Source Information */}
+        <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
+          <CardContent className="p-6">
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+              <p className="text-sm text-blue-900">
+                <strong>Source:</strong> Naukri.com Aerospace Job Trends 2025, TeamLease Employment Outlook Report 2025, and MSDE's Aerospace Skill Gap Report 2024.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
 
       {/* Final Insight Box */}
       <Card className="bg-gradient-to-br from-indigo-50 to-blue-50 border-indigo-200">
