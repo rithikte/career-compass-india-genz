@@ -1,6 +1,6 @@
 import React from 'react';
 import { AlertTriangle, Users, XCircle, CheckCircle, Clock, TrendingDown, Brain, MapPin } from 'lucide-react';
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Cell, Tooltip, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Progress } from './ui/progress';
 import SourceBadge from './SourceBadge';
@@ -78,136 +78,85 @@ export const InterviewSituation = () => {
       
 
       {/* Success Rate Chart */}
-      <Card className="p-4 sm:p-6 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 border-2 shadow-xl">
-        <CardHeader>
-          <CardTitle className="text-center text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
-            Interview Outcome Distribution
-          </CardTitle>
-          <p className="text-center text-sm text-gray-600 font-medium">100 Applicants per Job Role - Where Do They End Up?</p>
-        </CardHeader>
-        <CardContent>
-          <div className="h-80 sm:h-96">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart 
-                data={chartData} 
-                margin={{
-                  top: 20,
-                  right: 30,
-                  left: 20,
-                  bottom: 80
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
+        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6 text-center">
+          Interview Outcome Distribution by Role
+        </h3>
+        <p className="text-center text-gray-600 mb-6 text-sm sm:text-base">
+          Out of 100 applicants per job role - where do they end up?
+        </p>
+        <div className="h-64 sm:h-80 md:h-96">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart 
+              data={chartData} 
+              margin={{
+                top: 20,
+                right: 30,
+                left: 20,
+                bottom: 60
+              }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis 
+                dataKey="name" 
+                angle={-45} 
+                textAnchor="end" 
+                height={80} 
+                fontSize={12}
+              />
+              <YAxis 
+                fontSize={12}
+                label={{ value: '% of Applicants', angle: -90, position: 'insideLeft' }}
+              />
+              <Tooltip 
+                formatter={(value: any, name: string) => {
+                  const labels: Record<string, string> = {
+                    'success': 'Got Job',
+                    'rejection': 'Rejected After Interview', 
+                    'filtered': 'Filtered Out Early'
+                  };
+                  return [`${value}%`, labels[name] || name];
                 }}
-                barSize={80}
-              >
-                <defs>
-                  <linearGradient id="successGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#10b981" stopOpacity={1}/>
-                    <stop offset="100%" stopColor="#059669" stopOpacity={1}/>
-                  </linearGradient>
-                  <linearGradient id="rejectionGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#ef4444" stopOpacity={1}/>
-                    <stop offset="100%" stopColor="#dc2626" stopOpacity={1}/>
-                  </linearGradient>
-                  <linearGradient id="filteredGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#f59e0b" stopOpacity={1}/>
-                    <stop offset="100%" stopColor="#d97706" stopOpacity={1}/>
-                  </linearGradient>
-                </defs>
-                <XAxis 
-                  dataKey="name" 
-                  angle={-30} 
-                  textAnchor="end" 
-                  height={100} 
-                  interval={0} 
-                  fontSize={13}
-                  fontWeight={700}
-                  stroke="#475569"
-                  tick={{ fill: '#1e293b' }}
-                />
-                <YAxis 
-                  fontSize={13}
-                  fontWeight={600}
-                  stroke="#475569"
-                  tick={{ fill: '#1e293b' }}
-                  label={{ 
-                    value: 'Number of Applicants', 
-                    angle: -90, 
-                    position: 'insideLeft', 
-                    style: { fontSize: 13, fontWeight: 700, fill: '#1e293b' } 
-                  }}
-                  domain={[0, 100]}
-                />
-                <Tooltip 
-                  contentStyle={{ 
-                    backgroundColor: 'rgba(255, 255, 255, 0.98)', 
-                    border: '2px solid #e2e8f0',
-                    borderRadius: '12px',
-                    padding: '12px',
-                    boxShadow: '0 10px 25px rgba(0,0,0,0.15)'
-                  }}
-                  labelStyle={{ fontWeight: 700, fontSize: '14px', marginBottom: '8px', color: '#1e293b' }}
-                  cursor={{ fill: 'rgba(99, 102, 241, 0.1)' }}
-                  formatter={(value: any, name: string) => {
-                    const labels: Record<string, string> = {
-                      'success': 'Got Job',
-                      'rejection': 'Rejected After Interview', 
-                      'filtered': 'Filtered Out Early'
-                    };
-                    return [`${value} (${value}%)`, labels[name] || name];
-                  }}
-                />
-                <Legend 
-                  verticalAlign="top" 
-                  height={50}
-                  iconType="circle"
-                  formatter={(value: string) => {
-                    const labels: Record<string, string> = {
-                      'success': '✓ Got Job',
-                      'rejection': '✗ Rejected After Interview', 
-                      'filtered': '⏱ Filtered Out Early'
-                    };
-                    return <span style={{ fontWeight: 600, fontSize: '13px', color: '#1e293b' }}>{labels[value] || value}</span>;
-                  }}
-                  wrapperStyle={{ paddingBottom: '15px' }}
-                />
-                <Bar 
-                  dataKey="success" 
-                  stackId="a" 
-                  fill="url(#successGradient)" 
-                  radius={[0, 0, 0, 0]}
-                />
-                <Bar 
-                  dataKey="rejection" 
-                  stackId="a" 
-                  fill="url(#rejectionGradient)" 
-                  radius={[0, 0, 0, 0]}
-                />
-                <Bar 
-                  dataKey="filtered" 
-                  stackId="a" 
-                  fill="url(#filteredGradient)" 
-                  radius={[8, 8, 0, 0]}
-                />
-              </BarChart>
-            </ResponsiveContainer>
+                labelStyle={{ color: '#1e293b' }}
+              />
+              <Bar 
+                dataKey="success" 
+                fill="hsl(142 76% 42%)" 
+                name="Got Job" 
+                radius={[4, 4, 0, 0]} 
+              />
+              <Bar 
+                dataKey="rejection" 
+                fill="hsl(0 72% 51%)" 
+                name="Rejected" 
+                radius={[4, 4, 0, 0]} 
+              />
+              <Bar 
+                dataKey="filtered" 
+                fill="hsl(38 92% 50%)" 
+                name="Filtered Out" 
+                radius={[4, 4, 0, 0]} 
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+        
+        {/* Legend */}
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-6 pt-6 border-t">
+          <div className="flex items-center gap-2">
+            <div className="w-4 h-4 rounded" style={{ backgroundColor: 'hsl(142 76% 42%)' }}></div>
+            <span className="text-sm font-semibold text-gray-700">Got Job</span>
           </div>
-          
-          {/* Key Insights */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 pt-6 border-t-2 border-gray-200">
-            <div className="text-center p-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border-2 border-green-200">
-              <div className="text-3xl font-bold text-green-700 mb-1">~30%</div>
-              <div className="text-sm font-semibold text-green-900">Average Success Rate</div>
-            </div>
-            <div className="text-center p-4 bg-gradient-to-br from-red-50 to-rose-50 rounded-xl border-2 border-red-200">
-              <div className="text-3xl font-bold text-red-700 mb-1">~40%</div>
-              <div className="text-sm font-semibold text-red-900">Rejected Post-Interview</div>
-            </div>
-            <div className="text-center p-4 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl border-2 border-orange-200">
-              <div className="text-3xl font-bold text-orange-700 mb-1">~35%</div>
-              <div className="text-sm font-semibold text-orange-900">Never Reach Final Round</div>
-            </div>
+          <div className="flex items-center gap-2">
+            <div className="w-4 h-4 rounded" style={{ backgroundColor: 'hsl(0 72% 51%)' }}></div>
+            <span className="text-sm font-semibold text-gray-700">Rejected After Interview</span>
           </div>
-        </CardContent>
-      </Card>
+          <div className="flex items-center gap-2">
+            <div className="w-4 h-4 rounded" style={{ backgroundColor: 'hsl(38 92% 50%)' }}></div>
+            <span className="text-sm font-semibold text-gray-700">Filtered Out Early</span>
+          </div>
+        </div>
+      </div>
 
       {/* Individual Role Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
