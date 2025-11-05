@@ -4,74 +4,61 @@ import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Cell } from 'recharts
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Progress } from './ui/progress';
 import SourceBadge from './SourceBadge';
-
-const cityWiseData = [
-  {
-    city: 'Bengaluru',
-    applicants: 130,
-    gotJob: 38,
-    rejectedAfterInterview: 50,
-    didntReachFinal: 42,
-    insight: "India's most competitive aerospace job market due to ISRO, HAL, Boeing, Collins, and 150+ private companies."
-  },
-  {
-    city: 'Hyderabad',
-    applicants: 110,
-    gotJob: 35,
-    rejectedAfterInterview: 40,
-    didntReachFinal: 35,
-    insight: 'Strong MRO, avionics, and defense corridor – heavy competition but good placement chances for skilled candidates.'
-  },
-  {
-    city: 'Pune',
-    applicants: 95,
-    gotJob: 30,
-    rejectedAfterInterview: 33,
-    didntReachFinal: 32,
-    insight: 'Focus on manufacturing and avionics systems – slightly less competitive but rising rapidly with new OEM investments.'
-  }
-];
-
-const interviewData = [
-  {
-    role: "Aircraft Maintenance Eng.",
-    applicants: 120,
-    gotJob: 45,
-    rejectedAfterInterview: 42,
-    didntReachFinal: 33,
-    rejectionReasons: "No DGCA certs, poor MRO tool skills"
-  },
-  {
-    role: "Aerospace Engineer",
-    applicants: 100,
-    gotJob: 33,
-    rejectedAfterInterview: 33,
-    didntReachFinal: 34,
-    rejectionReasons: "Lacking CAD/CFD, simulation knowledge"
-  },
-  {
-    role: "Avionics Engineer",
-    applicants: 110,
-    gotJob: 27,
-    rejectedAfterInterview: 44,
-    didntReachFinal: 39,
-    rejectionReasons: "No embedded/VHDL skills, weak circuit logic"
-  }
-];
-
+const cityWiseData = [{
+  city: 'Bengaluru',
+  applicants: 130,
+  gotJob: 38,
+  rejectedAfterInterview: 50,
+  didntReachFinal: 42,
+  insight: "India's most competitive aerospace job market due to ISRO, HAL, Boeing, Collins, and 150+ private companies."
+}, {
+  city: 'Hyderabad',
+  applicants: 110,
+  gotJob: 35,
+  rejectedAfterInterview: 40,
+  didntReachFinal: 35,
+  insight: 'Strong MRO, avionics, and defense corridor – heavy competition but good placement chances for skilled candidates.'
+}, {
+  city: 'Pune',
+  applicants: 95,
+  gotJob: 30,
+  rejectedAfterInterview: 33,
+  didntReachFinal: 32,
+  insight: 'Focus on manufacturing and avionics systems – slightly less competitive but rising rapidly with new OEM investments.'
+}];
+const interviewData = [{
+  role: "Aircraft Maintenance Eng.",
+  applicants: 120,
+  gotJob: 45,
+  rejectedAfterInterview: 42,
+  didntReachFinal: 33,
+  rejectionReasons: "No DGCA certs, poor MRO tool skills"
+}, {
+  role: "Aerospace Engineer",
+  applicants: 100,
+  gotJob: 33,
+  rejectedAfterInterview: 33,
+  didntReachFinal: 34,
+  rejectionReasons: "Lacking CAD/CFD, simulation knowledge"
+}, {
+  role: "Avionics Engineer",
+  applicants: 110,
+  gotJob: 27,
+  rejectedAfterInterview: 44,
+  didntReachFinal: 39,
+  rejectionReasons: "No embedded/VHDL skills, weak circuit logic"
+}];
 export const InterviewSituation = () => {
   // Transform data for chart visualization
   const chartData = interviewData.map(item => ({
-    name: item.role.split(' ')[0], // Shortened name for chart
-    success: ((item.gotJob / item.applicants) * 100).toFixed(1),
-    rejection: ((item.rejectedAfterInterview / item.applicants) * 100).toFixed(1),
-    filtered: ((item.didntReachFinal / item.applicants) * 100).toFixed(1),
+    name: item.role.split(' ')[0],
+    // Shortened name for chart
+    success: (item.gotJob / item.applicants * 100).toFixed(1),
+    rejection: (item.rejectedAfterInterview / item.applicants * 100).toFixed(1),
+    filtered: (item.didntReachFinal / item.applicants * 100).toFixed(1)
   }));
-
-  const getSuccessRate = (gotJob: number, applicants: number) => (gotJob / applicants) * 100;
-
-  return (
-    <div className="space-y-8">
+  const getSuccessRate = (gotJob: number, applicants: number) => gotJob / applicants * 100;
+  return <div className="space-y-8">
       {/* Header */}
       <div className="text-center space-y-4 px-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -88,39 +75,7 @@ export const InterviewSituation = () => {
       </div>
 
       {/* Overall Statistics */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
-        <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
-          <CardContent className="p-6 text-center">
-            <Users className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-blue-900">110</div>
-            <div className="text-sm text-blue-700">Avg Applicants per Job</div>
-          </CardContent>
-        </Card>
-        
-        <Card className="bg-gradient-to-br from-green-50 to-green-100 border-green-200">
-          <CardContent className="p-6 text-center">
-            <CheckCircle className="w-8 h-8 text-green-600 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-green-900">35</div>
-            <div className="text-sm text-green-700">Get the Job</div>
-          </CardContent>
-        </Card>
-        
-        <Card className="bg-gradient-to-br from-red-50 to-red-100 border-red-200">
-          <CardContent className="p-6 text-center">
-            <XCircle className="w-8 h-8 text-red-600 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-red-900">40</div>
-            <div className="text-sm text-red-700">Rejected After Interview</div>
-          </CardContent>
-        </Card>
-        
-        <Card className="bg-gradient-to-br from-orange-50 to-orange-100 border-orange-200">
-          <CardContent className="p-6 text-center">
-            <Clock className="w-8 h-8 text-orange-600 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-orange-900">35</div>
-            <div className="text-sm text-orange-700">Don't Reach Final Round</div>
-          </CardContent>
-        </Card>
-      </div>
+      
 
       {/* Success Rate Chart */}
       <Card className="p-4 sm:p-6">
@@ -132,15 +87,13 @@ export const InterviewSituation = () => {
         <CardContent>
           <div className="h-48 sm:h-56 md:h-64">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={chartData} margin={{ top: 10, right: 10, left: 0, bottom: 60 }}>
-                <XAxis 
-                  dataKey="name" 
-                  angle={-45}
-                  textAnchor="end"
-                  height={80}
-                  interval={0}
-                  fontSize={10}
-                />
+              <BarChart data={chartData} margin={{
+              top: 10,
+              right: 10,
+              left: 0,
+              bottom: 60
+            }}>
+                <XAxis dataKey="name" angle={-45} textAnchor="end" height={80} interval={0} fontSize={10} />
                 <YAxis fontSize={10} />
                 <Bar dataKey="success" fill="#22c55e" radius={[4, 4, 0, 0]} />
               </BarChart>
@@ -152,12 +105,10 @@ export const InterviewSituation = () => {
       {/* Individual Role Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {interviewData.map((item, index) => {
-          const successRate = getSuccessRate(item.gotJob, item.applicants);
-          const rejectionRate = (item.rejectedAfterInterview / item.applicants) * 100;
-          const filteredRate = (item.didntReachFinal / item.applicants) * 100;
-          
-          return (
-            <Card key={index} className="hover:shadow-lg transition-shadow">
+        const successRate = getSuccessRate(item.gotJob, item.applicants);
+        const rejectionRate = item.rejectedAfterInterview / item.applicants * 100;
+        const filteredRate = item.didntReachFinal / item.applicants * 100;
+        return <Card key={index} className="hover:shadow-lg transition-shadow">
               <CardHeader className="pb-4">
                 <CardTitle className="text-lg font-semibold text-gray-800 leading-tight">
                   {item.role}
@@ -217,9 +168,8 @@ export const InterviewSituation = () => {
                   <div className="text-sm text-gray-800">{item.rejectionReasons}</div>
                 </div>
               </CardContent>
-            </Card>
-          );
-        })}
+            </Card>;
+      })}
       </div>
 
       {/* Source */}
@@ -275,12 +225,10 @@ export const InterviewSituation = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {cityWiseData.map((city, index) => {
-            const successRate = ((city.gotJob / city.applicants) * 100);
-            const rejectionRate = ((city.rejectedAfterInterview / city.applicants) * 100);
-            const filteredRate = ((city.didntReachFinal / city.applicants) * 100);
-            
-            return (
-              <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-blue-300 overflow-hidden">
+          const successRate = city.gotJob / city.applicants * 100;
+          const rejectionRate = city.rejectedAfterInterview / city.applicants * 100;
+          const filteredRate = city.didntReachFinal / city.applicants * 100;
+          return <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-blue-300 overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-600" />
                 
                 <CardHeader className="pb-4">
@@ -316,10 +264,9 @@ export const InterviewSituation = () => {
                       </span>
                     </div>
                     <div className="relative h-3 bg-gray-100 rounded-full overflow-hidden">
-                      <div 
-                        className="absolute inset-y-0 left-0 bg-gradient-to-r from-green-500 to-green-600 rounded-full transition-all duration-500"
-                        style={{ width: `${successRate}%` }}
-                      />
+                      <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-green-500 to-green-600 rounded-full transition-all duration-500" style={{
+                    width: `${successRate}%`
+                  }} />
                     </div>
                   </div>
 
@@ -335,10 +282,9 @@ export const InterviewSituation = () => {
                       </span>
                     </div>
                     <div className="relative h-3 bg-gray-100 rounded-full overflow-hidden">
-                      <div 
-                        className="absolute inset-y-0 left-0 bg-gradient-to-r from-red-500 to-red-600 rounded-full transition-all duration-500"
-                        style={{ width: `${rejectionRate}%` }}
-                      />
+                      <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-red-500 to-red-600 rounded-full transition-all duration-500" style={{
+                    width: `${rejectionRate}%`
+                  }} />
                     </div>
                   </div>
 
@@ -354,16 +300,14 @@ export const InterviewSituation = () => {
                       </span>
                     </div>
                     <div className="relative h-3 bg-gray-100 rounded-full overflow-hidden">
-                      <div 
-                        className="absolute inset-y-0 left-0 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full transition-all duration-500"
-                        style={{ width: `${filteredRate}%` }}
-                      />
+                      <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full transition-all duration-500" style={{
+                    width: `${filteredRate}%`
+                  }} />
                     </div>
                   </div>
                 </CardContent>
-              </Card>
-            );
-          })}
+              </Card>;
+        })}
         </div>
 
         {/* Source Information */}
@@ -404,9 +348,7 @@ export const InterviewSituation = () => {
       <Card className="bg-gradient-to-r from-red-50 to-orange-50 border-red-200">
         <CardContent className="p-8">
           <div className="flex items-start gap-4">
-            <div className="bg-red-100 p-3 rounded-full">
-              <AlertTriangle className="w-8 h-8 text-red-600" />
-            </div>
+            
             <div className="flex-1">
               <h3 className="text-2xl font-bold text-red-900 mb-6">Why 70% Students Don't Get Jobs</h3>
               
@@ -439,6 +381,5 @@ export const InterviewSituation = () => {
           </div>
         </CardContent>
       </Card>
-    </div>
-  );
+    </div>;
 };
