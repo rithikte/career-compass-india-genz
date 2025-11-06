@@ -149,7 +149,7 @@ export const JobSecurity = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
           <div className="bg-blue-50 border-l-4 border-blue-500 p-5 rounded">
             <div className="flex items-start space-x-3">
-              <span className="text-2xl">📋</span>
+              
               <div>
                 <h4 className="font-bold text-blue-900 mb-2">What It Means</h4>
                 <p className="text-blue-800 text-sm leading-relaxed">
@@ -161,7 +161,7 @@ export const JobSecurity = () => {
           
           <div className="bg-green-50 border-l-4 border-green-500 p-5 rounded">
             <div className="flex items-start space-x-3">
-              <span className="text-2xl">💡</span>
+              
               <div>
                 <h4 className="font-bold text-green-900 mb-2">Why It Matters</h4>
                 <p className="text-green-800 text-sm leading-relaxed">
@@ -173,28 +173,6 @@ export const JobSecurity = () => {
         </div>
       </div>
 
-      <div className="bg-gradient-success text-white p-8 rounded-lg">
-        <div className="text-center">
-          <TrendingUp className="w-12 h-12 mx-auto mb-4" />
-          <h3 className="text-2xl font-bold mb-2">The AI Skills Advantage</h3>
-          <p className="text-white/90 text-lg mb-6">
-            <strong>AI-trained engineers have 30-45% higher security.</strong> Professionals with AI skills have significantly better job security across all aerospace roles.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-white/20 p-4 rounded-lg">
-              <div className="text-2xl font-bold">91%</div>
-              <div className="text-white/80">Avionics Engineers with AI</div>
-            </div>
-            <div className="bg-white/20 p-4 rounded-lg">
-              <div className="text-2xl font-bold">88%</div>
-              <div className="text-white/80">Aerospace Engineers with AI</div>
-            </div>
-            <div className="bg-white/20 p-4 rounded-lg">
-              <div className="text-2xl font-bold">79%</div>
-              <div className="text-white/80">Maintenance Engineers with AI</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>;
 };
