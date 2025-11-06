@@ -265,10 +265,7 @@ export const CareerOutcomes = () => {
             </div>
 
             {/* Quick Summary Chart */}
-            <div className="w-full">
-              <VerticalBarChart data={mapToBarData(career)} />
-              <EntryMidSeniorCard entry={career.entry} mid={career.mid} senior={career.senior} />
-            </div>
+            
           </div>)}
       </div>
       <div className="bg-gradient-primary text-white p-4 sm:p-6 lg:p-8 rounded-lg mt-6 sm:mt-10">
