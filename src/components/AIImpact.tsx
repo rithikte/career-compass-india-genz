@@ -1,6 +1,6 @@
 import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend } from 'recharts';
-import { Brain, AlertTriangle, Shield } from 'lucide-react';
+import { AlertTriangle, Shield } from 'lucide-react';
 import SourceBadge from './SourceBadge';
 const aiImpactData = [{
   timeframe: '5 Years',
@@ -18,9 +18,7 @@ export const AIImpact = () => {
   return <div className="space-y-8">
       <div className="text-center mb-8 sm:mb-12 px-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">AI Impact on Aerospace Jobs</h2>
-        <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-          Automation timeline and job security analysis
-        </p>
+        
         <div className="flex flex-wrap justify-center gap-2 mt-4">
           <SourceBadge href="https://www.mckinsey.com/featured-insights/artificial-intelligence/the-age-of-ai" label="McKinsey AI Report" />
           <SourceBadge href="https://www.weforum.org/reports/the-future-of-jobs-report-2023" label="WEF Jobs Report" />
@@ -31,7 +29,7 @@ export const AIImpact = () => {
       <div className="mb-8">
         <div className="bg-gradient-primary rounded-t-xl p-6 sm:p-8">
           <div className="flex items-start gap-4">
-            <Brain className="w-10 h-10 sm:w-12 sm:h-12 text-white flex-shrink-0" />
+            
             <div>
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">AI Impact on Indian Aerospace Industry</h3>
               <p className="text-base sm:text-lg text-white/90 leading-relaxed">
@@ -138,37 +136,48 @@ export const AIImpact = () => {
           <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-4 text-center">AI Impact Comparison Chart</h4>
           <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-lg p-4 sm:p-6">
             <ResponsiveContainer width="100%" height={300}>
-              <BarChart
-                data={[
-                  { role: 'Aerospace', '5 Years': 28, '10 Years': 38 },
-                  { role: 'Avionics', '5 Years': 33, '10 Years': 43 },
-                  { role: 'AME', '5 Years': 30, '10 Years': 38 }
-                ]}
-                margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
-              >
+              <BarChart data={[{
+              role: 'Aerospace',
+              '5 Years': 28,
+              '10 Years': 38
+            }, {
+              role: 'Avionics',
+              '5 Years': 33,
+              '10 Years': 43
+            }, {
+              role: 'AME',
+              '5 Years': 30,
+              '10 Years': 38
+            }]} margin={{
+              top: 20,
+              right: 30,
+              left: 20,
+              bottom: 20
+            }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
-                <XAxis 
-                  dataKey="role" 
-                  tick={{ fill: 'hsl(var(--foreground))' }}
-                  axisLine={{ stroke: 'hsl(var(--border))' }}
-                />
-                <YAxis 
-                  label={{ value: 'AI Impact (%)', angle: -90, position: 'insideLeft', fill: 'hsl(var(--foreground))' }}
-                  tick={{ fill: 'hsl(var(--foreground))' }}
-                  axisLine={{ stroke: 'hsl(var(--border))' }}
-                />
-                <Tooltip 
-                  contentStyle={{ 
-                    backgroundColor: 'hsl(var(--background))',
-                    border: '1px solid hsl(var(--border))',
-                    borderRadius: '8px'
-                  }}
-                  formatter={(value) => `${value}%`}
-                />
-                <Legend 
-                  wrapperStyle={{ paddingTop: '20px' }}
-                  iconType="rect"
-                />
+                <XAxis dataKey="role" tick={{
+                fill: 'hsl(var(--foreground))'
+              }} axisLine={{
+                stroke: 'hsl(var(--border))'
+              }} />
+                <YAxis label={{
+                value: 'AI Impact (%)',
+                angle: -90,
+                position: 'insideLeft',
+                fill: 'hsl(var(--foreground))'
+              }} tick={{
+                fill: 'hsl(var(--foreground))'
+              }} axisLine={{
+                stroke: 'hsl(var(--border))'
+              }} />
+                <Tooltip contentStyle={{
+                backgroundColor: 'hsl(var(--background))',
+                border: '1px solid hsl(var(--border))',
+                borderRadius: '8px'
+              }} formatter={value => `${value}%`} />
+                <Legend wrapperStyle={{
+                paddingTop: '20px'
+              }} iconType="rect" />
                 <Bar dataKey="5 Years" fill="hsl(221 83% 53%)" radius={[8, 8, 0, 0]} />
                 <Bar dataKey="10 Years" fill="hsl(0 72% 51%)" radius={[8, 8, 0, 0]} />
               </BarChart>
@@ -274,7 +283,7 @@ export const AIImpact = () => {
 
       <div className="bg-gradient-accent text-white p-6 sm:p-8 rounded-lg">
         <div className="text-center">
-          <Shield className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-4" />
+          
           <h3 className="text-xl sm:text-2xl font-bold mb-2">AI Disruption Alert</h3>
           <p className="text-white/90 text-base sm:text-lg">
             47% of aerospace jobs will be impacted by AI in 10 years. Upskill now to stay relevant!
