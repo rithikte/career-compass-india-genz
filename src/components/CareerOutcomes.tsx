@@ -292,28 +292,7 @@ export const CareerOutcomes = () => {
       </div>
 
       {/* Data Sources Section */}
-      <div className="bg-gray-50 border border-gray-200 p-6 rounded-lg">
-        <h4 className="text-lg font-semibold text-gray-800 mb-4">📊 Data Sources & Methodology</h4>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <h5 className="font-semibold text-gray-700 mb-2">Salary Data:</h5>
-            <div className="flex flex-wrap gap-2">
-              <SourceBadge href="https://www.jobted.in/salary/aerospace-engineer" label="Jobted India" />
-              <SourceBadge href="https://6figr.com/india/salary/aerospace-engineer" label="6figr" />
-              <SourceBadge href="https://www.indeedcareers.co.in/careers/aerospace" label="Indeed Careers" />
-            </div>
-            <p className="text-xs text-gray-600 mt-2 italic">*Figures vary by city, company tier, and specialization.</p>
-          </div>
-          <div>
-            <h5 className="font-semibold text-gray-700 mb-2">Job Growth:</h5>
-            <div className="flex flex-wrap gap-2">
-              <SourceBadge href="https://careers.isro.gov.in" label="ISRO" />
-              <SourceBadge href="https://www.hal-india.co.in/careers" label="HAL" />
-              <SourceBadge href="https://www.drdo.gov.in/careers" label="DRDO" />
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>;
 };
 
