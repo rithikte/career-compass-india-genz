@@ -1,5 +1,5 @@
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, LabelList } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, LabelList, Cell } from 'recharts';
 import { Users, Briefcase, TrendingUp, Info } from 'lucide-react';
 import SourceBadge from './SourceBadge';
 const careerData = [{
@@ -127,10 +127,11 @@ const mapToBarData = (career: typeof careerData[0]) => [{
   salary: career.senior
 }];
 const LEVEL_COLORS = {
-  Entry: 'hsl(238 90% 60%)',
-  Mid: 'hsl(238 85% 50%)',
-  Senior: 'hsl(275 85% 65%)'
+  Entry: 'hsl(var(--primary))',
+  Mid: 'hsl(var(--chart-2))',
+  Senior: 'hsl(var(--accent))'
 };
+
 const VerticalBarChart = ({
   data
 }: {
@@ -143,36 +144,96 @@ const VerticalBarChart = ({
     console.error("VerticalBarChart expected array data but got:", data);
     return null;
   }
-  return <ResponsiveContainer width="100%" height={80}>
-      <BarChart data={data} layout="vertical" margin={{
-      top: 8,
-      right: 24,
-      left: 0,
-      bottom: 0
-    }}>
-        <CartesianGrid stroke="#e0e7eb" strokeDasharray="4 8" horizontal vertical={false} />
-        <XAxis type="number" dataKey="salary" axisLine={false} tickLine={false} fontSize={13} tick={{
-        fontWeight: 700,
-        fill: "#6366f1"
-      }} width={36} tickFormatter={v => `₹${v}L`} />
-        <YAxis type="category" dataKey="level" axisLine={false} tickLine={false} fontSize={14} tick={{
-        fontWeight: 600,
-        fill: "#334155"
-      }} />
-        <Tooltip formatter={(v: number) => [`₹${v} LPA`, "Salary"]} labelFormatter={l => `${l} Level`} contentStyle={{
-        borderRadius: 8,
-        fontWeight: 'bold'
-      }} />
-        <Bar dataKey="salary" fill="#6366f1" radius={[0, 20, 20, 0]}>
-          <LabelList dataKey="salary" position="right" formatter={(v: number) => `₹${v}L`} style={{
-          fontWeight: 700,
-          fontSize: 15,
-          fill: "#4f46e5",
-          textShadow: "0 1px 8px #fff"
-        }} />
-        </Bar>
-      </BarChart>
-    </ResponsiveContainer>;
+  
+  return (
+    <div className="bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-800 p-4 rounded-lg border border-slate-200 dark:border-slate-700">
+      <ResponsiveContainer width="100%" height={140}>
+        <BarChart data={data} layout="vertical" margin={{
+          top: 12,
+          right: 32,
+          left: 8,
+          bottom: 12
+        }}>
+          <defs>
+            <linearGradient id="entryGradient" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity={0.8} />
+              <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity={1} />
+            </linearGradient>
+            <linearGradient id="midGradient" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="hsl(var(--chart-2))" stopOpacity={0.8} />
+              <stop offset="100%" stopColor="hsl(var(--chart-2))" stopOpacity={1} />
+            </linearGradient>
+            <linearGradient id="seniorGradient" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="hsl(var(--accent))" stopOpacity={0.8} />
+              <stop offset="100%" stopColor="hsl(var(--accent))" stopOpacity={1} />
+            </linearGradient>
+          </defs>
+          <CartesianGrid 
+            stroke="hsl(var(--border))" 
+            strokeDasharray="3 3" 
+            horizontal 
+            vertical={false}
+            strokeOpacity={0.3}
+          />
+          <XAxis 
+            type="number" 
+            dataKey="salary" 
+            axisLine={false} 
+            tickLine={false} 
+            fontSize={12} 
+            tick={{ 
+              fontWeight: 600, 
+              fill: "hsl(var(--muted-foreground))" 
+            }} 
+            tickFormatter={v => `₹${v}L`}
+          />
+          <YAxis 
+            type="category" 
+            dataKey="level" 
+            axisLine={false} 
+            tickLine={false} 
+            fontSize={13} 
+            tick={{ 
+              fontWeight: 700, 
+              fill: "hsl(var(--foreground))" 
+            }}
+            width={60}
+          />
+          <Tooltip 
+            formatter={(v: number) => [`₹${v} LPA`, "Salary"]} 
+            labelFormatter={l => `${l} Level`} 
+            contentStyle={{
+              backgroundColor: 'hsl(var(--background))',
+              border: '1px solid hsl(var(--border))',
+              borderRadius: 8,
+              fontWeight: 600,
+              boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+            }}
+            cursor={{ fill: 'hsl(var(--muted))', opacity: 0.1 }}
+          />
+          <Bar dataKey="salary" radius={[0, 12, 12, 0]}>
+            {data.map((entry, index) => {
+              const gradientId = entry.level === 'Entry' ? 'entryGradient' : 
+                                entry.level === 'Mid' ? 'midGradient' : 'seniorGradient';
+              return (
+                <Cell key={`cell-${index}`} fill={`url(#${gradientId})`} />
+              );
+            })}
+            <LabelList 
+              dataKey="salary" 
+              position="right" 
+              formatter={(v: number) => `₹${v}L`} 
+              style={{
+                fontWeight: 800,
+                fontSize: 14,
+                fill: "hsl(var(--primary))",
+              }} 
+            />
+          </Bar>
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+  );
 };
 const EntryMidSeniorCard = ({
   entry,
@@ -182,20 +243,25 @@ const EntryMidSeniorCard = ({
   entry: number;
   mid: number;
   senior: number;
-}) => <div className="grid grid-cols-3 gap-4 text-center mt-2 mb-2">
-    <div className="bg-primary-light p-2 rounded-lg shadow">
-      <div className="text-base font-bold text-primary">₹{entry}L</div>
-      <div className="text-xs text-primary font-semibold">Entry</div>
+}) => (
+  <div className="grid grid-cols-3 gap-3 mt-4">
+    <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 dark:from-primary/20 dark:to-primary/10 p-4 border border-primary/20 hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
+      <div className="text-2xl font-extrabold text-primary mb-1">₹{entry}L</div>
+      <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Entry Level</div>
+      <div className="absolute -right-2 -bottom-2 w-16 h-16 bg-primary/5 rounded-full blur-xl" />
     </div>
-    <div className="bg-primary-light p-2 rounded-lg shadow">
-      <div className="text-base font-bold text-primary">₹{mid}L</div>
-      <div className="text-xs text-primary font-semibold">Mid</div>
+    <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-chart-2/10 to-chart-2/5 dark:from-chart-2/20 dark:to-chart-2/10 p-4 border border-chart-2/20 hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
+      <div className="text-2xl font-extrabold text-chart-2 mb-1">₹{mid}L</div>
+      <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Mid Level</div>
+      <div className="absolute -right-2 -bottom-2 w-16 h-16 bg-chart-2/5 rounded-full blur-xl" />
     </div>
-    <div className="bg-accent-light p-2 rounded-lg shadow">
-      <div className="text-base font-bold text-accent">₹{senior}L+</div>
-      <div className="text-xs text-accent font-semibold">Senior</div>
+    <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-accent/10 to-accent/5 dark:from-accent/20 dark:to-accent/10 p-4 border border-accent/20 hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
+      <div className="text-2xl font-extrabold text-accent mb-1">₹{senior}L+</div>
+      <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Senior Level</div>
+      <div className="absolute -right-2 -bottom-2 w-16 h-16 bg-accent/5 rounded-full blur-xl" />
     </div>
-  </div>;
+  </div>
+);
 export const CareerOutcomes = () => {
   return <div className="space-y-6 sm:space-y-8">
       <div className="text-center mb-6 sm:mb-8">
