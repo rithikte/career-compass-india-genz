@@ -136,27 +136,6 @@ export const JobDemand = () => {
           </div>)}
       </div>
 
-      <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white p-8 rounded-lg">
-        <div className="text-center">
-          <h3 className="text-2xl font-bold mb-4">🚀 Annual Hiring Growth Alert</h3>
-          <p className="text-red-200 text-lg mb-6">
-            Aircraft Maintenance Engineering will see 50% growth - from 2,000 (2025) to 3,000 new hires per year by 2040!
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-red-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-3xl font-bold">1,900</div>
-              <div className="text-red-200">Aerospace hires/yr by 2040</div>
-            </div>
-            <div className="bg-orange-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-3xl font-bold">1,050</div>
-              <div className="text-orange-200">Avionics hires/yr by 2040</div>
-            </div>
-            <div className="bg-yellow-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-3xl font-bold">3,000</div>
-              <div className="text-yellow-200">Maintenance hires/yr by 2040</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>;
 };
