@@ -1,53 +1,55 @@
 import { AlertTriangle, CheckCircle, XCircle, Zap, Heart, Target, Trophy, BookOpen, Clock, Users, TrendingDown, TrendingUp, Brain, Lightbulb, Shield, Flame, GraduationCap, FileText, UserCheck, Edit3, PenTool, Award, Calendar, FileCheck } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import SourceBadge from './SourceBadge';
-
 const IndustryAdvice = () => {
-  const brutalTruths = [
-    {
-      icon: Flame,
-      text: "This field is not about big names — it's about pressure, focus, and precision",
-      impact: "High Stress"
-    },
-    {
-      icon: Brain,
-      text: "It won't work if you're doing it for fun — it needs full effort", 
-      impact: "100% Commitment"
-    },
-    {
-      icon: TrendingDown,
-      text: "No shortcuts — if you skip tools or deep learning, you'll fall behind",
-      impact: "Skill Gaps = Failure"
-    }
-  ];
-
-  const fieldRespects = [
-    {
-      icon: Heart,
-      text: "If you truly love machines and solving problems, it will become your strength",
-      reward: "Passion = Power"
-    },
-    {
-      icon: Trophy,
-      text: "If you learn tools and stay serious, you can match any IIT student",
-      reward: "Skills Beat Brands"
-    },
-    {
-      icon: TrendingUp,
-      text: "If you give it your best, this degree will give you a future — HAL, ISRO, DRDO, UAV startups",
-      reward: "Real Opportunities"
-    }
-  ];
-
-  const realityChecks = [
-    { stat: "70%", desc: "Pass exams but fail interviews", icon: XCircle, color: "text-red-500" },
-    { stat: "60%", desc: "Feel lost in practical labs", icon: AlertTriangle, color: "text-orange-500" },
-    { stat: "50%", desc: "Waste years following hype", icon: Clock, color: "text-yellow-600" },
-    { stat: "40%", desc: "End up unemployed despite jobs existing", icon: Users, color: "text-red-600" }
-  ];
-
-  return (
-    <div className="space-y-8">
+  const brutalTruths = [{
+    icon: Flame,
+    text: "This field is not about big names — it's about pressure, focus, and precision",
+    impact: "High Stress"
+  }, {
+    icon: Brain,
+    text: "It won't work if you're doing it for fun — it needs full effort",
+    impact: "100% Commitment"
+  }, {
+    icon: TrendingDown,
+    text: "No shortcuts — if you skip tools or deep learning, you'll fall behind",
+    impact: "Skill Gaps = Failure"
+  }];
+  const fieldRespects = [{
+    icon: Heart,
+    text: "If you truly love machines and solving problems, it will become your strength",
+    reward: "Passion = Power"
+  }, {
+    icon: Trophy,
+    text: "If you learn tools and stay serious, you can match any IIT student",
+    reward: "Skills Beat Brands"
+  }, {
+    icon: TrendingUp,
+    text: "If you give it your best, this degree will give you a future — HAL, ISRO, DRDO, UAV startups",
+    reward: "Real Opportunities"
+  }];
+  const realityChecks = [{
+    stat: "70%",
+    desc: "Pass exams but fail interviews",
+    icon: XCircle,
+    color: "text-red-500"
+  }, {
+    stat: "60%",
+    desc: "Feel lost in practical labs",
+    icon: AlertTriangle,
+    color: "text-orange-500"
+  }, {
+    stat: "50%",
+    desc: "Waste years following hype",
+    icon: Clock,
+    color: "text-yellow-600"
+  }, {
+    stat: "40%",
+    desc: "End up unemployed despite jobs existing",
+    icon: Users,
+    color: "text-red-600"
+  }];
+  return <div className="space-y-8">
       <div className="max-w-7xl mx-auto">
         
         {/* Hero Section */}
@@ -102,13 +104,11 @@ const IndustryAdvice = () => {
           </CardHeader>
           <CardContent className="p-6">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {realityChecks.map((check, index) => (
-                <div key={index} className="bg-gray-50 rounded-lg p-6 text-center space-y-3 hover:bg-gray-100 transition-colors">
-                  <check.icon className={`w-12 h-12 mx-auto ${check.color}`} />
+              {realityChecks.map((check, index) => <div key={index} className="bg-gray-50 rounded-lg p-6 text-center space-y-3 hover:bg-gray-100 transition-colors">
+                  
                   <div className={`text-4xl font-black ${check.color}`}>{check.stat}</div>
                   <p className="text-sm font-semibold text-gray-700">{check.desc}</p>
-                </div>
-              ))}
+                </div>)}
             </div>
           </CardContent>
         </Card>
@@ -128,15 +128,13 @@ const IndustryAdvice = () => {
               <CardDescription className="text-base font-medium">The harsh truths you need to hear</CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
-              {brutalTruths.map((truth, index) => (
-                <div key={index} className="flex items-start gap-3 p-4 bg-red-50 rounded-lg hover:bg-red-100 transition-colors">
+              {brutalTruths.map((truth, index) => <div key={index} className="flex items-start gap-3 p-4 bg-red-50 rounded-lg hover:bg-red-100 transition-colors">
                   <truth.icon className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="font-medium text-gray-900 text-sm sm:text-base">{truth.text}</p>
                     <span className="text-xs sm:text-sm font-bold text-red-600 mt-1 inline-block">{truth.impact}</span>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </CardContent>
           </Card>
 
@@ -152,15 +150,13 @@ const IndustryAdvice = () => {
               <CardDescription className="text-base font-medium">What the field offers to those who earn it</CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
-              {fieldRespects.map((respect, index) => (
-                <div key={index} className="flex items-start gap-3 p-4 bg-green-50 rounded-lg hover:bg-green-100 transition-colors">
+              {fieldRespects.map((respect, index) => <div key={index} className="flex items-start gap-3 p-4 bg-green-50 rounded-lg hover:bg-green-100 transition-colors">
                   <respect.icon className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="font-medium text-gray-900 text-sm sm:text-base">{respect.text}</p>
                     <span className="text-xs sm:text-sm font-bold text-green-600 mt-1 inline-block">{respect.reward}</span>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </CardContent>
           </Card>
         </div>
@@ -236,7 +232,7 @@ const IndustryAdvice = () => {
             <div className="space-y-4">
               {/* Step 1 */}
               <div className="flex gap-4 items-start p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border-2 border-blue-200 hover:shadow-md transition-shadow">
-                <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">1</div>
+                
                 <div className="flex-1">
                   <h4 className="font-bold text-lg text-slate-900 mb-2 flex items-center gap-2">
                     <BookOpen className="w-5 h-5 text-blue-600" />
@@ -248,7 +244,7 @@ const IndustryAdvice = () => {
 
               {/* Step 2 */}
               <div className="flex gap-4 items-start p-4 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border-2 border-purple-200 hover:shadow-md transition-shadow">
-                <div className="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">2</div>
+                
                 <div className="flex-1">
                   <h4 className="font-bold text-lg text-slate-900 mb-2 flex items-center gap-2">
                     <Edit3 className="w-5 h-5 text-purple-600" />
@@ -263,7 +259,7 @@ const IndustryAdvice = () => {
 
               {/* Step 3 */}
               <div className="flex gap-4 items-start p-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border-2 border-green-200 hover:shadow-md transition-shadow">
-                <div className="flex-shrink-0 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-lg">3</div>
+                
                 <div className="flex-1">
                   <h4 className="font-bold text-lg text-slate-900 mb-2 flex items-center gap-2">
                     <UserCheck className="w-5 h-5 text-green-600" />
@@ -278,7 +274,7 @@ const IndustryAdvice = () => {
 
               {/* Step 4 */}
               <div className="flex gap-4 items-start p-4 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl border-2 border-orange-200 hover:shadow-md transition-shadow">
-                <div className="flex-shrink-0 w-10 h-10 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold text-lg">4</div>
+                
                 <div className="flex-1">
                   <h4 className="font-bold text-lg text-slate-900 mb-2 flex items-center gap-2">
                     <FileText className="w-5 h-5 text-orange-600" />
@@ -290,7 +286,7 @@ const IndustryAdvice = () => {
 
               {/* Step 5 */}
               <div className="flex gap-4 items-start p-4 bg-gradient-to-br from-red-50 to-rose-50 rounded-xl border-2 border-red-200 hover:shadow-md transition-shadow">
-                <div className="flex-shrink-0 w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-lg">5</div>
+                
                 <div className="flex-1">
                   <h4 className="font-bold text-lg text-slate-900 mb-2 flex items-center gap-2">
                     <Brain className="w-5 h-5 text-red-600" />
@@ -302,7 +298,7 @@ const IndustryAdvice = () => {
 
               {/* Step 6 */}
               <div className="flex gap-4 items-start p-4 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl border-2 border-cyan-200 hover:shadow-md transition-shadow">
-                <div className="flex-shrink-0 w-10 h-10 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold text-lg">6</div>
+                
                 <div className="flex-1">
                   <h4 className="font-bold text-lg text-slate-900 mb-2 flex items-center gap-2">
                     <PenTool className="w-5 h-5 text-cyan-600" />
@@ -314,7 +310,7 @@ const IndustryAdvice = () => {
 
               {/* Step 7 */}
               <div className="flex gap-4 items-start p-4 bg-gradient-to-br from-violet-50 to-purple-50 rounded-xl border-2 border-violet-200 hover:shadow-md transition-shadow">
-                <div className="flex-shrink-0 w-10 h-10 bg-violet-600 text-white rounded-full flex items-center justify-center font-bold text-lg">7</div>
+                
                 <div className="flex-1">
                   <h4 className="font-bold text-lg text-slate-900 mb-2 flex items-center gap-2">
                     <Users className="w-5 h-5 text-violet-600" />
@@ -331,7 +327,7 @@ const IndustryAdvice = () => {
 
               {/* Step 8 */}
               <div className="flex gap-4 items-start p-4 bg-gradient-to-br from-teal-50 to-green-50 rounded-xl border-2 border-teal-200 hover:shadow-md transition-shadow">
-                <div className="flex-shrink-0 w-10 h-10 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold text-lg">8</div>
+                
                 <div className="flex-1">
                   <h4 className="font-bold text-lg text-slate-900 mb-2 flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-teal-600" />
@@ -343,7 +339,7 @@ const IndustryAdvice = () => {
 
               {/* Step 9 */}
               <div className="flex gap-4 items-start p-4 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl border-2 border-amber-200 hover:shadow-md transition-shadow">
-                <div className="flex-shrink-0 w-10 h-10 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-lg">9</div>
+                
                 <div className="flex-1">
                   <h4 className="font-bold text-lg text-slate-900 mb-2 flex items-center gap-2">
                     <FileCheck className="w-5 h-5 text-amber-600" />
@@ -363,9 +359,7 @@ const IndustryAdvice = () => {
           <Card className="bg-white rounded-2xl shadow-lg border-2 border-blue-200 hover:shadow-xl transition-shadow">
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-blue-100 rounded-lg">
-                  <Trophy className="w-6 h-6 text-blue-600" />
-                </div>
+                
                 <CardTitle className="text-xl sm:text-2xl text-blue-600">
                   Top Government (IITs)
                 </CardTitle>
@@ -382,9 +376,7 @@ const IndustryAdvice = () => {
           <Card className="bg-white rounded-2xl shadow-lg border-2 border-purple-200 hover:shadow-xl transition-shadow">
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-purple-100 rounded-lg">
-                  <Target className="w-6 h-6 text-purple-600" />
-                </div>
+                
                 <CardTitle className="text-xl sm:text-2xl text-purple-600">
                   Top Private (TS/AP)
                 </CardTitle>
@@ -419,8 +411,6 @@ const IndustryAdvice = () => {
         </Card>
 
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default IndustryAdvice;
