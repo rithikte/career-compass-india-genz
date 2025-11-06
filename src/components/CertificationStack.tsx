@@ -1,184 +1,158 @@
-
 import React from 'react';
 import { CheckCircle, Clock, Target, Award, AlertTriangle } from 'lucide-react';
 import SourceBadge from './SourceBadge';
-
-const certificationPaths = [
-  {
-    role: 'Aerospace Engineer',
-    totalDuration: '10 months',
-    finalGap: '0-3%',
-    certifications: [
-      { 
-        level: 'Foundation', 
-        name: 'Aerospace Engineering Basics (NPTEL/IIT)', 
-        duration: '1.5 months', 
-        readiness: 55,
-        whenToPursue: '🔹 1st–2nd Year (Parallel with degree; helps understand fundamentals)'
-      },
-      { 
-        level: 'Specialization', 
-        name: 'CATIA V5 / SolidWorks (Aerospace Modules)', 
-        duration: '2 months', 
-        readiness: 75,
-        whenToPursue: '🔹 2nd–3rd Year (Parallel; ideal for design software mastery)'
-      },
-      { 
-        level: 'Advanced', 
-        name: 'Propulsion & Aerodynamics (Coursera/IIT-M)', 
-        duration: '2.5 months', 
-        readiness: 90,
-        whenToPursue: '🔹 3rd–Final Year or just After degree (for strong domain expertise)'
-      },
-      { 
-        level: 'Expert', 
-        name: 'Aerospace Systems Design (Simulink/Ansys)', 
-        duration: '3 months', 
-        readiness: 100,
-        whenToPursue: '🔹 After Degree (or Final Semester with internship; simulation-heavy)'
-      },
-      { 
-        level: 'AI Cert.', 
-        name: 'AI for CFD & Material Simulation', 
-        duration: '1 month', 
-        readiness: 100, 
-        isAI: true,
-        whenToPursue: '🔹 After Degree (Optional but future-proof for AI-based aerospace roles)'
-      }
-    ]
-  },
-  {
-    role: 'Avionics Engineer',
-    totalDuration: '10 months',
-    finalGap: '0-2%',
-    certifications: [
-      { 
-        level: 'Foundation', 
-        name: 'Intro to Avionics + Digital Circuits', 
-        duration: '1.5 months', 
-        readiness: 55,
-        whenToPursue: '🔹 1st–2nd Year (Parallel with degree; builds core electronics base)'
-      },
-      { 
-        level: 'Specialization', 
-        name: 'Embedded C Programming', 
-        duration: '2 months', 
-        readiness: 72,
-        whenToPursue: '🔹 2nd–3rd Year (Parallel; essential for avionics software systems)'
-      },
-      { 
-        level: 'Advanced', 
-        name: 'VHDL / FPGA for Avionics Systems', 
-        duration: '2.5 months', 
-        readiness: 90,
-        whenToPursue: '🔹 3rd–Final Year or After Degree (complex but crucial for hardware design)'
-      },
-      { 
-        level: 'Expert', 
-        name: 'ARINC Protocols + Avionics Testing', 
-        duration: '3 months', 
-        readiness: 100,
-        whenToPursue: '🔹 After Degree or Final Year Internship Phase (industry-standard tools)'
-      },
-      { 
-        level: 'AI Cert.', 
-        name: 'AI for Fault Detection in Avionics Systems', 
-        duration: '1 month', 
-        readiness: 100, 
-        isAI: true,
-        whenToPursue: '🔹 After Degree (Optional; helps in predictive maintenance roles)'
-      }
-    ]
-  },
-  {
-    role: 'Aircraft Maintenance Engineer (AME)',
-    totalDuration: '10 months',
-    finalGap: '0-2%',
-    certifications: [
-      { 
-        level: 'Foundation', 
-        name: 'AME DGCA Module 1 + Safety Basics', 
-        duration: '1.5 months', 
-        readiness: 60,
-        whenToPursue: '🔹 1st–2nd Year (Parallel; builds regulatory & safety knowledge)'
-      },
-      { 
-        level: 'Specialization', 
-        name: 'Aircraft Systems & CAMO Training', 
-        duration: '2 months', 
-        readiness: 75,
-        whenToPursue: '🔹 2nd–3rd Year (Parallel or short-term break; key for airworthiness roles)'
-      },
-      { 
-        level: 'Advanced', 
-        name: 'MRO Software Tools (Ramco/TRAX)', 
-        duration: '2.5 months', 
-        readiness: 90,
-        whenToPursue: '🔹 Final Year or Post-degree (used in real-world MRO environments)'
-      },
-      { 
-        level: 'Expert', 
-        name: 'Predictive Maintenance Techniques', 
-        duration: '3 months', 
-        readiness: 100,
-        whenToPursue: '🔹 After Degree or Internship Phase (needed for high-responsibility roles)'
-      },
-      { 
-        level: 'AI Cert.', 
-        name: 'AI for Aircraft Maintenance Forecasting', 
-        duration: '1 month', 
-        readiness: 100, 
-        isAI: true,
-        whenToPursue: '🔹 After Degree (Optional; boosts skill for future digital aviation MRO)'
-      }
-    ]
-  }
-];
-
+const certificationPaths = [{
+  role: 'Aerospace Engineer',
+  totalDuration: '10 months',
+  finalGap: '0-3%',
+  certifications: [{
+    level: 'Foundation',
+    name: 'Aerospace Engineering Basics (NPTEL/IIT)',
+    duration: '1.5 months',
+    readiness: 55,
+    whenToPursue: '🔹 1st–2nd Year (Parallel with degree; helps understand fundamentals)'
+  }, {
+    level: 'Specialization',
+    name: 'CATIA V5 / SolidWorks (Aerospace Modules)',
+    duration: '2 months',
+    readiness: 75,
+    whenToPursue: '🔹 2nd–3rd Year (Parallel; ideal for design software mastery)'
+  }, {
+    level: 'Advanced',
+    name: 'Propulsion & Aerodynamics (Coursera/IIT-M)',
+    duration: '2.5 months',
+    readiness: 90,
+    whenToPursue: '🔹 3rd–Final Year or just After degree (for strong domain expertise)'
+  }, {
+    level: 'Expert',
+    name: 'Aerospace Systems Design (Simulink/Ansys)',
+    duration: '3 months',
+    readiness: 100,
+    whenToPursue: '🔹 After Degree (or Final Semester with internship; simulation-heavy)'
+  }, {
+    level: 'AI Cert.',
+    name: 'AI for CFD & Material Simulation',
+    duration: '1 month',
+    readiness: 100,
+    isAI: true,
+    whenToPursue: '🔹 After Degree (Optional but future-proof for AI-based aerospace roles)'
+  }]
+}, {
+  role: 'Avionics Engineer',
+  totalDuration: '10 months',
+  finalGap: '0-2%',
+  certifications: [{
+    level: 'Foundation',
+    name: 'Intro to Avionics + Digital Circuits',
+    duration: '1.5 months',
+    readiness: 55,
+    whenToPursue: '🔹 1st–2nd Year (Parallel with degree; builds core electronics base)'
+  }, {
+    level: 'Specialization',
+    name: 'Embedded C Programming',
+    duration: '2 months',
+    readiness: 72,
+    whenToPursue: '🔹 2nd–3rd Year (Parallel; essential for avionics software systems)'
+  }, {
+    level: 'Advanced',
+    name: 'VHDL / FPGA for Avionics Systems',
+    duration: '2.5 months',
+    readiness: 90,
+    whenToPursue: '🔹 3rd–Final Year or After Degree (complex but crucial for hardware design)'
+  }, {
+    level: 'Expert',
+    name: 'ARINC Protocols + Avionics Testing',
+    duration: '3 months',
+    readiness: 100,
+    whenToPursue: '🔹 After Degree or Final Year Internship Phase (industry-standard tools)'
+  }, {
+    level: 'AI Cert.',
+    name: 'AI for Fault Detection in Avionics Systems',
+    duration: '1 month',
+    readiness: 100,
+    isAI: true,
+    whenToPursue: '🔹 After Degree (Optional; helps in predictive maintenance roles)'
+  }]
+}, {
+  role: 'Aircraft Maintenance Engineer (AME)',
+  totalDuration: '10 months',
+  finalGap: '0-2%',
+  certifications: [{
+    level: 'Foundation',
+    name: 'AME DGCA Module 1 + Safety Basics',
+    duration: '1.5 months',
+    readiness: 60,
+    whenToPursue: '🔹 1st–2nd Year (Parallel; builds regulatory & safety knowledge)'
+  }, {
+    level: 'Specialization',
+    name: 'Aircraft Systems & CAMO Training',
+    duration: '2 months',
+    readiness: 75,
+    whenToPursue: '🔹 2nd–3rd Year (Parallel or short-term break; key for airworthiness roles)'
+  }, {
+    level: 'Advanced',
+    name: 'MRO Software Tools (Ramco/TRAX)',
+    duration: '2.5 months',
+    readiness: 90,
+    whenToPursue: '🔹 Final Year or Post-degree (used in real-world MRO environments)'
+  }, {
+    level: 'Expert',
+    name: 'Predictive Maintenance Techniques',
+    duration: '3 months',
+    readiness: 100,
+    whenToPursue: '🔹 After Degree or Internship Phase (needed for high-responsibility roles)'
+  }, {
+    level: 'AI Cert.',
+    name: 'AI for Aircraft Maintenance Forecasting',
+    duration: '1 month',
+    readiness: 100,
+    isAI: true,
+    whenToPursue: '🔹 After Degree (Optional; boosts skill for future digital aviation MRO)'
+  }]
+}];
 const getLevelColor = (level: string) => {
   switch (level) {
-    case 'Foundation': return 'bg-blue-100 text-blue-800';
-    case 'Specialization': return 'bg-green-100 text-green-800';
-    case 'Advanced': return 'bg-orange-100 text-orange-800';
-    case 'Expert': return 'bg-purple-100 text-purple-800';
-    case 'AI Cert.': return 'bg-red-100 text-red-800';
-    default: return 'bg-gray-100 text-gray-800';
+    case 'Foundation':
+      return 'bg-blue-100 text-blue-800';
+    case 'Specialization':
+      return 'bg-green-100 text-green-800';
+    case 'Advanced':
+      return 'bg-orange-100 text-orange-800';
+    case 'Expert':
+      return 'bg-purple-100 text-purple-800';
+    case 'AI Cert.':
+      return 'bg-red-100 text-red-800';
+    default:
+      return 'bg-gray-100 text-gray-800';
   }
 };
-
-const universalCertifications = [
-  {
-    stage: 'Foundation',
-    course: 'AS9100D – Aerospace Quality Management System (QMS)',
-    provider: '(TÜV SÜD / BSI / SGS)',
-    duration: '1.5 months',
-    readiness: 'Builds foundation in aerospace quality & compliance',
-    subjectGain: '~20%',
-    whenToPursue: '1st Year (Sem 2) – after completing basic Physics/Math/Intro engineering'
-  },
-  {
-    stage: 'Specialization',
-    course: 'ICAO Safety Management System (SMS) + Human Factors',
-    provider: '(ICAO / IATA / CAAi)',
-    duration: '2 months',
-    readiness: 'Adds safety-first mindset & human factor awareness',
-    subjectGain: '~20%',
-    whenToPursue: '2nd Year (Sem 3) – alongside early core aviation/electronics subjects'
-  },
-  {
-    stage: 'Advanced',
-    course: 'Airworthiness & Certification Awareness (EASA Part-21 / DOA-POA Basics)',
-    provider: '(EASA / Sofema / CAAi)',
-    duration: '2.5 months',
-    readiness: 'Provides regulatory knowledge across design, avionics & maintenance',
-    subjectGain: '~15%',
-    whenToPursue: '2nd Year (Sem 4 end / summer break) – before entering 3rd year specialization'
-  }
-];
-
+const universalCertifications = [{
+  stage: 'Foundation',
+  course: 'AS9100D – Aerospace Quality Management System (QMS)',
+  provider: '(TÜV SÜD / BSI / SGS)',
+  duration: '1.5 months',
+  readiness: 'Builds foundation in aerospace quality & compliance',
+  subjectGain: '~20%',
+  whenToPursue: '1st Year (Sem 2) – after completing basic Physics/Math/Intro engineering'
+}, {
+  stage: 'Specialization',
+  course: 'ICAO Safety Management System (SMS) + Human Factors',
+  provider: '(ICAO / IATA / CAAi)',
+  duration: '2 months',
+  readiness: 'Adds safety-first mindset & human factor awareness',
+  subjectGain: '~20%',
+  whenToPursue: '2nd Year (Sem 3) – alongside early core aviation/electronics subjects'
+}, {
+  stage: 'Advanced',
+  course: 'Airworthiness & Certification Awareness (EASA Part-21 / DOA-POA Basics)',
+  provider: '(EASA / Sofema / CAAi)',
+  duration: '2.5 months',
+  readiness: 'Provides regulatory knowledge across design, avionics & maintenance',
+  subjectGain: '~15%',
+  whenToPursue: '2nd Year (Sem 4 end / summer break) – before entering 3rd year specialization'
+}];
 export const CertificationStack = () => {
-  return (
-    <div className="space-y-8">
+  return <div className="space-y-8">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-slate-900 mb-4">
           Certification Stack Roadmap
@@ -230,8 +204,7 @@ export const CertificationStack = () => {
 
         {/* Universal Certifications Table - Mobile */}
         <div className="block lg:hidden space-y-4 mb-8">
-          {universalCertifications.map((cert, index) => (
-            <div key={index} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          {universalCertifications.map((cert, index) => <div key={index} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
               <div className="flex items-center justify-between mb-3">
                 <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${getLevelColor(cert.stage)}`}>
                   {cert.stage}
@@ -254,8 +227,7 @@ export const CertificationStack = () => {
                   <span className="text-gray-700">{cert.whenToPursue}</span>
                 </div>
               </div>
-            </div>
-          ))}
+            </div>)}
         </div>
 
         {/* Universal Certifications Table - Desktop */}
@@ -272,8 +244,7 @@ export const CertificationStack = () => {
               </tr>
             </thead>
             <tbody>
-              {universalCertifications.map((cert, index) => (
-                <tr key={index} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+              {universalCertifications.map((cert, index) => <tr key={index} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
                   <td className="py-4 px-4">
                     <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${getLevelColor(cert.stage)}`}>
                       {cert.stage}
@@ -297,8 +268,7 @@ export const CertificationStack = () => {
                   <td className="py-4 px-4">
                     <span className="text-xs text-gray-700 leading-relaxed">{cert.whenToPursue}</span>
                   </td>
-                </tr>
-              ))}
+                </tr>)}
             </tbody>
           </table>
         </div>
@@ -311,9 +281,7 @@ export const CertificationStack = () => {
           
           <div className="relative flex items-start space-x-6">
             <div className="flex-shrink-0">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/50">
-                <Target className="w-8 h-8 text-white" />
-              </div>
+              
             </div>
             <div className="flex-1">
               <div className="inline-block px-4 py-1 bg-blue-500/20 border border-blue-400/30 rounded-full text-xs font-bold text-blue-300 mb-4 backdrop-blur-sm">
@@ -348,8 +316,7 @@ export const CertificationStack = () => {
         </p>
       </div>
 
-      {certificationPaths.map((path, pathIndex) => (
-        <div key={path.role} className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8 mb-6 sm:mb-8">
+      {certificationPaths.map((path, pathIndex) => <div key={path.role} className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8 mb-6 sm:mb-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 sm:mb-8">
             <div className="w-full sm:w-auto mb-4 sm:mb-0">
               <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">{path.role}</h3>
@@ -371,11 +338,8 @@ export const CertificationStack = () => {
           <div className="relative">
             {/* Mobile/Small Screen: Vertical Layout */}
             <div className="block md:hidden space-y-6">
-              {path.certifications.map((cert, certIndex) => (
-                <div key={certIndex} className="flex items-start space-x-4">
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${
-                    cert.isAI ? 'bg-red-600' : 'bg-blue-600'
-                  }`}>
+              {path.certifications.map((cert, certIndex) => <div key={certIndex} className="flex items-start space-x-4">
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${cert.isAI ? 'bg-red-600' : 'bg-blue-600'}`}>
                     <CheckCircle className="w-5 h-5 text-white" />
                   </div>
                   
@@ -387,10 +351,9 @@ export const CertificationStack = () => {
                     <div className="text-xs text-gray-600 mb-2">{cert.duration}</div>
                     
                     <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
-                      <div 
-                        className={`h-2 rounded-full ${cert.isAI ? 'bg-red-600' : 'bg-blue-600'}`}
-                        style={{ width: `${cert.readiness}%` }}
-                      ></div>
+                      <div className={`h-2 rounded-full ${cert.isAI ? 'bg-red-600' : 'bg-blue-600'}`} style={{
+                  width: `${cert.readiness}%`
+                }}></div>
                     </div>
                     <div className="text-xs font-bold text-gray-700 mb-3">{cert.readiness}% Ready</div>
                     
@@ -399,8 +362,7 @@ export const CertificationStack = () => {
                       <div className="text-xs text-gray-700 leading-tight">{cert.whenToPursue}</div>
                     </div>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
 
             {/* Desktop: Horizontal Timeline */}
@@ -408,11 +370,8 @@ export const CertificationStack = () => {
               <div className="absolute top-6 left-0 right-0 h-0.5 bg-gray-300"></div>
               
               <div className="flex justify-between items-start">
-                {path.certifications.map((cert, certIndex) => (
-                  <div key={certIndex} className="flex flex-col items-center relative">
-                    <div className={`w-12 h-12 rounded-full flex items-center justify-center z-10 ${
-                      cert.isAI ? 'bg-red-600' : 'bg-blue-600'
-                    }`}>
+                {path.certifications.map((cert, certIndex) => <div key={certIndex} className="flex flex-col items-center relative">
+                    <div className={`w-12 h-12 rounded-full flex items-center justify-center z-10 ${cert.isAI ? 'bg-red-600' : 'bg-blue-600'}`}>
                       <CheckCircle className="w-6 h-6 text-white" />
                     </div>
                     
@@ -424,10 +383,9 @@ export const CertificationStack = () => {
                       <div className="text-xs text-gray-600 mb-2">{cert.duration}</div>
                       
                       <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
-                        <div 
-                          className={`h-2 rounded-full ${cert.isAI ? 'bg-red-600' : 'bg-blue-600'}`}
-                          style={{ width: `${cert.readiness}%` }}
-                        ></div>
+                        <div className={`h-2 rounded-full ${cert.isAI ? 'bg-red-600' : 'bg-blue-600'}`} style={{
+                    width: `${cert.readiness}%`
+                  }}></div>
                       </div>
                       <div className="text-xs font-bold text-gray-700 mb-3">{cert.readiness}% Ready</div>
                       
@@ -436,8 +394,7 @@ export const CertificationStack = () => {
                         <div className="text-xs text-gray-700 leading-tight">{cert.whenToPursue}</div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </div>
@@ -457,8 +414,7 @@ export const CertificationStack = () => {
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        </div>)}
 
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-lg">
         <div className="text-center">
@@ -483,6 +439,5 @@ export const CertificationStack = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
