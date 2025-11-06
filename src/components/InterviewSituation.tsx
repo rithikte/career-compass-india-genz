@@ -87,56 +87,32 @@ export const InterviewSituation = () => {
         </p>
         <div className="h-64 sm:h-80 md:h-96">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart 
-              data={chartData} 
-              margin={{
-                top: 20,
-                right: 30,
-                left: 20,
-                bottom: 60
-              }}
-            >
+            <BarChart data={chartData} margin={{
+            top: 20,
+            right: 30,
+            left: 20,
+            bottom: 60
+          }}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis 
-                dataKey="name" 
-                angle={-45} 
-                textAnchor="end" 
-                height={80} 
-                fontSize={12}
-              />
-              <YAxis 
-                fontSize={12}
-                label={{ value: '% of Applicants', angle: -90, position: 'insideLeft' }}
-              />
-              <Tooltip 
-                formatter={(value: any, name: string) => {
-                  const labels: Record<string, string> = {
-                    'success': 'Got Job',
-                    'rejection': 'Rejected After Interview', 
-                    'filtered': 'Filtered Out Early'
-                  };
-                  return [`${value}%`, labels[name] || name];
-                }}
-                labelStyle={{ color: '#1e293b' }}
-              />
-              <Bar 
-                dataKey="success" 
-                fill="hsl(142 76% 42%)" 
-                name="Got Job" 
-                radius={[4, 4, 0, 0]} 
-              />
-              <Bar 
-                dataKey="rejection" 
-                fill="hsl(0 72% 51%)" 
-                name="Rejected" 
-                radius={[4, 4, 0, 0]} 
-              />
-              <Bar 
-                dataKey="filtered" 
-                fill="hsl(38 92% 50%)" 
-                name="Filtered Out" 
-                radius={[4, 4, 0, 0]} 
-              />
+              <XAxis dataKey="name" angle={-45} textAnchor="end" height={80} fontSize={12} />
+              <YAxis fontSize={12} label={{
+              value: '% of Applicants',
+              angle: -90,
+              position: 'insideLeft'
+            }} />
+              <Tooltip formatter={(value: any, name: string) => {
+              const labels: Record<string, string> = {
+                'success': 'Got Job',
+                'rejection': 'Rejected After Interview',
+                'filtered': 'Filtered Out Early'
+              };
+              return [`${value}%`, labels[name] || name];
+            }} labelStyle={{
+              color: '#1e293b'
+            }} />
+              <Bar dataKey="success" fill="hsl(142 76% 42%)" name="Got Job" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="rejection" fill="hsl(0 72% 51%)" name="Rejected" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="filtered" fill="hsl(38 92% 50%)" name="Filtered Out" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -144,15 +120,21 @@ export const InterviewSituation = () => {
         {/* Legend */}
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-6 pt-6 border-t">
           <div className="flex items-center gap-2">
-            <div className="w-4 h-4 rounded" style={{ backgroundColor: 'hsl(142 76% 42%)' }}></div>
+            <div className="w-4 h-4 rounded" style={{
+            backgroundColor: 'hsl(142 76% 42%)'
+          }}></div>
             <span className="text-sm font-semibold text-gray-700">Got Job</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-4 h-4 rounded" style={{ backgroundColor: 'hsl(0 72% 51%)' }}></div>
+            <div className="w-4 h-4 rounded" style={{
+            backgroundColor: 'hsl(0 72% 51%)'
+          }}></div>
             <span className="text-sm font-semibold text-gray-700">Rejected After Interview</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-4 h-4 rounded" style={{ backgroundColor: 'hsl(38 92% 50%)' }}></div>
+            <div className="w-4 h-4 rounded" style={{
+            backgroundColor: 'hsl(38 92% 50%)'
+          }}></div>
             <span className="text-sm font-semibold text-gray-700">Filtered Out Early</span>
           </div>
         </div>
@@ -246,7 +228,7 @@ export const InterviewSituation = () => {
       <Card className="bg-gradient-to-r from-green-50 to-emerald-50 border-green-200 mb-8">
         <CardContent className="p-8">
           <div className="text-center">
-            <CheckCircle className="w-12 h-12 text-green-600 mx-auto mb-4" />
+            
             <h3 className="text-2xl font-bold text-green-900 mb-4">Certified vs Non-Certified Reality</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-green-100 p-6 rounded-lg">
@@ -268,9 +250,7 @@ export const InterviewSituation = () => {
       {/* City-Wise Aerospace Hiring Section */}
       <div className="space-y-6">
         <div className="text-center space-y-4">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-4">
-            <MapPin className="w-8 h-8 text-white" />
-          </div>
+          
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             City-Wise Aerospace Hiring (2025)
           </h3>
@@ -410,25 +390,19 @@ export const InterviewSituation = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="bg-white p-6 rounded-lg shadow-sm border border-red-100">
-                  <div className="bg-red-100 p-3 rounded-full w-fit mb-4">
-                    <TrendingDown className="w-6 h-6 text-red-600" />
-                  </div>
+                  
                   <h4 className="font-bold text-red-900 mb-2">No Real Skills</h4>
                   <p className="text-red-800 text-sm">Just degrees, no hands-on tools or practical experience</p>
                 </div>
                 
                 <div className="bg-white p-6 rounded-lg shadow-sm border border-red-100">
-                  <div className="bg-red-100 p-3 rounded-full w-fit mb-4">
-                    <Brain className="w-6 h-6 text-red-600" />
-                  </div>
+                  
                   <h4 className="font-bold text-red-900 mb-2">No AI/Tech Awareness</h4>
                   <p className="text-red-800 text-sm">They fear AI but don't know how to work with it</p>
                 </div>
                 
                 <div className="bg-white p-6 rounded-lg shadow-sm border border-red-100">
-                  <div className="bg-red-100 p-3 rounded-full w-fit mb-4">
-                    <XCircle className="w-6 h-6 text-red-600" />
-                  </div>
+                  
                   <h4 className="font-bold text-red-900 mb-2">Zero Industry Prep</h4>
                   <p className="text-red-800 text-sm">No internships, certifications, or career clarity</p>
                 </div>
