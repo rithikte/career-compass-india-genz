@@ -1,43 +1,32 @@
 import React from 'react';
-import { TrendingUp, Users, Globe, Target, Flag, Award, Plane } from 'lucide-react';
+import { TrendingUp, Users, Globe, Target, Flag, Award } from 'lucide-react';
 import SourceBadge from './SourceBadge';
-
-const visionImpactData = [
-  {
-    icon: '🇮🇳',
-    projection: '70% of aircraft assembled in India by 2040',
-    source: 'Government "Vision 2040 for Civil Aviation"',
-    meaning: 'Massive demand for aerospace engineers and manufacturing talent'
-  },
-  {
-    icon: '🇮🇳',
-    projection: '90% of MRO done domestically by 2040',
-    source: 'Government "Vision 2040"',
-    meaning: 'Huge growth for AME careers and maintenance companies'
-  },
-  {
-    icon: '📈',
-    projection: 'Thousands of new aircraft needed in India over next 20 years',
-    source: 'Airbus Global Market Forecast',
-    meaning: 'Long-term hiring for design, testing, avionics, and production'
-  }
-];
-
-const careerImpacts = [
-  {
-    role: 'Aerospace Engineers',
-    description: 'will design the aircraft India flies and exports'
-  },
-  {
-    role: 'Avionics Engineers',
-    description: 'will build the systems that make them smart and safe'
-  },
-  {
-    role: 'Maintenance Engineers (AME)',
-    description: 'will keep them flying every single day'
-  }
-];
-
+const visionImpactData = [{
+  icon: '🇮🇳',
+  projection: '70% of aircraft assembled in India by 2040',
+  source: 'Government "Vision 2040 for Civil Aviation"',
+  meaning: 'Massive demand for aerospace engineers and manufacturing talent'
+}, {
+  icon: '🇮🇳',
+  projection: '90% of MRO done domestically by 2040',
+  source: 'Government "Vision 2040"',
+  meaning: 'Huge growth for AME careers and maintenance companies'
+}, {
+  icon: '📈',
+  projection: 'Thousands of new aircraft needed in India over next 20 years',
+  source: 'Airbus Global Market Forecast',
+  meaning: 'Long-term hiring for design, testing, avionics, and production'
+}];
+const careerImpacts = [{
+  role: 'Aerospace Engineers',
+  description: 'will design the aircraft India flies and exports'
+}, {
+  role: 'Avionics Engineers',
+  description: 'will build the systems that make them smart and safe'
+}, {
+  role: 'Maintenance Engineers (AME)',
+  description: 'will keep them flying every single day'
+}];
 const india2040Metrics = [{
   metric: 'GDP Contribution',
   current: '0.8%',
@@ -123,7 +112,7 @@ export const India2040 = () => {
       {/* 2040 Impact Vision Section */}
       <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-indigo-200">
         <div className="text-center mb-6">
-          <div className="text-4xl mb-4">🇮🇳</div>
+          
           <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
             2040 Impact Vision
           </h3>
@@ -133,9 +122,8 @@ export const India2040 = () => {
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
-          {visionImpactData.map((item, index) => (
-            <div key={index} className="bg-white rounded-lg p-6 shadow-sm border border-indigo-100 hover:shadow-md transition-shadow">
-              <div className="text-3xl mb-4">{item.icon}</div>
+          {visionImpactData.map((item, index) => <div key={index} className="bg-white rounded-lg p-6 shadow-sm border border-indigo-100 hover:shadow-md transition-shadow">
+              
               <h4 className="text-base sm:text-lg font-bold text-indigo-900 mb-3">{item.projection}</h4>
               <div className="mb-4">
                 <div className="text-xs font-semibold text-gray-500 mb-1">SOURCE</div>
@@ -145,15 +133,14 @@ export const India2040 = () => {
                 <div className="text-xs font-semibold text-indigo-700 mb-1">CAREER IMPACT</div>
                 <p className="text-sm text-gray-700 font-medium">{item.meaning}</p>
               </div>
-            </div>
-          ))}
+            </div>)}
         </div>
       </div>
 
       {/* What You Will Help Build Section */}
       <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-blue-200">
         <div className="text-center mb-6">
-          <Plane className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+          
           <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
             What You Will Help Build
           </h3>
@@ -163,12 +150,10 @@ export const India2040 = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-          {careerImpacts.map((career, index) => (
-            <div key={index} className="bg-white rounded-lg p-6 shadow-sm border border-blue-100">
+          {careerImpacts.map((career, index) => <div key={index} className="bg-white rounded-lg p-6 shadow-sm border border-blue-100">
               <h4 className="text-lg font-bold text-blue-900 mb-2">{career.role}</h4>
               <p className="text-gray-700">{career.description}</p>
-            </div>
-          ))}
+            </div>)}
         </div>
       </div>
 
@@ -206,7 +191,7 @@ export const India2040 = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
           {nationalImpact.map((impact, index) => <div key={impact.area} className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-300">
               <div className="flex items-center mb-4">
-                <impact.icon className="w-8 h-8 text-blue-600 mr-3" />
+                
                 <h4 className="text-lg font-bold text-slate-900">{impact.area}</h4>
               </div>
               
