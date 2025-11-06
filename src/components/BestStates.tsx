@@ -1,5 +1,4 @@
 import React from 'react';
-import { MapPin, TrendingUp, Building, AlertTriangle, Plane, Cpu, Wrench } from 'lucide-react';
 import SourceBadge from './SourceBadge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line, Area, AreaChart } from 'recharts';
@@ -130,9 +129,7 @@ export const BestStates = () => {
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
           Best States in India for Jobs
         </h2>
-        <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-          Geographic job hotspots and aerospace clusters
-        </p>
+        
         <div className="flex flex-wrap justify-center gap-2 mt-4">
           <SourceBadge href="https://www.karnataka.gov.in/aerospace" label="Karnataka Aerospace" />
           <SourceBadge href="https://www.telanganatoday.com/aerospace-clusters" label="Telangana Policy" />
@@ -144,7 +141,7 @@ export const BestStates = () => {
       <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-3">
-            <Building className="w-7 h-7 text-purple-600 mr-2" />
+            
             <h3 className="text-3xl font-bold text-slate-900">Top 5 States by Number of Companies (2025)</h3>
           </div>
           <p className="text-gray-600">
@@ -349,25 +346,70 @@ export const BestStates = () => {
         <div className="mt-8 bg-gradient-to-br from-gray-50 to-white p-6 rounded-lg border border-gray-200">
           <h4 className="text-xl font-bold text-slate-900 mb-6 text-center">Companies & Market Share Comparison</h4>
           <ResponsiveContainer width="100%" height={350}>
-            <BarChart
-              data={[
-                { state: 'Karnataka', companies: 150, marketShare: 30 },
-                { state: 'Maharashtra', companies: 100, marketShare: 20 },
-                { state: 'Telangana', companies: 80, marketShare: 18 },
-                { state: 'Tamil Nadu', companies: 70, marketShare: 14 },
-                { state: 'Delhi NCR', companies: 50, marketShare: 8 }
-              ]}
-              margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-            >
+            <BarChart data={[{
+            state: 'Karnataka',
+            companies: 150,
+            marketShare: 30
+          }, {
+            state: 'Maharashtra',
+            companies: 100,
+            marketShare: 20
+          }, {
+            state: 'Telangana',
+            companies: 80,
+            marketShare: 18
+          }, {
+            state: 'Tamil Nadu',
+            companies: 70,
+            marketShare: 14
+          }, {
+            state: 'Delhi NCR',
+            companies: 50,
+            marketShare: 8
+          }]} margin={{
+            top: 20,
+            right: 30,
+            left: 20,
+            bottom: 5
+          }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-              <XAxis dataKey="state" tick={{ fill: '#475569', fontSize: 12 }} />
-              <YAxis yAxisId="left" tick={{ fill: '#475569', fontSize: 12 }} label={{ value: 'Number of Companies', angle: -90, position: 'insideLeft', style: { fill: '#475569' } }} />
-              <YAxis yAxisId="right" orientation="right" tick={{ fill: '#475569', fontSize: 12 }} label={{ value: 'Market Share (%)', angle: 90, position: 'insideRight', style: { fill: '#475569' } }} />
-              <Tooltip 
-                contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', border: '1px solid #e5e7eb', borderRadius: '8px' }}
-                labelStyle={{ fontWeight: 'bold', color: '#1e293b' }}
-              />
-              <Legend wrapperStyle={{ paddingTop: '20px' }} />
+              <XAxis dataKey="state" tick={{
+              fill: '#475569',
+              fontSize: 12
+            }} />
+              <YAxis yAxisId="left" tick={{
+              fill: '#475569',
+              fontSize: 12
+            }} label={{
+              value: 'Number of Companies',
+              angle: -90,
+              position: 'insideLeft',
+              style: {
+                fill: '#475569'
+              }
+            }} />
+              <YAxis yAxisId="right" orientation="right" tick={{
+              fill: '#475569',
+              fontSize: 12
+            }} label={{
+              value: 'Market Share (%)',
+              angle: 90,
+              position: 'insideRight',
+              style: {
+                fill: '#475569'
+              }
+            }} />
+              <Tooltip contentStyle={{
+              backgroundColor: 'rgba(255, 255, 255, 0.95)',
+              border: '1px solid #e5e7eb',
+              borderRadius: '8px'
+            }} labelStyle={{
+              fontWeight: 'bold',
+              color: '#1e293b'
+            }} />
+              <Legend wrapperStyle={{
+              paddingTop: '20px'
+            }} />
               <Bar yAxisId="left" dataKey="companies" fill="#8b5cf6" name="Number of Companies" radius={[8, 8, 0, 0]} />
               <Bar yAxisId="right" dataKey="marketShare" fill="#06b6d4" name="Market Share (%)" radius={[8, 8, 0, 0]} />
             </BarChart>
@@ -381,7 +423,7 @@ export const BestStates = () => {
       {/* Average New Jobs Opening Per Year */}
       <div className="bg-white rounded-lg shadow-xl overflow-hidden mb-8 animate-fade-in">
         <div className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white text-center p-6 sm:p-8">
-          <TrendingUp className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3" />
+          
           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
             Average New Job Openings Per Year
           </h3>
@@ -461,24 +503,64 @@ export const BestStates = () => {
         <div className="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-lg border border-emerald-200">
           <h4 className="text-xl font-bold text-slate-900 mb-6 text-center">Job Openings Distribution by State & Role</h4>
           <ResponsiveContainer width="100%" height={400}>
-            <BarChart
-              data={[
-                { state: 'Karnataka', AME: 600, Avionics: 210, Aerospace: 360 },
-                { state: 'Tamil Nadu', AME: 440, Avionics: 154, Aerospace: 264 },
-                { state: 'Maharashtra', AME: 360, Avionics: 126, Aerospace: 216 },
-                { state: 'Telangana', AME: 400, Avionics: 140, Aerospace: 240 },
-                { state: 'Delhi NCR', AME: 200, Avionics: 70, Aerospace: 120 }
-              ]}
-              margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-            >
+            <BarChart data={[{
+            state: 'Karnataka',
+            AME: 600,
+            Avionics: 210,
+            Aerospace: 360
+          }, {
+            state: 'Tamil Nadu',
+            AME: 440,
+            Avionics: 154,
+            Aerospace: 264
+          }, {
+            state: 'Maharashtra',
+            AME: 360,
+            Avionics: 126,
+            Aerospace: 216
+          }, {
+            state: 'Telangana',
+            AME: 400,
+            Avionics: 140,
+            Aerospace: 240
+          }, {
+            state: 'Delhi NCR',
+            AME: 200,
+            Avionics: 70,
+            Aerospace: 120
+          }]} margin={{
+            top: 20,
+            right: 30,
+            left: 20,
+            bottom: 5
+          }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#d1fae5" />
-              <XAxis dataKey="state" tick={{ fill: '#047857', fontSize: 12 }} />
-              <YAxis tick={{ fill: '#047857', fontSize: 12 }} label={{ value: 'Jobs Per Year', angle: -90, position: 'insideLeft', style: { fill: '#047857' } }} />
-              <Tooltip 
-                contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', border: '1px solid #a7f3d0', borderRadius: '8px' }}
-                labelStyle={{ fontWeight: 'bold', color: '#065f46' }}
-              />
-              <Legend wrapperStyle={{ paddingTop: '20px' }} />
+              <XAxis dataKey="state" tick={{
+              fill: '#047857',
+              fontSize: 12
+            }} />
+              <YAxis tick={{
+              fill: '#047857',
+              fontSize: 12
+            }} label={{
+              value: 'Jobs Per Year',
+              angle: -90,
+              position: 'insideLeft',
+              style: {
+                fill: '#047857'
+              }
+            }} />
+              <Tooltip contentStyle={{
+              backgroundColor: 'rgba(255, 255, 255, 0.95)',
+              border: '1px solid #a7f3d0',
+              borderRadius: '8px'
+            }} labelStyle={{
+              fontWeight: 'bold',
+              color: '#065f46'
+            }} />
+              <Legend wrapperStyle={{
+              paddingTop: '20px'
+            }} />
               <Bar dataKey="AME" fill="#3b82f6" name="AME Jobs/Year" radius={[8, 8, 0, 0]} />
               <Bar dataKey="Avionics" fill="#6366f1" name="Avionics Jobs/Year" radius={[8, 8, 0, 0]} />
               <Bar dataKey="Aerospace" fill="#8b5cf6" name="Aerospace Eng Jobs/Year" radius={[8, 8, 0, 0]} />
@@ -494,7 +576,7 @@ export const BestStates = () => {
       <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-3">
-            <TrendingUp className="w-7 h-7 text-blue-600 mr-2" />
+            
             <h3 className="text-3xl font-bold text-slate-900">New Job Openings based on New Companies Opening</h3>
           </div>
           <p className="text-gray-600">
@@ -619,36 +701,71 @@ export const BestStates = () => {
         <div className="mt-8 bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg border border-blue-200">
           <h4 className="text-xl font-bold text-slate-900 mb-6 text-center">Job Growth Trajectory (2030-2040)</h4>
           <ResponsiveContainer width="100%" height={400}>
-            <AreaChart
-              data={[
-                { year: '2030', AME: 2000, Avionics: 1400, Aerospace: 1200, Total: 4600 },
-                { year: '2035', AME: 3800, Avionics: 2700, Aerospace: 2500, Total: 9000 },
-                { year: '2040', AME: 5800, Avionics: 4700, Aerospace: 3500, Total: 14000 }
-              ]}
-              margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-            >
+            <AreaChart data={[{
+            year: '2030',
+            AME: 2000,
+            Avionics: 1400,
+            Aerospace: 1200,
+            Total: 4600
+          }, {
+            year: '2035',
+            AME: 3800,
+            Avionics: 2700,
+            Aerospace: 2500,
+            Total: 9000
+          }, {
+            year: '2040',
+            AME: 5800,
+            Avionics: 4700,
+            Aerospace: 3500,
+            Total: 14000
+          }]} margin={{
+            top: 20,
+            right: 30,
+            left: 20,
+            bottom: 5
+          }}>
               <defs>
                 <linearGradient id="colorAME" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#6366f1" stopOpacity={0.8}/>
-                  <stop offset="95%" stopColor="#6366f1" stopOpacity={0.1}/>
+                  <stop offset="5%" stopColor="#6366f1" stopOpacity={0.8} />
+                  <stop offset="95%" stopColor="#6366f1" stopOpacity={0.1} />
                 </linearGradient>
                 <linearGradient id="colorAvionics" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#8b5cf6" stopOpacity={0.8}/>
-                  <stop offset="95%" stopColor="#8b5cf6" stopOpacity={0.1}/>
+                  <stop offset="5%" stopColor="#8b5cf6" stopOpacity={0.8} />
+                  <stop offset="95%" stopColor="#8b5cf6" stopOpacity={0.1} />
                 </linearGradient>
                 <linearGradient id="colorAerospace" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#14b8a6" stopOpacity={0.8}/>
-                  <stop offset="95%" stopColor="#14b8a6" stopOpacity={0.1}/>
+                  <stop offset="5%" stopColor="#14b8a6" stopOpacity={0.8} />
+                  <stop offset="95%" stopColor="#14b8a6" stopOpacity={0.1} />
                 </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="#dbeafe" />
-              <XAxis dataKey="year" tick={{ fill: '#1e40af', fontSize: 12 }} />
-              <YAxis tick={{ fill: '#1e40af', fontSize: 12 }} label={{ value: 'Number of Jobs', angle: -90, position: 'insideLeft', style: { fill: '#1e40af' } }} />
-              <Tooltip 
-                contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', border: '1px solid #bfdbfe', borderRadius: '8px' }}
-                labelStyle={{ fontWeight: 'bold', color: '#1e3a8a' }}
-              />
-              <Legend wrapperStyle={{ paddingTop: '20px' }} />
+              <XAxis dataKey="year" tick={{
+              fill: '#1e40af',
+              fontSize: 12
+            }} />
+              <YAxis tick={{
+              fill: '#1e40af',
+              fontSize: 12
+            }} label={{
+              value: 'Number of Jobs',
+              angle: -90,
+              position: 'insideLeft',
+              style: {
+                fill: '#1e40af'
+              }
+            }} />
+              <Tooltip contentStyle={{
+              backgroundColor: 'rgba(255, 255, 255, 0.95)',
+              border: '1px solid #bfdbfe',
+              borderRadius: '8px'
+            }} labelStyle={{
+              fontWeight: 'bold',
+              color: '#1e3a8a'
+            }} />
+              <Legend wrapperStyle={{
+              paddingTop: '20px'
+            }} />
               <Area type="monotone" dataKey="AME" stroke="#6366f1" fillOpacity={1} fill="url(#colorAME)" name="AME Jobs" />
               <Area type="monotone" dataKey="Avionics" stroke="#8b5cf6" fillOpacity={1} fill="url(#colorAvionics)" name="Avionics Jobs" />
               <Area type="monotone" dataKey="Aerospace" stroke="#14b8a6" fillOpacity={1} fill="url(#colorAerospace)" name="Aerospace Eng Jobs" />
@@ -664,7 +781,7 @@ export const BestStates = () => {
       {/* No. of Applications for each Job Role */}
       <div className="bg-white rounded-lg shadow-xl overflow-hidden mb-8 animate-fade-in">
         <div className="bg-gradient-to-r from-orange-500 to-red-600 text-white text-center p-6 sm:p-8">
-          <AlertTriangle className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3" />
+          
           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
             No. of Applications for each Job Role
           </h3>
@@ -725,7 +842,7 @@ export const BestStates = () => {
       {/* State-Wise Market Share */}
       <div className="bg-white rounded-lg shadow-xl overflow-hidden mb-8 animate-fade-in">
         <div className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-center p-6 sm:p-8">
-          <MapPin className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3" />
+          
           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
             State-Wise Market Share
           </h3>
@@ -743,7 +860,7 @@ export const BestStates = () => {
                 <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20"></div>
                 <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full -ml-16 -mb-16"></div>
                 <div className="relative z-10">
-                  <Plane className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 text-white" />
+                  
                   <h4 className="text-2xl sm:text-3xl font-bold text-white mb-2">
                     Aerospace Engineer
                   </h4>
@@ -761,7 +878,9 @@ export const BestStates = () => {
                     </div>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3 mb-3 overflow-hidden">
-                    <div className="bg-gradient-to-r from-purple-600 to-blue-600 h-full rounded-full animate-fade-in" style={{ width: '42.5%' }}></div>
+                    <div className="bg-gradient-to-r from-purple-600 to-blue-600 h-full rounded-full animate-fade-in" style={{
+                    width: '42.5%'
+                  }}></div>
                   </div>
                   <p className="text-gray-700 leading-relaxed">
                     HAL + dense OEM/Tier-1/R&D base; state leads India's aerospace exports.
@@ -777,7 +896,9 @@ export const BestStates = () => {
                     </div>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3 mb-3 overflow-hidden">
-                    <div className="bg-gradient-to-r from-cyan-600 to-blue-600 h-full rounded-full animate-fade-in" style={{ width: '20%' }}></div>
+                    <div className="bg-gradient-to-r from-cyan-600 to-blue-600 h-full rounded-full animate-fade-in" style={{
+                    width: '20%'
+                  }}></div>
                   </div>
                   <p className="text-gray-700 leading-relaxed">
                     TN Defence Industrial Corridor (5 nodes) + large MSME base scaling into aero.
@@ -793,7 +914,9 @@ export const BestStates = () => {
                     </div>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3 mb-3 overflow-hidden">
-                    <div className="bg-gradient-to-r from-blue-600 to-indigo-600 h-full rounded-full animate-fade-in" style={{ width: '18%' }}></div>
+                    <div className="bg-gradient-to-r from-blue-600 to-indigo-600 h-full rounded-full animate-fade-in" style={{
+                    width: '18%'
+                  }}></div>
                   </div>
                   <p className="text-gray-700 leading-relaxed">
                     Hyderabad A&D cluster (25+ large firms, 1,000+ MSMEs).
@@ -808,7 +931,9 @@ export const BestStates = () => {
                       <div className="text-2xl sm:text-3xl font-black text-indigo-600">12–15%</div>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2 mb-2 overflow-hidden">
-                      <div className="bg-indigo-600 h-full rounded-full" style={{ width: '13.5%' }}></div>
+                      <div className="bg-indigo-600 h-full rounded-full" style={{
+                      width: '13.5%'
+                    }}></div>
                     </div>
                     <p className="text-sm text-gray-700">
                       HAL Nashik + Nagpur MIHAN aero manufacturing/MRO ecosystem.
@@ -822,7 +947,9 @@ export const BestStates = () => {
                       <div className="text-2xl sm:text-3xl font-black text-teal-600">3–6%</div>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2 mb-2 overflow-hidden">
-                      <div className="bg-teal-600 h-full rounded-full" style={{ width: '4.5%' }}></div>
+                      <div className="bg-teal-600 h-full rounded-full" style={{
+                      width: '4.5%'
+                    }}></div>
                     </div>
                     <p className="text-sm text-gray-700">
                       New but real: JK Maini Global Aerospace facility (≈1,400 direct jobs by 2027).
@@ -841,7 +968,7 @@ export const BestStates = () => {
                 <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20"></div>
                 <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full -ml-16 -mb-16"></div>
                 <div className="relative z-10">
-                  <Cpu className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 text-white" />
+                  
                   <h4 className="text-2xl sm:text-3xl font-bold text-white mb-2">
                     Avionics Engineer
                   </h4>
@@ -859,7 +986,9 @@ export const BestStates = () => {
                     </div>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3 mb-3 overflow-hidden">
-                    <div className="bg-gradient-to-r from-purple-600 to-indigo-600 h-full rounded-full animate-fade-in" style={{ width: '34%' }}></div>
+                    <div className="bg-gradient-to-r from-purple-600 to-indigo-600 h-full rounded-full animate-fade-in" style={{
+                    width: '34%'
+                  }}></div>
                   </div>
                   <p className="text-gray-700 leading-relaxed">
                     Long-standing avionics & embedded hubs (RTX/Collins, Honeywell) + HAL ecosystem.
@@ -875,7 +1004,9 @@ export const BestStates = () => {
                     </div>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3 mb-3 overflow-hidden">
-                    <div className="bg-gradient-to-r from-blue-600 to-cyan-600 h-full rounded-full animate-fade-in" style={{ width: '30%' }}></div>
+                    <div className="bg-gradient-to-r from-blue-600 to-cyan-600 h-full rounded-full animate-fade-in" style={{
+                    width: '30%'
+                  }}></div>
                   </div>
                   <p className="text-gray-700 leading-relaxed">
                     Hyderabad hosts RTX/Collins, P&W training presence, and strong A&D supply chain.
@@ -890,7 +1021,9 @@ export const BestStates = () => {
                       <div className="text-2xl sm:text-3xl font-black text-cyan-600">12–16%</div>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2 mb-2 overflow-hidden">
-                      <div className="bg-cyan-600 h-full rounded-full" style={{ width: '14%' }}></div>
+                      <div className="bg-cyan-600 h-full rounded-full" style={{
+                      width: '14%'
+                    }}></div>
                     </div>
                     <p className="text-sm text-gray-700">
                       Corridor MSMEs moving up the value chain into avionics sub-systems.
@@ -904,7 +1037,9 @@ export const BestStates = () => {
                       <div className="text-2xl sm:text-3xl font-black text-indigo-600">12–16%</div>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2 mb-2 overflow-hidden">
-                      <div className="bg-indigo-600 h-full rounded-full" style={{ width: '14%' }}></div>
+                      <div className="bg-indigo-600 h-full rounded-full" style={{
+                      width: '14%'
+                    }}></div>
                     </div>
                     <p className="text-sm text-gray-700">
                       Nashik (HAL) and MIHAN suppliers; avionics labs co-located with MRO/manufacturing.
@@ -918,7 +1053,9 @@ export const BestStates = () => {
                       <div className="text-2xl sm:text-3xl font-black text-teal-600">4–6%</div>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2 mb-2 overflow-hidden">
-                      <div className="bg-teal-600 h-full rounded-full" style={{ width: '5%' }}></div>
+                      <div className="bg-teal-600 h-full rounded-full" style={{
+                      width: '5%'
+                    }}></div>
                     </div>
                     <p className="text-sm text-gray-700">
                       Early-stage; Space City/Tirupati + new aerospace manufacturing create future demand.
@@ -937,7 +1074,7 @@ export const BestStates = () => {
                 <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20"></div>
                 <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full -ml-16 -mb-16"></div>
                 <div className="relative z-10">
-                  <Wrench className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 text-white" />
+                  
                   <h4 className="text-2xl sm:text-3xl font-bold text-white mb-2">
                     Aircraft Maintenance Engineer (AME)
                   </h4>
@@ -955,7 +1092,9 @@ export const BestStates = () => {
                     </div>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3 mb-3 overflow-hidden">
-                    <div className="bg-gradient-to-r from-blue-600 to-cyan-600 h-full rounded-full animate-fade-in" style={{ width: '36%' }}></div>
+                    <div className="bg-gradient-to-r from-blue-600 to-cyan-600 h-full rounded-full animate-fade-in" style={{
+                    width: '36%'
+                  }}></div>
                   </div>
                   <p className="text-gray-700 leading-relaxed">
                     GMR Aero Technic hub (EASA/FAA approvals; 9+ narrow-body bays + paint/wide-body).
@@ -971,7 +1110,9 @@ export const BestStates = () => {
                     </div>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3 mb-3 overflow-hidden">
-                    <div className="bg-gradient-to-r from-indigo-600 to-purple-600 h-full rounded-full animate-fade-in" style={{ width: '30%' }}></div>
+                    <div className="bg-gradient-to-r from-indigo-600 to-purple-600 h-full rounded-full animate-fade-in" style={{
+                    width: '30%'
+                  }}></div>
                   </div>
                   <p className="text-gray-700 leading-relaxed">
                     AIESL MIHAN Nagpur + Indamer/Adani JV; multi-hangar capacity, expansion underway.
@@ -986,7 +1127,9 @@ export const BestStates = () => {
                       <div className="text-2xl sm:text-3xl font-black text-purple-600">16–20%</div>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2 mb-2 overflow-hidden">
-                      <div className="bg-purple-600 h-full rounded-full" style={{ width: '18%' }}></div>
+                      <div className="bg-purple-600 h-full rounded-full" style={{
+                      width: '18%'
+                    }}></div>
                     </div>
                     <p className="text-sm text-gray-700">
                       Bengaluru airline/defence fleets serviced via HAL/AIESL footprint and BLR ecosystem.
@@ -1000,7 +1143,9 @@ export const BestStates = () => {
                       <div className="text-2xl sm:text-3xl font-black text-cyan-600">8–12%</div>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2 mb-2 overflow-hidden">
-                      <div className="bg-cyan-600 h-full rounded-full" style={{ width: '10%' }}></div>
+                      <div className="bg-cyan-600 h-full rounded-full" style={{
+                      width: '10%'
+                    }}></div>
                     </div>
                     <p className="text-sm text-gray-700">
                       Corridor attracting airline support vendors; smaller MRO presence today.
@@ -1014,7 +1159,9 @@ export const BestStates = () => {
                       <div className="text-2xl sm:text-3xl font-black text-teal-600">4–6%</div>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2 mb-2 overflow-hidden">
-                      <div className="bg-teal-600 h-full rounded-full" style={{ width: '5%' }}></div>
+                      <div className="bg-teal-600 h-full rounded-full" style={{
+                      width: '5%'
+                    }}></div>
                     </div>
                     <p className="text-sm text-gray-700">
                       Policy push + upcoming clusters; limited operational MRO headcount today.
@@ -1035,30 +1182,37 @@ export const BestStates = () => {
                 <h5 className="text-lg font-bold text-purple-700 mb-4 text-center">Aerospace Engineer</h5>
                 <ResponsiveContainer width="100%" height={280}>
                   <PieChart>
-                    <Pie
-                      data={[
-                        { name: 'Karnataka', value: 42.5, fill: '#9333ea' },
-                        { name: 'Tamil Nadu', value: 20, fill: '#0891b2' },
-                        { name: 'Telangana', value: 18, fill: '#2563eb' },
-                        { name: 'Maharashtra', value: 13.5, fill: '#4f46e5' },
-                        { name: 'Andhra Pradesh', value: 4.5, fill: '#0d9488' }
-                      ]}
-                      cx="50%"
-                      cy="50%"
-                      labelLine={false}
-                      label={({ name, value }) => `${value}%`}
-                      outerRadius={75}
-                      dataKey="value"
-                    />
-                    <Tooltip 
-                      contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.98)', border: '1px solid #e5e7eb', borderRadius: '8px', padding: '8px' }}
-                      formatter={(value, name) => [`${value}%`, name]}
-                    />
-                    <Legend 
-                      verticalAlign="bottom" 
-                      height={36}
-                      formatter={(value) => <span className="text-xs">{value}</span>}
-                    />
+                    <Pie data={[{
+                    name: 'Karnataka',
+                    value: 42.5,
+                    fill: '#9333ea'
+                  }, {
+                    name: 'Tamil Nadu',
+                    value: 20,
+                    fill: '#0891b2'
+                  }, {
+                    name: 'Telangana',
+                    value: 18,
+                    fill: '#2563eb'
+                  }, {
+                    name: 'Maharashtra',
+                    value: 13.5,
+                    fill: '#4f46e5'
+                  }, {
+                    name: 'Andhra Pradesh',
+                    value: 4.5,
+                    fill: '#0d9488'
+                  }]} cx="50%" cy="50%" labelLine={false} label={({
+                    name,
+                    value
+                  }) => `${value}%`} outerRadius={75} dataKey="value" />
+                    <Tooltip contentStyle={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.98)',
+                    border: '1px solid #e5e7eb',
+                    borderRadius: '8px',
+                    padding: '8px'
+                  }} formatter={(value, name) => [`${value}%`, name]} />
+                    <Legend verticalAlign="bottom" height={36} formatter={value => <span className="text-xs">{value}</span>} />
                   </PieChart>
                 </ResponsiveContainer>
               </div>
@@ -1068,30 +1222,37 @@ export const BestStates = () => {
                 <h5 className="text-lg font-bold text-indigo-700 mb-4 text-center">Avionics Engineer</h5>
                 <ResponsiveContainer width="100%" height={280}>
                   <PieChart>
-                    <Pie
-                      data={[
-                        { name: 'Karnataka', value: 34, fill: '#9333ea' },
-                        { name: 'Telangana', value: 30, fill: '#2563eb' },
-                        { name: 'Tamil Nadu', value: 14, fill: '#0891b2' },
-                        { name: 'Maharashtra', value: 14, fill: '#4f46e5' },
-                        { name: 'Andhra Pradesh', value: 5, fill: '#0d9488' }
-                      ]}
-                      cx="50%"
-                      cy="50%"
-                      labelLine={false}
-                      label={({ name, value }) => `${value}%`}
-                      outerRadius={75}
-                      dataKey="value"
-                    />
-                    <Tooltip 
-                      contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.98)', border: '1px solid #e5e7eb', borderRadius: '8px', padding: '8px' }}
-                      formatter={(value, name) => [`${value}%`, name]}
-                    />
-                    <Legend 
-                      verticalAlign="bottom" 
-                      height={36}
-                      formatter={(value) => <span className="text-xs">{value}</span>}
-                    />
+                    <Pie data={[{
+                    name: 'Karnataka',
+                    value: 34,
+                    fill: '#9333ea'
+                  }, {
+                    name: 'Telangana',
+                    value: 30,
+                    fill: '#2563eb'
+                  }, {
+                    name: 'Tamil Nadu',
+                    value: 14,
+                    fill: '#0891b2'
+                  }, {
+                    name: 'Maharashtra',
+                    value: 14,
+                    fill: '#4f46e5'
+                  }, {
+                    name: 'Andhra Pradesh',
+                    value: 5,
+                    fill: '#0d9488'
+                  }]} cx="50%" cy="50%" labelLine={false} label={({
+                    name,
+                    value
+                  }) => `${value}%`} outerRadius={75} dataKey="value" />
+                    <Tooltip contentStyle={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.98)',
+                    border: '1px solid #e5e7eb',
+                    borderRadius: '8px',
+                    padding: '8px'
+                  }} formatter={(value, name) => [`${value}%`, name]} />
+                    <Legend verticalAlign="bottom" height={36} formatter={value => <span className="text-xs">{value}</span>} />
                   </PieChart>
                 </ResponsiveContainer>
               </div>
@@ -1101,30 +1262,37 @@ export const BestStates = () => {
                 <h5 className="text-lg font-bold text-blue-700 mb-4 text-center">Aircraft Maintenance Eng.</h5>
                 <ResponsiveContainer width="100%" height={280}>
                   <PieChart>
-                    <Pie
-                      data={[
-                        { name: 'Telangana', value: 36, fill: '#2563eb' },
-                        { name: 'Maharashtra', value: 30, fill: '#4f46e5' },
-                        { name: 'Karnataka', value: 18, fill: '#9333ea' },
-                        { name: 'Tamil Nadu', value: 10, fill: '#0891b2' },
-                        { name: 'Andhra Pradesh', value: 5, fill: '#0d9488' }
-                      ]}
-                      cx="50%"
-                      cy="50%"
-                      labelLine={false}
-                      label={({ name, value }) => `${value}%`}
-                      outerRadius={75}
-                      dataKey="value"
-                    />
-                    <Tooltip 
-                      contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.98)', border: '1px solid #e5e7eb', borderRadius: '8px', padding: '8px' }}
-                      formatter={(value, name) => [`${value}%`, name]}
-                    />
-                    <Legend 
-                      verticalAlign="bottom" 
-                      height={36}
-                      formatter={(value) => <span className="text-xs">{value}</span>}
-                    />
+                    <Pie data={[{
+                    name: 'Telangana',
+                    value: 36,
+                    fill: '#2563eb'
+                  }, {
+                    name: 'Maharashtra',
+                    value: 30,
+                    fill: '#4f46e5'
+                  }, {
+                    name: 'Karnataka',
+                    value: 18,
+                    fill: '#9333ea'
+                  }, {
+                    name: 'Tamil Nadu',
+                    value: 10,
+                    fill: '#0891b2'
+                  }, {
+                    name: 'Andhra Pradesh',
+                    value: 5,
+                    fill: '#0d9488'
+                  }]} cx="50%" cy="50%" labelLine={false} label={({
+                    name,
+                    value
+                  }) => `${value}%`} outerRadius={75} dataKey="value" />
+                    <Tooltip contentStyle={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.98)',
+                    border: '1px solid #e5e7eb',
+                    borderRadius: '8px',
+                    padding: '8px'
+                  }} formatter={(value, name) => [`${value}%`, name]} />
+                    <Legend verticalAlign="bottom" height={36} formatter={value => <span className="text-xs">{value}</span>} />
                   </PieChart>
                 </ResponsiveContainer>
               </div>
@@ -1139,25 +1307,12 @@ export const BestStates = () => {
 
       <div className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white p-8 rounded-lg">
         <div className="text-center">
-          <TrendingUp className="w-12 h-12 mx-auto mb-4" />
+          
           <h3 className="text-2xl font-bold mb-2">Geographic Advantage</h3>
           <p className="text-blue-200 text-lg mb-6">
             South India dominates with 70% of aerospace jobs concentrated in top 3 states
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
-            <div className="bg-blue-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-3xl font-bold">65K</div>
-              <div className="text-blue-200">Karnataka Jobs</div>
-            </div>
-            <div className="bg-indigo-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-3xl font-bold">29K</div>
-              <div className="text-indigo-200">Telangana Jobs</div>
-            </div>
-            <div className="bg-purple-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-3xl font-bold">26K</div>
-              <div className="text-purple-200">Maharashtra Jobs</div>
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>;
