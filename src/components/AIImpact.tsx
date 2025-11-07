@@ -250,55 +250,36 @@ export const AIImpact = () => {
         </div>
       </div>
 
-      <div className="bg-gradient-to-br from-white via-slate-50 to-white rounded-xl shadow-xl p-6 sm:p-8 mb-8 border border-border/50 overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-warning/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-success/5 rounded-full blur-3xl"></div>
-        
-        <div className="relative z-10 bg-gradient-to-br from-warning/10 via-warning/5 to-destructive/10 rounded-xl p-6 sm:p-8 mb-6 border-2 border-warning/30 hover:border-warning/50 transition-all duration-300">
-          <div className="flex items-start space-x-3 sm:space-x-4">
-            <div className="bg-warning/20 p-3 rounded-full">
-              <AlertTriangle className="w-6 h-6 sm:w-8 sm:h-8 text-warning flex-shrink-0" />
-            </div>
-            <div className="flex-1">
-              <h4 className="text-xl sm:text-2xl font-bold text-foreground mb-4">What's Really Happening:</h4>
-              <div className="space-y-4">
-                <div className="bg-background/60 backdrop-blur-sm rounded-lg p-4 border border-border/50">
-                  <p className="text-foreground text-base sm:text-lg font-bold">
-                    AI is replacing tasks, not engineers. Skilled graduates remain essential.
-                  </p>
-                </div>
-                <div className="bg-background/60 backdrop-blur-sm rounded-lg p-4 border border-border/50">
-                  <p className="text-foreground text-base sm:text-lg">
-                    AI is not killing jobs — it's killing <strong className="text-destructive">unskilled jobs</strong>.
-                  </p>
-                </div>
-                <div className="bg-background/60 backdrop-blur-sm rounded-lg p-4 border border-border/50">
-                  <p className="text-muted-foreground font-semibold text-base sm:text-lg">
-                    Companies still hiring but only for students who are skilled and know the latest tools.
-                  </p>
-                </div>
-              </div>
+      <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-8">
+        <div className="flex items-start space-x-3 sm:space-x-4 mb-6">
+          <AlertTriangle className="w-6 h-6 sm:w-8 sm:h-8 text-orange-600 mt-1 flex-shrink-0" />
+          <div className="flex-1">
+            <h4 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4">What's Really Happening:</h4>
+            <div className="space-y-4">
+              <p className="text-gray-800 text-base sm:text-lg">
+                <strong>AI is replacing tasks, not engineers. Skilled graduates remain essential.</strong>
+              </p>
+              <p className="text-gray-800 text-base sm:text-lg">
+                AI is not killing jobs — it's killing <strong>unskilled jobs</strong>.
+              </p>
+              <p className="text-gray-700 font-medium">
+                Companies still hiring but only for students who are skilled and know the latest tools.
+              </p>
             </div>
           </div>
         </div>
         
-        <div className="relative z-10 bg-gradient-to-br from-success/10 via-success/5 to-emerald-500/10 rounded-xl p-6 sm:p-8 border-2 border-success/30 hover:border-success/50 transition-all duration-300">
+        <div className="pt-6 border-t border-gray-200">
           <div className="flex items-start space-x-3 sm:space-x-4">
-            <div className="bg-success/20 p-3 rounded-full">
-              <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-success flex-shrink-0" />
-            </div>
+            <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-success flex-shrink-0 mt-1" />
             <div className="flex-1">
-              <h5 className="text-2xl font-bold text-foreground mb-4">Solution:</h5>
-              <div className="bg-background/60 backdrop-blur-sm rounded-lg p-5 border border-border/50 mb-4">
-                <p className="text-lg sm:text-xl font-bold text-success mb-2">
-                  Upskill + Certify + Know Your Role → You get hired.
-                </p>
-              </div>
-              <div className="bg-background/80 backdrop-blur-sm rounded-lg p-4 border-2 border-success/40">
-                <p className="text-base sm:text-lg text-foreground font-bold">
-                  <span className="text-success text-2xl sm:text-3xl">90%</span> Companies Expecting Certifications to Get Job in 2-3 Attempts
-                </p>
-              </div>
+              <h5 className="text-2xl font-bold text-slate-900 mb-4">Solution:</h5>
+              <p className="text-lg font-bold text-slate-900 mb-3">
+                Upskill + Certify + Know Your Role → You get hired.
+              </p>
+              <p className="text-base text-gray-700 font-medium">
+                90% Companies Expecting Certifications to Get Job in 2-3 Attempts
+              </p>
             </div>
           </div>
         </div>
