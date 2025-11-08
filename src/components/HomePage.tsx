@@ -137,51 +137,25 @@ export const HomePage = () => {
           animationDelay: '1.5s'
         }}></div>
           
-          {/* Headline - Enhanced Design */}
-          <h1 className="headline-interactive text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.15] tracking-tight px-4 mb-10 sm:mb-12 relative">
-            {/* Glow effect behind text */}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 blur-3xl opacity-30 animate-pulse"></div>
-            
-            <span className="animate-spring-up inline-block will-change-transform text-foreground animation-delay-100 relative drop-shadow-sm">
-              India's{' '}
-              <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer-subtle font-black">
-                  1st
-                </span>
-              </span>
-              {' '}
-              <span className="relative inline-block group">
-                <span className="absolute inset-0 bg-gradient-to-r from-primary/30 via-accent/30 to-primary/30 blur-xl opacity-50"></span>
-                <span className="relative bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer-subtle font-black">
-                  AI-Powered
-                </span>
+          {/* Headline - Mostly Black with ONE Gradient Word */}
+          <h1 className="headline-interactive text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight tracking-tight px-4 mb-10 sm:mb-12">
+            <span className="animate-spring-up inline-block will-change-transform text-foreground animation-delay-100">
+              India's 1st{' '}
+              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer-subtle">
+                AI-Powered
               </span>
             </span>
             <br />
-            <span className="text-foreground animate-spring-up inline-block will-change-transform animation-delay-200 relative drop-shadow-sm">
-              Platform That{' '}
-              <span className="relative inline-block px-3 py-1 bg-primary/10 rounded-lg border border-primary/20">
-                Maps
-              </span>
+            <span className="text-foreground animate-spring-up inline-block will-change-transform animation-delay-200">
+              Platform That Maps
             </span>
             <br />
-            <span className="text-foreground animate-spring-up inline-block will-change-transform animation-delay-300 relative drop-shadow-sm">
-              Your{' '}
-              <span className="relative inline-block">
-                <span className="absolute inset-0 bg-accent/20 blur-lg"></span>
-                <span className="relative bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent font-black">
-                  Future
-                </span>
-              </span>
-              {' '}from the
+            <span className="text-foreground animate-spring-up inline-block will-change-transform animation-delay-300">
+              Your Future from the
             </span>
             <br />
-            <span className="text-foreground animate-spring-up inline-block will-change-transform animation-delay-400 relative drop-shadow-sm">
-              Subjects You{' '}
-              <span className="relative inline-block text-primary hover:scale-105 transition-transform duration-300">
-                <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></span>
-                Love
-              </span>
+            <span className="text-foreground animate-spring-up inline-block will-change-transform animation-delay-400">
+              Subjects You Love
             </span>
           </h1>
           
