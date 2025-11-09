@@ -77,10 +77,6 @@ export const GovtSupport = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {supportReasons.map((reason, index) => <div key={reason.title} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
-            <div className={`bg-gradient-to-r ${reason.color} text-white p-4 rounded-lg mb-4`}>
-              <reason.icon className="w-8 h-8 mx-auto" />
-            </div>
-            
             <h3 className="text-xl font-bold text-slate-900 mb-3">{reason.title}</h3>
             <p className="text-gray-600 mb-4">{reason.description}</p>
             
