@@ -180,7 +180,10 @@ export const CertificationStack = () => {
               <p className="flex items-start bg-white/60 backdrop-blur-sm rounded-lg p-4 shadow-sm border border-red-100">
                 <span className="text-red-600 font-bold mr-2 text-xl">•</span>
                 <span>
-                  In B.Tech Mechanical Engineering, you learn only 38–45% basics — not enough for aviation jobs without extra certifications and projects.
+                  In <span className="font-bold text-slate-900">B.Tech Mechanical Engineering</span>, you'll learn only{" "}
+                  <span className="font-bold text-red-600">38-45%</span> (typical syllabus range, varies by university) 
+                  enough to understand the basics, but <span className="font-bold underline">not enough to get an aviation job directly</span>{" "}
+                  unless you do <span className="font-bold text-green-600">extra certifications and projects</span>.
                 </span>
               </p>
             </div>
