@@ -62,6 +62,23 @@ export const SkillGap = () => {
         </div>
       </div>
 
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8">
+        <div className="bg-gradient-accent text-white p-6 rounded-lg text-center">
+          <AlertTriangle className="w-12 h-12 mx-auto mb-4" />
+          <div className="text-3xl font-bold">{avgGap}%</div>
+          <div className="text-white/80">Average Skill Gap</div>
+        </div>
+        <div className="bg-gradient-primary text-white p-6 rounded-lg text-center">
+          <TrendingUp className="w-12 h-12 mx-auto mb-4" />
+          <div className="text-3xl font-bold">6-12</div>
+          <div className="text-white/80">Months to Bridge</div>
+        </div>
+        <div className="bg-gradient-success text-white p-6 rounded-lg text-center">
+          <CheckCircle className="w-12 h-12 mx-auto mb-4" />
+          <div className="text-3xl font-bold">85%</div>
+          <div className="text-white/80">Success Rate</div>
+        </div>
+      </div>
 
       <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
         <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6 text-center">
