@@ -90,87 +90,82 @@ export const JobSecurity = () => {
           </div>)}
       </div>
 
-      <div className="relative overflow-hidden bg-gradient-to-br from-background via-primary/5 to-accent/10 rounded-xl shadow-xl p-6 sm:p-8 mb-8 border border-border/50">
-        {/* Decorative blur elements */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-32 translate-x-32"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl translate-y-32 -translate-x-32"></div>
-        
-        <div className="relative z-10">
-          <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 text-center bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Difference between Traditional Skills and AI-Enhanced Skill Career Durability
-          </h3>
-          <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto text-base sm:text-lg">
-            Compare how traditional skills and AI-enhanced skills impact your career longevity.
-          </p>
-          
-          <div className="overflow-x-auto backdrop-blur-sm bg-background/50 rounded-lg border border-border/50 shadow-lg">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b-2 border-primary/20 bg-gradient-to-r from-primary/10 to-accent/10">
-                  <th className="text-left py-4 px-4 text-foreground font-bold">Role</th>
-                  <th className="text-center py-4 px-4 text-foreground font-bold">Traditional Skill</th>
-                  <th className="text-center py-4 px-4 text-foreground font-bold">AI-Enhanced Skill</th>
-                  <th className="text-center py-4 px-4 text-foreground font-bold">Career Durability Score</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-border/30 hover:bg-primary/5 transition-colors">
-                  <td className="py-4 px-4 font-medium text-foreground">Aerospace Engineer</td>
-                  <td className="text-center py-4 px-4">
-                    <span className="text-base font-bold text-muted-foreground">7–8 yrs</span>
-                  </td>
-                  <td className="text-center py-4 px-4">
-                    <span className="font-bold text-foreground">15–18 yrs</span>
-                  </td>
-                  <td className="text-center py-4 px-4">
-                    <span className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-success/20 to-success/30 font-bold text-success border border-success/30">88%</span>
-                  </td>
-                </tr>
-                <tr className="border-b border-border/30 hover:bg-primary/5 transition-colors">
-                  <td className="py-4 px-4 font-medium text-foreground">Avionics Engineer</td>
-                  <td className="text-center py-4 px-4">
-                    <span className="font-bold text-muted-foreground">6–7 yrs</span>
-                  </td>
-                  <td className="text-center py-4 px-4">
-                    <span className="font-bold text-foreground">14–16 yrs</span>
-                  </td>
-                  <td className="text-center py-4 px-4">
-                    <span className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-success/20 to-success/30 font-bold text-success border border-success/30">85%</span>
-                  </td>
-                </tr>
-                <tr className="hover:bg-primary/5 transition-colors">
-                  <td className="py-4 px-4 font-medium text-foreground">AME</td>
-                  <td className="text-center py-4 px-4">
-                    <span className="font-bold text-muted-foreground">8–9 yrs</span>
-                  </td>
-                  <td className="text-center py-4 px-4">
-                    <span className="font-bold text-foreground">16–20 yrs</span>
-                  </td>
-                  <td className="text-center py-4 px-4">
-                    <span className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-success/20 to-success/30 font-bold text-success border border-success/30">90%</span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+      <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h3 className="text-2xl font-bold text-slate-900 mb-4 text-center">Difference between Traditional Skills and AI-Enhanced Skill Career Durability</h3>
+        <p className="text-center text-gray-600 mb-6 max-w-2xl mx-auto">
+          Compare how traditional skills and AI-enhanced skills impact your career longevity.
+        </p>
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              <tr className="border-b-2 border-slate-300">
+                <th className="text-left py-4 px-4 text-slate-900 font-bold">Role</th>
+                <th className="text-center py-4 px-4 text-slate-900 font-bold">Traditional Skill</th>
+                <th className="text-center py-4 px-4 text-slate-900 font-bold">AI-Enhanced Skill</th>
+                <th className="text-center py-4 px-4 text-slate-900 font-bold">Career Durability Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-800">Aerospace Engineer</td>
+                <td className="text-center py-4 px-4">
+                  <span className="text-base font-bold text-slate-900">7–8 yrs</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className="font-bold text-slate-900">15–18 yrs</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className="font-bold text-green-600">88%</span>
+                </td>
+              </tr>
+              <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-800">Avionics Engineer</td>
+                <td className="text-center py-4 px-4">
+                  <span className="font-bold text-slate-900">6–7 yrs</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className="font-bold text-slate-900">14–16 yrs</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className="font-bold text-green-600">85%</span>
+                </td>
+              </tr>
+              <tr className="hover:bg-slate-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-800">AME</td>
+                <td className="text-center py-4 px-4">
+                  <span className="font-bold text-slate-900">8–9 yrs</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className="font-bold text-slate-900">16–20 yrs</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className="font-bold text-green-600">90%</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-primary/5 to-background border-l-4 border-primary p-6 rounded-lg backdrop-blur-sm hover:shadow-lg transition-all duration-300">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl"></div>
-              <div className="relative z-10">
-                <h4 className="font-bold text-foreground mb-3 text-lg">What It Means</h4>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  <strong className="text-foreground">Traditional Skill:</strong> Shows how quickly skills lose value without continuous learning.
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <div className="bg-blue-50 border-l-4 border-blue-500 p-5 rounded">
+            <div className="flex items-start space-x-3">
+              
+              <div>
+                <h4 className="font-bold text-blue-900 mb-2">What It Means</h4>
+                <p className="text-blue-800 text-sm leading-relaxed">
+                  <strong>Traditional Skill:</strong> Shows how quickly skills lose value without continuous learning.
                 </p>
               </div>
             </div>
-            
-            <div className="relative overflow-hidden bg-gradient-to-br from-success/10 via-success/5 to-background border-l-4 border-success p-6 rounded-lg backdrop-blur-sm hover:shadow-lg transition-all duration-300">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-success/5 rounded-full blur-2xl"></div>
-              <div className="relative z-10">
-                <h4 className="font-bold text-foreground mb-3 text-lg">Why It Matters</h4>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  <strong className="text-foreground">AI-Enhanced Skill:</strong> Proves that learning new technologies can double your career life and job security.
+          </div>
+          
+          <div className="bg-green-50 border-l-4 border-green-500 p-5 rounded">
+            <div className="flex items-start space-x-3">
+              
+              <div>
+                <h4 className="font-bold text-green-900 mb-2">Why It Matters</h4>
+                <p className="text-green-800 text-sm leading-relaxed">
+                  <strong>AI-Enhanced Skill:</strong> Proves that learning new technologies can double your career life and job security.
                 </p>
               </div>
             </div>
