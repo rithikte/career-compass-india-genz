@@ -159,6 +159,10 @@ export const India2040 = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {india2040Metrics.map((metric, index) => <div key={metric.metric} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
+            <div className={`bg-gradient-to-r ${metric.color} text-white p-3 rounded-lg mb-4`}>
+              <metric.icon className="w-6 h-6 mx-auto" />
+            </div>
+            
             <h3 className="text-lg font-bold text-slate-900 mb-3">{metric.metric}</h3>
             
             <div className="space-y-2 mb-4">

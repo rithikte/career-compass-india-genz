@@ -137,26 +137,50 @@ export const HomePage = () => {
           animationDelay: '1.5s'
         }}></div>
           
-          {/* Headline - Mostly Black with ONE Gradient Word */}
-          <h1 className="headline-interactive text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight tracking-tight px-4 mb-10 sm:mb-12">
-            <span className="animate-spring-up inline-block will-change-transform text-foreground animation-delay-100">
-              India's 1st{' '}
-              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer-subtle">
-                AI-Powered
+          {/* Headline - Enhanced Design */}
+          <h1 className="relative headline-interactive text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.1] tracking-tight px-4 mb-10 sm:mb-12">
+            {/* Glow effect behind text */}
+            <div className="absolute inset-0 blur-3xl opacity-30 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 animate-pulse" style={{ animationDuration: '4s' }}></div>
+            
+            <div className="relative">
+              <span className="animate-spring-up inline-block will-change-transform animation-delay-100 group">
+                <span className="text-foreground drop-shadow-sm">India's 1st{' '}</span>
+                <span className="relative inline-block">
+                  <span className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-primary blur-lg opacity-40"></span>
+                  <span className="relative bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer-subtle font-extrabold">
+                    AI-Powered
+                  </span>
+                </span>
               </span>
-            </span>
-            <br />
-            <span className="text-foreground animate-spring-up inline-block will-change-transform animation-delay-200">
-              Platform That Maps
-            </span>
-            <br />
-            <span className="text-foreground animate-spring-up inline-block will-change-transform animation-delay-300">
-              Your Future from the
-            </span>
-            <br />
-            <span className="text-foreground animate-spring-up inline-block will-change-transform animation-delay-400">
-              Subjects You Love
-            </span>
+              <br />
+              <span className="animate-spring-up inline-block will-change-transform animation-delay-200">
+                <span className="text-foreground drop-shadow-sm hover:text-primary transition-colors duration-300">
+                  Platform That Maps
+                </span>
+              </span>
+              <br />
+              <span className="animate-spring-up inline-block will-change-transform animation-delay-300">
+                <span className="text-foreground drop-shadow-sm">
+                  Your{' '}
+                  <span className="relative inline-block">
+                    <span className="text-foreground bg-gradient-to-r from-accent/10 to-primary/10 px-2 rounded-lg border-b-4 border-primary/30">
+                      Future
+                    </span>
+                  </span>
+                  {' '}from the
+                </span>
+              </span>
+              <br />
+              <span className="animate-spring-up inline-block will-change-transform animation-delay-400">
+                <span className="text-foreground drop-shadow-sm">
+                  Subjects You{' '}
+                  <span className="relative inline-block text-primary font-extrabold">
+                    Love
+                    <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full"></span>
+                  </span>
+                </span>
+              </span>
+            </div>
           </h1>
           
           {/* Subtitle - Clear Hierarchy */}
