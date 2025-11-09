@@ -154,7 +154,6 @@ export const PostCertBenefits = () => {
 
       <div className="bg-gradient-to-r from-green-600 to-teal-600 text-white p-8 rounded-lg">
         <div className="text-center">
-          <DollarSign className="w-12 h-12 mx-auto mb-4" />
           <h3 className="text-2xl font-bold mb-2">ROI Spotlight</h3>
           <p className="text-green-200 text-lg mb-4">
             <strong>Certifications = faster placement + higher stability.</strong>

@@ -76,11 +76,16 @@ export const GovtSupport = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        {supportReasons.map((reason, index) => <div key={reason.title} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
-            <div className={`bg-gradient-to-r ${reason.color} text-white p-4 rounded-lg mb-4`}>
-              <reason.icon className="w-8 h-8 mx-auto" />
-            </div>
-            
+        {supportReasons.map((reason, index) => {
+          const borderColors = [
+            'border-l-red-600',
+            'border-l-blue-600',
+            'border-l-green-600',
+            'border-l-purple-600',
+            'border-l-orange-600',
+            'border-l-indigo-600'
+          ];
+          return <div key={reason.title} className={`bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100 border-l-4 ${borderColors[index]}`}>
             <h3 className="text-xl font-bold text-slate-900 mb-3">{reason.title}</h3>
             <p className="text-gray-600 mb-4">{reason.description}</p>
             
@@ -88,7 +93,8 @@ export const GovtSupport = () => {
               <div className="text-sm font-semibold text-gray-600">IMPACT</div>
               <div className="text-lg font-bold text-slate-900">{reason.impact}</div>
             </div>
-          </div>)}
+          </div>;
+        })}
       </div>
 
       <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
@@ -97,7 +103,9 @@ export const GovtSupport = () => {
         </h3>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-          {govtInitiatives.map((initiative, index) => <div key={initiative.initiative} className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-300">
+          {govtInitiatives.map((initiative, index) => {
+            const borderColors = ['border-l-cyan-600', 'border-l-teal-600', 'border-l-violet-600', 'border-l-rose-600'];
+            return <div key={initiative.initiative} className={`border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-300 border-l-4 ${borderColors[index]}`}>
               <h4 className="text-lg font-bold text-slate-900 mb-4">{initiative.initiative}</h4>
               
               <div className="space-y-3">
@@ -116,7 +124,8 @@ export const GovtSupport = () => {
                   <span className="font-bold text-purple-600">{initiative.beneficiaries}</span>
                 </div>
               </div>
-            </div>)}
+            </div>;
+          })}
         </div>
       </div>
 
