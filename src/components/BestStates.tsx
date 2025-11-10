@@ -431,21 +431,6 @@ export const BestStates = () => {
             Expected ~3,400–4,400 new openings annually across India
           </p>
           
-          {/* Summary Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
-            <div className="bg-white bg-opacity-20 rounded-lg p-4 text-center backdrop-blur-sm">
-              <div className="text-2xl sm:text-3xl font-bold mb-1">1,800–2,200</div>
-              <div className="text-emerald-100 text-sm font-medium">AME Jobs/Year</div>
-            </div>
-            <div className="bg-white bg-opacity-20 rounded-lg p-4 text-center backdrop-blur-sm">
-              <div className="text-2xl sm:text-3xl font-bold mb-1">600–800</div>
-              <div className="text-emerald-100 text-sm font-medium">Avionics Jobs/Year</div>
-            </div>
-            <div className="bg-white bg-opacity-20 rounded-lg p-4 text-center backdrop-blur-sm">
-              <div className="text-2xl sm:text-3xl font-bold mb-1">1,000–1,400</div>
-              <div className="text-emerald-100 text-sm font-medium">Aerospace Eng Jobs/Year</div>
-            </div>
-          </div>
         </div>
 
         <div className="overflow-x-auto">
