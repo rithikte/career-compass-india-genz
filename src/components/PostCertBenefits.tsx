@@ -145,9 +145,6 @@ export const PostCertBenefits = () => {
           <p className="text-green-200 text-lg mb-4">
             <strong>Certifications = faster placement + higher stability.</strong>
           </p>
-          <p className="text-green-200 text-lg">
-            Aerospace Engineer roles show highest returns: 40% salary hike + 3.5x interview success rate
-          </p>
         </div>
       </div>
     </div>
