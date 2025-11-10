@@ -263,25 +263,6 @@ export const CareerOutcomes = () => {
             
           </div>)}
       </div>
-      <div className="bg-gradient-primary text-white p-4 sm:p-6 lg:p-8 rounded-lg mt-6 sm:mt-10">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-          <div className="text-center">
-            <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2" />
-            <div className="text-xl sm:text-2xl font-bold">15-20%</div>
-            <div className="text-white/80 text-sm sm:text-base">Average Growth</div>
-          </div>
-          <div className="text-center">
-            <Briefcase className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2" />
-            <div className="text-xl sm:text-2xl font-bold">3</div>
-            <div className="text-white/80 text-sm sm:text-base">Career Paths</div>
-          </div>
-          <div className="text-center">
-            <Users className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2" />
-            <div className="text-xl sm:text-2xl font-bold">64L+</div>
-            <div className="text-white/80 text-sm sm:text-base">Jobs by 2040</div>
-          </div>
-        </div>
-      </div>
 
       {/* Data Sources Section */}
       
