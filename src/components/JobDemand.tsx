@@ -49,24 +49,6 @@ export const JobDemand = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8">
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 sm:p-6 rounded-lg text-center my-[11px] mx-0 py-[40px]">
-          
-          <div className="text-2xl sm:text-3xl font-bold">{totalJobs2025.toLocaleString()}</div>
-          <div className="text-blue-200 text-sm sm:text-base">New Hires in 2025</div>
-        </div>
-        <div className="bg-gradient-to-r from-green-600 to-green-700 text-white p-4 sm:p-6 rounded-lg text-center py-[40px] my-[11px]">
-          
-          <div className="text-2xl sm:text-3xl font-bold">{totalJobs2040.toLocaleString()}</div>
-          <div className="text-green-200 text-sm sm:text-base">New Hires in 2040</div>
-        </div>
-        <div className="bg-gradient-to-r from-purple-600 to-purple-700 text-white p-4 sm:p-6 rounded-lg text-center sm:col-span-2 lg:col-span-1 py-[40px] my-[11px]">
-          
-          <div className="text-2xl sm:text-3xl font-bold">{Math.round((totalJobs2040 / totalJobs2025 - 1) * 100)}%</div>
-          <div className="text-purple-200 text-sm sm:text-base">Total Growth</div>
-        </div>
-      </div>
-
       <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8">
         <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6 text-center">Average Yearly Hiring : 2025 vs 2040</h3>
         <div className="h-64 sm:h-80 lg:h-96 mb-4 sm:mb-6">
