@@ -121,30 +121,6 @@ export const SkillGap = () => {
         </Table>
         </div>
       </div>
-
-      <div className="bg-gradient-accent text-white p-8 rounded-lg">
-        <div className="text-center">
-          <AlertTriangle className="w-12 h-12 mx-auto mb-4" />
-          <h3 className="text-2xl font-bold mb-2">Critical Skills Alert</h3>
-          <p className="text-white/90 text-lg mb-6">
-            Avionics Engineering has the highest skill gap at 40% - immediate action needed!
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-white/20 p-4 rounded-lg">
-              <div className="text-2xl font-bold">40%</div>
-              <div className="text-white/80">Avionics Gap</div>
-            </div>
-            <div className="bg-white/20 p-4 rounded-lg">
-              <div className="text-2xl font-bold">34%</div>
-              <div className="text-white/80">Aerospace Gap</div>
-            </div>
-            <div className="bg-white/20 p-4 rounded-lg">
-              <div className="text-2xl font-bold">25%</div>
-              <div className="text-white/80">Maintenance Gap</div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
