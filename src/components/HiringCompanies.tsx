@@ -136,33 +136,5 @@ export const HiringCompanies = () => {
             </div>)}
         </div>}
 
-      <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-8 rounded-lg">
-        <div className="text-center">
-          <TrendingUp className="w-12 h-12 mx-auto mb-4" />
-          <h3 className="text-2xl font-bold mb-2">Market Expansion Alert</h3>
-          <p className="text-purple-200 text-lg mb-6">
-            Private sector aerospace companies are growing 3x faster than public sector
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="text-center">
-              <div className="text-3xl font-bold">600+</div>
-              <div className="text-purple-200">Total Companies</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold">310+</div>
-              <div className="text-purple-200">Private Companies</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold">60%</div>
-              <div className="text-purple-200">Remote/Hybrid</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold">₹5-35L</div>
-              <div className="text-purple-200">Salary Range</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>;
 };
