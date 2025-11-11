@@ -307,7 +307,6 @@ export const CertificationStack = () => {
 
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-lg">
         <div className="text-center">
-          <Target className="w-12 h-12 mx-auto mb-4" />
           <h3 className="text-2xl font-bold mb-2">Certification Success Formula</h3>
           <p className="text-blue-200 text-lg mb-6">
             Foundation → Specialization → Advanced → Expert → AI = 100% Job Ready
