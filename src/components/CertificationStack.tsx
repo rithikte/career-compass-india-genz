@@ -303,15 +303,6 @@ export const CertificationStack = () => {
         </div>
       </div>
 
-      {/* Role-Specific Certifications Section */}
-      <div className="text-center mb-8">
-        <h3 className="text-3xl font-bold text-slate-900 mb-3">
-          Job-Role Specific Certifications
-        </h3>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          After identifying your ideal role, complete these specialized certifications
-        </p>
-      </div>
 
 
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-lg">
