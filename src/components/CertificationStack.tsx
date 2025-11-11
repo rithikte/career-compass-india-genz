@@ -321,20 +321,6 @@ export const CertificationStack = () => {
           <p className="text-blue-200 text-lg mb-6">
             Foundation → Specialization → Advanced → Expert → AI = 100% Job Ready
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-blue-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-2xl font-bold">10 Months</div>
-              <div className="text-blue-200">Average Timeline</div>
-            </div>
-            <div className="bg-purple-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-2xl font-bold">0-3%</div>
-              <div className="text-purple-200">Final Skill Gap</div>
-            </div>
-            <div className="bg-indigo-500 bg-opacity-30 p-4 rounded-lg">
-              <div className="text-2xl font-bold">100%</div>
-              <div className="text-indigo-200">Job Readiness</div>
-            </div>
-          </div>
         </div>
       </div>
     </div>;
