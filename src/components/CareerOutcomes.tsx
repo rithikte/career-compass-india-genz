@@ -28,7 +28,7 @@ const careerData = [{
     title: 'Principal Engineer / Specialist',
     salary: '25–40+',
     time: '10–15 years',
-    reach: '10–15%'
+    reach: '10%'
   }, {
     level: 'Leadership',
     title: 'Engineering Manager / Head / Director',
@@ -65,7 +65,7 @@ const careerData = [{
     title: 'Principal Avionics Architect/Specialist',
     salary: '23–33+',
     time: '10–15 years',
-    reach: '10–15%'
+    reach: '10%'
   }, {
     level: 'Leadership',
     title: 'Avionics Manager / Head',
@@ -102,7 +102,7 @@ const careerData = [{
     title: 'Reliability/Cert. Lead/Overhaul',
     salary: '18–25+',
     time: '10–15 years',
-    reach: '10–15%'
+    reach: '10%'
   }, {
     level: 'Management',
     title: 'Maintenance Manager/Director',
