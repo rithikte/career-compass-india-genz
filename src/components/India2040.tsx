@@ -129,9 +129,12 @@ export const India2040 = () => {
                 <div className="text-xs font-semibold text-gray-500 mb-1">SOURCE</div>
                 <p className="text-sm text-gray-600">{item.source}</p>
               </div>
-              <div className="bg-indigo-50 p-3 rounded-lg border-l-4 border-indigo-500">
-                <div className="text-xs font-semibold text-indigo-700 mb-1">CAREER IMPACT</div>
-                <p className="text-sm text-gray-700 font-medium">{item.meaning}</p>
+              <div className="bg-gradient-to-br from-primary/10 to-accent/10 p-4 rounded-xl border-2 border-primary/30 shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+                  <div className="text-xs font-bold text-primary uppercase tracking-wider">Career Impact</div>
+                </div>
+                <p className="text-sm text-foreground font-semibold leading-relaxed">{item.meaning}</p>
               </div>
             </div>)}
         </div>
