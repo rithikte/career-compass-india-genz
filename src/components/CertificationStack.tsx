@@ -305,6 +305,196 @@ export const CertificationStack = () => {
 
 
 
+      {/* Career Longevity Score Section */}
+      <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-8">
+        <div className="text-center mb-8">
+          <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
+            Career Longevity Score (2025-2040)
+          </h3>
+          <p className="text-gray-600 text-base sm:text-lg">
+            Understanding long-term career safety and reskilling requirements
+          </p>
+        </div>
+
+        {/* Aerospace Engineer Longevity (implied from summary table) */}
+        <div className="mb-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border-2 border-blue-200">
+          <h4 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4">
+            ✈️ Aerospace Engineer – Career Longevity Score
+          </h4>
+          
+          <div className="overflow-x-auto mb-4">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b-2 border-blue-300">
+                  <th className="text-left py-3 px-4 font-bold text-slate-900">Factor</th>
+                  <th className="text-left py-3 px-4 font-bold text-slate-900">Score (1–10)</th>
+                  <th className="text-left py-3 px-4 font-bold text-slate-900">Simple Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-blue-200 hover:bg-blue-100/50">
+                  <td className="py-3 px-4 font-semibold text-slate-800">Automation Risk</td>
+                  <td className="py-3 px-4 font-bold text-green-600">4/10 (Low-Medium)</td>
+                  <td className="py-3 px-4 text-gray-700">AI assists but cannot replace creative design and safety judgment.</td>
+                </tr>
+                <tr className="border-b border-blue-200 hover:bg-blue-100/50">
+                  <td className="py-3 px-4 font-semibold text-slate-800">Reskilling Need</td>
+                  <td className="py-3 px-4 font-bold text-orange-600">7/10 (High)</td>
+                  <td className="py-3 px-4 text-gray-700">Need to learn AI tools, simulation software, and space systems.</td>
+                </tr>
+                <tr className="hover:bg-blue-100/50">
+                  <td className="py-3 px-4 font-semibold text-slate-800">Longevity (2040 outlook)</td>
+                  <td className="py-3 px-4 font-bold text-green-600">9/10 (Very Strong)</td>
+                  <td className="py-3 px-4 text-gray-700">Space, defence, and commercial aviation projects ensure long-term demand.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div className="bg-blue-600 text-white rounded-lg p-4 mt-4">
+            <p className="font-bold text-base sm:text-lg">
+              💡 Summary: Engineers who blend core aerospace with AI, space tech, or advanced materials will thrive for decades.
+            </p>
+          </div>
+        </div>
+
+        {/* Avionics Engineer Longevity */}
+        <div className="mb-8 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl p-6 border-2 border-orange-200">
+          <h4 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4">
+            ⚙️ Avionics Engineer – Career Longevity Score
+          </h4>
+          
+          <div className="overflow-x-auto mb-4">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b-2 border-orange-300">
+                  <th className="text-left py-3 px-4 font-bold text-slate-900">Factor</th>
+                  <th className="text-left py-3 px-4 font-bold text-slate-900">Score (1–10)</th>
+                  <th className="text-left py-3 px-4 font-bold text-slate-900">Simple Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-orange-200 hover:bg-orange-100/50">
+                  <td className="py-3 px-4 font-semibold text-slate-800">Automation Risk</td>
+                  <td className="py-3 px-4 font-bold text-orange-600">6/10 (Medium-High)</td>
+                  <td className="py-3 px-4 text-gray-700">Routine testing will be automated by AI tools and robots.</td>
+                </tr>
+                <tr className="border-b border-orange-200 hover:bg-orange-100/50">
+                  <td className="py-3 px-4 font-semibold text-slate-800">Reskilling Need</td>
+                  <td className="py-3 px-4 font-bold text-red-600">8/10 (High)</td>
+                  <td className="py-3 px-4 text-gray-700">Must upgrade into embedded AI, automation, and cybersecurity for avionics.</td>
+                </tr>
+                <tr className="hover:bg-orange-100/50">
+                  <td className="py-3 px-4 font-semibold text-slate-800">Longevity (2040 outlook)</td>
+                  <td className="py-3 px-4 font-bold text-green-600">8/10 (Strong)</td>
+                  <td className="py-3 px-4 text-gray-700">Still solid because aircraft electronics will keep advancing.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div className="bg-orange-600 text-white rounded-lg p-4 mt-4">
+            <p className="font-bold text-base sm:text-lg">
+              💡 Summary: More automation threat, but skilled engineers who learn AI, ML, or drone electronics will stay in high demand.
+            </p>
+          </div>
+        </div>
+
+        {/* AME Longevity */}
+        <div className="mb-8 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border-2 border-green-200">
+          <h4 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4">
+            🔧 Aircraft Maintenance Engineer (AME) – Career Longevity Score
+          </h4>
+          
+          <div className="overflow-x-auto mb-4">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b-2 border-green-300">
+                  <th className="text-left py-3 px-4 font-bold text-slate-900">Factor</th>
+                  <th className="text-left py-3 px-4 font-bold text-slate-900">Score (1–10)</th>
+                  <th className="text-left py-3 px-4 font-bold text-slate-900">Simple Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-green-200 hover:bg-green-100/50">
+                  <td className="py-3 px-4 font-semibold text-slate-800">Automation Risk</td>
+                  <td className="py-3 px-4 font-bold text-green-600">3/10 (Low)</td>
+                  <td className="py-3 px-4 text-gray-700">Aircraft still need licensed humans for inspection & safety checks.</td>
+                </tr>
+                <tr className="border-b border-green-200 hover:bg-green-100/50">
+                  <td className="py-3 px-4 font-semibold text-slate-800">Reskilling Need</td>
+                  <td className="py-3 px-4 font-bold text-yellow-600">6/10 (Moderate)</td>
+                  <td className="py-3 px-4 text-gray-700">Learn predictive-maintenance software & electronic logbook systems.</td>
+                </tr>
+                <tr className="hover:bg-green-100/50">
+                  <td className="py-3 px-4 font-semibold text-slate-800">Longevity (2040 outlook)</td>
+                  <td className="py-3 px-4 font-bold text-green-600">9/10 (Very Strong)</td>
+                  <td className="py-3 px-4 text-gray-700">Global MRO demand rising; job can't be replaced by AI.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div className="bg-green-600 text-white rounded-lg p-4 mt-4">
+            <p className="font-bold text-base sm:text-lg">
+              💡 Summary: One of the most secure careers — manual expertise + legal certification make it future-proof.
+            </p>
+          </div>
+        </div>
+
+        {/* Quick Platform Summary */}
+        <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border-2 border-slate-200">
+          <h4 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 text-center">
+            🧭 Quick Platform Summary
+          </h4>
+          
+          <div className="overflow-x-auto mb-4">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b-2 border-slate-300 bg-slate-100">
+                  <th className="text-left py-3 px-4 font-bold text-slate-900">Job Role</th>
+                  <th className="text-center py-3 px-4 font-bold text-slate-900">Automation Risk</th>
+                  <th className="text-center py-3 px-4 font-bold text-slate-900">Reskilling Need</th>
+                  <th className="text-center py-3 px-4 font-bold text-slate-900">Longevity (2040)</th>
+                  <th className="text-center py-3 px-4 font-bold text-slate-900">Overall Career Safety</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-slate-200 hover:bg-slate-100">
+                  <td className="py-3 px-4 font-semibold text-slate-800">Aerospace Engineer</td>
+                  <td className="text-center py-3 px-4 font-bold text-green-600">4/10</td>
+                  <td className="text-center py-3 px-4 font-bold text-orange-600">7/10</td>
+                  <td className="text-center py-3 px-4 font-bold text-green-600">9/10</td>
+                  <td className="text-center py-3 px-4 font-bold text-green-600">Very High</td>
+                </tr>
+                <tr className="border-b border-slate-200 hover:bg-slate-100">
+                  <td className="py-3 px-4 font-semibold text-slate-800">Avionics Engineer</td>
+                  <td className="text-center py-3 px-4 font-bold text-orange-600">6/10</td>
+                  <td className="text-center py-3 px-4 font-bold text-red-600">8/10</td>
+                  <td className="text-center py-3 px-4 font-bold text-green-600">8/10</td>
+                  <td className="text-center py-3 px-4 font-bold text-yellow-600">High</td>
+                </tr>
+                <tr className="hover:bg-slate-100">
+                  <td className="py-3 px-4 font-semibold text-slate-800">AME</td>
+                  <td className="text-center py-3 px-4 font-bold text-green-600">3/10</td>
+                  <td className="text-center py-3 px-4 font-bold text-yellow-600">6/10</td>
+                  <td className="text-center py-3 px-4 font-bold text-green-600">9/10</td>
+                  <td className="text-center py-3 px-4 font-bold text-green-600">Very High</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div className="bg-indigo-600 text-white rounded-lg p-5 mt-4">
+            <h5 className="font-bold text-lg sm:text-xl mb-2">📝 Simple takeaway for parents:</h5>
+            <p className="text-base sm:text-lg leading-relaxed">
+              All three careers are future-safe, but students must keep upgrading their skills every 3–5 years. 
+              Aerospace & AME have the longest lifespan, while Avionics needs more AI and electronics upskilling to stay ahead.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-lg">
         <div className="text-center">
           <h3 className="text-2xl font-bold mb-2">Certification Success Formula</h3>
