@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Building, MapPin, TrendingUp, Users, Briefcase, Zap, Building2, Rocket } from 'lucide-react';
 import SourceBadge from './SourceBadge';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 const publicSectorData = [{
   role: 'Aerospace Engineer',
   companies: ['HAL', 'Boeing India', 'Airbus India', 'ISRO', 'DRDO'],
@@ -30,6 +31,40 @@ const privateSectorData = [{
   companies: ['Air Works Group', 'Indamer MRO', 'GMR Aero Technic', 'Max MRO', 'AI Engineering Services', 'Star Air'],
   locations: ['Delhi', 'Mumbai', 'Bengaluru', 'Chennai']
 }];
+
+const statesBoomData = [
+  {
+    state: 'Andhra Pradesh',
+    sectors: 'Aerospace manufacturing & defence electronics',
+    whyMatters: "The state's A&D Policy 4.0 (2025-30) targets large investments and an integrated supply-chain ecosystem."
+  },
+  {
+    state: 'Karnataka',
+    sectors: 'Aerospace manufacturing + MRO + avionics systems',
+    whyMatters: "Karnataka already contributes major share of India's aerospace exports and has strong policy support."
+  },
+  {
+    state: 'Telangana',
+    sectors: 'Aerospace & defence ecosystem + avionics vendors',
+    whyMatters: "Hyderabad's aerospace cluster is strong; good for design and avionics roles."
+  },
+  {
+    state: 'Tamil Nadu',
+    sectors: 'Defence industrial corridor + electronics + aerohub manufacturing',
+    whyMatters: 'Large investments aimed via defence corridor by 2032.'
+  },
+  {
+    state: 'Maharashtra (Nagpur region)',
+    sectors: 'MRO hub + aircraft maintenance growth',
+    whyMatters: "Nagpur's MRO facility growth signals strong AME job potential."
+  },
+  {
+    state: 'Gujarat',
+    sectors: 'Defence electronics + manufacturing base',
+    whyMatters: 'Supports avionics and aerospace supplier roles.'
+  }
+];
+
 export const HiringCompanies = () => {
   const [activeTab, setActiveTab] = useState<'public' | 'private'>('public');
   return <div className="space-y-8">
@@ -135,6 +170,42 @@ export const HiringCompanies = () => {
               </div>
             </div>)}
         </div>}
+
+      {/* Key States Industry Boom Section */}
+      <div className="mt-12 bg-white rounded-lg shadow-lg p-6 sm:p-8">
+        <div className="text-center mb-6">
+          <div className="flex items-center justify-center mb-4">
+            <TrendingUp className="w-6 h-6 text-indigo-600 mr-3" />
+            <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">
+              Key States Industry Boom 2025 - 2040
+            </h3>
+          </div>
+          <p className="text-gray-600 text-sm sm:text-base">
+            Strategic locations where aerospace & defence industries are expected to grow significantly
+          </p>
+        </div>
+
+        <div className="overflow-x-auto">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead className="font-bold text-slate-900">State</TableHead>
+                <TableHead className="font-bold text-slate-900">Sector(s) Likely to Boom</TableHead>
+                <TableHead className="font-bold text-slate-900">Why It Matters (for your roles)</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {statesBoomData.map((row) => (
+                <TableRow key={row.state} className="hover:bg-gray-50">
+                  <TableCell className="font-semibold text-slate-800">{row.state}</TableCell>
+                  <TableCell className="text-gray-700">{row.sectors}</TableCell>
+                  <TableCell className="text-gray-600">{row.whyMatters}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
+      </div>
 
     </div>;
 };
