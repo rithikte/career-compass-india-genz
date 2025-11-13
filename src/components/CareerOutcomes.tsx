@@ -223,6 +223,121 @@ export const CareerOutcomes = () => {
         </div>
       </div>
 
+      {/* Job Reality vs Expectation Section */}
+      <div className="mb-8 sm:mb-12">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-3 text-center px-4">
+          Job Reality vs Expectation
+        </h2>
+        <p className="text-lg sm:text-xl text-gray-600 text-center mb-6 px-4">
+          What students think vs what the job actually involves
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          {/* Aerospace Engineer */}
+          <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <h3 className="text-lg sm:text-xl font-bold text-primary mb-4">🚀 Aerospace Engineer</h3>
+            
+            <div className="mb-4">
+              <h4 className="text-sm font-bold text-slate-900 mb-2 flex items-center gap-2">
+                <span className="text-green-500">✨</span> Expectation:
+              </h4>
+              <ul className="text-xs sm:text-sm text-gray-700 space-y-1 list-disc list-inside">
+                <li>"I'll work on rockets, fighter jets, and space missions every day."</li>
+                <li>"My job will be high-adventure and hands-on."</li>
+                <li>"I'll design full aircraft at a young age."</li>
+              </ul>
+            </div>
+
+            <div className="mb-4">
+              <h4 className="text-sm font-bold text-slate-900 mb-2 flex items-center gap-2">
+                <span className="text-orange-500">⚡</span> Reality:
+              </h4>
+              <ul className="text-xs sm:text-sm text-gray-700 space-y-1 list-disc list-inside">
+                <li>80% of work is simulations, CAD modeling, calculations, reports, reviews.</li>
+                <li>Hands-on testing is limited and comes later in the career.</li>
+                <li>You mostly work on small components, not entire aircraft.</li>
+                <li>Long review cycles → patience required.</li>
+              </ul>
+            </div>
+
+            <div className="bg-primary-light p-3 rounded-lg border-l-4 border-primary">
+              <p className="text-xs sm:text-sm font-semibold text-slate-900">
+                More computer work, less rocket-glamour. High thinking, high accuracy.
+              </p>
+            </div>
+          </div>
+
+          {/* Avionics Engineer */}
+          <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <h3 className="text-lg sm:text-xl font-bold text-primary mb-4">⚙️ Avionics Engineer</h3>
+            
+            <div className="mb-4">
+              <h4 className="text-sm font-bold text-slate-900 mb-2 flex items-center gap-2">
+                <span className="text-green-500">✨</span> Expectation:
+              </h4>
+              <ul className="text-xs sm:text-sm text-gray-700 space-y-1 list-disc list-inside">
+                <li>"I will develop futuristic autopilot systems immediately."</li>
+                <li>"I will work inside aircraft cockpits daily."</li>
+                <li>"I'll build cool electronics quickly."</li>
+              </ul>
+            </div>
+
+            <div className="mb-4">
+              <h4 className="text-sm font-bold text-slate-900 mb-2 flex items-center gap-2">
+                <span className="text-orange-500">⚡</span> Reality:
+              </h4>
+              <ul className="text-xs sm:text-sm text-gray-700 space-y-1 list-disc list-inside">
+                <li>Majority of the work is coding, testing, debugging, documentation.</li>
+                <li>Cockpit/in-aircraft work is rare; most work is in lab environments.</li>
+                <li>Very strict rules — small mistakes can delay whole projects.</li>
+                <li>Need to learn embedded systems continuously.</li>
+              </ul>
+            </div>
+
+            <div className="bg-primary-light p-3 rounded-lg border-l-4 border-primary">
+              <p className="text-xs sm:text-sm font-semibold text-slate-900">
+                More coding/testing, less cockpit action. Great for tech lovers.
+              </p>
+            </div>
+          </div>
+
+          {/* AME */}
+          <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100 md:col-span-2 lg:col-span-1">
+            <h3 className="text-lg sm:text-xl font-bold text-primary mb-4">🔧 Aircraft Maintenance Engineer (AME)</h3>
+            
+            <div className="mb-4">
+              <h4 className="text-sm font-bold text-slate-900 mb-2 flex items-center gap-2">
+                <span className="text-green-500">✨</span> Expectation:
+              </h4>
+              <ul className="text-xs sm:text-sm text-gray-700 space-y-1 list-disc list-inside">
+                <li>"I'll stand near aircraft every day — glamorous aviation life."</li>
+                <li>"Job will be simple: check aircraft and go home."</li>
+                <li>"Airport environment will be luxurious."</li>
+              </ul>
+            </div>
+
+            <div className="mb-4">
+              <h4 className="text-sm font-bold text-slate-900 mb-2 flex items-center gap-2">
+                <span className="text-orange-500">⚡</span> Reality:
+              </h4>
+              <ul className="text-xs sm:text-sm text-gray-700 space-y-1 list-disc list-inside">
+                <li>Very high pressure → safety of passengers depends on your work.</li>
+                <li>Physical job: bending, lifting, outdoor work, heat, hangar noise.</li>
+                <li>Night shifts, long hours, on-call duty are common.</li>
+                <li>Work happens during aircraft downtime → often late nights.</li>
+                <li>Mistakes are not allowed — zero-error job.</li>
+              </ul>
+            </div>
+
+            <div className="bg-primary-light p-3 rounded-lg border-l-4 border-primary">
+              <p className="text-xs sm:text-sm font-semibold text-slate-900">
+                High pressure, high responsibility, long hours — but very respected and secure.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         {careerData.map(career => <div key={career.role} className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col gap-2">
             <div className="mb-3">
