@@ -235,11 +235,11 @@ export const CareerOutcomes = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {/* Aerospace Engineer */}
           <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-            <h3 className="text-lg sm:text-xl font-bold text-primary mb-4">🚀 Aerospace Engineer</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-primary mb-4"> Aerospace Engineer</h3>
             
             <div className="mb-4">
               <h4 className="text-sm font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-green-500">✨</span> Expectation:
+                 Expectation:
               </h4>
               <ul className="text-xs sm:text-sm text-gray-700 space-y-1 list-disc list-inside">
                 <li>"I'll work on rockets, fighter jets, and space missions every day."</li>
@@ -250,7 +250,7 @@ export const CareerOutcomes = () => {
 
             <div className="mb-4">
               <h4 className="text-sm font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-orange-500">⚡</span> Reality:
+                 Reality:
               </h4>
               <ul className="text-xs sm:text-sm text-gray-700 space-y-1 list-disc list-inside">
                 <li>80% of work is simulations, CAD modeling, calculations, reports, reviews.</li>
@@ -261,9 +261,7 @@ export const CareerOutcomes = () => {
             </div>
 
             <div className="relative mt-4 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent p-4 sm:p-5 rounded-xl border-2 border-primary/30 shadow-md hover:shadow-lg transition-all duration-300">
-              <div className="absolute top-2 left-2 w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
-                <span className="text-xl">💡</span>
-              </div>
+              
               <p className="text-sm font-bold text-slate-900 pl-12 leading-relaxed sm:text-xs">
                 More computer work, less rocket-glamour. High thinking, high accuracy.
               </p>
@@ -272,11 +270,11 @@ export const CareerOutcomes = () => {
 
           {/* Avionics Engineer */}
           <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-            <h3 className="text-lg sm:text-xl font-bold text-primary mb-4">⚙️ Avionics Engineer</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-primary mb-4"> Avionics Engineer</h3>
             
             <div className="mb-4">
               <h4 className="text-sm font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-green-500">✨</span> Expectation:
+                 Expectation:
               </h4>
               <ul className="text-xs sm:text-sm text-gray-700 space-y-1 list-disc list-inside">
                 <li>"I will develop futuristic autopilot systems immediately."</li>
@@ -287,7 +285,7 @@ export const CareerOutcomes = () => {
 
             <div className="mb-4">
               <h4 className="text-sm font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-orange-500">⚡</span> Reality:
+                 Reality:
               </h4>
               <ul className="text-xs sm:text-sm text-gray-700 space-y-1 list-disc list-inside">
                 <li>Majority of the work is coding, testing, debugging, documentation.</li>
@@ -298,9 +296,7 @@ export const CareerOutcomes = () => {
             </div>
 
             <div className="relative mt-4 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent p-4 sm:p-5 rounded-xl border-2 border-primary/30 shadow-md hover:shadow-lg transition-all duration-300">
-              <div className="absolute top-2 left-2 w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
-                <span className="text-xl">💡</span>
-              </div>
+              
               <p className="text-sm font-bold text-slate-900 pl-12 leading-relaxed sm:text-xs">
                 More coding/testing, less cockpit action. Great for tech lovers.
               </p>
@@ -309,11 +305,11 @@ export const CareerOutcomes = () => {
 
           {/* AME */}
           <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100 md:col-span-2 lg:col-span-1">
-            <h3 className="text-lg sm:text-xl font-bold text-primary mb-4">🔧 Aircraft Maintenance Engineer (AME)</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-primary mb-4">           Aircraft Maintenance Engineer  </h3>
             
             <div className="mb-4">
               <h4 className="text-sm font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-green-500">✨</span> Expectation:
+                 Expectation:
               </h4>
               <ul className="text-xs sm:text-sm text-gray-700 space-y-1 list-disc list-inside">
                 <li>"I'll stand near aircraft every day — glamorous aviation life."</li>
@@ -324,7 +320,7 @@ export const CareerOutcomes = () => {
 
             <div className="mb-4">
               <h4 className="text-sm font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="text-orange-500">⚡</span> Reality:
+                 Reality:
               </h4>
               <ul className="text-xs sm:text-sm text-gray-700 space-y-1 list-disc list-inside">
                 <li>Very high pressure → safety of passengers depends on your work.</li>
@@ -336,9 +332,7 @@ export const CareerOutcomes = () => {
             </div>
 
             <div className="relative mt-4 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent p-4 sm:p-5 rounded-xl border-2 border-primary/30 shadow-md hover:shadow-lg transition-all duration-300">
-              <div className="absolute top-2 left-2 w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
-                <span className="text-xl">💡</span>
-              </div>
+              
               <p className="text-sm font-bold text-slate-900 pl-12 leading-relaxed sm:text-xs">
                 High pressure, high responsibility, long hours — but very respected and secure.
               </p>
