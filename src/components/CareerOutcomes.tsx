@@ -260,8 +260,11 @@ export const CareerOutcomes = () => {
               </ul>
             </div>
 
-            <div className="bg-primary-light p-3 rounded-lg border-l-4 border-primary">
-              <p className="text-xs sm:text-sm font-semibold text-slate-900">
+            <div className="relative mt-4 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent p-4 sm:p-5 rounded-xl border-2 border-primary/30 shadow-md hover:shadow-lg transition-all duration-300">
+              <div className="absolute top-2 left-2 w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+                <span className="text-xl">💡</span>
+              </div>
+              <p className="text-sm sm:text-base font-bold text-slate-900 pl-12 leading-relaxed">
                 More computer work, less rocket-glamour. High thinking, high accuracy.
               </p>
             </div>
@@ -294,8 +297,11 @@ export const CareerOutcomes = () => {
               </ul>
             </div>
 
-            <div className="bg-primary-light p-3 rounded-lg border-l-4 border-primary">
-              <p className="text-xs sm:text-sm font-semibold text-slate-900">
+            <div className="relative mt-4 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent p-4 sm:p-5 rounded-xl border-2 border-primary/30 shadow-md hover:shadow-lg transition-all duration-300">
+              <div className="absolute top-2 left-2 w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+                <span className="text-xl">💡</span>
+              </div>
+              <p className="text-sm sm:text-base font-bold text-slate-900 pl-12 leading-relaxed">
                 More coding/testing, less cockpit action. Great for tech lovers.
               </p>
             </div>
@@ -329,8 +335,11 @@ export const CareerOutcomes = () => {
               </ul>
             </div>
 
-            <div className="bg-primary-light p-3 rounded-lg border-l-4 border-primary">
-              <p className="text-xs sm:text-sm font-semibold text-slate-900">
+            <div className="relative mt-4 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent p-4 sm:p-5 rounded-xl border-2 border-primary/30 shadow-md hover:shadow-lg transition-all duration-300">
+              <div className="absolute top-2 left-2 w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+                <span className="text-xl">💡</span>
+              </div>
+              <p className="text-sm sm:text-base font-bold text-slate-900 pl-12 leading-relaxed">
                 High pressure, high responsibility, long hours — but very respected and secure.
               </p>
             </div>
