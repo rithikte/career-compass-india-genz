@@ -264,7 +264,7 @@ export const CareerOutcomes = () => {
               <div className="absolute top-2 left-2 w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
                 <span className="text-xl">💡</span>
               </div>
-              <p className="text-sm sm:text-base font-bold text-slate-900 pl-12 leading-relaxed">
+              <p className="text-sm font-bold text-slate-900 pl-12 leading-relaxed sm:text-xs">
                 More computer work, less rocket-glamour. High thinking, high accuracy.
               </p>
             </div>
@@ -301,7 +301,7 @@ export const CareerOutcomes = () => {
               <div className="absolute top-2 left-2 w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
                 <span className="text-xl">💡</span>
               </div>
-              <p className="text-sm sm:text-base font-bold text-slate-900 pl-12 leading-relaxed">
+              <p className="text-sm font-bold text-slate-900 pl-12 leading-relaxed sm:text-xs">
                 More coding/testing, less cockpit action. Great for tech lovers.
               </p>
             </div>
@@ -339,7 +339,7 @@ export const CareerOutcomes = () => {
               <div className="absolute top-2 left-2 w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
                 <span className="text-xl">💡</span>
               </div>
-              <p className="text-sm sm:text-base font-bold text-slate-900 pl-12 leading-relaxed">
+              <p className="text-sm font-bold text-slate-900 pl-12 leading-relaxed sm:text-xs">
                 High pressure, high responsibility, long hours — but very respected and secure.
               </p>
             </div>
