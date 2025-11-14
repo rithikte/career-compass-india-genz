@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, XCircle, AlertTriangle, Brain, Cog, Calculator, Wrench, Plane, Zap, Target, Clock, BookOpen, Shield } from 'lucide-react';
+import { CheckCircle, XCircle, AlertTriangle, Brain, Cog, Wrench, Plane, Zap, Target, Clock, BookOpen, Shield } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 export const BTechMechanical = () => {
   return <div className="space-y-8">
@@ -25,9 +25,7 @@ export const BTechMechanical = () => {
       <Card className="border-2 border-primary/20">
         <CardHeader>
           <CardTitle className="flex items-center gap-3 text-2xl">
-            <div className="p-2 bg-primary/10 rounded-lg">
-              <Target className="h-6 w-6 text-primary" />
-            </div>
+            
             Focus to Get Into Aviation Industry
           </CardTitle>
           <CardDescription className="text-lg font-semibold">
@@ -40,7 +38,7 @@ export const BTechMechanical = () => {
             <div className="bg-gradient-to-r from-primary to-secondary text-white p-3 sm:p-4">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 font-bold text-sm sm:text-base md:text-lg">
                 <div className="flex items-center gap-2 mb-2 sm:mb-0">
-                  <Calculator className="h-4 w-4 sm:h-5 sm:w-5" />
+                  
                   <span className="text-xs sm:text-sm md:text-base">Category</span>
                 </div>
                 <div className="flex items-center gap-2 mb-2 sm:mb-0">
@@ -57,7 +55,7 @@ export const BTechMechanical = () => {
             <div className="divide-y divide-gray-200">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-gray-50">
                 <div className="font-bold text-blue-600 text-base sm:text-lg flex items-center gap-2 mb-2 sm:mb-0">
-                  <Calculator className="h-4 w-4 sm:h-5 sm:w-5" />
+                  
                   <span>Math</span>
                 </div>
                 <div className="text-gray-700 text-sm sm:text-base">
@@ -80,7 +78,7 @@ export const BTechMechanical = () => {
               
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-gray-50">
                 <div className="font-bold text-green-600 text-base sm:text-lg flex items-center gap-2 mb-2 sm:mb-0">
-                  <Brain className="h-4 w-4 sm:h-5 sm:w-5" />
+                  
                   <span>Physics</span>
                 </div>
                 <div className="text-gray-700 text-sm sm:text-base">
@@ -112,9 +110,7 @@ export const BTechMechanical = () => {
       <Card className="border-2 border-primary/20">
         <CardHeader>
           <CardTitle className="flex items-center gap-3 text-2xl">
-            <div className="p-2 bg-primary/10 rounded-lg">
-              <BookOpen className="h-6 w-6 text-primary" />
-            </div>
+            
             Engineering Subjects Intensity Across 4 Years
           </CardTitle>
           <CardDescription className="text-lg font-semibold">
@@ -125,7 +121,7 @@ export const BTechMechanical = () => {
           {/* Math Topics Table */}
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-4">
-              <Calculator className="h-6 w-6 text-blue-600" />
+              
               <h3 className="text-xl font-bold text-gray-900">Math Topics</h3>
             </div>
             <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
@@ -187,7 +183,7 @@ export const BTechMechanical = () => {
           {/* Physics Topics Table */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <Brain className="h-6 w-6 text-green-600" />
+              
               <h3 className="text-xl font-bold text-gray-900">Physics Topics</h3>
             </div>
             <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
@@ -249,7 +245,7 @@ export const BTechMechanical = () => {
           {/* Chemistry Topics Table */}
           <div className="mt-8">
             <div className="flex items-center gap-3 mb-4">
-              <Brain className="h-6 w-6 text-purple-600" />
+              
               <h3 className="text-xl font-bold text-gray-900">Chemistry Topics</h3>
             </div>
             <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
@@ -298,9 +294,7 @@ export const BTechMechanical = () => {
       <Card className="border-2 border-primary/20">
         <CardHeader>
           <CardTitle className="flex items-center gap-3 text-2xl">
-            <div className="p-2 bg-primary/10 rounded-lg">
-              <BookOpen className="h-6 w-6 text-primary" />
-            </div>
+            
             What You'll Study in College – B.Tech Mechanical (Aviation Industry Focus)
           </CardTitle>
           <CardDescription className="text-lg font-semibold">
@@ -549,9 +543,7 @@ export const BTechMechanical = () => {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-3 text-2xl">
-            <div className="p-2 bg-primary/10 rounded-lg">
-              <BookOpen className="h-6 w-6 text-primary" />
-            </div>
+            
             What You'll Actually Master in 4 Years
           </CardTitle>
           <CardDescription className="text-lg font-semibold">
@@ -587,9 +579,7 @@ export const BTechMechanical = () => {
       <Card className="border-2 border-primary/20">
         <CardHeader>
           <CardTitle className="flex items-center gap-3 text-2xl">
-            <div className="p-2 bg-primary/10 rounded-lg">
-              <AlertTriangle className="h-6 w-6 text-primary" />
-            </div>
+            
             Decision Point - Are You Ready?
           </CardTitle>
           <CardDescription className="text-lg font-semibold">
@@ -607,10 +597,10 @@ export const BTechMechanical = () => {
                 <h3 className="text-xl font-bold text-gray-900">If You're NOT Ready...</h3>
               </div>
               <div className="space-y-3 bg-red-50 p-4 rounded-lg border border-red-200">
-                <p className="text-base font-medium text-gray-800">❌ You'll pass exams but fail in labs</p>
-                <p className="font-medium text-gray-800">❌ You'll blame professors when you struggle</p>
-                <p className="font-medium text-gray-800">❌ You'll copy assignments without understanding</p>
-                <p className="font-medium text-gray-800">❌ You'll graduate but feel lost in interviews</p>
+                <p className="text-base font-medium text-gray-800">You'll pass exams but fail in labs</p>
+                <p className="font-medium text-gray-800">You'll blame professors when you struggle</p>
+                <p className="font-medium text-gray-800">You'll copy assignments without understanding</p>
+                <p className="font-medium text-gray-800">You'll graduate but feel lost in interviews</p>
                 <div className="mt-4 pt-4 border-t border-red-300">
                   <p className="font-bold text-red-900">Result: Wasted 4 years and frustrated with engineering</p>
                 </div>
@@ -626,10 +616,10 @@ export const BTechMechanical = () => {
                 <h3 className="text-xl font-bold text-gray-900">If You ARE Ready...</h3>
               </div>
               <div className="space-y-3 bg-green-50 p-4 rounded-lg border border-green-200">
-                <p className="font-medium text-gray-800">✅ You'll enjoy solving complex problems</p>
-                <p className="font-medium text-gray-800">✅ You'll build strong technical skills</p>
-                <p className="font-medium text-gray-800">✅ You'll understand what you're learning</p>
-                <p className="font-medium text-gray-800">✅ You'll be job-ready from any college</p>
+                <p className="font-medium text-gray-800"> You'll enjoy solving complex problems</p>
+                <p className="font-medium text-gray-800">You'll build strong technical skills</p>
+                <p className="font-medium text-gray-800">You'll understand what you're learning</p>
+                <p className="font-medium text-gray-800">You'll be job-ready from any college</p>
                 <div className="mt-4 pt-4 border-t border-green-300">
                   <p className="font-bold text-green-900">Result: Strong engineer ready for ISRO, HAL, or aerospace startups</p>
                 </div>
@@ -643,7 +633,7 @@ export const BTechMechanical = () => {
       <Card className="bg-gradient-to-br from-primary via-primary to-secondary text-white border-0">
         <CardContent className="p-8 text-center">
           <div className="space-y-4">
-            <div className="text-4xl mb-4">🎯</div>
+            
             <h2 className="text-3xl font-bold mb-4">Your Decision Moment</h2>
             <p className="text-xl mb-6 opacity-90">
               This degree isn't about looking cool or following trends
