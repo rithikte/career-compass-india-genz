@@ -270,6 +270,149 @@ export const CertificationStack = () => {
           </table>
         </div>
 
+        {/* What If You Skip Certifications Section */}
+        <div className="mt-16 mb-12">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+              What If You Skip Certifications?
+            </h3>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Real-world impact analysis: with vs without certifications
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Aerospace Engineer */}
+            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-all duration-300">
+              <h4 className="text-xl font-bold text-slate-900 mb-6 flex items-center">
+                <span className="mr-2">🚀</span>
+                Aerospace Engineer
+              </h4>
+
+              <div className="space-y-4 mb-6">
+                <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
+                  <h5 className="text-sm font-bold text-red-900 mb-2 flex items-center">
+                    <AlertTriangle className="w-4 h-4 mr-2" />
+                    If you skip certification:
+                  </h5>
+                  <ul className="text-sm text-red-800 space-y-1.5">
+                    <li>• Salary drops ~25–35%</li>
+                    <li>• You get only basic design/support jobs</li>
+                    <li>• You wait 1–2 years longer for a good role</li>
+                    <li>• Competition becomes very high</li>
+                  </ul>
+                </div>
+
+                <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
+                  <h5 className="text-sm font-bold text-green-900 mb-2 flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2" />
+                    If you do certification (CAD + Simulation + CAE):
+                  </h5>
+                  <ul className="text-sm text-green-800 space-y-1.5">
+                    <li>• Salary jumps +30–50%</li>
+                    <li>• You get core design, CFD, FEA roles</li>
+                    <li>• You stand out from 70% of applicants</li>
+                    <li>• Faster promotions + better companies</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 rounded-lg">
+                <p className="text-sm font-bold text-center">
+                  Skipping certs → basic job.<br />
+                  Doing certs → design job + higher salary.
+                </p>
+              </div>
+            </div>
+
+            {/* Avionics Engineer */}
+            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-all duration-300">
+              <h4 className="text-xl font-bold text-slate-900 mb-6 flex items-center">
+                <span className="mr-2">⚙️</span>
+                Avionics Engineer
+              </h4>
+
+              <div className="space-y-4 mb-6">
+                <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
+                  <h5 className="text-sm font-bold text-red-900 mb-2 flex items-center">
+                    <AlertTriangle className="w-4 h-4 mr-2" />
+                    If you skip certification:
+                  </h5>
+                  <ul className="text-sm text-red-800 space-y-1.5">
+                    <li>• Salary drops ~30–40%</li>
+                    <li>• You get stuck in testing assistant / wiring roles</li>
+                    <li>• Very low growth because avionics is skill-heavy</li>
+                    <li>• AI tools replace many basic testing tasks</li>
+                  </ul>
+                </div>
+
+                <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
+                  <h5 className="text-sm font-bold text-green-900 mb-2 flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2" />
+                    If you do certification (Embedded + Testing + Automation):
+                  </h5>
+                  <ul className="text-sm text-green-800 space-y-1.5">
+                    <li>• Salary goes up +40–60%</li>
+                    <li>• You move into R&D, embedded system design, advanced testing</li>
+                    <li>• You become AI-resistant because you understand automation tools</li>
+                    <li>• Better companies + faster job calls</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-purple-600 to-purple-700 text-white p-4 rounded-lg">
+                <p className="text-sm font-bold text-center">
+                  Without certs → low-skill testing.<br />
+                  With certs → high-skill R&D roles + 2× salary.
+                </p>
+              </div>
+            </div>
+
+            {/* Aircraft Maintenance Engineer */}
+            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-all duration-300 md:col-span-2 lg:col-span-1">
+              <h4 className="text-xl font-bold text-slate-900 mb-6 flex items-center">
+                <span className="mr-2">🔧</span>
+                Aircraft Maintenance Engineer (AME)
+              </h4>
+
+              <div className="space-y-4 mb-6">
+                <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
+                  <h5 className="text-sm font-bold text-red-900 mb-2 flex items-center">
+                    <AlertTriangle className="w-4 h-4 mr-2" />
+                    If you skip mandatory AME certifications:
+                  </h5>
+                  <ul className="text-sm text-red-800 space-y-1.5">
+                    <li>• You cannot work on aircraft</li>
+                    <li>• Only ground support / helper roles</li>
+                    <li>• Salary becomes ₹15–20k instead of engineering pay</li>
+                    <li>• Zero career growth</li>
+                  </ul>
+                </div>
+
+                <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
+                  <h5 className="text-sm font-bold text-green-900 mb-2 flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2" />
+                    If you complete DGCA/Type-rated certifications:
+                  </h5>
+                  <ul className="text-sm text-green-800 space-y-1.5">
+                    <li>• Salary becomes ₹40k–₹80k starting</li>
+                    <li>• You get licensed AME positions</li>
+                    <li>• Airlines prefer you immediately</li>
+                    <li>• Growth becomes stable because MRO demand is rising</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-orange-600 to-orange-700 text-white p-4 rounded-lg">
+                <p className="text-sm font-bold text-center">
+                  Without certs → you don't enter aviation.<br />
+                  With certs → full AME engineer + 2–3× salary.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Role Fitment Exam Section */}
         <div className="relative overflow-hidden bg-gradient-to-br from-slate-700 via-blue-700 to-purple-700 rounded-2xl shadow-2xl p-8 sm:p-10 border border-blue-400/20">
           {/* Decorative Elements */}
