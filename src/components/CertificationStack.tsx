@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, Clock, Target, Award, AlertTriangle } from 'lucide-react';
+import { Clock, Target, Award } from 'lucide-react';
 import SourceBadge from './SourceBadge';
 const certificationPaths = [{
   role: 'Aerospace Engineer',
@@ -285,14 +285,14 @@ export const CertificationStack = () => {
             {/* Aerospace Engineer */}
             <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-all duration-300">
               <h4 className="text-xl font-bold text-slate-900 mb-6 flex items-center">
-                <span className="mr-2">🚀</span>
+                
                 Aerospace Engineer
               </h4>
 
               <div className="space-y-4 mb-6">
                 <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
                   <h5 className="text-sm font-bold text-red-900 mb-2 flex items-center">
-                    <AlertTriangle className="w-4 h-4 mr-2" />
+                    
                     If you skip certification:
                   </h5>
                   <ul className="text-sm text-red-800 space-y-1.5">
@@ -305,7 +305,7 @@ export const CertificationStack = () => {
 
                 <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
                   <h5 className="text-sm font-bold text-green-900 mb-2 flex items-center">
-                    <CheckCircle className="w-4 h-4 mr-2" />
+                    
                     If you do certification (CAD + Simulation + CAE):
                   </h5>
                   <ul className="text-sm text-green-800 space-y-1.5">
@@ -328,14 +328,15 @@ export const CertificationStack = () => {
             {/* Avionics Engineer */}
             <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-all duration-300">
               <h4 className="text-xl font-bold text-slate-900 mb-6 flex items-center">
-                <span className="mr-2">⚙️</span>
+                <span className="mr-2">
+              </span>
                 Avionics Engineer
               </h4>
 
               <div className="space-y-4 mb-6">
                 <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
                   <h5 className="text-sm font-bold text-red-900 mb-2 flex items-center">
-                    <AlertTriangle className="w-4 h-4 mr-2" />
+                    
                     If you skip certification:
                   </h5>
                   <ul className="text-sm text-red-800 space-y-1.5">
@@ -348,7 +349,7 @@ export const CertificationStack = () => {
 
                 <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
                   <h5 className="text-sm font-bold text-green-900 mb-2 flex items-center">
-                    <CheckCircle className="w-4 h-4 mr-2" />
+                    
                     If you do certification (Embedded + Testing + Automation):
                   </h5>
                   <ul className="text-sm text-green-800 space-y-1.5">
@@ -371,14 +372,44 @@ export const CertificationStack = () => {
             {/* Aircraft Maintenance Engineer */}
             <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-all duration-300 md:col-span-2 lg:col-span-1">
               <h4 className="text-xl font-bold text-slate-900 mb-6 flex items-center">
-                <span className="mr-2">🔧</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Aircraft Maintenance Engineer   <span className="mr-2">
+              </span>
                 Aircraft Maintenance Engineer (AME)
               </h4>
 
               <div className="space-y-4 mb-6">
                 <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
                   <h5 className="text-sm font-bold text-red-900 mb-2 flex items-center">
-                    <AlertTriangle className="w-4 h-4 mr-2" />
+                    
                     If you skip mandatory AME certifications:
                   </h5>
                   <ul className="text-sm text-red-800 space-y-1.5">
@@ -391,7 +422,7 @@ export const CertificationStack = () => {
 
                 <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
                   <h5 className="text-sm font-bold text-green-900 mb-2 flex items-center">
-                    <CheckCircle className="w-4 h-4 mr-2" />
+                    
                     If you complete DGCA/Type-rated certifications:
                   </h5>
                   <ul className="text-sm text-green-800 space-y-1.5">
@@ -462,7 +493,7 @@ export const CertificationStack = () => {
         {/* Aerospace Engineer Longevity (implied from summary table) */}
         <div className="mb-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border-2 border-blue-200">
           <h4 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4">
-            ✈️ Aerospace Engineer – Career Longevity Score
+            Aerospace Engineer    
           </h4>
           
           <div className="overflow-x-auto mb-4">
@@ -496,7 +527,7 @@ export const CertificationStack = () => {
           
           <div className="bg-blue-600 text-white rounded-lg p-4 mt-4">
             <p className="font-bold text-base sm:text-lg">
-              💡 Summary: Engineers who blend core aerospace with AI, space tech, or advanced materials will thrive for decades.
+              Summary: Engineers who blend core aerospace with AI, space tech, or advanced materials will thrive for decades.
             </p>
           </div>
         </div>
@@ -504,7 +535,7 @@ export const CertificationStack = () => {
         {/* Avionics Engineer Longevity */}
         <div className="mb-8 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl p-6 border-2 border-orange-200">
           <h4 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4">
-            ⚙️ Avionics Engineer – Career Longevity Score
+            Avionics Engineer    
           </h4>
           
           <div className="overflow-x-auto mb-4">
@@ -538,7 +569,7 @@ export const CertificationStack = () => {
           
           <div className="bg-orange-600 text-white rounded-lg p-4 mt-4">
             <p className="font-bold text-base sm:text-lg">
-              💡 Summary: More automation threat, but skilled engineers who learn AI, ML, or drone electronics will stay in high demand.
+              Summary: More automation threat, but skilled engineers who learn AI, ML, or drone electronics will stay in high demand.
             </p>
           </div>
         </div>
@@ -546,7 +577,7 @@ export const CertificationStack = () => {
         {/* AME Longevity */}
         <div className="mb-8 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border-2 border-green-200">
           <h4 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4">
-            🔧 Aircraft Maintenance Engineer (AME) – Career Longevity Score
+            Aircraft Maintenance Engineer     
           </h4>
           
           <div className="overflow-x-auto mb-4">
@@ -580,7 +611,7 @@ export const CertificationStack = () => {
           
           <div className="bg-green-600 text-white rounded-lg p-4 mt-4">
             <p className="font-bold text-base sm:text-lg">
-              💡 Summary: One of the most secure careers — manual expertise + legal certification make it future-proof.
+               Summary: One of the most secure careers — manual expertise + legal certification make it future-proof.
             </p>
           </div>
         </div>
@@ -588,7 +619,7 @@ export const CertificationStack = () => {
         {/* Quick Platform Summary */}
         <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border-2 border-slate-200">
           <h4 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 text-center">
-            🧭 Quick Platform Summary
+            Quick Platform Summary
           </h4>
           
           <div className="overflow-x-auto mb-4">
@@ -629,7 +660,7 @@ export const CertificationStack = () => {
           </div>
           
           <div className="bg-indigo-600 text-white rounded-lg p-5 mt-4">
-            <h5 className="font-bold text-lg sm:text-xl mb-2">📝 Simple takeaway for parents:</h5>
+            <h5 className="font-bold text-lg sm:text-xl mb-2">Simple takeaway for parents:</h5>
             <p className="text-base sm:text-lg leading-relaxed">
               All three careers are future-safe, but students must keep upgrading their skills every 3–5 years. 
               Aerospace & AME have the longest lifespan, while Avionics needs more AI and electronics upskilling to stay ahead.
