@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, XCircle, AlertTriangle, Brain, Cog, Wrench, Zap, Target, Clock, BookOpen, Shield } from 'lucide-react';
+import { CheckCircle, XCircle, AlertTriangle, Brain, Cog, Wrench, Zap, Target, BookOpen, Shield } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 export const BTechMechanical = () => {
   return <div className="space-y-8">
@@ -309,15 +309,15 @@ export const BTechMechanical = () => {
             <div className="bg-gradient-to-r from-primary via-primary/90 to-secondary text-white p-4 lg:p-6">
               <div className="grid grid-cols-12 gap-4 font-bold text-sm lg:text-base">
                 <div className="col-span-2 flex items-center gap-2">
-                  <Clock className="h-5 w-5 lg:h-6 lg:w-6" />
+                  
                   <span>Year</span>
                 </div>
                 <div className="col-span-5 flex items-center gap-2">
-                  <BookOpen className="h-5 w-5 lg:h-6 lg:w-6" />
+                  
                   <span>Subjects You'll Study</span>
                 </div>
                 <div className="col-span-5 flex items-center gap-2">
-                  <Brain className="h-5 w-5 lg:h-6 lg:w-6" />
+                  
                   <span>What You'll Learn</span>
                 </div>
               </div>
