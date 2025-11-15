@@ -159,16 +159,16 @@ export const CareerInsights = () => {
           </div>
 
           {/* Hiring Cycle Calendar */}
-          <section className="mb-12">
+          <section className="mb-12 bg-blue-50/50 dark:bg-blue-950/10 rounded-2xl p-6 sm:p-8">
             <div className="flex items-center gap-3 mb-6">
-              <Calendar className="w-8 h-8 text-primary" />
+              <Calendar className="w-8 h-8 text-blue-600" />
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Hiring Cycle Calendar</h2>
             </div>
             <p className="text-muted-foreground mb-6">Each industry has peak hiring seasons. Plan your applications accordingly.</p>
             
             <div className="grid gap-6 md:grid-cols-3">
               {hiringCycleData.map((item, idx) => (
-                <Card key={idx} className="hover:shadow-lg transition-shadow">
+                <Card key={idx} className="hover:shadow-lg transition-shadow bg-white dark:bg-slate-900 border-blue-200 dark:border-blue-900">
                   <CardHeader>
                     <CardTitle className="text-lg">{item.role}</CardTitle>
                   </CardHeader>
@@ -176,11 +176,11 @@ export const CareerInsights = () => {
                     <div className="space-y-3">
                       <div>
                         <p className="text-sm text-muted-foreground">Peak Months</p>
-                        <p className="text-xl font-bold text-primary">{item.months}</p>
+                        <p className="text-lg font-semibold text-foreground">{item.months}</p>
                       </div>
                       <div>
                         <p className="text-sm text-muted-foreground">Why</p>
-                        <p className="text-sm">{item.reason}</p>
+                        <p className="text-sm text-foreground">{item.reason}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -190,25 +190,25 @@ export const CareerInsights = () => {
           </section>
 
           {/* Failure Points Map */}
-          <section className="mb-12">
+          <section className="mb-12 bg-rose-50/50 dark:bg-rose-950/10 rounded-2xl p-6 sm:p-8">
             <div className="flex items-center gap-3 mb-6">
-              <AlertTriangle className="w-8 h-8 text-destructive" />
+              <AlertTriangle className="w-8 h-8 text-rose-600" />
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Failure Points Map</h2>
             </div>
             <p className="text-muted-foreground mb-6">A brutally honest map showing top reasons students struggle.</p>
             
             <div className="grid gap-6 md:grid-cols-3">
-              {failurePoints.map((role, idx) => (
-                <Card key={idx} className="border-destructive/20 hover:shadow-lg transition-shadow">
+              {failurePoints.map((item, idx) => (
+                <Card key={idx} className="hover:shadow-lg transition-shadow bg-white dark:bg-slate-900 border-rose-200 dark:border-rose-900">
                   <CardHeader>
-                    <CardTitle className="text-lg text-destructive">{role.role}</CardTitle>
+                    <CardTitle className="text-lg">{item.role}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-3">
-                      {role.points.map((point, pidx) => (
-                        <li key={pidx} className="flex flex-col gap-1">
-                          <span className="font-semibold text-sm">{point.issue}</span>
-                          <span className="text-xs text-muted-foreground">→ {point.consequence}</span>
+                      {item.points.map((point, pidx) => (
+                        <li key={pidx} className="border-l-2 border-destructive pl-3">
+                          <p className="font-semibold text-foreground">{point.issue}</p>
+                          <p className="text-sm text-muted-foreground">→ {point.consequence}</p>
                         </li>
                       ))}
                     </ul>
@@ -219,61 +219,59 @@ export const CareerInsights = () => {
           </section>
 
           {/* Hiring Weightage */}
-          <section className="mb-12">
+          <section className="mb-12 bg-purple-50/50 dark:bg-purple-950/10 rounded-2xl p-6 sm:p-8">
             <div className="flex items-center gap-3 mb-6">
-              <BarChart3 className="w-8 h-8 text-primary" />
+              <BarChart3 className="w-8 h-8 text-purple-600" />
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Hiring Weightage</h2>
             </div>
-            <p className="text-muted-foreground mb-6">What actually matters when companies hire.</p>
+            <p className="text-muted-foreground mb-6">What actually matters when companies evaluate candidates.</p>
             
-            <Card>
-              <CardContent className="p-0">
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead className="bg-muted">
-                      <tr>
-                        <th className="px-4 py-3 text-left font-semibold">Factor</th>
-                        <th className="px-4 py-3 text-center font-semibold">Aerospace</th>
-                        <th className="px-4 py-3 text-center font-semibold">Avionics</th>
-                        <th className="px-4 py-3 text-center font-semibold">AME</th>
+            <Card className="overflow-hidden bg-white dark:bg-slate-900 border-purple-200 dark:border-purple-900">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b bg-muted/50">
+                      <th className="text-left p-4 font-semibold">Factor</th>
+                      <th className="text-center p-4 font-semibold">Aero</th>
+                      <th className="text-center p-4 font-semibold">Avionics</th>
+                      <th className="text-center p-4 font-semibold">AME</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {hiringWeightage.map((row, idx) => (
+                      <tr key={idx} className="border-b last:border-0 hover:bg-muted/20 transition-colors">
+                        <td className="p-4 font-medium text-foreground">{row.factor}</td>
+                        <td className="p-4 text-center text-foreground">{row.aero}</td>
+                        <td className="p-4 text-center text-foreground">{row.avionics}</td>
+                        <td className="p-4 text-center text-foreground">{row.ame}</td>
                       </tr>
-                    </thead>
-                    <tbody className="divide-y divide-border">
-                      {hiringWeightage.map((row, idx) => (
-                        <tr key={idx} className="hover:bg-muted/50 transition-colors">
-                          <td className="px-4 py-3 font-medium">{row.factor}</td>
-                          <td className="px-4 py-3 text-center text-primary font-bold">{row.aero}</td>
-                          <td className="px-4 py-3 text-center text-primary font-bold">{row.avionics}</td>
-                          <td className="px-4 py-3 text-center text-primary font-bold">{row.ame}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </CardContent>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </Card>
           </section>
 
           {/* Survivor Profile */}
-          <section className="mb-12">
+          <section className="mb-12 bg-emerald-50/50 dark:bg-emerald-950/10 rounded-2xl p-6 sm:p-8">
             <div className="flex items-center gap-3 mb-6">
-              <Award className="w-8 h-8 text-primary" />
+              <Award className="w-8 h-8 text-emerald-600" />
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Survivor Profile</h2>
             </div>
             <p className="text-muted-foreground mb-6">The personality profile of students who survive and grow.</p>
             
             <div className="grid gap-6 md:grid-cols-3">
-              {survivorProfiles.map((profile, idx) => (
-                <Card key={idx} className="border-primary/20 hover:shadow-lg transition-shadow">
+              {survivorProfiles.map((item, idx) => (
+                <Card key={idx} className="hover:shadow-lg transition-shadow bg-white dark:bg-slate-900 border-emerald-200 dark:border-emerald-900">
                   <CardHeader>
-                    <CardTitle className="text-lg text-primary">{profile.role}</CardTitle>
+                    <CardTitle className="text-lg">{item.role}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2">
-                      {profile.traits.map((trait, tidx) => (
+                      {item.traits.map((trait, tidx) => (
                         <li key={tidx} className="flex items-start gap-2">
                           <span className="text-primary mt-1">✓</span>
-                          <span className="text-sm">{trait}</span>
+                          <span className="text-foreground">{trait}</span>
                         </li>
                       ))}
                     </ul>
@@ -284,144 +282,70 @@ export const CareerInsights = () => {
           </section>
 
           {/* City-wise Internship Chances */}
-          <section className="mb-12">
+          <section className="mb-12 bg-amber-50/50 dark:bg-amber-950/10 rounded-2xl p-6 sm:p-8">
             <div className="flex items-center gap-3 mb-6">
-              <MapPin className="w-8 h-8 text-primary" />
+              <MapPin className="w-8 h-8 text-amber-600" />
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground">City-wise Internship Chances</h2>
             </div>
-            <p className="text-muted-foreground mb-6">Where to maximize your internship opportunities.</p>
+            <p className="text-muted-foreground mb-6">Where you have the best chances of landing internships.</p>
             
-            <div className="space-y-8">
-              {/* Aerospace Engineer */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Aerospace Engineer</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    {cityInternshipData.aerospace.map((city, idx) => (
-                      <div key={idx} className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 p-3 rounded-lg hover:bg-muted/50 transition-colors">
-                        <div className="flex items-center gap-3 sm:w-48">
-                          <span className="font-semibold">{city.city}</span>
-                          <span className="px-2 py-1 bg-primary/10 text-primary rounded font-bold text-sm">{city.score}</span>
+            <div className="grid gap-6 lg:grid-cols-3">
+              {Object.entries(cityInternshipData).map(([roleKey, cities]) => (
+                <Card key={roleKey} className="overflow-hidden bg-white dark:bg-slate-900 border-amber-200 dark:border-amber-900">
+                  <CardHeader className="pb-4">
+                    <CardTitle className="capitalize">{roleKey} Engineer</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {cities.map((city, idx) => (
+                        <div key={idx} className="border-b last:border-0 pb-3 last:pb-0">
+                          <div className="flex justify-between items-center mb-1">
+                            <p className="font-semibold text-foreground">{city.city}</p>
+                            <span className="text-sm font-bold text-primary">{city.score}</span>
+                          </div>
+                          <p className="text-sm text-muted-foreground">{city.reason}</p>
                         </div>
-                        <p className="text-sm text-muted-foreground">{city.reason}</p>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Avionics Engineer */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Avionics Engineer</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    {cityInternshipData.avionics.map((city, idx) => (
-                      <div key={idx} className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 p-3 rounded-lg hover:bg-muted/50 transition-colors">
-                        <div className="flex items-center gap-3 sm:w-48">
-                          <span className="font-semibold">{city.city}</span>
-                          <span className="px-2 py-1 bg-primary/10 text-primary rounded font-bold text-sm">{city.score}</span>
-                        </div>
-                        <p className="text-sm text-muted-foreground">{city.reason}</p>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* AME */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Aircraft Maintenance Engineer (AME)</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    {cityInternshipData.ame.map((city, idx) => (
-                      <div key={idx} className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 p-3 rounded-lg hover:bg-muted/50 transition-colors">
-                        <div className="flex items-center gap-3 sm:w-48">
-                          <span className="font-semibold">{city.city}</span>
-                          <span className="px-2 py-1 bg-primary/10 text-primary rounded font-bold text-sm">{city.score}</span>
-                        </div>
-                        <p className="text-sm text-muted-foreground">{city.reason}</p>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </section>
 
           {/* Internship Opportunities */}
-          <section className="mb-12">
+          <section className="mb-12 bg-cyan-50/50 dark:bg-cyan-950/10 rounded-2xl p-6 sm:p-8">
             <div className="flex items-center gap-3 mb-6">
-              <Briefcase className="w-8 h-8 text-primary" />
+              <Briefcase className="w-8 h-8 text-cyan-600" />
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Internship Opportunities</h2>
             </div>
-            <p className="text-muted-foreground mb-6">Verified entry-level friendly companies for each role.</p>
+            <p className="text-muted-foreground mb-6">Top companies offering internships in each domain.</p>
             
-            <div className="grid gap-6 lg:grid-cols-3">
-              {/* Aerospace */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Aerospace Engineer</CardTitle>
-                  <p className="text-sm text-primary font-semibold">{internshipCompanies.aerospace.summary}</p>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm">
-                    {internshipCompanies.aerospace.companies.map((company, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <span className="text-primary mt-1">•</span>
-                        <span>{company}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* Avionics */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Avionics Engineer</CardTitle>
-                  <p className="text-sm text-primary font-semibold">{internshipCompanies.avionics.summary}</p>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm">
-                    {internshipCompanies.avionics.companies.map((company, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <span className="text-primary mt-1">•</span>
-                        <span>{company}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* AME */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Aircraft Maintenance Engineer</CardTitle>
-                  <p className="text-sm text-primary font-semibold">{internshipCompanies.ame.summary}</p>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm">
-                    {internshipCompanies.ame.companies.map((company, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <span className="text-primary mt-1">•</span>
-                        <span>{company}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+            <div className="grid gap-6 md:grid-cols-3">
+              {Object.entries(internshipCompanies).map(([roleKey, data]) => (
+                <Card key={roleKey} className="hover:shadow-lg transition-shadow bg-white dark:bg-slate-900 border-cyan-200 dark:border-cyan-900">
+                  <CardHeader>
+                    <CardTitle className="capitalize">{roleKey} Engineer</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2 mb-4">
+                      {data.companies.map((company, idx) => (
+                        <li key={idx} className="text-sm text-foreground border-l-2 border-primary pl-2">
+                          {company}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="pt-4 border-t">
+                      <p className="text-sm font-semibold text-primary">{data.summary}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </section>
+
         </div>
       </div>
     </>
   );
 };
-
-export default CareerInsights;
