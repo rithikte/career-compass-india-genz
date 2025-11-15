@@ -6,6 +6,7 @@ import { HomePage } from '../components/HomePage';
 import { BTechMechanical } from '../components/BTechMechanical';
 import { CareerOutcomes } from '../components/CareerOutcomes';
 import { CareerExplorer } from '../components/CareerExplorer';
+import { CareerInsights } from '../components/CareerInsights';
 import { HiringCompanies } from '../components/HiringCompanies';
 import { GrowthRate } from '../components/GrowthRate';
 import { JobDemand } from '../components/JobDemand';
@@ -36,6 +37,7 @@ const Index = () => {
     { id: 'job-lifestyle', title: 'Job Lifestyle & Stability', component: JobLifestyle },
     { id: 'career-outcomes', title: 'Career Outcomes', component: CareerOutcomes },
     { id: 'career-explorer', title: 'Career Explorer', component: CareerExplorer },
+    { id: 'career-insights', title: 'Career Insights', component: CareerInsights },
     { id: 'hiring-companies', title: 'Hiring Companies', component: HiringCompanies },
     { id: 'growth-rate', title: 'Growth Rate', component: GrowthRate },
     { id: 'job-demand', title: 'Job Demand', component: JobDemand },
