@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, XCircle, AlertTriangle, Brain, Cog, Wrench, Zap, Target, BookOpen, Shield } from 'lucide-react';
+import { CheckCircle, XCircle, AlertTriangle, Brain, Cog, Wrench, Target, BookOpen, Shield } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 export const BTechMechanical = () => {
   return <div className="space-y-8">
@@ -42,11 +42,11 @@ export const BTechMechanical = () => {
                   <span className="text-xs sm:text-sm md:text-base">Category</span>
                 </div>
                 <div className="flex items-center gap-2 mb-2 sm:mb-0">
-                  <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5" />
+                  
                   <span className="text-xs sm:text-sm md:text-base">Most Important Topics</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Zap className="h-4 w-4 sm:h-5 sm:w-5" />
+                  
                   <span className="text-xs sm:text-sm md:text-base">Usage in Aviation NVH Careers</span>
                 </div>
               </div>
