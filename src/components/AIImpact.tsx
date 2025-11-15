@@ -1,6 +1,6 @@
 import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend } from 'recharts';
-import { AlertTriangle, Shield, Plane, Radio, Wrench } from 'lucide-react';
+import { AlertTriangle, Shield } from 'lucide-react';
 import SourceBadge from './SourceBadge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 const aiImpactData = [{
@@ -296,7 +296,7 @@ export const AIImpact = () => {
         {/* Aerospace Engineer Safety Meter */}
         <div className="mb-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border-2 border-blue-200">
           <div className="flex items-center gap-3 mb-4">
-            <Plane className="w-7 h-7 text-blue-600" />
+            
             <h4 className="text-xl sm:text-2xl font-bold text-slate-900">Aerospace Engineer – Job Safety Meter</h4>
           </div>
           
@@ -312,17 +312,17 @@ export const AIImpact = () => {
               <tbody>
                 <tr className="border-b border-blue-200 hover:bg-blue-100/50">
                   <td className="py-3 px-4 font-semibold text-slate-800">AI/Automation Risk</td>
-                  <td className="py-3 px-4 font-bold text-green-600">🟢 Low (30–35%)</td>
+                  <td className="py-3 px-4 font-bold text-green-600">Low (30–35%)</td>
                   <td className="py-3 px-4 text-gray-700">AI can help in design, but it can't replace human creativity or safety logic.</td>
                 </tr>
                 <tr className="border-b border-blue-200 hover:bg-blue-100/50">
                   <td className="py-3 px-4 font-semibold text-slate-800">Human Role Importance</td>
-                  <td className="py-3 px-4 font-bold text-blue-600">🔵 Very High</td>
+                  <td className="py-3 px-4 font-bold text-blue-600">Very High</td>
                   <td className="py-3 px-4 text-gray-700">Engineers still needed for testing, validation, and final design approval.</td>
                 </tr>
                 <tr className="hover:bg-blue-100/50">
                   <td className="py-3 px-4 font-semibold text-slate-800">Safety Level (2025–2040)</td>
-                  <td className="py-3 px-4 font-bold text-green-600">✅ 8.5/10 – Very Safe</td>
+                  <td className="py-3 px-4 font-bold text-green-600">8.5/10 – Very Safe</td>
                   <td className="py-3 px-4 text-gray-700">New aerospace, space, and defence projects keep long-term demand strong.</td>
                 </tr>
               </tbody>
@@ -331,7 +331,7 @@ export const AIImpact = () => {
           
           <div className="bg-blue-600 text-white rounded-lg p-4 mt-4">
             <p className="font-bold text-base sm:text-lg">
-              💡 Parent Message: Aerospace jobs are safe. AI is a tool, not a threat. Human design judgment stays valuable.
+              Parent Message: Aerospace jobs are safe. AI is a tool, not a threat. Human design judgment stays valuable.
             </p>
           </div>
         </div>
@@ -339,8 +339,8 @@ export const AIImpact = () => {
         {/* Avionics Engineer Safety Meter */}
         <div className="mb-8 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl p-6 border-2 border-orange-200">
           <div className="flex items-center gap-3 mb-4">
-            <Radio className="w-7 h-7 text-orange-600" />
-            <h4 className="text-xl sm:text-2xl font-bold text-slate-900">⚙️ Avionics Engineer – Job Safety Meter</h4>
+            
+            <h4 className="text-xl sm:text-2xl font-bold text-slate-900">Avionics Engineer – Job Safety Meter</h4>
           </div>
           
           <div className="overflow-x-auto mb-4">
@@ -355,17 +355,17 @@ export const AIImpact = () => {
               <tbody>
                 <tr className="border-b border-orange-200 hover:bg-orange-100/50">
                   <td className="py-3 px-4 font-semibold text-slate-800">AI/Automation Risk</td>
-                  <td className="py-3 px-4 font-bold text-orange-600">🟠 Medium (45–50%)</td>
+                  <td className="py-3 px-4 font-bold text-orange-600">Medium (45–50%)</td>
                   <td className="py-3 px-4 text-gray-700">AI will take over testing and monitoring, but skilled engineers can adapt easily.</td>
                 </tr>
                 <tr className="border-b border-orange-200 hover:bg-orange-100/50">
                   <td className="py-3 px-4 font-semibold text-slate-800">Human Role Importance</td>
-                  <td className="py-3 px-4 font-bold text-blue-600">🔵 High</td>
+                  <td className="py-3 px-4 font-bold text-blue-600">High</td>
                   <td className="py-3 px-4 text-gray-700">Still need humans for system design, troubleshooting, and safety integration.</td>
                 </tr>
                 <tr className="hover:bg-orange-100/50">
                   <td className="py-3 px-4 font-semibold text-slate-800">Safety Level (2025–2040)</td>
-                  <td className="py-3 px-4 font-bold text-green-600">✅ 7/10 – Stable but evolving</td>
+                  <td className="py-3 px-4 font-bold text-green-600">7/10 – Stable but evolving</td>
                   <td className="py-3 px-4 text-gray-700">Need to keep learning embedded AI, automation tools to stay future-ready.</td>
                 </tr>
               </tbody>
@@ -374,7 +374,7 @@ export const AIImpact = () => {
           
           <div className="bg-orange-600 text-white rounded-lg p-4 mt-4">
             <p className="font-bold text-base sm:text-lg">
-              💡 Parent Message: Safe career with strong demand — but students must keep updating their tech skills.
+              Parent Message: Safe career with strong demand — but students must keep updating their tech skills.
             </p>
           </div>
         </div>
@@ -382,8 +382,8 @@ export const AIImpact = () => {
         {/* AME Safety Meter */}
         <div className="mb-8 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border-2 border-green-200">
           <div className="flex items-center gap-3 mb-4">
-            <Wrench className="w-7 h-7 text-green-600" />
-            <h4 className="text-xl sm:text-2xl font-bold text-slate-900">🔧 Aircraft Maintenance Engineer (AME) – Job Safety Meter</h4>
+            
+            <h4 className="text-xl sm:text-2xl font-bold text-slate-900">Aircraft Maintenance Engineer (AME) – Job Safety Meter</h4>
           </div>
           
           <div className="overflow-x-auto mb-4">
@@ -398,17 +398,17 @@ export const AIImpact = () => {
               <tbody>
                 <tr className="border-b border-green-200 hover:bg-green-100/50">
                   <td className="py-3 px-4 font-semibold text-slate-800">AI/Automation Risk</td>
-                  <td className="py-3 px-4 font-bold text-green-600">🟢 Very Low (25–30%)</td>
+                  <td className="py-3 px-4 font-bold text-green-600">Very Low (25–30%)</td>
                   <td className="py-3 px-4 text-gray-700">AI can predict faults, but only licensed humans can inspect and certify.</td>
                 </tr>
                 <tr className="border-b border-green-200 hover:bg-green-100/50">
                   <td className="py-3 px-4 font-semibold text-slate-800">Human Role Importance</td>
-                  <td className="py-3 px-4 font-bold text-blue-600">🔵 Extremely High</td>
+                  <td className="py-3 px-4 font-bold text-blue-600">Extremely High</td>
                   <td className="py-3 px-4 text-gray-700">Physical inspection and safety clearance cannot be automated.</td>
                 </tr>
                 <tr className="hover:bg-green-100/50">
                   <td className="py-3 px-4 font-semibold text-slate-800">Safety Level (2025–2040)</td>
-                  <td className="py-3 px-4 font-bold text-green-600">✅ 9.5/10 – Highly Safe</td>
+                  <td className="py-3 px-4 font-bold text-green-600">9.5/10 – Highly Safe</td>
                   <td className="py-3 px-4 text-gray-700">Global shortage of AMEs + legal requirement ensures job security.</td>
                 </tr>
               </tbody>
@@ -417,7 +417,7 @@ export const AIImpact = () => {
           
           <div className="bg-green-600 text-white rounded-lg p-4 mt-4">
             <p className="font-bold text-base sm:text-lg">
-              💡 Parent Message: AME is one of the most protected jobs — legally required, respected, and AI-proof.
+              Parent Message: AME is one of the most protected jobs — legally required, respected, and AI-proof.
             </p>
           </div>
         </div>
