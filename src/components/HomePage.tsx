@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { MapPin, ArrowRight, Target, Filter, Award, Building2, ChevronDown, Sparkles, TrendingUp, Users, Shield, BookOpen, Zap, Instagram, Twitter, Linkedin } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
-import { CareerExplorer } from './CareerExplorer';
 const indianStates = ['Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal', 'Delhi', 'Jammu and Kashmir', 'Ladakh'];
 const workflowStages = [{
   stage: '01',
@@ -39,7 +38,6 @@ export const HomePage = () => {
   const [selectedState, setSelectedState] = useState('');
   const [isStateDropdownOpen, setIsStateDropdownOpen] = useState(false);
   const [animatedStats, setAnimatedStats] = useState([]);
-  const [isCareerExplorerOpen, setIsCareerExplorerOpen] = useState(false);
   useEffect(() => {
     // Animate stats when component mounts
     const timer = setTimeout(() => {
@@ -353,7 +351,7 @@ export const HomePage = () => {
                   
                 </div>
                 
-                <Button onClick={() => setIsCareerExplorerOpen(true)} className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 rounded-xl hover:scale-105 transition-transform duration-300">
+                <Button onClick={() => {}} className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 rounded-xl hover:scale-105 transition-transform duration-300">
                   Start My Degree Journey
                 </Button>
               </CardContent>
@@ -473,7 +471,5 @@ export const HomePage = () => {
 
       </div>
 
-      {/* Career Explorer Modal */}
-      <CareerExplorer open={isCareerExplorerOpen} onOpenChange={setIsCareerExplorerOpen} />
     </div>;
 };

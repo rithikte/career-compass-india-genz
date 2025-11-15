@@ -1,15 +1,9 @@
 import React, { useState } from 'react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
 import { Button } from './ui/button';
 import { ChevronDown, ChevronRight, Check, Search, Star } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Input } from './ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
-
-interface CareerExplorerProps {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-}
 
 interface Domain {
   id: string;
@@ -163,7 +157,7 @@ const physicsDepthLevels: DepthLevel[] = [
   },
 ];
 
-export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChange }) => {
+export const CareerExplorer: React.FC = () => {
   const [step, setStep] = useState(1);
   const [selectedDomain, setSelectedDomain] = useState<string>('');
   const [selectedStream, setSelectedStream] = useState<string>('');
@@ -188,7 +182,6 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
 
   const handleClose = () => {
     resetState();
-    onOpenChange(false);
   };
 
   const toggleSection = (section: string) => {
@@ -285,13 +278,13 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
   };
 
   return (
-    <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="w-[95vw] max-w-[95vw] sm:max-w-2xl lg:max-w-4xl xl:max-w-5xl max-h-[90vh] overflow-y-auto p-4 sm:p-6">
-        <DialogHeader>
-          <DialogTitle className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+    <div className="w-full max-w-7xl mx-auto p-4 sm:p-6">
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6">
+        <div className="mb-6">
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             {getStepTitle()}
-          </DialogTitle>
-        </DialogHeader>
+          </h1>
+        </div>
 
         {step === 1 && (
           <div className="space-y-4 sm:space-y-6 py-2 sm:py-4">
@@ -724,7 +717,7 @@ export const CareerExplorer: React.FC<CareerExplorerProps> = ({ open, onOpenChan
             </div>
           </div>
         )}
-      </DialogContent>
-    </Dialog>
+      </div>
+    </div>
   );
 };
