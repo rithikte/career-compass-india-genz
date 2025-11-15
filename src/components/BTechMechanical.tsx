@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, XCircle, AlertTriangle, Brain, Cog, Wrench, Plane, Zap, Target, Clock, BookOpen, Shield } from 'lucide-react';
+import { CheckCircle, XCircle, AlertTriangle, Brain, Cog, Wrench, Zap, Target, Clock, BookOpen, Shield } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 export const BTechMechanical = () => {
   return <div className="space-y-8">
@@ -10,7 +10,7 @@ export const BTechMechanical = () => {
         
         <div className="relative text-center space-y-4 sm:space-y-6">
           <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/20 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 md:px-6">
-            <Plane className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
+            
             <span className="font-semibold text-xs sm:text-sm md:text-base">B.Tech Mechanical Engineering</span>
           </div>
           
