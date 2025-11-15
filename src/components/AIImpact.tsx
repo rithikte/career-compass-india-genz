@@ -58,7 +58,7 @@ export const AIImpact = () => {
 
           <div className="p-4 bg-blue-100 rounded-lg border-l-4 border-blue-600">
             <p className="text-base sm:text-lg font-semibold text-slate-900">
-              💡 Indian engineers with AI skills earn 35-50% more in aerospace companies
+              Indian engineers with AI skills earn 35-50% more in aerospace companies
             </p>
           </div>
         </div>
@@ -188,7 +188,7 @@ export const AIImpact = () => {
 
         <div className="mt-6 text-center">
           <p className="text-base sm:text-lg font-bold text-red-600">
-            ⚠️ Ignoring AI skills reduces hiring chances by 40%.
+            Ignoring AI skills reduces hiring chances by 40%.
           </p>
         </div>
       </div>
@@ -245,7 +245,7 @@ export const AIImpact = () => {
           <div className="mt-6 relative overflow-hidden rounded-xl bg-gradient-to-br from-warning/10 to-destructive/10 p-6 border-2 border-warning/40 hover:border-warning/60 transition-all duration-300">
             <div className="absolute top-0 left-0 w-24 h-24 bg-warning/20 rounded-full blur-2xl"></div>
             <p className="text-base sm:text-lg font-bold text-foreground relative z-10">
-              ⚠️ Caution: Job count may reduce slightly, but value of human-AI hybrid engineers will rise. Adapt or be replaced.
+              Caution: Job count may reduce slightly, but value of human-AI hybrid engineers will rise. Adapt or be replaced.
             </p>
           </div>
         </div>
