@@ -25,6 +25,7 @@ import { InterviewSituation } from '../components/InterviewSituation';
 import IndustryAdvice from '../components/IndustryAdvice';
 import CollegeDetails from '../components/CollegeDetails';
 import AboutUs from '../components/AboutUs';
+import CoreVsIT from '../components/CoreVsIT';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -49,6 +50,7 @@ const Index = () => {
     { id: 'govt-support', title: 'Govt Support', component: GovtSupport },
     { id: 'india-2040', title: 'India 2040', component: India2040 },
     { id: 'interview-situation', title: 'Interview Situation', component: InterviewSituation },
+    { id: 'core-vs-it', title: 'Why NOT Choose IT Blindly', component: CoreVsIT },
     { id: 'industry-advice', title: '20 Years Industry Advice', component: IndustryAdvice },
     { id: 'where-to-learn', title: 'Where to Learn', component: WhereToLearn },
     { id: 'college-details', title: 'B.Tech – Degree Landing Page', component: CollegeDetails },
