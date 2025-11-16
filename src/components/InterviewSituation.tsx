@@ -380,6 +380,393 @@ export const InterviewSituation = () => {
         </CardContent>
       </Card>
 
+      {/* Real-Time Job Density Tracker */}
+      <div className="space-y-8">
+        <div className="text-center space-y-4">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+            Real-Time Job Density Tracker
+          </h3>
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+            Monthly average across top states
+          </p>
+        </div>
+
+        {/* Aerospace Engineer Section */}
+        <Card className="border-emerald-200 bg-emerald-50/30">
+          <CardHeader>
+            <CardTitle className="text-xl sm:text-2xl font-bold text-emerald-900">
+              Aerospace Engineer
+            </CardTitle>
+            <p className="text-sm text-gray-600 mt-2">Monthly average across top states</p>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            {/* Desktop Table */}
+            <div className="hidden md:block overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="bg-emerald-100 border-b-2 border-emerald-300">
+                    <th className="text-left p-3 text-sm font-semibold text-emerald-900">State</th>
+                    <th className="text-left p-3 text-sm font-semibold text-emerald-900">Avg. Monthly Openings</th>
+                    <th className="text-left p-3 text-sm font-semibold text-emerald-900">Avg. Monthly Applicants</th>
+                    <th className="text-left p-3 text-sm font-semibold text-emerald-900">Competition Level</th>
+                    <th className="text-left p-3 text-sm font-semibold text-emerald-900">Simple Meaning</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-emerald-200 bg-white hover:bg-emerald-50 transition-colors">
+                    <td className="p-3 text-sm font-medium">Karnataka (Bengaluru)</td>
+                    <td className="p-3 text-sm">180–220</td>
+                    <td className="p-3 text-sm">900–1,100</td>
+                    <td className="p-3 text-sm"><span className="px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs font-semibold">High</span></td>
+                    <td className="p-3 text-sm">Many jobs but more competition.</td>
+                  </tr>
+                  <tr className="border-b border-emerald-200 bg-white hover:bg-emerald-50 transition-colors">
+                    <td className="p-3 text-sm font-medium">Telangana (Hyderabad)</td>
+                    <td className="p-3 text-sm">120–150</td>
+                    <td className="p-3 text-sm">550–650</td>
+                    <td className="p-3 text-sm"><span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-semibold">Medium</span></td>
+                    <td className="p-3 text-sm">Good balance — skilled students get through.</td>
+                  </tr>
+                  <tr className="border-b border-emerald-200 bg-white hover:bg-emerald-50 transition-colors">
+                    <td className="p-3 text-sm font-medium">Maharashtra (Pune/Nagpur)</td>
+                    <td className="p-3 text-sm">60–90</td>
+                    <td className="p-3 text-sm">300–350</td>
+                    <td className="p-3 text-sm"><span className="px-2 py-1 bg-orange-100 text-orange-800 rounded-full text-xs font-semibold">Medium-High</span></td>
+                    <td className="p-3 text-sm">Fewer openings, but competition still manageable.</td>
+                  </tr>
+                  <tr className="bg-white hover:bg-emerald-50 transition-colors">
+                    <td className="p-3 text-sm font-medium">Tamil Nadu (Chennai)</td>
+                    <td className="p-3 text-sm">40–70</td>
+                    <td className="p-3 text-sm">250–300</td>
+                    <td className="p-3 text-sm"><span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-semibold">Medium</span></td>
+                    <td className="p-3 text-sm">Stable industry roles.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Mobile Cards */}
+            <div className="md:hidden space-y-4">
+              {[
+                { state: "Karnataka (Bengaluru)", openings: "180–220", applicants: "900–1,100", level: "High", meaning: "Many jobs but more competition.", color: "red" },
+                { state: "Telangana (Hyderabad)", openings: "120–150", applicants: "550–650", level: "Medium", meaning: "Good balance — skilled students get through.", color: "yellow" },
+                { state: "Maharashtra (Pune/Nagpur)", openings: "60–90", applicants: "300–350", level: "Medium-High", meaning: "Fewer openings, but competition still manageable.", color: "orange" },
+                { state: "Tamil Nadu (Chennai)", openings: "40–70", applicants: "250–300", level: "Medium", meaning: "Stable industry roles.", color: "yellow" }
+              ].map((item, idx) => (
+                <div key={idx} className="bg-white p-4 rounded-lg border border-emerald-200">
+                  <h4 className="font-bold text-emerald-900 mb-3">{item.state}</h4>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Openings:</span>
+                      <span className="font-semibold">{item.openings}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Applicants:</span>
+                      <span className="font-semibold">{item.applicants}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Competition:</span>
+                      <span className={`px-2 py-1 bg-${item.color}-100 text-${item.color}-800 rounded-full text-xs font-semibold`}>{item.level}</span>
+                    </div>
+                    <div className="pt-2 border-t border-emerald-100">
+                      <p className="text-gray-700">{item.meaning}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-emerald-100 p-4 rounded-lg border border-emerald-300">
+              <p className="text-sm text-emerald-900 font-medium">
+                <strong>Simple Line:</strong> Karnataka is the hottest but most competitive. Hyderabad offers the best "win chance" for freshers.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Avionics Engineer Section */}
+        <Card className="border-blue-200 bg-blue-50/30">
+          <CardHeader>
+            <CardTitle className="text-xl sm:text-2xl font-bold text-blue-900">
+              Avionics Engineer
+            </CardTitle>
+            <p className="text-sm text-gray-600 mt-2">Monthly average across top states</p>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            {/* Desktop Table */}
+            <div className="hidden md:block overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="bg-blue-100 border-b-2 border-blue-300">
+                    <th className="text-left p-3 text-sm font-semibold text-blue-900">State</th>
+                    <th className="text-left p-3 text-sm font-semibold text-blue-900">Avg. Monthly Openings</th>
+                    <th className="text-left p-3 text-sm font-semibold text-blue-900">Avg. Monthly Applicants</th>
+                    <th className="text-left p-3 text-sm font-semibold text-blue-900">Competition Level</th>
+                    <th className="text-left p-3 text-sm font-semibold text-blue-900">Simple Meaning</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-blue-200 bg-white hover:bg-blue-50 transition-colors">
+                    <td className="p-3 text-sm font-medium">Karnataka (Bengaluru)</td>
+                    <td className="p-3 text-sm">200–240</td>
+                    <td className="p-3 text-sm">850–950</td>
+                    <td className="p-3 text-sm"><span className="px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs font-semibold">High</span></td>
+                    <td className="p-3 text-sm">Many openings in embedded/avionics labs; strong competition.</td>
+                  </tr>
+                  <tr className="border-b border-blue-200 bg-white hover:bg-blue-50 transition-colors">
+                    <td className="p-3 text-sm font-medium">Telangana (Hyderabad)</td>
+                    <td className="p-3 text-sm">140–170</td>
+                    <td className="p-3 text-sm">450–550</td>
+                    <td className="p-3 text-sm"><span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-semibold">Medium</span></td>
+                    <td className="p-3 text-sm">Electronics + defence labs = steady demand, easier entry.</td>
+                  </tr>
+                  <tr className="border-b border-blue-200 bg-white hover:bg-blue-50 transition-colors">
+                    <td className="p-3 text-sm font-medium">Gujarat (Ahmedabad)</td>
+                    <td className="p-3 text-sm">40–60</td>
+                    <td className="p-3 text-sm">150–250</td>
+                    <td className="p-3 text-sm"><span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs font-semibold">Low-Medium</span></td>
+                    <td className="p-3 text-sm">Less competition, good entry spots.</td>
+                  </tr>
+                  <tr className="bg-white hover:bg-blue-50 transition-colors">
+                    <td className="p-3 text-sm font-medium">Tamil Nadu (Chennai)</td>
+                    <td className="p-3 text-sm">70–90</td>
+                    <td className="p-3 text-sm">250–350</td>
+                    <td className="p-3 text-sm"><span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-semibold">Medium</span></td>
+                    <td className="p-3 text-sm">Balanced market, stable demand.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Mobile Cards */}
+            <div className="md:hidden space-y-4">
+              {[
+                { state: "Karnataka (Bengaluru)", openings: "200–240", applicants: "850–950", level: "High", meaning: "Many openings in embedded/avionics labs; strong competition.", color: "red" },
+                { state: "Telangana (Hyderabad)", openings: "140–170", applicants: "450–550", level: "Medium", meaning: "Electronics + defence labs = steady demand, easier entry.", color: "yellow" },
+                { state: "Gujarat (Ahmedabad)", openings: "40–60", applicants: "150–250", level: "Low-Medium", meaning: "Less competition, good entry spots.", color: "green" },
+                { state: "Tamil Nadu (Chennai)", openings: "70–90", applicants: "250–350", level: "Medium", meaning: "Balanced market, stable demand.", color: "yellow" }
+              ].map((item, idx) => (
+                <div key={idx} className="bg-white p-4 rounded-lg border border-blue-200">
+                  <h4 className="font-bold text-blue-900 mb-3">{item.state}</h4>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Openings:</span>
+                      <span className="font-semibold">{item.openings}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Applicants:</span>
+                      <span className="font-semibold">{item.applicants}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Competition:</span>
+                      <span className={`px-2 py-1 bg-${item.color}-100 text-${item.color}-800 rounded-full text-xs font-semibold`}>{item.level}</span>
+                    </div>
+                    <div className="pt-2 border-t border-blue-100">
+                      <p className="text-gray-700">{item.meaning}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-blue-100 p-4 rounded-lg border border-blue-300">
+              <p className="text-sm text-blue-900 font-medium">
+                <strong>Simple Line:</strong> Hyderabad = easiest entry. Bengaluru = biggest market, hardest competition.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Aircraft Maintenance Engineer Section */}
+        <Card className="border-purple-200 bg-purple-50/30">
+          <CardHeader>
+            <CardTitle className="text-xl sm:text-2xl font-bold text-purple-900">
+              Aircraft Maintenance Engineer
+            </CardTitle>
+            <p className="text-sm text-gray-600 mt-2">Monthly average across top states</p>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            {/* Desktop Table */}
+            <div className="hidden md:block overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="bg-purple-100 border-b-2 border-purple-300">
+                    <th className="text-left p-3 text-sm font-semibold text-purple-900">State</th>
+                    <th className="text-left p-3 text-sm font-semibold text-purple-900">Avg. Monthly Openings</th>
+                    <th className="text-left p-3 text-sm font-semibold text-purple-900">Avg. Monthly Applicants</th>
+                    <th className="text-left p-3 text-sm font-semibold text-purple-900">Competition Level</th>
+                    <th className="text-left p-3 text-sm font-semibold text-purple-900">Simple Meaning</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-purple-200 bg-white hover:bg-purple-50 transition-colors">
+                    <td className="p-3 text-sm font-medium">Maharashtra (Nagpur)</td>
+                    <td className="p-3 text-sm">160–200</td>
+                    <td className="p-3 text-sm">400–500</td>
+                    <td className="p-3 text-sm"><span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs font-semibold">Low-Medium</span></td>
+                    <td className="p-3 text-sm">Strong MRO hub; easier to get an internship or job.</td>
+                  </tr>
+                  <tr className="border-b border-purple-200 bg-white hover:bg-purple-50 transition-colors">
+                    <td className="p-3 text-sm font-medium">Telangana (Hyderabad)</td>
+                    <td className="p-3 text-sm">130–160</td>
+                    <td className="p-3 text-sm">350–450</td>
+                    <td className="p-3 text-sm"><span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs font-semibold">Low-Medium</span></td>
+                    <td className="p-3 text-sm">GMR MRO intake is steady.</td>
+                  </tr>
+                  <tr className="border-b border-purple-200 bg-white hover:bg-purple-50 transition-colors">
+                    <td className="p-3 text-sm font-medium">Karnataka (Bengaluru)</td>
+                    <td className="p-3 text-sm">70–100</td>
+                    <td className="p-3 text-sm">250–320</td>
+                    <td className="p-3 text-sm"><span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-semibold">Medium</span></td>
+                    <td className="p-3 text-sm">Competition depends on license level.</td>
+                  </tr>
+                  <tr className="bg-white hover:bg-purple-50 transition-colors">
+                    <td className="p-3 text-sm font-medium">Kerala (Kochi)</td>
+                    <td className="p-3 text-sm">50–70</td>
+                    <td className="p-3 text-sm">200–250</td>
+                    <td className="p-3 text-sm"><span className="px-2 py-1 bg-orange-100 text-orange-800 rounded-full text-xs font-semibold">Medium-High</span></td>
+                    <td className="p-3 text-sm">Smaller MRO units → limited openings.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Mobile Cards */}
+            <div className="md:hidden space-y-4">
+              {[
+                { state: "Maharashtra (Nagpur)", openings: "160–200", applicants: "400–500", level: "Low-Medium", meaning: "Strong MRO hub; easier to get an internship or job.", color: "green" },
+                { state: "Telangana (Hyderabad)", openings: "130–160", applicants: "350–450", level: "Low-Medium", meaning: "GMR MRO intake is steady.", color: "green" },
+                { state: "Karnataka (Bengaluru)", openings: "70–100", applicants: "250–320", level: "Medium", meaning: "Competition depends on license level.", color: "yellow" },
+                { state: "Kerala (Kochi)", openings: "50–70", applicants: "200–250", level: "Medium-High", meaning: "Smaller MRO units → limited openings.", color: "orange" }
+              ].map((item, idx) => (
+                <div key={idx} className="bg-white p-4 rounded-lg border border-purple-200">
+                  <h4 className="font-bold text-purple-900 mb-3">{item.state}</h4>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Openings:</span>
+                      <span className="font-semibold">{item.openings}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Applicants:</span>
+                      <span className="font-semibold">{item.applicants}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Competition:</span>
+                      <span className={`px-2 py-1 bg-${item.color}-100 text-${item.color}-800 rounded-full text-xs font-semibold`}>{item.level}</span>
+                    </div>
+                    <div className="pt-2 border-t border-purple-100">
+                      <p className="text-gray-700">{item.meaning}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-purple-100 p-4 rounded-lg border border-purple-300">
+              <p className="text-sm text-purple-900 font-medium">
+                <strong>Simple Line:</strong> Nagpur and Hyderabad offer the highest chance of landing AME roles quickly.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Skill Gap Section for Aerospace Engineer */}
+        <Card className="border-indigo-200 bg-indigo-50/30">
+          <CardHeader>
+            <CardTitle className="text-xl sm:text-2xl font-bold text-indigo-900">
+              Aerospace Engineer - Skill Gap by District
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            {/* Desktop Table */}
+            <div className="hidden md:block overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="bg-indigo-100 border-b-2 border-indigo-300">
+                    <th className="text-left p-3 text-sm font-semibold text-indigo-900">District / City</th>
+                    <th className="text-left p-3 text-sm font-semibold text-indigo-900">Skill Gap</th>
+                    <th className="text-left p-3 text-sm font-semibold text-indigo-900">Meaning</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-indigo-200 bg-white hover:bg-indigo-50 transition-colors">
+                    <td className="p-3 text-sm font-medium">Hyderabad (Ranga Reddy / Medchal)</td>
+                    <td className="p-3 text-sm">
+                      <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-semibold inline-flex items-center gap-1">
+                        🟢 High Shortage
+                      </span>
+                    </td>
+                    <td className="p-3 text-sm">Many aerospace firms, fewer industry-ready engineers.</td>
+                  </tr>
+                  <tr className="border-b border-indigo-200 bg-white hover:bg-indigo-50 transition-colors">
+                    <td className="p-3 text-sm font-medium">Bengaluru (Bengaluru Urban)</td>
+                    <td className="p-3 text-sm">
+                      <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-semibold inline-flex items-center gap-1">
+                        🔴 Oversupply
+                      </span>
+                    </td>
+                    <td className="p-3 text-sm">Too many graduates, competition high.</td>
+                  </tr>
+                  <tr className="border-b border-indigo-200 bg-white hover:bg-indigo-50 transition-colors">
+                    <td className="p-3 text-sm font-medium">Pune (Pune Urban)</td>
+                    <td className="p-3 text-sm">
+                      <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-semibold inline-flex items-center gap-1">
+                        🟡 Balanced
+                      </span>
+                    </td>
+                    <td className="p-3 text-sm">Good industry presence, moderate competition.</td>
+                  </tr>
+                  <tr className="border-b border-indigo-200 bg-white hover:bg-indigo-50 transition-colors">
+                    <td className="p-3 text-sm font-medium">Nagpur</td>
+                    <td className="p-3 text-sm">
+                      <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-semibold inline-flex items-center gap-1">
+                        🟢 Shortage
+                      </span>
+                    </td>
+                    <td className="p-3 text-sm">MRO focus, not many design engineers available.</td>
+                  </tr>
+                  <tr className="bg-white hover:bg-indigo-50 transition-colors">
+                    <td className="p-3 text-sm font-medium">Chennai (Kanchipuram)</td>
+                    <td className="p-3 text-sm">
+                      <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-semibold inline-flex items-center gap-1">
+                        🟡 Balanced
+                      </span>
+                    </td>
+                    <td className="p-3 text-sm">Steady aerospace growth, but enough talent supply.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Mobile Cards */}
+            <div className="md:hidden space-y-4">
+              {[
+                { city: "Hyderabad (Ranga Reddy / Medchal)", gap: "🟢 High Shortage", meaning: "Many aerospace firms, fewer industry-ready engineers.", color: "green" },
+                { city: "Bengaluru (Bengaluru Urban)", gap: "🔴 Oversupply", meaning: "Too many graduates, competition high.", color: "red" },
+                { city: "Pune (Pune Urban)", gap: "🟡 Balanced", meaning: "Good industry presence, moderate competition.", color: "yellow" },
+                { city: "Nagpur", gap: "🟢 Shortage", meaning: "MRO focus, not many design engineers available.", color: "green" },
+                { city: "Chennai (Kanchipuram)", gap: "🟡 Balanced", meaning: "Steady aerospace growth, but enough talent supply.", color: "yellow" }
+              ].map((item, idx) => (
+                <div key={idx} className="bg-white p-4 rounded-lg border border-indigo-200">
+                  <h4 className="font-bold text-indigo-900 mb-3">{item.city}</h4>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Skill Gap:</span>
+                      <span className={`px-2 py-1 bg-${item.color}-100 text-${item.color}-800 rounded-full text-xs font-semibold`}>
+                        {item.gap}
+                      </span>
+                    </div>
+                    <div className="pt-2 border-t border-indigo-100">
+                      <p className="text-gray-700">{item.meaning}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
       {/* Alert Section */}
       <Card className="bg-gradient-to-r from-red-50 to-orange-50 border-red-200">
         <CardContent className="p-8">
