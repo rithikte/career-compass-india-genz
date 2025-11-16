@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Users, TrendingUp, Globe, Flag, Award } from 'lucide-react';
+import { Shield, Users, TrendingUp, Globe, Award } from 'lucide-react';
 import SourceBadge from './SourceBadge';
 const supportReasons = [{
   icon: Shield,
@@ -118,7 +118,7 @@ export const GovtSupport = () => {
 
       <div className="bg-gradient-to-r from-orange-600 to-red-600 text-white p-4 sm:p-6 md:p-8 rounded-lg">
         <div className="text-center">
-          <Flag className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 mx-auto mb-4" />
+          
           <h3 className="text-xl sm:text-2xl font-bold mb-2">🇮🇳 Atmanirbhar Bharat Vision</h3>
           <p className="text-sm sm:text-base md:text-lg text-orange-200 mb-4 sm:mb-6">
             India aims to become a global aerospace manufacturing hub by 2030
