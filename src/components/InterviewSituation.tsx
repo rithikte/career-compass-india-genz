@@ -447,13 +447,35 @@ export const InterviewSituation = () => {
 
             {/* Mobile Cards */}
             <div className="md:hidden space-y-4">
-              {[
-                { state: "Karnataka (Bengaluru)", openings: "180–220", applicants: "900–1,100", level: "High", meaning: "Many jobs but more competition.", color: "red" },
-                { state: "Telangana (Hyderabad)", openings: "120–150", applicants: "550–650", level: "Medium", meaning: "Good balance — skilled students get through.", color: "yellow" },
-                { state: "Maharashtra (Pune/Nagpur)", openings: "60–90", applicants: "300–350", level: "Medium-High", meaning: "Fewer openings, but competition still manageable.", color: "orange" },
-                { state: "Tamil Nadu (Chennai)", openings: "40–70", applicants: "250–300", level: "Medium", meaning: "Stable industry roles.", color: "yellow" }
-              ].map((item, idx) => (
-                <div key={idx} className="bg-white p-4 rounded-lg border border-emerald-200">
+              {[{
+              state: "Karnataka (Bengaluru)",
+              openings: "180–220",
+              applicants: "900–1,100",
+              level: "High",
+              meaning: "Many jobs but more competition.",
+              color: "red"
+            }, {
+              state: "Telangana (Hyderabad)",
+              openings: "120–150",
+              applicants: "550–650",
+              level: "Medium",
+              meaning: "Good balance — skilled students get through.",
+              color: "yellow"
+            }, {
+              state: "Maharashtra (Pune/Nagpur)",
+              openings: "60–90",
+              applicants: "300–350",
+              level: "Medium-High",
+              meaning: "Fewer openings, but competition still manageable.",
+              color: "orange"
+            }, {
+              state: "Tamil Nadu (Chennai)",
+              openings: "40–70",
+              applicants: "250–300",
+              level: "Medium",
+              meaning: "Stable industry roles.",
+              color: "yellow"
+            }].map((item, idx) => <div key={idx} className="bg-white p-4 rounded-lg border border-emerald-200">
                   <h4 className="font-bold text-emerald-900 mb-3">{item.state}</h4>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
@@ -472,8 +494,7 @@ export const InterviewSituation = () => {
                       <p className="text-gray-700">{item.meaning}</p>
                     </div>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
 
             <div className="bg-emerald-100 p-4 rounded-lg border border-emerald-300">
@@ -540,13 +561,35 @@ export const InterviewSituation = () => {
 
             {/* Mobile Cards */}
             <div className="md:hidden space-y-4">
-              {[
-                { state: "Karnataka (Bengaluru)", openings: "200–240", applicants: "850–950", level: "High", meaning: "Many openings in embedded/avionics labs; strong competition.", color: "red" },
-                { state: "Telangana (Hyderabad)", openings: "140–170", applicants: "450–550", level: "Medium", meaning: "Electronics + defence labs = steady demand, easier entry.", color: "yellow" },
-                { state: "Gujarat (Ahmedabad)", openings: "40–60", applicants: "150–250", level: "Low-Medium", meaning: "Less competition, good entry spots.", color: "green" },
-                { state: "Tamil Nadu (Chennai)", openings: "70–90", applicants: "250–350", level: "Medium", meaning: "Balanced market, stable demand.", color: "yellow" }
-              ].map((item, idx) => (
-                <div key={idx} className="bg-white p-4 rounded-lg border border-blue-200">
+              {[{
+              state: "Karnataka (Bengaluru)",
+              openings: "200–240",
+              applicants: "850–950",
+              level: "High",
+              meaning: "Many openings in embedded/avionics labs; strong competition.",
+              color: "red"
+            }, {
+              state: "Telangana (Hyderabad)",
+              openings: "140–170",
+              applicants: "450–550",
+              level: "Medium",
+              meaning: "Electronics + defence labs = steady demand, easier entry.",
+              color: "yellow"
+            }, {
+              state: "Gujarat (Ahmedabad)",
+              openings: "40–60",
+              applicants: "150–250",
+              level: "Low-Medium",
+              meaning: "Less competition, good entry spots.",
+              color: "green"
+            }, {
+              state: "Tamil Nadu (Chennai)",
+              openings: "70–90",
+              applicants: "250–350",
+              level: "Medium",
+              meaning: "Balanced market, stable demand.",
+              color: "yellow"
+            }].map((item, idx) => <div key={idx} className="bg-white p-4 rounded-lg border border-blue-200">
                   <h4 className="font-bold text-blue-900 mb-3">{item.state}</h4>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
@@ -565,8 +608,7 @@ export const InterviewSituation = () => {
                       <p className="text-gray-700">{item.meaning}</p>
                     </div>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
 
             <div className="bg-blue-100 p-4 rounded-lg border border-blue-300">
@@ -633,13 +675,35 @@ export const InterviewSituation = () => {
 
             {/* Mobile Cards */}
             <div className="md:hidden space-y-4">
-              {[
-                { state: "Maharashtra (Nagpur)", openings: "160–200", applicants: "400–500", level: "Low-Medium", meaning: "Strong MRO hub; easier to get an internship or job.", color: "green" },
-                { state: "Telangana (Hyderabad)", openings: "130–160", applicants: "350–450", level: "Low-Medium", meaning: "GMR MRO intake is steady.", color: "green" },
-                { state: "Karnataka (Bengaluru)", openings: "70–100", applicants: "250–320", level: "Medium", meaning: "Competition depends on license level.", color: "yellow" },
-                { state: "Kerala (Kochi)", openings: "50–70", applicants: "200–250", level: "Medium-High", meaning: "Smaller MRO units → limited openings.", color: "orange" }
-              ].map((item, idx) => (
-                <div key={idx} className="bg-white p-4 rounded-lg border border-purple-200">
+              {[{
+              state: "Maharashtra (Nagpur)",
+              openings: "160–200",
+              applicants: "400–500",
+              level: "Low-Medium",
+              meaning: "Strong MRO hub; easier to get an internship or job.",
+              color: "green"
+            }, {
+              state: "Telangana (Hyderabad)",
+              openings: "130–160",
+              applicants: "350–450",
+              level: "Low-Medium",
+              meaning: "GMR MRO intake is steady.",
+              color: "green"
+            }, {
+              state: "Karnataka (Bengaluru)",
+              openings: "70–100",
+              applicants: "250–320",
+              level: "Medium",
+              meaning: "Competition depends on license level.",
+              color: "yellow"
+            }, {
+              state: "Kerala (Kochi)",
+              openings: "50–70",
+              applicants: "200–250",
+              level: "Medium-High",
+              meaning: "Smaller MRO units → limited openings.",
+              color: "orange"
+            }].map((item, idx) => <div key={idx} className="bg-white p-4 rounded-lg border border-purple-200">
                   <h4 className="font-bold text-purple-900 mb-3">{item.state}</h4>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
@@ -658,8 +722,7 @@ export const InterviewSituation = () => {
                       <p className="text-gray-700">{item.meaning}</p>
                     </div>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
 
             <div className="bg-purple-100 p-4 rounded-lg border border-purple-300">
@@ -693,7 +756,7 @@ export const InterviewSituation = () => {
                     <td className="p-3 text-sm font-medium">Hyderabad (Ranga Reddy / Medchal)</td>
                     <td className="p-3 text-sm">
                       <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-semibold inline-flex items-center gap-1">
-                        🟢 High Shortage
+                        High Shortage
                       </span>
                     </td>
                     <td className="p-3 text-sm">Many aerospace firms, fewer industry-ready engineers.</td>
@@ -702,7 +765,7 @@ export const InterviewSituation = () => {
                     <td className="p-3 text-sm font-medium">Bengaluru (Bengaluru Urban)</td>
                     <td className="p-3 text-sm">
                       <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-semibold inline-flex items-center gap-1">
-                        🔴 Oversupply
+                        Oversupply
                       </span>
                     </td>
                     <td className="p-3 text-sm">Too many graduates, competition high.</td>
@@ -711,7 +774,7 @@ export const InterviewSituation = () => {
                     <td className="p-3 text-sm font-medium">Pune (Pune Urban)</td>
                     <td className="p-3 text-sm">
                       <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-semibold inline-flex items-center gap-1">
-                        🟡 Balanced
+                        Balanced
                       </span>
                     </td>
                     <td className="p-3 text-sm">Good industry presence, moderate competition.</td>
@@ -720,7 +783,7 @@ export const InterviewSituation = () => {
                     <td className="p-3 text-sm font-medium">Nagpur</td>
                     <td className="p-3 text-sm">
                       <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-semibold inline-flex items-center gap-1">
-                        🟢 Shortage
+                        Shortage
                       </span>
                     </td>
                     <td className="p-3 text-sm">MRO focus, not many design engineers available.</td>
@@ -729,7 +792,7 @@ export const InterviewSituation = () => {
                     <td className="p-3 text-sm font-medium">Chennai (Kanchipuram)</td>
                     <td className="p-3 text-sm">
                       <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-semibold inline-flex items-center gap-1">
-                        🟡 Balanced
+                        Balanced
                       </span>
                     </td>
                     <td className="p-3 text-sm">Steady aerospace growth, but enough talent supply.</td>
@@ -740,14 +803,32 @@ export const InterviewSituation = () => {
 
             {/* Mobile Cards */}
             <div className="md:hidden space-y-4">
-              {[
-                { city: "Hyderabad (Ranga Reddy / Medchal)", gap: "🟢 High Shortage", meaning: "Many aerospace firms, fewer industry-ready engineers.", color: "green" },
-                { city: "Bengaluru (Bengaluru Urban)", gap: "🔴 Oversupply", meaning: "Too many graduates, competition high.", color: "red" },
-                { city: "Pune (Pune Urban)", gap: "🟡 Balanced", meaning: "Good industry presence, moderate competition.", color: "yellow" },
-                { city: "Nagpur", gap: "🟢 Shortage", meaning: "MRO focus, not many design engineers available.", color: "green" },
-                { city: "Chennai (Kanchipuram)", gap: "🟡 Balanced", meaning: "Steady aerospace growth, but enough talent supply.", color: "yellow" }
-              ].map((item, idx) => (
-                <div key={idx} className="bg-white p-4 rounded-lg border border-indigo-200">
+              {[{
+              city: "Hyderabad (Ranga Reddy / Medchal)",
+              gap: "🟢 High Shortage",
+              meaning: "Many aerospace firms, fewer industry-ready engineers.",
+              color: "green"
+            }, {
+              city: "Bengaluru (Bengaluru Urban)",
+              gap: "🔴 Oversupply",
+              meaning: "Too many graduates, competition high.",
+              color: "red"
+            }, {
+              city: "Pune (Pune Urban)",
+              gap: "🟡 Balanced",
+              meaning: "Good industry presence, moderate competition.",
+              color: "yellow"
+            }, {
+              city: "Nagpur",
+              gap: "🟢 Shortage",
+              meaning: "MRO focus, not many design engineers available.",
+              color: "green"
+            }, {
+              city: "Chennai (Kanchipuram)",
+              gap: "🟡 Balanced",
+              meaning: "Steady aerospace growth, but enough talent supply.",
+              color: "yellow"
+            }].map((item, idx) => <div key={idx} className="bg-white p-4 rounded-lg border border-indigo-200">
                   <h4 className="font-bold text-indigo-900 mb-3">{item.city}</h4>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between items-center">
@@ -760,8 +841,7 @@ export const InterviewSituation = () => {
                       <p className="text-gray-700">{item.meaning}</p>
                     </div>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </CardContent>
         </Card>
