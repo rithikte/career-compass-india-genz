@@ -128,7 +128,10 @@ export const GovtSupport = () => {
               <div className="text-2xl font-bold">₹4000 Cr</div>
               <div className="text-orange-200">Total Investment</div>
             </div>
-            
+            <div className="bg-red-500 bg-opacity-30 p-4 rounded-lg">
+              <div className="text-2xl font-bold">3+ Million</div>
+              <div className="text-red-200">Jobs Created</div>
+            </div>
             <div className="bg-orange-500 bg-opacity-30 p-4 rounded-lg">
               <div className="text-2xl font-bold">$10B</div>
               <div className="text-orange-200">Export Target</div>
