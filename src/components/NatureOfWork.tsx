@@ -129,23 +129,23 @@ const NatureOfWork = () => {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         {/* Swiss Typography Header */}
-        <div className="mb-24">
+        <div className="mb-12 sm:mb-16 lg:mb-24">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="w-16 h-0.5 bg-primary"></div>
-              <Target className="w-6 h-6 text-primary" />
-              <div className="w-16 h-0.5 bg-primary"></div>
+            <div className="flex items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+              <div className="w-8 sm:w-12 lg:w-16 h-0.5 bg-primary"></div>
+              <Target className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+              <div className="w-8 sm:w-12 lg:w-16 h-0.5 bg-primary"></div>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-black tracking-tight text-foreground mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black tracking-tight text-foreground mb-4 sm:mb-6">
               WORK ENVIRONMENT
               <br />
               <span className="text-primary">TYPES</span>
             </h1>
             
-            <p className="text-xl font-light text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl font-light text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
               From Your Desk to the Factory Floor
             </p>
             
@@ -154,36 +154,36 @@ const NatureOfWork = () => {
         </div>
 
         {/* Work Environment Types - Responsive Grid */}
-        <div className="mb-32">
+        <div className="mb-16 sm:mb-24 lg:mb-32">
           {/* Interactive Responsive Cards */}
-          <div className="space-y-8">
+          <div className="space-y-4 sm:space-y-6 lg:space-y-8">
             {workTypes.map((work, index) => {
             const isSelected = selectedWork === index;
             return <Card key={index} className={`group relative overflow-hidden border-2 transition-all duration-300 cursor-pointer hover-scale
                     ${isSelected ? 'border-primary/20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 shadow-xl' : 'border-primary/10 bg-white hover:border-primary/30 hover:shadow-lg'}`} onClick={() => setSelectedWork(isSelected ? null : index)}>
                   
-                  <CardContent className="p-6 md:p-8 relative z-10">
+                  <CardContent className="p-4 sm:p-6 md:p-8 relative z-10">
                     {/* Mobile Layout (< md) */}
-                    <div className="block md:hidden space-y-6">
+                    <div className="block md:hidden space-y-4 sm:space-y-6">
                       {/* Mobile Header */}
-                      <div className="space-y-2">
-                        <h3 className="text-xl font-black text-foreground tracking-tight">
+                      <div className="space-y-1 sm:space-y-2">
+                        <h3 className="text-lg sm:text-xl font-black text-foreground tracking-tight">
                           {work.type.toUpperCase()}
                         </h3>
-                        <p className="text-sm font-medium text-muted-foreground tracking-wide uppercase">
+                        <p className="text-xs sm:text-sm font-medium text-muted-foreground tracking-wide uppercase">
                           {work.subtitle}
                         </p>
                       </div>
                       
                       {/* Mobile Description */}
-                      <p className="text-muted-foreground leading-relaxed">
+                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                         {work.explanation}
                       </p>
                       
                       {/* Mobile Work Breakdown */}
-                      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 border-2 border-primary/10">
-                        <Activity className="h-6 w-6 text-primary mx-auto mb-2" />
-                        <div className="text-lg font-black text-slate-900 text-center mb-1">{work.breakdown}</div>
+                      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-3 sm:p-4 border-2 border-primary/10">
+                        <Activity className="h-5 w-5 sm:h-6 sm:w-6 text-primary mx-auto mb-2" />
+                        <div className="text-base sm:text-lg font-black text-slate-900 text-center mb-1">{work.breakdown}</div>
                         <div className="text-xs text-gray-600 text-center">Work Distribution</div>
                       </div>
                       
@@ -194,28 +194,28 @@ const NatureOfWork = () => {
                     </div>
 
                     {/* Desktop Layout (>= md) */}
-                    <div className="hidden md:grid grid-cols-12 gap-6 items-center">
+                    <div className="hidden md:grid grid-cols-12 gap-4 lg:gap-6 items-center">
                       {/* Title & Description */}
-                      <div className="col-span-6 space-y-3">
+                      <div className="col-span-6 space-y-2 sm:space-y-3">
                         <div>
-                          <h3 className="text-2xl font-black text-foreground tracking-tight mb-1">
+                          <h3 className="text-xl lg:text-2xl font-black text-foreground tracking-tight mb-1">
                             {work.type.toUpperCase()}
                           </h3>
-                          <p className="text-sm font-medium text-muted-foreground tracking-wide uppercase">
+                          <p className="text-xs sm:text-sm font-medium text-muted-foreground tracking-wide uppercase">
                             {work.subtitle}
                           </p>
                         </div>
-                        <p className="text-muted-foreground leading-relaxed">
+                        <p className="text-sm lg:text-base text-muted-foreground leading-relaxed">
                           {work.explanation}
                         </p>
                       </div>
                       
                       {/* Work Breakdown */}
                       <div className="col-span-5 flex justify-center">
-                        <div className="text-center bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border-2 border-primary/10 min-w-[280px]">
+                        <div className="text-center bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 lg:p-6 border-2 border-primary/10 min-w-[200px] lg:min-w-[280px]">
                           
-                          <div className="text-2xl font-black text-slate-900 mb-2">{work.breakdown}</div>
-                          <div className="text-sm text-gray-600 font-medium">Work Distribution</div>
+                          <div className="text-xl lg:text-2xl font-black text-slate-900 mb-2">{work.breakdown}</div>
+                          <div className="text-xs sm:text-sm text-gray-600 font-medium">Work Distribution</div>
                         </div>
                       </div>
                       
