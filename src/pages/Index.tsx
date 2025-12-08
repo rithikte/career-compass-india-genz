@@ -16,6 +16,7 @@ import { SkillGap } from '../components/SkillGap';
 
 import { CertificationStack } from '../components/CertificationStack';
 import NatureOfWork from '../components/NatureOfWork';
+import JobRealityExpectation from '../components/JobRealityExpectation';
 import JobLifestyle from '../components/JobLifestyle';
 import { PostCertBenefits } from '../components/PostCertBenefits';
 import { GovtSupport } from '../components/GovtSupport';
@@ -34,6 +35,7 @@ const Index = () => {
     { id: 'home', title: 'Home', component: HomePage },
     { id: 'btech-mechanical', title: 'Degree B.Tech Mechanical', component: BTechMechanical },
     { id: 'nature-of-work', title: 'Nature of Work', component: NatureOfWork },
+    { id: 'job-reality', title: 'Job Reality vs Expectation', component: JobRealityExpectation },
     { id: 'job-lifestyle', title: 'Job Lifestyle & Stability', component: JobLifestyle },
     { id: 'career-outcomes', title: 'Career Outcomes', component: CareerOutcomes },
     { id: 'career-insights', title: 'Career Insights', component: CareerInsights },
