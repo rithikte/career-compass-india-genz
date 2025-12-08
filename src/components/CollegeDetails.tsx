@@ -82,20 +82,20 @@ const CollegeDetails = () => {
   ];
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 sm:space-y-8">
       {/* Hero Section */}
-      <div className="text-center bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-lg">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
+      <div className="text-center bg-gradient-to-r from-blue-50 to-indigo-50 p-4 sm:p-6 lg:p-8 rounded-lg">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">
           B.Tech Mechanical Engineering
         </h1>
-        <p className="text-xl text-gray-600 mb-6">
+        <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-4 sm:mb-6">
           Complete College Guide for Students & Parents
         </p>
-        <div className="bg-yellow-100 border-l-4 border-yellow-500 p-4 max-w-4xl mx-auto">
-          <p className="text-yellow-800 font-medium">
+        <div className="bg-yellow-100 border-l-4 border-yellow-500 p-3 sm:p-4 max-w-4xl mx-auto">
+          <p className="text-sm sm:text-base text-yellow-800 font-medium">
             🎯 Certifications will be Auto Updated based on Market Trends
           </p>
-          <p className="text-yellow-700 text-sm mt-1">
+          <p className="text-xs sm:text-sm text-yellow-700 mt-1">
             We partner with Coursera, Udemy & other platforms to provide latest industry certifications
           </p>
         </div>
@@ -110,16 +110,16 @@ const CollegeDetails = () => {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {facultyData.map((faculty, index) => (
-              <div key={index} className="bg-white border rounded-lg p-4 shadow-sm">
+              <div key={index} className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm">
                 <img 
                   src={faculty.image} 
                   alt={faculty.name}
-                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+                  className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full mx-auto mb-3 sm:mb-4 object-cover"
                 />
-                <h3 className="font-semibold text-center mb-2">{faculty.name}</h3>
-                <div className="space-y-2 text-sm">
+                <h3 className="font-semibold text-center mb-2 text-sm sm:text-base">{faculty.name}</h3>
+                <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm">
                   <p><span className="font-medium">Experience:</span> {faculty.experience}</p>
                   <p><span className="font-medium">Subject:</span> {faculty.subject}</p>
                   <p><span className="font-medium">Qualification:</span> {faculty.qualification}</p>
@@ -132,44 +132,44 @@ const CollegeDetails = () => {
       </Card>
 
       {/* Basic College Information */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
         <Card>
-          <CardContent className="p-6">
-            <div className="flex items-center gap-2 mb-2">
-              <Building className="h-5 w-5 text-blue-500" />
-              <h3 className="font-semibold">College Code</h3>
+          <CardContent className="p-3 sm:p-4 lg:p-6">
+            <div className="flex items-center gap-2 mb-1 sm:mb-2">
+              <Building className="h-4 w-4 sm:h-5 sm:w-5 text-blue-500" />
+              <h3 className="font-semibold text-xs sm:text-sm lg:text-base">College Code</h3>
             </div>
-            <p className="text-2xl font-bold text-blue-600">MECH2024</p>
+            <p className="text-lg sm:text-xl lg:text-2xl font-bold text-blue-600">MECH2024</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardContent className="p-6">
-            <div className="flex items-center gap-2 mb-2">
-              <TrendingUp className="h-5 w-5 text-green-500" />
-              <h3 className="font-semibold">Attendance Required</h3>
+          <CardContent className="p-3 sm:p-4 lg:p-6">
+            <div className="flex items-center gap-2 mb-1 sm:mb-2">
+              <TrendingUp className="h-4 w-4 sm:h-5 sm:w-5 text-green-500" />
+              <h3 className="font-semibold text-xs sm:text-sm lg:text-base">Attendance Required</h3>
             </div>
-            <p className="text-2xl font-bold text-green-600">75%</p>
+            <p className="text-lg sm:text-xl lg:text-2xl font-bold text-green-600">75%</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardContent className="p-6">
-            <div className="flex items-center gap-2 mb-2">
-              <Users className="h-5 w-5 text-purple-500" />
-              <h3 className="font-semibold">Faculty Ratio</h3>
+          <CardContent className="p-3 sm:p-4 lg:p-6">
+            <div className="flex items-center gap-2 mb-1 sm:mb-2">
+              <Users className="h-4 w-4 sm:h-5 sm:w-5 text-purple-500" />
+              <h3 className="font-semibold text-xs sm:text-sm lg:text-base">Faculty Ratio</h3>
             </div>
-            <p className="text-2xl font-bold text-purple-600">1:25</p>
+            <p className="text-lg sm:text-xl lg:text-2xl font-bold text-purple-600">1:25</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardContent className="p-6">
-            <div className="flex items-center gap-2 mb-2">
-              <Award className="h-5 w-5 text-orange-500" />
-              <h3 className="font-semibold">NAAC Grade</h3>
+          <CardContent className="p-3 sm:p-4 lg:p-6">
+            <div className="flex items-center gap-2 mb-1 sm:mb-2">
+              <Award className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500" />
+              <h3 className="font-semibold text-xs sm:text-sm lg:text-base">NAAC Grade</h3>
             </div>
-            <p className="text-2xl font-bold text-orange-600">A+</p>
+            <p className="text-lg sm:text-xl lg:text-2xl font-bold text-orange-600">A+</p>
           </CardContent>
         </Card>
       </div>
@@ -183,21 +183,21 @@ const CollegeDetails = () => {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center p-4 bg-blue-50 rounded-lg">
-              <Globe className="h-12 w-12 text-blue-500 mx-auto mb-2" />
-              <h3 className="font-semibold mb-2">MS Abroad</h3>
-              <p className="text-sm text-gray-600">Valid for US, UK, Canada, Australia universities</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+            <div className="text-center p-3 sm:p-4 bg-blue-50 rounded-lg">
+              <Globe className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-blue-500 mx-auto mb-2" />
+              <h3 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">MS Abroad</h3>
+              <p className="text-xs sm:text-sm text-gray-600">Valid for US, UK, Canada, Australia universities</p>
             </div>
-            <div className="text-center p-4 bg-green-50 rounded-lg">
-              <Shield className="h-12 w-12 text-green-500 mx-auto mb-2" />
-              <h3 className="font-semibold mb-2">UPSC & Govt Jobs</h3>
-              <p className="text-sm text-gray-600">Eligible for IAS, IES, PSU examinations</p>
+            <div className="text-center p-3 sm:p-4 bg-green-50 rounded-lg">
+              <Shield className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-green-500 mx-auto mb-2" />
+              <h3 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">UPSC & Govt Jobs</h3>
+              <p className="text-xs sm:text-sm text-gray-600">Eligible for IAS, IES, PSU examinations</p>
             </div>
-            <div className="text-center p-4 bg-purple-50 rounded-lg">
-              <BookOpen className="h-12 w-12 text-purple-500 mx-auto mb-2" />
-              <h3 className="font-semibold mb-2">Higher Studies</h3>
-              <p className="text-sm text-gray-600">M.Tech, MBA, research programs</p>
+            <div className="text-center p-3 sm:p-4 bg-purple-50 rounded-lg sm:col-span-2 md:col-span-1">
+              <BookOpen className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-purple-500 mx-auto mb-2" />
+              <h3 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Higher Studies</h3>
+              <p className="text-xs sm:text-sm text-gray-600">M.Tech, MBA, research programs</p>
             </div>
           </div>
         </CardContent>

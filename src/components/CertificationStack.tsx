@@ -152,12 +152,12 @@ const universalCertifications = [{
   whenToPursue: '2nd Year (Sem 4 end / summer break) – before entering 3rd year specialization'
 }];
 export const CertificationStack = () => {
-  return <div className="space-y-8">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-slate-900 mb-4">
+  return <div className="space-y-6 sm:space-y-8">
+      <div className="text-center mb-8 sm:mb-12 px-4">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-3 sm:mb-4">
           Certification Stack Roadmap
         </h2>
-        <p className="text-xl text-gray-600">
+        <p className="text-base sm:text-lg lg:text-xl text-gray-600">
           Your path from 0% to 100% job readiness
         </p>
         <div className="flex flex-wrap justify-center gap-2 mt-4">
@@ -168,18 +168,18 @@ export const CertificationStack = () => {
       </div>
 
       {/* Critical Reality Check Section */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-red-50 via-orange-50 to-red-50 rounded-xl shadow-xl p-6 sm:p-8 mb-8 border-2 border-red-200">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-red-100/30 rounded-full -translate-y-16 translate-x-16"></div>
-        <div className="absolute bottom-0 left-0 w-24 h-24 bg-orange-100/30 rounded-full translate-y-12 -translate-x-12"></div>
+      <div className="relative overflow-hidden bg-gradient-to-br from-red-50 via-orange-50 to-red-50 rounded-xl shadow-xl p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8 border-2 border-red-200">
+        <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-red-100/30 rounded-full -translate-y-12 sm:-translate-y-16 translate-x-12 sm:translate-x-16"></div>
+        <div className="absolute bottom-0 left-0 w-16 sm:w-24 h-16 sm:h-24 bg-orange-100/30 rounded-full translate-y-8 sm:translate-y-12 -translate-x-8 sm:-translate-x-12"></div>
         <div className="relative flex items-start">
           <div className="flex-1">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent mb-3 sm:mb-4">
               Critical Reality Check
             </h3>
-            <div className="space-y-3 text-base text-slate-800 leading-relaxed">
-              <p className="flex items-start bg-white/60 backdrop-blur-sm rounded-lg p-4 shadow-sm border border-red-100">
-                <span className="text-red-600 font-bold mr-2 text-xl">•</span>
-                <span>
+            <div className="space-y-2 sm:space-y-3 text-sm sm:text-base text-slate-800 leading-relaxed">
+              <p className="flex items-start bg-white/60 backdrop-blur-sm rounded-lg p-3 sm:p-4 shadow-sm border border-red-100">
+                <span className="text-red-600 font-bold mr-2 text-lg sm:text-xl">•</span>
+                <span className="text-sm sm:text-base">
                   In B.Tech Mechanical Engineering, you learn only 38–45% basics — not enough for aviation jobs without extra certifications and projects.
                 </span>
               </p>
