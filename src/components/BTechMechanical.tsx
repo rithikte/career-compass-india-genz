@@ -23,30 +23,26 @@ export const BTechMechanical = () => {
 
       {/* Focus to Get Into Aviation Industry */}
       <Card className="border-2 border-primary/20">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-3 text-2xl">
-            
+        <CardHeader className="p-4 sm:p-6">
+          <CardTitle className="flex items-center gap-2 sm:gap-3 text-lg sm:text-xl md:text-2xl">
             Focus to Get Into Aviation Industry
           </CardTitle>
-          <CardDescription className="text-lg font-semibold">
+          <CardDescription className="text-sm sm:text-base md:text-lg font-semibold">
             Essential Math & Physics foundation for aviation NVH careers
           </CardDescription>
         </CardHeader>
-        <CardContent className="p-6">
+        <CardContent className="p-3 sm:p-4 md:p-6">
           {/* Essential Math & Physics Foundation Table */}
           <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm mb-6">
             <div className="bg-gradient-to-r from-primary to-secondary text-white p-3 sm:p-4">
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 font-bold text-sm sm:text-base md:text-lg">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 font-bold">
                 <div className="flex items-center gap-2 mb-2 sm:mb-0">
-                  
                   <span className="text-xs sm:text-sm md:text-base">Category</span>
                 </div>
                 <div className="flex items-center gap-2 mb-2 sm:mb-0">
-                  
                   <span className="text-xs sm:text-sm md:text-base">Most Important Topics</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  
                   <span className="text-xs sm:text-sm md:text-base">Usage in Aviation NVH Careers</span>
                 </div>
               </div>
@@ -54,11 +50,10 @@ export const BTechMechanical = () => {
             
             <div className="divide-y divide-gray-200">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-gray-50">
-                <div className="font-bold text-blue-600 text-base sm:text-lg flex items-center gap-2 mb-2 sm:mb-0">
-                  
+                <div className="font-bold text-blue-600 text-sm sm:text-base md:text-lg flex items-center gap-2 mb-2 sm:mb-0">
                   <span>Math</span>
                 </div>
-                <div className="text-gray-700 text-sm sm:text-base">
+                <div className="text-gray-700 text-xs sm:text-sm md:text-base">
                   <div className="space-y-1 rounded-md">
                     <div>• Differential Equations</div>
                     <div>• Fourier/Laplace</div>
@@ -66,7 +61,7 @@ export const BTechMechanical = () => {
                     <div>• Calculus</div>
                   </div>
                 </div>
-                <div className="text-gray-700 text-sm sm:text-base">
+                <div className="text-gray-700 text-xs sm:text-sm md:text-base">
                   <div className="space-y-1 rounded-md">
                     <div>• Vibration modeling</div>
                     <div>• Signal filtering</div>
@@ -77,11 +72,10 @@ export const BTechMechanical = () => {
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-gray-50">
-                <div className="font-bold text-green-600 text-base sm:text-lg flex items-center gap-2 mb-2 sm:mb-0">
-                  
+                <div className="font-bold text-green-600 text-sm sm:text-base md:text-lg flex items-center gap-2 mb-2 sm:mb-0">
                   <span>Physics</span>
                 </div>
-                <div className="text-gray-700 text-sm sm:text-base">
+                <div className="text-gray-700 text-xs sm:text-sm md:text-base">
                   <div className="space-y-1 rounded-md">
                     <div>• Vibrations & Oscillations</div>
                     <div>• Kinematics of Motion</div>
@@ -89,7 +83,7 @@ export const BTechMechanical = () => {
                     <div>• Thermo-acoustics</div>
                   </div>
                 </div>
-                <div className="text-gray-700 text-sm sm:text-base">
+                <div className="text-gray-700 text-xs sm:text-sm md:text-base">
                   <div className="space-y-1 rounded-md">
                     <div>• Structural vibration</div>
                     <div>• Fatigue testing</div>
@@ -100,33 +94,30 @@ export const BTechMechanical = () => {
               </div>
             </div>
           </div>
-
-          {/* Key Insight */}
-          
         </CardContent>
       </Card>
 
       {/* Engineering Subjects Intensity Across 4 Years */}
       <Card className="border-2 border-primary/20">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-3 text-2xl">
-            
+        <CardHeader className="p-4 sm:p-6">
+          <CardTitle className="flex items-center gap-2 sm:gap-3 text-lg sm:text-xl md:text-2xl">
             Engineering Subjects Intensity Across 4 Years
           </CardTitle>
-          <CardDescription className="text-lg font-semibold">
+          <CardDescription className="text-sm sm:text-base md:text-lg font-semibold">
             Detailed breakdown of Math & Physics topics by semester and their real-world applications
           </CardDescription>
         </CardHeader>
-        <CardContent className="p-6">
+        <CardContent className="p-3 sm:p-4 md:p-6">
           {/* Math Topics Table */}
-          <div className="mb-8">
-            <div className="flex items-center gap-3 mb-4">
-              
-              <h3 className="text-xl font-bold text-gray-900">Math Topics</h3>
+          <div className="mb-6 sm:mb-8">
+            <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+              <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900">Math Topics</h3>
             </div>
-            <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
-              <div className="bg-gradient-to-r from-indigo-50 to-indigo-100 text-indigo-700 p-4 shadow-sm">
-                <div className="grid grid-cols-4 gap-4 font-bold text-sm">
+            
+            {/* Desktop Table */}
+            <div className="hidden sm:block overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
+              <div className="bg-gradient-to-r from-indigo-50 to-indigo-100 text-indigo-700 p-3 sm:p-4 shadow-sm">
+                <div className="grid grid-cols-4 gap-2 sm:gap-4 font-bold text-xs sm:text-sm">
                   <div>Math Topic</div>
                   <div>Sems Covered</div>
                   <div>Intensity Peak (%)</div>
@@ -135,60 +126,82 @@ export const BTechMechanical = () => {
               </div>
               
               <div className="divide-y divide-gray-200">
-                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
-                  <div className="font-semibold text-gray-900">Calculus (Diff + Int)</div>
-                  <div className="text-gray-700 rounded-md">Sem 1–4</div>
-                  <div className="font-bold text-blue-600">90%</div>
-                  <div className="text-gray-700 text-sm rounded-md">Thermo, Fluids, Vibrations, HMT</div>
+                <div className="grid grid-cols-4 gap-2 sm:gap-4 p-3 sm:p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base">Calculus (Diff + Int)</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Sem 1–4</div>
+                  <div className="font-bold text-blue-600 text-xs sm:text-sm">90%</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Thermo, Fluids, Vibrations, HMT</div>
                 </div>
                 
-                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
-                  <div className="font-semibold text-gray-900">Differential Equations</div>
-                  <div className="text-gray-700 rounded-md">Sem 2–5</div>
-                  <div className="font-bold text-green-600">85%</div>
-                  <div className="text-gray-700 text-sm rounded-md">Vibration, Dynamics, FEM</div>
+                <div className="grid grid-cols-4 gap-2 sm:gap-4 p-3 sm:p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base">Differential Equations</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Sem 2–5</div>
+                  <div className="font-bold text-green-600 text-xs sm:text-sm">85%</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Vibration, Dynamics, FEM</div>
                 </div>
                 
-                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
-                  <div className="font-semibold text-gray-900">Linear Algebra / Matrices</div>
-                  <div className="text-gray-700 rounded-md">Sem 1, 3, 6</div>
-                  <div className="font-bold text-purple-600">75%</div>
-                  <div className="text-gray-700 text-sm rounded-md">FEA, Design, System Modeling</div>
+                <div className="grid grid-cols-4 gap-2 sm:gap-4 p-3 sm:p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base">Linear Algebra / Matrices</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Sem 1, 3, 6</div>
+                  <div className="font-bold text-purple-600 text-xs sm:text-sm">75%</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">FEA, Design, System Modeling</div>
                 </div>
                 
-                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
-                  <div className="font-semibold text-gray-900">Fourier/Laplace</div>
-                  <div className="text-gray-700 rounded-md">Sem 4–7</div>
-                  <div className="font-bold text-orange-600">70%</div>
-                  <div className="text-gray-700 text-sm rounded-md">Signal systems, control</div>
+                <div className="grid grid-cols-4 gap-2 sm:gap-4 p-3 sm:p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base">Fourier/Laplace</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Sem 4–7</div>
+                  <div className="font-bold text-orange-600 text-xs sm:text-sm">70%</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Signal systems, control</div>
                 </div>
                 
-                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
-                  <div className="font-semibold text-gray-900">Optimization / OR</div>
-                  <div className="text-gray-700 rounded-md">Sem 5–6</div>
-                  <div className="font-bold text-yellow-600">60%</div>
-                  <div className="text-gray-700 text-sm rounded-md">Manufacturing, Project planning</div>
+                <div className="grid grid-cols-4 gap-2 sm:gap-4 p-3 sm:p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base">Optimization / OR</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Sem 5–6</div>
+                  <div className="font-bold text-yellow-600 text-xs sm:text-sm">60%</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Manufacturing, Project planning</div>
                 </div>
                 
-                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
-                  <div className="font-semibold text-gray-900">Probability & Stats</div>
-                  <div className="text-gray-700 rounded-md">Sem 5, 6</div>
-                  <div className="font-bold text-red-600">50%</div>
-                  <div className="text-gray-700 text-sm rounded-md">Quality control, failure analysis</div>
+                <div className="grid grid-cols-4 gap-2 sm:gap-4 p-3 sm:p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base">Probability & Stats</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Sem 5, 6</div>
+                  <div className="font-bold text-red-600 text-xs sm:text-sm">50%</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Quality control, failure analysis</div>
                 </div>
               </div>
+            </div>
+
+            {/* Mobile Cards */}
+            <div className="sm:hidden space-y-3">
+              {[
+                { topic: "Calculus (Diff + Int)", sems: "Sem 1–4", intensity: "90%", color: "text-blue-600", usage: "Thermo, Fluids, Vibrations, HMT" },
+                { topic: "Differential Equations", sems: "Sem 2–5", intensity: "85%", color: "text-green-600", usage: "Vibration, Dynamics, FEM" },
+                { topic: "Linear Algebra / Matrices", sems: "Sem 1, 3, 6", intensity: "75%", color: "text-purple-600", usage: "FEA, Design, System Modeling" },
+                { topic: "Fourier/Laplace", sems: "Sem 4–7", intensity: "70%", color: "text-orange-600", usage: "Signal systems, control" },
+                { topic: "Optimization / OR", sems: "Sem 5–6", intensity: "60%", color: "text-yellow-600", usage: "Manufacturing, Project planning" },
+                { topic: "Probability & Stats", sems: "Sem 5, 6", intensity: "50%", color: "text-red-600", usage: "Quality control, failure analysis" },
+              ].map((item, idx) => (
+                <div key={idx} className="bg-gradient-to-r from-indigo-50 to-white border border-indigo-100 rounded-lg p-3 space-y-2">
+                  <div className="flex justify-between items-start">
+                    <span className="font-semibold text-gray-900 text-sm">{item.topic}</span>
+                    <span className={`font-bold ${item.color} text-sm`}>{item.intensity}</span>
+                  </div>
+                  <div className="text-xs text-gray-600">{item.sems}</div>
+                  <div className="text-xs text-gray-700">{item.usage}</div>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Physics Topics Table */}
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              
-              <h3 className="text-xl font-bold text-gray-900">Physics Topics</h3>
+          <div className="mb-6 sm:mb-8">
+            <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+              <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900">Physics Topics</h3>
             </div>
-            <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
-              <div className="bg-gradient-to-r from-green-50 to-green-100 text-green-700 p-4 shadow-sm">
-                <div className="grid grid-cols-4 gap-4 font-bold text-sm">
+            
+            {/* Desktop Table */}
+            <div className="hidden sm:block overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
+              <div className="bg-gradient-to-r from-green-50 to-green-100 text-green-700 p-3 sm:p-4 shadow-sm">
+                <div className="grid grid-cols-4 gap-2 sm:gap-4 font-bold text-xs sm:text-sm">
                   <div>Physics Topic</div>
                   <div>Sems Covered</div>
                   <div>Intensity Peak (%)</div>
@@ -197,60 +210,82 @@ export const BTechMechanical = () => {
               </div>
               
               <div className="divide-y divide-gray-200">
-                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
-                  <div className="font-semibold text-gray-900">Kinematics & Laws of Motion</div>
-                  <div className="text-gray-700">Sem 1–3</div>
-                  <div className="font-bold text-purple-600">70%</div>
-                  <div className="text-gray-700 text-sm">Dynamics, Mechanisms</div>
+                <div className="grid grid-cols-4 gap-2 sm:gap-4 p-3 sm:p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base">Kinematics & Laws of Motion</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Sem 1–3</div>
+                  <div className="font-bold text-purple-600 text-xs sm:text-sm">70%</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Dynamics, Mechanisms</div>
                 </div>
                 
-                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
-                  <div className="font-semibold text-gray-900">Thermodynamics</div>
-                  <div className="text-gray-700">Sem 2–6</div>
-                  <div className="font-bold text-red-600">90%</div>
-                  <div className="text-gray-700 text-sm">Engines, Refrigeration, HMT</div>
+                <div className="grid grid-cols-4 gap-2 sm:gap-4 p-3 sm:p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base">Thermodynamics</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Sem 2–6</div>
+                  <div className="font-bold text-red-600 text-xs sm:text-sm">90%</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Engines, Refrigeration, HMT</div>
                 </div>
                 
-                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
-                  <div className="font-semibold text-gray-900">Fluid Mechanics</div>
-                  <div className="text-gray-700">Sem 3–5</div>
-                  <div className="font-bold text-blue-600">85%</div>
-                  <div className="text-gray-700 text-sm">Pumps, Pipes, Simulations</div>
+                <div className="grid grid-cols-4 gap-2 sm:gap-4 p-3 sm:p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base">Fluid Mechanics</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Sem 3–5</div>
+                  <div className="font-bold text-blue-600 text-xs sm:text-sm">85%</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Pumps, Pipes, Simulations</div>
                 </div>
                 
-                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
-                  <div className="font-semibold text-gray-900">Material Properties</div>
-                  <div className="text-gray-700">Sem 2–4</div>
-                  <div className="font-bold text-orange-600">70%</div>
-                  <div className="text-gray-700 text-sm">Strength of Materials</div>
+                <div className="grid grid-cols-4 gap-2 sm:gap-4 p-3 sm:p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base">Material Properties</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Sem 2–4</div>
+                  <div className="font-bold text-orange-600 text-xs sm:text-sm">70%</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Strength of Materials</div>
                 </div>
                 
-                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
-                  <div className="font-semibold text-gray-900">Vibrations & Oscillations</div>
-                  <div className="text-gray-700">Sem 5–6</div>
-                  <div className="font-bold text-green-600">80%</div>
-                  <div className="text-gray-700 text-sm">Dynamics of Machines</div>
+                <div className="grid grid-cols-4 gap-2 sm:gap-4 p-3 sm:p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base">Vibrations & Oscillations</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Sem 5–6</div>
+                  <div className="font-bold text-green-600 text-xs sm:text-sm">80%</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Dynamics of Machines</div>
                 </div>
                 
-                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
-                  <div className="font-semibold text-gray-900">Heat Transfer</div>
-                  <div className="text-gray-700">Sem 4–6</div>
-                  <div className="font-bold text-red-600">90%</div>
-                  <div className="text-gray-700 text-sm">Design of heat exchangers, thermal systems</div>
+                <div className="grid grid-cols-4 gap-2 sm:gap-4 p-3 sm:p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base">Heat Transfer</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Sem 4–6</div>
+                  <div className="font-bold text-red-600 text-xs sm:text-sm">90%</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Design of heat exchangers, thermal systems</div>
                 </div>
               </div>
+            </div>
+
+            {/* Mobile Cards */}
+            <div className="sm:hidden space-y-3">
+              {[
+                { topic: "Kinematics & Laws of Motion", sems: "Sem 1–3", intensity: "70%", color: "text-purple-600", usage: "Dynamics, Mechanisms" },
+                { topic: "Thermodynamics", sems: "Sem 2–6", intensity: "90%", color: "text-red-600", usage: "Engines, Refrigeration, HMT" },
+                { topic: "Fluid Mechanics", sems: "Sem 3–5", intensity: "85%", color: "text-blue-600", usage: "Pumps, Pipes, Simulations" },
+                { topic: "Material Properties", sems: "Sem 2–4", intensity: "70%", color: "text-orange-600", usage: "Strength of Materials" },
+                { topic: "Vibrations & Oscillations", sems: "Sem 5–6", intensity: "80%", color: "text-green-600", usage: "Dynamics of Machines" },
+                { topic: "Heat Transfer", sems: "Sem 4–6", intensity: "90%", color: "text-red-600", usage: "Design of heat exchangers, thermal systems" },
+              ].map((item, idx) => (
+                <div key={idx} className="bg-gradient-to-r from-green-50 to-white border border-green-100 rounded-lg p-3 space-y-2">
+                  <div className="flex justify-between items-start">
+                    <span className="font-semibold text-gray-900 text-sm">{item.topic}</span>
+                    <span className={`font-bold ${item.color} text-sm`}>{item.intensity}</span>
+                  </div>
+                  <div className="text-xs text-gray-600">{item.sems}</div>
+                  <div className="text-xs text-gray-700">{item.usage}</div>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Chemistry Topics Table */}
-          <div className="mt-8">
-            <div className="flex items-center gap-3 mb-4">
-              
-              <h3 className="text-xl font-bold text-gray-900">Chemistry Topics</h3>
+          <div>
+            <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+              <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900">Chemistry Topics</h3>
             </div>
-            <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
-              <div className="bg-gradient-to-r from-rose-50 to-rose-100 text-rose-700 p-4 shadow-sm">
-                <div className="grid grid-cols-4 gap-4 font-bold text-sm">
+            
+            {/* Desktop Table */}
+            <div className="hidden sm:block overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
+              <div className="bg-gradient-to-r from-rose-50 to-rose-100 text-rose-700 p-3 sm:p-4 shadow-sm">
+                <div className="grid grid-cols-4 gap-2 sm:gap-4 font-bold text-xs sm:text-sm">
                   <div>Chemistry Topic</div>
                   <div>Sems Covered</div>
                   <div>Intensity Peak (%)</div>
@@ -259,20 +294,37 @@ export const BTechMechanical = () => {
               </div>
               
               <div className="divide-y divide-gray-200">
-                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
-                  <div className="font-semibold text-gray-900">Thermodynamics (Chemistry)</div>
-                  <div className="text-gray-700">Sem 2–4</div>
-                  <div className="font-bold text-red-600">70%</div>
-                  <div className="text-gray-700 text-sm">Jet fuel combustion, energy efficiency, material heat resistance</div>
+                <div className="grid grid-cols-4 gap-2 sm:gap-4 p-3 sm:p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base">Thermodynamics (Chemistry)</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Sem 2–4</div>
+                  <div className="font-bold text-red-600 text-xs sm:text-sm">70%</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Jet fuel combustion, energy efficiency, material heat resistance</div>
                 </div>
                 
-                <div className="grid grid-cols-4 gap-4 p-4 hover:bg-gray-50">
-                  <div className="font-semibold text-gray-900">Environmental Chemistry</div>
-                  <div className="text-gray-700">Sem 5–7</div>
-                  <div className="font-bold text-green-600">60%</div>
-                  <div className="text-gray-700 text-sm">Sustainable aviation fuels, emission control, hydrogen propulsion research</div>
+                <div className="grid grid-cols-4 gap-2 sm:gap-4 p-3 sm:p-4 hover:bg-gray-50">
+                  <div className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base">Environmental Chemistry</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Sem 5–7</div>
+                  <div className="font-bold text-green-600 text-xs sm:text-sm">60%</div>
+                  <div className="text-gray-700 text-xs sm:text-sm">Sustainable aviation fuels, emission control, hydrogen propulsion research</div>
                 </div>
               </div>
+            </div>
+
+            {/* Mobile Cards */}
+            <div className="sm:hidden space-y-3">
+              {[
+                { topic: "Thermodynamics (Chemistry)", sems: "Sem 2–4", intensity: "70%", color: "text-red-600", usage: "Jet fuel combustion, energy efficiency, material heat resistance" },
+                { topic: "Environmental Chemistry", sems: "Sem 5–7", intensity: "60%", color: "text-green-600", usage: "Sustainable aviation fuels, emission control, hydrogen propulsion research" },
+              ].map((item, idx) => (
+                <div key={idx} className="bg-gradient-to-r from-rose-50 to-white border border-rose-100 rounded-lg p-3 space-y-2">
+                  <div className="flex justify-between items-start">
+                    <span className="font-semibold text-gray-900 text-sm">{item.topic}</span>
+                    <span className={`font-bold ${item.color} text-sm`}>{item.intensity}</span>
+                  </div>
+                  <div className="text-xs text-gray-600">{item.sems}</div>
+                  <div className="text-xs text-gray-700">{item.usage}</div>
+                </div>
+              ))}
             </div>
           </div>
         </CardContent>
@@ -292,16 +344,15 @@ export const BTechMechanical = () => {
 
       {/* What You'll Study in College - B.Tech Mechanical (Aviation Industry Focus) */}
       <Card className="border-2 border-primary/20">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-3 text-2xl">
-            
+        <CardHeader className="p-4 sm:p-6">
+          <CardTitle className="flex items-center gap-2 sm:gap-3 text-lg sm:text-xl md:text-2xl leading-tight">
             What You'll Study in College – B.Tech Mechanical (Aviation Industry Focus)
           </CardTitle>
-          <CardDescription className="text-lg font-semibold">
+          <CardDescription className="text-sm sm:text-base md:text-lg font-semibold">
             Year-by-year curriculum breakdown with real-world aviation applications
           </CardDescription>
         </CardHeader>
-        <CardContent className="p-4 sm:p-6">
+        <CardContent className="p-3 sm:p-4 md:p-6">
           {/* Mobile: Individual Cards, Desktop: Enhanced Table */}
           
           {/* Desktop & Tablet View - Hidden on Mobile */}
@@ -541,36 +592,33 @@ export const BTechMechanical = () => {
 
       {/* What You'll Actually Learn */}
       <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-3 text-2xl">
-            
+        <CardHeader className="p-4 sm:p-6">
+          <CardTitle className="flex items-center gap-2 sm:gap-3 text-lg sm:text-xl md:text-2xl">
             What You'll Actually Master in 4 Years
           </CardTitle>
-          <CardDescription className="text-lg font-semibold">
+          <CardDescription className="text-sm sm:text-base md:text-lg font-semibold">
             Real skills that aerospace companies need - not just theory
           </CardDescription>
         </CardHeader>
-        <CardContent>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Core Sciences</h3>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  <span><strong>Advanced Physics:</strong> Wave mechanics, fluid dynamics, thermodynamics for real aircraft systems</span>
+        <CardContent className="p-3 sm:p-4 md:p-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+            <div className="space-y-3 sm:space-y-4">
+              <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-3 sm:mb-4">Core Sciences</h3>
+              <div className="space-y-2 sm:space-y-3">
+                <div className="flex items-start gap-2 sm:gap-3 p-2 sm:p-3 bg-blue-50 rounded-lg">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-xs sm:text-sm md:text-base"><strong>Advanced Physics:</strong> Wave mechanics, fluid dynamics, thermodynamics for real aircraft systems</span>
                 </div>
-                <div className="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span><strong>Engineering Mathematics:</strong> Complex analysis, differential equations that solve real flight problems</span>
+                <div className="flex items-start gap-2 sm:gap-3 p-2 sm:p-3 bg-green-50 rounded-lg">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-xs sm:text-sm md:text-base"><strong>Engineering Mathematics:</strong> Complex analysis, differential equations that solve real flight problems</span>
                 </div>
-                <div className="flex items-center gap-3 p-3 bg-purple-50 rounded-lg">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                  <span><strong>Materials Science:</strong> How metals behave under extreme stress, heat, and vibration</span>
+                <div className="flex items-start gap-2 sm:gap-3 p-2 sm:p-3 bg-purple-50 rounded-lg">
+                  <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-xs sm:text-sm md:text-base"><strong>Materials Science:</strong> How metals behave under extreme stress, heat, and vibration</span>
                 </div>
               </div>
             </div>
-
-            
           </div>
         </CardContent>
       </Card>
@@ -631,19 +679,18 @@ export const BTechMechanical = () => {
 
       {/* Final Call to Action */}
       <Card className="bg-gradient-to-br from-primary via-primary to-secondary text-white border-0">
-        <CardContent className="p-8 text-center">
-          <div className="space-y-4">
-            
-            <h2 className="text-3xl font-bold mb-4">Your Decision Moment</h2>
-            <p className="text-xl mb-6 opacity-90">
+        <CardContent className="p-4 sm:p-6 md:p-8 text-center">
+          <div className="space-y-3 sm:space-y-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">Your Decision Moment</h2>
+            <p className="text-base sm:text-lg md:text-xl mb-4 sm:mb-6 opacity-90">
               This degree isn't about looking cool or following trends
             </p>
-            <div className="bg-white/20 rounded-lg p-6 text-center">
-              <p className="text-2xl font-bold">
+            <div className="bg-white/20 rounded-lg p-4 sm:p-6 text-center">
+              <p className="text-base sm:text-lg md:text-2xl font-bold leading-relaxed">
                 "Choose B.Tech Mechanical only if you're ready to EARN it through dedication, precision, and genuine passion for aerospace engineering."
               </p>
             </div>
-            <p className="text-lg opacity-80 mt-4">
+            <p className="text-sm sm:text-base md:text-lg opacity-80 mt-3 sm:mt-4">
               If you're still reading and feeling excited about the challenge → Continue exploring the career information below
             </p>
           </div>
