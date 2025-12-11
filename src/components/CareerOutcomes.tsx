@@ -224,45 +224,82 @@ export const CareerOutcomes = () => {
       </div>
 
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-        {careerData.map(career => <div key={career.role} className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col gap-2">
-            <div className="mb-3">
-              <h3 className="text-lg sm:text-xl font-bold text-slate-900 leading-tight">{career.role}</h3>
-              <p className="text-xs sm:text-sm text-gray-600 leading-tight">{career.duties}</p>
-            </div>
-            
-            {/* Detailed Career Levels Table */}
-            <div className="overflow-x-auto mb-3">
-              <table className="w-full text-xs sm:text-sm border-collapse">
-                <thead>
-                  <tr className="bg-gray-50 border-b border-gray-200">
-                    <th className="text-left p-2 font-semibold text-gray-700">Level</th>
-                    <th className="text-left p-2 font-semibold text-gray-700">Salary (LPA)</th>
-                    <th className="text-left p-2 font-semibold text-gray-700">Time</th>
-                    <th className="text-left p-2 font-semibold text-gray-700">% Reach</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {career.levels.map((lvl, idx) => <tr key={idx} className="border-b border-gray-100 hover:bg-gray-50">
-                      <td className="p-2">
-                        <div className="font-semibold text-gray-800">{lvl.level}</div>
-                        <div className="text-xs text-gray-600">{lvl.title}</div>
-                      </td>
-                      <td className="p-2 font-bold text-green-700">₹{lvl.salary}</td>
-                      <td className="p-2 text-gray-600">{lvl.time}</td>
-                      <td className="p-2">
-                        <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-semibold ${lvl.reach === '100%' ? 'bg-green-100 text-green-800' : lvl.reach === '65%' ? 'bg-blue-100 text-blue-800' : lvl.reach === '30%' ? 'bg-yellow-100 text-yellow-800' : 'bg-orange-100 text-orange-800'}`}>
-                          {lvl.reach}
-                        </span>
-                      </td>
-                    </tr>)}
-                </tbody>
-              </table>
+      {/* Swiss Design Grid - Clean, Minimal, Typography-focused */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-border">
+        {careerData.map((career, careerIdx) => (
+          <div 
+            key={career.role} 
+            className={`bg-card p-6 sm:p-8 lg:p-10 flex flex-col ${careerIdx < careerData.length - 1 ? 'border-b lg:border-b-0 lg:border-r border-border' : ''}`}
+          >
+            {/* Role Header - Strong Typography */}
+            <div className="mb-6 sm:mb-8">
+              <span className="text-xs font-medium tracking-[0.2em] uppercase text-muted-foreground mb-2 block">
+                Role {String(careerIdx + 1).padStart(2, '0')}
+              </span>
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground leading-tight tracking-tight">
+                {career.role}
+              </h3>
+              <p className="text-sm text-muted-foreground mt-2 font-medium">
+                {career.duties}
+              </p>
             </div>
 
-            {/* Quick Summary Chart */}
+            {/* Salary Range Visual - Swiss Minimal */}
+            <div className="mb-6 sm:mb-8 py-4 sm:py-6 border-y border-border">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
+                <div>
+                  <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary">₹{career.entry}L</span>
+                  <span className="block text-[10px] sm:text-xs font-semibold tracking-[0.15em] uppercase text-muted-foreground mt-1">Entry</span>
+                </div>
+                <div>
+                  <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground">₹{career.mid}L</span>
+                  <span className="block text-[10px] sm:text-xs font-semibold tracking-[0.15em] uppercase text-muted-foreground mt-1">Mid</span>
+                </div>
+                <div>
+                  <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-accent">₹{career.senior}L+</span>
+                  <span className="block text-[10px] sm:text-xs font-semibold tracking-[0.15em] uppercase text-muted-foreground mt-1">Senior</span>
+                </div>
+              </div>
+            </div>
             
-          </div>)}
+            {/* Career Progression - Clean List */}
+            <div className="flex-1 space-y-0">
+              {career.levels.map((lvl, idx) => (
+                <div 
+                  key={idx} 
+                  className={`py-3 sm:py-4 ${idx < career.levels.length - 1 ? 'border-b border-border/50' : ''}`}
+                >
+                  <div className="flex items-start justify-between gap-2 sm:gap-4">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 sm:gap-3 mb-1">
+                        <span className="text-[10px] sm:text-xs font-bold tracking-wider uppercase text-muted-foreground whitespace-nowrap">
+                          {lvl.level}
+                        </span>
+                        <div className="h-px flex-1 bg-border/50 hidden sm:block" />
+                        <span className={`text-[10px] sm:text-xs font-bold px-2 py-0.5 ${
+                          lvl.reach === '100%' 
+                            ? 'bg-success/10 text-success' 
+                            : lvl.reach === '65%' 
+                              ? 'bg-primary/10 text-primary' 
+                              : lvl.reach === '30%' 
+                                ? 'bg-warning/20 text-warning' 
+                                : 'bg-accent/10 text-accent'
+                        }`}>
+                          {lvl.reach}
+                        </span>
+                      </div>
+                      <p className="text-xs sm:text-sm text-muted-foreground truncate">{lvl.title}</p>
+                    </div>
+                    <div className="text-right flex-shrink-0">
+                      <span className="text-sm sm:text-base lg:text-lg font-bold text-success whitespace-nowrap">₹{lvl.salary}L</span>
+                      <span className="block text-[10px] sm:text-xs text-muted-foreground">{lvl.time}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
 
       {/* Data Sources Section */}
