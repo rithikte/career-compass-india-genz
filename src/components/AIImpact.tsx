@@ -287,20 +287,20 @@ export const AIImpact = () => {
       </div>
 
       {/* Job Safety Meter Section */}
-      <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-8">
-        <div className="text-center mb-8">
-          <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Job Safety Meter</h3>
-          <p className="text-gray-600 text-base sm:text-lg">Understanding AI risk and job security across aerospace roles (2025-2040)</p>
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 mb-8">
+        <div className="text-center mb-6 sm:mb-8">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-2">Job Safety Meter</h3>
+          <p className="text-gray-600 text-sm sm:text-base lg:text-lg px-2">Understanding AI risk and job security across aerospace roles (2025-2040)</p>
         </div>
 
         {/* Aerospace Engineer Safety Meter */}
-        <div className="mb-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border-2 border-blue-200">
-          <div className="flex items-center gap-3 mb-4">
-            
-            <h4 className="text-xl sm:text-2xl font-bold text-slate-900">Aerospace Engineer – Job Safety Meter</h4>
+        <div className="mb-6 sm:mb-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-4 sm:p-6 border-2 border-blue-200">
+          <div className="flex items-center gap-2 sm:gap-3 mb-4">
+            <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-900">Aerospace Engineer – Job Safety Meter</h4>
           </div>
           
-          <div className="overflow-x-auto mb-4">
+          {/* Desktop Table */}
+          <div className="hidden md:block overflow-x-auto mb-4">
             <table className="w-full border-collapse">
               <thead>
                 <tr className="border-b-2 border-blue-300">
@@ -329,21 +329,40 @@ export const AIImpact = () => {
             </table>
           </div>
           
-          <div className="bg-blue-600 text-white rounded-lg p-4 mt-4">
-            <p className="font-bold text-base sm:text-lg">
+          {/* Mobile Cards */}
+          <div className="md:hidden space-y-3 mb-4">
+            <div className="bg-white/70 rounded-lg p-3 border border-blue-200">
+              <div className="font-semibold text-slate-800 text-sm mb-1">AI/Automation Risk</div>
+              <div className="font-bold text-green-600 text-base mb-1">Low (30–35%)</div>
+              <div className="text-gray-700 text-xs">AI can help in design, but it can't replace human creativity or safety logic.</div>
+            </div>
+            <div className="bg-white/70 rounded-lg p-3 border border-blue-200">
+              <div className="font-semibold text-slate-800 text-sm mb-1">Human Role Importance</div>
+              <div className="font-bold text-blue-600 text-base mb-1">Very High</div>
+              <div className="text-gray-700 text-xs">Engineers still needed for testing, validation, and final design approval.</div>
+            </div>
+            <div className="bg-white/70 rounded-lg p-3 border border-blue-200">
+              <div className="font-semibold text-slate-800 text-sm mb-1">Safety Level (2025–2040)</div>
+              <div className="font-bold text-green-600 text-base mb-1">8.5/10 – Very Safe</div>
+              <div className="text-gray-700 text-xs">New aerospace, space, and defence projects keep long-term demand strong.</div>
+            </div>
+          </div>
+          
+          <div className="bg-blue-600 text-white rounded-lg p-3 sm:p-4 mt-4">
+            <p className="font-bold text-sm sm:text-base lg:text-lg">
               Parent Message: Aerospace jobs are safe. AI is a tool, not a threat. Human design judgment stays valuable.
             </p>
           </div>
         </div>
 
         {/* Avionics Engineer Safety Meter */}
-        <div className="mb-8 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl p-6 border-2 border-orange-200">
-          <div className="flex items-center gap-3 mb-4">
-            
-            <h4 className="text-xl sm:text-2xl font-bold text-slate-900">Avionics Engineer – Job Safety Meter</h4>
+        <div className="mb-6 sm:mb-8 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl p-4 sm:p-6 border-2 border-orange-200">
+          <div className="flex items-center gap-2 sm:gap-3 mb-4">
+            <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-900">Avionics Engineer – Job Safety Meter</h4>
           </div>
           
-          <div className="overflow-x-auto mb-4">
+          {/* Desktop Table */}
+          <div className="hidden md:block overflow-x-auto mb-4">
             <table className="w-full border-collapse">
               <thead>
                 <tr className="border-b-2 border-orange-300">
@@ -372,21 +391,40 @@ export const AIImpact = () => {
             </table>
           </div>
           
-          <div className="bg-orange-600 text-white rounded-lg p-4 mt-4">
-            <p className="font-bold text-base sm:text-lg">
+          {/* Mobile Cards */}
+          <div className="md:hidden space-y-3 mb-4">
+            <div className="bg-white/70 rounded-lg p-3 border border-orange-200">
+              <div className="font-semibold text-slate-800 text-sm mb-1">AI/Automation Risk</div>
+              <div className="font-bold text-orange-600 text-base mb-1">Medium (45–50%)</div>
+              <div className="text-gray-700 text-xs">AI will take over testing and monitoring, but skilled engineers can adapt easily.</div>
+            </div>
+            <div className="bg-white/70 rounded-lg p-3 border border-orange-200">
+              <div className="font-semibold text-slate-800 text-sm mb-1">Human Role Importance</div>
+              <div className="font-bold text-blue-600 text-base mb-1">High</div>
+              <div className="text-gray-700 text-xs">Still need humans for system design, troubleshooting, and safety integration.</div>
+            </div>
+            <div className="bg-white/70 rounded-lg p-3 border border-orange-200">
+              <div className="font-semibold text-slate-800 text-sm mb-1">Safety Level (2025–2040)</div>
+              <div className="font-bold text-green-600 text-base mb-1">7/10 – Stable but evolving</div>
+              <div className="text-gray-700 text-xs">Need to keep learning embedded AI, automation tools to stay future-ready.</div>
+            </div>
+          </div>
+          
+          <div className="bg-orange-600 text-white rounded-lg p-3 sm:p-4 mt-4">
+            <p className="font-bold text-sm sm:text-base lg:text-lg">
               Parent Message: Safe career with strong demand — but students must keep updating their tech skills.
             </p>
           </div>
         </div>
 
         {/* AME Safety Meter */}
-        <div className="mb-8 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border-2 border-green-200">
-          <div className="flex items-center gap-3 mb-4">
-            
-            <h4 className="text-xl sm:text-2xl font-bold text-slate-900">Aircraft Maintenance Engineer (AME) – Job Safety Meter</h4>
+        <div className="mb-6 sm:mb-8 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4 sm:p-6 border-2 border-green-200">
+          <div className="flex items-center gap-2 sm:gap-3 mb-4">
+            <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-900">Aircraft Maintenance Engineer (AME) – Job Safety Meter</h4>
           </div>
           
-          <div className="overflow-x-auto mb-4">
+          {/* Desktop Table */}
+          <div className="hidden md:block overflow-x-auto mb-4">
             <table className="w-full border-collapse">
               <thead>
                 <tr className="border-b-2 border-green-300">
@@ -415,18 +453,38 @@ export const AIImpact = () => {
             </table>
           </div>
           
-          <div className="bg-green-600 text-white rounded-lg p-4 mt-4">
-            <p className="font-bold text-base sm:text-lg">
+          {/* Mobile Cards */}
+          <div className="md:hidden space-y-3 mb-4">
+            <div className="bg-white/70 rounded-lg p-3 border border-green-200">
+              <div className="font-semibold text-slate-800 text-sm mb-1">AI/Automation Risk</div>
+              <div className="font-bold text-green-600 text-base mb-1">Very Low (25–30%)</div>
+              <div className="text-gray-700 text-xs">AI can predict faults, but only licensed humans can inspect and certify.</div>
+            </div>
+            <div className="bg-white/70 rounded-lg p-3 border border-green-200">
+              <div className="font-semibold text-slate-800 text-sm mb-1">Human Role Importance</div>
+              <div className="font-bold text-blue-600 text-base mb-1">Extremely High</div>
+              <div className="text-gray-700 text-xs">Physical inspection and safety clearance cannot be automated.</div>
+            </div>
+            <div className="bg-white/70 rounded-lg p-3 border border-green-200">
+              <div className="font-semibold text-slate-800 text-sm mb-1">Safety Level (2025–2040)</div>
+              <div className="font-bold text-green-600 text-base mb-1">9.5/10 – Highly Safe</div>
+              <div className="text-gray-700 text-xs">Global shortage of AMEs + legal requirement ensures job security.</div>
+            </div>
+          </div>
+          
+          <div className="bg-green-600 text-white rounded-lg p-3 sm:p-4 mt-4">
+            <p className="font-bold text-sm sm:text-base lg:text-lg">
               Parent Message: AME is one of the most protected jobs — legally required, respected, and AI-proof.
             </p>
           </div>
         </div>
 
         {/* Platform Summary Table */}
-        <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border-2 border-slate-200">
-          <h4 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 text-center">🧭 Platform Summary Table</h4>
+        <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-4 sm:p-6 border-2 border-slate-200">
+          <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-900 mb-4 text-center">🧭 Platform Summary Table</h4>
           
-          <div className="overflow-x-auto">
+          {/* Desktop Table */}
+          <div className="hidden md:block overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow>
@@ -457,6 +515,34 @@ export const AIImpact = () => {
                 </TableRow>
               </TableBody>
             </Table>
+          </div>
+          
+          {/* Mobile Cards */}
+          <div className="md:hidden space-y-3">
+            <div className="bg-white rounded-lg p-3 border border-slate-200">
+              <div className="font-semibold text-slate-800 text-sm mb-2">Aerospace Engineer</div>
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                <div><span className="text-gray-500">AI Risk:</span> <span className="font-bold text-green-600">Low (30–35%)</span></div>
+                <div><span className="text-gray-500">Safety:</span> <span className="font-bold text-green-600">8.5/10</span></div>
+              </div>
+              <div className="text-gray-700 text-xs mt-2">Human creativity keeps this job safe.</div>
+            </div>
+            <div className="bg-white rounded-lg p-3 border border-slate-200">
+              <div className="font-semibold text-slate-800 text-sm mb-2">Avionics Engineer</div>
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                <div><span className="text-gray-500">AI Risk:</span> <span className="font-bold text-orange-600">Medium (45–50%)</span></div>
+                <div><span className="text-gray-500">Safety:</span> <span className="font-bold text-yellow-600">7/10</span></div>
+              </div>
+              <div className="text-gray-700 text-xs mt-2">Safe with continuous tech learning.</div>
+            </div>
+            <div className="bg-white rounded-lg p-3 border border-slate-200">
+              <div className="font-semibold text-slate-800 text-sm mb-2">AME</div>
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                <div><span className="text-gray-500">AI Risk:</span> <span className="font-bold text-green-600">Very Low (25–30%)</span></div>
+                <div><span className="text-gray-500">Safety:</span> <span className="font-bold text-green-600">9.5/10</span></div>
+              </div>
+              <div className="text-gray-700 text-xs mt-2">One of the safest, AI-proof careers.</div>
+            </div>
           </div>
         </div>
       </div>
