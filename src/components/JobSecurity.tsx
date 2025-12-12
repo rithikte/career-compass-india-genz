@@ -90,12 +90,14 @@ export const JobSecurity = () => {
           </div>)}
       </div>
 
-      <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-        <h3 className="text-2xl font-bold text-slate-900 mb-4 text-center">Difference between Traditional Skills and AI-Enhanced Skill Career Durability</h3>
-        <p className="text-center text-gray-600 mb-6 max-w-2xl mx-auto">
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 mb-8">
+        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 text-center">Difference between Traditional Skills and AI-Enhanced Skill Career Durability</h3>
+        <p className="text-center text-gray-600 mb-6 max-w-2xl mx-auto text-sm sm:text-base">
           Compare how traditional skills and AI-enhanced skills impact your career longevity.
         </p>
-        <div className="overflow-x-auto">
+        
+        {/* Desktop Table */}
+        <div className="hidden md:block overflow-x-auto">
           <table className="w-full">
             <thead>
               <tr className="border-b-2 border-slate-300">
@@ -146,25 +148,80 @@ export const JobSecurity = () => {
           </table>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-5 rounded">
-            <div className="flex items-start space-x-3">
-              
+        {/* Mobile Cards */}
+        <div className="md:hidden space-y-4">
+          <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
+            <h4 className="font-bold text-slate-900 mb-3">Aerospace Engineer</h4>
+            <div className="grid grid-cols-3 gap-2 text-center">
               <div>
-                <h4 className="font-bold text-blue-900 mb-2">What It Means</h4>
-                <p className="text-blue-800 text-sm leading-relaxed">
+                <p className="text-xs text-slate-500 mb-1">Traditional</p>
+                <p className="font-bold text-slate-900 text-sm">7–8 yrs</p>
+              </div>
+              <div>
+                <p className="text-xs text-slate-500 mb-1">AI-Enhanced</p>
+                <p className="font-bold text-slate-900 text-sm">15–18 yrs</p>
+              </div>
+              <div>
+                <p className="text-xs text-slate-500 mb-1">Durability</p>
+                <p className="font-bold text-green-600 text-sm">88%</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
+            <h4 className="font-bold text-slate-900 mb-3">Avionics Engineer</h4>
+            <div className="grid grid-cols-3 gap-2 text-center">
+              <div>
+                <p className="text-xs text-slate-500 mb-1">Traditional</p>
+                <p className="font-bold text-slate-900 text-sm">6–7 yrs</p>
+              </div>
+              <div>
+                <p className="text-xs text-slate-500 mb-1">AI-Enhanced</p>
+                <p className="font-bold text-slate-900 text-sm">14–16 yrs</p>
+              </div>
+              <div>
+                <p className="text-xs text-slate-500 mb-1">Durability</p>
+                <p className="font-bold text-green-600 text-sm">85%</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
+            <h4 className="font-bold text-slate-900 mb-3">AME</h4>
+            <div className="grid grid-cols-3 gap-2 text-center">
+              <div>
+                <p className="text-xs text-slate-500 mb-1">Traditional</p>
+                <p className="font-bold text-slate-900 text-sm">8–9 yrs</p>
+              </div>
+              <div>
+                <p className="text-xs text-slate-500 mb-1">AI-Enhanced</p>
+                <p className="font-bold text-slate-900 text-sm">16–20 yrs</p>
+              </div>
+              <div>
+                <p className="text-xs text-slate-500 mb-1">Durability</p>
+                <p className="font-bold text-green-600 text-sm">90%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-6">
+          <div className="bg-blue-50 border-l-4 border-blue-500 p-4 sm:p-5 rounded">
+            <div className="flex items-start space-x-3">
+              <div>
+                <h4 className="font-bold text-blue-900 mb-2 text-sm sm:text-base">What It Means</h4>
+                <p className="text-blue-800 text-xs sm:text-sm leading-relaxed">
                   <strong>Traditional Skill:</strong> Shows how quickly skills lose value without continuous learning.
                 </p>
               </div>
             </div>
           </div>
           
-          <div className="bg-green-50 border-l-4 border-green-500 p-5 rounded">
+          <div className="bg-green-50 border-l-4 border-green-500 p-4 sm:p-5 rounded">
             <div className="flex items-start space-x-3">
-              
               <div>
-                <h4 className="font-bold text-green-900 mb-2">Why It Matters</h4>
-                <p className="text-green-800 text-sm leading-relaxed">
+                <h4 className="font-bold text-green-900 mb-2 text-sm sm:text-base">Why It Matters</h4>
+                <p className="text-green-800 text-xs sm:text-sm leading-relaxed">
                   <strong>AI-Enhanced Skill:</strong> Proves that learning new technologies can double your career life and job security.
                 </p>
               </div>
