@@ -235,11 +235,11 @@ export const HiringCompanies = () => {
       </div>
 
       {/* Key States Industry Boom Section */}
-      <div className="mt-12 bg-white rounded-lg shadow-lg p-6 sm:p-8">
+      <div className="mt-12 bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8">
         <div className="text-center mb-6">
           <div className="flex items-center justify-center mb-4">
-            <TrendingUp className="w-6 h-6 text-indigo-600 mr-3" />
-            <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">
+            <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600 mr-2 sm:mr-3" />
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
               Key States Industry Boom 2025 - 2040
             </h3>
           </div>
@@ -248,7 +248,8 @@ export const HiringCompanies = () => {
           </p>
         </div>
 
-        <div className="overflow-x-auto">
+        {/* Desktop Table */}
+        <div className="hidden md:block overflow-x-auto">
           <Table>
             <TableHeader>
               <TableRow>
@@ -267,6 +268,25 @@ export const HiringCompanies = () => {
               ))}
             </TableBody>
           </Table>
+        </div>
+
+        {/* Mobile Cards */}
+        <div className="md:hidden space-y-4">
+          {statesBoomData.map((row) => (
+            <div key={row.state} className="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-lg p-4 border border-indigo-100">
+              <h4 className="font-bold text-slate-900 text-lg mb-2">{row.state}</h4>
+              <div className="space-y-2">
+                <div>
+                  <p className="text-xs text-indigo-600 font-semibold uppercase tracking-wide">Sectors</p>
+                  <p className="text-sm text-gray-700">{row.sectors}</p>
+                </div>
+                <div>
+                  <p className="text-xs text-indigo-600 font-semibold uppercase tracking-wide">Why It Matters</p>
+                  <p className="text-sm text-gray-600">{row.whyMatters}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 

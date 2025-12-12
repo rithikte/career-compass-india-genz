@@ -321,10 +321,11 @@ const JobLifestyle = () => {
         <Card className="mt-8 border-2">
           <CardContent className="p-4 sm:p-6">
             <h3 className="text-lg sm:text-xl font-bold text-foreground mb-4 flex items-center gap-2">
-              
               Platform Summary View
             </h3>
-            <div className="overflow-x-auto">
+            
+            {/* Desktop Table */}
+            <div className="hidden md:block overflow-x-auto">
               <Table>
                 <TableHeader>
                   <TableRow>
@@ -347,6 +348,37 @@ const JobLifestyle = () => {
                     </TableRow>)}
                 </TableBody>
               </Table>
+            </div>
+
+            {/* Mobile Cards */}
+            <div className="md:hidden space-y-4">
+              {summaryData.map((item, i) => (
+                <div key={i} className="bg-muted/30 rounded-lg p-4 border">
+                  <h4 className="font-bold text-foreground mb-3">{item.role}</h4>
+                  <div className="grid grid-cols-2 gap-3 text-sm">
+                    <div>
+                      <span className="text-muted-foreground">Stress:</span>
+                      <span className="font-semibold ml-2">{item.stress}</span>
+                    </div>
+                    <div>
+                      <span className="text-muted-foreground">Travel:</span>
+                      <span className="font-semibold ml-2">{item.travel}</span>
+                    </div>
+                    <div>
+                      <span className="text-muted-foreground">Growth:</span>
+                      <span className="font-semibold ml-2">{item.growth}</span>
+                    </div>
+                    <div>
+                      <span className="text-muted-foreground">Recognition:</span>
+                      <span className="font-semibold ml-2">{item.recognition}</span>
+                    </div>
+                  </div>
+                  <div className="mt-3 pt-3 border-t">
+                    <span className="text-muted-foreground text-sm">Insight: </span>
+                    <span className="text-sm font-medium">{item.insight}</span>
+                  </div>
+                </div>
+              ))}
             </div>
           </CardContent>
         </Card>

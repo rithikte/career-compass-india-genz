@@ -242,7 +242,8 @@ export const CareerInsights = () => {
             <p className="text-muted-foreground mb-6">What actually matters when companies evaluate candidates.</p>
             
             <Card className="overflow-hidden bg-white dark:bg-slate-900 border-purple-200 dark:border-purple-900">
-              <div className="overflow-x-auto">
+              {/* Desktop Table */}
+              <div className="hidden sm:block overflow-x-auto">
                 <table className="w-full">
                   <thead>
                     <tr className="border-b bg-muted/50">
@@ -261,6 +262,29 @@ export const CareerInsights = () => {
                       </tr>)}
                   </tbody>
                 </table>
+              </div>
+
+              {/* Mobile Cards */}
+              <div className="sm:hidden p-4 space-y-4">
+                {hiringWeightage.map((row, idx) => (
+                  <div key={idx} className="bg-muted/30 rounded-lg p-4 border">
+                    <h4 className="font-bold text-foreground mb-3">{row.factor}</h4>
+                    <div className="grid grid-cols-3 gap-2 text-sm">
+                      <div className="text-center">
+                        <p className="text-muted-foreground text-xs mb-1">Aero</p>
+                        <p className="font-bold text-foreground">{row.aero}</p>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-muted-foreground text-xs mb-1">Avionics</p>
+                        <p className="font-bold text-foreground">{row.avionics}</p>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-muted-foreground text-xs mb-1">AME</p>
+                        <p className="font-bold text-foreground">{row.ame}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </Card>
           </section>
