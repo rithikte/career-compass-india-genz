@@ -467,34 +467,58 @@ export const CertificationStack = () => {
             Aerospace Engineer    
           </h4>
           
-          <div className="overflow-x-auto mb-3 sm:mb-4 -mx-4 sm:mx-0">
-            <div className="inline-block min-w-full align-middle px-4 sm:px-0">
-              <table className="w-full border-collapse min-w-[600px]">
-                <thead>
-                  <tr className="border-b-2 border-blue-300">
-                    <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-bold text-slate-900 text-xs sm:text-sm">Factor</th>
-                    <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-bold text-slate-900 text-xs sm:text-sm">Score (1–10)</th>
-                    <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-bold text-slate-900 text-xs sm:text-sm">Simple Explanation</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-blue-200 hover:bg-blue-100/50">
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 font-semibold text-slate-800 text-xs sm:text-sm">Automation Risk</td>
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 font-bold text-green-600 text-xs sm:text-sm whitespace-nowrap">4/10 (Low-Medium)</td>
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-700 text-xs sm:text-sm">AI assists but cannot replace creative design and safety judgment.</td>
-                  </tr>
-                  <tr className="border-b border-blue-200 hover:bg-blue-100/50">
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 font-semibold text-slate-800 text-xs sm:text-sm">Reskilling Need</td>
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 font-bold text-orange-600 text-xs sm:text-sm whitespace-nowrap">7/10 (High)</td>
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-700 text-xs sm:text-sm">Need to learn AI tools, simulation software, and space systems.</td>
-                  </tr>
-                  <tr className="hover:bg-blue-100/50">
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 font-semibold text-slate-800 text-xs sm:text-sm whitespace-nowrap">Longevity (2040 outlook)</td>
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 font-bold text-green-600 text-xs sm:text-sm whitespace-nowrap">9/10 (Very Strong)</td>
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-700 text-xs sm:text-sm">Space, defence, and commercial aviation projects ensure long-term demand.</td>
-                  </tr>
-                </tbody>
-              </table>
+          {/* Desktop Table */}
+          <div className="hidden md:block overflow-x-auto mb-3 sm:mb-4">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b-2 border-blue-300">
+                  <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-bold text-slate-900 text-xs sm:text-sm">Factor</th>
+                  <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-bold text-slate-900 text-xs sm:text-sm">Score (1–10)</th>
+                  <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-bold text-slate-900 text-xs sm:text-sm">Simple Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-blue-200 hover:bg-blue-100/50">
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 font-semibold text-slate-800 text-xs sm:text-sm">Automation Risk</td>
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 font-bold text-green-600 text-xs sm:text-sm whitespace-nowrap">4/10 (Low-Medium)</td>
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-700 text-xs sm:text-sm">AI assists but cannot replace creative design and safety judgment.</td>
+                </tr>
+                <tr className="border-b border-blue-200 hover:bg-blue-100/50">
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 font-semibold text-slate-800 text-xs sm:text-sm">Reskilling Need</td>
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 font-bold text-orange-600 text-xs sm:text-sm whitespace-nowrap">7/10 (High)</td>
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-700 text-xs sm:text-sm">Need to learn AI tools, simulation software, and space systems.</td>
+                </tr>
+                <tr className="hover:bg-blue-100/50">
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 font-semibold text-slate-800 text-xs sm:text-sm whitespace-nowrap">Longevity (2040 outlook)</td>
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 font-bold text-green-600 text-xs sm:text-sm whitespace-nowrap">9/10 (Very Strong)</td>
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-700 text-xs sm:text-sm">Space, defence, and commercial aviation projects ensure long-term demand.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          {/* Mobile Cards */}
+          <div className="md:hidden space-y-3 mb-3">
+            <div className="bg-white rounded-lg p-3 border border-blue-200">
+              <div className="flex justify-between items-start mb-2">
+                <span className="font-semibold text-slate-800 text-sm">Automation Risk</span>
+                <span className="font-bold text-green-600 text-sm">4/10 (Low-Medium)</span>
+              </div>
+              <p className="text-gray-700 text-xs">AI assists but cannot replace creative design and safety judgment.</p>
+            </div>
+            <div className="bg-white rounded-lg p-3 border border-blue-200">
+              <div className="flex justify-between items-start mb-2">
+                <span className="font-semibold text-slate-800 text-sm">Reskilling Need</span>
+                <span className="font-bold text-orange-600 text-sm">7/10 (High)</span>
+              </div>
+              <p className="text-gray-700 text-xs">Need to learn AI tools, simulation software, and space systems.</p>
+            </div>
+            <div className="bg-white rounded-lg p-3 border border-blue-200">
+              <div className="flex justify-between items-start mb-2">
+                <span className="font-semibold text-slate-800 text-sm">Longevity (2040)</span>
+                <span className="font-bold text-green-600 text-sm">9/10 (Very Strong)</span>
+              </div>
+              <p className="text-gray-700 text-xs">Space, defence, and commercial aviation projects ensure long-term demand.</p>
             </div>
           </div>
           
@@ -511,34 +535,58 @@ export const CertificationStack = () => {
             Avionics Engineer    
           </h4>
           
-          <div className="overflow-x-auto mb-3 sm:mb-4 -mx-4 sm:mx-0">
-            <div className="inline-block min-w-full align-middle px-4 sm:px-0">
-              <table className="w-full border-collapse min-w-[600px]">
-                <thead>
-                  <tr className="border-b-2 border-orange-300">
-                    <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-bold text-slate-900 text-xs sm:text-sm">Factor</th>
-                    <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-bold text-slate-900 text-xs sm:text-sm">Score (1–10)</th>
-                    <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-bold text-slate-900 text-xs sm:text-sm">Simple Explanation</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-orange-200 hover:bg-orange-100/50">
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 font-semibold text-slate-800 text-xs sm:text-sm">Automation Risk</td>
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 font-bold text-green-600 text-xs sm:text-sm whitespace-nowrap">3/10 (Low)</td>
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-700 text-xs sm:text-sm">Hardware design + safety-critical systems are too complex for AI alone.</td>
-                  </tr>
-                  <tr className="border-b border-orange-200 hover:bg-orange-100/50">
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 font-semibold text-slate-800 text-xs sm:text-sm">Reskilling Need</td>
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 font-bold text-orange-600 text-xs sm:text-sm whitespace-nowrap">6/10 (Medium-High)</td>
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-700 text-xs sm:text-sm">Must learn AI-based fault detection, IoT integration, and next-gen comms.</td>
-                  </tr>
-                  <tr className="hover:bg-orange-100/50">
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 font-semibold text-slate-800 text-xs sm:text-sm whitespace-nowrap">Longevity (2040 outlook)</td>
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 font-bold text-green-600 text-xs sm:text-sm whitespace-nowrap">9/10 (Very Strong)</td>
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-700 text-xs sm:text-sm">Defence, space, and electric aviation expand demand for skilled avionics engineers.</td>
-                  </tr>
-                </tbody>
-              </table>
+          {/* Desktop Table */}
+          <div className="hidden md:block overflow-x-auto mb-3 sm:mb-4">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b-2 border-orange-300">
+                  <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-bold text-slate-900 text-xs sm:text-sm">Factor</th>
+                  <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-bold text-slate-900 text-xs sm:text-sm">Score (1–10)</th>
+                  <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-bold text-slate-900 text-xs sm:text-sm">Simple Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-orange-200 hover:bg-orange-100/50">
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 font-semibold text-slate-800 text-xs sm:text-sm">Automation Risk</td>
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 font-bold text-green-600 text-xs sm:text-sm whitespace-nowrap">3/10 (Low)</td>
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-700 text-xs sm:text-sm">Hardware design + safety-critical systems are too complex for AI alone.</td>
+                </tr>
+                <tr className="border-b border-orange-200 hover:bg-orange-100/50">
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 font-semibold text-slate-800 text-xs sm:text-sm">Reskilling Need</td>
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 font-bold text-orange-600 text-xs sm:text-sm whitespace-nowrap">6/10 (Medium-High)</td>
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-700 text-xs sm:text-sm">Must learn AI-based fault detection, IoT integration, and next-gen comms.</td>
+                </tr>
+                <tr className="hover:bg-orange-100/50">
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 font-semibold text-slate-800 text-xs sm:text-sm whitespace-nowrap">Longevity (2040 outlook)</td>
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 font-bold text-green-600 text-xs sm:text-sm whitespace-nowrap">9/10 (Very Strong)</td>
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-700 text-xs sm:text-sm">Defence, space, and electric aviation expand demand for skilled avionics engineers.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          {/* Mobile Cards */}
+          <div className="md:hidden space-y-3 mb-3">
+            <div className="bg-white rounded-lg p-3 border border-orange-200">
+              <div className="flex justify-between items-start mb-2">
+                <span className="font-semibold text-slate-800 text-sm">Automation Risk</span>
+                <span className="font-bold text-green-600 text-sm">3/10 (Low)</span>
+              </div>
+              <p className="text-gray-700 text-xs">Hardware design + safety-critical systems are too complex for AI alone.</p>
+            </div>
+            <div className="bg-white rounded-lg p-3 border border-orange-200">
+              <div className="flex justify-between items-start mb-2">
+                <span className="font-semibold text-slate-800 text-sm">Reskilling Need</span>
+                <span className="font-bold text-orange-600 text-sm">6/10 (Medium-High)</span>
+              </div>
+              <p className="text-gray-700 text-xs">Must learn AI-based fault detection, IoT integration, and next-gen comms.</p>
+            </div>
+            <div className="bg-white rounded-lg p-3 border border-orange-200">
+              <div className="flex justify-between items-start mb-2">
+                <span className="font-semibold text-slate-800 text-sm">Longevity (2040)</span>
+                <span className="font-bold text-green-600 text-sm">9/10 (Very Strong)</span>
+              </div>
+              <p className="text-gray-700 text-xs">Defence, space, and electric aviation expand demand for skilled avionics engineers.</p>
             </div>
           </div>
           
@@ -555,34 +603,58 @@ export const CertificationStack = () => {
             Aircraft Maintenance Engineer     
           </h4>
           
-          <div className="overflow-x-auto mb-3 sm:mb-4 -mx-4 sm:mx-0">
-            <div className="inline-block min-w-full align-middle px-4 sm:px-0">
-              <table className="w-full border-collapse min-w-[600px]">
-                <thead>
-                  <tr className="border-b-2 border-green-300">
-                    <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-bold text-slate-900 text-xs sm:text-sm">Factor</th>
-                    <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-bold text-slate-900 text-xs sm:text-sm">Score (1–10)</th>
-                    <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-bold text-slate-900 text-xs sm:text-sm">Simple Explanation</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-green-200 hover:bg-green-100/50">
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 font-semibold text-slate-800 text-xs sm:text-sm">Automation Risk</td>
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 font-bold text-green-600 text-xs sm:text-sm whitespace-nowrap">3/10 (Low)</td>
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-700 text-xs sm:text-sm">Aircraft still need licensed humans for inspection & safety checks.</td>
-                  </tr>
-                  <tr className="border-b border-green-200 hover:bg-green-100/50">
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 font-semibold text-slate-800 text-xs sm:text-sm">Reskilling Need</td>
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 font-bold text-yellow-600 text-xs sm:text-sm whitespace-nowrap">6/10 (Moderate)</td>
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-700 text-xs sm:text-sm">Learn predictive-maintenance software & electronic logbook systems.</td>
-                  </tr>
-                  <tr className="hover:bg-green-100/50">
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 font-semibold text-slate-800 text-xs sm:text-sm whitespace-nowrap">Longevity (2040 outlook)</td>
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 font-bold text-green-600 text-xs sm:text-sm whitespace-nowrap">9/10 (Very Strong)</td>
-                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-700 text-xs sm:text-sm">Global MRO demand rising; job can't be replaced by AI.</td>
-                  </tr>
-                </tbody>
-              </table>
+          {/* Desktop Table */}
+          <div className="hidden md:block overflow-x-auto mb-3 sm:mb-4">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b-2 border-green-300">
+                  <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-bold text-slate-900 text-xs sm:text-sm">Factor</th>
+                  <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-bold text-slate-900 text-xs sm:text-sm">Score (1–10)</th>
+                  <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-bold text-slate-900 text-xs sm:text-sm">Simple Explanation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-green-200 hover:bg-green-100/50">
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 font-semibold text-slate-800 text-xs sm:text-sm">Automation Risk</td>
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 font-bold text-green-600 text-xs sm:text-sm whitespace-nowrap">3/10 (Low)</td>
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-700 text-xs sm:text-sm">Aircraft still need licensed humans for inspection & safety checks.</td>
+                </tr>
+                <tr className="border-b border-green-200 hover:bg-green-100/50">
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 font-semibold text-slate-800 text-xs sm:text-sm">Reskilling Need</td>
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 font-bold text-yellow-600 text-xs sm:text-sm whitespace-nowrap">6/10 (Moderate)</td>
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-700 text-xs sm:text-sm">Learn predictive-maintenance software & electronic logbook systems.</td>
+                </tr>
+                <tr className="hover:bg-green-100/50">
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 font-semibold text-slate-800 text-xs sm:text-sm whitespace-nowrap">Longevity (2040 outlook)</td>
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 font-bold text-green-600 text-xs sm:text-sm whitespace-nowrap">9/10 (Very Strong)</td>
+                  <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-700 text-xs sm:text-sm">Global MRO demand rising; job can't be replaced by AI.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          {/* Mobile Cards */}
+          <div className="md:hidden space-y-3 mb-3">
+            <div className="bg-white rounded-lg p-3 border border-green-200">
+              <div className="flex justify-between items-start mb-2">
+                <span className="font-semibold text-slate-800 text-sm">Automation Risk</span>
+                <span className="font-bold text-green-600 text-sm">3/10 (Low)</span>
+              </div>
+              <p className="text-gray-700 text-xs">Aircraft still need licensed humans for inspection & safety checks.</p>
+            </div>
+            <div className="bg-white rounded-lg p-3 border border-green-200">
+              <div className="flex justify-between items-start mb-2">
+                <span className="font-semibold text-slate-800 text-sm">Reskilling Need</span>
+                <span className="font-bold text-yellow-600 text-sm">6/10 (Moderate)</span>
+              </div>
+              <p className="text-gray-700 text-xs">Learn predictive-maintenance software & electronic logbook systems.</p>
+            </div>
+            <div className="bg-white rounded-lg p-3 border border-green-200">
+              <div className="flex justify-between items-start mb-2">
+                <span className="font-semibold text-slate-800 text-sm">Longevity (2040)</span>
+                <span className="font-bold text-green-600 text-sm">9/10 (Very Strong)</span>
+              </div>
+              <p className="text-gray-700 text-xs">Global MRO demand rising; job can't be replaced by AI.</p>
             </div>
           </div>
           
@@ -594,20 +666,21 @@ export const CertificationStack = () => {
         </div>
 
         {/* Quick Platform Summary */}
-        <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border-2 border-slate-200">
-          <h4 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 text-center">
+        <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-4 sm:p-6 border-2 border-slate-200">
+          <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-900 mb-4 text-center">
             Quick Platform Summary
           </h4>
           
-          <div className="overflow-x-auto mb-4">
+          {/* Desktop Table */}
+          <div className="hidden lg:block overflow-x-auto mb-4">
             <table className="w-full border-collapse">
               <thead>
                 <tr className="border-b-2 border-slate-300 bg-slate-100">
-                  <th className="text-left py-3 px-4 font-bold text-slate-900">Job Role</th>
-                  <th className="text-center py-3 px-4 font-bold text-slate-900">Automation Risk</th>
-                  <th className="text-center py-3 px-4 font-bold text-slate-900">Reskilling Need</th>
-                  <th className="text-center py-3 px-4 font-bold text-slate-900">Longevity (2040)</th>
-                  <th className="text-center py-3 px-4 font-bold text-slate-900">Overall Career Safety</th>
+                  <th className="text-left py-3 px-4 font-bold text-slate-900 text-sm">Job Role</th>
+                  <th className="text-center py-3 px-4 font-bold text-slate-900 text-sm">Automation Risk</th>
+                  <th className="text-center py-3 px-4 font-bold text-slate-900 text-sm">Reskilling Need</th>
+                  <th className="text-center py-3 px-4 font-bold text-slate-900 text-sm">Longevity (2040)</th>
+                  <th className="text-center py-3 px-4 font-bold text-slate-900 text-sm">Overall Career Safety</th>
                 </tr>
               </thead>
               <tbody>
@@ -635,10 +708,77 @@ export const CertificationStack = () => {
               </tbody>
             </table>
           </div>
+
+          {/* Mobile/Tablet Cards */}
+          <div className="lg:hidden space-y-3 mb-4">
+            <div className="bg-white rounded-lg p-4 border border-slate-200">
+              <h5 className="font-bold text-slate-900 mb-3 text-base">Aerospace Engineer</h5>
+              <div className="grid grid-cols-2 gap-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Automation Risk:</span>
+                  <span className="font-bold text-green-600">4/10</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Reskilling Need:</span>
+                  <span className="font-bold text-orange-600">7/10</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Longevity (2040):</span>
+                  <span className="font-bold text-green-600">9/10</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Career Safety:</span>
+                  <span className="font-bold text-green-600">Very High</span>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg p-4 border border-slate-200">
+              <h5 className="font-bold text-slate-900 mb-3 text-base">Avionics Engineer</h5>
+              <div className="grid grid-cols-2 gap-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Automation Risk:</span>
+                  <span className="font-bold text-orange-600">6/10</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Reskilling Need:</span>
+                  <span className="font-bold text-red-600">8/10</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Longevity (2040):</span>
+                  <span className="font-bold text-green-600">8/10</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Career Safety:</span>
+                  <span className="font-bold text-yellow-600">High</span>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg p-4 border border-slate-200">
+              <h5 className="font-bold text-slate-900 mb-3 text-base">AME</h5>
+              <div className="grid grid-cols-2 gap-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Automation Risk:</span>
+                  <span className="font-bold text-green-600">3/10</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Reskilling Need:</span>
+                  <span className="font-bold text-yellow-600">6/10</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Longevity (2040):</span>
+                  <span className="font-bold text-green-600">9/10</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Career Safety:</span>
+                  <span className="font-bold text-green-600">Very High</span>
+                </div>
+              </div>
+            </div>
+          </div>
           
-          <div className="bg-indigo-600 text-white rounded-lg p-5 mt-4">
-            <h5 className="font-bold text-lg sm:text-xl mb-2">Simple takeaway for parents:</h5>
-            <p className="text-base sm:text-lg leading-relaxed">
+          <div className="bg-indigo-600 text-white rounded-lg p-4 sm:p-5 mt-4">
+            <h5 className="font-bold text-base sm:text-lg lg:text-xl mb-2">Simple takeaway for parents:</h5>
+            <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
               All three careers are future-safe, but students must keep upgrading their skills every 3–5 years. 
               Aerospace & AME have the longest lifespan, while Avionics needs more AI and electronics upskilling to stay ahead.
             </p>
