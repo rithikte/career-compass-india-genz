@@ -114,27 +114,23 @@ const CoreVsIT = () => {
         </div>
 
         {/* Reasons Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-12">
           {reasons.map((reason, index) => {
           const Icon = reason.icon;
           const colors = getColorClasses(reason.color);
-          return <Card key={index} className={`${colors.bg} ${colors.border} border-2 p-6 hover:shadow-xl transition-all duration-300 hover:scale-[1.02]`}>
-                <div className="flex items-start gap-4 mb-4">
-                  
-                  <div className="flex-1">
-                    
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-3">
-                      {reason.title}
-                    </h3>
+          return <Card key={index} className={`${colors.bg} ${colors.border} border-2 p-4 sm:p-6 hover:shadow-xl transition-all duration-300 hover:scale-[1.02]`}>
+                <div className="flex flex-col items-center text-center">
+                  <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full ${colors.badge} flex items-center justify-center mb-3 sm:mb-4`}>
+                    <Icon className={`w-6 h-6 sm:w-7 sm:h-7 ${colors.icon}`} />
                   </div>
-                </div>
-                
-                <div className="space-y-3 pl-16">
-                  <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-50 mb-2 sm:mb-3">
+                    {reason.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed mb-3 sm:mb-4">
                     {reason.description}
                   </p>
-                  <div className={`p-3 rounded-lg ${colors.badge} border-l-4 ${colors.border}`}>
-                    <p className="text-sm font-semibold">
+                  <div className={`w-full p-3 sm:p-4 rounded-lg ${colors.badge} border-l-4 ${colors.border}`}>
+                    <p className="text-xs sm:text-sm font-semibold">
                       💡 {reason.insight}
                     </p>
                   </div>
