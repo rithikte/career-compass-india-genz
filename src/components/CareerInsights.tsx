@@ -350,22 +350,99 @@ export const CareerInsights = () => {
             </div>
             <p className="text-muted-foreground mb-6">Top companies offering internships in each domain.</p>
             
-            <div className="grid gap-6 md:grid-cols-3">
-              {Object.entries(internshipCompanies).map(([roleKey, data]) => <Card key={roleKey} className="hover:shadow-lg transition-shadow bg-white dark:bg-slate-900 border-cyan-200 dark:border-cyan-900">
-                  <CardHeader>
-                    <CardTitle className="capitalize">{roleKey} Engineer</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2 mb-4">
-                      {data.companies.map((company, idx) => <li key={idx} className="text-sm text-foreground border-l-2 border-primary pl-2">
-                          {company}
-                        </li>)}
-                    </ul>
-                    <div className="pt-4 border-t">
-                      <p className="text-sm font-semibold text-primary">{data.summary}</p>
+            {/* Desktop CSS Grid Table */}
+            <div className="hidden sm:block bg-white dark:bg-slate-900 rounded-xl border border-cyan-200 dark:border-cyan-900 overflow-hidden shadow-sm">
+              {/* Header Row */}
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 bg-gradient-to-r from-cyan-600 to-cyan-500 text-white">
+                <div className="p-3 sm:p-4 font-bold text-xs sm:text-sm md:text-base">Company Name</div>
+                <div className="p-3 sm:p-4 font-bold text-xs sm:text-sm md:text-base text-center">Domain</div>
+                <div className="p-3 sm:p-4 font-bold text-xs sm:text-sm md:text-base">Type of Exposure</div>
+              </div>
+              
+              {/* Data Rows */}
+              {Object.entries(internshipCompanies).map(([roleKey, data]) => 
+                data.companies.map((company, idx) => {
+                  const parts = company.split(' – ');
+                  const companyName = parts[0];
+                  const exposure = parts[1] || 'Various exposure';
+                  const domainLabel = roleKey === 'aerospace' ? 'Aerospace' : roleKey === 'avionics' ? 'Avionics' : 'AME';
+                  const domainColor = roleKey === 'aerospace' 
+                    ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300' 
+                    : roleKey === 'avionics' 
+                    ? 'bg-purple-100 text-purple-700 dark:bg-purple-900/50 dark:text-purple-300' 
+                    : 'bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300';
+                  
+                  return (
+                    <div 
+                      key={`${roleKey}-${idx}`} 
+                      className="grid grid-cols-3 gap-2 sm:gap-4 border-b border-cyan-100 dark:border-cyan-900/50 last:border-0 hover:bg-cyan-50/50 dark:hover:bg-cyan-950/30 transition-colors"
+                    >
+                      <div className="p-3 sm:p-4 text-xs sm:text-sm md:text-base font-medium text-foreground">{companyName}</div>
+                      <div className="p-3 sm:p-4 flex items-center justify-center">
+                        <span className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold ${domainColor}`}>
+                          {domainLabel}
+                        </span>
+                      </div>
+                      <div className="p-3 sm:p-4 text-xs sm:text-sm md:text-base text-muted-foreground">{exposure}</div>
                     </div>
-                  </CardContent>
-                </Card>)}
+                  );
+                })
+              )}
+            </div>
+
+            {/* Mobile Card Layout */}
+            <div className="sm:hidden space-y-3">
+              {Object.entries(internshipCompanies).map(([roleKey, data]) => 
+                data.companies.map((company, idx) => {
+                  const parts = company.split(' – ');
+                  const companyName = parts[0];
+                  const exposure = parts[1] || 'Various exposure';
+                  const domainLabel = roleKey === 'aerospace' ? 'Aerospace' : roleKey === 'avionics' ? 'Avionics' : 'AME';
+                  const domainColor = roleKey === 'aerospace' 
+                    ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300' 
+                    : roleKey === 'avionics' 
+                    ? 'bg-purple-100 text-purple-700 dark:bg-purple-900/50 dark:text-purple-300' 
+                    : 'bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300';
+                  
+                  return (
+                    <div 
+                      key={`mobile-${roleKey}-${idx}`} 
+                      className="bg-white dark:bg-slate-900 rounded-lg border border-cyan-200 dark:border-cyan-900 p-4 shadow-sm"
+                    >
+                      <div className="flex items-start justify-between gap-2 mb-2">
+                        <h4 className="font-semibold text-sm text-foreground leading-tight">{companyName}</h4>
+                        <span className={`px-2 py-0.5 rounded-full text-xs font-semibold flex-shrink-0 ${domainColor}`}>
+                          {domainLabel}
+                        </span>
+                      </div>
+                      <p className="text-xs text-muted-foreground">{exposure}</p>
+                    </div>
+                  );
+                })
+              )}
+            </div>
+
+            {/* Summary Cards */}
+            <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-3 mt-6 sm:mt-8">
+              {Object.entries(internshipCompanies).map(([roleKey, data]) => {
+                const domainLabel = roleKey === 'aerospace' ? 'Aerospace' : roleKey === 'avionics' ? 'Avionics' : 'AME';
+                const borderColor = roleKey === 'aerospace' 
+                  ? 'border-l-blue-500' 
+                  : roleKey === 'avionics' 
+                  ? 'border-l-purple-500' 
+                  : 'border-l-amber-500';
+                
+                return (
+                  <div 
+                    key={`summary-${roleKey}`} 
+                    className={`bg-white dark:bg-slate-900 rounded-lg border border-cyan-200 dark:border-cyan-900 border-l-4 ${borderColor} p-4 shadow-sm`}
+                  >
+                    <h4 className="font-bold text-sm sm:text-base text-foreground mb-2">{domainLabel}</h4>
+                    <p className="text-xs sm:text-sm text-primary font-medium">{data.summary}</p>
+                    <p className="text-xs text-muted-foreground mt-1">{data.companies.length} companies listed</p>
+                  </div>
+                );
+              })}
             </div>
           </section>
 
