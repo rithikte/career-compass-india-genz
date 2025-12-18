@@ -180,31 +180,61 @@ export const CareerInsights = () => {
           </div>
 
           {/* Hiring Cycle Calendar */}
-          <section className="mb-12 bg-blue-50/50 dark:bg-blue-950/10 rounded-2xl p-6 sm:p-8">
-            <div className="flex items-center gap-3 mb-6">
-              
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Hiring Cycle Calendar</h2>
+          <section className="mb-12 bg-blue-50/50 dark:bg-blue-950/10 rounded-2xl p-4 sm:p-6 lg:p-8">
+            <div className="text-center mb-6 sm:mb-8">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2">Hiring Cycle Calendar</h2>
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+                Each industry has peak hiring seasons. Plan your applications accordingly.
+              </p>
             </div>
-            <p className="text-muted-foreground mb-6">Each industry has peak hiring seasons. Plan your applications accordingly.</p>
             
-            <div className="grid gap-6 md:grid-cols-3">
-              {hiringCycleData.map((item, idx) => <Card key={idx} className="hover:shadow-lg transition-shadow bg-white dark:bg-slate-900 border-blue-200 dark:border-blue-900">
-                  <CardHeader>
-                    <CardTitle className="text-lg">{item.role}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      <div>
-                        <p className="text-sm text-muted-foreground">Peak Months</p>
-                        <p className="text-lg font-semibold text-foreground">{item.months}</p>
-                      </div>
-                      <div>
-                        <p className="text-sm text-muted-foreground">Why</p>
-                        <p className="text-sm text-foreground">{item.reason}</p>
-                      </div>
+            {/* Desktop CSS Grid Table */}
+            <div className="hidden sm:block bg-white dark:bg-slate-900 rounded-xl border border-blue-200 dark:border-blue-900 overflow-hidden shadow-sm">
+              {/* Header Row */}
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white">
+                <div className="p-3 sm:p-4 font-bold text-xs sm:text-sm md:text-base">Role</div>
+                <div className="p-3 sm:p-4 font-bold text-xs sm:text-sm md:text-base text-center">Peak Months</div>
+                <div className="p-3 sm:p-4 font-bold text-xs sm:text-sm md:text-base">Reason</div>
+              </div>
+              
+              {/* Data Rows */}
+              {hiringCycleData.map((item, idx) => (
+                <div 
+                  key={idx} 
+                  className="grid grid-cols-3 gap-2 sm:gap-4 border-b border-blue-100 dark:border-blue-900/50 last:border-0 hover:bg-blue-50/50 dark:hover:bg-blue-950/30 transition-colors"
+                >
+                  <div className="p-3 sm:p-4 text-xs sm:text-sm md:text-base font-semibold text-foreground">{item.role}</div>
+                  <div className="p-3 sm:p-4 text-center">
+                    <span className="inline-block px-2 py-1 text-xs sm:text-sm font-bold bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 rounded-full">
+                      {item.months}
+                    </span>
+                  </div>
+                  <div className="p-3 sm:p-4 text-xs sm:text-sm md:text-base text-muted-foreground">{item.reason}</div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Mobile Card Layout */}
+            <div className="sm:hidden space-y-3">
+              {hiringCycleData.map((item, idx) => (
+                <Card key={idx} className="overflow-hidden bg-white dark:bg-slate-900 border-blue-200 dark:border-blue-900">
+                  <div className="p-3 pb-2 border-b border-blue-100 dark:border-blue-900/50">
+                    <h3 className="text-sm font-bold text-foreground">{item.role}</h3>
+                  </div>
+                  <CardContent className="p-3 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-muted-foreground">Peak Months:</span>
+                      <span className="text-xs font-bold bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 px-2 py-0.5 rounded-full">
+                        {item.months}
+                      </span>
+                    </div>
+                    <div>
+                      <span className="text-xs text-muted-foreground">Reason:</span>
+                      <p className="text-xs text-foreground mt-0.5">{item.reason}</p>
                     </div>
                   </CardContent>
-                </Card>)}
+                </Card>
+              ))}
             </div>
           </section>
 
@@ -290,27 +320,63 @@ export const CareerInsights = () => {
           </section>
 
           {/* Survivor Profile */}
-          <section className="mb-12 bg-emerald-50/50 dark:bg-emerald-950/10 rounded-2xl p-6 sm:p-8">
-            <div className="flex items-center gap-3 mb-6">
-              
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Survivor Profile</h2>
+          <section className="mb-12 bg-emerald-50/50 dark:bg-emerald-950/10 rounded-2xl p-4 sm:p-6 lg:p-8">
+            <div className="text-center mb-6 sm:mb-8">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2">Survivor Profile</h2>
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+                The personality profile of students who survive and grow.
+              </p>
             </div>
-            <p className="text-muted-foreground mb-6">The personality profile of students who survive and grow.</p>
             
-            <div className="grid gap-6 md:grid-cols-3">
-              {survivorProfiles.map((item, idx) => <Card key={idx} className="hover:shadow-lg transition-shadow bg-white dark:bg-slate-900 border-emerald-200 dark:border-emerald-900">
-                  <CardHeader>
-                    <CardTitle className="text-lg">{item.role}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2">
-                      {item.traits.map((trait, tidx) => <li key={tidx} className="flex items-start gap-2">
-                          
-                          <span className="text-foreground">{trait}</span>
-                        </li>)}
-                    </ul>
+            {/* Desktop CSS Grid Table */}
+            <div className="hidden sm:block bg-white dark:bg-slate-900 rounded-xl border border-emerald-200 dark:border-emerald-900 overflow-hidden shadow-sm">
+              {/* Header Row */}
+              <div className="grid grid-cols-4 gap-2 sm:gap-4 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white">
+                <div className="p-3 sm:p-4 font-bold text-xs sm:text-sm md:text-base">Role</div>
+                <div className="p-3 sm:p-4 font-bold text-xs sm:text-sm md:text-base text-center">Trait 1</div>
+                <div className="p-3 sm:p-4 font-bold text-xs sm:text-sm md:text-base text-center">Trait 2</div>
+                <div className="p-3 sm:p-4 font-bold text-xs sm:text-sm md:text-base text-center">Trait 3</div>
+              </div>
+              
+              {/* Data Rows */}
+              {survivorProfiles.map((item, idx) => (
+                <div 
+                  key={idx} 
+                  className="grid grid-cols-4 gap-2 sm:gap-4 border-b border-emerald-100 dark:border-emerald-900/50 last:border-0 hover:bg-emerald-50/50 dark:hover:bg-emerald-950/30 transition-colors"
+                >
+                  <div className="p-3 sm:p-4 text-xs sm:text-sm md:text-base font-semibold text-foreground">{item.role}</div>
+                  {item.traits.map((trait, tidx) => (
+                    <div key={tidx} className="p-3 sm:p-4 text-center">
+                      <span className="inline-block px-2 py-1 text-xs sm:text-sm bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300 rounded-lg">
+                        {trait}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+            
+            {/* Mobile Card Layout */}
+            <div className="sm:hidden space-y-3">
+              {survivorProfiles.map((item, idx) => (
+                <Card key={idx} className="overflow-hidden bg-white dark:bg-slate-900 border-emerald-200 dark:border-emerald-900">
+                  <div className="p-3 pb-2 border-b border-emerald-100 dark:border-emerald-900/50">
+                    <h3 className="text-sm font-bold text-foreground">{item.role}</h3>
+                  </div>
+                  <CardContent className="p-3">
+                    <div className="flex flex-wrap gap-2">
+                      {item.traits.map((trait, tidx) => (
+                        <span 
+                          key={tidx} 
+                          className="inline-block px-2 py-1 text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300 rounded-lg"
+                        >
+                          {trait}
+                        </span>
+                      ))}
+                    </div>
                   </CardContent>
-                </Card>)}
+                </Card>
+              ))}
             </div>
           </section>
 
