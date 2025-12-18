@@ -431,45 +431,54 @@ const JobLifestyle = () => {
       </section>
 
       {/* Industry Volatility Score Section */}
-      <section>
-        <div className="text-center mb-8 sm:mb-12 px-4">
+      <section className="bg-amber-50/50 dark:bg-amber-950/10 rounded-2xl p-4 sm:p-6 lg:p-8">
+        <div className="text-center mb-6 sm:mb-8">
           <div className="flex items-center justify-center gap-3 mb-4">
-            
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Industry Volatility Score</h2>
           </div>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             How stable is each career during economic changes and crises
           </p>
         </div>
 
-        <div className="grid gap-6 md:gap-8 mt-8">
+        <div className="grid gap-4 sm:gap-6 grid-cols-1 lg:grid-cols-3">
           {volatilityData.map((role, idx) => {
-          const Icon = role.icon;
-          return <Card key={idx} className={`border-2 ${getColorClasses(role.color)}`}>
-                <CardContent className="p-4 sm:p-6">
-                  <div className="flex items-center gap-3 mb-6">
-                    
-                    <div>
-                      <h3 className="text-lg sm:text-xl font-bold text-foreground">{role.title}</h3>
-                      <p className="text-base font-semibold text-green-600">Volatility Score: {role.score}</p>
-                    </div>
+            const Icon = role.icon;
+            const borderColor = role.color === 'blue' 
+              ? 'border-blue-200 dark:border-blue-900' 
+              : role.color === 'orange' 
+              ? 'border-orange-200 dark:border-orange-900' 
+              : 'border-green-200 dark:border-green-900';
+            const scoreColor = role.color === 'blue' 
+              ? 'text-blue-600 dark:text-blue-400' 
+              : role.color === 'orange' 
+              ? 'text-orange-600 dark:text-orange-400' 
+              : 'text-green-600 dark:text-green-400';
+            
+            return (
+              <Card key={idx} className={`overflow-hidden bg-white dark:bg-slate-900 ${borderColor}`}>
+                <div className="p-4 sm:p-5 pb-3 sm:pb-4 border-b border-amber-100 dark:border-amber-900/50">
+                  <h3 className="text-base sm:text-lg font-bold text-foreground">{role.title}</h3>
+                  <p className={`text-sm sm:text-base font-bold ${scoreColor} mt-1`}>Score: {role.score}</p>
+                </div>
+                <CardContent className="p-4 sm:p-5">
+                  <div className="space-y-3">
+                    {role.factors.map((factor, i) => (
+                      <div key={i} className="border-b border-amber-100 dark:border-amber-900/30 last:border-0 pb-3 last:pb-0">
+                        <div className="flex justify-between items-start gap-2 mb-1">
+                          <p className="font-semibold text-sm sm:text-base text-foreground">{factor.event}</p>
+                        </div>
+                        <p className="text-xs sm:text-sm text-muted-foreground whitespace-pre-line">{factor.impact}</p>
+                      </div>
+                    ))}
                   </div>
-
-                  <div className="space-y-4">
-                    {role.factors.map((factor, i) => <div key={i} className="border-l-4 border-primary pl-4 py-2">
-                        <p className="font-semibold text-foreground mb-1">{factor.event}:</p>
-                        <p className="text-sm text-muted-foreground whitespace-pre-line">{factor.impact}</p>
-                      </div>)}
-                  </div>
-
-                  <div className={`mt-6 p-4 rounded-lg bg-${role.color}-100 border border-${role.color}-200`}>
-                    <p className="text-sm font-medium text-foreground">
-                      <strong>Simple Line:</strong> {role.summary}
-                    </p>
+                  <div className="mt-4 pt-4 border-t border-amber-200 dark:border-amber-900/50">
+                    <p className="text-xs sm:text-sm font-semibold text-primary">{role.summary}</p>
                   </div>
                 </CardContent>
-              </Card>;
-        })}
+              </Card>
+            );
+          })}
         </div>
       </section>
 
