@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Building2, AlertTriangle, MapPin, TrendingUp, Users, Plane, Wrench, Radio } from 'lucide-react';
+import { Shield, Building2, MapPin, TrendingUp, Users } from 'lucide-react';
 import SourceBadge from './SourceBadge';
 
 const howItWorksData = [
@@ -13,18 +13,13 @@ const centralGovtData = [
   { section: 'Key Policies', meaning: 'Make in India, Defence Indigenisation Policy, Drone Rules, UDAN, Skill India' },
   { section: 'Money Power', meaning: 'Very large defence budget (₹6+ lakh crore in 2025) supports aircraft, defence systems, and aviation manufacturing' },
   { section: 'Industry Target', meaning: 'Make India self-reliant and grow aerospace & defence industry at national level' },
-  { section: 'How this helps Aerospace Engineers', meaning: 'More aircraft & defence projects → more design and manufacturing jobs', icon: Plane, color: 'text-blue-600' },
-  { section: 'How this helps Avionics Engineers', meaning: 'More defence electronics & systems → more avionics and testing jobs', icon: Radio, color: 'text-purple-600' },
-  { section: 'How this helps AME', meaning: 'More airports & flights → more aircraft maintenance (MRO) jobs', icon: Wrench, color: 'text-amber-600' },
+  { section: 'How this helps Aerospace Engineers', meaning: 'More aircraft & defence projects → more design and manufacturing jobs' },
+  { section: 'How this helps Avionics Engineers', meaning: 'More defence electronics & systems → more avionics and testing jobs' },
+  { section: 'How this helps AME', meaning: 'More airports & flights → more aircraft maintenance (MRO) jobs' },
   { section: 'Foreign companies attracted (2020–2025)', meaning: '≈ 90–120 global aerospace, defence & aviation companies entered India' },
   { section: 'Official Sources', meaning: 'Invest India, PIB (Defence & Civil Aviation MoUs), Aero India MoU releases' },
 ];
 
-const noGuarantees = [
-  '❌ No job guarantee',
-  '❌ No salary guarantee', 
-  '❌ No placement guarantee'
-];
 
 const stateData = [
   {
@@ -174,8 +169,7 @@ export const GovtSupport = () => {
           </div>
           {centralGovtData.map((row, index) => (
             <div key={index} className="grid grid-cols-2 hover:bg-blue-50/50 transition-colors">
-              <div className="p-4 border-b border-slate-100 font-medium text-slate-900 flex items-center gap-2">
-                {row.icon && <row.icon className={`w-5 h-5 ${row.color}`} />}
+            <div className="p-4 border-b border-slate-100 font-medium text-slate-900">
                 {row.section}
               </div>
               <div className="p-4 border-b border-slate-100 text-slate-700">{row.meaning}</div>
@@ -187,8 +181,7 @@ export const GovtSupport = () => {
         <div className="lg:hidden p-4 space-y-4">
           {centralGovtData.map((row, index) => (
             <div key={index} className="bg-blue-50/50 rounded-lg p-4 border border-blue-100">
-              <div className="font-bold text-slate-900 mb-2 flex items-center gap-2">
-                {row.icon && <row.icon className={`w-5 h-5 ${row.color}`} />}
+              <div className="font-bold text-slate-900 mb-2">
                 {row.section}
               </div>
               <div className="text-sm text-slate-700">{row.meaning}</div>
@@ -196,20 +189,6 @@ export const GovtSupport = () => {
           ))}
         </div>
 
-        {/* No Guarantees Warning */}
-        <div className="bg-red-50 border-t-2 border-red-200 p-4 sm:p-6">
-          <div className="flex items-start gap-3">
-            <AlertTriangle className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
-            <div>
-              <h4 className="font-bold text-red-800 mb-2">What Government does NOT guarantee</h4>
-              <div className="flex flex-wrap gap-2 sm:gap-4">
-                {noGuarantees.map((item, index) => (
-                  <span key={index} className="text-red-700 text-sm sm:text-base font-medium">{item}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Final Meaning */}
         <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-4 sm:p-6 border-t border-green-200">
