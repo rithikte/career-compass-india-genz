@@ -265,6 +265,360 @@ export const CareerOutcomes = () => {
           </div>)}
       </div>
 
+      {/* Truth Curve Sections */}
+      <div className="space-y-6 sm:space-y-8">
+        {/* Aerospace Engineer Truth Curve */}
+        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-4 sm:p-6 lg:p-8 border border-blue-200">
+          <div className="flex items-center gap-2 mb-4">
+            <Plane className="w-6 h-6 text-blue-600" />
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
+              Aerospace Engineer — Truth Curve
+            </h3>
+          </div>
+          
+          <div className="bg-blue-100 rounded-lg p-4 border border-blue-300 mb-6">
+            <p className="text-sm sm:text-base text-blue-900 font-semibold">
+              <span className="font-bold">Reality in one line:</span> Slow start, brutal learning, massive payoff — only if you survive the middle years.
+            </p>
+          </div>
+
+          {/* Desktop Table */}
+          <div className="hidden md:block mb-6">
+            <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-blue-100">
+              <div className="grid grid-cols-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold text-sm">
+                <div className="p-3 border-r border-blue-500">Career Year</div>
+                <div className="p-3 border-r border-blue-500 text-center">Effort Level</div>
+                <div className="p-3 border-r border-blue-500 text-center">Salary Growth</div>
+                <div className="p-3">What ACTUALLY happens</div>
+              </div>
+              <div className="divide-y divide-gray-100">
+                <div className="grid grid-cols-4 hover:bg-blue-50/50 transition-colors">
+                  <div className="p-3 font-semibold text-gray-800">0–2 yrs</div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">🔴 Very High</span></div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">🔻 Low</span></div>
+                  <div className="p-3 text-gray-700 text-sm">Heavy CAD, simulations, reviews, documentation. You design small parts, not aircraft. Ego dies here.</div>
+                </div>
+                <div className="grid grid-cols-4 hover:bg-blue-50/50 transition-colors">
+                  <div className="p-3 font-semibold text-gray-800">3–5 yrs</div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-semibold">🟠 High</span></div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">🟡 Medium</span></div>
+                  <div className="p-3 text-gray-700 text-sm">Start owning subsystems. Mistakes reduce. Reputation begins internally.</div>
+                </div>
+                <div className="grid grid-cols-4 hover:bg-blue-50/50 transition-colors">
+                  <div className="p-3 font-semibold text-gray-800">6–10 yrs</div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">🟡 Medium</span></div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">🟢 High</span></div>
+                  <div className="p-3 text-gray-700 text-sm">You become hard to replace. Firms depend on your judgement, not just tools.</div>
+                </div>
+                <div className="grid grid-cols-4 hover:bg-blue-50/50 transition-colors">
+                  <div className="p-3 font-semibold text-gray-800">10+ yrs</div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">🟢 Low</span></div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-semibold">🔥 Very High</span></div>
+                  <div className="p-3 text-gray-700 text-sm">Authority roles: Lead Engineer, Chief Designer, Review Head. Paid for decisions, not hours.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Cards */}
+          <div className="md:hidden space-y-3 mb-6">
+            <div className="bg-white rounded-lg p-4 border border-blue-100 shadow-sm">
+              <div className="flex justify-between items-center mb-2">
+                <span className="font-bold text-gray-800">0–2 yrs</span>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-2">
+                <span className="px-2 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">🔴 Effort: Very High</span>
+                <span className="px-2 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">🔻 Salary: Low</span>
+              </div>
+              <p className="text-gray-600 text-sm">Heavy CAD, simulations, reviews, documentation. You design small parts, not aircraft. Ego dies here.</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 border border-blue-100 shadow-sm">
+              <div className="flex justify-between items-center mb-2">
+                <span className="font-bold text-gray-800">3–5 yrs</span>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-2">
+                <span className="px-2 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-semibold">🟠 Effort: High</span>
+                <span className="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">🟡 Salary: Medium</span>
+              </div>
+              <p className="text-gray-600 text-sm">Start owning subsystems. Mistakes reduce. Reputation begins internally.</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 border border-blue-100 shadow-sm">
+              <div className="flex justify-between items-center mb-2">
+                <span className="font-bold text-gray-800">6–10 yrs</span>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-2">
+                <span className="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">🟡 Effort: Medium</span>
+                <span className="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">🟢 Salary: High</span>
+              </div>
+              <p className="text-gray-600 text-sm">You become hard to replace. Firms depend on your judgement, not just tools.</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 border border-blue-100 shadow-sm">
+              <div className="flex justify-between items-center mb-2">
+                <span className="font-bold text-gray-800">10+ yrs</span>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-2">
+                <span className="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">🟢 Effort: Low</span>
+                <span className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-semibold">🔥 Salary: Very High</span>
+              </div>
+              <p className="text-gray-600 text-sm">Authority roles: Lead Engineer, Chief Designer, Review Head. Paid for decisions, not hours.</p>
+            </div>
+          </div>
+
+          {/* Hidden Truth */}
+          <div className="bg-gradient-to-r from-blue-100 to-indigo-100 rounded-xl p-4 border border-blue-300">
+            <h4 className="font-bold text-blue-900 mb-3 text-base sm:text-lg">Hidden truth (99% don't know)</h4>
+            <ul className="space-y-2 text-sm sm:text-base text-blue-800">
+              <li className="flex items-start gap-2">
+                <span className="text-blue-600 mt-1">•</span>
+                <span>Aerospace rewards patience + precision, not speed</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-blue-600 mt-1">•</span>
+                <span>Most drop out in Year 2–3 because effort feels "not worth it"</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-blue-600 mt-1">•</span>
+                <span>Survivors control projects, reviews, and approvals later</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Avionics Engineer Truth Curve */}
+        <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl p-4 sm:p-6 lg:p-8 border border-purple-200">
+          <div className="flex items-center gap-2 mb-4">
+            <Cpu className="w-6 h-6 text-purple-600" />
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
+              Avionics Engineer — Truth Curve
+            </h3>
+          </div>
+          
+          <div className="bg-purple-100 rounded-lg p-4 border border-purple-300 mb-6">
+            <p className="text-sm sm:text-base text-purple-900 font-semibold">
+              <span className="font-bold">Reality in one line:</span> Mentally exhausting early, highly paid if you master complexity.
+            </p>
+          </div>
+
+          {/* Desktop Table */}
+          <div className="hidden md:block mb-6">
+            <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-purple-100">
+              <div className="grid grid-cols-4 bg-gradient-to-r from-purple-600 to-violet-600 text-white font-semibold text-sm">
+                <div className="p-3 border-r border-purple-500">Career Year</div>
+                <div className="p-3 border-r border-purple-500 text-center">Effort Level</div>
+                <div className="p-3 border-r border-purple-500 text-center">Salary Growth</div>
+                <div className="p-3">What ACTUALLY happens</div>
+              </div>
+              <div className="divide-y divide-gray-100">
+                <div className="grid grid-cols-4 hover:bg-purple-50/50 transition-colors">
+                  <div className="p-3 font-semibold text-gray-800">0–2 yrs</div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">🔴 Very High</span></div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">🔻 Low</span></div>
+                  <div className="p-3 text-gray-700 text-sm">Constant debugging, failures, test benches. Nothing works first time.</div>
+                </div>
+                <div className="grid grid-cols-4 hover:bg-purple-50/50 transition-colors">
+                  <div className="p-3 font-semibold text-gray-800">3–5 yrs</div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">🔴 Very High</span></div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">🟡 Medium</span></div>
+                  <div className="p-3 text-gray-700 text-sm">Embedded + safety systems + standards. Pressure increases, skills deepen.</div>
+                </div>
+                <div className="grid grid-cols-4 hover:bg-purple-50/50 transition-colors">
+                  <div className="p-3 font-semibold text-gray-800">6–10 yrs</div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">🟡 Medium</span></div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">🟢 High</span></div>
+                  <div className="p-3 text-gray-700 text-sm">You handle critical avionics modules. Fewer people can do your job.</div>
+                </div>
+                <div className="grid grid-cols-4 hover:bg-purple-50/50 transition-colors">
+                  <div className="p-3 font-semibold text-gray-800">10+ yrs</div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">🟢 Low</span></div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-semibold">🔥 Very High</span></div>
+                  <div className="p-3 text-gray-700 text-sm">Systems Architect, Safety Lead, Defence Avionics Head. Your logic is paid for.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Cards */}
+          <div className="md:hidden space-y-3 mb-6">
+            <div className="bg-white rounded-lg p-4 border border-purple-100 shadow-sm">
+              <div className="flex justify-between items-center mb-2">
+                <span className="font-bold text-gray-800">0–2 yrs</span>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-2">
+                <span className="px-2 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">🔴 Effort: Very High</span>
+                <span className="px-2 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">🔻 Salary: Low</span>
+              </div>
+              <p className="text-gray-600 text-sm">Constant debugging, failures, test benches. Nothing works first time.</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 border border-purple-100 shadow-sm">
+              <div className="flex justify-between items-center mb-2">
+                <span className="font-bold text-gray-800">3–5 yrs</span>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-2">
+                <span className="px-2 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">🔴 Effort: Very High</span>
+                <span className="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">🟡 Salary: Medium</span>
+              </div>
+              <p className="text-gray-600 text-sm">Embedded + safety systems + standards. Pressure increases, skills deepen.</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 border border-purple-100 shadow-sm">
+              <div className="flex justify-between items-center mb-2">
+                <span className="font-bold text-gray-800">6–10 yrs</span>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-2">
+                <span className="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">🟡 Effort: Medium</span>
+                <span className="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">🟢 Salary: High</span>
+              </div>
+              <p className="text-gray-600 text-sm">You handle critical avionics modules. Fewer people can do your job.</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 border border-purple-100 shadow-sm">
+              <div className="flex justify-between items-center mb-2">
+                <span className="font-bold text-gray-800">10+ yrs</span>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-2">
+                <span className="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">🟢 Effort: Low</span>
+                <span className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-semibold">🔥 Salary: Very High</span>
+              </div>
+              <p className="text-gray-600 text-sm">Systems Architect, Safety Lead, Defence Avionics Head. Your logic is paid for.</p>
+            </div>
+          </div>
+
+          {/* Hidden Truth */}
+          <div className="bg-gradient-to-r from-purple-100 to-violet-100 rounded-xl p-4 border border-purple-300">
+            <h4 className="font-bold text-purple-900 mb-3 text-base sm:text-lg">Hidden truth (99% don't know)</h4>
+            <ul className="space-y-2 text-sm sm:text-base text-purple-800">
+              <li className="flex items-start gap-2">
+                <span className="text-purple-600 mt-1">•</span>
+                <span>Avionics is cognitively harder than Aerospace</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-600 mt-1">•</span>
+                <span>Fewer people survive → less crowd later</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-600 mt-1">•</span>
+                <span>One small mistake can delay projects by months → responsibility is huge</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* AME Truth Curve */}
+        <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-4 sm:p-6 lg:p-8 border border-emerald-200">
+          <div className="flex items-center gap-2 mb-4">
+            <Wrench className="w-6 h-6 text-emerald-600" />
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
+              Aircraft Maintenance Engineer (AME) — Truth Curve
+            </h3>
+          </div>
+          
+          <div className="bg-emerald-100 rounded-lg p-4 border border-emerald-300 mb-6">
+            <p className="text-sm sm:text-base text-emerald-900 font-semibold">
+              <span className="font-bold">Reality in one line:</span> Physically hard early, mentally demanding forever, one of the most stable careers.
+            </p>
+          </div>
+
+          {/* Desktop Table */}
+          <div className="hidden md:block mb-6">
+            <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-emerald-100">
+              <div className="grid grid-cols-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold text-sm">
+                <div className="p-3 border-r border-emerald-500">Career Year</div>
+                <div className="p-3 border-r border-emerald-500 text-center">Effort Level</div>
+                <div className="p-3 border-r border-emerald-500 text-center">Salary Growth</div>
+                <div className="p-3">What ACTUALLY happens</div>
+              </div>
+              <div className="divide-y divide-gray-100">
+                <div className="grid grid-cols-4 hover:bg-emerald-50/50 transition-colors">
+                  <div className="p-3 font-semibold text-gray-800">0–2 yrs</div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">🔴 Very High</span></div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">🔻 Low</span></div>
+                  <div className="p-3 text-gray-700 text-sm">Night shifts, physical work, inspections, zero error tolerance.</div>
+                </div>
+                <div className="grid grid-cols-4 hover:bg-emerald-50/50 transition-colors">
+                  <div className="p-3 font-semibold text-gray-800">3–5 yrs</div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-semibold">🟠 High</span></div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">🟡 Medium</span></div>
+                  <div className="p-3 text-gray-700 text-sm">Licensed responsibilities increase. Trust builds fast.</div>
+                </div>
+                <div className="grid grid-cols-4 hover:bg-emerald-50/50 transition-colors">
+                  <div className="p-3 font-semibold text-gray-800">6–10 yrs</div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">🟡 Medium</span></div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">🟢 High</span></div>
+                  <div className="p-3 text-gray-700 text-sm">You sign off aircraft. Airlines depend on you legally.</div>
+                </div>
+                <div className="grid grid-cols-4 hover:bg-emerald-50/50 transition-colors">
+                  <div className="p-3 font-semibold text-gray-800">10+ yrs</div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">🟢 Low</span></div>
+                  <div className="p-3 text-center"><span className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-semibold">🔥 Very High</span></div>
+                  <div className="p-3 text-gray-700 text-sm">Maintenance Head, QA Head, MRO Manager. Job security beats most fields.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Cards */}
+          <div className="md:hidden space-y-3 mb-6">
+            <div className="bg-white rounded-lg p-4 border border-emerald-100 shadow-sm">
+              <div className="flex justify-between items-center mb-2">
+                <span className="font-bold text-gray-800">0–2 yrs</span>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-2">
+                <span className="px-2 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">🔴 Effort: Very High</span>
+                <span className="px-2 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">🔻 Salary: Low</span>
+              </div>
+              <p className="text-gray-600 text-sm">Night shifts, physical work, inspections, zero error tolerance.</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 border border-emerald-100 shadow-sm">
+              <div className="flex justify-between items-center mb-2">
+                <span className="font-bold text-gray-800">3–5 yrs</span>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-2">
+                <span className="px-2 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-semibold">🟠 Effort: High</span>
+                <span className="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">🟡 Salary: Medium</span>
+              </div>
+              <p className="text-gray-600 text-sm">Licensed responsibilities increase. Trust builds fast.</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 border border-emerald-100 shadow-sm">
+              <div className="flex justify-between items-center mb-2">
+                <span className="font-bold text-gray-800">6–10 yrs</span>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-2">
+                <span className="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">🟡 Effort: Medium</span>
+                <span className="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">🟢 Salary: High</span>
+              </div>
+              <p className="text-gray-600 text-sm">You sign off aircraft. Airlines depend on you legally.</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 border border-emerald-100 shadow-sm">
+              <div className="flex justify-between items-center mb-2">
+                <span className="font-bold text-gray-800">10+ yrs</span>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-2">
+                <span className="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">🟢 Effort: Low</span>
+                <span className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-semibold">🔥 Salary: Very High</span>
+              </div>
+              <p className="text-gray-600 text-sm">Maintenance Head, QA Head, MRO Manager. Job security beats most fields.</p>
+            </div>
+          </div>
+
+          {/* Hidden Truth */}
+          <div className="bg-gradient-to-r from-emerald-100 to-teal-100 rounded-xl p-4 border border-emerald-300">
+            <h4 className="font-bold text-emerald-900 mb-3 text-base sm:text-lg">Hidden truth (99% don't know)</h4>
+            <ul className="space-y-2 text-sm sm:text-base text-emerald-800">
+              <li className="flex items-start gap-2">
+                <span className="text-emerald-600 mt-1">•</span>
+                <span>AME salaries grow slower initially but never collapse</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-emerald-600 mt-1">•</span>
+                <span>Automation cannot replace licensed human responsibility</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-emerald-600 mt-1">•</span>
+                <span>This is one of the most legally protected careers</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       {/* Demand–Supply Index Section */}
       <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-4 sm:p-6 lg:p-8 border border-indigo-200">
         <div className="text-center mb-6">
