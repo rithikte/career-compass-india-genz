@@ -138,6 +138,40 @@ export const HiringCompanies = () => {
           </div>)}
       </div>
 
+      {/* Hire-Ready Requirements Section */}
+      <div className="mt-12 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-4 sm:p-6 lg:p-8 border border-emerald-200">
+        <div className="text-center mb-4 sm:mb-6">
+          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-900 mb-2">
+            To be hire-ready for the companies listed above, you must have:
+          </h3>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 max-w-4xl mx-auto">
+          <div className="flex items-start bg-white rounded-lg p-3 sm:p-4 shadow-sm border border-emerald-100">
+            <span className="text-emerald-600 font-bold text-lg mr-2 sm:mr-3 flex-shrink-0">✔</span>
+            <span className="text-slate-700 text-sm sm:text-base">At least 1–2 real internships or practical exposures</span>
+          </div>
+          <div className="flex items-start bg-white rounded-lg p-3 sm:p-4 shadow-sm border border-emerald-100">
+            <span className="text-emerald-600 font-bold text-lg mr-2 sm:mr-3 flex-shrink-0">✔</span>
+            <span className="text-slate-700 text-sm sm:text-base">A project portfolio based on real problems (not copy-paste)</span>
+          </div>
+          <div className="flex items-start bg-white rounded-lg p-3 sm:p-4 shadow-sm border border-emerald-100">
+            <span className="text-emerald-600 font-bold text-lg mr-2 sm:mr-3 flex-shrink-0">✔</span>
+            <span className="text-slate-700 text-sm sm:text-base">Role-aligned certifications or training</span>
+          </div>
+          <div className="flex items-start bg-white rounded-lg p-3 sm:p-4 shadow-sm border border-emerald-100">
+            <span className="text-emerald-600 font-bold text-lg mr-2 sm:mr-3 flex-shrink-0">✔</span>
+            <span className="text-slate-700 text-sm sm:text-base">Comfort with industry tools, not just theory</span>
+          </div>
+        </div>
+
+        <div className="mt-4 sm:mt-6 bg-red-50 rounded-lg p-3 sm:p-4 border border-red-200 max-w-3xl mx-auto">
+          <p className="text-center text-red-700 font-semibold text-sm sm:text-base">
+            Without these, most companies on this page will not shortlist you.
+          </p>
+        </div>
+      </div>
+
       {/* Company Hiring Reality by Experience Level */}
       <div className="mt-12 bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-4 sm:p-6 lg:p-8 border border-amber-200">
         <div className="text-center mb-6 sm:mb-8">
@@ -310,6 +344,16 @@ export const HiringCompanies = () => {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Industry Boom Clarification */}
+      <div className="mt-8 bg-gradient-to-r from-amber-50 to-yellow-50 rounded-xl p-4 sm:p-6 border border-amber-200">
+        <div className="flex items-start sm:items-center">
+          <span className="text-amber-600 text-xl sm:text-2xl mr-3 sm:mr-4 flex-shrink-0">⚠️</span>
+          <p className="text-slate-800 text-sm sm:text-base lg:text-lg font-medium leading-relaxed">
+            Industry "boom" means <span className="font-bold text-amber-700">gradual expansion over many years</span>, not instant mass hiring.
+          </p>
         </div>
       </div>
 
