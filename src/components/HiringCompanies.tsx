@@ -138,6 +138,179 @@ export const HiringCompanies = () => {
           </div>)}
       </div>
 
+      {/* Corrected Demand vs Supply Stress Section */}
+      <div className="mt-12 bg-gradient-to-br from-rose-50 to-red-50 rounded-xl p-4 sm:p-6 lg:p-8 border border-rose-200">
+        <div className="text-center mb-6 sm:mb-8">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
+            CORRECTED DEMAND vs SUPPLY STRESS
+          </h3>
+        </div>
+
+        {/* Desktop Table */}
+        <div className="hidden lg:block">
+          {/* Header Row */}
+          <div className="grid grid-cols-4 gap-2 mb-3 bg-rose-100/80 rounded-lg p-3">
+            <div className="font-bold text-slate-900 text-sm">Role</div>
+            <div className="font-bold text-slate-900 text-sm text-center">Jobs / Year (India)</div>
+            <div className="font-bold text-slate-900 text-sm text-center">Eligible Candidates / Year</div>
+            <div className="font-bold text-slate-900 text-sm text-center">Selection Reality</div>
+          </div>
+          {/* Data Rows */}
+          <div className="grid grid-cols-4 gap-2 p-3 rounded-lg mb-2 bg-white transition-all duration-200 hover:shadow-md">
+            <div className="font-semibold text-slate-800 text-sm flex items-center">AME</div>
+            <div className="text-center">
+              <span className="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">2,000 – 3,000</span>
+            </div>
+            <div className="text-center">
+              <span className="inline-block bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-semibold">6,000 – 8,000</span>
+            </div>
+            <div className="text-center">
+              <span className="inline-block bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-semibold">License filters ~60–65%</span>
+            </div>
+          </div>
+          <div className="grid grid-cols-4 gap-2 p-3 rounded-lg mb-2 bg-rose-50/50 transition-all duration-200 hover:shadow-md">
+            <div className="font-semibold text-slate-800 text-sm flex items-center">Aviation Engineer (AE)</div>
+            <div className="text-center">
+              <span className="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">800 – 1,200</span>
+            </div>
+            <div className="text-center">
+              <span className="inline-block bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-semibold">15,000 – 20,000</span>
+            </div>
+            <div className="text-center">
+              <span className="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-semibold">Top ~5–8% survive</span>
+            </div>
+          </div>
+          <div className="grid grid-cols-4 gap-2 p-3 rounded-lg mb-2 bg-white transition-all duration-200 hover:shadow-md">
+            <div className="font-semibold text-slate-800 text-sm flex items-center">Avionics Engineer (AV)</div>
+            <div className="text-center">
+              <span className="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">600 – 1,000</span>
+            </div>
+            <div className="text-center">
+              <span className="inline-block bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-semibold">10,000 – 15,000</span>
+            </div>
+            <div className="text-center">
+              <span className="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-semibold">Top ~6–10% survive</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Tablet Grid (md screens) */}
+        <div className="hidden md:block lg:hidden space-y-3">
+          {/* AME */}
+          <div className="bg-white rounded-lg p-4 shadow-sm border border-rose-100">
+            <div className="font-bold text-slate-900 text-base mb-3">AME</div>
+            <div className="grid grid-cols-3 gap-3">
+              <div className="text-center bg-blue-50 rounded-lg p-2">
+                <p className="text-xs text-gray-500 mb-1">Jobs/Year</p>
+                <span className="font-bold text-blue-700 text-sm">2,000 – 3,000</span>
+              </div>
+              <div className="text-center bg-amber-50 rounded-lg p-2">
+                <p className="text-xs text-gray-500 mb-1">Candidates/Year</p>
+                <span className="font-bold text-amber-700 text-sm">6,000 – 8,000</span>
+              </div>
+              <div className="text-center bg-yellow-50 rounded-lg p-2">
+                <p className="text-xs text-gray-500 mb-1">Selection</p>
+                <span className="font-bold text-yellow-700 text-xs">~60–65% filtered</span>
+              </div>
+            </div>
+          </div>
+          {/* Aviation Engineer */}
+          <div className="bg-white rounded-lg p-4 shadow-sm border border-rose-100">
+            <div className="font-bold text-slate-900 text-base mb-3">Aviation Engineer (AE)</div>
+            <div className="grid grid-cols-3 gap-3">
+              <div className="text-center bg-blue-50 rounded-lg p-2">
+                <p className="text-xs text-gray-500 mb-1">Jobs/Year</p>
+                <span className="font-bold text-blue-700 text-sm">800 – 1,200</span>
+              </div>
+              <div className="text-center bg-amber-50 rounded-lg p-2">
+                <p className="text-xs text-gray-500 mb-1">Candidates/Year</p>
+                <span className="font-bold text-amber-700 text-sm">15,000 – 20,000</span>
+              </div>
+              <div className="text-center bg-red-50 rounded-lg p-2">
+                <p className="text-xs text-gray-500 mb-1">Selection</p>
+                <span className="font-bold text-red-700 text-xs">Top ~5–8% survive</span>
+              </div>
+            </div>
+          </div>
+          {/* Avionics Engineer */}
+          <div className="bg-white rounded-lg p-4 shadow-sm border border-rose-100">
+            <div className="font-bold text-slate-900 text-base mb-3">Avionics Engineer (AV)</div>
+            <div className="grid grid-cols-3 gap-3">
+              <div className="text-center bg-blue-50 rounded-lg p-2">
+                <p className="text-xs text-gray-500 mb-1">Jobs/Year</p>
+                <span className="font-bold text-blue-700 text-sm">600 – 1,000</span>
+              </div>
+              <div className="text-center bg-amber-50 rounded-lg p-2">
+                <p className="text-xs text-gray-500 mb-1">Candidates/Year</p>
+                <span className="font-bold text-amber-700 text-sm">10,000 – 15,000</span>
+              </div>
+              <div className="text-center bg-red-50 rounded-lg p-2">
+                <p className="text-xs text-gray-500 mb-1">Selection</p>
+                <span className="font-bold text-red-700 text-xs">Top ~6–10% survive</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Cards */}
+        <div className="md:hidden space-y-4">
+          {/* AME Card */}
+          <div className="bg-white rounded-lg p-4 shadow-sm border border-rose-100">
+            <div className="font-bold text-slate-900 text-lg mb-3">AME</div>
+            <div className="space-y-2">
+              <div className="flex items-center justify-between bg-blue-50 rounded-lg p-3">
+                <span className="text-sm font-medium text-gray-700">Jobs / Year (India)</span>
+                <span className="font-bold text-blue-700">2,000 – 3,000</span>
+              </div>
+              <div className="flex items-center justify-between bg-amber-50 rounded-lg p-3">
+                <span className="text-sm font-medium text-gray-700">Eligible Candidates / Year</span>
+                <span className="font-bold text-amber-700">6,000 – 8,000</span>
+              </div>
+              <div className="flex items-center justify-between bg-yellow-50 rounded-lg p-3">
+                <span className="text-sm font-medium text-gray-700">Selection Reality</span>
+                <span className="font-bold text-yellow-700 text-sm">License filters ~60–65%</span>
+              </div>
+            </div>
+          </div>
+          {/* Aviation Engineer Card */}
+          <div className="bg-white rounded-lg p-4 shadow-sm border border-rose-100">
+            <div className="font-bold text-slate-900 text-lg mb-3">Aviation Engineer (AE)</div>
+            <div className="space-y-2">
+              <div className="flex items-center justify-between bg-blue-50 rounded-lg p-3">
+                <span className="text-sm font-medium text-gray-700">Jobs / Year (India)</span>
+                <span className="font-bold text-blue-700">800 – 1,200</span>
+              </div>
+              <div className="flex items-center justify-between bg-amber-50 rounded-lg p-3">
+                <span className="text-sm font-medium text-gray-700">Eligible Candidates / Year</span>
+                <span className="font-bold text-amber-700">15,000 – 20,000</span>
+              </div>
+              <div className="flex items-center justify-between bg-red-50 rounded-lg p-3">
+                <span className="text-sm font-medium text-gray-700">Selection Reality</span>
+                <span className="font-bold text-red-700 text-sm">Top ~5–8% survive</span>
+              </div>
+            </div>
+          </div>
+          {/* Avionics Engineer Card */}
+          <div className="bg-white rounded-lg p-4 shadow-sm border border-rose-100">
+            <div className="font-bold text-slate-900 text-lg mb-3">Avionics Engineer (AV)</div>
+            <div className="space-y-2">
+              <div className="flex items-center justify-between bg-blue-50 rounded-lg p-3">
+                <span className="text-sm font-medium text-gray-700">Jobs / Year (India)</span>
+                <span className="font-bold text-blue-700">600 – 1,000</span>
+              </div>
+              <div className="flex items-center justify-between bg-amber-50 rounded-lg p-3">
+                <span className="text-sm font-medium text-gray-700">Eligible Candidates / Year</span>
+                <span className="font-bold text-amber-700">10,000 – 15,000</span>
+              </div>
+              <div className="flex items-center justify-between bg-red-50 rounded-lg p-3">
+                <span className="text-sm font-medium text-gray-700">Selection Reality</span>
+                <span className="font-bold text-red-700 text-sm">Top ~6–10% survive</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Hire-Ready Requirements Section */}
       <div className="mt-12 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-4 sm:p-6 lg:p-8 border border-emerald-200">
         <div className="text-center mb-4 sm:mb-6">
