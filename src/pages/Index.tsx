@@ -24,7 +24,6 @@ import { India2040 } from '../components/India2040';
 import { WhereToLearn } from '../components/WhereToLearn';
 import { InterviewSituation } from '../components/InterviewSituation';
 import IndustryAdvice from '../components/IndustryAdvice';
-import GroundReality from '../components/GroundReality';
 import CollegeDetails from '../components/CollegeDetails';
 import AboutUs from '../components/AboutUs';
 import CoreVsIT from '../components/CoreVsIT';
@@ -56,7 +55,6 @@ const Index = () => {
     { id: 'core-vs-it', title: 'Why NOT Choose IT Blindly', component: CoreVsIT },
     { id: 'industry-advice', title: '20 Years Industry Advice', component: IndustryAdvice },
     { id: 'where-to-learn', title: 'Where to Learn', component: WhereToLearn },
-    { id: 'ground-reality', title: 'Ground Reality for Parents', component: GroundReality },
     { id: 'college-details', title: 'B.Tech – Degree Landing Page', component: CollegeDetails },
     { id: 'about-us', title: 'About Us', component: AboutUs },
   ];
