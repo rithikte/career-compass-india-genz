@@ -137,27 +137,35 @@ export const HomePage = () => {
           animationDelay: '1.5s'
         }}></div>
           
-          {/* Headline - Identity */}
-          <h1 className="headline-interactive text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight tracking-tight px-4 mb-10 sm:mb-12">
+          {/* Headline - Mostly Black with ONE Gradient Word */}
+          <h1 className="headline-interactive text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight tracking-tight px-4 mb-10 sm:mb-12">
             <span className="animate-spring-up inline-block will-change-transform text-foreground animation-delay-100">
-              Core Topics
-            </span>
-            <span className="text-foreground animate-spring-up inline-block will-change-transform animation-delay-100 mx-2 sm:mx-4">→</span>
-            <span className="animate-spring-up inline-block will-change-transform animation-delay-200">
+              India's 1st{' '}
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer-subtle">
-                2 Best-Fit Degrees
+                AI-Powered
               </span>
             </span>
-            <span className="text-foreground animate-spring-up inline-block will-change-transform animation-delay-200 mx-2 sm:mx-4">→</span>
+            <br />
+            <span className="text-foreground animate-spring-up inline-block will-change-transform animation-delay-200">
+              Platform That Maps
+            </span>
+            <br />
             <span className="text-foreground animate-spring-up inline-block will-change-transform animation-delay-300">
-              2 Best-Fit Careers
+              Your Future from the
+            </span>
+            <br />
+            <span className="text-foreground animate-spring-up inline-block will-change-transform animation-delay-400">
+              Subjects You Love
             </span>
           </h1>
           
-          {/* Sub-headline - Trust */}
+          {/* Subtitle - Clear Hierarchy */}
           <div className="max-w-4xl mx-auto mb-12 sm:mb-16 px-4">
-            <p className="text-xl sm:text-2xl md:text-3xl text-muted-foreground font-medium leading-relaxed animate-spring-up will-change-transform animation-delay-500">
-              Career clarity before college — based on subjects and real work, not hype.
+            <p className="text-xl sm:text-2xl md:text-3xl text-foreground font-bold leading-relaxed mb-6 animate-spring-up will-change-transform animation-delay-500">
+              From subjects you love to a future you deserve
+            </p>
+            <p className="text-lg sm:text-xl text-muted-foreground font-medium leading-relaxed animate-spring-up will-change-transform animation-delay-500">
+              Powered by AI. Backed by Research. Built for India.
             </p>
           </div>
 
