@@ -138,24 +138,20 @@ export const HomePage = () => {
         }}></div>
           
           {/* Headline - Mostly Black with ONE Gradient Word */}
-          <h1 className="headline-interactive text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight tracking-tight px-4 mb-10 sm:mb-12">
+          <h1 className="headline-interactive text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight tracking-tight px-4 mb-10 sm:mb-12">
             <span className="animate-spring-up inline-block will-change-transform text-foreground animation-delay-100">
-              India's 1st{' '}
+              From{' '}
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer-subtle">
-                AI-Powered
+                Core Topics
               </span>
             </span>
             <br />
             <span className="text-foreground animate-spring-up inline-block will-change-transform animation-delay-200">
-              Platform That Maps
+              2 Best-Fit Degrees
             </span>
             <br />
             <span className="text-foreground animate-spring-up inline-block will-change-transform animation-delay-300">
-              Your Future from the
-            </span>
-            <br />
-            <span className="text-foreground animate-spring-up inline-block will-change-transform animation-delay-400">
-              Subjects You Love
+              2 Best-Fit Careers
             </span>
           </h1>
           
