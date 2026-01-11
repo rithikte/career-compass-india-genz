@@ -189,6 +189,60 @@ export const HomePage = () => {
           </div>
         </div>
 
+        {/* Degree Truth Section */}
+        <div className="mb-16 sm:mb-24 px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Main Statement */}
+            <div className="mb-8 sm:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-foreground leading-tight mb-4">
+                Every degree has strong careers.
+              </h2>
+              <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-medium">
+                Most people are not aware of them.
+              </p>
+            </div>
+
+            {/* The Real Difference */}
+            <div className="bg-white/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 shadow-layer-2 border border-border/50">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-6 sm:mb-8">
+                The real difference is:
+              </h3>
+              
+              <div className="space-y-4 sm:space-y-6">
+                {/* Point 1 */}
+                <div className="flex items-start gap-3 sm:gap-4 text-left">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0 shadow-layer-1">
+                    <span className="text-white font-bold text-sm sm:text-base">1</span>
+                  </div>
+                  <p className="text-base sm:text-lg md:text-xl text-foreground font-medium pt-1">
+                    How well the degree fits the student
+                  </p>
+                </div>
+
+                {/* Point 2 */}
+                <div className="flex items-start gap-3 sm:gap-4 text-left">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0 shadow-layer-1">
+                    <span className="text-white font-bold text-sm sm:text-base">2</span>
+                  </div>
+                  <p className="text-base sm:text-lg md:text-xl text-foreground font-medium pt-1">
+                    How clearly the career path is understood
+                  </p>
+                </div>
+
+                {/* Point 3 */}
+                <div className="flex items-start gap-3 sm:gap-4 text-left">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0 shadow-layer-1">
+                    <span className="text-white font-bold text-sm sm:text-base">3</span>
+                  </div>
+                  <p className="text-base sm:text-lg md:text-xl text-foreground font-medium pt-1">
+                    How much effort the student puts in
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Workflow Diagram */}
         <div className="mb-16 sm:mb-24 px-4">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-center text-foreground mb-12 sm:mb-20">
