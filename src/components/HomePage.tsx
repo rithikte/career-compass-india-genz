@@ -189,54 +189,66 @@ export const HomePage = () => {
           </div>
         </div>
 
-        {/* Degree Truth Section */}
+        {/* Degree Truth Section - Swiss Design */}
         <div className="mb-16 sm:mb-24 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            {/* Main Statement */}
-            <div className="mb-8 sm:mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-foreground leading-tight mb-4">
-                Every degree has strong careers.
-              </h2>
-              <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-medium">
-                Most people are not aware of them.
-              </p>
-            </div>
-
-            {/* The Real Difference */}
-            <div className="bg-white/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 shadow-layer-2 border border-border/50">
-              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-6 sm:mb-8">
-                The real difference is:
-              </h3>
+          <div className="max-w-5xl mx-auto">
+            {/* Grid Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
               
-              <div className="space-y-4 sm:space-y-6">
-                {/* Point 1 */}
-                <div className="flex items-start gap-3 sm:gap-4 text-left">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0 shadow-layer-1">
-                    <span className="text-white font-bold text-sm sm:text-base">1</span>
-                  </div>
-                  <p className="text-base sm:text-lg md:text-xl text-foreground font-medium pt-1">
-                    How well the degree fits the student
+              {/* Left Column - Main Statement */}
+              <div className="lg:col-span-5 lg:border-r lg:border-foreground/20 lg:pr-12">
+                <div className="border-l-4 border-primary pl-4 sm:pl-6">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground leading-tight tracking-tight">
+                    Every degree has strong careers.
+                  </h2>
+                  <p className="text-base sm:text-lg md:text-xl text-muted-foreground mt-3 font-medium">
+                    Most people are not aware of them.
                   </p>
                 </div>
+              </div>
 
-                {/* Point 2 */}
-                <div className="flex items-start gap-3 sm:gap-4 text-left">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0 shadow-layer-1">
-                    <span className="text-white font-bold text-sm sm:text-base">2</span>
+              {/* Right Column - The Difference */}
+              <div className="lg:col-span-7">
+                <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-muted-foreground font-semibold mb-6 sm:mb-8">
+                  The real difference is
+                </p>
+                
+                <div className="space-y-0">
+                  {/* Point 1 */}
+                  <div className="group border-t border-foreground/10 py-4 sm:py-5">
+                    <div className="flex items-baseline gap-4 sm:gap-6">
+                      <span className="text-3xl sm:text-4xl md:text-5xl font-black text-primary/30 group-hover:text-primary transition-colors">
+                        01
+                      </span>
+                      <p className="text-base sm:text-lg md:text-xl text-foreground font-medium leading-snug">
+                        How well the degree fits the student
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-base sm:text-lg md:text-xl text-foreground font-medium pt-1">
-                    How clearly the career path is understood
-                  </p>
-                </div>
 
-                {/* Point 3 */}
-                <div className="flex items-start gap-3 sm:gap-4 text-left">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0 shadow-layer-1">
-                    <span className="text-white font-bold text-sm sm:text-base">3</span>
+                  {/* Point 2 */}
+                  <div className="group border-t border-foreground/10 py-4 sm:py-5">
+                    <div className="flex items-baseline gap-4 sm:gap-6">
+                      <span className="text-3xl sm:text-4xl md:text-5xl font-black text-primary/30 group-hover:text-primary transition-colors">
+                        02
+                      </span>
+                      <p className="text-base sm:text-lg md:text-xl text-foreground font-medium leading-snug">
+                        How clearly the career path is understood
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-base sm:text-lg md:text-xl text-foreground font-medium pt-1">
-                    How much effort the student puts in
-                  </p>
+
+                  {/* Point 3 */}
+                  <div className="group border-t border-b border-foreground/10 py-4 sm:py-5">
+                    <div className="flex items-baseline gap-4 sm:gap-6">
+                      <span className="text-3xl sm:text-4xl md:text-5xl font-black text-primary/30 group-hover:text-primary transition-colors">
+                        03
+                      </span>
+                      <p className="text-base sm:text-lg md:text-xl text-foreground font-medium leading-snug">
+                        How much effort the student puts in
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
