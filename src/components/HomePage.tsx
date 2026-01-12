@@ -475,9 +475,7 @@ export const HomePage = () => {
               <br />
               Across India
             </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-              Join the revolution in career guidance and degree selection with our proven track record
-            </p>
+            
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 lg:gap-6 mb-12 sm:mb-16 relative z-10">
@@ -534,21 +532,16 @@ export const HomePage = () => {
         </div>
 
         {/* Career Explorer Integration */}
-        {showCareerExplorer && (
-          <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        {showCareerExplorer && <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
             <div className="relative w-full max-w-6xl my-8">
               <CareerExplorer />
-              <button
-                onClick={() => setShowCareerExplorer(false)}
-                className="absolute top-4 right-4 z-50 bg-white hover:bg-gray-100 text-gray-800 rounded-full p-2 shadow-lg transition-all duration-200"
-              >
+              <button onClick={() => setShowCareerExplorer(false)} className="absolute top-4 right-4 z-50 bg-white hover:bg-gray-100 text-gray-800 rounded-full p-2 shadow-lg transition-all duration-200">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
             </div>
-          </div>
-        )}
+          </div>}
 
       </div>
 
