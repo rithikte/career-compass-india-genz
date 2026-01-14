@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MapPin, ArrowRight, Target, Filter, Award, Building2, ChevronDown, Sparkles, TrendingUp, Users, Shield, BookOpen, Zap, Instagram, Twitter, Linkedin, Settings, Search, CheckSquare, FileText, BarChart3 } from 'lucide-react';
+import { MapPin, ArrowRight, Target, Filter, Award, Building2, ChevronDown, Sparkles, TrendingUp, Users, Shield, BookOpen, Zap, Instagram, Twitter, Linkedin } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { CareerExplorer } from './CareerExplorer';
@@ -255,154 +255,145 @@ export const HomePage = () => {
           </div>
         </div>
 
-        {/* How the Platform Works - Swiss Design */}
+        {/* Workflow Diagram */}
         <div className="mb-16 sm:mb-24 px-4">
-          {/* Swiss 12-Column Grid Layout */}
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-center text-foreground mb-12 sm:mb-20">
+            How the Platform Works
+          </h2>
+          
+          {/* Desktop Circular Layout */}
+          <div className="hidden lg:block relative max-w-5xl mx-auto">
+            <div className="relative w-full aspect-square max-w-[800px] mx-auto">
+              <div className="absolute inset-0 rounded-full border-4 border-dashed border-primary/20"></div>
               
-              {/* Left 6 Columns - Text Content */}
-              <div className="lg:col-span-6 flex flex-col justify-center py-8 lg:py-16">
-                {/* Logo/Brand */}
-                <p className="text-xs sm:text-sm uppercase tracking-[0.25em] text-muted-foreground font-semibold mb-8 lg:mb-12">
-                  Undergraduate Maps
-                </p>
-                
-                {/* Headline */}
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-black text-foreground leading-[1.1] tracking-tight mb-6 lg:mb-8">
-                  Choose the Right Degree — Backed by Science
-                </h2>
-                
-                {/* Subtext */}
-                <p className="text-base sm:text-lg text-muted-foreground font-medium leading-relaxed mb-8 lg:mb-10 max-w-xl">
-                  From stream selection to best-fit degrees and real career outcomes.
-                </p>
-                
-                {/* CTA Button - Academic Green */}
-                <div>
-                  <Button 
-                    onClick={() => setShowCareerExplorer(true)}
-                    className="bg-success hover:bg-success/90 text-white font-semibold text-base px-8 py-6 rounded-xl transition-all duration-300 shadow-layer-1 hover:shadow-layer-2"
-                  >
-                    Find My Best-Fit Career
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
-                </div>
-              </div>
-
-              {/* Right 6 Columns - System Illustration */}
-              <div className="lg:col-span-6 relative">
-                <div className="relative py-8 lg:py-12">
-                  
-                  {/* Main Illustration Container */}
-                  <div className="relative flex flex-col lg:flex-row items-start gap-4 lg:gap-6">
-                    
-                    {/* Left Input Cards */}
-                    <div className="w-full lg:w-auto flex flex-col gap-3 lg:gap-4">
-                      {/* Stream Selection Card */}
-                      <div className="bg-white border border-border rounded-xl p-4 shadow-layer-1 min-w-[200px]">
-                        <p className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-3">Choose Your Stream</p>
-                        <div className="flex flex-wrap gap-2">
-                          {['MPC', 'BiPC', 'MEC', 'CEC'].map((stream) => (
-                            <span key={stream} className="px-3 py-1.5 bg-secondary text-foreground text-xs font-medium rounded-lg">
-                              {stream}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      {/* Subjects Card */}
-                      <div className="bg-white border border-border rounded-xl p-4 shadow-layer-1">
-                        <p className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-3">Pick Subjects You Enjoy</p>
-                        <div className="space-y-2">
-                          {['Maths', 'Physics', 'Biology', 'Commerce'].map((subject) => (
-                            <div key={subject} className="flex items-center gap-2">
-                              <div className="w-4 h-4 border-2 border-border rounded flex items-center justify-center">
-                                <CheckSquare className="w-3 h-3 text-success" />
-                              </div>
-                              <span className="text-sm text-foreground">{subject}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      {/* Core Topics Card */}
-                      <div className="bg-white border border-border rounded-xl p-4 shadow-layer-1">
-                        <p className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-2">Pick Core Topics</p>
-                        <p className="text-xs text-muted-foreground">Topics you're interested in</p>
-                      </div>
-                    </div>
-
-                    {/* Center - Career Fit Engine */}
-                    <div className="w-full lg:w-auto flex flex-col items-center gap-3 lg:gap-4 lg:self-center">
-                      {/* Center Overlay Label */}
-                      <p className="text-[10px] sm:text-xs text-muted-foreground italic text-center max-w-[180px] leading-relaxed hidden lg:block">
-                        Behind every click — Science calculates the perfect fit
-                      </p>
-                      
-                      {/* Main Engine Card */}
-                      <div className="bg-success text-white rounded-xl p-5 sm:p-6 shadow-layer-2 text-center min-w-[180px] sm:min-w-[200px]">
-                        <div className="flex items-center justify-center gap-2 mb-2">
-                          <Settings className="w-5 h-5" />
-                          <Search className="w-4 h-4" />
-                        </div>
-                        <p className="text-sm sm:text-base font-bold mb-1">Career Fit Engine</p>
-                        <p className="text-[10px] sm:text-xs opacity-90">Science-powered decision system</p>
-                      </div>
-                      
-                      {/* Center Label - Mobile */}
-                      <p className="text-[10px] sm:text-xs text-muted-foreground italic text-center max-w-[200px] leading-relaxed lg:hidden">
-                        Behind every click — Science calculates the perfect fit
-                      </p>
-                    </div>
-
-                    {/* Right Output Cards */}
-                    <div className="w-full lg:w-auto flex flex-col gap-3 lg:gap-4">
-                      {/* Best-Fit Degrees Card */}
-                      <div className="bg-white border border-border rounded-xl p-4 shadow-layer-1 min-w-[200px]">
-                        <p className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-3">2 Best-Fit Degrees</p>
-                        <div className="flex flex-wrap gap-2">
-                          <span className="px-3 py-1.5 bg-success/10 text-success text-xs font-medium rounded-lg border border-success/20">
-                            Degree 1
-                          </span>
-                          <span className="px-3 py-1.5 bg-success/10 text-success text-xs font-medium rounded-lg border border-success/20">
-                            Degree 2
-                          </span>
-                        </div>
-                      </div>
-                      
-                      {/* Industries & Careers Card */}
-                      <div className="bg-white border border-border rounded-xl p-4 shadow-layer-1">
-                        <div className="flex items-start justify-between gap-3">
-                          <div>
-                            <p className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1">Industries & Careers</p>
-                            <p className="text-[10px] sm:text-xs text-muted-foreground">Careers you're made for & growth ahead</p>
-                          </div>
-                          <BarChart3 className="w-5 h-5 text-success flex-shrink-0" />
-                        </div>
-                      </div>
-                      
-                      {/* Science-Backed Card */}
-                      <div className="bg-white border border-border rounded-xl p-4 shadow-layer-1">
-                        <div className="flex items-start justify-between gap-3">
-                          <div>
-                            <p className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1">Science-Backed</p>
-                            <p className="text-[10px] sm:text-xs text-muted-foreground">Verified Data & Research</p>
-                          </div>
-                          <div className="flex items-center gap-1 flex-shrink-0">
-                            <FileText className="w-4 h-4 text-success" />
-                            <Shield className="w-4 h-4 text-success" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                <div className="w-48 h-48 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-layer-3">
+                  <div className="text-center text-white px-6">
+                    <Sparkles className="w-16 h-16 mx-auto mb-3" />
+                    <p className="font-bold text-lg leading-tight">AI-Powered Career Mapping</p>
                   </div>
-                  
                 </div>
               </div>
-              
+
+              {/* Workflow Items */}
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-layer-2 border-4 border-white">
+                    <Target className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="text-center bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-layer-1 border border-border min-w-[200px]">
+                    <p className="font-bold text-foreground text-sm mb-1">Choose Your Stream</p>
+                    <p className="text-xs text-muted-foreground">Pick Subjects You Enjoy</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute top-[15%] right-[5%] transform translate-x-1/4">
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-layer-2 border-4 border-white">
+                    <Filter className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="text-center bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-layer-1 border border-border min-w-[200px]">
+                    <p className="font-bold text-foreground text-sm mb-1">Pick the Core Topics</p>
+                    <p className="text-xs text-muted-foreground">Topics You're Interested In</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2">
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center shadow-layer-2 border-4 border-white">
+                    <Zap className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="text-center bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-layer-1 border border-border min-w-[200px]">
+                    <p className="font-bold text-foreground text-sm mb-1">Behind every click</p>
+                    <p className="text-xs text-muted-foreground">Science calculates the perfect fit</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute bottom-[15%] right-[5%] transform translate-x-1/4">
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center shadow-layer-2 border-4 border-white">
+                    <Award className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="text-center bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-layer-1 border border-border min-w-[200px]">
+                    <p className="font-bold text-foreground text-sm mb-1">Get Your 2 Best-Fit</p>
+                    <p className="text-xs text-muted-foreground">Degrees & Industries</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2">
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-layer-2 border-4 border-white">
+                    <TrendingUp className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="text-center bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-layer-1 border border-border min-w-[200px]">
+                    <p className="font-bold text-foreground text-sm mb-1">See The Careers</p>
+                    <p className="text-xs text-muted-foreground">You're Made For & Growth Ahead</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-teal-500 to-blue-500 flex items-center justify-center shadow-layer-2 border-4 border-white">
+                    <BookOpen className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="text-center bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-layer-1 border border-border min-w-[200px]">
+                    <p className="font-bold text-foreground text-sm mb-1">Science-Backed</p>
+                    <p className="text-xs text-muted-foreground">Verified Data & Research</p>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+
+          {/* Tablet & Mobile Linear Layout */}
+          <div className="lg:hidden space-y-6">
+            {[{
+            icon: Target,
+            title: 'Choose Your Stream',
+            desc: 'Pick Subjects You Enjoy',
+            color: 'from-blue-500 to-cyan-500'
+          }, {
+            icon: Filter,
+            title: 'Pick the Core Topics',
+            desc: 'Topics You\'re Interested In',
+            color: 'from-purple-500 to-pink-500'
+          }, {
+            icon: Zap,
+            title: 'Behind every click',
+            desc: 'Science calculates the perfect fit',
+            color: 'from-green-500 to-emerald-500'
+          }, {
+            icon: Award,
+            title: 'Get Your 2 Best-Fit',
+            desc: 'Degrees & Industries',
+            color: 'from-orange-500 to-red-500'
+          }, {
+            icon: TrendingUp,
+            title: 'See The Careers',
+            desc: 'You\'re Made For & Growth Ahead',
+            color: 'from-indigo-500 to-purple-600'
+          }, {
+            icon: BookOpen,
+            title: 'Science-Backed',
+            desc: 'Verified Data & Research',
+            color: 'from-teal-500 to-blue-500'
+          }].map((item, index) => {
+            const Icon = item.icon;
+            return <div key={index} className="magnetic-container flex items-center gap-4 sm:gap-6 bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-layer-2 border border-border hover:shadow-layer-3 transition-all duration-300">
+                  <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br ${item.color} flex items-center justify-center flex-shrink-0 shadow-layer-1`}>
+                    <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-bold text-foreground text-base sm:text-lg mb-1">{item.title}</h3>
+                    <p className="text-sm sm:text-base text-muted-foreground">{item.desc}</p>
+                  </div>
+                </div>;
+          })}
           </div>
         </div>
 
