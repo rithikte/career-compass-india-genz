@@ -50,7 +50,12 @@ export const JobDemand = () => {
       </div>
 
       <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8">
-        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6 text-center">Average Yearly Hiring : 2025 vs 2040</h3>
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+          <h3 className="text-xl sm:text-2xl font-bold text-slate-900 text-center">Average Yearly Hiring : 2025 vs 2040</h3>
+          <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
+            Projection
+          </span>
+        </div>
         <div className="h-64 sm:h-80 lg:h-96 mb-4 sm:mb-6">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={demandData} margin={{
