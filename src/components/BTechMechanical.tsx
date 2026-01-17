@@ -24,8 +24,11 @@ export const BTechMechanical = () => {
       {/* Focus to Get Into Aviation Industry */}
       <Card className="border-2 border-primary/20">
         <CardHeader className="p-4 sm:p-6">
-          <CardTitle className="flex items-center gap-2 sm:gap-3 text-lg sm:text-xl md:text-2xl">
-            Focus to Get Into Aviation Industry
+          <CardTitle className="flex flex-wrap items-center gap-2 sm:gap-3 text-lg sm:text-xl md:text-2xl">
+            <span>Focus to Get Into Aviation Industry</span>
+            <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
+              Estimate
+            </span>
           </CardTitle>
           <CardDescription className="text-sm sm:text-base md:text-lg font-semibold">
             Essential Math & Physics foundation for aviation NVH careers
@@ -100,8 +103,11 @@ export const BTechMechanical = () => {
       {/* Engineering Subjects Intensity Across 4 Years */}
       <Card className="border-2 border-primary/20">
         <CardHeader className="p-4 sm:p-6">
-          <CardTitle className="flex items-center gap-2 sm:gap-3 text-lg sm:text-xl md:text-2xl">
-            Engineering Subjects Intensity Across 4 Years
+          <CardTitle className="flex flex-wrap items-center gap-2 sm:gap-3 text-lg sm:text-xl md:text-2xl">
+            <span>Engineering Subjects Intensity Across 4 Years</span>
+            <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
+              Estimate
+            </span>
           </CardTitle>
           <CardDescription className="text-sm sm:text-base md:text-lg font-semibold">
             Detailed breakdown of Math & Physics topics by semester and their real-world applications
@@ -345,8 +351,11 @@ export const BTechMechanical = () => {
       {/* What You'll Study in College - B.Tech Mechanical (Aviation Industry Focus) */}
       <Card className="border-2 border-primary/20">
         <CardHeader className="p-4 sm:p-6">
-          <CardTitle className="flex items-center gap-2 sm:gap-3 text-lg sm:text-xl md:text-2xl leading-tight">
-            What You'll Study in College – B.Tech Mechanical (Aviation Industry Focus)
+          <CardTitle className="flex flex-wrap items-center gap-2 sm:gap-3 text-lg sm:text-xl md:text-2xl leading-tight">
+            <span>What You'll Study in College – B.Tech Mechanical (Aviation Industry Focus)</span>
+            <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
+              Estimate
+            </span>
           </CardTitle>
           <CardDescription className="text-sm sm:text-base md:text-lg font-semibold">
             Year-by-year curriculum breakdown with real-world aviation applications
