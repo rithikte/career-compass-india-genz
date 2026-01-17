@@ -106,6 +106,16 @@ export const India2040 = () => {
         <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
           What Is a Goal vs What Is Real
         </p>
+        
+        {/* Why this matters */}
+        <div className="flex items-center justify-center mt-3">
+          <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+            <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+              <span className="font-semibold">Why this matters:</span> Helps students separate government ambition from actual job reality, so they don't expect guaranteed outcomes.
+            </span>
+          </div>
+        </div>
+        
         <div className="flex flex-wrap justify-center gap-2 mt-4">
           <SourceBadge href="https://www.niti.gov.in/reports" label="NITI Aayog Reports" />
           <SourceBadge href="https://www.vision2047.gov.in" label="Vision 2047 Portal" />
@@ -157,6 +167,15 @@ export const India2040 = () => {
           <p className="text-base sm:text-lg text-green-700 font-medium">
             (This Is Real)
           </p>
+          
+          {/* Why this matters */}
+          <div className="flex items-center justify-center mt-3">
+            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                <span className="font-semibold">Why this matters:</span> Shows which cities will have which types of jobs, helping students plan skills and location wisely.
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* Desktop Table */}
@@ -204,6 +223,18 @@ export const India2040 = () => {
         <div className="mt-6 bg-white border-l-4 border-green-500 p-4 rounded-r-lg">
           <p className="text-slate-700 text-sm sm:text-base font-medium">
             This pattern is already happening in India.
+          </p>
+        </div>
+      </div>
+
+      {/* Bottom-line Truth */}
+      <div className="mt-12 bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg">
+        <div className="text-center">
+          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3">
+            Bottom-line Truth
+          </h3>
+          <p className="text-white/95 text-sm sm:text-base lg:text-lg font-medium leading-relaxed max-w-3xl mx-auto">
+            Knowing this early helps students plan for real opportunities, not just future promises.
           </p>
         </div>
       </div>
