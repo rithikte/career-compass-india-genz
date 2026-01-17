@@ -101,39 +101,12 @@ const JobRealityExpectation = () => {
         </p>
       </div>
 
-      {/* Importance Section */}
-      <div className="bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 rounded-2xl p-4 sm:p-6 lg:p-8 border border-amber-200 shadow-sm">
-        <div className="space-y-3 sm:space-y-4">
-          {/* Importance */}
-          <div className="flex items-start gap-3 sm:gap-4">
-            <div className="p-2 sm:p-2.5 bg-amber-100 rounded-xl flex-shrink-0">
-              <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-amber-600" />
-            </div>
-            <div className="space-y-1 sm:space-y-2">
-              <h3 className="text-sm sm:text-base lg:text-lg font-bold text-amber-800">
-                Importance
-              </h3>
-              <p className="text-[0.8125rem] sm:text-[0.9375rem] lg:text-[1.0625rem] text-amber-700 leading-relaxed">
-                Helps students avoid choosing a career based on glamour and understand the real daily work before committing years.
-              </p>
-            </div>
-          </div>
-
-          {/* Bottom-line Truth */}
-          <div className="flex items-start gap-3 sm:gap-4 pt-2 sm:pt-3 border-t border-amber-200/60">
-            <div className="p-2 sm:p-2.5 bg-orange-100 rounded-xl flex-shrink-0">
-              <Target className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-orange-600" />
-            </div>
-            <div className="space-y-1 sm:space-y-2">
-              <h3 className="text-sm sm:text-base lg:text-lg font-bold text-orange-800">
-                Bottom-line Truth
-              </h3>
-              <p className="text-[0.8125rem] sm:text-[0.9375rem] lg:text-[1.0625rem] text-orange-700 leading-relaxed font-medium">
-                Knowing job reality before choosing a degree prevents disappointment, stress, and wrong career decisions later.
-              </p>
-            </div>
-          </div>
-        </div>
+      {/* Importance Section - Compact inline design */}
+      <div className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 bg-amber-50/80 rounded-xl border border-amber-200/60">
+        <AlertTriangle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-600 flex-shrink-0" />
+        <p className="text-[0.6875rem] sm:text-xs lg:text-sm text-amber-700">
+          <span className="font-semibold">Why this matters:</span> Helps students avoid choosing a career based on glamour and understand real daily work before committing years.
+        </p>
       </div>
 
       {/* Role Cards */}
@@ -228,7 +201,7 @@ const JobRealityExpectation = () => {
         })}
       </div>
 
-      {/* Bottom Note */}
+      {/* Key Takeaway */}
       <div className="bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 rounded-2xl p-4 sm:p-6 lg:p-8 border border-indigo-100">
         <div className="text-center space-y-2 sm:space-y-3">
           <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-800">
@@ -239,6 +212,23 @@ const JobRealityExpectation = () => {
             set right expectations, and build a fulfilling long-term career. The glamour is real — 
             it just comes with dedication and patience.
           </p>
+        </div>
+      </div>
+
+      {/* Bottom-line Truth - At bottom of page */}
+      <div className="bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg">
+        <div className="flex items-center justify-center gap-3 sm:gap-4">
+          <div className="p-2 sm:p-2.5 bg-white/20 rounded-xl backdrop-blur-sm flex-shrink-0">
+            <Target className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
+          </div>
+          <div className="text-center sm:text-left">
+            <h3 className="text-[0.6875rem] sm:text-xs lg:text-sm font-bold text-white/90 uppercase tracking-wide mb-0.5 sm:mb-1">
+              Bottom-line Truth
+            </h3>
+            <p className="text-[0.6875rem] sm:text-xs lg:text-sm text-white font-medium leading-relaxed">
+              Knowing job reality before choosing a degree prevents disappointment, stress, and wrong career decisions later.
+            </p>
+          </div>
         </div>
       </div>
     </div>
