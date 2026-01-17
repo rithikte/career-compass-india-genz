@@ -164,6 +164,15 @@ export const GovtSupport = () => {
             <Building2 className="w-5 h-5 sm:w-6 sm:h-6" />
             Central Government – Aviation Industry Contribution (2020–2025)
           </h3>
+          
+          {/* Why this matters */}
+          <div className="flex items-center justify-center mt-3">
+            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                <span className="font-semibold">Why this matters:</span> Helps students understand how national policies create industry growth, but jobs still depend on personal skills, not government promises.
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* Desktop Table */}
@@ -219,6 +228,15 @@ export const GovtSupport = () => {
             <span className="inline-flex items-center rounded-full bg-white/20 text-white px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-white/30">
               Estimate
             </span>
+          </div>
+          
+          {/* Why this matters */}
+          <div className="flex items-center justify-center mt-3">
+            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                <span className="font-semibold">Why this matters:</span> Helps students choose the right state for studies and jobs by showing where real aviation investments and hiring are happening.
+              </span>
+            </div>
           </div>
         </div>
 
@@ -280,6 +298,18 @@ export const GovtSupport = () => {
           <p>Companies create jobs.</p>
           <p className="text-amber-400 font-bold text-lg sm:text-xl pt-2">
             Only skills decide who gets hired.
+          </p>
+        </div>
+      </div>
+
+      {/* Bottom-line Truth */}
+      <div className="mt-12 bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg">
+        <div className="text-center">
+          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3">
+            Bottom-line Truth
+          </h3>
+          <p className="text-white/95 text-sm sm:text-base lg:text-lg font-medium leading-relaxed max-w-3xl mx-auto">
+            Knowing government support early helps students plan skills + location smartly instead of expecting guaranteed jobs.
           </p>
         </div>
       </div>
