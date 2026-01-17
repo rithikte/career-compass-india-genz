@@ -48,6 +48,15 @@ export const InterviewSituation = () => {
         <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
           Core-role competition ranges across aviation careers
         </p>
+        
+        {/* Why this matters */}
+        <div className="flex items-center justify-center mt-3">
+          <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+            <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+              <span className="font-semibold">Why this matters:</span> Shows how many serious candidates you actually compete with in interviews, helping students plan skills and location realistically before choosing the career.
+            </span>
+          </div>
+        </div>
         <div className="flex flex-wrap justify-center gap-2 mt-4">
           <SourceBadge href="https://www.aicte-india.org/feedback/placement-statistics" label="AICTE Placement Data" />
           <SourceBadge href="https://www.naukri.com/company-reviews/aerospace-companies" label="Naukri Reviews" />
