@@ -191,6 +191,13 @@ export const CareerInsights = () => {
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
                 Each industry has peak hiring seasons. Plan your applications accordingly.
               </p>
+              
+              {/* Why this matters */}
+              <div className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 bg-amber-50/80 rounded-xl border border-amber-200/60 mt-4">
+                <p className="text-[0.6875rem] sm:text-xs lg:text-sm text-amber-700">
+                  <span className="font-semibold">Why this matters:</span> Helps students apply at the right time instead of missing hiring windows due to poor timing.
+                </p>
+              </div>
             </div>
             
             {/* Desktop CSS Grid Table */}
@@ -251,7 +258,14 @@ export const CareerInsights = () => {
                 Estimate
               </span>
             </div>
-            <p className="text-muted-foreground mb-6">A brutally honest map showing top reasons students struggle.</p>
+            <p className="text-muted-foreground mb-4">A brutally honest map showing top reasons students struggle.</p>
+            
+            {/* Why this matters */}
+            <div className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 bg-amber-50/80 rounded-xl border border-amber-200/60 mb-6">
+              <p className="text-[0.6875rem] sm:text-xs lg:text-sm text-amber-700">
+                <span className="font-semibold">Why this matters:</span> Shows common mistakes early so students can fix weaknesses before facing rejection.
+              </p>
+            </div>
             
             <div className="grid gap-6 md:grid-cols-3">
               {failurePoints.map((item, idx) => <Card key={idx} className="hover:shadow-lg transition-shadow bg-white dark:bg-slate-900 border-rose-200 dark:border-rose-900">
@@ -278,7 +292,14 @@ export const CareerInsights = () => {
                 Estimate
               </span>
             </div>
-            <p className="text-muted-foreground mb-6">What actually matters when companies evaluate candidates.</p>
+            <p className="text-muted-foreground mb-4">What actually matters when companies evaluate candidates.</p>
+            
+            {/* Why this matters */}
+            <div className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 bg-amber-50/80 rounded-xl border border-amber-200/60 mb-6">
+              <p className="text-[0.6875rem] sm:text-xs lg:text-sm text-amber-700">
+                <span className="font-semibold">Why this matters:</span> Tells students what companies truly value, so they focus on the right skills, not myths.
+              </p>
+            </div>
             
             <Card className="overflow-hidden bg-white dark:bg-slate-900 border-purple-200 dark:border-purple-900">
               {/* Desktop Table */}
@@ -340,6 +361,13 @@ export const CareerInsights = () => {
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
                 The personality profile of students who survive and grow.
               </p>
+              
+              {/* Why this matters */}
+              <div className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 bg-amber-50/80 rounded-xl border border-amber-200/60 mt-4">
+                <p className="text-[0.6875rem] sm:text-xs lg:text-sm text-amber-700">
+                  <span className="font-semibold">Why this matters:</span> Helps students check if their personality and discipline match the career's long-term demands.
+                </p>
+              </div>
             </div>
             
             {/* Desktop CSS Grid Table */}
@@ -402,7 +430,14 @@ export const CareerInsights = () => {
                 Index
               </span>
             </div>
-            <p className="text-muted-foreground mb-6">Where you have the best chances of landing internships.</p>
+            <p className="text-muted-foreground mb-4">Where you have the best chances of landing internships.</p>
+            
+            {/* Why this matters */}
+            <div className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 bg-amber-50/80 rounded-xl border border-amber-200/60 mb-6">
+              <p className="text-[0.6875rem] sm:text-xs lg:text-sm text-amber-700">
+                <span className="font-semibold">Why this matters:</span> Helps students choose the right city to improve internship and job chances.
+              </p>
+            </div>
             
             <div className="grid gap-6 lg:grid-cols-3">
               {Object.entries(cityInternshipData).map(([roleKey, cities]) => <Card key={roleKey} className="overflow-hidden bg-white dark:bg-slate-900 border-amber-200 dark:border-amber-900">
@@ -432,7 +467,14 @@ export const CareerInsights = () => {
                 Estimate
               </span>
             </div>
-            <p className="text-muted-foreground mb-6">Top companies offering internships in each domain.</p>
+            <p className="text-muted-foreground mb-4">Top companies offering internships in each domain.</p>
+            
+            {/* Why this matters */}
+            <div className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 bg-amber-50/80 rounded-xl border border-amber-200/60 mb-6">
+              <p className="text-[0.6875rem] sm:text-xs lg:text-sm text-amber-700">
+                <span className="font-semibold">Why this matters:</span> Shows real entry points into the industry so students can plan practical exposure early.
+              </p>
+            </div>
             
             {/* Desktop CSS Grid Table */}
             <div className="hidden sm:block bg-white dark:bg-slate-900 rounded-xl border border-cyan-200 dark:border-cyan-900 overflow-hidden shadow-sm">
@@ -529,6 +571,20 @@ export const CareerInsights = () => {
               })}
             </div>
           </section>
+
+          {/* Bottom-line Truth */}
+          <div className="bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg">
+            <div className="flex items-center justify-center gap-3 sm:gap-4">
+              <div className="text-center sm:text-left">
+                <h3 className="text-[0.6875rem] sm:text-xs lg:text-sm font-bold text-white/90 uppercase tracking-wide mb-0.5 sm:mb-1">
+                  Bottom-line Truth
+                </h3>
+                <p className="text-[0.6875rem] sm:text-xs lg:text-sm text-white font-medium leading-relaxed">
+                  Knowing this before choosing a degree saves students from wrong preparation, wasted years, and missed opportunities.
+                </p>
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>
