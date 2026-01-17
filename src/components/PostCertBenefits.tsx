@@ -70,9 +70,14 @@ export const PostCertBenefits = () => {
   return (
     <div className="space-y-6 sm:space-y-8">
       <div className="text-center mb-8 sm:mb-12 px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-          Post-Certification Benefits
-        </h2>
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900">
+            Post-Certification Benefits
+          </h2>
+          <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
+            Estimate
+          </span>
+        </div>
         <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
           ROI Analysis • Before vs After Certification Impact
         </p>
