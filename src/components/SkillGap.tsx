@@ -136,6 +136,18 @@ export const SkillGap = () => {
           </TableBody>
         </Table>
         </div>
+
+        {/* Reassurance message */}
+        <div className="mt-6 sm:mt-8 text-center">
+          <div className="inline-flex flex-col items-center bg-gradient-to-r from-emerald-50 to-green-50 rounded-xl px-4 py-3 sm:px-6 sm:py-4 border border-emerald-200/60">
+            <p className="text-sm sm:text-base md:text-lg text-slate-800 font-semibold">
+              A skill gap does <span className="text-red-600 font-bold">NOT</span> mean your child will fail.
+            </p>
+            <p className="text-xs sm:text-sm md:text-base text-emerald-700 mt-1 font-medium">
+              It only means: <span className="font-bold">Extra training is required</span>
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Effort Intensity Required Section */}
