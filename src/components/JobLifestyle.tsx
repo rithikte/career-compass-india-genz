@@ -269,9 +269,11 @@ const JobLifestyle = () => {
       {/* Job Lifestyle Index Section */}
       <section>
         <div className="text-center mb-8 sm:mb-12 px-4">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Job Lifestyle Index</h2>
+            <span className="inline-flex items-center rounded-full bg-blue-100 text-blue-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-blue-200">
+              Index
+            </span>
           </div>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
             Compare work-life balance, stress levels, and career growth across roles
@@ -387,9 +389,11 @@ const JobLifestyle = () => {
       {/* Industry Health Bar Section */}
       <section>
         <div className="text-center mb-8 sm:mb-12 px-4">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Industry Health Bar</h2>
+            <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
+              Projection
+            </span>
           </div>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
             Current state of each industry and why it matters for your career
@@ -433,8 +437,11 @@ const JobLifestyle = () => {
       {/* Industry Volatility Score Section */}
       <section className="bg-amber-50/50 dark:bg-amber-950/10 rounded-2xl p-4 sm:p-6 lg:p-8">
         <div className="text-center mb-6 sm:mb-8">
-          <div className="flex items-center justify-center gap-3 mb-4">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Industry Volatility Score</h2>
+            <span className="inline-flex items-center rounded-full bg-blue-100 text-blue-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-blue-200">
+              Index
+            </span>
           </div>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             How stable is each career during economic changes and crises
@@ -485,9 +492,11 @@ const JobLifestyle = () => {
       {/* Saturation Forecast Section */}
       <section>
         <div className="text-center mb-8 sm:mb-12 px-4">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Saturation Forecast</h2>
+            <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
+              Projection
+            </span>
           </div>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
             Will there be enough jobs in the future? 
