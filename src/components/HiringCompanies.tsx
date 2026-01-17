@@ -149,6 +149,15 @@ export const HiringCompanies = () => {
               Estimate
             </span>
           </div>
+          
+          {/* Why this matters */}
+          <div className="flex items-center justify-center mt-3">
+            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                <span className="font-semibold">Why this matters:</span> Helps students understand real competition levels so they don't assume "degree = job."
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* Desktop Table */}
@@ -365,6 +374,15 @@ export const HiringCompanies = () => {
           <p className="text-gray-600 text-sm sm:text-base">
             (Across ~600+ aviation ecosystem companies)
           </p>
+          
+          {/* Why this matters */}
+          <div className="flex items-center justify-center mt-3">
+            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                <span className="font-semibold">Why this matters:</span> Makes students realize freshers face limits and long-term growth comes with skills and experience.
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* Desktop Grid Table */}
@@ -487,6 +505,15 @@ export const HiringCompanies = () => {
           <p className="text-gray-600 text-sm sm:text-base">
             Strategic locations where aerospace & defence industries are expected to grow significantly
           </p>
+          
+          {/* Why this matters */}
+          <div className="flex items-center justify-center mt-3">
+            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                <span className="font-semibold">Why this matters:</span> Helps students choose the right state and city for studies, internships, and future jobs.
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* Desktop Table */}
@@ -537,6 +564,18 @@ export const HiringCompanies = () => {
           <span className="text-amber-600 text-xl sm:text-2xl mr-3 sm:mr-4 flex-shrink-0">⚠️</span>
           <p className="text-slate-800 text-sm sm:text-base lg:text-lg font-medium leading-relaxed">
             Industry "boom" means <span className="font-bold text-amber-700">gradual expansion over many years</span>, not instant mass hiring.
+          </p>
+        </div>
+      </div>
+
+      {/* Bottom-line Truth */}
+      <div className="mt-12 bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg">
+        <div className="text-center">
+          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3">
+            Bottom-line Truth
+          </h3>
+          <p className="text-white/95 text-sm sm:text-base lg:text-lg font-medium leading-relaxed max-w-3xl mx-auto">
+            Knowing this early helps students plan skills, location, and effort realistically instead of chasing false hope.
           </p>
         </div>
       </div>
