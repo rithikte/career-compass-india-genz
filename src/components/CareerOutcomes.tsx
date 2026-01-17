@@ -269,11 +269,14 @@ export const CareerOutcomes = () => {
       <div className="space-y-6 sm:space-y-8">
         {/* Aerospace Engineer Truth Curve */}
         <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-4 sm:p-6 lg:p-8 border border-blue-200">
-          <div className="flex items-center gap-2 mb-4">
+          <div className="flex flex-wrap items-center gap-2 mb-4">
             <Plane className="w-6 h-6 text-blue-600" />
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
               Aerospace Engineer — Truth Curve
             </h3>
+            <span className="inline-flex items-center rounded-full bg-blue-100 text-blue-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-blue-200">
+              Index
+            </span>
           </div>
           
           <div className="bg-blue-100 rounded-lg p-4 border border-blue-300 mb-6">
@@ -622,9 +625,14 @@ export const CareerOutcomes = () => {
       {/* Demand–Supply Index Section */}
       <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-4 sm:p-6 lg:p-8 border border-indigo-200">
         <div className="text-center mb-6">
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-2">
-            📊 Demand–Supply Index (Industry-Valid)
-          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
+              📊 Demand–Supply Index (Industry-Valid)
+            </h3>
+            <span className="inline-flex items-center rounded-full bg-blue-100 text-blue-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-blue-200">
+              Index
+            </span>
+          </div>
           <p className="text-sm sm:text-base text-gray-600">
             Each role is evaluated on three defensible indicators
           </p>
