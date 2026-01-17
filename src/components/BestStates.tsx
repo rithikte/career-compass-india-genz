@@ -446,6 +446,14 @@ export const BestStates = () => {
             Expected ~3,400–4,400 new openings annually across India
           </p>
           
+          {/* Why this matters */}
+          <div className="flex items-center justify-center">
+            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                <span className="font-semibold">Why this matters:</span> Shows how many jobs open every year, helping students judge real hiring volume instead of hype.
+              </span>
+            </div>
+          </div>
         </div>
 
         <div className="overflow-x-auto">
@@ -584,6 +592,15 @@ export const BestStates = () => {
           <p className="text-gray-600">
             When these projected companies & startups open, they create extra one-time new jobs
           </p>
+          
+          {/* Why this matters */}
+          <div className="flex items-center justify-center mt-3">
+            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                <span className="font-semibold">Why this matters:</span> Helps students understand future job creation as new companies and startups enter the market.
+              </span>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -856,9 +873,18 @@ export const BestStates = () => {
               Estimate
             </span>
           </div>
-          <p className="text-cyan-100 text-sm sm:text-base">
+          <p className="text-cyan-100 text-sm sm:text-base mb-4">
             Understanding regional dominance and why opportunities cluster in specific states
           </p>
+          
+          {/* Why this matters */}
+          <div className="flex items-center justify-center">
+            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                <span className="font-semibold">Why this matters:</span> Helps students know where most jobs are concentrated so they can plan location and career moves smartly.
+              </span>
+            </div>
+          </div>
         </div>
 
         <div className="p-6 sm:p-8 space-y-12">
@@ -1323,6 +1349,18 @@ export const BestStates = () => {
             South India dominates with 70% of aerospace jobs concentrated in top 3 states
           </p>
           
+        </div>
+      </div>
+
+      {/* Bottom-line Truth */}
+      <div className="mt-12 bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg">
+        <div className="text-center">
+          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3">
+            Bottom-line Truth
+          </h3>
+          <p className="text-white/95 text-sm sm:text-base lg:text-lg font-medium leading-relaxed max-w-3xl mx-auto">
+            Knowing this data early helps students choose the right role + right state, not just the right degree.
+          </p>
         </div>
       </div>
     </div>;
