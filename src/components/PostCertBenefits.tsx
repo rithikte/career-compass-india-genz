@@ -81,6 +81,16 @@ export const PostCertBenefits = () => {
         <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
           ROI Analysis • Before vs After Certification Impact
         </p>
+        
+        {/* Why this matters */}
+        <div className="flex items-center justify-center mt-3">
+          <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+            <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+              <span className="font-semibold">Why this matters:</span> Shows how certifications directly increase salary, promotions, and interview chances, helping students justify early effort before choosing a career path.
+            </span>
+          </div>
+        </div>
+        
         <div className="flex flex-wrap justify-center gap-2 mt-4">
           <SourceBadge href="https://www.payscale.com/research/IN/Certification" label="PayScale Certification" />
           <SourceBadge href="https://www.glassdoor.co.in/Salaries/aerospace-engineer-salary" label="Glassdoor India" />
