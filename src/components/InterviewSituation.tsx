@@ -1,5 +1,5 @@
 import React from 'react';
-import { AlertTriangle, Users, MapPin, Award, Info } from 'lucide-react';
+import { AlertTriangle, Users, MapPin, Award, Info, Target, CheckCircle, XCircle, Cpu, Wrench } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import SourceBadge from './SourceBadge';
 
@@ -350,6 +350,154 @@ export const InterviewSituation = () => {
           <div className="bg-white p-4 sm:p-6 rounded-xl border border-indigo-100">
             <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
               The numbers shown (like <strong>10–14</strong>) mean how many people you actually compete with at interview stage — <strong>not total applicants</strong>.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* What Should You Do Next? */}
+      <Card className="border-2 border-primary/20">
+        <CardHeader className="p-4 sm:p-6">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+            <CardTitle className="text-lg sm:text-xl md:text-2xl">What Should You Do Next?</CardTitle>
+            <span className="inline-flex items-center rounded-full bg-blue-100 text-blue-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-blue-200">
+              Index
+            </span>
+          </div>
+        </CardHeader>
+        <CardContent className="p-3 sm:p-4 md:p-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+            {/* Aerospace Engineer */}
+            <div className="relative overflow-hidden rounded-xl border border-blue-200 bg-gradient-to-br from-blue-50 to-white shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full -translate-y-12 translate-x-12"></div>
+              <div className="relative p-4 sm:p-5 space-y-4">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white shadow-lg">
+                    <Target className="w-5 h-5 sm:w-6 sm:h-6" />
+                  </div>
+                  <h3 className="font-bold text-base sm:text-lg text-slate-900">Aerospace Engineer</h3>
+                </div>
+                
+                <div className="space-y-3">
+                  <div className="flex items-start gap-2 p-2 sm:p-3 bg-green-50 rounded-lg border border-green-100">
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                    <p className="text-xs sm:text-sm text-slate-700">
+                      <strong>If this role still feels right →</strong> focus on strong basics, design concepts, and problem-solving practice
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start gap-2 p-2 sm:p-3 bg-amber-50 rounded-lg border border-amber-100">
+                    <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600 mt-0.5 flex-shrink-0" />
+                    <p className="text-xs sm:text-sm text-slate-700">
+                      <strong>If you feel unsure →</strong> spend time improving fundamentals before committing fully
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start gap-2 p-2 sm:p-3 bg-red-50 rounded-lg border border-red-100">
+                    <XCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                    <p className="text-xs sm:text-sm text-slate-700">
+                      <strong>If many sections felt uncomfortable →</strong> pause and rethink calmly
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="pt-3 border-t border-blue-100">
+                  <p className="text-xs sm:text-sm font-medium text-blue-700 italic">
+                    Building skills slowly is better than rushing with confusion.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Avionics Engineer */}
+            <div className="relative overflow-hidden rounded-xl border border-purple-200 bg-gradient-to-br from-purple-50 to-white shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-purple-500/10 rounded-full -translate-y-12 translate-x-12"></div>
+              <div className="relative p-4 sm:p-5 space-y-4">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white shadow-lg">
+                    <Cpu className="w-5 h-5 sm:w-6 sm:h-6" />
+                  </div>
+                  <h3 className="font-bold text-base sm:text-lg text-slate-900">Avionics Engineer</h3>
+                </div>
+                
+                <div className="space-y-3">
+                  <div className="flex items-start gap-2 p-2 sm:p-3 bg-green-50 rounded-lg border border-green-100">
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                    <p className="text-xs sm:text-sm text-slate-700">
+                      <strong>If this role still fits you →</strong> start strengthening electronics basics and accuracy-based practice
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start gap-2 p-2 sm:p-3 bg-amber-50 rounded-lg border border-amber-100">
+                    <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600 mt-0.5 flex-shrink-0" />
+                    <p className="text-xs sm:text-sm text-slate-700">
+                      <strong>If you feel mentally stressed →</strong> slow down and improve step by step
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start gap-2 p-2 sm:p-3 bg-red-50 rounded-lg border border-red-100">
+                    <XCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                    <p className="text-xs sm:text-sm text-slate-700">
+                      <strong>If repeated checking feels uncomfortable →</strong> take time before moving ahead
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="pt-3 border-t border-purple-100">
+                  <p className="text-xs sm:text-sm font-medium text-purple-700 italic">
+                    High-responsibility roles need calm preparation, not pressure.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Aircraft Maintenance Engineer */}
+            <div className="relative overflow-hidden rounded-xl border border-amber-200 bg-gradient-to-br from-amber-50 to-white shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-full -translate-y-12 translate-x-12"></div>
+              <div className="relative p-4 sm:p-5 space-y-4">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center text-white shadow-lg">
+                    <Wrench className="w-5 h-5 sm:w-6 sm:h-6" />
+                  </div>
+                  <h3 className="font-bold text-base sm:text-lg text-slate-900">Aircraft Maintenance Engineer (AME)</h3>
+                </div>
+                
+                <div className="space-y-3">
+                  <div className="flex items-start gap-2 p-2 sm:p-3 bg-green-50 rounded-lg border border-green-100">
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                    <p className="text-xs sm:text-sm text-slate-700">
+                      <strong>If this role feels acceptable →</strong> build discipline, safety understanding, and routine practice
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start gap-2 p-2 sm:p-3 bg-amber-50 rounded-lg border border-amber-100">
+                    <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600 mt-0.5 flex-shrink-0" />
+                    <p className="text-xs sm:text-sm text-slate-700">
+                      <strong>If rules and responsibility feel heavy →</strong> discuss once with parents or mentors
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start gap-2 p-2 sm:p-3 bg-red-50 rounded-lg border border-red-100">
+                    <XCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                    <p className="text-xs sm:text-sm text-slate-700">
+                      <strong>If multiple parts felt difficult →</strong> pause and reassess before deciding
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="pt-3 border-t border-amber-100">
+                  <p className="text-xs sm:text-sm font-medium text-amber-700 italic">
+                    Steady preparation matters more than quick decisions.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Truth */}
+          <div className="mt-6 bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-4 sm:p-6 rounded-xl text-center">
+            <p className="text-sm sm:text-base md:text-lg font-bold">
+              Taking time to think is smarter than rushing into a decision.
             </p>
           </div>
         </CardContent>
