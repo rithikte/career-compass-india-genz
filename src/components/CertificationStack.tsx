@@ -202,6 +202,15 @@ export const CertificationStack = () => {
           <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
             For Aerospace, Avionics, Aircraft Maintenance Engineering
           </p>
+          
+          {/* Why this matters */}
+          <div className="flex items-center justify-center mt-3">
+            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                <span className="font-semibold">Why this matters:</span> Shows the minimum certifications needed to become job-ready, so students don't rely on degree alone.
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* Universal Certifications Table - Mobile */}
@@ -284,6 +293,15 @@ export const CertificationStack = () => {
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
               Real-world impact analysis: with vs without certifications
             </p>
+            
+            {/* Why this matters */}
+            <div className="flex items-center justify-center mt-3">
+              <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+                <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                  <span className="font-semibold">Why this matters:</span> Clearly shows the salary loss, role downgrade, and delays students face if they avoid certifications.
+                </span>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-4 sm:px-0">
@@ -434,9 +452,19 @@ export const CertificationStack = () => {
               <div className="inline-block px-4 py-1 bg-blue-500/20 border border-blue-400/30 rounded-full text-xs font-bold text-blue-300 mb-4 backdrop-blur-sm">
                 NEXT CRITICAL STEP
               </div>
-              <h4 className="text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight">
+              <h4 className="text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight">
                 Role Fitment Exam
               </h4>
+              
+              {/* Why this matters */}
+              <div className="flex items-center justify-start mb-6">
+                <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+                  <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                    <span className="font-semibold">Why this matters:</span> Helps students identify which role suits them best before wasting time on the wrong career path.
+                  </span>
+                </div>
+              </div>
+              
               <div className="space-y-4 text-base sm:text-lg text-blue-100 leading-relaxed">
                 <p className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
                   Finish your 3 Universal Certs, then take the <span className="font-bold text-white">Role Fitment Test</span> — it shows whether you fit best in <span className="font-bold text-blue-300">Aerospace, Avionics, or AME</span>.
@@ -469,6 +497,15 @@ export const CertificationStack = () => {
           <p className="text-gray-600 text-sm sm:text-base lg:text-lg">
             Understanding long-term career safety and reskilling requirements
           </p>
+          
+          {/* Why this matters */}
+          <div className="flex items-center justify-center mt-3">
+            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                <span className="font-semibold">Why this matters:</span> Helps students judge how long the career will stay safe and valuable in the future.
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* Aerospace Engineer Longevity (implied from summary table) */}
@@ -801,6 +838,18 @@ export const CertificationStack = () => {
           <h3 className="text-2xl font-bold mb-2">Certification Success Formula</h3>
           <p className="text-blue-200 text-lg mb-6">
             Foundation → Specialization → Advanced → Expert → AI = 100% Job Ready
+          </p>
+        </div>
+      </div>
+
+      {/* Bottom-line Truth */}
+      <div className="mt-12 bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg">
+        <div className="text-center">
+          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3">
+            Bottom-line Truth
+          </h3>
+          <p className="text-white/95 text-sm sm:text-base lg:text-lg font-medium leading-relaxed max-w-3xl mx-auto">
+            Knowing this early helps students choose the right skills + right role, not just the right degree.
           </p>
         </div>
       </div>
