@@ -94,9 +94,14 @@ export const GovtSupport = () => {
     <div className="space-y-8 sm:space-y-12">
       {/* Section Header */}
       <div className="text-center mb-8 sm:mb-12 px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-          How Government Support Actually Works
-        </h2>
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900">
+            How Government Support Actually Works
+          </h2>
+          <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
+            Estimate
+          </span>
+        </div>
         <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
           Very Simple Explanation
         </p>
@@ -206,10 +211,15 @@ export const GovtSupport = () => {
       {/* State-Wise Investment Reality */}
       <div className="bg-white rounded-xl shadow-lg overflow-hidden">
         <div className="bg-gradient-to-r from-purple-700 to-purple-800 p-4 sm:p-6">
-          <h3 className="text-lg sm:text-xl font-bold text-white text-center flex items-center justify-center gap-2">
-            <MapPin className="w-5 h-5 sm:w-6 sm:h-6" />
-            State-Wise Aviation Investment Reality (2020–2025)
-          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+            <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+            <h3 className="text-lg sm:text-xl font-bold text-white text-center">
+              State-Wise Aviation Investment Reality (2020–2025)
+            </h3>
+            <span className="inline-flex items-center rounded-full bg-white/20 text-white px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-white/30">
+              Estimate
+            </span>
+          </div>
         </div>
 
         <div className="p-4 sm:p-6 space-y-6">

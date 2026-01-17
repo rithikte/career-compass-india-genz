@@ -191,9 +191,14 @@ export const CertificationStack = () => {
       {/* Universal Certifications Section */}
       <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 md:p-10 mb-8">
         <div className="text-center mb-8">
-          <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
-            Universal Certifications
-          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-3">
+            <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">
+              Universal Certifications
+            </h3>
+            <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
+              Estimate
+            </span>
+          </div>
           <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
             For Aerospace, Avionics, Aircraft Maintenance Engineering
           </p>
@@ -453,9 +458,14 @@ export const CertificationStack = () => {
       {/* Career Longevity Score Section */}
       <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8">
         <div className="text-center mb-6 sm:mb-8 px-4">
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-2 sm:mb-3">
-            Career Longevity Score (2025-2040)
-          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
+              Career Longevity Score (2025-2040)
+            </h3>
+            <span className="inline-flex items-center rounded-full bg-blue-100 text-blue-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-blue-200">
+              Index
+            </span>
+          </div>
           <p className="text-gray-600 text-sm sm:text-base lg:text-lg">
             Understanding long-term career safety and reskilling requirements
           </p>

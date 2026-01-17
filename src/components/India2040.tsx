@@ -95,9 +95,14 @@ export const India2040 = () => {
     <div className="space-y-6 sm:space-y-8">
       {/* Header */}
       <div className="text-center mb-8 sm:mb-12 px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-          India 2040 Aviation Vision
-        </h2>
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900">
+            India 2040 Aviation Vision
+          </h2>
+          <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
+            Projection
+          </span>
+        </div>
         <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
           What Is a Goal vs What Is Real
         </p>
@@ -140,11 +145,14 @@ export const India2040 = () => {
       {/* Where Jobs Will Actually Be Section */}
       <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-green-200">
         <div className="text-center mb-6">
-          <div className="flex items-center justify-center gap-2 mb-3">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-3">
             <MapPin className="w-6 h-6 sm:w-7 sm:h-7 text-green-600" />
             <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
               Where Jobs Will Actually Be
             </h3>
+            <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
+              Projection
+            </span>
           </div>
           <p className="text-base sm:text-lg text-green-700 font-medium">
             (This Is Real)

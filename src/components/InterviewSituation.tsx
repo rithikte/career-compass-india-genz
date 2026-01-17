@@ -58,9 +58,14 @@ export const InterviewSituation = () => {
       {/* Competition Range Overview */}
       <Card className="bg-gradient-to-br from-slate-50 to-blue-50 border-blue-200">
         <CardHeader>
-          <CardTitle className="text-xl sm:text-2xl font-bold text-slate-900 text-center">
-            Competition Range Overview
-          </CardTitle>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
+            <CardTitle className="text-xl sm:text-2xl font-bold text-slate-900">
+              Competition Range Overview
+            </CardTitle>
+            <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
+              Estimate
+            </span>
+          </div>
         </CardHeader>
         <CardContent>
           {/* Desktop Table */}
