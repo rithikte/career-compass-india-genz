@@ -97,6 +97,15 @@ export const GrowthRate = () => {
           <p className="text-gray-600">
             Annual growth rates and projections for aerospace careers
           </p>
+          
+          {/* Why this matters */}
+          <div className="flex items-center justify-center mt-3">
+            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                <span className="font-semibold">Why this matters:</span> Shows how many job opportunities will increase in the future, helping students choose a career with long-term demand.
+              </span>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -158,6 +167,15 @@ export const GrowthRate = () => {
             </span>
           </div>
           <p className="text-muted-foreground">CAGR = the average yearly growth</p>
+          
+          {/* Why this matters */}
+          <div className="flex items-center justify-center mt-3">
+            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                <span className="font-semibold">Why this matters:</span> Helps students understand why India offers stronger career growth compared to global markets.
+              </span>
+            </div>
+          </div>
         </div>
         <div className="rounded-xl p-6 border border-gray-200">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
@@ -192,6 +210,15 @@ export const GrowthRate = () => {
           <p className="text-gray-600">
             How fast new aerospace companies are entering the Indian market
           </p>
+          
+          {/* Why this matters */}
+          <div className="flex items-center justify-center mt-3">
+            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                <span className="font-semibold">Why this matters:</span> Shows how many new companies will enter the industry, increasing hiring opportunities over time.
+              </span>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -245,7 +272,17 @@ export const GrowthRate = () => {
         </div>
       </div>
 
-      {/* Comprehensive Source Documentation */}
+      {/* Bottom-line Truth */}
+      <div className="mt-12 bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg">
+        <div className="text-center">
+          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3">
+            Bottom-line Truth
+          </h3>
+          <p className="text-white/95 text-sm sm:text-base lg:text-lg font-medium leading-relaxed max-w-3xl mx-auto">
+            Knowing these growth trends before choosing a degree helps students invest effort in careers that will still matter in 10–15 years.
+          </p>
+        </div>
+      </div>
       
     </div>;
 };
