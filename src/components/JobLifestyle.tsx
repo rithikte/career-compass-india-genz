@@ -280,6 +280,13 @@ const JobLifestyle = () => {
           </p>
         </div>
 
+        {/* Why this matters - Job Lifestyle Index */}
+        <div className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 bg-amber-50/80 rounded-xl border border-amber-200/60">
+          <p className="text-[0.6875rem] sm:text-xs lg:text-sm text-amber-700">
+            <span className="font-semibold">Why this matters:</span> Helps students understand daily work pressure and life balance before committing years to a career.
+          </p>
+        </div>
+
         <div className="grid gap-6 md:gap-8 mt-8">
           {lifestyleData.map((role, idx) => {
           const Icon = role.icon;
@@ -400,6 +407,13 @@ const JobLifestyle = () => {
           </p>
         </div>
 
+        {/* Why this matters - Industry Health Bar */}
+        <div className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 bg-amber-50/80 rounded-xl border border-amber-200/60">
+          <p className="text-[0.6875rem] sm:text-xs lg:text-sm text-amber-700">
+            <span className="font-semibold">Why this matters:</span> Shows whether the industry is growing or risky, so students don't invest time in a weak field.
+          </p>
+        </div>
+
         <div className="grid gap-6 md:gap-8 mt-8">
           {industryHealthData.map((role, idx) => {
           const Icon = role.icon;
@@ -448,7 +462,14 @@ const JobLifestyle = () => {
           </p>
         </div>
 
-        <div className="grid gap-4 sm:gap-6 grid-cols-1 lg:grid-cols-3">
+        {/* Why this matters - Industry Volatility Score */}
+        <div className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 bg-amber-50/80 rounded-xl border border-amber-200/60 mt-4">
+          <p className="text-[0.6875rem] sm:text-xs lg:text-sm text-amber-700">
+            <span className="font-semibold">Why this matters:</span> Helps students know how safe the career is during recessions, pandemics, and global crises.
+          </p>
+        </div>
+
+        <div className="grid gap-4 sm:gap-6 grid-cols-1 lg:grid-cols-3 mt-6">
           {volatilityData.map((role, idx) => {
             const Icon = role.icon;
             const borderColor = role.color === 'blue' 
@@ -499,7 +520,14 @@ const JobLifestyle = () => {
             </span>
           </div>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Will there be enough jobs in the future? 
+            Will there be enough jobs in the future? 
+          </p>
+        </div>
+
+        {/* Why this matters - Saturation Forecast */}
+        <div className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 bg-amber-50/80 rounded-xl border border-amber-200/60">
+          <p className="text-[0.6875rem] sm:text-xs lg:text-sm text-amber-700">
+            <span className="font-semibold">Why this matters:</span> Warns students about future competition so they don't enter overcrowded careers blindly.
           </p>
         </div>
 
@@ -542,6 +570,20 @@ const JobLifestyle = () => {
         })}
         </div>
       </section>
+
+      {/* Bottom-line Truth - At bottom of page */}
+      <div className="bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg">
+        <div className="flex items-center justify-center gap-3 sm:gap-4">
+          <div className="text-center sm:text-left">
+            <h3 className="text-[0.6875rem] sm:text-xs lg:text-sm font-bold text-white/90 uppercase tracking-wide mb-0.5 sm:mb-1">
+              Bottom-line Truth
+            </h3>
+            <p className="text-[0.6875rem] sm:text-xs lg:text-sm text-white font-medium leading-relaxed">
+              Knowing this before choosing a degree prevents stress, regret, and wrong career decisions later.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>;
 };
 export default JobLifestyle;
