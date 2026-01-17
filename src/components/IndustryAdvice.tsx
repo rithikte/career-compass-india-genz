@@ -221,6 +221,116 @@ const IndustryAdvice = () => {
           </CardContent>
         </Card>
 
+        {/* ENTRANCE EXAMS */}
+        <Card className="bg-white rounded-2xl shadow-lg border-2 border-gray-200">
+          <CardHeader>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="p-2 bg-indigo-100 rounded-lg">
+                <FileCheck className="w-6 h-6 text-indigo-600" />
+              </div>
+              <CardTitle className="text-2xl sm:text-3xl">Entrance Exams Used to Enter This Degree</CardTitle>
+            </div>
+            <CardDescription className="text-lg font-semibold">Common and less-known pathways to Mechanical Engineering</CardDescription>
+          </CardHeader>
+          <CardContent className="p-4 sm:p-6 space-y-6">
+            {/* Main Entrance Exams */}
+            <div className="space-y-3">
+              <h4 className="text-lg sm:text-xl font-bold text-slate-900 flex items-center gap-2">
+                <div className="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                Primary Entrance Exams
+              </h4>
+              <div className="grid sm:grid-cols-2 gap-3">
+                <div className="p-3 sm:p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-200">
+                  <h5 className="font-bold text-slate-900 text-sm sm:text-base mb-1">JEE Main</h5>
+                  <p className="text-slate-700 text-xs sm:text-sm">For NITs, IIITs, and many central/private engineering colleges</p>
+                </div>
+                <div className="p-3 sm:p-4 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border border-purple-200">
+                  <h5 className="font-bold text-slate-900 text-sm sm:text-base mb-1">JEE Advanced</h5>
+                  <p className="text-slate-700 text-xs sm:text-sm">For IITs (Mechanical Engineering)</p>
+                </div>
+                <div className="p-3 sm:p-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-200">
+                  <h5 className="font-bold text-slate-900 text-sm sm:text-base mb-1">State Engineering Entrance Exams</h5>
+                  <p className="text-slate-700 text-xs sm:text-sm">TS EAMCET / AP EAMCET / KCET / MHT CET – for state colleges</p>
+                </div>
+                <div className="p-3 sm:p-4 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl border border-orange-200">
+                  <h5 className="font-bold text-slate-900 text-sm sm:text-base mb-1">University Entrance Exams</h5>
+                  <p className="text-slate-700 text-xs sm:text-sm">Some universities conduct their own tests</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Less-Known Exams */}
+            <div className="space-y-3">
+              <h4 className="text-lg sm:text-xl font-bold text-slate-900 flex items-center gap-2">
+                <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
+                Less-Known Exams / Entry Routes
+              </h4>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                {/* COMEDK UGET */}
+                <div className="p-4 sm:p-5 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl border-2 border-cyan-200 hover:shadow-md transition-shadow">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-lg sm:text-xl">1️⃣</span>
+                    <h5 className="font-bold text-slate-900 text-sm sm:text-base">COMEDK UGET</h5>
+                  </div>
+                  <ul className="text-slate-700 text-xs sm:text-sm space-y-1.5">
+                    <li>• Used by private engineering colleges in Karnataka</li>
+                    <li>• Many students think only KCET works → <span className="font-semibold text-red-600">wrong</span></li>
+                    <li>• Good backup for Mechanical seats</li>
+                  </ul>
+                  <div className="mt-3 pt-3 border-t border-cyan-200">
+                    <p className="text-xs text-amber-700 font-medium">
+                      <span className="font-bold">Why hidden:</span> Not promoted outside Karnataka much
+                    </p>
+                  </div>
+                </div>
+
+                {/* CUSAT CAT */}
+                <div className="p-4 sm:p-5 bg-gradient-to-br from-teal-50 to-green-50 rounded-xl border-2 border-teal-200 hover:shadow-md transition-shadow">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-lg sm:text-xl">2️⃣</span>
+                    <h5 className="font-bold text-slate-900 text-sm sm:text-base">CUSAT CAT</h5>
+                  </div>
+                  <p className="text-slate-600 text-xs mb-2">(Cochin University)</p>
+                  <ul className="text-slate-700 text-xs sm:text-sm space-y-1.5">
+                    <li>• Entry to Cochin University of Science & Technology</li>
+                    <li>• Mechanical Engineering available</li>
+                  </ul>
+                  <div className="mt-3 pt-3 border-t border-teal-200">
+                    <p className="text-xs text-amber-700 font-medium">
+                      <span className="font-bold">Why hidden:</span> University-specific, low marketing
+                    </p>
+                  </div>
+                </div>
+
+                {/* AEEE */}
+                <div className="p-4 sm:p-5 bg-gradient-to-br from-violet-50 to-purple-50 rounded-xl border-2 border-violet-200 hover:shadow-md transition-shadow sm:col-span-2 lg:col-span-1">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-lg sm:text-xl">3️⃣</span>
+                    <h5 className="font-bold text-slate-900 text-sm sm:text-base">AEEE</h5>
+                  </div>
+                  <p className="text-slate-600 text-xs mb-2">(Amrita University Entrance Exam)</p>
+                  <ul className="text-slate-700 text-xs sm:text-sm space-y-1.5">
+                    <li>• Entry to Amrita Vishwa Vidyapeetham</li>
+                    <li>• Mechanical Engineering across multiple campuses</li>
+                  </ul>
+                  <div className="mt-3 pt-3 border-t border-violet-200">
+                    <p className="text-xs text-amber-700 font-medium">
+                      <span className="font-bold">Why hidden:</span> Society focuses only on IIT/NIT narrative
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Truth */}
+            <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl p-4 sm:p-5">
+              <p className="text-center text-sm sm:text-base md:text-lg font-semibold">
+                ⚡ Exam rank decides college entry, but <span className="underline decoration-2">career success depends on skills</span>
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* ADMISSION PROCESS */}
         <Card className="bg-white rounded-2xl shadow-lg border-2 border-gray-200">
           <CardHeader>
