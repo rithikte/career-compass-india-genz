@@ -55,13 +55,24 @@ export const JobSecurity = () => {
       </div>
 
       <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-          <h3 className="text-xl sm:text-2xl font-bold text-slate-900 text-center">
-            Job Security Comparison
-          </h3>
-          <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
-            Estimate
-          </span>
+        <div className="text-center mb-4 sm:mb-6">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 text-center">
+              Job Security Comparison
+            </h3>
+            <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
+              Estimate
+            </span>
+          </div>
+          
+          {/* Why this matters */}
+          <div className="flex items-center justify-center mt-3">
+            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                <span className="font-semibold">Why this matters:</span> Shows how learning AI skills greatly improves long-term job safety before students plan their career path.
+              </span>
+            </div>
+          </div>
         </div>
         <div className="h-64 sm:h-80 md:h-96">
           <ResponsiveContainer width="100%" height="100%">
@@ -146,15 +157,26 @@ export const JobSecurity = () => {
       </div>
 
       <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 mb-8">
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-4">
-          <h3 className="text-xl sm:text-2xl font-bold text-slate-900 text-center">Difference between Traditional Skills and AI-Enhanced Skill Career Durability</h3>
-          <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
-            Projection
-          </span>
+        <div className="text-center mb-6">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 text-center">Difference between Traditional Skills and AI-Enhanced Skill Career Durability</h3>
+            <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
+              Projection
+            </span>
+          </div>
+          <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
+            Compare how traditional skills and AI-enhanced skills impact your career longevity.
+          </p>
+          
+          {/* Why this matters */}
+          <div className="flex items-center justify-center mt-3">
+            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                <span className="font-semibold">Why this matters:</span> Helps students understand that upgrading skills can double career life and reduce job loss risk.
+              </span>
+            </div>
+          </div>
         </div>
-        <p className="text-center text-gray-600 mb-6 max-w-2xl mx-auto text-sm sm:text-base">
-          Compare how traditional skills and AI-enhanced skills impact your career longevity.
-        </p>
         
         {/* Desktop Table */}
         <div className="hidden md:block overflow-x-auto">
@@ -358,6 +380,18 @@ export const JobSecurity = () => {
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed">
             Job security in the next 20 years will belong to engineers who combine <span className="font-bold text-emerald-800">domain knowledge</span> with <span className="font-bold text-emerald-800">AI</span> — not one without the other.
+          </p>
+        </div>
+      </div>
+
+      {/* Bottom-line Truth */}
+      <div className="mt-12 bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg">
+        <div className="text-center">
+          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3">
+            Bottom-line Truth
+          </h3>
+          <p className="text-white/95 text-sm sm:text-base lg:text-lg font-medium leading-relaxed max-w-3xl mx-auto">
+            Knowing this early helps students choose future-proof skills, not just a degree name.
           </p>
         </div>
       </div>
