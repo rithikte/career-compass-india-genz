@@ -205,6 +205,14 @@ export const CareerOutcomes = () => {
         <p className="text-lg sm:text-xl text-gray-600 px-4">
           Explore high-growth aerospace careers with competitive salaries
         </p>
+
+        {/* Why this matters - What Can I Become After This Degree? */}
+        <div className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 bg-amber-50/80 rounded-xl border border-amber-200/60 mt-4 mx-4">
+          <p className="text-[0.6875rem] sm:text-xs lg:text-sm text-amber-700">
+            <span className="font-semibold">Why this matters:</span> Helps students clearly see real career paths, growth levels, and salary reality before choosing the degree.
+          </p>
+        </div>
+
         <div className="flex flex-wrap justify-center gap-2 mt-4">
           <SourceBadge href="https://www.jobted.in/salary/aerospace-engineer" label="Jobted India" />
           <SourceBadge href="https://6figr.com/india/salary/aerospace-engineer" label="6figr" />
@@ -267,6 +275,13 @@ export const CareerOutcomes = () => {
 
       {/* Truth Curve Sections */}
       <div className="space-y-6 sm:space-y-8">
+        {/* Why this matters - Truth Curve */}
+        <div className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 bg-amber-50/80 rounded-xl border border-amber-200/60">
+          <p className="text-[0.6875rem] sm:text-xs lg:text-sm text-amber-700">
+            <span className="font-semibold">Why this matters:</span> Shows the real effort vs reward timeline so students don't quit early due to false expectations.
+          </p>
+        </div>
+
         {/* Aerospace Engineer Truth Curve */}
         <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-4 sm:p-6 lg:p-8 border border-blue-200">
           <div className="flex flex-wrap items-center gap-2 mb-4">
@@ -636,6 +651,13 @@ export const CareerOutcomes = () => {
           <p className="text-sm sm:text-base text-gray-600">
             Each role is evaluated on three defensible indicators
           </p>
+
+          {/* Why this matters - Demand–Supply Index */}
+          <div className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 bg-amber-50/80 rounded-xl border border-amber-200/60 mt-4">
+            <p className="text-[0.6875rem] sm:text-xs lg:text-sm text-amber-700">
+              <span className="font-semibold">Why this matters:</span> Helps students understand competition pressure and job chances instead of assuming "degree = job."
+            </p>
+          </div>
         </div>
 
         {/* Indicator Explanation Table - Desktop */}
@@ -918,6 +940,20 @@ export const CareerOutcomes = () => {
                 Salary depends on <span className="font-semibold">skills, certifications, project depth, and responsibility level</span> — not just degree or college name.
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom-line Truth - At bottom of page */}
+      <div className="bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg">
+        <div className="flex items-center justify-center gap-3 sm:gap-4">
+          <div className="text-center sm:text-left">
+            <h3 className="text-[0.6875rem] sm:text-xs lg:text-sm font-bold text-white/90 uppercase tracking-wide mb-0.5 sm:mb-1">
+              Bottom-line Truth
+            </h3>
+            <p className="text-[0.6875rem] sm:text-xs lg:text-sm text-white font-medium leading-relaxed">
+              Knowing these before choosing a degree prevents career shock, regret, and wrong long-term decisions.
+            </p>
           </div>
         </div>
       </div>
