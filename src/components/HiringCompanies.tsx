@@ -141,9 +141,14 @@ export const HiringCompanies = () => {
       {/* Corrected Demand vs Supply Stress Section */}
       <div className="mt-12 bg-gradient-to-br from-rose-50 to-red-50 rounded-xl p-4 sm:p-6 lg:p-8 border border-rose-200">
         <div className="text-center mb-6 sm:mb-8">
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
-            CORRECTED DEMAND vs SUPPLY STRESS
-          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
+              CORRECTED DEMAND vs SUPPLY STRESS
+            </h3>
+            <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
+              Estimate
+            </span>
+          </div>
         </div>
 
         {/* Desktop Table */}
@@ -348,11 +353,14 @@ export const HiringCompanies = () => {
       {/* Company Hiring Reality by Experience Level */}
       <div className="mt-12 bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-4 sm:p-6 lg:p-8 border border-amber-200">
         <div className="text-center mb-6 sm:mb-8">
-          <div className="flex items-center justify-center mb-3">
-            <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-amber-600 mr-2 sm:mr-3" />
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-3">
+            <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-amber-600" />
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
               Company Hiring Reality by Experience Level
             </h3>
+            <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
+              Estimate
+            </span>
           </div>
           <p className="text-gray-600 text-sm sm:text-base">
             (Across ~600+ aviation ecosystem companies)
@@ -467,11 +475,14 @@ export const HiringCompanies = () => {
       {/* Key States Industry Boom Section */}
       <div className="mt-12 bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8">
         <div className="text-center mb-6">
-          <div className="flex items-center justify-center mb-4">
-            <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600 mr-2 sm:mr-3" />
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-4">
+            <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600" />
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
               Key States Industry Boom 2025 - 2040
             </h3>
+            <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
+              Projection
+            </span>
           </div>
           <p className="text-gray-600 text-sm sm:text-base">
             Strategic locations where aerospace & defence industries are expected to grow significantly

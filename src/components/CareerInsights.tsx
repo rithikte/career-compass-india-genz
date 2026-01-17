@@ -182,7 +182,12 @@ export const CareerInsights = () => {
           {/* Hiring Cycle Calendar */}
           <section className="mb-12 bg-blue-50/50 dark:bg-blue-950/10 rounded-2xl p-4 sm:p-6 lg:p-8">
             <div className="text-center mb-6 sm:mb-8">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2">Hiring Cycle Calendar</h2>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Hiring Cycle Calendar</h2>
+            <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
+              Projection
+            </span>
+          </div>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
                 Each industry has peak hiring seasons. Plan your applications accordingly.
               </p>
@@ -240,9 +245,11 @@ export const CareerInsights = () => {
 
           {/* Failure Points Map */}
           <section className="mb-12 bg-rose-50/50 dark:bg-rose-950/10 rounded-2xl p-6 sm:p-8">
-            <div className="flex items-center gap-3 mb-6">
-              
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-6">
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Failure Points Map</h2>
+              <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
+                Estimate
+              </span>
             </div>
             <p className="text-muted-foreground mb-6">A brutally honest map showing top reasons students struggle.</p>
             
@@ -265,9 +272,11 @@ export const CareerInsights = () => {
 
           {/* Hiring Weightage */}
           <section className="mb-12 bg-purple-50/50 dark:bg-purple-950/10 rounded-2xl p-6 sm:p-8">
-            <div className="flex items-center gap-3 mb-6">
-              
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-6">
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Hiring Weightage</h2>
+              <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
+                Estimate
+              </span>
             </div>
             <p className="text-muted-foreground mb-6">What actually matters when companies evaluate candidates.</p>
             
@@ -322,7 +331,12 @@ export const CareerInsights = () => {
           {/* Survivor Profile */}
           <section className="mb-12 bg-emerald-50/50 dark:bg-emerald-950/10 rounded-2xl p-4 sm:p-6 lg:p-8">
             <div className="text-center mb-6 sm:mb-8">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2">Survivor Profile</h2>
+              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Survivor Profile</h2>
+                <span className="inline-flex items-center rounded-full bg-blue-100 text-blue-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-blue-200">
+                  Index
+                </span>
+              </div>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
                 The personality profile of students who survive and grow.
               </p>
@@ -382,9 +396,11 @@ export const CareerInsights = () => {
 
           {/* City-wise Internship Chances */}
           <section className="mb-12 bg-amber-50/50 dark:bg-amber-950/10 rounded-2xl p-6 sm:p-8">
-            <div className="flex items-center gap-3 mb-6">
-              
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-6">
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground">City-wise Internship Chances</h2>
+              <span className="inline-flex items-center rounded-full bg-blue-100 text-blue-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-blue-200">
+                Index
+              </span>
             </div>
             <p className="text-muted-foreground mb-6">Where you have the best chances of landing internships.</p>
             
@@ -410,9 +426,11 @@ export const CareerInsights = () => {
 
           {/* Internship Opportunities */}
           <section className="mb-12 bg-cyan-50/50 dark:bg-cyan-950/10 rounded-2xl p-6 sm:p-8">
-            <div className="flex items-center gap-3 mb-6">
-              
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-6">
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Internship Opportunities</h2>
+              <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
+                Estimate
+              </span>
             </div>
             <p className="text-muted-foreground mb-6">Top companies offering internships in each domain.</p>
             

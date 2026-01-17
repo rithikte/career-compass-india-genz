@@ -140,9 +140,11 @@ export const BestStates = () => {
       {/* Top 5 States by Companies and Market Share */}
       <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
         <div className="text-center mb-8">
-          <div className="flex items-center justify-center mb-3">
-            
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-3">
             <h3 className="text-3xl font-bold text-slate-900">Top 5 States by Number of Companies (2025)</h3>
+            <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
+              Estimate
+            </span>
           </div>
           <p className="text-gray-600">
             Aerospace, Avionics, and Aircraft Maintenance Companies with Market Share
@@ -423,10 +425,14 @@ export const BestStates = () => {
       {/* Average New Jobs Opening Per Year */}
       <div className="bg-white rounded-lg shadow-xl overflow-hidden mb-8 animate-fade-in">
         <div className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white text-center p-6 sm:p-8">
-          
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
-            Average New Job Openings Per Year
-          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
+              Average New Job Openings Per Year
+            </h3>
+            <span className="inline-flex items-center rounded-full bg-white/20 text-white px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-white/30">
+              Estimate
+            </span>
+          </div>
           <p className="text-emerald-100 text-sm sm:text-base mb-4">
             Expected ~3,400–4,400 new openings annually across India
           </p>
@@ -560,9 +566,11 @@ export const BestStates = () => {
       {/* Future Projections Table */}
       <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
         <div className="text-center mb-8">
-          <div className="flex items-center justify-center mb-3">
-            
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-3">
             <h3 className="text-3xl font-bold text-slate-900">New Job Openings based on New Companies Opening</h3>
+            <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
+              Projection
+            </span>
           </div>
           <p className="text-gray-600">
             When these projected companies & startups open, they create extra one-time new jobs
@@ -766,10 +774,14 @@ export const BestStates = () => {
       {/* No. of Applications for each Job Role */}
       <div className="bg-white rounded-lg shadow-xl overflow-hidden mb-8 animate-fade-in">
         <div className="bg-gradient-to-r from-orange-500 to-red-600 text-white text-center p-6 sm:p-8">
-          
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
-            No. of Applications for each Job Role
-          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
+              No. of Applications for each Job Role
+            </h3>
+            <span className="inline-flex items-center rounded-full bg-white/20 text-white px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-white/30">
+              Estimate
+            </span>
+          </div>
           <p className="text-orange-100 text-sm sm:text-base mb-2">
             Competition level by state and role
           </p>
@@ -827,10 +839,14 @@ export const BestStates = () => {
       {/* State-Wise Market Share */}
       <div className="bg-white rounded-lg shadow-xl overflow-hidden mb-8 animate-fade-in">
         <div className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-center p-6 sm:p-8">
-          
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
-            State-Wise Market Share
-          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
+              State-Wise Market Share
+            </h3>
+            <span className="inline-flex items-center rounded-full bg-white/20 text-white px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-white/30">
+              Estimate
+            </span>
+          </div>
           <p className="text-cyan-100 text-sm sm:text-base">
             Understanding regional dominance and why opportunities cluster in specific states
           </p>

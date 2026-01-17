@@ -91,7 +91,12 @@ export const AIImpact = () => {
       </div>
 
       <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-8">
-        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6 text-center">AI Impact on Job Roles</h3>
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-6">
+          <h3 className="text-xl sm:text-2xl font-bold text-slate-900">AI Impact on Job Roles</h3>
+          <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
+            Projection
+          </span>
+        </div>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
@@ -194,7 +199,12 @@ export const AIImpact = () => {
       </div>
 
       <div className="bg-gradient-to-br from-slate-50 to-white rounded-xl shadow-xl p-6 sm:p-8 mb-8 border border-border/50">
-        <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-8 text-center">Cause of Impact</h3>
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8">
+          <h3 className="text-xl sm:text-2xl font-bold text-foreground">Cause of Impact</h3>
+          <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
+            Projection
+          </span>
+        </div>
         
         <div className="space-y-6">
           <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary/5 via-primary/10 to-accent/5 p-6 sm:p-8 border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg">
@@ -289,7 +299,12 @@ export const AIImpact = () => {
       {/* Job Safety Meter Section */}
       <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 mb-8">
         <div className="text-center mb-6 sm:mb-8">
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-2">Job Safety Meter</h3>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">Job Safety Meter</h3>
+            <span className="inline-flex items-center rounded-full bg-blue-100 text-blue-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-blue-200">
+              Index
+            </span>
+          </div>
           <p className="text-gray-600 text-sm sm:text-base lg:text-lg px-2">Understanding AI risk and job security across aerospace roles (2025-2040)</p>
         </div>
 

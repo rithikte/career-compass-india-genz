@@ -64,9 +64,14 @@ export const SkillGap = () => {
 
 
       <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
-        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6 text-center">
-          Skill Gap Heat Map
-        </h3>
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+          <h3 className="text-xl sm:text-2xl font-bold text-slate-900 text-center">
+            Skill Gap Heat Map
+          </h3>
+          <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
+            Estimate
+          </span>
+        </div>
         <div className="overflow-x-auto">
           <Table>
           <TableHeader>

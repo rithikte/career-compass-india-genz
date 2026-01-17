@@ -86,9 +86,14 @@ export const GrowthRate = () => {
 
       <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
         <div className="text-center mb-8">
-          <h3 className="text-3xl font-bold text-slate-900 mb-2">
-            Jobs Growth Rate by 2040
-          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
+            <h3 className="text-3xl font-bold text-slate-900">
+              Jobs Growth Rate by 2040
+            </h3>
+            <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
+              Projection
+            </span>
+          </div>
           <p className="text-gray-600">
             Annual growth rates and projections for aerospace careers
           </p>
@@ -146,7 +151,12 @@ export const GrowthRate = () => {
       {/* Global vs India Snapshot */}
       <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
         <div className="text-center mb-6">
-          <h5 className="text-xl font-black text-foreground mb-2">🌍 GLOBAL VS INDIA SNAPSHOT</h5>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
+            <h5 className="text-xl font-black text-foreground">🌍 GLOBAL VS INDIA SNAPSHOT</h5>
+            <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
+              Projection
+            </span>
+          </div>
           <p className="text-muted-foreground">CAGR = the average yearly growth</p>
         </div>
         <div className="rounded-xl p-6 border border-gray-200">
@@ -172,9 +182,12 @@ export const GrowthRate = () => {
       {/* New Companies Growth Rate by 2040 - Enhanced */}
       <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
         <div className="text-center mb-8">
-          <div className="flex items-center justify-center mb-3">
-            <Building2 className="w-7 h-7 text-indigo-600 mr-2" />
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-3">
+            <Building2 className="w-7 h-7 text-indigo-600" />
             <h3 className="text-3xl font-bold text-slate-900">New Companies Growth Rate by 2040</h3>
+            <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
+              Projection
+            </span>
           </div>
           <p className="text-gray-600">
             How fast new aerospace companies are entering the Indian market
