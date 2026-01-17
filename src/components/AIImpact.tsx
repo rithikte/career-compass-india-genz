@@ -91,11 +91,22 @@ export const AIImpact = () => {
       </div>
 
       <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-8">
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-6">
-          <h3 className="text-xl sm:text-2xl font-bold text-slate-900">AI Impact on Job Roles</h3>
-          <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
-            Projection
-          </span>
+        <div className="text-center mb-6">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900">AI Impact on Job Roles</h3>
+            <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
+              Projection
+            </span>
+          </div>
+          
+          {/* Why this matters */}
+          <div className="flex items-center justify-center mt-3">
+            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                <span className="font-semibold">Why this matters:</span> Shows how much each role will change, helping students choose roles that stay relevant long-term.
+              </span>
+            </div>
+          </div>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full">
@@ -199,11 +210,22 @@ export const AIImpact = () => {
       </div>
 
       <div className="bg-gradient-to-br from-slate-50 to-white rounded-xl shadow-xl p-6 sm:p-8 mb-8 border border-border/50">
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8">
-          <h3 className="text-xl sm:text-2xl font-bold text-foreground">Cause of Impact</h3>
-          <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
-            Projection
-          </span>
+        <div className="text-center mb-8">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground">Cause of Impact</h3>
+            <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
+              Projection
+            </span>
+          </div>
+          
+          {/* Why this matters */}
+          <div className="flex items-center justify-center mt-3">
+            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                <span className="font-semibold">Why this matters:</span> Explains why AI affects some tasks, so students know what skills they must upgrade early.
+              </span>
+            </div>
+          </div>
         </div>
         
         <div className="space-y-6">
@@ -306,6 +328,15 @@ export const AIImpact = () => {
             </span>
           </div>
           <p className="text-gray-600 text-sm sm:text-base lg:text-lg px-2">Understanding AI risk and job security across aerospace roles (2025-2040)</p>
+          
+          {/* Why this matters */}
+          <div className="flex items-center justify-center mt-3">
+            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                <span className="font-semibold">Why this matters:</span> Helps students and parents judge how secure each job is in the AI future.
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* Aerospace Engineer Safety Meter */}
@@ -568,6 +599,18 @@ export const AIImpact = () => {
           <h3 className="text-xl sm:text-2xl font-bold mb-2">AI Disruption Alert</h3>
           <p className="text-white/90 text-base sm:text-lg">
             47% of aerospace jobs will be impacted by AI in 10 years. Upskill now to stay relevant!
+          </p>
+        </div>
+      </div>
+
+      {/* Bottom-line Truth */}
+      <div className="mt-12 bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg">
+        <div className="text-center">
+          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3">
+            Bottom-line Truth
+          </h3>
+          <p className="text-white/95 text-sm sm:text-base lg:text-lg font-medium leading-relaxed max-w-3xl mx-auto">
+            Knowing AI impact early helps students adapt, upskill, and stay employable, instead of being replaced.
           </p>
         </div>
       </div>
