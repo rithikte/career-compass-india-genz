@@ -67,6 +67,15 @@ export const InterviewSituation = () => {
               Estimate
             </span>
           </div>
+          
+          {/* Why this matters */}
+          <div className="flex items-center justify-center mt-3">
+            <div className="bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+              <p className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm text-center">
+                <span className="font-semibold">Why this matters:</span> Shows how many serious candidates you actually compete with in interviews, helping students plan skills and location realistically before choosing the career.
+              </p>
+            </div>
+          </div>
         </CardHeader>
         <CardContent>
           {/* Desktop Table */}
