@@ -464,43 +464,76 @@ export const CertificationStack = () => {
         </div>
 
         {/* Role Fitment Exam Section */}
-        <div className="relative overflow-hidden bg-gradient-to-br from-slate-700 via-blue-700 to-purple-700 rounded-2xl shadow-2xl p-8 sm:p-10 border border-blue-400/20">
-          {/* Decorative Elements */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div className="bg-white rounded-xl border border-slate-200 shadow-lg overflow-hidden">
+          {/* Header with gradient accent */}
+          <div className="h-1.5 sm:h-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600"></div>
           
-          <div className="relative flex items-start space-x-6">
-            <div className="flex-shrink-0">
-              
-            </div>
-            <div className="flex-1">
-              <div className="inline-block px-4 py-1 bg-blue-500/20 border border-blue-400/30 rounded-full text-xs font-bold text-blue-300 mb-4 backdrop-blur-sm">
-                NEXT CRITICAL STEP
-              </div>
-              <h4 className="text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight">
-                Role Fitment Exam
-              </h4>
-              
-              {/* Why this matters */}
-              <div className="flex items-center justify-start mb-6">
-                <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
-                  <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
-                    <span className="font-semibold">Why this matters:</span> Helps students identify which role suits them best before wasting time on the wrong career path.
-                  </span>
+          <div className="p-4 sm:p-6 lg:p-8">
+            {/* Title Row */}
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-3">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg">
+                  <Target className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
+                <h4 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
+                  Role Fitment Exam
+                </h4>
+              </div>
+              <span className="inline-flex items-center self-start sm:self-auto rounded-full bg-blue-100 text-blue-800 px-2.5 py-1 text-[10px] sm:text-xs font-semibold border border-blue-200">
+                NEXT CRITICAL STEP
+              </span>
+            </div>
+            
+            {/* Why this matters */}
+            <div className="flex items-center justify-start mb-5 sm:mb-6">
+              <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+                <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                  <span className="font-semibold">Why this matters:</span> Helps students identify which role suits them best before wasting time on the wrong career path.
+                </span>
+              </div>
+            </div>
+            
+            {/* Content Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
+              {/* Step 1 */}
+              <div className="bg-slate-50 rounded-xl p-4 sm:p-5 border border-slate-200">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-bold flex items-center justify-center">1</span>
+                  <span className="text-sm sm:text-base font-semibold text-slate-900">Complete Certs</span>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Finish your <span className="font-semibold text-slate-800">3 Universal Certifications</span> first to build your foundation.
+                </p>
               </div>
               
-              <div className="space-y-4 text-base sm:text-lg text-blue-100 leading-relaxed">
-                <p className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
-                  Finish your 3 Universal Certs, then take the <span className="font-bold text-white">Role Fitment Test</span> — it shows whether you fit best in <span className="font-bold text-blue-300">Aerospace, Avionics, or AME</span>.
-                </p>
-                <p className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
-                  This test isn't about marks — it's about showing you where you <span className="font-bold text-white">truly shine</span>.
-                </p>
-                <p className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-sm rounded-lg p-4 border border-green-400/30">
-                  Next, complete the Fit job-role certifications and be <span className="font-bold text-green-300 text-xl">100% job-ready</span> before placements.
+              {/* Step 2 */}
+              <div className="bg-slate-50 rounded-xl p-4 sm:p-5 border border-slate-200">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-indigo-600 text-white text-xs sm:text-sm font-bold flex items-center justify-center">2</span>
+                  <span className="text-sm sm:text-base font-semibold text-slate-900">Take the Test</span>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Discover if you fit best in <span className="font-semibold text-blue-700">Aerospace</span>, <span className="font-semibold text-indigo-700">Avionics</span>, or <span className="font-semibold text-purple-700">AME</span>.
                 </p>
               </div>
+              
+              {/* Step 3 */}
+              <div className="bg-slate-50 rounded-xl p-4 sm:p-5 border border-slate-200">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-purple-600 text-white text-xs sm:text-sm font-bold flex items-center justify-center">3</span>
+                  <span className="text-sm sm:text-base font-semibold text-slate-900">Get Job-Ready</span>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Complete role-specific certifications and be <span className="font-semibold text-green-700">100% placement ready</span>.
+                </p>
+              </div>
+            </div>
+            
+            {/* Key Insight */}
+            <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-xl p-4 sm:p-5 text-center">
+              <p className="text-sm sm:text-base text-white font-medium leading-relaxed">
+                💡 This test isn't about marks — it's about showing you where you <span className="font-bold text-blue-300">truly shine</span>.
+              </p>
             </div>
           </div>
         </div>
