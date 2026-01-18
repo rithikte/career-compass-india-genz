@@ -101,16 +101,11 @@ const CoreVsIT = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-100 dark:bg-red-900/30 rounded-full mb-6">
-            
-            <span className="text-sm font-semibold text-red-700 dark:text-red-300">Critical Career Decision</span>
-          </div>
+          
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-50 mb-4">
             Why NOT Choose IT Blindly
           </h1>
-          <p className="text-lg sm:text-xl text-slate-700 dark:text-slate-300 max-w-3xl mx-auto">
-            Over Core Roles like Aerospace Engineer, Avionics Engineer, AME
-          </p>
+          
           
           {/* Why this matters */}
           <div className="flex items-center justify-center mt-3">
@@ -129,9 +124,7 @@ const CoreVsIT = () => {
           const colors = getColorClasses(reason.color);
           return <Card key={index} className={`${colors.bg} ${colors.border} border-2 p-4 sm:p-6 hover:shadow-xl transition-all duration-300 hover:scale-[1.02]`}>
                 <div className="flex flex-col items-center text-center">
-                  <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full ${colors.badge} flex items-center justify-center mb-3 sm:mb-4`}>
-                    <Icon className={`w-6 h-6 sm:w-7 sm:h-7 ${colors.icon}`} />
-                  </div>
+                  
                   <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-50 mb-2 sm:mb-3">
                     {reason.title}
                   </h3>
