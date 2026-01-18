@@ -212,108 +212,173 @@ export const CertificationStack = () => {
       </div>
 
       {/* Universal Certifications Section */}
-      <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 md:p-10 mb-8">
-        <div className="text-center mb-8">
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-3">
-            <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">
-              Universal Certifications
-            </h3>
-            <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
-              Estimate
-            </span>
-          </div>
-          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
-            For Aerospace, Avionics, Aircraft Maintenance Engineering
-          </p>
+      <div className="group relative mb-8">
+        {/* Gradient Glow Effect */}
+        <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-blue-500 rounded-2xl opacity-15 group-hover:opacity-30 blur-sm transition-all duration-300"></div>
+        
+        <div className="relative bg-white rounded-xl border border-slate-200 shadow-lg overflow-hidden">
+          {/* Top Accent Bar */}
+          <div className="h-1.5 sm:h-2 bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600"></div>
           
-          {/* Why this matters */}
-          <div className="flex items-center justify-center mt-3">
-            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
-              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
-                <span className="font-semibold">Why this matters:</span> Shows the minimum certifications needed to become job-ready, so students don't rely on degree alone.
-              </span>
+          <div className="p-4 sm:p-6 lg:p-8">
+            {/* Section Header */}
+            <div className="text-center mb-6 sm:mb-8">
+              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-3">
+                {/* Icon */}
+                <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 shadow-lg">
+                  <Award className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                </div>
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
+                  Universal Certifications
+                </h3>
+                <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2.5 py-1 text-[10px] sm:text-xs font-semibold border border-amber-200">
+                  Estimate
+                </span>
+              </div>
+              
+              <p className="text-sm sm:text-base lg:text-lg text-slate-600 max-w-2xl mx-auto mb-4">
+                For Aerospace, Avionics & Aircraft Maintenance Engineering
+              </p>
+              
+              {/* Why this matters */}
+              <div className="flex items-center justify-center">
+                <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+                  <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                    <span className="font-semibold">Why this matters:</span> Shows the minimum certifications needed to become job-ready, so students don't rely on degree alone.
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop Table View */}
+            <div className="hidden lg:block">
+              <div className="rounded-xl overflow-hidden border border-slate-200">
+                {/* Table Header */}
+                <div className="bg-gradient-to-r from-slate-700 to-slate-800">
+                  <div className="grid grid-cols-12 gap-2 p-4">
+                    <div className="col-span-2 text-xs font-bold text-white uppercase tracking-wider">Stage</div>
+                    <div className="col-span-3 text-xs font-bold text-white uppercase tracking-wider">Course / Focus</div>
+                    <div className="col-span-1 text-xs font-bold text-white uppercase tracking-wider text-center">Duration</div>
+                    <div className="col-span-3 text-xs font-bold text-white uppercase tracking-wider">Readiness After Completion</div>
+                    <div className="col-span-1 text-xs font-bold text-white uppercase tracking-wider text-center">Gain %</div>
+                    <div className="col-span-2 text-xs font-bold text-white uppercase tracking-wider">When to Pursue</div>
+                  </div>
+                </div>
+                
+                {/* Table Body */}
+                <div className="divide-y divide-slate-200">
+                  {universalCertifications.map((cert, index) => (
+                    <div key={index} className="grid grid-cols-12 gap-2 p-4 bg-slate-50/50 hover:bg-white transition-colors items-center">
+                      <div className="col-span-2">
+                        <span className={`inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-bold ${
+                          cert.stage === 'Foundation' ? 'bg-blue-100 text-blue-800 border border-blue-200' :
+                          cert.stage === 'Specialization' ? 'bg-emerald-100 text-emerald-800 border border-emerald-200' :
+                          'bg-orange-100 text-orange-800 border border-orange-200'
+                        }`}>
+                          {cert.stage}
+                        </span>
+                      </div>
+                      <div className="col-span-3">
+                        <div className="font-semibold text-slate-900 text-sm mb-0.5">{cert.course}</div>
+                        <div className="text-xs text-slate-500">{cert.provider}</div>
+                      </div>
+                      <div className="col-span-1 text-center">
+                        <div className="inline-flex items-center gap-1 bg-indigo-50 rounded-lg px-2.5 py-1.5 border border-indigo-100">
+                          <Clock className="w-3.5 h-3.5 text-indigo-600" />
+                          <span className="text-sm font-bold text-indigo-700">{cert.duration}</span>
+                        </div>
+                      </div>
+                      <div className="col-span-3">
+                        <span className="text-sm text-slate-700">{cert.readiness}</span>
+                      </div>
+                      <div className="col-span-1 text-center">
+                        <span className="inline-flex items-center justify-center bg-emerald-100 text-emerald-800 rounded-lg px-2.5 py-1.5 text-sm font-bold border border-emerald-200">
+                          {cert.subjectGain}
+                        </span>
+                      </div>
+                      <div className="col-span-2">
+                        <span className="text-xs text-slate-600 leading-relaxed">{cert.whenToPursue}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile Card View */}
+            <div className="lg:hidden space-y-4">
+              {universalCertifications.map((cert, index) => (
+                <div key={index} className="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+                  {/* Card Header */}
+                  <div className={`px-4 py-3 ${
+                    cert.stage === 'Foundation' ? 'bg-gradient-to-r from-blue-500 to-blue-600' :
+                    cert.stage === 'Specialization' ? 'bg-gradient-to-r from-emerald-500 to-emerald-600' :
+                    'bg-gradient-to-r from-orange-500 to-orange-600'
+                  }`}>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-bold text-white">{cert.stage}</span>
+                      <div className="flex items-center gap-1 bg-white/20 backdrop-blur-sm rounded-lg px-2 py-1">
+                        <Clock className="w-3.5 h-3.5 text-white" />
+                        <span className="text-xs font-bold text-white">{cert.duration}</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Card Body */}
+                  <div className="p-4 space-y-3">
+                    <div>
+                      <h4 className="text-sm font-bold text-slate-900 mb-1">{cert.course}</h4>
+                      <p className="text-xs text-slate-500">{cert.provider}</p>
+                    </div>
+                    
+                    <div className="bg-white rounded-lg p-3 border border-slate-200">
+                      <div className="text-xs text-slate-600 font-medium mb-1">Readiness After Completion</div>
+                      <div className="text-sm text-slate-800">{cert.readiness}</div>
+                    </div>
+                    
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex-1 bg-emerald-50 rounded-lg p-2.5 border border-emerald-100 text-center">
+                        <div className="text-[10px] text-emerald-600 font-medium mb-0.5">Subject Gain</div>
+                        <div className="text-base font-bold text-emerald-700">{cert.subjectGain}</div>
+                      </div>
+                      <div className="flex-[2] bg-indigo-50 rounded-lg p-2.5 border border-indigo-100">
+                        <div className="text-[10px] text-indigo-600 font-medium mb-0.5">When to Pursue</div>
+                        <div className="text-xs text-indigo-800">{cert.whenToPursue}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Summary Banner */}
+            <div className="mt-6 sm:mt-8 bg-gradient-to-r from-slate-800 to-slate-900 rounded-xl p-4 sm:p-5">
+              <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-center sm:text-left">
+                <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex-shrink-0">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <p className="text-white text-sm sm:text-base font-medium">
+                    <span className="text-indigo-300 font-bold">Total Duration:</span> ~6 months 
+                    <span className="mx-2 text-slate-400">•</span>
+                    <span className="text-emerald-300 font-bold">Combined Gain:</span> ~55% job-readiness boost
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Universal Certifications Table - Mobile */}
-        <div className="block lg:hidden space-y-4 mb-8">
-          {universalCertifications.map((cert, index) => <div key={index} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-              <div className="flex items-center justify-between mb-3">
-                <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${getLevelColor(cert.stage)}`}>
-                  {cert.stage}
-                </span>
-                <span className="text-sm font-bold text-blue-600">{cert.duration}</span>
-              </div>
-              <h4 className="text-sm font-bold text-gray-900 mb-1">{cert.course}</h4>
-              <p className="text-xs text-gray-500 mb-3">{cert.provider}</p>
-              <div className="space-y-2 text-xs">
-                <div className="flex justify-between">
-                  <span className="text-gray-600 font-medium">Readiness:</span>
-                  <span className="text-gray-900">{cert.readiness}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600 font-medium">Subject Gain:</span>
-                  <span className="text-green-600 font-bold">{cert.subjectGain}</span>
-                </div>
-                <div className="pt-2 border-t">
-                  <span className="text-gray-600 font-medium block mb-1">When to Pursue:</span>
-                  <span className="text-gray-700">{cert.whenToPursue}</span>
-                </div>
-              </div>
-            </div>)}
-        </div>
-
-        {/* Universal Certifications Table - Desktop */}
-        <div className="hidden lg:block overflow-x-auto mb-8">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr className="bg-gray-100">
-                <th className="text-left py-3 px-4 text-sm font-bold text-gray-900 border-b-2 border-gray-300">Stage</th>
-                <th className="text-left py-3 px-4 text-sm font-bold text-gray-900 border-b-2 border-gray-300">Course / Focus</th>
-                <th className="text-center py-3 px-4 text-sm font-bold text-gray-900 border-b-2 border-gray-300">Duration</th>
-                <th className="text-left py-3 px-4 text-sm font-bold text-gray-900 border-b-2 border-gray-300">Readiness After Completion</th>
-                <th className="text-center py-3 px-4 text-sm font-bold text-gray-900 border-b-2 border-gray-300">Subject Gain %</th>
-                <th className="text-left py-3 px-4 text-sm font-bold text-gray-900 border-b-2 border-gray-300">When to Pursue</th>
-              </tr>
-            </thead>
-            <tbody>
-              {universalCertifications.map((cert, index) => <tr key={index} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                  <td className="py-4 px-4">
-                    <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${getLevelColor(cert.stage)}`}>
-                      {cert.stage}
-                    </span>
-                  </td>
-                  <td className="py-4 px-4">
-                    <div>
-                      <div className="text-sm font-bold text-gray-900 mb-1">{cert.course}</div>
-                      <div className="text-xs text-gray-500">{cert.provider}</div>
-                    </div>
-                  </td>
-                  <td className="py-4 px-4 text-center">
-                    <span className="text-sm font-bold text-blue-600">{cert.duration}</span>
-                  </td>
-                  <td className="py-4 px-4">
-                    <span className="text-sm text-gray-700">{cert.readiness}</span>
-                  </td>
-                  <td className="py-4 px-4 text-center">
-                    <span className="text-sm font-bold text-green-600">{cert.subjectGain}</span>
-                  </td>
-                  <td className="py-4 px-4">
-                    <span className="text-xs text-gray-700 leading-relaxed">{cert.whenToPursue}</span>
-                  </td>
-                </tr>)}
-            </tbody>
-          </table>
-        </div>
-
-        {/* What If You Skip Certifications Section */}
-        <div className="mt-12 sm:mt-16 mb-8 sm:mb-12">
-          {/* Section Header */}
-          <div className="bg-white rounded-xl border border-slate-200 shadow-lg overflow-hidden">
-            <div className="h-1.5 sm:h-2 bg-gradient-to-r from-red-500 via-orange-500 to-amber-500"></div>
-            
-            <div className="p-4 sm:p-6 lg:p-8">
+      {/* What If You Skip Certifications Section */}
+      <div className="mt-8 sm:mt-12 mb-8 sm:mb-12">
+        {/* Section Header */}
+        <div className="bg-white rounded-xl border border-slate-200 shadow-lg overflow-hidden">
+          <div className="h-1.5 sm:h-2 bg-gradient-to-r from-red-500 via-orange-500 to-amber-500"></div>
+          
+          <div className="p-4 sm:p-6 lg:p-8">
               <div className="text-center mb-6 sm:mb-8">
                 
                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
@@ -582,77 +647,75 @@ export const CertificationStack = () => {
                   </div>
                 </div>
               </div>
-            </div>
           </div>
         </div>
+      </div>
 
-        {/* Role Fitment Exam Section */}
-        <div className="bg-white rounded-xl border border-slate-200 shadow-lg overflow-hidden">
-          {/* Header with gradient accent */}
-          <div className="h-1.5 sm:h-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600"></div>
+      {/* Role Fitment Exam Section */}
+      <div className="bg-white rounded-xl border border-slate-200 shadow-lg overflow-hidden">
+        {/* Header with gradient accent */}
+        <div className="h-1.5 sm:h-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600"></div>
+        
+        <div className="p-4 sm:p-6 lg:p-8">
+          {/* Title Row */}
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-3">
+            <div className="flex items-center gap-3">
+              <h4 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
+                Role Fitment Exam
+              </h4>
+            </div>
+          </div>
           
-          <div className="p-4 sm:p-6 lg:p-8">
-            {/* Title Row */}
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-3">
-              <div className="flex items-center gap-3">
-                
-                <h4 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
-                  Role Fitment Exam
-                </h4>
-              </div>
-              
+          {/* Why this matters */}
+          <div className="flex items-center justify-start mb-5 sm:mb-6">
+            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                <span className="font-semibold">Why this matters:</span> Helps students identify which role suits them best before wasting time on the wrong career path.
+              </span>
             </div>
-            
-            {/* Why this matters */}
-            <div className="flex items-center justify-start mb-5 sm:mb-6">
-              <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
-                <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
-                  <span className="font-semibold">Why this matters:</span> Helps students identify which role suits them best before wasting time on the wrong career path.
-                </span>
+          </div>
+          
+          {/* Content Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
+            {/* Step 1 */}
+            <div className="bg-slate-50 rounded-xl p-4 sm:p-5 border border-slate-200">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-bold flex items-center justify-center">1</span>
+                <span className="text-sm sm:text-base font-semibold text-slate-900">Complete Certs</span>
               </div>
-            </div>
-            
-            {/* Content Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
-              {/* Step 1 */}
-              <div className="bg-slate-50 rounded-xl p-4 sm:p-5 border border-slate-200">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-bold flex items-center justify-center">1</span>
-                  <span className="text-sm sm:text-base font-semibold text-slate-900">Complete Certs</span>
-                </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Finish your <span className="font-semibold text-slate-800">3 Universal Certifications</span> first to build your foundation.
-                </p>
-              </div>
-              
-              {/* Step 2 */}
-              <div className="bg-slate-50 rounded-xl p-4 sm:p-5 border border-slate-200">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-indigo-600 text-white text-xs sm:text-sm font-bold flex items-center justify-center">2</span>
-                  <span className="text-sm sm:text-base font-semibold text-slate-900">Take the Test</span>
-                </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Discover if you fit best in <span className="font-semibold text-blue-700">Aerospace</span>, <span className="font-semibold text-indigo-700">Avionics</span>, or <span className="font-semibold text-purple-700">AME</span>.
-                </p>
-              </div>
-              
-              {/* Step 3 */}
-              <div className="bg-slate-50 rounded-xl p-4 sm:p-5 border border-slate-200">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-purple-600 text-white text-xs sm:text-sm font-bold flex items-center justify-center">3</span>
-                  <span className="text-sm sm:text-base font-semibold text-slate-900">Get Job-Ready</span>
-                </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Complete role-specific certifications and be <span className="font-semibold text-green-700"> placement ready</span>.
-                </p>
-              </div>
-            </div>
-            
-            {/* Key Insight */}
-            <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-xl p-4 sm:p-5 text-center">
-              <p className="text-sm sm:text-base text-white font-medium leading-relaxed">This test isn't about marks — it's about showing you where you truly shine.<span className="font-bold text-blue-300">truly shine</span>.
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Finish your <span className="font-semibold text-slate-800">3 Universal Certifications</span> first to build your foundation.
               </p>
             </div>
+            
+            {/* Step 2 */}
+            <div className="bg-slate-50 rounded-xl p-4 sm:p-5 border border-slate-200">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-indigo-600 text-white text-xs sm:text-sm font-bold flex items-center justify-center">2</span>
+                <span className="text-sm sm:text-base font-semibold text-slate-900">Take the Test</span>
+              </div>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Discover if you fit best in <span className="font-semibold text-blue-700">Aerospace</span>, <span className="font-semibold text-indigo-700">Avionics</span>, or <span className="font-semibold text-purple-700">AME</span>.
+              </p>
+            </div>
+            
+            {/* Step 3 */}
+            <div className="bg-slate-50 rounded-xl p-4 sm:p-5 border border-slate-200">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-purple-600 text-white text-xs sm:text-sm font-bold flex items-center justify-center">3</span>
+                <span className="text-sm sm:text-base font-semibold text-slate-900">Get Job-Ready</span>
+              </div>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Complete role-specific certifications and be <span className="font-semibold text-green-700">placement ready</span>.
+              </p>
+            </div>
+          </div>
+          
+          {/* Key Insight */}
+          <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-xl p-4 sm:p-5 text-center">
+            <p className="text-sm sm:text-base text-white font-medium leading-relaxed">
+              This test isn't about marks — it's about showing you where you <span className="font-bold text-blue-300">truly shine</span>.
+            </p>
           </div>
         </div>
       </div>
