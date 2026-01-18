@@ -1,6 +1,6 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, LabelList } from 'recharts';
-import { Users, Briefcase, TrendingUp, Info, Plane, Cpu, Wrench } from 'lucide-react';
+import { Users, Briefcase, TrendingUp } from 'lucide-react';
 import SourceBadge from './SourceBadge';
 const careerData = [{
   role: 'Aerospace Engineer',
@@ -225,7 +225,7 @@ export const CareerOutcomes = () => {
         <div className="flex items-start">
           <div className="flex-1">
             <p className="text-sm sm:text-base text-foreground font-semibold">
-              <span className="text-primary">⚠️ Important:</span> Figures vary by city, company tier, and specialization.
+               Figures vary by city, company tier, and specialization.
             </p>
           </div>
         </div>
@@ -285,7 +285,7 @@ export const CareerOutcomes = () => {
         {/* Aerospace Engineer Truth Curve */}
         <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-4 sm:p-6 lg:p-8 border border-blue-200">
           <div className="flex flex-wrap items-center gap-2 mb-4">
-            <Plane className="w-6 h-6 text-blue-600" />
+            
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
               Aerospace Engineer — Truth Curve
             </h3>
@@ -405,7 +405,7 @@ export const CareerOutcomes = () => {
         {/* Avionics Engineer Truth Curve */}
         <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl p-4 sm:p-6 lg:p-8 border border-purple-200">
           <div className="flex items-center gap-2 mb-4">
-            <Cpu className="w-6 h-6 text-purple-600" />
+            
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
               Avionics Engineer — Truth Curve
             </h3>
@@ -522,7 +522,7 @@ export const CareerOutcomes = () => {
         {/* AME Truth Curve */}
         <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-4 sm:p-6 lg:p-8 border border-emerald-200">
           <div className="flex items-center gap-2 mb-4">
-            <Wrench className="w-6 h-6 text-emerald-600" />
+            
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
               Aircraft Maintenance Engineer (AME) — Truth Curve
             </h3>
@@ -641,9 +641,7 @@ export const CareerOutcomes = () => {
       <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-4 sm:p-6 lg:p-8 border border-indigo-200">
         <div className="text-center mb-6">
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
-            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
-              📊 Demand–Supply Index (Industry-Valid)
-            </h3>
+            
             <span className="inline-flex items-center rounded-full bg-blue-100 text-blue-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-blue-200">
               Index
             </span>
@@ -718,7 +716,7 @@ export const CareerOutcomes = () => {
           <div className="bg-white rounded-xl border-2 border-blue-200 shadow-sm hover:shadow-md transition-shadow">
             <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-4 rounded-t-xl">
               <div className="flex items-center gap-2">
-                <Plane className="w-5 h-5" />
+                
                 <span className="font-bold text-base sm:text-lg">Aerospace Engineer</span>
               </div>
               <p className="text-blue-100 text-xs mt-1">Demand–Supply Reality</p>
@@ -789,7 +787,7 @@ export const CareerOutcomes = () => {
           <div className="bg-white rounded-xl border-2 border-purple-200 shadow-sm hover:shadow-md transition-shadow">
             <div className="bg-gradient-to-r from-purple-500 to-purple-600 text-white p-4 rounded-t-xl">
               <div className="flex items-center gap-2">
-                <Cpu className="w-5 h-5" />
+                
                 <span className="font-bold text-base sm:text-lg">Avionics Engineer</span>
               </div>
               <p className="text-purple-100 text-xs mt-1">Demand–Supply Reality</p>
@@ -860,7 +858,7 @@ export const CareerOutcomes = () => {
           <div className="bg-white rounded-xl border-2 border-emerald-200 shadow-sm hover:shadow-md transition-shadow">
             <div className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white p-4 rounded-t-xl">
               <div className="flex items-center gap-2">
-                <Wrench className="w-5 h-5" />
+                
                 <span className="font-bold text-base sm:text-lg">Aircraft Maintenance Engineer</span>
               </div>
               <p className="text-emerald-100 text-xs mt-1">Demand–Supply Reality</p>
@@ -931,7 +929,7 @@ export const CareerOutcomes = () => {
         {/* Closing Note */}
         <div className="mt-6 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-4 border border-amber-200">
           <div className="flex items-start gap-3">
-            <Info className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+            
             <div>
               <p className="text-sm sm:text-base text-amber-900 font-semibold mb-1">
                 Why some people earn less or more:
