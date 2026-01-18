@@ -1,6 +1,6 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
-import { TrendingUp, Zap, Target, Brain } from 'lucide-react';
+import { TrendingUp, Zap, Target, Brain, Building2 } from 'lucide-react';
 import SourceBadge from './SourceBadge';
 const growthData = [{
   role: 'Aerospace Engineer',

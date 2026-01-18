@@ -797,70 +797,6 @@ export const BestStates = () => {
       </div>
 
 
-      {/* No. of Applications for each Job Role */}
-      <div className="bg-white rounded-lg shadow-xl overflow-hidden mb-8 animate-fade-in">
-        <div className="bg-gradient-to-r from-orange-500 to-red-600 text-white text-center p-6 sm:p-8">
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
-              No. of Applications for each Job Role
-            </h3>
-            <span className="inline-flex items-center rounded-full bg-white/20 text-white px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-white/30">
-              Estimate
-            </span>
-          </div>
-          <p className="text-orange-100 text-sm sm:text-base mb-2">
-            Competition level by state and role
-          </p>
-          <p className="text-orange-100 text-xs sm:text-sm italic">
-            Left number = minimum applicants per job | Right number = maximum applicants per job
-          </p>
-        </div>
-
-        <div className="overflow-x-auto">
-          <Table>
-            <TableHeader>
-              <TableRow className="bg-gradient-to-r from-orange-50 to-amber-50 hover:from-orange-100 hover:to-amber-100 shadow-sm border-b-2 border-amber-100">
-                <TableHead className="text-amber-600 font-bold text-center">State</TableHead>
-                <TableHead className="text-amber-600 font-bold text-center">AME (apps per job)</TableHead>
-                <TableHead className="text-amber-600 font-bold text-center">Avionics</TableHead>
-                <TableHead className="text-amber-600 font-bold text-center">Aerospace Eng.</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              <TableRow className="hover:bg-orange-50">
-                <TableCell className="font-semibold text-gray-900 text-center">Karnataka (KA)</TableCell>
-                <TableCell className="text-center text-green-700 font-semibold">1–2</TableCell>
-                <TableCell className="text-center text-yellow-700 font-semibold">3–7</TableCell>
-                <TableCell className="text-center text-orange-700 font-semibold">3–6</TableCell>
-              </TableRow>
-              <TableRow className="hover:bg-orange-50">
-                <TableCell className="font-semibold text-gray-900 text-center">Tamil Nadu (TN)</TableCell>
-                <TableCell className="text-center text-green-700 font-semibold">1–2</TableCell>
-                <TableCell className="text-center text-yellow-700 font-semibold">3–7</TableCell>
-                <TableCell className="text-center text-red-700 font-semibold">4–9</TableCell>
-              </TableRow>
-              <TableRow className="hover:bg-orange-50">
-                <TableCell className="font-semibold text-gray-900 text-center">Maharashtra (MH)</TableCell>
-                <TableCell className="text-center text-green-700 font-semibold">~2</TableCell>
-                <TableCell className="text-center text-yellow-700 font-semibold">3–7</TableCell>
-                <TableCell className="text-center text-red-700 font-semibold">4–9</TableCell>
-              </TableRow>
-              <TableRow className="hover:bg-orange-50">
-                <TableCell className="font-semibold text-gray-900 text-center">Telangana (TS)</TableCell>
-                <TableCell className="text-center text-green-700 font-semibold">~1</TableCell>
-                <TableCell className="text-center text-yellow-700 font-semibold">2–5</TableCell>
-                <TableCell className="text-center text-orange-700 font-semibold">2–6</TableCell>
-              </TableRow>
-              <TableRow className="hover:bg-orange-50">
-                <TableCell className="font-semibold text-gray-900 text-center">Andhra Pradesh (AP)</TableCell>
-                <TableCell className="text-center text-green-700 font-semibold">1–2</TableCell>
-                <TableCell className="text-center text-yellow-700 font-semibold">2–5</TableCell>
-                <TableCell className="text-center text-orange-700 font-semibold">3–8</TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </div>
-      </div>
 
       {/* State-Wise Market Share */}
       <div className="bg-white rounded-lg shadow-xl overflow-hidden mb-8 animate-fade-in">
@@ -959,7 +895,7 @@ export const BestStates = () => {
                   </p>
                 </div>
 
-                <div className="grid sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Maharashtra */}
                   <div className="group bg-gradient-to-br from-indigo-50 to-white p-4 sm:p-5 rounded-xl hover:shadow-lg transition-all duration-300 border border-indigo-200 hover:border-indigo-400">
                     <div className="flex items-center justify-between mb-2">
@@ -1049,7 +985,7 @@ export const BestStates = () => {
                   </p>
                 </div>
 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {/* Tamil Nadu */}
                   <div className="group bg-gradient-to-br from-cyan-50 to-white p-4 sm:p-5 rounded-xl hover:shadow-lg transition-all duration-300 border border-cyan-200 hover:border-cyan-400">
                     <div className="flex items-center justify-between mb-2">
@@ -1155,7 +1091,7 @@ export const BestStates = () => {
                   </p>
                 </div>
 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {/* Karnataka */}
                   <div className="group bg-gradient-to-br from-purple-50 to-white p-4 sm:p-5 rounded-xl hover:shadow-lg transition-all duration-300 border border-purple-200 hover:border-purple-400">
                     <div className="flex items-center justify-between mb-2">
@@ -1212,7 +1148,7 @@ export const BestStates = () => {
           <div className="bg-gradient-to-br from-slate-50 to-blue-50 p-6 rounded-lg border-2 border-slate-200 shadow-lg">
             <h4 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6 text-center">Market Share Distribution by Role</h4>
             
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {/* Aerospace Engineer Chart */}
               <div className="bg-white p-4 rounded-lg shadow-md border border-purple-200">
                 <h5 className="text-lg font-bold text-purple-700 mb-4 text-center">Aerospace Engineer</h5>
