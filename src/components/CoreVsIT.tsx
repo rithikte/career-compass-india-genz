@@ -142,34 +142,111 @@ const CoreVsIT = () => {
         </div>
 
         {/* Final Truth Box */}
-        <Card className="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-950/30 dark:to-purple-950/30 border-2 border-indigo-300 dark:border-indigo-700 p-8 sm:p-12 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-100 dark:bg-indigo-900/50 rounded-full mb-6">
+        <div className="relative group">
+          {/* Gradient glow effect */}
+          <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-2xl opacity-20 group-hover:opacity-30 blur-lg transition-all duration-500"></div>
+          
+          <div className="relative bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 shadow-xl overflow-hidden">
+            {/* Top gradient accent */}
+            <div className="h-1.5 sm:h-2 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600"></div>
             
-            <span className="text-sm font-semibold text-indigo-700 dark:text-indigo-300">The Final Truth</span>
-          </div>
-          
-          
-          
-          <div className="max-w-3xl mx-auto space-y-4">
-            <p className="text-lg sm:text-xl text-red-600 dark:text-red-400 font-semibold">
-              Fancy IT gives fast money but short careers.
-            </p>
-            <p className="text-lg sm:text-xl text-emerald-600 dark:text-emerald-400 font-semibold">
-              Core aviation roles give deep expertise, respect, global opportunities, and long career stability.
-            </p>
-          </div>
+            <div className="p-6 sm:p-8 lg:p-10">
+              {/* Header */}
+              <div className="text-center mb-6 sm:mb-8">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-indigo-900/50 dark:to-purple-900/50 rounded-full border border-indigo-200 dark:border-indigo-700 mb-4">
+                  <span className="text-lg">🎯</span>
+                  <span className="text-sm sm:text-base font-bold text-indigo-700 dark:text-indigo-300">The Final Truth</span>
+                </div>
+                
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 dark:text-slate-50">
+                  Choose Your <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Career Path</span> Wisely
+                </h2>
+              </div>
 
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            <div className="bg-red-100 dark:bg-red-900/30 p-4 rounded-lg border border-red-300 dark:border-red-700">
-              <h4 className="font-bold text-red-700 dark:text-red-300 mb-2">IT Route</h4>
-              <p className="text-sm text-red-600 dark:text-red-400">Fast money, short careers, high replacement risk</p>
-            </div>
-            <div className="bg-emerald-100 dark:bg-emerald-900/30 p-4 rounded-lg border border-emerald-300 dark:border-emerald-700">
-              <h4 className="font-bold text-emerald-700 dark:text-emerald-300 mb-2">Core Engineering Route</h4>
-              <p className="text-sm text-emerald-600 dark:text-emerald-400">Deep expertise, long stability, irreplaceable value</p>
+              {/* Comparison Cards */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+                {/* IT Route Card */}
+                <div className="relative overflow-hidden rounded-xl border-2 border-red-200 dark:border-red-800 bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-950/30 dark:to-orange-950/30">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-red-200/30 dark:bg-red-800/20 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                  
+                  <div className="p-4 sm:p-6 relative">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center shadow-lg">
+                        <span className="text-white text-lg sm:text-xl">⚡</span>
+                      </div>
+                      <div>
+                        <h3 className="text-lg sm:text-xl font-bold text-red-700 dark:text-red-300">IT Route</h3>
+                        <span className="text-xs sm:text-sm text-red-600/80 dark:text-red-400/80">Short-term gains</span>
+                      </div>
+                    </div>
+                    
+                    <p className="text-sm sm:text-base text-red-700 dark:text-red-300 font-medium mb-4">
+                      Fancy IT gives fast money but short careers.
+                    </p>
+                    
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 text-xs sm:text-sm text-red-600 dark:text-red-400">
+                        <span className="w-5 h-5 rounded-full bg-red-200 dark:bg-red-800 flex items-center justify-center text-red-600 dark:text-red-300">✕</span>
+                        <span>Fast money, short careers</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs sm:text-sm text-red-600 dark:text-red-400">
+                        <span className="w-5 h-5 rounded-full bg-red-200 dark:bg-red-800 flex items-center justify-center text-red-600 dark:text-red-300">✕</span>
+                        <span>High replacement risk</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs sm:text-sm text-red-600 dark:text-red-400">
+                        <span className="w-5 h-5 rounded-full bg-red-200 dark:bg-red-800 flex items-center justify-center text-red-600 dark:text-red-300">✕</span>
+                        <span>Skills expire quickly</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Core Engineering Route Card */}
+                <div className="relative overflow-hidden rounded-xl border-2 border-emerald-200 dark:border-emerald-800 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950/30 dark:to-teal-950/30">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-200/30 dark:bg-emerald-800/20 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                  
+                  <div className="p-4 sm:p-6 relative">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shadow-lg">
+                        <span className="text-white text-lg sm:text-xl">🚀</span>
+                      </div>
+                      <div>
+                        <h3 className="text-lg sm:text-xl font-bold text-emerald-700 dark:text-emerald-300">Core Engineering Route</h3>
+                        <span className="text-xs sm:text-sm text-emerald-600/80 dark:text-emerald-400/80">Long-term success</span>
+                      </div>
+                    </div>
+                    
+                    <p className="text-sm sm:text-base text-emerald-700 dark:text-emerald-300 font-medium mb-4">
+                      Deep expertise, respect, global opportunities, and long career stability.
+                    </p>
+                    
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 text-xs sm:text-sm text-emerald-600 dark:text-emerald-400">
+                        <span className="w-5 h-5 rounded-full bg-emerald-200 dark:bg-emerald-800 flex items-center justify-center text-emerald-600 dark:text-emerald-300">✓</span>
+                        <span>Deep expertise & stability</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs sm:text-sm text-emerald-600 dark:text-emerald-400">
+                        <span className="w-5 h-5 rounded-full bg-emerald-200 dark:bg-emerald-800 flex items-center justify-center text-emerald-600 dark:text-emerald-300">✓</span>
+                        <span>Irreplaceable value</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs sm:text-sm text-emerald-600 dark:text-emerald-400">
+                        <span className="w-5 h-5 rounded-full bg-emerald-200 dark:bg-emerald-800 flex items-center justify-center text-emerald-600 dark:text-emerald-300">✓</span>
+                        <span>Knowledge grows with time</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Summary Banner */}
+              <div className="bg-gradient-to-r from-slate-800 via-slate-900 to-slate-800 dark:from-slate-700 dark:via-slate-800 dark:to-slate-700 rounded-xl p-4 sm:p-5 text-center">
+                <p className="text-sm sm:text-base lg:text-lg text-white font-medium">
+                  💡 <span className="text-amber-300 font-semibold">Think long-term.</span> Build skills that last a lifetime, not just a few years.
+                </p>
+              </div>
             </div>
           </div>
-        </Card>
+        </div>
       </div>
     </div>;
 };
