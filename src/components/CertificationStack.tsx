@@ -309,151 +309,295 @@ export const CertificationStack = () => {
 
         {/* What If You Skip Certifications Section */}
         <div className="mt-12 sm:mt-16 mb-8 sm:mb-12">
-          <div className="text-center mb-6 sm:mb-8 px-4">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-3 sm:mb-4">
-              What If You Skip Certifications?
-            </h3>
+          {/* Section Header */}
+          <div className="bg-white rounded-xl border border-slate-200 shadow-lg overflow-hidden">
+            <div className="h-1.5 sm:h-2 bg-gradient-to-r from-red-500 via-orange-500 to-amber-500"></div>
             
-            
-            {/* Why this matters */}
-            <div className="flex items-center justify-center mt-3">
-              <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
-                <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
-                  <span className="font-semibold">Why this matters:</span> Clearly shows the salary loss, role downgrade, and delays students face if they avoid certifications.
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-4 sm:px-0">
-            {/* Aerospace Engineer */}
-            <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-gray-200 hover:shadow-xl transition-all duration-300">
-              <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-4 sm:mb-6 flex items-center">
+            <div className="p-4 sm:p-6 lg:p-8">
+              <div className="text-center mb-6 sm:mb-8">
+                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-red-500 to-orange-500 text-white mb-3 sm:mb-4">
+                  <svg className="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+                  What If You Skip Certifications?
+                </h3>
                 
-                Aerospace Engineer
-              </h4>
-
-              <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
-                <div className="bg-red-50 border-l-4 border-red-500 p-3 sm:p-4 rounded">
-                  <h5 className="text-xs sm:text-sm font-bold text-red-900 mb-2 flex items-center">
-                    
-                    If you skip certification:
-                  </h5>
-                  <ul className="text-xs sm:text-sm text-red-800 space-y-1 sm:space-y-1.5">
-                    <li>• Salary drops ~25–35%</li>
-                    <li>• You get only basic design/support jobs</li>
-                    <li>• You wait 1–2 years longer for a good role</li>
-                    <li>• Competition becomes very high</li>
-                  </ul>
-                </div>
-
-                <div className="bg-green-50 border-l-4 border-green-500 p-3 sm:p-4 rounded">
-                  <h5 className="text-xs sm:text-sm font-bold text-green-900 mb-2 flex items-center">
-                    
-                    If you do certification (CAD + Simulation + CAE):
-                  </h5>
-                  <ul className="text-xs sm:text-sm text-green-800 space-y-1 sm:space-y-1.5">
-                    <li>• Salary jumps +30–50%</li>
-                    <li>• You get core design, CFD, FEA roles</li>
-                    <li>• You stand out from 70% of applicants</li>
-                    <li>• Faster promotions + better companies</li>
-                  </ul>
+                {/* Why this matters */}
+                <div className="flex items-center justify-center mt-3">
+                  <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+                    <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                      <span className="font-semibold">Why this matters:</span> Clearly shows the salary loss, role downgrade, and delays students face if they avoid certifications.
+                    </span>
+                  </div>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-3 sm:p-4 rounded-lg">
-                <p className="text-xs sm:text-sm font-bold text-center leading-relaxed">
-                  Skipping certs → basic job.<br />
-                  Doing certs → design job + higher salary.
-                </p>
-              </div>
-            </div>
-
-            {/* Avionics Engineer */}
-            <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-gray-200 hover:shadow-xl transition-all duration-300">
-              <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-4 sm:mb-6 flex items-center">
-                <span className="mr-2">
-              </span>
-                Avionics Engineer
-              </h4>
-
-              <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
-                <div className="bg-red-50 border-l-4 border-red-500 p-3 sm:p-4 rounded">
-                  <h5 className="text-xs sm:text-sm font-bold text-red-900 mb-2 flex items-center">
+              {/* Comparison Cards Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
+                
+                {/* Aerospace Engineer Card */}
+                <div className="group relative">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-20 blur transition-all duration-300"></div>
+                  <div className="relative bg-white rounded-xl border border-slate-200 overflow-hidden h-full">
+                    {/* Card Header */}
+                    <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-3 sm:px-5 sm:py-4">
+                      <div className="flex items-center gap-2">
+                        <span className="inline-flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-white/20 text-white">
+                          <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                          </svg>
+                        </span>
+                        <h4 className="text-base sm:text-lg font-bold text-white">Aerospace Engineer</h4>
+                      </div>
+                    </div>
                     
-                    If you skip certification:
-                  </h5>
-                  <ul className="text-xs sm:text-sm text-red-800 space-y-1 sm:space-y-1.5">
-                    <li>• Salary drops 20–30%</li>
-                    <li>• Only junior testing/support roles</li>
-                    <li>• Cannot touch avionics systems</li>
-                    <li>• Very limited career growth</li>
-                  </ul>
+                    <div className="p-4 sm:p-5 space-y-4">
+                      {/* Skip Section */}
+                      <div className="bg-red-50/80 rounded-xl p-3 sm:p-4 border border-red-100">
+                        <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                          <span className="inline-flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-red-500 text-white">
+                            <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                          </span>
+                          <span className="text-xs sm:text-sm font-bold text-red-800">If You Skip</span>
+                        </div>
+                        <ul className="space-y-1.5 sm:space-y-2">
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-red-700">
+                            <span className="text-red-500 mt-0.5">•</span>
+                            <span>Salary drops <span className="font-semibold">~25–35%</span></span>
+                          </li>
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-red-700">
+                            <span className="text-red-500 mt-0.5">•</span>
+                            <span>Only basic design/support jobs</span>
+                          </li>
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-red-700">
+                            <span className="text-red-500 mt-0.5">•</span>
+                            <span>Wait <span className="font-semibold">1–2 years</span> longer for good role</span>
+                          </li>
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-red-700">
+                            <span className="text-red-500 mt-0.5">•</span>
+                            <span>Competition becomes very high</span>
+                          </li>
+                        </ul>
+                      </div>
+                      
+                      {/* Complete Section */}
+                      <div className="bg-emerald-50/80 rounded-xl p-3 sm:p-4 border border-emerald-100">
+                        <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                          <span className="inline-flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-emerald-500 text-white">
+                            <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                          </span>
+                          <span className="text-xs sm:text-sm font-bold text-emerald-800">With CAD + Simulation + CAE</span>
+                        </div>
+                        <ul className="space-y-1.5 sm:space-y-2">
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-emerald-700">
+                            <span className="text-emerald-500 mt-0.5">•</span>
+                            <span>Salary jumps <span className="font-semibold">+30–50%</span></span>
+                          </li>
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-emerald-700">
+                            <span className="text-emerald-500 mt-0.5">•</span>
+                            <span>Core design, CFD, FEA roles</span>
+                          </li>
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-emerald-700">
+                            <span className="text-emerald-500 mt-0.5">•</span>
+                            <span>Stand out from <span className="font-semibold">70%</span> of applicants</span>
+                          </li>
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-emerald-700">
+                            <span className="text-emerald-500 mt-0.5">•</span>
+                            <span>Faster promotions + better companies</span>
+                          </li>
+                        </ul>
+                      </div>
+                      
+                      {/* Bottom Line */}
+                      <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl p-3 sm:p-4">
+                        <p className="text-xs sm:text-sm font-semibold text-white text-center leading-relaxed">
+                          <span className="opacity-80">Skip =</span> basic job → <span className="opacity-80">Complete =</span> design job + higher salary
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="bg-green-50 border-l-4 border-green-500 p-3 sm:p-4 rounded">
-                  <h5 className="text-xs sm:text-sm font-bold text-green-900 mb-2 flex items-center">
+                {/* Avionics Engineer Card */}
+                <div className="group relative">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl opacity-0 group-hover:opacity-20 blur transition-all duration-300"></div>
+                  <div className="relative bg-white rounded-xl border border-slate-200 overflow-hidden h-full">
+                    {/* Card Header */}
+                    <div className="bg-gradient-to-r from-purple-600 to-purple-700 px-4 py-3 sm:px-5 sm:py-4">
+                      <div className="flex items-center gap-2">
+                        <span className="inline-flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-white/20 text-white">
+                          <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                          </svg>
+                        </span>
+                        <h4 className="text-base sm:text-lg font-bold text-white">Avionics Engineer</h4>
+                      </div>
+                    </div>
                     
-                    If you do certification (FPGA + Embedded C + ARINC):
-                  </h5>
-                  <ul className="text-xs sm:text-sm text-green-800 space-y-1 sm:space-y-1.5">
-                    <li>• Salary rises +35–55%</li>
-                    <li>• You design & test avionics hardware</li>
-                    <li>• You become a system specialist</li>
-                    <li>• Defence and aviation firms target you</li>
-                  </ul>
+                    <div className="p-4 sm:p-5 space-y-4">
+                      {/* Skip Section */}
+                      <div className="bg-red-50/80 rounded-xl p-3 sm:p-4 border border-red-100">
+                        <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                          <span className="inline-flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-red-500 text-white">
+                            <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                          </span>
+                          <span className="text-xs sm:text-sm font-bold text-red-800">If You Skip</span>
+                        </div>
+                        <ul className="space-y-1.5 sm:space-y-2">
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-red-700">
+                            <span className="text-red-500 mt-0.5">•</span>
+                            <span>Salary drops <span className="font-semibold">20–30%</span></span>
+                          </li>
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-red-700">
+                            <span className="text-red-500 mt-0.5">•</span>
+                            <span>Only junior testing/support roles</span>
+                          </li>
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-red-700">
+                            <span className="text-red-500 mt-0.5">•</span>
+                            <span>Cannot touch avionics systems</span>
+                          </li>
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-red-700">
+                            <span className="text-red-500 mt-0.5">•</span>
+                            <span>Very limited career growth</span>
+                          </li>
+                        </ul>
+                      </div>
+                      
+                      {/* Complete Section */}
+                      <div className="bg-emerald-50/80 rounded-xl p-3 sm:p-4 border border-emerald-100">
+                        <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                          <span className="inline-flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-emerald-500 text-white">
+                            <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                          </span>
+                          <span className="text-xs sm:text-sm font-bold text-emerald-800">With FPGA + Embedded C + ARINC</span>
+                        </div>
+                        <ul className="space-y-1.5 sm:space-y-2">
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-emerald-700">
+                            <span className="text-emerald-500 mt-0.5">•</span>
+                            <span>Salary rises <span className="font-semibold">+35–55%</span></span>
+                          </li>
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-emerald-700">
+                            <span className="text-emerald-500 mt-0.5">•</span>
+                            <span>Design & test avionics hardware</span>
+                          </li>
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-emerald-700">
+                            <span className="text-emerald-500 mt-0.5">•</span>
+                            <span>Become a system specialist</span>
+                          </li>
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-emerald-700">
+                            <span className="text-emerald-500 mt-0.5">•</span>
+                            <span>Defence & aviation firms target you</span>
+                          </li>
+                        </ul>
+                      </div>
+                      
+                      {/* Bottom Line */}
+                      <div className="bg-gradient-to-r from-purple-600 to-purple-700 rounded-xl p-3 sm:p-4">
+                        <p className="text-xs sm:text-sm font-semibold text-white text-center leading-relaxed">
+                          <span className="opacity-80">Skip =</span> junior support → <span className="opacity-80">Complete =</span> system engineer + growth
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
 
-              <div className="bg-gradient-to-r from-purple-600 to-purple-700 text-white p-3 sm:p-4 rounded-lg">
-                <p className="text-xs sm:text-sm font-bold text-center leading-relaxed">
-                  Skipping certs → junior support.<br />
-                  Doing certs → avionics system engineer + growth.
-                </p>
-              </div>
-            </div>
-
-            {/* Aircraft Maintenance Engineer */}
-            <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-gray-200 hover:shadow-xl transition-all duration-300 md:col-span-2 lg:col-span-1">
-              <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-4 sm:mb-6 flex items-center">
-                <span className="mr-2">
-              </span>
-                Aircraft Maintenance Engineer (AME)
-              </h4>
-
-              <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
-                <div className="bg-red-50 border-l-4 border-red-500 p-3 sm:p-4 rounded">
-                  <h5 className="text-xs sm:text-sm font-bold text-red-900 mb-2 flex items-center">
+                {/* AME Card */}
+                <div className="group relative lg:col-span-1">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl opacity-0 group-hover:opacity-20 blur transition-all duration-300"></div>
+                  <div className="relative bg-white rounded-xl border border-slate-200 overflow-hidden h-full">
+                    {/* Card Header */}
+                    <div className="bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-3 sm:px-5 sm:py-4">
+                      <div className="flex items-center gap-2">
+                        <span className="inline-flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-white/20 text-white">
+                          <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                          </svg>
+                        </span>
+                        <h4 className="text-base sm:text-lg font-bold text-white">Aircraft Maintenance Engineer</h4>
+                      </div>
+                    </div>
                     
-                    If you skip mandatory AME certifications:
-                  </h5>
-                  <ul className="text-xs sm:text-sm text-red-800 space-y-1 sm:space-y-1.5">
-                    <li>• You cannot work on aircraft</li>
-                    <li>• Only ground support / helper roles</li>
-                    <li>• Salary becomes ₹15–20k instead of engineering pay</li>
-                    <li>• Zero career growth</li>
-                  </ul>
+                    <div className="p-4 sm:p-5 space-y-4">
+                      {/* Skip Section */}
+                      <div className="bg-red-50/80 rounded-xl p-3 sm:p-4 border border-red-100">
+                        <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                          <span className="inline-flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-red-500 text-white">
+                            <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                          </span>
+                          <span className="text-xs sm:text-sm font-bold text-red-800">If You Skip Mandatory AME Certs</span>
+                        </div>
+                        <ul className="space-y-1.5 sm:space-y-2">
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-red-700">
+                            <span className="text-red-500 mt-0.5">•</span>
+                            <span><span className="font-semibold">Cannot work</span> on aircraft</span>
+                          </li>
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-red-700">
+                            <span className="text-red-500 mt-0.5">•</span>
+                            <span>Only ground support / helper roles</span>
+                          </li>
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-red-700">
+                            <span className="text-red-500 mt-0.5">•</span>
+                            <span>Salary becomes <span className="font-semibold">₹15–20k</span></span>
+                          </li>
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-red-700">
+                            <span className="text-red-500 mt-0.5">•</span>
+                            <span>Zero career growth</span>
+                          </li>
+                        </ul>
+                      </div>
+                      
+                      {/* Complete Section */}
+                      <div className="bg-emerald-50/80 rounded-xl p-3 sm:p-4 border border-emerald-100">
+                        <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                          <span className="inline-flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-emerald-500 text-white">
+                            <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                          </span>
+                          <span className="text-xs sm:text-sm font-bold text-emerald-800">With DGCA/Type-rated Certs</span>
+                        </div>
+                        <ul className="space-y-1.5 sm:space-y-2">
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-emerald-700">
+                            <span className="text-emerald-500 mt-0.5">•</span>
+                            <span>Salary becomes <span className="font-semibold">₹40k–₹80k</span> starting</span>
+                          </li>
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-emerald-700">
+                            <span className="text-emerald-500 mt-0.5">•</span>
+                            <span>Get licensed AME positions</span>
+                          </li>
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-emerald-700">
+                            <span className="text-emerald-500 mt-0.5">•</span>
+                            <span>Airlines prefer you immediately</span>
+                          </li>
+                          <li className="flex items-start gap-2 text-xs sm:text-sm text-emerald-700">
+                            <span className="text-emerald-500 mt-0.5">•</span>
+                            <span>Stable growth as MRO demand rises</span>
+                          </li>
+                        </ul>
+                      </div>
+                      
+                      {/* Bottom Line */}
+                      <div className="bg-gradient-to-r from-amber-500 to-orange-500 rounded-xl p-3 sm:p-4">
+                        <p className="text-xs sm:text-sm font-semibold text-white text-center leading-relaxed">
+                          <span className="opacity-80">No certs =</span> can't enter aviation → <span className="opacity-80">With certs =</span> 2–3× salary
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-
-                <div className="bg-green-50 border-l-4 border-green-500 p-3 sm:p-4 rounded">
-                  <h5 className="text-xs sm:text-sm font-bold text-green-900 mb-2 flex items-center">
-                    
-                    If you complete DGCA/Type-rated certifications:
-                  </h5>
-                  <ul className="text-xs sm:text-sm text-green-800 space-y-1 sm:space-y-1.5">
-                    <li>• Salary becomes ₹40k–₹80k starting</li>
-                    <li>• You get licensed AME positions</li>
-                    <li>• Airlines prefer you immediately</li>
-                    <li>• Growth becomes stable because MRO demand is rising</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="bg-gradient-to-r from-orange-600 to-orange-700 text-white p-3 sm:p-4 rounded-lg">
-                <p className="text-xs sm:text-sm font-bold text-center leading-relaxed">
-                  Without certs → you don't enter aviation.<br />
-                  With certs → full AME engineer + 2–3× salary.
-                </p>
               </div>
             </div>
           </div>
