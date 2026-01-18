@@ -1,6 +1,6 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
-import { TrendingUp, Zap, Target, Building2, Brain } from 'lucide-react';
+import { TrendingUp, Zap, Target, Brain } from 'lucide-react';
 import SourceBadge from './SourceBadge';
 const growthData = [{
   role: 'Aerospace Engineer',
@@ -201,7 +201,7 @@ export const GrowthRate = () => {
       <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
         <div className="text-center mb-8">
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-3">
-            <Building2 className="w-7 h-7 text-indigo-600" />
+            
             <h3 className="text-3xl font-bold text-slate-900">New Companies Growth Rate by 2040</h3>
             <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
               Projection
@@ -226,9 +226,7 @@ export const GrowthRate = () => {
               {/* Header with badge */}
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center">
-                  <item.icon className="w-6 h-6 mr-2" style={{
-                color: item.color
-              }} />
+                  
                   <h4 className="text-lg font-bold text-slate-900">{item.category}</h4>
                 </div>
                 <span className={`px-3 py-1 rounded-full text-xs font-semibold ${item.baseCAGR >= 13 ? 'bg-green-100 text-green-800' : item.baseCAGR >= 10 ? 'bg-yellow-100 text-yellow-800' : 'bg-blue-100 text-blue-800'}`}>
