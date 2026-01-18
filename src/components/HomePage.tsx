@@ -404,58 +404,67 @@ export const HomePage = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {/* Start My Degree Journey */}
-            <Card className="magnetic-container relative overflow-hidden group hover:shadow-layer-3 transition-all duration-300 border-0 bg-white/95 backdrop-blur-sm shadow-layer-2">
-              <CardContent className="p-8 my-0 px-[30px]">
-                <div className="text-left mb-6">
+            <div className="group relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl opacity-20 group-hover:opacity-40 blur-sm transition-all duration-300"></div>
+              <Card className="relative magnetic-container overflow-hidden hover:shadow-layer-3 transition-all duration-300 border-0 bg-white/95 backdrop-blur-sm shadow-layer-2 h-full">
+                <CardContent className="p-8 my-0 px-[30px]">
+                  <div className="text-left mb-6">
+                    
+                    <h3 className="text-2xl font-bold text-foreground mb-2">Start My Degree Journey</h3>
+                    <p className="text-base text-muted-foreground mb-2 mx-[40px]">
+                      <span className="font-semibold">For:</span> Students after Inter / +2
+                    </p>
+                    
+                  </div>
                   
-                  <h3 className="text-2xl font-bold text-foreground mb-2">Start My Degree Journey</h3>
-                  <p className="text-base text-muted-foreground mb-2 mx-[40px]">
-                    <span className="font-semibold">For:</span> Students after Inter / +2
-                  </p>
-                  
-                </div>
-                
-                <Button onClick={() => setShowCareerExplorer(true)} className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 rounded-xl hover:scale-105 transition-transform duration-300">
-                  Start My Degree Journey
-                </Button>
-              </CardContent>
-            </Card>
+                  <Button onClick={() => setShowCareerExplorer(true)} className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 rounded-xl hover:scale-105 transition-transform duration-300">
+                    Start My Degree Journey
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
 
             {/* Plan My Career Path */}
-            <Card className="magnetic-container relative overflow-hidden group hover:shadow-layer-3 transition-all duration-300 border-0 bg-white/95 backdrop-blur-sm shadow-layer-2">
-              <CardContent className="p-8">
-                <div className="text-left mb-6">
+            <div className="group relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl opacity-20 group-hover:opacity-40 blur-sm transition-all duration-300"></div>
+              <Card className="relative magnetic-container overflow-hidden hover:shadow-layer-3 transition-all duration-300 border-0 bg-white/95 backdrop-blur-sm shadow-layer-2 h-full">
+                <CardContent className="p-8">
+                  <div className="text-left mb-6">
+                    
+                    <h3 className="text-2xl font-bold text-foreground mb-2 my-0 mx-[25px]">Plan My Career Path</h3>
+                    <p className="text-base text-muted-foreground mb-2 mx-[25px]">
+                      <span className="font-semibold">For:</span> Students already in a degree
+                    </p>
+                    
+                  </div>
                   
-                  <h3 className="text-2xl font-bold text-foreground mb-2 my-0 mx-[25px]">Plan My Career Path</h3>
-                  <p className="text-base text-muted-foreground mb-2 mx-[25px]">
-                    <span className="font-semibold">For:</span> Students already in a degree
-                  </p>
-                  
-                </div>
-                
-                <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 rounded-xl hover:scale-105 transition-transform duration-300">
-                  Plan My Career Path
-                </Button>
-              </CardContent>
-            </Card>
+                  <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 rounded-xl hover:scale-105 transition-transform duration-300">
+                    Plan My Career Path
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
 
             {/* Explore Government Opportunities */}
-            <Card className="magnetic-container relative overflow-hidden group hover:shadow-layer-3 transition-all duration-300 border-0 bg-white/95 backdrop-blur-sm md:col-span-2 lg:col-span-1 shadow-layer-2">
-              <CardContent className="p-8">
-                <div className="text-left mb-6">
+            <div className="group relative md:col-span-2 lg:col-span-1">
+              <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-green-500 rounded-2xl opacity-20 group-hover:opacity-40 blur-sm transition-all duration-300"></div>
+              <Card className="relative magnetic-container overflow-hidden hover:shadow-layer-3 transition-all duration-300 border-0 bg-white/95 backdrop-blur-sm shadow-layer-2 h-full">
+                <CardContent className="p-8">
+                  <div className="text-left mb-6">
+                    
+                    <h3 className="text-2xl font-bold text-foreground mb-2 mx-[30px]">Govt Opportunities</h3>
+                    <p className="text-base text-muted-foreground mb-2">
+                      <span className="font-semibold">For:</span> Students looking for Govt jobs after degree
+                    </p>
+                    
+                  </div>
                   
-                  <h3 className="text-2xl font-bold text-foreground mb-2 mx-[30px]">Govt Opportunities</h3>
-                  <p className="text-base text-muted-foreground mb-2">
-                    <span className="font-semibold">For:</span> Students looking for Govt jobs after degree
-                  </p>
-                  
-                </div>
-                
-                <Button className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-3 rounded-xl hover:scale-105 transition-transform duration-300">
-                  Explore Government Opportunities
-                </Button>
-              </CardContent>
-            </Card>
+                  <Button className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-3 rounded-xl hover:scale-105 transition-transform duration-300">
+                    Explore Government Opportunities
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
 
