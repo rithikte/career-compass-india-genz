@@ -154,7 +154,7 @@ const CoreVsIT = () => {
               {/* Header */}
               <div className="text-center mb-6 sm:mb-8">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-indigo-900/50 dark:to-purple-900/50 rounded-full border border-indigo-200 dark:border-indigo-700 mb-4">
-                  <span className="text-lg">🎯</span>
+                  
                   <span className="text-sm sm:text-base font-bold text-indigo-700 dark:text-indigo-300">The Final Truth</span>
                 </div>
                 
@@ -171,9 +171,7 @@ const CoreVsIT = () => {
                   
                   <div className="p-4 sm:p-6 relative">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center shadow-lg">
-                        <span className="text-white text-lg sm:text-xl">⚡</span>
-                      </div>
+                      
                       <div>
                         <h3 className="text-lg sm:text-xl font-bold text-red-700 dark:text-red-300">IT Route</h3>
                         <span className="text-xs sm:text-sm text-red-600/80 dark:text-red-400/80">Short-term gains</span>
@@ -207,9 +205,7 @@ const CoreVsIT = () => {
                   
                   <div className="p-4 sm:p-6 relative">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shadow-lg">
-                        <span className="text-white text-lg sm:text-xl">🚀</span>
-                      </div>
+                      
                       <div>
                         <h3 className="text-lg sm:text-xl font-bold text-emerald-700 dark:text-emerald-300">Core Engineering Route</h3>
                         <span className="text-xs sm:text-sm text-emerald-600/80 dark:text-emerald-400/80">Long-term success</span>
@@ -240,8 +236,7 @@ const CoreVsIT = () => {
 
               {/* Bottom Summary Banner */}
               <div className="bg-gradient-to-r from-slate-800 via-slate-900 to-slate-800 dark:from-slate-700 dark:via-slate-800 dark:to-slate-700 rounded-xl p-4 sm:p-5 text-center">
-                <p className="text-sm sm:text-base lg:text-lg text-white font-medium">
-                  💡 <span className="text-amber-300 font-semibold">Think long-term.</span> Build skills that last a lifetime, not just a few years.
+                <p className="text-sm sm:text-base lg:text-lg text-white font-medium">Think long-term. Build skills that last a lifetime, not just a few years.<span className="text-amber-300 font-semibold">Think long-term.</span> Build skills that last a lifetime, not just a few years.
                 </p>
               </div>
             </div>
