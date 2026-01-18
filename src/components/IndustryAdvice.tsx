@@ -1,4 +1,4 @@
-import { AlertTriangle, XCircle, Zap, Heart, Target, Trophy, Clock, TrendingDown, TrendingUp, Lightbulb, Shield, Flame, GraduationCap, Award, Calendar } from 'lucide-react';
+import { AlertTriangle, XCircle, Zap, Heart, Target, Trophy, Clock, TrendingDown, TrendingUp, Lightbulb, Shield, Flame, GraduationCap, Award, Calendar, Brain, Users } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import SourceBadge from './SourceBadge';
 const IndustryAdvice = () => {
