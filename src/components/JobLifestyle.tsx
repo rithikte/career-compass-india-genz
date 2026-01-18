@@ -269,13 +269,10 @@ const JobLifestyle = () => {
       {/* Job Lifestyle Index Section */}
       <section>
         <div className="text-center mb-8 sm:mb-12 px-4">
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Job Lifestyle Index</h2>
-            <span className="inline-flex items-center rounded-full bg-blue-100 text-blue-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-blue-200">
-              Index
-            </span>
-          </div>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary via-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+            Real work life, stress, and job stability.
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
             Compare work-life balance, stress levels, and career growth across roles
           </p>
         </div>
