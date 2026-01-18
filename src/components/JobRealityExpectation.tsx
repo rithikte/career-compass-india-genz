@@ -89,12 +89,24 @@ const JobRealityExpectation = () => {
           return (
             <Card 
               key={index} 
-              className="overflow-hidden border-2 border-slate-200 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className={`overflow-hidden border-2 shadow-lg hover:shadow-xl transition-shadow duration-300 ${
+                role.title === 'Aerospace Engineer' ? 'border-blue-200 bg-blue-50/30' :
+                role.title === 'Avionics Engineer' ? 'border-purple-200 bg-purple-50/30' :
+                'border-amber-200 bg-amber-50/30'
+              }`}
             >
               {/* Card Header */}
-              <CardHeader className="bg-slate-50 border-b border-slate-200 p-4 sm:p-6">
+              <CardHeader className={`border-b p-4 sm:p-6 ${
+                role.title === 'Aerospace Engineer' ? 'bg-blue-50 border-blue-200' :
+                role.title === 'Avionics Engineer' ? 'bg-purple-50 border-purple-200' :
+                'bg-amber-50 border-amber-200'
+              }`}>
                 <CardTitle className="flex items-center gap-3">
-                  <div className="p-2 sm:p-3 bg-slate-700 rounded-xl shadow-md">
+                  <div className={`p-2 sm:p-3 rounded-xl shadow-md ${
+                    role.title === 'Aerospace Engineer' ? 'bg-blue-600' :
+                    role.title === 'Avionics Engineer' ? 'bg-purple-600' :
+                    'bg-amber-600'
+                  }`}>
                     <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                   <span className={`text-sm font-semibold px-3 py-1 rounded-full border ${role.badgeColor}`}>

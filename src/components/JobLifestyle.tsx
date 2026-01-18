@@ -28,7 +28,7 @@ const JobLifestyle = () => {
   }, {
     title: 'Avionics Engineer',
     icon: Radio,
-    color: 'orange',
+    color: 'purple',
     factors: [{
       factor: 'Stress',
       rating: '4️⃣',
@@ -50,7 +50,7 @@ const JobLifestyle = () => {
   }, {
     title: 'Aircraft Maintenance Engineer (AME)',
     icon: Wrench,
-    color: 'green',
+    color: 'amber',
     factors: [{
       factor: 'Stress',
       rating: '5️⃣',
@@ -102,14 +102,14 @@ const JobLifestyle = () => {
   }, {
     title: 'Avionics Engineer',
     icon: Radio,
-    color: 'orange',
+    color: 'purple',
     status: '🟢 Healthy',
     reasons: ['Electronics, sensors, autopilot systems, and drone tech are booming.', 'Defence electronics companies are expanding labs in India.', 'Car companies (EV/ADAS) are also hiring avionics-like talent.', 'High global demand for embedded engineers.'],
     summary: 'Very strong demand — avionics is one of the safest tech careers today.'
   }, {
     title: 'Aircraft Maintenance Engineer (AME)',
     icon: Wrench,
-    color: 'green',
+    color: 'amber',
     status: '🟢🟢 Very Healthy',
     reasons: ['India buying more aircraft → airlines need more AMEs.', 'MRO hubs (Nagpur, Hyderabad, Kochi) are expanding rapidly.', 'AME work cannot be replaced by AI or robots.', 'Foreign companies want to invest in India\'s aviation maintenance sector.'],
     summary: 'AME industry is booming — highest stability and very strong demand.'
@@ -142,7 +142,7 @@ const JobLifestyle = () => {
   }, {
     title: 'Avionics Engineer',
     icon: Radio,
-    color: 'orange',
+    color: 'purple',
     score: '8/10 (Very Stable)',
     factors: [{
       event: 'Recession',
@@ -167,7 +167,7 @@ const JobLifestyle = () => {
   }, {
     title: 'Aircraft Maintenance Engineer (AME)',
     icon: Wrench,
-    color: 'green',
+    color: 'amber',
     score: '9/10 (Extremely Stable)',
     factors: [{
       event: 'Recession',
@@ -215,7 +215,7 @@ const JobLifestyle = () => {
   }, {
     title: 'Avionics Engineer',
     icon: Radio,
-    color: 'orange',
+    color: 'purple',
     forecast: [{
       year: '2025',
       status: '🟢 Expanding',
@@ -237,7 +237,7 @@ const JobLifestyle = () => {
   }, {
     title: 'Aircraft Maintenance Engineer (AME)',
     icon: Wrench,
-    color: 'green',
+    color: 'amber',
     forecast: [{
       year: '2025',
       status: '🟢 Expanding',
@@ -258,8 +258,16 @@ const JobLifestyle = () => {
     summary: 'AME remains in expansion mode for the next 15+ years — extremely low saturation.'
   }];
   const getColorClasses = (color: string) => {
-    // Uniform neutral colors for all cards
-    return 'bg-white border-slate-200';
+    switch (color) {
+      case 'blue':
+        return 'bg-blue-50 border-blue-200';
+      case 'purple':
+        return 'bg-purple-50 border-purple-200';
+      case 'amber':
+        return 'bg-amber-50 border-amber-200';
+      default:
+        return 'bg-white border-slate-200';
+    }
   };
   return <div className="space-y-12 pb-12">
       {/* Job Lifestyle Index Section */}

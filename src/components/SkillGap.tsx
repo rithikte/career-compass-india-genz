@@ -177,7 +177,7 @@ export const SkillGap = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {/* Aerospace Engineer */}
-          <div className="bg-white rounded-xl p-4 sm:p-5 border-2 border-slate-200">
+          <div className="bg-blue-50 rounded-xl p-4 sm:p-5 border-2 border-blue-200">
             <div className="flex items-center gap-2 mb-3">
               <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800 border border-blue-200">
                 Aerospace Engineer
@@ -214,7 +214,7 @@ export const SkillGap = () => {
           </div>
 
           {/* Avionics Engineer */}
-          <div className="bg-white rounded-xl p-4 sm:p-5 border-2 border-slate-200">
+          <div className="bg-purple-50 rounded-xl p-4 sm:p-5 border-2 border-purple-200">
             <div className="flex items-center gap-2 mb-3">
               <span className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-100 text-purple-800 border border-purple-200">
                 Avionics Engineer
@@ -251,7 +251,7 @@ export const SkillGap = () => {
           </div>
 
           {/* Aircraft Maintenance Engineer (AME) */}
-          <div className="bg-white rounded-xl p-4 sm:p-5 border-2 border-slate-200">
+          <div className="bg-amber-50 rounded-xl p-4 sm:p-5 border-2 border-amber-200">
             <div className="flex items-center gap-2 mb-3">
               <span className="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 border border-amber-200">
                 Aircraft Maintenance Engineer (AME)
