@@ -157,9 +157,7 @@ export const CertificationStack = () => {
         <h2 className="text-4xl font-bold text-slate-900 mb-4">
           Certification Stack Roadmap
         </h2>
-        <p className="text-xl text-gray-600">
-          Your path from 0% to 100% job readiness
-        </p>
+        
         <div className="flex flex-wrap justify-center gap-2 mt-4">
           <SourceBadge href="https://nptel.ac.in/courses" label="NPTEL Courses" />
           <SourceBadge href="https://www.coursera.org/iit" label="IIT Coursera" />
@@ -315,9 +313,7 @@ export const CertificationStack = () => {
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-3 sm:mb-4">
               What If You Skip Certifications?
             </h3>
-            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
-              Real-world impact analysis: with vs without certifications
-            </p>
+            
             
             {/* Why this matters */}
             <div className="flex items-center justify-center mt-3">
@@ -472,16 +468,12 @@ export const CertificationStack = () => {
             {/* Title Row */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-3">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg">
-                  <Target className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                </div>
+                
                 <h4 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">
                   Role Fitment Exam
                 </h4>
               </div>
-              <span className="inline-flex items-center self-start sm:self-auto rounded-full bg-blue-100 text-blue-800 px-2.5 py-1 text-[10px] sm:text-xs font-semibold border border-blue-200">
-                NEXT CRITICAL STEP
-              </span>
+              
             </div>
             
             {/* Why this matters */}
@@ -524,15 +516,14 @@ export const CertificationStack = () => {
                   <span className="text-sm sm:text-base font-semibold text-slate-900">Get Job-Ready</span>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Complete role-specific certifications and be <span className="font-semibold text-green-700">100% placement ready</span>.
+                  Complete role-specific certifications and be <span className="font-semibold text-green-700"> placement ready</span>.
                 </p>
               </div>
             </div>
             
             {/* Key Insight */}
             <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-xl p-4 sm:p-5 text-center">
-              <p className="text-sm sm:text-base text-white font-medium leading-relaxed">
-                💡 This test isn't about marks — it's about showing you where you <span className="font-bold text-blue-300">truly shine</span>.
+              <p className="text-sm sm:text-base text-white font-medium leading-relaxed">This test isn't about marks — it's about showing you where you truly shine.<span className="font-bold text-blue-300">truly shine</span>.
               </p>
             </div>
           </div>
