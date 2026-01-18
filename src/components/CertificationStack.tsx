@@ -167,22 +167,53 @@ export const CertificationStack = () => {
         </div>
       </div>
 
-      {/* Critical Reality Check Section */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-red-50 via-orange-50 to-red-50 rounded-xl shadow-xl p-6 sm:p-8 mb-8 border-2 border-red-200">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-red-100/30 rounded-full -translate-y-16 translate-x-16"></div>
-        <div className="absolute bottom-0 left-0 w-24 h-24 bg-orange-100/30 rounded-full translate-y-12 -translate-x-12"></div>
-        <div className="relative flex items-start">
-          <div className="flex-1">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent mb-4">
-              Critical Reality Check
-            </h3>
-            <div className="space-y-3 text-base text-slate-800 leading-relaxed">
-              <p className="flex items-start bg-white/60 backdrop-blur-sm rounded-lg p-4 shadow-sm border border-red-100">
-                <span className="text-red-600 font-bold mr-2 text-xl">•</span>
-                <span>
-                  In B.Tech Mechanical Engineering, you learn only 38–45% basics — not enough for aviation jobs without extra certifications and projects.
-                </span>
-              </p>
+      {/* Reality Insight Callout */}
+      <div className="relative mb-8">
+        <div className="group relative">
+          {/* Gradient Glow Effect */}
+          <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl opacity-20 group-hover:opacity-40 blur-sm transition-all duration-300"></div>
+          
+          {/* Main Content */}
+          <div className="relative bg-white rounded-xl border border-slate-200 shadow-lg overflow-hidden">
+            {/* Top Accent Bar */}
+            <div className="h-1.5 sm:h-2 bg-gradient-to-r from-amber-500 via-orange-500 to-red-500"></div>
+            
+            <div className="p-4 sm:p-6 lg:p-8">
+              <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 lg:gap-5">
+                {/* Icon Container */}
+                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-xl bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center border border-amber-200/50">
+                  <span className="text-xl sm:text-2xl lg:text-3xl">⚠️</span>
+                </div>
+                
+                {/* Text Content */}
+                <div className="flex-1 space-y-2 sm:space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2.5 py-1 text-[10px] sm:text-xs font-semibold border border-amber-200">
+                      Reality Check
+                    </span>
+                  </div>
+                  
+                  <p className="text-sm sm:text-base lg:text-lg text-slate-800 font-medium leading-relaxed">
+                    In B.Tech Mechanical Engineering, you learn only <span className="font-bold text-amber-600">38–45% basics</span> — not enough for aviation jobs without extra certifications and projects.
+                  </p>
+                  
+                  {/* Bottom Stats */}
+                  <div className="flex flex-wrap gap-2 sm:gap-3 pt-2">
+                    <div className="inline-flex items-center gap-1.5 bg-slate-50 rounded-lg px-2.5 py-1.5 sm:px-3 sm:py-2 border border-slate-200">
+                      <span className="text-slate-500 text-[10px] sm:text-xs">Coverage</span>
+                      <span className="font-bold text-amber-600 text-xs sm:text-sm">38–45%</span>
+                    </div>
+                    <div className="inline-flex items-center gap-1.5 bg-slate-50 rounded-lg px-2.5 py-1.5 sm:px-3 sm:py-2 border border-slate-200">
+                      <span className="text-slate-500 text-[10px] sm:text-xs">Gap</span>
+                      <span className="font-bold text-red-600 text-xs sm:text-sm">55–62%</span>
+                    </div>
+                    <div className="inline-flex items-center gap-1.5 bg-slate-50 rounded-lg px-2.5 py-1.5 sm:px-3 sm:py-2 border border-slate-200">
+                      <span className="text-slate-500 text-[10px] sm:text-xs">Solution</span>
+                      <span className="font-bold text-emerald-600 text-xs sm:text-sm">Certifications</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
