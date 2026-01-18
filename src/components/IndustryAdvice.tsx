@@ -1,55 +1,53 @@
-import { AlertTriangle, XCircle, Zap, Heart, Target, Trophy, Clock, TrendingDown, TrendingUp, Lightbulb, Shield, Flame, Award, Calendar } from 'lucide-react';
+import { AlertTriangle, CheckCircle, XCircle, Zap, Heart, Target, Trophy, BookOpen, Clock, Users, TrendingDown, TrendingUp, Brain, Lightbulb, Shield, Flame, GraduationCap, FileText, UserCheck, Edit3, PenTool, Award, Calendar, FileCheck } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import SourceBadge from './SourceBadge';
+
 const IndustryAdvice = () => {
-  const brutalTruths = [{
-    icon: Flame,
-    text: "This field is not about big names — it's about pressure, focus, and precision",
-    impact: "High Stress"
-  }, {
-    icon: Brain,
-    text: "It won't work if you're doing it for fun — it needs full effort",
-    impact: "100% Commitment"
-  }, {
-    icon: TrendingDown,
-    text: "No shortcuts — if you skip tools or deep learning, you'll fall behind",
-    impact: "Skill Gaps = Failure"
-  }];
-  const fieldRespects = [{
-    icon: Heart,
-    text: "If you truly love machines and solving problems, it will become your strength",
-    reward: "Passion = Power"
-  }, {
-    icon: Trophy,
-    text: "If you learn tools and stay serious, you can match any IIT student",
-    reward: "Skills Beat Brands"
-  }, {
-    icon: TrendingUp,
-    text: "If you give it your best, this degree will give you a future — HAL, ISRO, DRDO, UAV startups",
-    reward: "Real Opportunities"
-  }];
-  const realityChecks = [{
-    stat: "70%",
-    desc: "Pass exams but fail interviews",
-    icon: XCircle,
-    color: "text-red-500"
-  }, {
-    stat: "60%",
-    desc: "Feel lost in practical labs",
-    icon: AlertTriangle,
-    color: "text-orange-500"
-  }, {
-    stat: "50%",
-    desc: "Waste years following hype",
-    icon: Clock,
-    color: "text-yellow-600"
-  }, {
-    stat: "40%",
-    desc: "End up unemployed despite jobs existing",
-    icon: Users,
-    color: "text-red-600"
-  }];
-  return <div className="space-y-8">
+  const brutalTruths = [
+    {
+      icon: Flame,
+      text: "This field is not about big names — it's about pressure, focus, and precision",
+      impact: "High Stress"
+    },
+    {
+      icon: Brain,
+      text: "It won't work if you're doing it for fun — it needs full effort", 
+      impact: "100% Commitment"
+    },
+    {
+      icon: TrendingDown,
+      text: "No shortcuts — if you skip tools or deep learning, you'll fall behind",
+      impact: "Skill Gaps = Failure"
+    }
+  ];
+
+  const fieldRespects = [
+    {
+      icon: Heart,
+      text: "If you truly love machines and solving problems, it will become your strength",
+      reward: "Passion = Power"
+    },
+    {
+      icon: Trophy,
+      text: "If you learn tools and stay serious, you can match any IIT student",
+      reward: "Skills Beat Brands"
+    },
+    {
+      icon: TrendingUp,
+      text: "If you give it your best, this degree will give you a future — HAL, ISRO, DRDO, UAV startups",
+      reward: "Real Opportunities"
+    }
+  ];
+
+  const realityChecks = [
+    { stat: "70%", desc: "Pass exams but fail interviews", icon: XCircle, color: "text-red-500" },
+    { stat: "60%", desc: "Feel lost in practical labs", icon: AlertTriangle, color: "text-orange-500" },
+    { stat: "50%", desc: "Waste years following hype", icon: Clock, color: "text-yellow-600" },
+    { stat: "40%", desc: "End up unemployed despite jobs existing", icon: Users, color: "text-red-600" }
+  ];
+
+  return (
+    <div className="space-y-8">
       <div className="max-w-7xl mx-auto">
         
         {/* Hero Section */}
@@ -58,7 +56,10 @@ const IndustryAdvice = () => {
           <div className="absolute bottom-0 left-0 w-18 h-18 sm:w-24 sm:h-24 bg-white/10 rounded-full translate-y-9 -translate-x-9 sm:translate-y-12 sm:-translate-x-12"></div>
           
           <div className="relative text-center space-y-4 sm:space-y-6">
-            
+            <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/20 rounded-full px-4 py-2 sm:px-6 sm:py-3">
+              <AlertTriangle className="h-5 w-5 sm:h-6 sm:w-6" />
+              <span className="font-bold text-sm sm:text-base">STOP & READ THIS FIRST</span>
+            </div>
             
             <div className="space-y-3">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">20 Years Industry Veteran Speaks</h1>
@@ -101,11 +102,13 @@ const IndustryAdvice = () => {
           </CardHeader>
           <CardContent className="p-6">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {realityChecks.map((check, index) => <div key={index} className="bg-gray-50 rounded-lg p-6 text-center space-y-3 hover:bg-gray-100 transition-colors">
+              {realityChecks.map((check, index) => (
+                <div key={index} className="bg-gray-50 rounded-lg p-6 text-center space-y-3 hover:bg-gray-100 transition-colors">
                   <check.icon className={`w-12 h-12 mx-auto ${check.color}`} />
                   <div className={`text-4xl font-black ${check.color}`}>{check.stat}</div>
                   <p className="text-sm font-semibold text-gray-700">{check.desc}</p>
-                </div>)}
+                </div>
+              ))}
             </div>
           </CardContent>
         </Card>
@@ -125,13 +128,15 @@ const IndustryAdvice = () => {
               <CardDescription className="text-base font-medium">The harsh truths you need to hear</CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
-              {brutalTruths.map((truth, index) => <div key={index} className="flex items-start gap-3 p-4 bg-red-50 rounded-lg hover:bg-red-100 transition-colors">
+              {brutalTruths.map((truth, index) => (
+                <div key={index} className="flex items-start gap-3 p-4 bg-red-50 rounded-lg hover:bg-red-100 transition-colors">
                   <truth.icon className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="font-medium text-gray-900 text-sm sm:text-base">{truth.text}</p>
                     <span className="text-xs sm:text-sm font-bold text-red-600 mt-1 inline-block">{truth.impact}</span>
                   </div>
-                </div>)}
+                </div>
+              ))}
             </CardContent>
           </Card>
 
@@ -147,13 +152,15 @@ const IndustryAdvice = () => {
               <CardDescription className="text-base font-medium">What the field offers to those who earn it</CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
-              {fieldRespects.map((respect, index) => <div key={index} className="flex items-start gap-3 p-4 bg-green-50 rounded-lg hover:bg-green-100 transition-colors">
+              {fieldRespects.map((respect, index) => (
+                <div key={index} className="flex items-start gap-3 p-4 bg-green-50 rounded-lg hover:bg-green-100 transition-colors">
                   <respect.icon className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="font-medium text-gray-900 text-sm sm:text-base">{respect.text}</p>
                     <span className="text-xs sm:text-sm font-bold text-green-600 mt-1 inline-block">{respect.reward}</span>
                   </div>
-                </div>)}
+                </div>
+              ))}
             </CardContent>
           </Card>
         </div>
@@ -180,14 +187,31 @@ const IndustryAdvice = () => {
         {/* NEXT STEPS - PRACTICAL ADVICE */}
         <Card className="bg-white rounded-2xl shadow-lg border-2 border-gray-200">
           <CardHeader>
-            
-            
+            <div className="flex items-center gap-3 mb-2">
+              <div className="p-2 bg-indigo-100 rounded-lg">
+                <BookOpen className="w-6 h-6 text-indigo-600" />
+              </div>
+              <CardTitle className="text-2xl sm:text-3xl">NEXT STEPS</CardTitle>
+            </div>
+            <CardDescription className="text-lg font-semibold">Actionable advice for those who are ready</CardDescription>
           </CardHeader>
           <CardContent className="p-6">
             <div className="grid md:grid-cols-2 gap-6">
-              
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border-2 border-blue-200 hover:shadow-lg transition-shadow">
+                <div className="flex items-center gap-2 mb-4">
+                  <Target className="w-5 h-5 text-blue-600" />
+                  <h4 className="text-lg font-bold text-blue-700">If Serious About This Field:</h4>
+                </div>
+                <p className="text-gray-800 font-semibold mb-2">
+                  → Start CAD + DGCA license early
+                </p>
+                <p className="text-gray-600 text-sm">Build practical skills from day one</p>
+              </div>
               <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 border-2 border-purple-200 hover:shadow-lg transition-shadow">
-                
+                <div className="flex items-center gap-2 mb-4">
+                  <Trophy className="w-5 h-5 text-purple-600" />
+                  <h4 className="text-lg font-bold text-purple-700">Career Reality:</h4>
+                </div>
                 <p className="text-gray-800 font-semibold mb-2">
                   Placements at HAL/DRDO possible even from private colleges if skills strong
                 </p>
@@ -201,7 +225,9 @@ const IndustryAdvice = () => {
         <Card className="bg-white rounded-2xl shadow-lg border-2 border-gray-200">
           <CardHeader>
             <div className="flex items-center gap-3 mb-2">
-              
+              <div className="p-2 bg-indigo-100 rounded-lg">
+                <FileCheck className="w-6 h-6 text-indigo-600" />
+              </div>
               <CardTitle className="text-2xl sm:text-3xl">Entrance Exams Used to Enter This Degree</CardTitle>
             </div>
             <CardDescription className="text-lg font-semibold">Common and less-known pathways to Mechanical Engineering</CardDescription>
@@ -310,7 +336,7 @@ const IndustryAdvice = () => {
           <CardHeader>
             <div className="flex items-center gap-3 mb-2">
               <div className="p-2 bg-green-100 rounded-lg">
-                
+                <GraduationCap className="w-6 h-6 text-green-600" />
               </div>
               <CardTitle className="text-2xl sm:text-3xl">Admission Process</CardTitle>
             </div>
@@ -323,7 +349,7 @@ const IndustryAdvice = () => {
                 <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-lg">1</div>
                 <div className="flex-1 min-w-0">
                   <h4 className="font-bold text-base sm:text-lg text-slate-900 mb-1 sm:mb-2 flex items-center gap-2 flex-wrap">
-                    
+                    <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0" />
                     <span>Finish +2 (MPC Stream)</span>
                   </h4>
                   <p className="text-slate-700 text-sm sm:text-base">You must take Maths, Physics, Chemistry in Intermediate.</p>
@@ -335,7 +361,7 @@ const IndustryAdvice = () => {
                 <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-lg">2</div>
                 <div className="flex-1 min-w-0">
                   <h4 className="font-bold text-base sm:text-lg text-slate-900 mb-1 sm:mb-2 flex items-center gap-2 flex-wrap">
-                    
+                    <Edit3 className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600 flex-shrink-0" />
                     <span>Write Entrance Exam</span>
                   </h4>
                   <ul className="text-slate-700 space-y-1 list-disc list-inside text-sm sm:text-base">
@@ -350,7 +376,7 @@ const IndustryAdvice = () => {
                 <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-lg">3</div>
                 <div className="flex-1 min-w-0">
                   <h4 className="font-bold text-base sm:text-lg text-slate-900 mb-1 sm:mb-2 flex items-center gap-2 flex-wrap">
-                    
+                    <UserCheck className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
                     <span>Check Eligibility</span>
                   </h4>
                   <ul className="text-slate-700 space-y-1 list-disc list-inside text-sm sm:text-base">
@@ -365,7 +391,7 @@ const IndustryAdvice = () => {
                 <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-lg">4</div>
                 <div className="flex-1 min-w-0">
                   <h4 className="font-bold text-base sm:text-lg text-slate-900 mb-1 sm:mb-2 flex items-center gap-2 flex-wrap">
-                    
+                    <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-orange-600 flex-shrink-0" />
                     <span>Apply Online</span>
                   </h4>
                   <p className="text-slate-700 text-sm sm:text-base">Fill EAPCET form → Upload photo/sign → Pay fee → Select exam center.</p>
@@ -377,7 +403,7 @@ const IndustryAdvice = () => {
                 <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-lg">5</div>
                 <div className="flex-1 min-w-0">
                   <h4 className="font-bold text-base sm:text-lg text-slate-900 mb-1 sm:mb-2 flex items-center gap-2 flex-wrap">
-                    
+                    <Brain className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 flex-shrink-0" />
                     <span>Prepare for Exam</span>
                   </h4>
                   <p className="text-slate-700 text-sm sm:text-base">Focus on Maths (most weightage), then Physics, Chemistry. Use previous papers & mock tests for speed and accuracy.</p>
@@ -389,7 +415,7 @@ const IndustryAdvice = () => {
                 <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-lg">6</div>
                 <div className="flex-1 min-w-0">
                   <h4 className="font-bold text-base sm:text-lg text-slate-900 mb-1 sm:mb-2 flex items-center gap-2 flex-wrap">
-                    
+                    <PenTool className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-600 flex-shrink-0" />
                     <span>Write Exam & Get Rank</span>
                   </h4>
                   <p className="text-slate-700 text-sm sm:text-base">After results, download Rank Card.</p>
@@ -401,7 +427,7 @@ const IndustryAdvice = () => {
                 <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-violet-600 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-lg">7</div>
                 <div className="flex-1 min-w-0">
                   <h4 className="font-bold text-base sm:text-lg text-slate-900 mb-1 sm:mb-2 flex items-center gap-2 flex-wrap">
-                    
+                    <Users className="w-4 h-4 sm:w-5 sm:h-5 text-violet-600 flex-shrink-0" />
                     <span>Attend Counselling</span>
                   </h4>
                   <ul className="text-slate-700 space-y-1 list-disc list-inside text-sm sm:text-base">
@@ -418,7 +444,7 @@ const IndustryAdvice = () => {
                 <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-lg">8</div>
                 <div className="flex-1 min-w-0">
                   <h4 className="font-bold text-base sm:text-lg text-slate-900 mb-1 sm:mb-2 flex items-center gap-2 flex-wrap">
-                    
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-teal-600 flex-shrink-0" />
                     <span>Confirm Admission</span>
                   </h4>
                   <p className="text-slate-700 text-sm sm:text-base">Once seat allotted → pay college fee → report to college with documents.</p>
@@ -430,7 +456,7 @@ const IndustryAdvice = () => {
                 <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-lg">9</div>
                 <div className="flex-1 min-w-0">
                   <h4 className="font-bold text-base sm:text-lg text-slate-900 mb-1 sm:mb-2 flex items-center gap-2 flex-wrap">
-                    
+                    <FileCheck className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600 flex-shrink-0" />
                     <span>Submit Documents & Join</span>
                   </h4>
                   <p className="text-slate-700 text-sm sm:text-base mb-2">Carry originals + photocopies:</p>
@@ -485,10 +511,26 @@ const IndustryAdvice = () => {
 
         {/* SOURCE ATTRIBUTION */}
         <Card className="bg-white rounded-2xl shadow-lg border-2 border-gray-200">
-          
+          <CardContent className="p-6 sm:p-8">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <div className="p-3 bg-indigo-100 rounded-lg">
+                <Shield className="w-6 h-6 text-indigo-600" />
+              </div>
+              <div className="flex-1">
+                <h4 className="font-bold text-slate-900 mb-3 text-lg">Data Sources & Attribution</h4>
+                <div className="flex flex-wrap gap-3">
+                  <SourceBadge href="#" label="Industry Veterans Survey 2024" />
+                  <SourceBadge href="#" label="AICTE Career Statistics" />
+                  <SourceBadge href="#" label="Aerospace Hiring Trends Report" />
+                </div>
+              </div>
+            </div>
+          </CardContent>
         </Card>
 
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default IndustryAdvice;
