@@ -1,10 +1,317 @@
-import { GraduationCap, Award, Calendar } from 'lucide-react';
+import { GraduationCap, Award, Calendar, MessageSquareQuote, Users, Target, Lightbulb, CheckCircle2, XCircle, AlertTriangle, Brain, TrendingUp, Focus, Compass } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import SourceBadge from './SourceBadge';
 
 const IndustryAdvice = () => {
   return <div className="space-y-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto space-y-8">
+
+        {/* SECTION 1: ADVICE FROM EXPERIENCE */}
+        <div className="group relative">
+          <div className="absolute -inset-1 bg-gradient-to-r from-slate-600 via-slate-700 to-slate-800 rounded-2xl opacity-20 group-hover:opacity-30 blur-lg transition-all duration-500"></div>
+          <Card className="relative bg-white rounded-2xl shadow-lg border-2 border-slate-200 overflow-hidden">
+            {/* Top accent bar */}
+            <div className="h-1.5 sm:h-2 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700"></div>
+            
+            <CardHeader className="pb-2 sm:pb-4">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="p-2 sm:p-3 bg-slate-100 rounded-xl">
+                  <MessageSquareQuote className="w-5 h-5 sm:w-6 sm:h-6 text-slate-700" />
+                </div>
+                <CardTitle className="text-xl sm:text-2xl lg:text-3xl bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
+                  Advice From Experience
+                </CardTitle>
+              </div>
+              
+              {/* Quote Block */}
+              <div className="mt-3 sm:mt-4 p-4 sm:p-5 bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl border-l-4 border-slate-600">
+                <p className="text-slate-700 text-sm sm:text-base lg:text-lg italic leading-relaxed">
+                  "I studied this degree and worked in these roles for years.<br className="hidden sm:block" />
+                  <span className="sm:hidden"> </span>I've seen who grows, who survives, and who drops out quietly."
+                </p>
+              </div>
+            </CardHeader>
+
+            <CardContent className="p-4 sm:p-6 pt-2 sm:pt-3 space-y-4 sm:space-y-5">
+              {/* Advice Points Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                {/* Point 1 */}
+                <div className="p-4 sm:p-5 bg-gradient-to-br from-red-50 to-orange-50 rounded-xl border border-red-200 hover:shadow-md transition-all duration-300">
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-bold text-slate-900 text-sm sm:text-base mb-2">This industry is not for everyone</h4>
+                      <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Many call it "the best" without working in it. I've seen good students leave because they couldn't handle the pressure.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Point 2 */}
+                <div className="p-4 sm:p-5 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl border border-amber-200 hover:shadow-md transition-all duration-300">
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-bold text-slate-900 text-sm sm:text-base mb-2">A degree name won't save you</h4>
+                      <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Students from top colleges fail without skills. Average-college students succeed when skills are strong.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Point 3 */}
+                <div className="p-4 sm:p-5 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-200 hover:shadow-md transition-all duration-300">
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-bold text-slate-900 text-sm sm:text-base mb-2">Interest matters more than marks</h4>
+                      <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        If you don't like the subject, daily work becomes hard. This career tests thinking and focus, not memory.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Point 4 */}
+                <div className="p-4 sm:p-5 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border border-purple-200 hover:shadow-md transition-all duration-300">
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-bold text-slate-900 text-sm sm:text-base mb-2">Half effort always fails</h4>
+                      <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        You may pass exams. But weak skills get exposed fast in real jobs.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Clear Advice Banner */}
+              <div className="bg-gradient-to-r from-slate-700 via-slate-800 to-slate-700 text-white rounded-xl p-4 sm:p-5">
+                <div className="flex items-center gap-3 justify-center">
+                  <Target className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400 flex-shrink-0" />
+                  <p className="text-center text-sm sm:text-base lg:text-lg font-semibold">
+                    If you're ready to learn deeply and stay patient — this career can reward you.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* SECTION 2: HONEST ADVICE FOR AVERAGE STUDENTS */}
+        <div className="group relative">
+          <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-green-500 rounded-2xl opacity-20 group-hover:opacity-30 blur-lg transition-all duration-500"></div>
+          <Card className="relative bg-white rounded-2xl shadow-lg border-2 border-emerald-200 overflow-hidden">
+            {/* Top accent bar */}
+            <div className="h-1.5 sm:h-2 bg-gradient-to-r from-emerald-500 via-teal-500 to-green-500"></div>
+            
+            <CardHeader className="pb-2 sm:pb-4">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="p-2 sm:p-3 bg-emerald-100 rounded-xl">
+                  <Users className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
+                </div>
+                <CardTitle className="text-xl sm:text-2xl lg:text-3xl bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                  One Honest Advice for Average Students
+                </CardTitle>
+              </div>
+              
+              {/* Quote Block */}
+              <div className="mt-3 sm:mt-4 p-4 sm:p-5 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl border-l-4 border-emerald-500">
+                <p className="text-slate-700 text-sm sm:text-base lg:text-lg italic leading-relaxed">
+                  "I've seen toppers fail. I've seen average students succeed.<br className="hidden sm:block" />
+                  <span className="sm:hidden"> </span>Marks help you enter — focus helps you survive."
+                </p>
+              </div>
+
+              {/* Sub-intro */}
+              <p className="mt-3 text-slate-600 text-sm sm:text-base">
+                If you are average in studies but willing to learn, listen carefully:
+              </p>
+            </CardHeader>
+
+            <CardContent className="p-4 sm:p-6 pt-2 sm:pt-3 space-y-4 sm:space-y-5">
+              {/* Advice Points - Stacked on mobile, 2 cols on md+ */}
+              <div className="space-y-3 sm:space-y-4">
+                {/* Point 1 */}
+                <div className="flex gap-3 sm:gap-4 items-start p-4 sm:p-5 bg-gradient-to-br from-emerald-50 to-green-50 rounded-xl border border-emerald-200 hover:shadow-md transition-all duration-300">
+                  <div className="flex-shrink-0">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
+                      <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h4 className="font-bold text-slate-900 text-sm sm:text-base lg:text-lg mb-2">Being average today doesn't mean weak tomorrow</h4>
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                      Most working professionals were not toppers. They improved step by step by fixing basics and practicing daily.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Point 2 */}
+                <div className="flex gap-3 sm:gap-4 items-start p-4 sm:p-5 bg-gradient-to-br from-teal-50 to-cyan-50 rounded-xl border border-teal-200 hover:shadow-md transition-all duration-300">
+                  <div className="flex-shrink-0">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center">
+                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h4 className="font-bold text-slate-900 text-sm sm:text-base lg:text-lg mb-2">Consistency beats talent</h4>
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                      One focused hour every day for a few years beats last-minute effort. Industry values steady learners, not flashy students.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Point 3 */}
+                <div className="flex gap-3 sm:gap-4 items-start p-4 sm:p-5 bg-gradient-to-br from-green-50 to-lime-50 rounded-xl border border-green-200 hover:shadow-md transition-all duration-300">
+                  <div className="flex-shrink-0">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-500 to-lime-600 rounded-xl flex items-center justify-center">
+                      <Lightbulb className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h4 className="font-bold text-slate-900 text-sm sm:text-base lg:text-lg mb-2">Start from zero, but start right</h4>
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                      Weak basics are not a problem if you rebuild them slowly. Strong basics + tools + practice build confidence.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Point 4 */}
+                <div className="flex gap-3 sm:gap-4 items-start p-4 sm:p-5 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-200 hover:shadow-md transition-all duration-300">
+                  <div className="flex-shrink-0">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
+                      <Award className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h4 className="font-bold text-slate-900 text-sm sm:text-base lg:text-lg mb-2">Industry looks at skills, not past marks</h4>
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                      Companies care about what you can do now. Skills remove academic labels.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* SECTION 3: FAILURE COMES FROM LACK OF CLARITY */}
+        <div className="group relative">
+          <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-2xl opacity-20 group-hover:opacity-30 blur-lg transition-all duration-500"></div>
+          <Card className="relative bg-white rounded-2xl shadow-lg border-2 border-amber-200 overflow-hidden">
+            {/* Top accent bar */}
+            <div className="h-1.5 sm:h-2 bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500"></div>
+            
+            <CardHeader className="pb-2 sm:pb-4">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="p-2 sm:p-3 bg-amber-100 rounded-xl">
+                  <Compass className="w-5 h-5 sm:w-6 sm:h-6 text-amber-600" />
+                </div>
+                <CardTitle className="text-xl sm:text-2xl lg:text-3xl bg-gradient-to-r from-orange-500 to-amber-600 bg-clip-text text-transparent">
+                  Failure usually comes from lack of clarity, not lack of talent
+                </CardTitle>
+              </div>
+              
+              {/* Main statement */}
+              <div className="mt-3 sm:mt-4 p-4 sm:p-5 bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl border-l-4 border-amber-500">
+                <p className="text-slate-700 text-sm sm:text-base lg:text-lg leading-relaxed">
+                  Most students don't fail because the degree is difficult.<br className="hidden sm:block" />
+                  <span className="sm:hidden"> </span>They fail because they don't know <strong>what to focus on, when, and why.</strong>
+                </p>
+              </div>
+            </CardHeader>
+
+            <CardContent className="p-4 sm:p-6 pt-2 sm:pt-3 space-y-4 sm:space-y-5">
+              {/* Two column layout on larger screens */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5">
+                {/* They Do (Wrong behaviors) */}
+                <div className="p-4 sm:p-5 bg-gradient-to-br from-red-50 to-rose-50 rounded-xl border-2 border-red-200">
+                  <div className="flex items-center gap-2 mb-3 sm:mb-4">
+                    <XCircle className="w-5 h-5 sm:w-6 sm:h-6 text-red-500" />
+                    <h4 className="font-bold text-red-700 text-base sm:text-lg">They:</h4>
+                  </div>
+                  <ul className="space-y-2 sm:space-y-3">
+                    <li className="flex items-start gap-2 sm:gap-3">
+                      <span className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 bg-red-200 rounded-full flex items-center justify-center mt-0.5">
+                        <span className="text-red-600 text-xs sm:text-sm">✗</span>
+                      </span>
+                      <span className="text-slate-700 text-xs sm:text-sm">Study everything without clear priority</span>
+                    </li>
+                    <li className="flex items-start gap-2 sm:gap-3">
+                      <span className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 bg-red-200 rounded-full flex items-center justify-center mt-0.5">
+                        <span className="text-red-600 text-xs sm:text-sm">✗</span>
+                      </span>
+                      <span className="text-slate-700 text-xs sm:text-sm">Don't know which skills matter for jobs</span>
+                    </li>
+                    <li className="flex items-start gap-2 sm:gap-3">
+                      <span className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 bg-red-200 rounded-full flex items-center justify-center mt-0.5">
+                        <span className="text-red-600 text-xs sm:text-sm">✗</span>
+                      </span>
+                      <span className="text-slate-700 text-xs sm:text-sm">Compare with others and lose confidence</span>
+                    </li>
+                    <li className="flex items-start gap-2 sm:gap-3">
+                      <span className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 bg-red-200 rounded-full flex items-center justify-center mt-0.5">
+                        <span className="text-red-600 text-xs sm:text-sm">✗</span>
+                      </span>
+                      <span className="text-slate-700 text-xs sm:text-sm">Panic instead of fixing basics step by step</span>
+                    </li>
+                  </ul>
+                  <div className="mt-4 pt-3 border-t border-red-200">
+                    <p className="text-red-700 font-semibold text-xs sm:text-sm flex items-center gap-2">
+                      <AlertTriangle className="w-4 h-4" />
+                      Result: effort goes in the wrong direction.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Once Focus is Clear (Right behaviors) */}
+                <div className="p-4 sm:p-5 bg-gradient-to-br from-emerald-50 to-green-50 rounded-xl border-2 border-emerald-200">
+                  <div className="flex items-center gap-2 mb-3 sm:mb-4">
+                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-500" />
+                    <h4 className="font-bold text-emerald-700 text-base sm:text-lg">Once focus is clear:</h4>
+                  </div>
+                  <ul className="space-y-2 sm:space-y-3">
+                    <li className="flex items-start gap-2 sm:gap-3">
+                      <span className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 bg-emerald-200 rounded-full flex items-center justify-center mt-0.5">
+                        <span className="text-emerald-600 text-xs sm:text-sm">✓</span>
+                      </span>
+                      <span className="text-slate-700 text-xs sm:text-sm">Effort becomes useful</span>
+                    </li>
+                    <li className="flex items-start gap-2 sm:gap-3">
+                      <span className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 bg-emerald-200 rounded-full flex items-center justify-center mt-0.5">
+                        <span className="text-emerald-600 text-xs sm:text-sm">✓</span>
+                      </span>
+                      <span className="text-slate-700 text-xs sm:text-sm">Confidence grows naturally</span>
+                    </li>
+                    <li className="flex items-start gap-2 sm:gap-3">
+                      <span className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 bg-emerald-200 rounded-full flex items-center justify-center mt-0.5">
+                        <span className="text-emerald-600 text-xs sm:text-sm">✓</span>
+                      </span>
+                      <span className="text-slate-700 text-xs sm:text-sm">Average students improve faster</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Final Takeaway Banner */}
+              <div className="bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 text-white rounded-xl p-4 sm:p-5">
+                <div className="flex items-start sm:items-center gap-3">
+                  <Brain className="w-6 h-6 sm:w-7 sm:h-7 text-white flex-shrink-0 mt-0.5 sm:mt-0" />
+                  <div>
+                    <p className="font-bold text-sm sm:text-base lg:text-lg mb-1">Final takeaway for students & parents:</p>
+                    <p className="text-xs sm:text-sm lg:text-base opacity-95">
+                      Talent helps. Marks help. But <span className="font-bold underline decoration-2">clarity + direction + consistency</span> decide real success.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
 
         {/* ENTRANCE EXAMS */}
         <Card className="bg-white rounded-2xl shadow-lg border-2 border-gray-200">
