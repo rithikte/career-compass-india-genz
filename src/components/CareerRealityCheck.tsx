@@ -43,7 +43,7 @@ const CareerRealityCheck = () => {
         </div>
 
         {/* Introduction Text */}
-        <Card className="mb-6 sm:mb-8 border-slate-200 bg-gradient-to-br from-slate-50 to-white">
+        <Card className="mb-6 sm:mb-8 border-slate-200 bg-white">
           <CardContent className="p-4 sm:p-6">
             <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
               This career path is designed based on the core topics and subtopics you selected, so the degree and job roles shown here are a <span className="font-semibold text-slate-900">strong academic and skill fit</span> for you.
@@ -58,10 +58,10 @@ const CareerRealityCheck = () => {
         </Card>
 
         {/* This Career May Feel Difficult If */}
-        <Card className="mb-6 sm:mb-8 border-red-200 bg-gradient-to-br from-red-50/50 to-white">
+        <Card className="mb-6 sm:mb-8 border-slate-200 bg-white">
           <CardHeader className="pb-2 sm:pb-4">
-            <CardTitle className="flex items-center gap-2 sm:gap-3 text-lg sm:text-xl text-red-800">
-              <AlertTriangle className="w-5 h-5 sm:w-6 sm:h-6 text-red-600 flex-shrink-0" />
+            <CardTitle className="flex items-center gap-2 sm:gap-3 text-lg sm:text-xl text-slate-800">
+              <AlertTriangle className="w-5 h-5 sm:w-6 sm:h-6 text-slate-600 flex-shrink-0" />
               This Career May Feel Difficult If
             </CardTitle>
           </CardHeader>
@@ -69,14 +69,14 @@ const CareerRealityCheck = () => {
             <ul className="space-y-2 sm:space-y-3">
               {difficultIfPoints.map((point, index) => (
                 <li key={index} className="flex items-start gap-2 sm:gap-3">
-                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-red-400 mt-2 flex-shrink-0"></span>
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span>
                   <span className="text-sm sm:text-base text-slate-700">{point}</span>
                 </li>
               ))}
             </ul>
             
             {/* Clarification Note */}
-            <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-slate-100/80 rounded-lg border border-slate-200">
+            <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-slate-100 rounded-lg border border-slate-200">
               <p className="text-xs sm:text-sm text-slate-600 italic">
                 This does not mean you are weak or incapable.
               </p>
@@ -88,10 +88,10 @@ const CareerRealityCheck = () => {
         </Card>
 
         {/* Why We Still Show This Career */}
-        <Card className="mb-6 sm:mb-8 border-emerald-200 bg-gradient-to-br from-emerald-50/50 to-white">
+        <Card className="mb-6 sm:mb-8 border-slate-200 bg-white">
           <CardHeader className="pb-2 sm:pb-4">
-            <CardTitle className="flex items-center gap-2 sm:gap-3 text-lg sm:text-xl text-emerald-800">
-              <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600 flex-shrink-0" />
+            <CardTitle className="flex items-center gap-2 sm:gap-3 text-lg sm:text-xl text-slate-800">
+              <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-slate-600 flex-shrink-0" />
               Why We Still Show This Career to You
             </CardTitle>
           </CardHeader>
@@ -99,7 +99,7 @@ const CareerRealityCheck = () => {
             <ul className="space-y-2 sm:space-y-3">
               {whyWeShowPoints.map((point, index) => (
                 <li key={index} className="flex items-start gap-2 sm:gap-3">
-                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-400 mt-2 flex-shrink-0"></span>
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span>
                   <span className="text-sm sm:text-base text-slate-700">{point}</span>
                 </li>
               ))}
@@ -108,10 +108,10 @@ const CareerRealityCheck = () => {
         </Card>
 
         {/* Simple Truth */}
-        <Card className="mb-6 sm:mb-8 border-blue-200 bg-gradient-to-br from-blue-50/50 to-white">
+        <Card className="mb-6 sm:mb-8 border-slate-200 bg-white">
           <CardHeader className="pb-2 sm:pb-4">
-            <CardTitle className="flex items-center gap-2 sm:gap-3 text-lg sm:text-xl text-blue-800">
-              <Lightbulb className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 flex-shrink-0" />
+            <CardTitle className="flex items-center gap-2 sm:gap-3 text-lg sm:text-xl text-slate-800">
+              <Lightbulb className="w-5 h-5 sm:w-6 sm:h-6 text-slate-600 flex-shrink-0" />
               Simple Truth
             </CardTitle>
           </CardHeader>
@@ -119,17 +119,17 @@ const CareerRealityCheck = () => {
             <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
               Most students understand whether a job truly suits them only after <span className="font-semibold text-slate-900">3–4 years</span> of real work experience.
             </p>
-            <p className="text-sm sm:text-base text-blue-700 font-medium mt-3 sm:mt-4">
+            <p className="text-sm sm:text-base text-slate-700 font-medium mt-3 sm:mt-4">
               Our role is to help you enter the right path with open eyes, not fear.
             </p>
           </CardContent>
         </Card>
 
         {/* What You Should Do Now */}
-        <Card className="mb-6 sm:mb-8 border-indigo-200 bg-gradient-to-br from-indigo-50/50 to-white">
+        <Card className="mb-6 sm:mb-8 border-slate-200 bg-white">
           <CardHeader className="pb-2 sm:pb-4">
-            <CardTitle className="flex items-center gap-2 sm:gap-3 text-lg sm:text-xl text-indigo-800">
-              <Target className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600 flex-shrink-0" />
+            <CardTitle className="flex items-center gap-2 sm:gap-3 text-lg sm:text-xl text-slate-800">
+              <Target className="w-5 h-5 sm:w-6 sm:h-6 text-slate-600 flex-shrink-0" />
               What You Should Do Now
             </CardTitle>
           </CardHeader>
@@ -137,15 +137,15 @@ const CareerRealityCheck = () => {
             <ul className="space-y-2 sm:space-y-3">
               {whatToDoPoints.map((point, index) => (
                 <li key={index} className="flex items-start gap-2 sm:gap-3">
-                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-indigo-400 mt-2 flex-shrink-0"></span>
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-slate-400 mt-2 flex-shrink-0"></span>
                   <span className="text-sm sm:text-base text-slate-700">{point}</span>
                 </li>
               ))}
             </ul>
             
             {/* Encouragement Note */}
-            <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-indigo-100/60 rounded-lg border border-indigo-200">
-              <p className="text-xs sm:text-sm text-indigo-800 font-medium">
+            <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-slate-100 rounded-lg border border-slate-200">
+              <p className="text-xs sm:text-sm text-slate-800 font-medium">
                 Taking time to think is always better than rushing.
               </p>
             </div>

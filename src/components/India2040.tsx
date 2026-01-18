@@ -123,19 +123,19 @@ export const India2040 = () => {
       </div>
 
       {/* Vision Points Section */}
-      <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-indigo-200">
+      <div className="bg-slate-50 rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-slate-200">
         <div className="space-y-4 sm:space-y-6">
           {visionPoints.map((point) => (
             <div
               key={point.number}
-              className="bg-white rounded-lg p-4 sm:p-6 shadow-sm border border-indigo-100 hover:shadow-md transition-shadow"
+              className="bg-white rounded-lg p-4 sm:p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow"
             >
               <div className="flex items-start gap-3 sm:gap-4">
-                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-base">
+                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-slate-700 to-slate-800 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-base">
                   {point.number}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h4 className="text-base sm:text-lg font-bold text-indigo-900 mb-2 sm:mb-3">
+                  <h4 className="text-base sm:text-lg font-bold text-slate-900 mb-2 sm:mb-3">
                     {point.title}
                   </h4>
                   <div className="space-y-2">
@@ -153,10 +153,10 @@ export const India2040 = () => {
       </div>
 
       {/* Where Jobs Will Actually Be Section */}
-      <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-green-200">
+      <div className="bg-slate-50 rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-slate-200">
         <div className="text-center mb-6">
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-3">
-            <MapPin className="w-6 h-6 sm:w-7 sm:h-7 text-green-600" />
+            <MapPin className="w-6 h-6 sm:w-7 sm:h-7 text-slate-600" />
             <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
               Where Jobs Will Actually Be
             </h3>
@@ -164,7 +164,7 @@ export const India2040 = () => {
               Projection
             </span>
           </div>
-          <p className="text-base sm:text-lg text-green-700 font-medium">
+          <p className="text-base sm:text-lg text-slate-700 font-medium">
             (This Is Real)
           </p>
           
@@ -179,21 +179,21 @@ export const India2040 = () => {
         </div>
 
         {/* Desktop Table */}
-        <div className="hidden lg:block overflow-hidden rounded-lg border border-green-200">
-          <div className="grid grid-cols-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold text-sm">
+        <div className="hidden lg:block overflow-hidden rounded-lg border border-slate-200">
+          <div className="grid grid-cols-3 bg-gradient-to-r from-slate-700 to-slate-800 text-white font-semibold text-sm">
             <div className="p-4">City Tier</div>
             <div className="p-4">Focus Areas</div>
             <div className="p-4">Note</div>
           </div>
           {tierData.map((tier, index) => (
-            <div key={index} className="grid grid-cols-3 hover:bg-green-50/50 transition-colors bg-white">
-              <div className="p-4 border-b border-green-100 font-bold text-slate-900">
+            <div key={index} className="grid grid-cols-3 hover:bg-slate-50 transition-colors bg-white">
+              <div className="p-4 border-b border-slate-100 font-bold text-slate-900">
                 {tier.tier}
               </div>
-              <div className="p-4 border-b border-green-100 text-slate-700">
+              <div className="p-4 border-b border-slate-100 text-slate-700">
                 {tier.focus}
               </div>
-              <div className="p-4 border-b border-green-100 text-slate-600 italic">
+              <div className="p-4 border-b border-slate-100 text-slate-600 italic">
                 {tier.note || '—'}
               </div>
             </div>
@@ -203,8 +203,8 @@ export const India2040 = () => {
         {/* Mobile Cards */}
         <div className="lg:hidden space-y-4">
           {tierData.map((tier, index) => (
-            <div key={index} className="bg-white rounded-lg p-4 border border-green-100 shadow-sm">
-              <div className="font-bold text-green-800 text-lg mb-2">
+            <div key={index} className="bg-white rounded-lg p-4 border border-slate-200 shadow-sm">
+              <div className="font-bold text-slate-800 text-lg mb-2">
                 {tier.tier}
               </div>
               <div className="text-slate-700 mb-1">
@@ -220,7 +220,7 @@ export const India2040 = () => {
         </div>
 
         {/* Pattern Note */}
-        <div className="mt-6 bg-white border-l-4 border-green-500 p-4 rounded-r-lg">
+        <div className="mt-6 bg-white border-l-4 border-slate-500 p-4 rounded-r-lg">
           <p className="text-slate-700 text-sm sm:text-base font-medium">
             This pattern is already happening in India.
           </p>

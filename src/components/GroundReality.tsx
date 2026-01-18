@@ -27,8 +27,7 @@ const realityPoints = [
       'Companies hire skills, not certificates.',
       'A degree is the entry ticket, not the destination.'
     ],
-    note: 'Industry data shows 25–40% skill gap in fresh graduates across core engineering roles',
-    color: 'blue'
+    note: 'Industry data shows 25–40% skill gap in fresh graduates across core engineering roles'
   },
   {
     id: 2,
@@ -39,8 +38,7 @@ const realityPoints = [
       'Colleges build your base.',
       'Job-specific skills change every 3–5 years and must be learned separately.'
     ],
-    note: 'This is not failure — it\'s how the education system is designed worldwide.',
-    color: 'purple'
+    note: 'This is not failure — it\'s how the education system is designed worldwide.'
   },
   {
     id: 3,
@@ -54,8 +52,7 @@ const realityPoints = [
       '• Certifications',
       'than CGPA alone.'
     ],
-    note: null,
-    color: 'green'
+    note: null
   },
   {
     id: 4,
@@ -69,8 +66,7 @@ const realityPoints = [
       '• Award degrees',
       'They cannot customize training for every company.'
     ],
-    note: 'Blaming college is misunderstanding its role.',
-    color: 'orange'
+    note: 'Blaming college is misunderstanding its role.'
   },
   {
     id: 5,
@@ -81,8 +77,7 @@ const realityPoints = [
       'Training today is limited, fast, and basic.',
       'Skill gaps must be filled before joining.'
     ],
-    note: null,
-    color: 'red'
+    note: null
   },
   {
     id: 6,
@@ -94,8 +89,7 @@ const realityPoints = [
       'Pilots do flight hours.',
       'Engineers do certifications.'
     ],
-    note: 'This does not mean their colleges failed.',
-    color: 'teal'
+    note: 'This does not mean their colleges failed.'
   },
   {
     id: 7,
@@ -106,8 +100,7 @@ const realityPoints = [
       'Policies create opportunities —',
       'Students must still qualify to grab them.'
     ],
-    note: 'No policy can bypass skills.',
-    color: 'indigo'
+    note: 'No policy can bypass skills.'
   },
   {
     id: 8,
@@ -119,8 +112,7 @@ const realityPoints = [
       '• Market conditions',
       '• Company needs'
     ],
-    note: 'Colleges facilitate, they do not employ students.',
-    color: 'pink'
+    note: 'Colleges facilitate, they do not employ students.'
   },
   {
     id: 9,
@@ -131,8 +123,7 @@ const realityPoints = [
       'Colleges give breadth.',
       'Certifications give depth and specialization.'
     ],
-    note: 'Most recruiters expect at least 1–2 certifications today.',
-    color: 'cyan'
+    note: 'Most recruiters expect at least 1–2 certifications today.'
   },
   {
     id: 10,
@@ -142,26 +133,9 @@ const realityPoints = [
     details: [
       'Industry reports consistently show graduates are partially prepared, not useless.'
     ],
-    note: null,
-    color: 'amber'
+    note: null
   }
 ];
-
-const getColorClasses = (color: string) => {
-  const colors: Record<string, { bg: string; border: string; icon: string; badge: string }> = {
-    blue: { bg: 'bg-blue-50 dark:bg-blue-950/30', border: 'border-blue-200 dark:border-blue-800', icon: 'text-blue-600 dark:text-blue-400', badge: 'bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300' },
-    purple: { bg: 'bg-purple-50 dark:bg-purple-950/30', border: 'border-purple-200 dark:border-purple-800', icon: 'text-purple-600 dark:text-purple-400', badge: 'bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300' },
-    green: { bg: 'bg-green-50 dark:bg-green-950/30', border: 'border-green-200 dark:border-green-800', icon: 'text-green-600 dark:text-green-400', badge: 'bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300' },
-    orange: { bg: 'bg-orange-50 dark:bg-orange-950/30', border: 'border-orange-200 dark:border-orange-800', icon: 'text-orange-600 dark:text-orange-400', badge: 'bg-orange-100 dark:bg-orange-900/50 text-orange-700 dark:text-orange-300' },
-    red: { bg: 'bg-red-50 dark:bg-red-950/30', border: 'border-red-200 dark:border-red-800', icon: 'text-red-600 dark:text-red-400', badge: 'bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-300' },
-    teal: { bg: 'bg-teal-50 dark:bg-teal-950/30', border: 'border-teal-200 dark:border-teal-800', icon: 'text-teal-600 dark:text-teal-400', badge: 'bg-teal-100 dark:bg-teal-900/50 text-teal-700 dark:text-teal-300' },
-    indigo: { bg: 'bg-indigo-50 dark:bg-indigo-950/30', border: 'border-indigo-200 dark:border-indigo-800', icon: 'text-indigo-600 dark:text-indigo-400', badge: 'bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300' },
-    pink: { bg: 'bg-pink-50 dark:bg-pink-950/30', border: 'border-pink-200 dark:border-pink-800', icon: 'text-pink-600 dark:text-pink-400', badge: 'bg-pink-100 dark:bg-pink-900/50 text-pink-700 dark:text-pink-300' },
-    cyan: { bg: 'bg-cyan-50 dark:bg-cyan-950/30', border: 'border-cyan-200 dark:border-cyan-800', icon: 'text-cyan-600 dark:text-cyan-400', badge: 'bg-cyan-100 dark:bg-cyan-900/50 text-cyan-700 dark:text-cyan-300' },
-    amber: { bg: 'bg-amber-50 dark:bg-amber-950/30', border: 'border-amber-200 dark:border-amber-800', icon: 'text-amber-600 dark:text-amber-400', badge: 'bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300' }
-  };
-  return colors[color] || colors.blue;
-};
 
 const GroundReality = () => {
   return (
@@ -176,23 +150,22 @@ const GroundReality = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {realityPoints.map((point) => {
             const Icon = point.icon;
-            const colors = getColorClasses(point.color);
             
             return (
               <Card 
                 key={point.id} 
-                className={`${colors.bg} ${colors.border} border-2 transition-all duration-300 hover:shadow-lg`}
+                className="bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 border-2 transition-all duration-300 hover:shadow-lg"
               >
                 <CardContent className="p-4 sm:p-6">
                   {/* Header with Number and Icon */}
                   <div className="flex items-start gap-3 sm:gap-4 mb-4">
-                    <div className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full ${colors.badge} flex items-center justify-center font-bold text-lg sm:text-xl`}>
+                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 flex items-center justify-center font-bold text-lg sm:text-xl">
                       {point.id}
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-2">
-                        <Icon className={`w-5 h-5 sm:w-6 sm:h-6 ${colors.icon} flex-shrink-0`} />
-                        <span className={`text-xs sm:text-sm font-medium ${colors.badge} px-2 py-1 rounded-full`}>
+                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-slate-600 dark:text-slate-400 flex-shrink-0" />
+                        <span className="text-xs sm:text-sm font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2 py-1 rounded-full">
                           Point {point.id}
                         </span>
                       </div>
@@ -230,7 +203,7 @@ const GroundReality = () => {
                   </div>
 
                   {/* Details */}
-                  <div className="bg-white/60 dark:bg-slate-800/60 rounded-lg p-3 sm:p-4 mb-3">
+                  <div className="bg-slate-50 dark:bg-slate-800/60 rounded-lg p-3 sm:p-4 mb-3">
                     {point.details.map((detail, idx) => (
                       <p 
                         key={idx} 
@@ -243,7 +216,7 @@ const GroundReality = () => {
 
                   {/* Note */}
                   {point.note && (
-                    <div className={`${colors.badge} rounded-lg p-3 sm:p-4 flex items-start gap-2`}>
+                    <div className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg p-3 sm:p-4 flex items-start gap-2">
                       <Lightbulb className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 mt-0.5" />
                       <p className="text-xs sm:text-sm font-medium">
                         {point.note}

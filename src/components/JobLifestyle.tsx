@@ -258,12 +258,8 @@ const JobLifestyle = () => {
     summary: 'AME remains in expansion mode for the next 15+ years — extremely low saturation.'
   }];
   const getColorClasses = (color: string) => {
-    const colors = {
-      blue: 'bg-blue-50 border-blue-200',
-      orange: 'bg-orange-50 border-orange-200',
-      green: 'bg-green-50 border-green-200'
-    };
-    return colors[color as keyof typeof colors] || colors.blue;
+    // Uniform neutral colors for all cards
+    return 'bg-white border-slate-200';
   };
   return <div className="space-y-12 pb-12">
       {/* Job Lifestyle Index Section */}
