@@ -9,24 +9,21 @@ const skillGapData = [
     currentSkill: 58,
     requiredSkill: 92,
     gap: 34,
-    priority: 'High',
-    badgeColor: 'bg-blue-100 text-blue-800'
+    priority: 'High'
   },
   {
     role: 'Avionics Engineer',
     currentSkill: 55,
     requiredSkill: 95,
     gap: 40,
-    priority: 'Critical',
-    badgeColor: 'bg-purple-100 text-purple-800'
+    priority: 'Critical'
   },
   {
     role: 'Aircraft Maintenance Eng.',
     currentSkill: 63,
     requiredSkill: 88,
     gap: 25,
-    priority: 'Medium',
-    badgeColor: 'bg-amber-100 text-amber-800'
+    priority: 'Medium'
   }
 ];
 
@@ -66,7 +63,7 @@ export const SkillGap = () => {
       </div>
 
 
-      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-slate-200">
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
         <div className="text-center mb-4 sm:mb-6">
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
             <h3 className="text-xl sm:text-2xl font-bold text-slate-900 text-center">
@@ -89,23 +86,23 @@ export const SkillGap = () => {
         <div className="overflow-x-auto">
           <Table>
           <TableHeader>
-            <TableRow className="bg-gradient-to-r from-slate-700 to-slate-800">
-              <TableHead className="text-white font-bold">Job Role</TableHead>
-              <TableHead className="text-white font-bold">Current Skills</TableHead>
-              <TableHead className="text-white font-bold">Required Skills</TableHead>
-              <TableHead className="text-white font-bold">Gap %</TableHead>
-              <TableHead className="text-white font-bold">Priority</TableHead>
+            <TableRow className="bg-gradient-to-r from-slate-50 to-slate-100 shadow-sm border-b-2 border-slate-200">
+              <TableHead className="text-slate-700 font-bold">Job Role</TableHead>
+              <TableHead className="text-slate-700 font-bold">Current Skills</TableHead>
+              <TableHead className="text-slate-700 font-bold">Required Skills</TableHead>
+              <TableHead className="text-slate-700 font-bold">Gap %</TableHead>
+              <TableHead className="text-slate-700 font-bold">Priority</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {skillGapData.map((item) => (
-              <TableRow key={item.role} className="hover:bg-slate-50">
+              <TableRow key={item.role}>
                 <TableCell className="font-medium">{item.role}</TableCell>
                 <TableCell>
                   <div className="flex items-center">
                     <div className="w-full bg-gray-200 rounded-full h-2 mr-2">
                       <div 
-                        className="bg-slate-600 h-2 rounded-full" 
+                        className="bg-blue-600 h-2 rounded-full" 
                         style={{ width: `${item.currentSkill}%` }}
                       ></div>
                     </div>
@@ -116,7 +113,7 @@ export const SkillGap = () => {
                   <div className="flex items-center">
                     <div className="w-full bg-gray-200 rounded-full h-2 mr-2">
                       <div 
-                        className="bg-slate-800 h-2 rounded-full" 
+                        className="bg-green-600 h-2 rounded-full" 
                         style={{ width: `${item.requiredSkill}%` }}
                       ></div>
                     </div>
@@ -142,11 +139,11 @@ export const SkillGap = () => {
 
         {/* Reassurance message */}
         <div className="mt-6 sm:mt-8 text-center">
-          <div className="inline-flex flex-col items-center bg-slate-50 rounded-xl px-4 py-3 sm:px-6 sm:py-4 border border-slate-200">
+          <div className="inline-flex flex-col items-center bg-gradient-to-r from-emerald-50 to-green-50 rounded-xl px-4 py-3 sm:px-6 sm:py-4 border border-emerald-200/60">
             <p className="text-sm sm:text-base md:text-lg text-slate-800 font-semibold">
               A skill gap does <span className="text-red-600 font-bold">NOT</span> mean your child will fail.
             </p>
-            <p className="text-xs sm:text-sm md:text-base text-slate-600 mt-1 font-medium">
+            <p className="text-xs sm:text-sm md:text-base text-emerald-700 mt-1 font-medium">
               It only means: <span className="font-bold">Extra training is required</span>
             </p>
           </div>
@@ -154,7 +151,7 @@ export const SkillGap = () => {
       </div>
 
       {/* Effort Intensity Required Section */}
-      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-slate-200">
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
         <div className="text-center mb-4 sm:mb-6">
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
             <h3 className="text-xl sm:text-2xl font-bold text-slate-900 text-center">
@@ -177,12 +174,8 @@ export const SkillGap = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {/* Aerospace Engineer */}
-          <div className="bg-blue-50 rounded-xl p-4 sm:p-5 border-2 border-blue-200">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800 border border-blue-200">
-                Aerospace Engineer
-              </span>
-            </div>
+          <div className="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-xl p-4 sm:p-5 border border-blue-200/60">
+            <h4 className="text-lg sm:text-xl font-bold text-blue-900 mb-3">Aerospace Engineer</h4>
             
             <div className="mb-4">
               <p className="text-xs sm:text-sm text-slate-600 mb-2 font-medium">Effort Level:</p>
@@ -194,7 +187,7 @@ export const SkillGap = () => {
                   <span className="w-4 h-4 border-2 border-slate-300 rounded-sm bg-white"></span> Medium
                 </span>
                 <span className="flex items-center gap-1 text-xs sm:text-sm text-slate-700 font-semibold">
-                  <span className="w-4 h-4 border-2 border-slate-600 rounded-sm bg-slate-600"></span> High
+                  <span className="w-4 h-4 border-2 border-blue-600 rounded-sm bg-blue-600"></span> High
                 </span>
                 <span className="flex items-center gap-1 text-xs sm:text-sm text-slate-600">
                   <span className="w-4 h-4 border-2 border-slate-300 rounded-sm bg-white"></span> Extreme
@@ -207,19 +200,15 @@ export const SkillGap = () => {
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 This role needs strong basics, continuous learning, and patience. Early years involve design reviews, testing, and repeated corrections before growth becomes steady.
               </p>
-              <p className="text-xs sm:text-sm text-slate-700 font-medium italic">
+              <p className="text-xs sm:text-sm text-blue-700 font-medium italic">
                 High effort means long preparation and consistency — not difficulty beyond your ability.
               </p>
             </div>
           </div>
 
           {/* Avionics Engineer */}
-          <div className="bg-purple-50 rounded-xl p-4 sm:p-5 border-2 border-purple-200">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-100 text-purple-800 border border-purple-200">
-                Avionics Engineer
-              </span>
-            </div>
+          <div className="bg-gradient-to-br from-purple-50 to-purple-100/50 rounded-xl p-4 sm:p-5 border border-purple-200/60">
+            <h4 className="text-lg sm:text-xl font-bold text-purple-900 mb-3">Avionics Engineer</h4>
             
             <div className="mb-4">
               <p className="text-xs sm:text-sm text-slate-600 mb-2 font-medium">Effort Level:</p>
@@ -234,7 +223,7 @@ export const SkillGap = () => {
                   <span className="w-4 h-4 border-2 border-slate-300 rounded-sm bg-white"></span> High
                 </span>
                 <span className="flex items-center gap-1 text-xs sm:text-sm text-slate-700 font-semibold">
-                  <span className="w-4 h-4 border-2 border-slate-600 rounded-sm bg-slate-600"></span> Extreme
+                  <span className="w-4 h-4 border-2 border-purple-600 rounded-sm bg-purple-600"></span> Extreme
                 </span>
               </div>
             </div>
@@ -244,19 +233,15 @@ export const SkillGap = () => {
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 This role needs very high accuracy, constant upskilling, and mental focus. Small mistakes matter, and learning never really stops in this field.
               </p>
-              <p className="text-xs sm:text-sm text-slate-700 font-medium italic">
+              <p className="text-xs sm:text-sm text-purple-700 font-medium italic">
                 Extreme effort means high responsibility and deep focus — not pressure without reward.
               </p>
             </div>
           </div>
 
           {/* Aircraft Maintenance Engineer (AME) */}
-          <div className="bg-amber-50 rounded-xl p-4 sm:p-5 border-2 border-amber-200">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 border border-amber-200">
-                Aircraft Maintenance Engineer (AME)
-              </span>
-            </div>
+          <div className="bg-gradient-to-br from-amber-50 to-amber-100/50 rounded-xl p-4 sm:p-5 border border-amber-200/60">
+            <h4 className="text-lg sm:text-xl font-bold text-amber-900 mb-3">Aircraft Maintenance Engineer (AME)</h4>
             
             <div className="mb-4">
               <p className="text-xs sm:text-sm text-slate-600 mb-2 font-medium">Effort Level:</p>
@@ -268,7 +253,7 @@ export const SkillGap = () => {
                   <span className="w-4 h-4 border-2 border-slate-300 rounded-sm bg-white"></span> Medium
                 </span>
                 <span className="flex items-center gap-1 text-xs sm:text-sm text-slate-700 font-semibold">
-                  <span className="w-4 h-4 border-2 border-slate-600 rounded-sm bg-slate-600"></span> High
+                  <span className="w-4 h-4 border-2 border-amber-600 rounded-sm bg-amber-600"></span> High
                 </span>
                 <span className="flex items-center gap-1 text-xs sm:text-sm text-slate-600">
                   <span className="w-4 h-4 border-2 border-slate-300 rounded-sm bg-white"></span> Extreme
@@ -281,7 +266,7 @@ export const SkillGap = () => {
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 This role needs discipline, routine work, and strict safety practices. Growth is steady but requires consistency and responsibility every day.
               </p>
-              <p className="text-xs sm:text-sm text-slate-700 font-medium italic">
+              <p className="text-xs sm:text-sm text-amber-700 font-medium italic">
                 High effort means regular hard work and responsibility — not constant stress.
               </p>
             </div>
@@ -290,7 +275,7 @@ export const SkillGap = () => {
 
         {/* Bottom message */}
         <div className="mt-6 sm:mt-8 text-center">
-          <div className="inline-flex flex-col items-center bg-slate-50 rounded-xl px-4 py-3 sm:px-6 sm:py-4 border border-slate-200">
+          <div className="inline-flex flex-col items-center bg-gradient-to-r from-slate-50 to-slate-100 rounded-xl px-4 py-3 sm:px-6 sm:py-4 border border-slate-200">
             <p className="text-sm sm:text-base text-slate-700 font-medium">
               This gap is normal for fresh students.
             </p>

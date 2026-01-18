@@ -180,7 +180,7 @@ export const CareerInsights = () => {
           </div>
 
           {/* Hiring Cycle Calendar */}
-          <section className="mb-12 bg-slate-50/50 dark:bg-slate-950/10 rounded-2xl p-4 sm:p-6 lg:p-8">
+          <section className="mb-12 bg-blue-50/50 dark:bg-blue-950/10 rounded-2xl p-4 sm:p-6 lg:p-8">
             <div className="text-center mb-6 sm:mb-8">
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Hiring Cycle Calendar</h2>
@@ -203,7 +203,7 @@ export const CareerInsights = () => {
             {/* Desktop CSS Grid Table */}
             <div className="hidden sm:block bg-white dark:bg-slate-900 rounded-xl border border-blue-200 dark:border-blue-900 overflow-hidden shadow-sm">
               {/* Header Row */}
-              <div className="grid grid-cols-3 gap-2 sm:gap-4 bg-gradient-to-r from-slate-700 to-slate-800 text-white">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white">
                 <div className="p-3 sm:p-4 font-bold text-xs sm:text-sm md:text-base">Role</div>
                 <div className="p-3 sm:p-4 font-bold text-xs sm:text-sm md:text-base text-center">Peak Months</div>
                 <div className="p-3 sm:p-4 font-bold text-xs sm:text-sm md:text-base">Reason</div>
@@ -251,7 +251,7 @@ export const CareerInsights = () => {
           </section>
 
           {/* Failure Points Map */}
-          <section className="mb-12 bg-slate-50/50 dark:bg-slate-950/10 rounded-2xl p-6 sm:p-8">
+          <section className="mb-12 bg-rose-50/50 dark:bg-rose-950/10 rounded-2xl p-6 sm:p-8">
           <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-6">
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Failure Points Map</h2>
               <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
@@ -285,7 +285,7 @@ export const CareerInsights = () => {
           </section>
 
           {/* Hiring Weightage */}
-          <section className="mb-12 bg-slate-50/50 dark:bg-slate-950/10 rounded-2xl p-6 sm:p-8">
+          <section className="mb-12 bg-purple-50/50 dark:bg-purple-950/10 rounded-2xl p-6 sm:p-8">
           <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-6">
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Hiring Weightage</h2>
               <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
@@ -350,7 +350,7 @@ export const CareerInsights = () => {
           </section>
 
           {/* Survivor Profile */}
-          <section className="mb-12 bg-slate-50/50 dark:bg-slate-950/10 rounded-2xl p-4 sm:p-6 lg:p-8">
+          <section className="mb-12 bg-emerald-50/50 dark:bg-emerald-950/10 rounded-2xl p-4 sm:p-6 lg:p-8">
             <div className="text-center mb-6 sm:mb-8">
               <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Survivor Profile</h2>
@@ -373,7 +373,7 @@ export const CareerInsights = () => {
             {/* Desktop CSS Grid Table */}
             <div className="hidden sm:block bg-white dark:bg-slate-900 rounded-xl border border-emerald-200 dark:border-emerald-900 overflow-hidden shadow-sm">
               {/* Header Row */}
-              <div className="grid grid-cols-4 gap-2 sm:gap-4 bg-gradient-to-r from-slate-700 to-slate-800 text-white">
+              <div className="grid grid-cols-4 gap-2 sm:gap-4 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white">
                 <div className="p-3 sm:p-4 font-bold text-xs sm:text-sm md:text-base">Role</div>
                 <div className="p-3 sm:p-4 font-bold text-xs sm:text-sm md:text-base text-center">Trait 1</div>
                 <div className="p-3 sm:p-4 font-bold text-xs sm:text-sm md:text-base text-center">Trait 2</div>
@@ -423,7 +423,7 @@ export const CareerInsights = () => {
           </section>
 
           {/* City-wise Internship Chances */}
-          <section className="mb-12 bg-slate-50/50 dark:bg-slate-950/10 rounded-2xl p-6 sm:p-8">
+          <section className="mb-12 bg-amber-50/50 dark:bg-amber-950/10 rounded-2xl p-6 sm:p-8">
             <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-6">
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground">City-wise Internship Chances</h2>
               <span className="inline-flex items-center rounded-full bg-blue-100 text-blue-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-blue-200">
@@ -460,7 +460,7 @@ export const CareerInsights = () => {
           </section>
 
           {/* Internship Opportunities */}
-          <section className="mb-12 bg-slate-50/50 dark:bg-slate-950/10 rounded-2xl p-6 sm:p-8">
+          <section className="mb-12 bg-cyan-50/50 dark:bg-cyan-950/10 rounded-2xl p-6 sm:p-8">
             <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-6">
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Internship Opportunities</h2>
               <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
@@ -479,7 +479,7 @@ export const CareerInsights = () => {
             {/* Desktop CSS Grid Table */}
             <div className="hidden sm:block bg-white dark:bg-slate-900 rounded-xl border border-cyan-200 dark:border-cyan-900 overflow-hidden shadow-sm">
               {/* Header Row */}
-              <div className="grid grid-cols-3 gap-2 sm:gap-4 bg-gradient-to-r from-slate-700 to-slate-800 text-white">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 bg-gradient-to-r from-cyan-600 to-cyan-500 text-white">
                 <div className="p-3 sm:p-4 font-bold text-xs sm:text-sm md:text-base">Company Name</div>
                 <div className="p-3 sm:p-4 font-bold text-xs sm:text-sm md:text-base text-center">Domain</div>
                 <div className="p-3 sm:p-4 font-bold text-xs sm:text-sm md:text-base">Type of Exposure</div>
