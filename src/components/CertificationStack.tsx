@@ -181,17 +181,11 @@ export const CertificationStack = () => {
             <div className="p-4 sm:p-6 lg:p-8">
               <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 lg:gap-5">
                 {/* Icon Container */}
-                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-xl bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center border border-amber-200/50">
-                  <span className="text-xl sm:text-2xl lg:text-3xl">⚠️</span>
-                </div>
+                
                 
                 {/* Text Content */}
                 <div className="flex-1 space-y-2 sm:space-y-3">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2.5 py-1 text-[10px] sm:text-xs font-semibold border border-amber-200">
-                      Reality Check
-                    </span>
-                  </div>
+                  
                   
                   <p className="text-sm sm:text-base lg:text-lg text-slate-800 font-medium leading-relaxed">
                     In B.Tech Mechanical Engineering, you learn only <span className="font-bold text-amber-600">38–45% basics</span> — not enough for aviation jobs without extra certifications and projects.
