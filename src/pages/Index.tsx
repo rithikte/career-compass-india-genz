@@ -12,13 +12,10 @@ import { JobDemand } from '../components/JobDemand';
 import { BestStates } from '../components/BestStates';
 import { AIImpact } from '../components/AIImpact';
 import { JobSecurity } from '../components/JobSecurity';
-import { SkillGap } from '../components/SkillGap';
-
 import { CertificationStack } from '../components/CertificationStack';
 import JobRealityExpectation from '../components/JobRealityExpectation';
 import CareerRealityCheck from '../components/CareerRealityCheck';
 import JobLifestyle from '../components/JobLifestyle';
-import { PostCertBenefits } from '../components/PostCertBenefits';
 import { GovtSupport } from '../components/GovtSupport';
 import { India2040 } from '../components/India2040';
 import { WhereToLearn } from '../components/WhereToLearn';
@@ -46,10 +43,7 @@ const Index = () => {
     { id: 'best-states', title: 'Best States', component: BestStates },
     { id: 'ai-impact', title: 'AI Impact', component: AIImpact },
     { id: 'job-security', title: 'Job Security', component: JobSecurity },
-    { id: 'skill-gap', title: 'Skill Gap', component: SkillGap },
-    
     { id: 'certification-stack', title: 'Certification Stack', component: CertificationStack },
-    { id: 'post-cert-benefits', title: 'Post-Cert Benefits', component: PostCertBenefits },
     { id: 'govt-support', title: 'Govt Support', component: GovtSupport },
     { id: 'india-2040', title: 'India 2040', component: India2040 },
     { id: 'interview-situation', title: 'Interview Situation', component: InterviewSituation },
