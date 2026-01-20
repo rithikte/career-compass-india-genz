@@ -54,9 +54,7 @@ export const JobDemand = () => {
         {/* Aerospace Engineer */}
         <div className="bg-white rounded-xl shadow-lg p-5 sm:p-6 border-t-4 border-blue-500 hover:shadow-xl transition-shadow duration-300">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-100 flex items-center justify-center">
-              <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
-            </div>
+            
             <h3 className="text-lg sm:text-xl font-bold text-slate-900">Aerospace Engineer</h3>
           </div>
           
@@ -101,9 +99,7 @@ export const JobDemand = () => {
         {/* Avionics Engineer */}
         <div className="bg-white rounded-xl shadow-lg p-5 sm:p-6 border-t-4 border-indigo-500 hover:shadow-xl transition-shadow duration-300">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-indigo-100 flex items-center justify-center">
-              <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600" />
-            </div>
+            
             <h3 className="text-lg sm:text-xl font-bold text-slate-900">Avionics Engineer</h3>
           </div>
           
@@ -148,9 +144,7 @@ export const JobDemand = () => {
         {/* Aircraft Maintenance Engineer (AME) */}
         <div className="bg-white rounded-xl shadow-lg p-5 sm:p-6 border-t-4 border-emerald-500 hover:shadow-xl transition-shadow duration-300">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-emerald-100 flex items-center justify-center">
-              <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
-            </div>
+            
             <h3 className="text-lg sm:text-xl font-bold text-slate-900">Aircraft Maintenance Engineer (AME)</h3>
           </div>
           
@@ -193,49 +187,7 @@ export const JobDemand = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
-        {demandData.map((item, index) => <div key={item.role} className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300">
-            
-            
-            <div className="space-y-3">
-              <div className="flex justify-between items-center">
-                <span className="text-gray-600 text-sm">2025 Hires/Year</span>
-                <span className="font-bold text-blue-600">
-                  {item['2025'].toLocaleString()}
-                </span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-gray-600 text-sm">2030 Hires/Year</span>
-                
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-gray-600 text-sm">2035 Hires/Year</span>
-                <span className="font-bold text-purple-600">
-                  {item['2035'].toLocaleString()}
-                </span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-gray-600 text-sm">2040 Hires/Year</span>
-                <span className="font-bold text-green-600">
-                  {item['2040'].toLocaleString()}
-                </span>
-              </div>
-              <div className="border-t pt-3">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Total Growth</span>
-                  <span className={`font-bold px-3 py-1 rounded-full text-sm ${item.growth >= 1000 ? 'bg-red-100 text-red-800' : item.growth >= 300 ? 'bg-orange-100 text-orange-800' : 'bg-blue-100 text-blue-800'}`}>
-                    +{item.growth}%
-                  </span>
-                </div>
-                <div className="mt-3 flex justify-center items-center text-center font-semibold text-sm rounded-md py-2 px-2" style={{
-              background: 'linear-gradient(90deg, #e0ecff 0%, #f0fff4 100%)'
-            }}>
-                  Why: {item.why}
-                </div>
-              </div>
-            </div>
-          </div>)}
-      </div>
+      
 
       
     </div>;
