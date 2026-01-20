@@ -1,24 +1,52 @@
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { Shield, AlertTriangle, TrendingUp, CheckCircle, XCircle } from 'lucide-react';
+import { CheckCircle, XCircle, TrendingUp, AlertTriangle, Award } from 'lucide-react';
 import SourceBadge from './SourceBadge';
 
-const securityData = [{
-  role: 'Aerospace Engineer',
-  withAI: 88,
-  withoutAI: 52,
-  shortName: 'Aerospace'
-}, {
-  role: 'Avionics Engineer',
-  withAI: 91,
-  withoutAI: 45,
-  shortName: 'Avionics'
-}, {
-  role: 'Aircraft Maintenance Eng.',
-  withAI: 79,
-  withoutAI: 58,
-  shortName: 'Maintenance'
-}];
+const getResilienceColor = (level: string) => {
+  switch (level) {
+    case 'Very high resilience': return 'text-emerald-600';
+    case 'High resilience': return 'text-green-600';
+    case 'Moderate resilience': return 'text-amber-600';
+    case 'Low–moderate resilience': return 'text-orange-600';
+    default: return 'text-slate-600';
+  }
+};
+
+const getAdaptabilityColor = (level: string) => {
+  switch (level) {
+    case 'Very High': return 'text-emerald-600';
+    case 'High': return 'text-green-600';
+    case 'Medium': return 'text-amber-600';
+    case 'Low–Medium': return 'text-orange-600';
+    default: return 'text-slate-600';
+  }
+};
+
+const getGapColor = (level: string) => {
+  switch (level) {
+    case 'Very Large': return 'bg-red-100 text-red-700 border-red-200';
+    case 'Large': return 'bg-orange-100 text-orange-700 border-orange-200';
+    case 'Medium': return 'bg-amber-100 text-amber-700 border-amber-200';
+    default: return 'bg-slate-100 text-slate-700 border-slate-200';
+  }
+};
+
+const getPriorityColor = (priority: string) => {
+  switch (priority) {
+    case 'Critical': return 'bg-red-100 text-red-700 border-red-200';
+    case 'High': return 'bg-orange-100 text-orange-700 border-orange-200';
+    case 'Medium': return 'bg-amber-100 text-amber-700 border-amber-200';
+    default: return 'bg-slate-100 text-slate-700 border-slate-200';
+  }
+};
+
+const getLongevityColor = (level: string) => {
+  switch (level) {
+    case 'Very Strong': return 'text-emerald-600';
+    case 'Strong': return 'text-green-600';
+    default: return 'text-slate-600';
+  }
+};
 
 export const JobSecurity = () => {
   return (
@@ -37,7 +65,7 @@ export const JobSecurity = () => {
         </div>
       </div>
 
-      {/* Important Job Security Reality - NEW SECTION */}
+      {/* Important Job Security Reality */}
       <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-amber-200">
         <div className="text-center">
           <h3 className="text-xl sm:text-2xl font-bold text-amber-900 mb-4">
@@ -54,176 +82,330 @@ export const JobSecurity = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
-        <div className="text-center mb-4 sm:mb-6">
+      {/* Career Resilience with AI Skills */}
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-slate-200">
+        <div className="text-center mb-6">
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
-            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 text-center">
-              Job Security Comparison
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
+              Career Resilience with AI Skills
             </h3>
             <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
               Estimate
             </span>
           </div>
+          <p className="text-slate-600 text-sm sm:text-base">(Qualitative estimate, not a guarantee)</p>
           
-          {/* Why this matters */}
           <div className="flex items-center justify-center mt-3">
             <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
               <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
-                <span className="font-semibold">Why this matters:</span> Shows how learning AI skills greatly improves long-term job safety before students plan their career path.
+                <span className="font-semibold">Why this matters:</span> Shows how AI skills affect long-term career stability for each role.
               </span>
             </div>
           </div>
         </div>
-        <div className="h-64 sm:h-80 md:h-96">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={securityData} margin={{
-              top: 20,
-              right: 10,
-              left: 10,
-              bottom: 40
-            }}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="shortName" angle={-45} textAnchor="end" height={60} fontSize={12} />
-              <YAxis fontSize={12} />
-              <Tooltip formatter={(value, name) => [`${value}%`, name]} labelStyle={{
-                color: '#1e293b'
-              }} />
-              <Bar dataKey="withAI" fill="hsl(142 76% 42%)" name="With AI Skills" radius={[4, 4, 0, 0]} />
-              <Bar dataKey="withoutAI" fill="hsl(0 72% 51%)" name="Without AI Skills" radius={[4, 4, 0, 0]} />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        {securityData.map((item, index) => (
-          <div key={item.role} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-            <h3 className="text-lg font-bold text-slate-900 mb-4">{item.role}</h3>
-            
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <Shield className="w-4 h-4 text-green-600 mr-2" />
-                  <span className="text-gray-600">With AI Skills</span>
-                </div>
-                <span className="font-bold text-green-600">{item.withAI}%</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <AlertTriangle className="w-4 h-4 text-red-600 mr-2" />
-                  <span className="text-gray-600">Without AI Skills</span>
-                </div>
-                <span className="font-bold text-red-600">{item.withoutAI}%</span>
-              </div>
-              <div className="border-t pt-3">
-                <div className="text-center">
-                  <span className="text-2xl font-bold text-indigo-600">
-                    +{item.withAI - item.withoutAI}%
-                  </span>
-                  <div className="text-sm text-gray-600">Security Boost</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Security Boost Meaning - NEW SECTION */}
-      <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-indigo-200">
-        <h3 className="text-xl sm:text-2xl font-bold text-indigo-900 mb-4 text-center">
-          What a +36% / +46% / +21% security boost really means
-        </h3>
-        <div className="max-w-2xl mx-auto">
-          <ul className="space-y-3">
-            <li className="flex items-start gap-3">
-              <div className="w-2 h-2 rounded-full bg-indigo-600 mt-2 flex-shrink-0"></div>
-              <span className="text-slate-700 text-base sm:text-lg">Higher chance of staying in core engineering roles</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <div className="w-2 h-2 rounded-full bg-indigo-600 mt-2 flex-shrink-0"></div>
-              <span className="text-slate-700 text-base sm:text-lg">Lower risk of being pushed into support or low-growth roles</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <div className="w-2 h-2 rounded-full bg-indigo-600 mt-2 flex-shrink-0"></div>
-              <span className="text-slate-700 text-base sm:text-lg">Faster recovery after industry slowdowns</span>
-            </li>
-          </ul>
-          <div className="mt-6 bg-white border-l-4 border-indigo-500 p-4 rounded-r-lg">
-            <p className="text-indigo-900 font-bold text-base sm:text-lg">
-              This boost is earned, not automatic.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 mb-8">
-        <div className="text-center mb-6">
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
-            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 text-center">Difference between Traditional Skills and AI-Enhanced Skill Career Durability</h3>
-            <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
-              Projection
-            </span>
-          </div>
-          <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
-            Compare how traditional skills and AI-enhanced skills impact your career longevity.
-          </p>
-          
-          {/* Why this matters */}
-          <div className="flex items-center justify-center mt-3">
-            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
-              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
-                <span className="font-semibold">Why this matters:</span> Helps students understand that upgrading skills can double career life and reduce job loss risk.
-              </span>
-            </div>
-          </div>
-        </div>
-        
         {/* Desktop Table */}
         <div className="hidden md:block overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b-2 border-slate-300">
-                <th className="text-left py-4 px-4 text-slate-900 font-bold">Role</th>
-                <th className="text-center py-4 px-4 text-slate-900 font-bold">Traditional Skill</th>
-                <th className="text-center py-4 px-4 text-slate-900 font-bold">AI-Enhanced Skill</th>
-                <th className="text-center py-4 px-4 text-slate-900 font-bold">Career Durability Score</th>
+              <tr className="bg-gradient-to-r from-slate-700 to-slate-800 text-white">
+                <th className="text-left py-3 px-4 font-semibold rounded-tl-lg">Job Role</th>
+                <th className="text-center py-3 px-4 font-semibold">With AI Skills</th>
+                <th className="text-center py-3 px-4 font-semibold">Without AI Skills</th>
+                <th className="text-left py-3 px-4 font-semibold rounded-tr-lg">What actually changes</th>
               </tr>
             </thead>
             <tbody>
               <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
                 <td className="py-4 px-4 font-medium text-slate-800">Aerospace Engineer</td>
                 <td className="text-center py-4 px-4">
-                  <span className="text-base font-bold text-slate-900">7–8 yrs</span>
+                  <span className={`font-bold ${getResilienceColor('High resilience')}`}>High resilience</span>
                 </td>
                 <td className="text-center py-4 px-4">
-                  <span className="font-bold text-slate-900">15–18 yrs</span>
+                  <span className={`font-bold ${getResilienceColor('Moderate resilience')}`}>Moderate resilience</span>
                 </td>
-                <td className="text-center py-4 px-4">
-                  <span className="font-bold text-green-600">88%</span>
-                </td>
+                <td className="py-4 px-4 text-slate-600 text-sm">AI-skilled engineers stay in core design & systems roles</td>
               </tr>
               <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
                 <td className="py-4 px-4 font-medium text-slate-800">Avionics Engineer</td>
                 <td className="text-center py-4 px-4">
-                  <span className="font-bold text-slate-900">6–7 yrs</span>
+                  <span className={`font-bold ${getResilienceColor('Very high resilience')}`}>Very high resilience</span>
                 </td>
                 <td className="text-center py-4 px-4">
-                  <span className="font-bold text-slate-900">14–16 yrs</span>
+                  <span className={`font-bold ${getResilienceColor('Low–moderate resilience')}`}>Low–moderate resilience</span>
                 </td>
-                <td className="text-center py-4 px-4">
-                  <span className="font-bold text-green-600">85%</span>
-                </td>
+                <td className="py-4 px-4 text-slate-600 text-sm">Automation favors engineers who can work with AI-driven systems</td>
               </tr>
               <tr className="hover:bg-slate-50 transition-colors">
                 <td className="py-4 px-4 font-medium text-slate-800">AME</td>
                 <td className="text-center py-4 px-4">
-                  <span className="font-bold text-slate-900">8–9 yrs</span>
+                  <span className={`font-bold ${getResilienceColor('High resilience')}`}>High resilience</span>
                 </td>
                 <td className="text-center py-4 px-4">
-                  <span className="font-bold text-slate-900">16–20 yrs</span>
+                  <span className={`font-bold ${getResilienceColor('Moderate resilience')}`}>Moderate resilience</span>
+                </td>
+                <td className="py-4 px-4 text-slate-600 text-sm">AI skills help shift into predictive & reliability roles</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        {/* Mobile Cards */}
+        <div className="md:hidden space-y-4">
+          <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
+            <h4 className="font-bold text-slate-900 mb-3">Aerospace Engineer</h4>
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between">
+                <span className="text-slate-500">With AI Skills:</span>
+                <span className={`font-bold ${getResilienceColor('High resilience')}`}>High resilience</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-500">Without AI Skills:</span>
+                <span className={`font-bold ${getResilienceColor('Moderate resilience')}`}>Moderate resilience</span>
+              </div>
+              <p className="text-slate-600 pt-2 border-t border-slate-200 mt-2">AI-skilled engineers stay in core design & systems roles</p>
+            </div>
+          </div>
+          <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
+            <h4 className="font-bold text-slate-900 mb-3">Avionics Engineer</h4>
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between">
+                <span className="text-slate-500">With AI Skills:</span>
+                <span className={`font-bold ${getResilienceColor('Very high resilience')}`}>Very high resilience</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-500">Without AI Skills:</span>
+                <span className={`font-bold ${getResilienceColor('Low–moderate resilience')}`}>Low–moderate resilience</span>
+              </div>
+              <p className="text-slate-600 pt-2 border-t border-slate-200 mt-2">Automation favors engineers who can work with AI-driven systems</p>
+            </div>
+          </div>
+          <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
+            <h4 className="font-bold text-slate-900 mb-3">AME</h4>
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between">
+                <span className="text-slate-500">With AI Skills:</span>
+                <span className={`font-bold ${getResilienceColor('High resilience')}`}>High resilience</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-500">Without AI Skills:</span>
+                <span className={`font-bold ${getResilienceColor('Moderate resilience')}`}>Moderate resilience</span>
+              </div>
+              <p className="text-slate-600 pt-2 border-t border-slate-200 mt-2">AI skills help shift into predictive & reliability roles</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Resilience Advantage Meaning */}
+        <div className="mt-6 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg p-4 sm:p-6 border border-indigo-200">
+          <h4 className="text-lg font-bold text-indigo-900 mb-4">What "Resilience Advantage" really means</h4>
+          <ul className="space-y-2">
+            <li className="flex items-start gap-3">
+              <div className="w-2 h-2 rounded-full bg-indigo-600 mt-2 flex-shrink-0"></div>
+              <span className="text-slate-700 text-sm sm:text-base">Better chance of staying in core engineering roles</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <div className="w-2 h-2 rounded-full bg-indigo-600 mt-2 flex-shrink-0"></div>
+              <span className="text-slate-700 text-sm sm:text-base">Lower risk of being pushed into support / low-growth roles</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <div className="w-2 h-2 rounded-full bg-indigo-600 mt-2 flex-shrink-0"></div>
+              <span className="text-slate-700 text-sm sm:text-base">Faster recovery after industry slowdowns</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <div className="w-2 h-2 rounded-full bg-indigo-600 mt-2 flex-shrink-0"></div>
+              <span className="text-slate-700 text-sm sm:text-base">Easier shift into higher-responsibility work</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Traditional Skills vs AI-Enhanced Skills — Career Adaptability */}
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-slate-200">
+        <div className="text-center mb-6">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
+              Traditional Skills vs AI-Enhanced Skills — Career Adaptability
+            </h3>
+            <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
+              Projection
+            </span>
+          </div>
+          
+          <div className="flex items-center justify-center mt-3">
+            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
+              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
+                <span className="font-semibold">What this shows:</span> Explains how upgrading skills affects long-term relevance, not career length guarantees.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop Table */}
+        <div className="hidden md:block overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              <tr className="bg-gradient-to-r from-slate-700 to-slate-800 text-white">
+                <th className="text-left py-3 px-4 font-semibold rounded-tl-lg">Role</th>
+                <th className="text-center py-3 px-4 font-semibold">Traditional Skill Adaptability</th>
+                <th className="text-center py-3 px-4 font-semibold">AI-Enhanced Skill Adaptability</th>
+                <th className="text-left py-3 px-4 font-semibold rounded-tr-lg">What actually changes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-800">Aerospace Engineer</td>
+                <td className="text-center py-4 px-4">
+                  <span className={`font-bold ${getAdaptabilityColor('Medium')}`}>Medium</span>
                 </td>
                 <td className="text-center py-4 px-4">
-                  <span className="font-bold text-green-600">90%</span>
+                  <span className={`font-bold ${getAdaptabilityColor('High')}`}>High</span>
+                </td>
+                <td className="py-4 px-4 text-slate-600 text-sm">Better fit for advanced design & validation roles</td>
+              </tr>
+              <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-800">Avionics Engineer</td>
+                <td className="text-center py-4 px-4">
+                  <span className={`font-bold ${getAdaptabilityColor('Low–Medium')}`}>Low–Medium</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className={`font-bold ${getAdaptabilityColor('High')}`}>High</span>
+                </td>
+                <td className="py-4 px-4 text-slate-600 text-sm">Can move with automation & smart systems</td>
+              </tr>
+              <tr className="hover:bg-slate-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-800">AME</td>
+                <td className="text-center py-4 px-4">
+                  <span className={`font-bold ${getAdaptabilityColor('Medium')}`}>Medium</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className={`font-bold ${getAdaptabilityColor('Very High')}`}>Very High</span>
+                </td>
+                <td className="py-4 px-4 text-slate-600 text-sm">Shifts into predictive & reliability roles</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        {/* Mobile Cards */}
+        <div className="md:hidden space-y-4">
+          <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
+            <h4 className="font-bold text-slate-900 mb-3">Aerospace Engineer</h4>
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between">
+                <span className="text-slate-500">Traditional:</span>
+                <span className={`font-bold ${getAdaptabilityColor('Medium')}`}>Medium</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-500">AI-Enhanced:</span>
+                <span className={`font-bold ${getAdaptabilityColor('High')}`}>High</span>
+              </div>
+              <p className="text-slate-600 pt-2 border-t border-slate-200 mt-2">Better fit for advanced design & validation roles</p>
+            </div>
+          </div>
+          <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
+            <h4 className="font-bold text-slate-900 mb-3">Avionics Engineer</h4>
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between">
+                <span className="text-slate-500">Traditional:</span>
+                <span className={`font-bold ${getAdaptabilityColor('Low–Medium')}`}>Low–Medium</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-500">AI-Enhanced:</span>
+                <span className={`font-bold ${getAdaptabilityColor('High')}`}>High</span>
+              </div>
+              <p className="text-slate-600 pt-2 border-t border-slate-200 mt-2">Can move with automation & smart systems</p>
+            </div>
+          </div>
+          <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
+            <h4 className="font-bold text-slate-900 mb-3">AME</h4>
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between">
+                <span className="text-slate-500">Traditional:</span>
+                <span className={`font-bold ${getAdaptabilityColor('Medium')}`}>Medium</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-500">AI-Enhanced:</span>
+                <span className={`font-bold ${getAdaptabilityColor('Very High')}`}>Very High</span>
+              </div>
+              <p className="text-slate-600 pt-2 border-t border-slate-200 mt-2">Shifts into predictive & reliability roles</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Key takeaway */}
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-r-lg">
+            <p className="text-orange-800 text-sm sm:text-base font-medium">
+              Traditional skills → risk becoming narrow over time
+            </p>
+          </div>
+          <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
+            <p className="text-green-800 text-sm sm:text-base font-medium">
+              AI-enhanced skills → help you move across roles as work changes
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Skill Gap Heat Map */}
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-slate-200">
+        <div className="text-center mb-6">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
+              Skill Gap Heat Map
+            </h3>
+            <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
+              Estimate
+            </span>
+          </div>
+          <p className="text-slate-600 text-sm sm:text-base">(Qualitative estimate, based on hiring feedback & curriculum gaps)</p>
+        </div>
+
+        {/* Desktop Table */}
+        <div className="hidden md:block overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              <tr className="bg-gradient-to-r from-slate-700 to-slate-800 text-white">
+                <th className="text-left py-3 px-4 font-semibold rounded-tl-lg">Job Role</th>
+                <th className="text-center py-3 px-4 font-semibold">Typical Graduate Readiness</th>
+                <th className="text-center py-3 px-4 font-semibold">Industry Job Readiness</th>
+                <th className="text-center py-3 px-4 font-semibold">Skill Gap Level</th>
+                <th className="text-center py-3 px-4 font-semibold rounded-tr-lg">Priority</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-800">Aerospace Engineer</td>
+                <td className="text-center py-4 px-4 text-slate-600">Moderate</td>
+                <td className="text-center py-4 px-4 text-slate-600">High</td>
+                <td className="text-center py-4 px-4">
+                  <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getGapColor('Large')}`}>Large</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getPriorityColor('High')}`}>High</span>
+                </td>
+              </tr>
+              <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-800">Avionics Engineer</td>
+                <td className="text-center py-4 px-4 text-slate-600">Low–Moderate</td>
+                <td className="text-center py-4 px-4 text-slate-600">Very High</td>
+                <td className="text-center py-4 px-4">
+                  <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getGapColor('Very Large')}`}>Very Large</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getPriorityColor('Critical')}`}>Critical</span>
+                </td>
+              </tr>
+              <tr className="hover:bg-slate-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-800">AME</td>
+                <td className="text-center py-4 px-4 text-slate-600">Moderate</td>
+                <td className="text-center py-4 px-4 text-slate-600">High</td>
+                <td className="text-center py-4 px-4">
+                  <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getGapColor('Medium')}`}>Medium</span>
+                </td>
+                <td className="text-center py-4 px-4">
+                  <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getPriorityColor('Medium')}`}>Medium</span>
                 </td>
               </tr>
             </tbody>
@@ -234,85 +416,317 @@ export const JobSecurity = () => {
         <div className="md:hidden space-y-4">
           <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
             <h4 className="font-bold text-slate-900 mb-3">Aerospace Engineer</h4>
-            <div className="grid grid-cols-3 gap-2 text-center">
+            <div className="grid grid-cols-2 gap-2 text-sm">
               <div>
-                <p className="text-xs text-slate-500 mb-1">Traditional</p>
-                <p className="font-bold text-slate-900 text-sm">7–8 yrs</p>
+                <p className="text-slate-500 text-xs">Graduate Readiness</p>
+                <p className="font-medium text-slate-800">Moderate</p>
               </div>
               <div>
-                <p className="text-xs text-slate-500 mb-1">AI-Enhanced</p>
-                <p className="font-bold text-slate-900 text-sm">15–18 yrs</p>
+                <p className="text-slate-500 text-xs">Industry Readiness</p>
+                <p className="font-medium text-slate-800">High</p>
               </div>
               <div>
-                <p className="text-xs text-slate-500 mb-1">Durability</p>
-                <p className="font-bold text-green-600 text-sm">88%</p>
+                <p className="text-slate-500 text-xs">Skill Gap</p>
+                <span className={`px-2 py-0.5 rounded-full text-xs font-medium border ${getGapColor('Large')}`}>Large</span>
+              </div>
+              <div>
+                <p className="text-slate-500 text-xs">Priority</p>
+                <span className={`px-2 py-0.5 rounded-full text-xs font-medium border ${getPriorityColor('High')}`}>High</span>
               </div>
             </div>
           </div>
-          
           <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
             <h4 className="font-bold text-slate-900 mb-3">Avionics Engineer</h4>
-            <div className="grid grid-cols-3 gap-2 text-center">
+            <div className="grid grid-cols-2 gap-2 text-sm">
               <div>
-                <p className="text-xs text-slate-500 mb-1">Traditional</p>
-                <p className="font-bold text-slate-900 text-sm">6–7 yrs</p>
+                <p className="text-slate-500 text-xs">Graduate Readiness</p>
+                <p className="font-medium text-slate-800">Low–Moderate</p>
               </div>
               <div>
-                <p className="text-xs text-slate-500 mb-1">AI-Enhanced</p>
-                <p className="font-bold text-slate-900 text-sm">14–16 yrs</p>
+                <p className="text-slate-500 text-xs">Industry Readiness</p>
+                <p className="font-medium text-slate-800">Very High</p>
               </div>
               <div>
-                <p className="text-xs text-slate-500 mb-1">Durability</p>
-                <p className="font-bold text-green-600 text-sm">85%</p>
+                <p className="text-slate-500 text-xs">Skill Gap</p>
+                <span className={`px-2 py-0.5 rounded-full text-xs font-medium border ${getGapColor('Very Large')}`}>Very Large</span>
+              </div>
+              <div>
+                <p className="text-slate-500 text-xs">Priority</p>
+                <span className={`px-2 py-0.5 rounded-full text-xs font-medium border ${getPriorityColor('Critical')}`}>Critical</span>
               </div>
             </div>
           </div>
-          
           <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
             <h4 className="font-bold text-slate-900 mb-3">AME</h4>
-            <div className="grid grid-cols-3 gap-2 text-center">
+            <div className="grid grid-cols-2 gap-2 text-sm">
               <div>
-                <p className="text-xs text-slate-500 mb-1">Traditional</p>
-                <p className="font-bold text-slate-900 text-sm">8–9 yrs</p>
+                <p className="text-slate-500 text-xs">Graduate Readiness</p>
+                <p className="font-medium text-slate-800">Moderate</p>
               </div>
               <div>
-                <p className="text-xs text-slate-500 mb-1">AI-Enhanced</p>
-                <p className="font-bold text-slate-900 text-sm">16–20 yrs</p>
+                <p className="text-slate-500 text-xs">Industry Readiness</p>
+                <p className="font-medium text-slate-800">High</p>
               </div>
               <div>
-                <p className="text-xs text-slate-500 mb-1">Durability</p>
-                <p className="font-bold text-green-600 text-sm">90%</p>
+                <p className="text-slate-500 text-xs">Skill Gap</p>
+                <span className={`px-2 py-0.5 rounded-full text-xs font-medium border ${getGapColor('Medium')}`}>Medium</span>
+              </div>
+              <div>
+                <p className="text-slate-500 text-xs">Priority</p>
+                <span className={`px-2 py-0.5 rounded-full text-xs font-medium border ${getPriorityColor('Medium')}`}>Medium</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-6">
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-4 sm:p-5 rounded">
-            <div className="flex items-start space-x-3">
+        {/* How to read this */}
+        <div className="mt-6 bg-slate-50 rounded-lg p-4 border border-slate-200">
+          <h4 className="font-bold text-slate-900 mb-3 text-sm sm:text-base">How to read this</h4>
+          <ul className="space-y-2 text-sm text-slate-700">
+            <li><strong>Typical Graduate Readiness</strong> → What most students have after college</li>
+            <li><strong>Industry Job Readiness</strong> → What companies expect for entry-level roles</li>
+            <li><strong>Skill Gap Level</strong> → How much extra learning is needed</li>
+            <li><strong>Priority</strong> → How urgently you should close the gap</li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Career Longevity Outlook (2025–2040) */}
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-slate-200">
+        <div className="text-center mb-6">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
+              Career Longevity Outlook (2025–2040)
+            </h3>
+            <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
+              Estimate
+            </span>
+          </div>
+          <p className="text-slate-600 text-sm sm:text-base">Based on regulation, demand stability, and reskilling needs</p>
+        </div>
+
+        {/* Desktop Table */}
+        <div className="hidden md:block overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              <tr className="bg-gradient-to-r from-slate-700 to-slate-800 text-white">
+                <th className="text-left py-3 px-4 font-semibold rounded-tl-lg">Job Role</th>
+                <th className="text-center py-3 px-4 font-semibold">Automation Risk</th>
+                <th className="text-center py-3 px-4 font-semibold">Reskilling Need</th>
+                <th className="text-center py-3 px-4 font-semibold">Longevity Outlook</th>
+                <th className="text-left py-3 px-4 font-semibold rounded-tr-lg">Why</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-800">Aerospace Engineer</td>
+                <td className="text-center py-4 px-4 text-amber-600 font-medium">Low–Medium</td>
+                <td className="text-center py-4 px-4 text-orange-600 font-medium">High</td>
+                <td className="text-center py-4 px-4">
+                  <span className={`font-bold ${getLongevityColor('Very Strong')}`}>Very Strong</span>
+                </td>
+                <td className="py-4 px-4 text-slate-600 text-sm">Defence, space, and long project cycles</td>
+              </tr>
+              <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-800">Avionics Engineer</td>
+                <td className="text-center py-4 px-4 text-amber-600 font-medium">Medium</td>
+                <td className="text-center py-4 px-4 text-orange-600 font-medium">Medium–High</td>
+                <td className="text-center py-4 px-4">
+                  <span className={`font-bold ${getLongevityColor('Strong')}`}>Strong</span>
+                </td>
+                <td className="py-4 px-4 text-slate-600 text-sm">Growth tied to smart systems + skills</td>
+              </tr>
+              <tr className="hover:bg-slate-50 transition-colors">
+                <td className="py-4 px-4 font-medium text-slate-800">AME</td>
+                <td className="text-center py-4 px-4 text-green-600 font-medium">Low</td>
+                <td className="text-center py-4 px-4 text-amber-600 font-medium">Medium</td>
+                <td className="text-center py-4 px-4">
+                  <span className={`font-bold ${getLongevityColor('Very Strong')}`}>Very Strong</span>
+                </td>
+                <td className="py-4 px-4 text-slate-600 text-sm">Legal licensing + global MRO demand</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        {/* Mobile Cards */}
+        <div className="md:hidden space-y-4">
+          <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
+            <h4 className="font-bold text-slate-900 mb-3">Aerospace Engineer</h4>
+            <div className="grid grid-cols-2 gap-2 text-sm">
               <div>
-                <h4 className="font-bold text-blue-900 mb-2 text-sm sm:text-base">What It Means</h4>
-                <p className="text-blue-800 text-xs sm:text-sm leading-relaxed">
-                  <strong>Traditional Skill:</strong> Shows how quickly skills lose value without continuous learning.
-                </p>
+                <p className="text-slate-500 text-xs">Automation Risk</p>
+                <p className="font-medium text-amber-600">Low–Medium</p>
+              </div>
+              <div>
+                <p className="text-slate-500 text-xs">Reskilling Need</p>
+                <p className="font-medium text-orange-600">High</p>
+              </div>
+              <div className="col-span-2">
+                <p className="text-slate-500 text-xs">Longevity Outlook</p>
+                <p className={`font-bold ${getLongevityColor('Very Strong')}`}>Very Strong</p>
+              </div>
+            </div>
+            <p className="text-slate-600 text-sm mt-2 pt-2 border-t border-slate-200">Defence, space, and long project cycles</p>
+          </div>
+          <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
+            <h4 className="font-bold text-slate-900 mb-3">Avionics Engineer</h4>
+            <div className="grid grid-cols-2 gap-2 text-sm">
+              <div>
+                <p className="text-slate-500 text-xs">Automation Risk</p>
+                <p className="font-medium text-amber-600">Medium</p>
+              </div>
+              <div>
+                <p className="text-slate-500 text-xs">Reskilling Need</p>
+                <p className="font-medium text-orange-600">Medium–High</p>
+              </div>
+              <div className="col-span-2">
+                <p className="text-slate-500 text-xs">Longevity Outlook</p>
+                <p className={`font-bold ${getLongevityColor('Strong')}`}>Strong</p>
+              </div>
+            </div>
+            <p className="text-slate-600 text-sm mt-2 pt-2 border-t border-slate-200">Growth tied to smart systems + skills</p>
+          </div>
+          <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
+            <h4 className="font-bold text-slate-900 mb-3">AME</h4>
+            <div className="grid grid-cols-2 gap-2 text-sm">
+              <div>
+                <p className="text-slate-500 text-xs">Automation Risk</p>
+                <p className="font-medium text-green-600">Low</p>
+              </div>
+              <div>
+                <p className="text-slate-500 text-xs">Reskilling Need</p>
+                <p className="font-medium text-amber-600">Medium</p>
+              </div>
+              <div className="col-span-2">
+                <p className="text-slate-500 text-xs">Longevity Outlook</p>
+                <p className={`font-bold ${getLongevityColor('Very Strong')}`}>Very Strong</p>
+              </div>
+            </div>
+            <p className="text-slate-600 text-sm mt-2 pt-2 border-t border-slate-200">Legal licensing + global MRO demand</p>
+          </div>
+        </div>
+
+        {/* How to read this */}
+        <div className="mt-6 bg-slate-50 rounded-lg p-4 border border-slate-200">
+          <h4 className="font-bold text-slate-900 mb-3 text-sm sm:text-base">How to read this</h4>
+          <ul className="space-y-2 text-sm text-slate-700">
+            <li><strong>Automation Risk</strong> → How much AI changes tasks</li>
+            <li><strong>Reskilling Need</strong> → How often skills must be updated</li>
+            <li><strong>Longevity Outlook</strong> → Long-term relevance, not guarantees</li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Career Outcome Improvement with Skill Upgrades */}
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-slate-200">
+        <div className="text-center mb-6">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
+              Career Outcome Improvement with Skill Upgrades
+            </h3>
+            <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-amber-200">
+              Estimate
+            </span>
+          </div>
+          <p className="text-slate-600 text-sm sm:text-base">(Qualitative impact, not guaranteed results)</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          {/* Aerospace Engineer */}
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-4 sm:p-6 border border-blue-200">
+            <div className="flex items-center gap-2 mb-4">
+              <Award className="w-5 h-5 text-blue-600" />
+              <h4 className="font-bold text-blue-900">Aerospace Engineer</h4>
+            </div>
+            <div className="space-y-3 text-sm">
+              <div className="flex justify-between">
+                <span className="text-slate-600">Promotion Impact:</span>
+                <span className="font-bold text-blue-700">High</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-600">Salary Impact:</span>
+                <span className="font-bold text-blue-700">Strong improvement</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-600">Interview Impact:</span>
+                <span className="font-bold text-blue-700">Significantly better</span>
+              </div>
+              <div className="border-t border-blue-200 pt-3 mt-3">
+                <p className="text-slate-600 text-xs mb-1">Typical salary shift (entry-level):</p>
+                <p className="font-bold text-slate-800">₹4–5L → ₹5–7L</p>
+                <p className="text-slate-500 text-xs">(company & location dependent)</p>
+              </div>
+              <div className="border-t border-blue-200 pt-3">
+                <p className="text-slate-600 text-xs mb-1">Career progression:</p>
+                <p className="font-medium text-slate-800 text-xs">Junior → Senior → Lead Engineer</p>
               </div>
             </div>
           </div>
-          
-          <div className="bg-green-50 border-l-4 border-green-500 p-4 sm:p-5 rounded">
-            <div className="flex items-start space-x-3">
-              <div>
-                <h4 className="font-bold text-green-900 mb-2 text-sm sm:text-base">Why It Matters</h4>
-                <p className="text-green-800 text-xs sm:text-sm leading-relaxed">
-                  <strong>AI-Enhanced Skill:</strong> Proves that learning new technologies can double your career life and job security.
-                </p>
+
+          {/* Avionics Engineer */}
+          <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-lg p-4 sm:p-6 border border-purple-200">
+            <div className="flex items-center gap-2 mb-4">
+              <Award className="w-5 h-5 text-purple-600" />
+              <h4 className="font-bold text-purple-900">Avionics Engineer</h4>
+            </div>
+            <div className="space-y-3 text-sm">
+              <div className="flex justify-between">
+                <span className="text-slate-600">Promotion Impact:</span>
+                <span className="font-bold text-purple-700">Medium–High</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-600">Salary Impact:</span>
+                <span className="font-bold text-purple-700">Moderate to strong</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-600">Interview Impact:</span>
+                <span className="font-bold text-purple-700">Better screening</span>
+              </div>
+              <div className="border-t border-purple-200 pt-3 mt-3">
+                <p className="text-slate-600 text-xs mb-1">Typical salary shift (entry-level):</p>
+                <p className="font-bold text-slate-800">₹3–4L → ₹4.5–6L</p>
+              </div>
+              <div className="border-t border-purple-200 pt-3">
+                <p className="text-slate-600 text-xs mb-1">Career progression:</p>
+                <p className="font-medium text-slate-800 text-xs">Trainee → Engineer → Senior Engineer</p>
+              </div>
+            </div>
+          </div>
+
+          {/* AME */}
+          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-lg p-4 sm:p-6 border border-amber-200">
+            <div className="flex items-center gap-2 mb-4">
+              <Award className="w-5 h-5 text-amber-600" />
+              <h4 className="font-bold text-amber-900">Aircraft Maintenance Engineer (AME)</h4>
+            </div>
+            <div className="space-y-3 text-sm">
+              <div className="flex justify-between">
+                <span className="text-slate-600">Promotion Impact:</span>
+                <span className="font-bold text-amber-700">Medium</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-600">Salary Impact:</span>
+                <span className="font-bold text-amber-700">Moderate improvement</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-600">Interview Impact:</span>
+                <span className="font-bold text-amber-700">Higher selection</span>
+              </div>
+              <div className="border-t border-amber-200 pt-3 mt-3">
+                <p className="text-slate-600 text-xs mb-1">Typical salary shift (entry-level):</p>
+                <p className="font-bold text-slate-800">₹3–4L → ₹4–6L</p>
+              </div>
+              <div className="border-t border-amber-200 pt-3">
+                <p className="text-slate-600 text-xs mb-1">Career progression:</p>
+                <p className="font-medium text-slate-800 text-xs">Technician → Engineer → Manager</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* What happens if you don't upgrade skills - NEW SECTION */}
+      {/* What happens if you don't upgrade skills */}
       <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-lg shadow-lg p-4 sm:p-6 md:p-8 border border-red-200">
         <h3 className="text-xl sm:text-2xl font-bold text-red-900 mb-6 text-center">
           What happens if you don't upgrade skills
