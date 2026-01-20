@@ -273,6 +273,13 @@ export const CareerOutcomes = () => {
           </div>)}
       </div>
 
+      {/* Salary Disclaimer */}
+      <div className="bg-slate-50 rounded-xl p-4 sm:p-5 border border-slate-200">
+        <p className="text-xs sm:text-sm text-slate-600 text-center leading-relaxed">
+          <span className="font-medium text-slate-700">Note:</span> Salary and growth depend on skills, company type, location, and career choices. Not everyone reaches senior or leadership levels.
+        </p>
+      </div>
+
       {/* Truth Curve Sections */}
       <div className="space-y-6 sm:space-y-8">
         {/* Why this matters - Truth Curve */}
