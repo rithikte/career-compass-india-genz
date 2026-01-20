@@ -49,42 +49,147 @@ export const JobDemand = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8">
-        <div className="text-center mb-4 sm:mb-6">
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
-            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 text-center">Average Yearly Hiring : 2025 vs 2040</h3>
-            <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2 py-0.5 text-[10px] sm:text-xs font-medium border border-emerald-200">
-              Projection
-            </span>
+      {/* Hiring Direction Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
+        {/* Aerospace Engineer */}
+        <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-5 sm:p-6 hover:shadow-xl transition-shadow duration-300">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
+              <TrendingUp className="w-5 h-5 text-blue-600" />
+            </div>
+            <h3 className="text-lg sm:text-xl font-bold text-slate-900">Aerospace Engineer</h3>
           </div>
           
-          {/* Why this matters */}
-          <div className="flex items-center justify-center mt-3">
-            <div className="inline-flex items-center bg-amber-50/80 border border-amber-200/60 rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
-              <span className="text-amber-700 text-[0.6875rem] sm:text-xs md:text-sm">
-                <span className="font-semibold">Why this matters:</span> Shows how yearly job openings will grow over time, helping students judge long-term job availability before choosing a career.
+          <div className="space-y-3 mb-4">
+            <div className="flex justify-between items-center">
+              <span className="text-slate-600 text-sm">Hiring Direction</span>
+              <span className="font-semibold text-blue-700 text-sm">Steady Long-Term Increase</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-slate-600 text-sm">Growth Strength</span>
+              <span className="inline-flex items-center rounded-full bg-blue-100 text-blue-800 px-2.5 py-0.5 text-xs font-medium">
+                Medium
               </span>
             </div>
           </div>
+          
+          <div className="mb-4">
+            <p className="text-sm font-semibold text-slate-700 mb-2">Key Growth Drivers:</p>
+            <ul className="space-y-1.5">
+              <li className="flex items-start gap-2 text-sm text-slate-600">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 flex-shrink-0"></span>
+                Defence manufacturing expansion
+              </li>
+              <li className="flex items-start gap-2 text-sm text-slate-600">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 flex-shrink-0"></span>
+                ISRO missions & space programs
+              </li>
+              <li className="flex items-start gap-2 text-sm text-slate-600">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 flex-shrink-0"></span>
+                Indigenous aircraft & systems development
+              </li>
+            </ul>
+          </div>
+          
+          <div className="bg-slate-50 rounded-lg p-3 border border-slate-200">
+            <p className="text-xs sm:text-sm text-slate-700">
+              <span className="font-semibold">Reality Check:</span> Hiring is selective. Core roles grow slowly but consistently. Strong fundamentals and design skills are essential.
+            </p>
+          </div>
         </div>
-        <div className="h-64 sm:h-80 lg:h-96 mb-4 sm:mb-6">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={demandData} margin={{
-            top: 20,
-            right: 30,
-            left: 20,
-            bottom: 5
-          }}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="shortName" />
-              <YAxis tickFormatter={value => value.toLocaleString()} />
-              <Tooltip formatter={(value: number, name: string) => [`${value.toLocaleString()} hires/year`, name]} labelStyle={{
-              color: '#1e293b'
-            }} />
-              <Bar dataKey="2025" fill="#3b82f6" name="2025" radius={[4, 4, 0, 0]} />
-              <Bar dataKey="2040" fill="#10b981" name="2040" radius={[4, 4, 0, 0]} />
-            </BarChart>
-          </ResponsiveContainer>
+
+        {/* Avionics Engineer */}
+        <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-5 sm:p-6 hover:shadow-xl transition-shadow duration-300">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center">
+              <TrendingUp className="w-5 h-5 text-purple-600" />
+            </div>
+            <h3 className="text-lg sm:text-xl font-bold text-slate-900">Avionics Engineer</h3>
+          </div>
+          
+          <div className="space-y-3 mb-4">
+            <div className="flex justify-between items-center">
+              <span className="text-slate-600 text-sm">Hiring Direction</span>
+              <span className="font-semibold text-purple-700 text-sm">Moderate to Strong Increase</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-slate-600 text-sm">Growth Strength</span>
+              <span className="inline-flex items-center rounded-full bg-purple-100 text-purple-800 px-2.5 py-0.5 text-xs font-medium">
+                Medium–High
+              </span>
+            </div>
+          </div>
+          
+          <div className="mb-4">
+            <p className="text-sm font-semibold text-slate-700 mb-2">Key Growth Drivers:</p>
+            <ul className="space-y-1.5">
+              <li className="flex items-start gap-2 text-sm text-slate-600">
+                <span className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-1.5 flex-shrink-0"></span>
+                Smart aircraft systems
+              </li>
+              <li className="flex items-start gap-2 text-sm text-slate-600">
+                <span className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-1.5 flex-shrink-0"></span>
+                Defence electronics & avionics upgrades
+              </li>
+              <li className="flex items-start gap-2 text-sm text-slate-600">
+                <span className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-1.5 flex-shrink-0"></span>
+                UAVs, sensors, and embedded systems
+              </li>
+            </ul>
+          </div>
+          
+          <div className="bg-slate-50 rounded-lg p-3 border border-slate-200">
+            <p className="text-xs sm:text-sm text-slate-700">
+              <span className="font-semibold">Reality Check:</span> Jobs grow with technology adoption, but skills must stay updated. Practical electronics and testing experience matters more than degree name.
+            </p>
+          </div>
+        </div>
+
+        {/* Aircraft Maintenance Engineer (AME) */}
+        <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-5 sm:p-6 hover:shadow-xl transition-shadow duration-300">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center">
+              <TrendingUp className="w-5 h-5 text-amber-600" />
+            </div>
+            <h3 className="text-lg sm:text-xl font-bold text-slate-900">Aircraft Maintenance Engineer (AME)</h3>
+          </div>
+          
+          <div className="space-y-3 mb-4">
+            <div className="flex justify-between items-center">
+              <span className="text-slate-600 text-sm">Hiring Direction</span>
+              <span className="font-semibold text-amber-700 text-sm">Strong & Continuous Increase</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-slate-600 text-sm">Growth Strength</span>
+              <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-800 px-2.5 py-0.5 text-xs font-medium">
+                High
+              </span>
+            </div>
+          </div>
+          
+          <div className="mb-4">
+            <p className="text-sm font-semibold text-slate-700 mb-2">Key Growth Drivers:</p>
+            <ul className="space-y-1.5">
+              <li className="flex items-start gap-2 text-sm text-slate-600">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 flex-shrink-0"></span>
+                Airline fleet expansion
+              </li>
+              <li className="flex items-start gap-2 text-sm text-slate-600">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 flex-shrink-0"></span>
+                India developing as a global MRO hub
+              </li>
+              <li className="flex items-start gap-2 text-sm text-slate-600">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 flex-shrink-0"></span>
+                Mandatory maintenance & safety regulations
+              </li>
+            </ul>
+          </div>
+          
+          <div className="bg-slate-50 rounded-lg p-3 border border-slate-200">
+            <p className="text-xs sm:text-sm text-slate-700">
+              <span className="font-semibold">Reality Check:</span> Entry is controlled by licensing, but once qualified, demand remains stable across economic cycles.
+            </p>
+          </div>
         </div>
       </div>
 
