@@ -196,17 +196,126 @@ const EntryMidSeniorCard = ({
       <div className="text-xs text-accent font-semibold">Senior</div>
     </div>
   </div>;
+// Career data for each role
+const aerospaceCareerData = [
+  { level: 'Entry / Junior', title: 'Jr. Aerospace Engineer / Graduate Engineer Trainee', salary: '₹4.5–7', time: '0–2 yrs', reach: 'Common' },
+  { level: 'Mid / Associate', title: 'Aerospace Engineer II / Systems Engineer', salary: '₹8–15', time: '2–5 yrs', reach: 'Likely' },
+  { level: 'Senior', title: 'Senior Aerospace Engineer / Lead Engineer', salary: '₹15–25+', time: '5–10 yrs', reach: 'Selective' },
+  { level: 'Expert / Principal', title: 'Principal Engineer / Specialist', salary: '₹25–40+', time: '10–15 yrs', reach: 'Rare' },
+  { level: 'Leadership', title: 'Engineering Manager / Head / Director', salary: '₹40–60+', time: '12–20+ yrs', reach: 'Very Rare' },
+];
+
+const avionicsCareerData = [
+  { level: 'Entry / Junior', title: 'Jr. Avionics Engineer / Test Engineer', salary: '₹5–8', time: '0–2 yrs', reach: 'Common' },
+  { level: 'Mid / Associate', title: 'Avionics Engineer / Systems Engineer', salary: '₹10–15', time: '2–5 yrs', reach: 'Likely' },
+  { level: 'Senior', title: 'Senior Avionics Engineer / Lead', salary: '₹15–23+', time: '5–10 yrs', reach: 'Selective' },
+  { level: 'Principal / Expert', title: 'Principal Avionics Architect / Specialist', salary: '₹23–33+', time: '10–15 yrs', reach: 'Rare' },
+  { level: 'Leadership', title: 'Avionics Manager / Head', salary: '₹33–50+', time: '12–20+ yrs', reach: 'Very Rare' },
+];
+
+const ameCareerData = [
+  { level: 'Entry / Technician', title: 'Jr. AME / Trainee / Licensed AME', salary: '₹4–6', time: '0–2 yrs', reach: 'Common' },
+  { level: 'Mid / Experienced', title: 'Senior AME / Inspector', salary: '₹6–10', time: '2–5 yrs', reach: 'Likely' },
+  { level: 'Senior / Lead', title: 'Lead Maintenance Engineer', salary: '₹10–18+', time: '5–10 yrs', reach: 'Selective' },
+  { level: 'Specialist', title: 'Reliability / Certification / Overhaul Lead', salary: '₹18–25+', time: '10–15 yrs', reach: 'Rare' },
+  { level: 'Management', title: 'Maintenance Manager / Director', salary: '₹25–40+', time: '12–20+ yrs', reach: 'Very Rare' },
+];
+
+// Helper function for reach likelihood colors
+const getReachColor = (reach: string) => {
+  switch (reach) {
+    case 'Common': return 'bg-green-100 text-green-700';
+    case 'Likely': return 'bg-blue-100 text-blue-700';
+    case 'Selective': return 'bg-yellow-100 text-yellow-700';
+    case 'Rare': return 'bg-orange-100 text-orange-700';
+    case 'Very Rare': return 'bg-red-100 text-red-700';
+    default: return 'bg-gray-100 text-gray-700';
+  }
+};
+
+// Career table component for reusability
+const CareerTable = ({ data, role, subtitle, realityNote, bgGradient, borderColor }: {
+  data: typeof aerospaceCareerData;
+  role: string;
+  subtitle: string;
+  realityNote: string;
+  bgGradient: string;
+  borderColor: string;
+}) => (
+  <div className={`${bgGradient} rounded-2xl p-4 sm:p-6 border ${borderColor}`}>
+    <div className="mb-4">
+      <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-900">{role}</h3>
+      <p className="text-xs sm:text-sm text-slate-600">({subtitle})</p>
+    </div>
+
+    {/* Desktop Table */}
+    <div className="hidden md:block mb-4">
+      <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-200">
+        <div className="grid grid-cols-5 bg-gradient-to-r from-slate-700 to-slate-800 text-white font-semibold text-sm">
+          <div className="p-3 border-r border-slate-600">Level</div>
+          <div className="p-3 border-r border-slate-600">Typical Role Titles</div>
+          <div className="p-3 border-r border-slate-600 text-center">Salary (LPA)</div>
+          <div className="p-3 border-r border-slate-600 text-center">Time</div>
+          <div className="p-3 text-center">Reach Likelihood</div>
+        </div>
+        <div className="divide-y divide-gray-100">
+          {data.map((item, idx) => (
+            <div key={idx} className="grid grid-cols-5 hover:bg-slate-50/50 transition-colors">
+              <div className="p-3 font-semibold text-gray-800">{item.level}</div>
+              <div className="p-3 text-gray-700 text-sm">{item.title}</div>
+              <div className="p-3 text-center font-bold text-green-700">{item.salary}</div>
+              <div className="p-3 text-center text-gray-600">{item.time}</div>
+              <div className="p-3 text-center">
+                <span className={`px-2 py-1 rounded-full text-xs font-semibold ${getReachColor(item.reach)}`}>
+                  {item.reach}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* Mobile Cards */}
+    <div className="md:hidden space-y-3 mb-4">
+      {data.map((item, idx) => (
+        <div key={idx} className="bg-white rounded-lg p-4 border border-slate-200 shadow-sm">
+          <div className="flex justify-between items-start mb-2">
+            <span className="font-bold text-gray-800 text-sm">{item.level}</span>
+            <span className={`px-2 py-1 rounded-full text-xs font-semibold ${getReachColor(item.reach)}`}>
+              {item.reach}
+            </span>
+          </div>
+          <p className="text-gray-600 text-xs mb-2">{item.title}</p>
+          <div className="flex gap-4 text-xs">
+            <span className="font-bold text-green-700">{item.salary}</span>
+            <span className="text-gray-500">{item.time}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Reality Note */}
+    <div className="bg-slate-100 rounded-lg p-3 border border-slate-200">
+      <p className="text-xs sm:text-sm text-slate-700">
+        <span className="font-semibold">Reality note:</span> {realityNote}
+      </p>
+    </div>
+  </div>
+);
+
 export const CareerOutcomes = () => {
   return <div className="space-y-6 sm:space-y-8">
+      {/* Header Section */}
       <div className="text-center mb-6 sm:mb-8">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-3 px-4">
-          What Can I Become After This Degree?
+          How Career Grows Over Time
         </h2>
         <p className="text-lg sm:text-xl text-gray-600 px-4">
-          Explore high-growth aerospace careers with competitive salaries
+          Explore realistic career paths, salary growth, and progression timelines
         </p>
 
-        {/* Why this matters - What Can I Become After This Degree? */}
+        {/* Why this matters */}
         <div className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 bg-amber-50/80 rounded-xl border border-amber-200/60 mt-4 mx-4">
           <p className="text-[0.6875rem] sm:text-xs lg:text-sm text-amber-700">
             <span className="font-semibold">Why this matters:</span> Helps students clearly see real career paths, growth levels, and salary reality before choosing the degree.
@@ -220,64 +329,214 @@ export const CareerOutcomes = () => {
         </div>
       </div>
 
-      {/* Important Notice */}
-      <div className="bg-gradient-subtle rounded-lg p-4 sm:p-6 border-2 border-primary/30 mb-6">
-        <div className="flex items-start">
-          <div className="flex-1">
-            <p className="text-sm sm:text-base text-foreground font-semibold">
-               Figures vary by city, company tier, and specialization.
-            </p>
+      {/* Career Growth Tables */}
+      <div className="space-y-6">
+        <CareerTable
+          data={aerospaceCareerData}
+          role="Aerospace Engineer"
+          subtitle="Design • Systems • Structures • Propulsion"
+          realityNote="Aerospace growth depends on strong technical skills, patience with long projects, and the ability to take design and safety responsibility."
+          bgGradient="bg-gradient-to-br from-blue-50 to-indigo-50"
+          borderColor="border-blue-200"
+        />
+
+        <CareerTable
+          data={avionicsCareerData}
+          role="Avionics Engineer"
+          subtitle="Aircraft Electronics • Embedded Systems • Integration"
+          realityNote="Avionics careers reward engineers who continuously upgrade skills in embedded systems, automation, and system integration."
+          bgGradient="bg-gradient-to-br from-purple-50 to-violet-50"
+          borderColor="border-purple-200"
+        />
+
+        <CareerTable
+          data={ameCareerData}
+          role="Aircraft Maintenance Engineer (AME)"
+          subtitle="Maintenance • Repair • Operations"
+          realityNote="AME progression depends strongly on licensing, aircraft type ratings, and years of hands-on responsibility."
+          bgGradient="bg-gradient-to-br from-emerald-50 to-teal-50"
+          borderColor="border-emerald-200"
+        />
+      </div>
+
+      {/* How to Read Reach Likelihood */}
+      <div className="bg-slate-50 rounded-xl p-4 sm:p-6 border border-slate-200">
+        <h4 className="font-bold text-slate-900 mb-4 text-base sm:text-lg">How to Read "Reach Likelihood" (Show Once for All)</h4>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+          <div className="flex items-center gap-2">
+            <span className="px-2 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700">Common</span>
+            <span className="text-xs text-slate-600">Most professionals reach this level</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="px-2 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-700">Likely</span>
+            <span className="text-xs text-slate-600">Achievable with steady skills and experience</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="px-2 py-1 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-700">Selective</span>
+            <span className="text-xs text-slate-600">Only well-performing engineers reach here</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="px-2 py-1 rounded-full text-xs font-semibold bg-orange-100 text-orange-700">Rare</span>
+            <span className="text-xs text-slate-600">Requires deep specialization and long experience</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="px-2 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-700">Very Rare</span>
+            <span className="text-xs text-slate-600">Limited leadership positions</span>
           </div>
         </div>
-      </div>
-
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-        {careerData.map(career => <div key={career.role} className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col gap-2">
-            <div className="mb-3">
-              <h3 className="text-lg sm:text-xl font-bold text-slate-900 leading-tight">{career.role}</h3>
-              <p className="text-xs sm:text-sm text-gray-600 leading-tight">{career.duties}</p>
-            </div>
-            
-            {/* Detailed Career Levels Table */}
-            <div className="overflow-x-auto mb-3">
-              <table className="w-full text-xs sm:text-sm border-collapse">
-                <thead>
-                  <tr className="bg-gray-50 border-b border-gray-200">
-                    <th className="text-left p-2 font-semibold text-gray-700">Level</th>
-                    <th className="text-left p-2 font-semibold text-gray-700">Salary (LPA)</th>
-                    <th className="text-left p-2 font-semibold text-gray-700">Time</th>
-                    <th className="text-left p-2 font-semibold text-gray-700">% Reach</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {career.levels.map((lvl, idx) => <tr key={idx} className="border-b border-gray-100 hover:bg-gray-50">
-                      <td className="p-2">
-                        <div className="font-semibold text-gray-800">{lvl.level}</div>
-                        <div className="text-xs text-gray-600">{lvl.title}</div>
-                      </td>
-                      <td className="p-2 font-bold text-green-700">₹{lvl.salary}</td>
-                      <td className="p-2 text-gray-600">{lvl.time}</td>
-                      <td className="p-2">
-                        <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-semibold ${lvl.reach === '100%' ? 'bg-green-100 text-green-800' : lvl.reach === '65%' ? 'bg-blue-100 text-blue-800' : lvl.reach === '30%' ? 'bg-yellow-100 text-yellow-800' : 'bg-orange-100 text-orange-800'}`}>
-                          {lvl.reach}
-                        </span>
-                      </td>
-                    </tr>)}
-                </tbody>
-              </table>
-            </div>
-
-            {/* Quick Summary Chart */}
-            
-          </div>)}
-      </div>
-
-      {/* Salary Disclaimer */}
-      <div className="bg-slate-50 rounded-xl p-4 sm:p-5 border border-slate-200">
-        <p className="text-xs sm:text-sm text-slate-600 text-center leading-relaxed">
-          <span className="font-medium text-slate-700">Note:</span> Salary and growth depend on skills, company type, location, and career choices. Not everyone reaches senior or leadership levels.
+        <p className="text-xs sm:text-sm text-slate-600 mt-4 text-center">
+          Career growth depends on skills, performance, opportunity, and discipline — not everyone reaches the top levels.
         </p>
+      </div>
+
+      {/* Why Many People Don't Reach the Next Level */}
+      <div className="bg-white rounded-2xl p-4 sm:p-6 border border-slate-200 shadow-sm">
+        <div className="text-center mb-6">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-2">
+            Why Many People Don't Reach the Next Level
+          </h3>
+          <p className="text-sm sm:text-base text-slate-600">
+            This explains why the number of people reduces at every stage, even when salary and titles look attractive.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          {/* Entry → Mid Level */}
+          <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4 sm:p-5 border border-green-200">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-lg">🟢</span>
+              <h4 className="font-bold text-green-800 text-base sm:text-lg">Entry → Mid Level</h4>
+            </div>
+            <p className="text-xs sm:text-sm font-semibold text-green-700 mb-2">Why some don't move ahead</p>
+            <ul className="space-y-1.5 text-xs sm:text-sm text-green-800 mb-3">
+              <li className="flex items-start gap-2">
+                <span className="text-green-600 mt-0.5">•</span>
+                <span>Rely only on the degree, not skills</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-600 mt-0.5">•</span>
+                <span>Weak basics (math, physics, electronics)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-600 mt-0.5">•</span>
+                <span>No internships or practical work</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-600 mt-0.5">•</span>
+                <span>Expect growth just by waiting</span>
+              </li>
+            </ul>
+            <div className="bg-green-100 rounded-lg p-2.5 border border-green-300">
+              <p className="text-xs sm:text-sm text-green-900 font-medium">
+                <span className="font-bold">Simple truth:</span> A degree helps you start. Skills decide if you move ahead.
+              </p>
+            </div>
+          </div>
+
+          {/* Mid → Senior Level */}
+          <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-xl p-4 sm:p-5 border border-yellow-200">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-lg">🟡</span>
+              <h4 className="font-bold text-yellow-800 text-base sm:text-lg">Mid → Senior Level</h4>
+            </div>
+            <p className="text-xs sm:text-sm font-semibold text-yellow-700 mb-2">Why many stop here</p>
+            <ul className="space-y-1.5 text-xs sm:text-sm text-yellow-800 mb-3">
+              <li className="flex items-start gap-2">
+                <span className="text-yellow-600 mt-0.5">•</span>
+                <span>Stay comfortable with routine tasks</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-yellow-600 mt-0.5">•</span>
+                <span>Avoid bigger responsibility</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-yellow-600 mt-0.5">•</span>
+                <span>Don't learn new tools or methods</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-yellow-600 mt-0.5">•</span>
+                <span>Struggle with pressure and deadlines</span>
+              </li>
+            </ul>
+            <div className="bg-yellow-100 rounded-lg p-2.5 border border-yellow-300">
+              <p className="text-xs sm:text-sm text-yellow-900 font-medium">
+                <span className="font-bold">Simple truth:</span> Senior roles need thinking and ownership, not just work done.
+              </p>
+            </div>
+          </div>
+
+          {/* Senior → Expert / Principal */}
+          <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl p-4 sm:p-5 border border-orange-200">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-lg">🟠</span>
+              <h4 className="font-bold text-orange-800 text-base sm:text-lg">Senior → Expert / Principal</h4>
+            </div>
+            <p className="text-xs sm:text-sm font-semibold text-orange-700 mb-2">Why very few reach this level</p>
+            <ul className="space-y-1.5 text-xs sm:text-sm text-orange-800 mb-3">
+              <li className="flex items-start gap-2">
+                <span className="text-orange-600 mt-0.5">•</span>
+                <span>Needs deep knowledge in one area</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-orange-600 mt-0.5">•</span>
+                <span>Takes many years of focus and patience</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-orange-600 mt-0.5">•</span>
+                <span>Trust must be earned over time</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-orange-600 mt-0.5">•</span>
+                <span>Very limited expert positions</span>
+              </li>
+            </ul>
+            <div className="bg-orange-100 rounded-lg p-2.5 border border-orange-300">
+              <p className="text-xs sm:text-sm text-orange-900 font-medium">
+                <span className="font-bold">Simple truth:</span> Real expertise takes time and commitment.
+              </p>
+            </div>
+          </div>
+
+          {/* Expert → Leadership */}
+          <div className="bg-gradient-to-br from-red-50 to-rose-50 rounded-xl p-4 sm:p-5 border border-red-200">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-lg">🔴</span>
+              <h4 className="font-bold text-red-800 text-base sm:text-lg">Expert → Leadership</h4>
+            </div>
+            <p className="text-xs sm:text-sm font-semibold text-red-700 mb-2">Why this is rare</p>
+            <ul className="space-y-1.5 text-xs sm:text-sm text-red-800 mb-3">
+              <li className="flex items-start gap-2">
+                <span className="text-red-600 mt-0.5">•</span>
+                <span>Very few leadership positions exist</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-red-600 mt-0.5">•</span>
+                <span>Needs people skills plus technical strength</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-red-600 mt-0.5">•</span>
+                <span>High pressure and responsibility</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-red-600 mt-0.5">•</span>
+                <span>Not everyone wants to manage people</span>
+              </li>
+            </ul>
+            <div className="bg-red-100 rounded-lg p-2.5 border border-red-300">
+              <p className="text-xs sm:text-sm text-red-900 font-medium">
+                <span className="font-bold">Simple truth:</span> Leadership means responsibility first, salary second.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Final Summary */}
+        <div className="mt-6 bg-gradient-to-r from-slate-100 to-slate-50 rounded-xl p-4 border border-slate-200 text-center">
+          <p className="text-sm sm:text-base text-slate-700 font-medium">
+            Higher levels exist, but fewer people reach them —<br className="hidden sm:block" />
+            <span className="font-bold">because effort, skill depth, and responsibility increase at every step.</span>
+          </p>
+        </div>
       </div>
 
       {/* Truth Curve Sections */}
