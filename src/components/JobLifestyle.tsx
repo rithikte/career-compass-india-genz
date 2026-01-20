@@ -118,7 +118,7 @@ const JobLifestyle = () => {
     title: 'Aerospace Engineer',
     icon: Plane,
     color: 'blue',
-    score: '7/10 (Stable)',
+    score: 'Stable',
     factors: [{
       event: 'Recession',
       impact: 'Hiring slows but design & R&D projects continue.\nDefence spending usually remains stable.'
@@ -143,7 +143,7 @@ const JobLifestyle = () => {
     title: 'Avionics Engineer',
     icon: Radio,
     color: 'orange',
-    score: '8/10 (Very Stable)',
+    score: 'Very Stable',
     factors: [{
       event: 'Recession',
       impact: 'Electronics + embedded systems keep hiring even when aviation slows.'
@@ -168,7 +168,7 @@ const JobLifestyle = () => {
     title: 'Aircraft Maintenance Engineer (AME)',
     icon: Wrench,
     color: 'green',
-    score: '9/10 (Extremely Stable)',
+    score: 'Extremely Stable',
     factors: [{
       event: 'Recession',
       impact: 'Airlines cut costs but still need AMEs for safety.'
@@ -487,7 +487,7 @@ const JobLifestyle = () => {
               <Card key={idx} className={`overflow-hidden bg-white dark:bg-slate-900 ${borderColor}`}>
                 <div className="p-4 sm:p-5 pb-3 sm:pb-4 border-b border-amber-100 dark:border-amber-900/50">
                   <h3 className="text-base sm:text-lg font-bold text-foreground">{role.title}</h3>
-                  <p className={`text-sm sm:text-base font-bold ${scoreColor} mt-1`}>Score: {role.score}</p>
+                  <p className={`text-sm sm:text-base font-bold ${scoreColor} mt-1`}>{role.score}</p>
                 </div>
                 <CardContent className="p-4 sm:p-5">
                   <div className="space-y-3">
