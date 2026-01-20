@@ -201,6 +201,150 @@ const JobRealityExpectation = () => {
         })}
       </div>
 
+      {/* Early Career Reality Section */}
+      <div className="space-y-4 sm:space-y-6">
+        <div className="text-center space-y-2 sm:space-y-3">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">
+            Early Career Reality: How Most Students Actually Start
+          </h2>
+        </div>
+
+        {/* Timeline Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          {/* Year 0-1 */}
+          <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-xl p-4 sm:p-5 border-2 border-yellow-200 shadow-md">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-lg sm:text-xl">🟡</span>
+              <h3 className="text-sm sm:text-base lg:text-lg font-bold text-yellow-800">
+                Year 0–1
+              </h3>
+            </div>
+            <p className="text-[0.6875rem] sm:text-xs text-yellow-700 font-medium mb-3">
+              Immediately After Graduation
+            </p>
+            <ul className="space-y-1.5 sm:space-y-2 mb-3">
+              <li className="flex items-start gap-2">
+                <span className="text-yellow-500 mt-0.5 flex-shrink-0">•</span>
+                <span className="text-xs sm:text-sm text-gray-700">Internships, traineeships, vendor or support roles</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-yellow-500 mt-0.5 flex-shrink-0">•</span>
+                <span className="text-xs sm:text-sm text-gray-700">Skill building + certifications</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-yellow-500 mt-0.5 flex-shrink-0">•</span>
+                <span className="text-xs sm:text-sm text-gray-700">Many students don't start in core roles</span>
+              </li>
+            </ul>
+            <div className="bg-yellow-100/80 rounded-lg p-2.5 sm:p-3 border border-yellow-200">
+              <p className="text-[0.6875rem] sm:text-xs text-yellow-800">
+                <span className="font-semibold">Reality:</span> Learning phase, not earning peak phase
+              </p>
+            </div>
+          </div>
+
+          {/* Year 1-2 */}
+          <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl p-4 sm:p-5 border-2 border-orange-200 shadow-md">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-lg sm:text-xl">🟠</span>
+              <h3 className="text-sm sm:text-base lg:text-lg font-bold text-orange-800">
+                Year 1–2
+              </h3>
+            </div>
+            <p className="text-[0.6875rem] sm:text-xs text-orange-700 font-medium mb-3">
+              Early Industry Exposure
+            </p>
+            <ul className="space-y-1.5 sm:space-y-2 mb-3">
+              <li className="flex items-start gap-2">
+                <span className="text-orange-500 mt-0.5 flex-shrink-0">•</span>
+                <span className="text-xs sm:text-sm text-gray-700">Junior engineer, technician, tester, assistant roles</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-orange-500 mt-0.5 flex-shrink-0">•</span>
+                <span className="text-xs sm:text-sm text-gray-700">First real responsibility</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-orange-500 mt-0.5 flex-shrink-0">•</span>
+                <span className="text-xs sm:text-sm text-gray-700">Skill gaps become clear</span>
+              </li>
+            </ul>
+            <div className="bg-orange-100/80 rounded-lg p-2.5 sm:p-3 border border-orange-200">
+              <p className="text-[0.6875rem] sm:text-xs text-orange-800">
+                <span className="font-semibold">Reality:</span> Skills start mattering more than college name
+              </p>
+            </div>
+          </div>
+
+          {/* Year 2-3 */}
+          <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-xl p-4 sm:p-5 border-2 border-emerald-200 shadow-md">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-lg sm:text-xl">🟢</span>
+              <h3 className="text-sm sm:text-base lg:text-lg font-bold text-emerald-800">
+                Year 2–3
+              </h3>
+            </div>
+            <p className="text-[0.6875rem] sm:text-xs text-emerald-700 font-medium mb-3">
+              Stabilisation Phase
+            </p>
+            <ul className="space-y-1.5 sm:space-y-2 mb-3">
+              <li className="flex items-start gap-2">
+                <span className="text-emerald-500 mt-0.5 flex-shrink-0">•</span>
+                <span className="text-xs sm:text-sm text-gray-700">Better role clarity</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-emerald-500 mt-0.5 flex-shrink-0">•</span>
+                <span className="text-xs sm:text-sm text-gray-700">Core or semi-core roles start opening</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-emerald-500 mt-0.5 flex-shrink-0">•</span>
+                <span className="text-xs sm:text-sm text-gray-700">Salary and responsibility improve</span>
+              </li>
+            </ul>
+            <div className="bg-emerald-100/80 rounded-lg p-2.5 sm:p-3 border border-emerald-200">
+              <p className="text-[0.6875rem] sm:text-xs text-emerald-800">
+                <span className="font-semibold">Reality:</span> Career direction becomes clear after effort + experience
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Role-wise Clarity */}
+        <div className="bg-slate-50 rounded-xl p-4 sm:p-5 border border-slate-200">
+          <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-800 mb-3 sm:mb-4">
+            Role-wise clarity
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+            <div className="bg-white rounded-lg p-3 sm:p-4 border border-emerald-100">
+              <div className="flex items-center gap-2 mb-2">
+                <Rocket className="w-4 h-4 text-emerald-600" />
+                <span className="text-xs sm:text-sm font-semibold text-emerald-700">Aerospace Engineer</span>
+              </div>
+              <p className="text-[0.6875rem] sm:text-xs text-gray-600 leading-relaxed">
+                Core roles usually appear after 2–3 years, not immediately
+              </p>
+            </div>
+            <div className="bg-white rounded-lg p-3 sm:p-4 border border-blue-100">
+              <div className="flex items-center gap-2 mb-2">
+                <Cpu className="w-4 h-4 text-blue-600" />
+                <span className="text-xs sm:text-sm font-semibold text-blue-700">Avionics Engineer</span>
+              </div>
+              <p className="text-[0.6875rem] sm:text-xs text-gray-600 leading-relaxed">
+                Testing & integration roles come first, design later
+              </p>
+            </div>
+            <div className="bg-white rounded-lg p-3 sm:p-4 border border-amber-100">
+              <div className="flex items-center gap-2 mb-2">
+                <Wrench className="w-4 h-4 text-amber-600" />
+                <span className="text-xs sm:text-sm font-semibold text-amber-700">AME</span>
+              </div>
+              <p className="text-[0.6875rem] sm:text-xs text-gray-600 leading-relaxed">
+                License + hands-on hours decide progress speed
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Key Takeaway */}
       <div className="bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 rounded-2xl p-4 sm:p-6 lg:p-8 border border-indigo-100">
         <div className="text-center space-y-2 sm:space-y-3">
