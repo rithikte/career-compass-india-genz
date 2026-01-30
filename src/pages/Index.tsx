@@ -25,6 +25,7 @@ import GroundReality from '../components/GroundReality';
 import CollegeDetails from '../components/CollegeDetails';
 import AboutUs from '../components/AboutUs';
 import CoreVsIT from '../components/CoreVsIT';
+import { BTechCivil } from '../components/BTechCivil';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -53,6 +54,7 @@ const Index = () => {
     { id: 'ground-reality', title: 'Ground Reality for Parents', component: GroundReality },
     { id: 'college-details', title: 'B.Tech – Degree Landing Page', component: CollegeDetails },
     { id: 'about-us', title: 'About Us', component: AboutUs },
+    { id: 'btech-civil', title: 'B.Tech Civil Eng', component: BTechCivil },
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
