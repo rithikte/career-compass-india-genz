@@ -26,6 +26,7 @@ import CollegeDetails from '../components/CollegeDetails';
 import AboutUs from '../components/AboutUs';
 import CoreVsIT from '../components/CoreVsIT';
 import { BTechCivil } from '../components/BTechCivil';
+import CivilEngineering from '../components/CivilEngineering';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -55,6 +56,7 @@ const Index = () => {
     { id: 'college-details', title: 'B.Tech – Degree Landing Page', component: CollegeDetails },
     { id: 'about-us', title: 'About Us', component: AboutUs },
     { id: 'btech-civil', title: 'B.Tech Civil Eng', component: BTechCivil },
+    { id: 'civil-engineering', title: 'Civil Engineering', component: CivilEngineering },
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
