@@ -28,6 +28,7 @@ import CoreVsIT from '../components/CoreVsIT';
 import { BTechCivil } from '../components/BTechCivil';
 import CivilEngineering from '../components/CivilEngineering';
 import CivilEngineering2 from '../components/CivilEngineering2';
+import ECECareers from '../components/ECECareers';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -59,6 +60,7 @@ const Index = () => {
     { id: 'btech-civil', title: 'B.Tech Civil Eng', component: BTechCivil },
     { id: 'civil-engineering', title: 'Civil Engineering', component: CivilEngineering },
     { id: 'civil-engineering-2', title: 'Civil Eng 2.1', component: CivilEngineering2 },
+    { id: 'ece-careers', title: 'ECE Careers', component: ECECareers },
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
