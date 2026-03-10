@@ -28,6 +28,7 @@ import CoreVsIT from '../components/CoreVsIT';
 import { BTechCivil } from '../components/BTechCivil';
 import CivilEngineering from '../components/CivilEngineering';
 import CivilEngineering2 from '../components/CivilEngineering2';
+import ECECareers from '../components/ECECareers';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
