@@ -60,6 +60,7 @@ const Index = () => {
     { id: 'btech-civil', title: 'B.Tech Civil Eng', component: BTechCivil },
     { id: 'civil-engineering', title: 'Civil Engineering', component: CivilEngineering },
     { id: 'civil-engineering-2', title: 'Civil Eng 2.1', component: CivilEngineering2 },
+    { id: 'ece-careers', title: 'ECE Careers', component: ECECareers },
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
