@@ -3,64 +3,12 @@ import React, { useState } from 'react';
 import Seo from "@/components/Seo";
 import { Header } from '../components/Header';
 import { HomePage } from '../components/HomePage';
-import { BTechMechanical } from '../components/BTechMechanical';
-import { CareerOutcomes } from '../components/CareerOutcomes';
-import { CareerInsights } from '../components/CareerInsights';
-import { HiringCompanies } from '../components/HiringCompanies';
-import { GrowthRate } from '../components/GrowthRate';
-import { JobDemand } from '../components/JobDemand';
-import { BestStates } from '../components/BestStates';
-import { AIImpact } from '../components/AIImpact';
-import { JobSecurity } from '../components/JobSecurity';
-import { CertificationStack } from '../components/CertificationStack';
-import JobRealityExpectation from '../components/JobRealityExpectation';
-import CareerRealityCheck from '../components/CareerRealityCheck';
-import JobLifestyle from '../components/JobLifestyle';
-import { GovtSupport } from '../components/GovtSupport';
-import { India2040 } from '../components/India2040';
-import { WhereToLearn } from '../components/WhereToLearn';
-import { InterviewSituation } from '../components/InterviewSituation';
-import IndustryAdvice from '../components/IndustryAdvice';
-import GroundReality from '../components/GroundReality';
-import CollegeDetails from '../components/CollegeDetails';
-import AboutUs from '../components/AboutUs';
-import CoreVsIT from '../components/CoreVsIT';
-import { BTechCivil } from '../components/BTechCivil';
-import CivilEngineering from '../components/CivilEngineering';
-import CivilEngineering2 from '../components/CivilEngineering2';
-import ECECareers from '../components/ECECareers';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
 
   const sections = [
     { id: 'home', title: 'Home', component: HomePage },
-    { id: 'btech-mechanical', title: 'Degree B.Tech Mechanical', component: BTechMechanical },
-    { id: 'job-reality', title: 'Job Reality vs Expectation', component: JobRealityExpectation },
-    { id: 'career-reality-check', title: 'Career Reality Check', component: CareerRealityCheck },
-    { id: 'job-lifestyle', title: 'Job Lifestyle & Stability', component: JobLifestyle },
-    { id: 'career-outcomes', title: 'Career Outcomes', component: CareerOutcomes },
-    { id: 'career-insights', title: 'Career Insights', component: CareerInsights },
-    { id: 'hiring-companies', title: 'Hiring Companies', component: HiringCompanies },
-    { id: 'growth-rate', title: 'Growth Rate', component: GrowthRate },
-    { id: 'job-demand', title: 'Job Demand', component: JobDemand },
-    { id: 'best-states', title: 'Best States', component: BestStates },
-    { id: 'ai-impact', title: 'AI Impact', component: AIImpact },
-    { id: 'job-security', title: 'Job Security', component: JobSecurity },
-    { id: 'certification-stack', title: 'Certification Stack', component: CertificationStack },
-    { id: 'govt-support', title: 'Govt Support', component: GovtSupport },
-    { id: 'india-2040', title: 'India 2040', component: India2040 },
-    { id: 'interview-situation', title: 'Interview Situation', component: InterviewSituation },
-    { id: 'core-vs-it', title: 'Why NOT Choose IT Blindly', component: CoreVsIT },
-    { id: 'industry-advice', title: '20 Years Industry Advice', component: IndustryAdvice },
-    { id: 'where-to-learn', title: 'Where to Learn', component: WhereToLearn },
-    { id: 'ground-reality', title: 'Ground Reality for Parents', component: GroundReality },
-    { id: 'college-details', title: 'B.Tech – Degree Landing Page', component: CollegeDetails },
-    { id: 'about-us', title: 'About Us', component: AboutUs },
-    { id: 'btech-civil', title: 'B.Tech Civil Eng', component: BTechCivil },
-    { id: 'civil-engineering', title: 'Civil Engineering', component: CivilEngineering },
-    { id: 'civil-engineering-2', title: 'Civil Eng 2.1', component: CivilEngineering2 },
-    { id: 'ece-careers', title: 'ECE Careers', component: ECECareers },
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
