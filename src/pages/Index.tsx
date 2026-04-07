@@ -3,12 +3,14 @@ import React, { useState } from 'react';
 import Seo from "@/components/Seo";
 import { Header } from '../components/Header';
 import { HomePage } from '../components/HomePage';
+import ECEEmbeddedSystems from '../components/ECEEmbeddedSystems';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
 
   const sections = [
     { id: 'home', title: 'Home', component: HomePage },
+    { id: 'ece-embedded', title: 'ECE – Embedded Systems', component: ECEEmbeddedSystems },
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
