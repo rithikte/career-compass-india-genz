@@ -73,6 +73,28 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				swiss: {
+					sage: {
+						DEFAULT: 'hsl(var(--swiss-sage))',
+						foreground: 'hsl(var(--swiss-sage-fg))'
+					},
+					sky: {
+						DEFAULT: 'hsl(var(--swiss-sky))',
+						foreground: 'hsl(var(--swiss-sky-fg))'
+					},
+					sand: {
+						DEFAULT: 'hsl(var(--swiss-sand))',
+						foreground: 'hsl(var(--swiss-sand-fg))'
+					},
+					rose: {
+						DEFAULT: 'hsl(var(--swiss-rose))',
+						foreground: 'hsl(var(--swiss-rose-fg))'
+					},
+					lavender: {
+						DEFAULT: 'hsl(var(--swiss-lavender))',
+						foreground: 'hsl(var(--swiss-lavender-fg))'
+					}
 				}
 			},
 			borderRadius: {

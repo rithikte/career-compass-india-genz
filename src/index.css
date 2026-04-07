@@ -55,6 +55,18 @@
     --text-body: 215 20% 35%;
     --text-muted: 215 15% 50%;
 
+    /* Swiss Accent Palette — 5 Soft Category Colors */
+    --swiss-sage: 152 30% 92%;
+    --swiss-sage-fg: 152 30% 38%;
+    --swiss-sky: 205 35% 92%;
+    --swiss-sky-fg: 205 35% 38%;
+    --swiss-sand: 35 30% 92%;
+    --swiss-sand-fg: 35 30% 40%;
+    --swiss-rose: 350 30% 93%;
+    --swiss-rose-fg: 350 30% 42%;
+    --swiss-lavender: 265 28% 93%;
+    --swiss-lavender-fg: 265 28% 42%;
+
     /* Consolidated Gradients - 3 standard variations */
     --gradient-primary: linear-gradient(135deg, hsl(238 90% 60%), hsl(275 85% 65%));
     --gradient-success: linear-gradient(135deg, hsl(142 76% 42%), hsl(142 76% 50%));
@@ -127,6 +139,18 @@
     --text-headline: 210 30% 95%;
     --text-body: 210 25% 75%;
     --text-muted: 215 15% 60%;
+
+    /* Swiss Accent Palette — Dark Mode */
+    --swiss-sage: 152 25% 16%;
+    --swiss-sage-fg: 152 30% 72%;
+    --swiss-sky: 205 30% 16%;
+    --swiss-sky-fg: 205 35% 72%;
+    --swiss-sand: 35 25% 16%;
+    --swiss-sand-fg: 35 30% 72%;
+    --swiss-rose: 350 25% 16%;
+    --swiss-rose-fg: 350 30% 72%;
+    --swiss-lavender: 265 22% 16%;
+    --swiss-lavender-fg: 265 28% 72%;
 
     /* Dark Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(238 85% 65%), hsl(275 80% 70%));
