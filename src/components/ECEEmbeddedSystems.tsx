@@ -613,6 +613,130 @@ const ECEEmbeddedSystems = () => {
         </div>
       </section>
 
+      {/* Related Roles Section */}
+      <section>
+        <div className="flex items-center gap-2.5 mb-6">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-swiss-lavender to-swiss-lavender/60 flex items-center justify-center">
+            <Briefcase className="w-4 h-4 text-swiss-lavender-foreground" />
+          </div>
+          <div>
+            <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight">Related Roles</h2>
+            <p className="text-[0.6875rem] sm:text-xs text-muted-foreground">Roles sharing the same subject foundation and work layer</p>
+          </div>
+        </div>
+
+        <div className="grid gap-4 sm:gap-5">
+          {[
+            {
+              role: 'Firmware Engineer',
+              altTitles: ['Embedded Firmware Engineer', 'MCU Firmware Engineer'],
+              match: 93,
+              subjects: ['Microprocessors and Microcontrollers', 'Embedded Systems', 'Digital Electronics', 'Electronic Circuits', 'Electronic Measurements and Instrumentation'],
+              sameLevel: 'Same controller-level embedded board layer where firmware directly drives hardware behavior.',
+              sameWork: 'Same working output logic of board bring-up, peripheral response, and validated embedded feature execution.',
+              accent: 'swiss-sky',
+              accentBg: 'bg-gradient-to-br from-swiss-sky to-swiss-sky/60',
+              accentBorder: 'border-swiss-sky-foreground/12',
+              accentText: 'text-swiss-sky-foreground',
+              accentRing: 'ring-swiss-sky-foreground/20',
+            },
+            {
+              role: 'Embedded Validation Engineer',
+              altTitles: ['Embedded Test Engineer', 'Firmware Validation Engineer'],
+              match: 89,
+              subjects: ['Embedded Systems', 'Microprocessors and Microcontrollers', 'Digital Electronics', 'Electronic Measurements and Instrumentation'],
+              sameLevel: 'Same embedded product layer where firmware behavior must be tested against actual board-level response.',
+              sameWork: 'Same validation outcome of proving whether the embedded board/system works correctly under test conditions.',
+              accent: 'swiss-sage',
+              accentBg: 'bg-gradient-to-br from-swiss-sage to-swiss-sage/60',
+              accentBorder: 'border-swiss-sage-foreground/12',
+              accentText: 'text-swiss-sage-foreground',
+              accentRing: 'ring-swiss-sage-foreground/20',
+            },
+            {
+              role: 'Board Bring-Up Engineer',
+              altTitles: ['Hardware Bring-Up Engineer', 'Embedded Hardware Debug Engineer'],
+              match: 85,
+              subjects: ['Microprocessors and Microcontrollers', 'Embedded Systems', 'Electronic Circuits', 'Electronic Measurements and Instrumentation'],
+              sameLevel: 'Same prototype-board and controller-interface layer where first-time hardware activation and debug happen.',
+              sameWork: 'Same output family of boot-ready boards, interface verification, and fault-isolated bring-up evidence.',
+              accent: 'swiss-sand',
+              accentBg: 'bg-gradient-to-br from-swiss-sand to-swiss-sand/60',
+              accentBorder: 'border-swiss-sand-foreground/12',
+              accentText: 'text-swiss-sand-foreground',
+              accentRing: 'ring-swiss-sand-foreground/20',
+            },
+            {
+              role: 'IoT Systems Engineer',
+              altTitles: ['IoT Embedded Engineer', 'Connected Device Engineer'],
+              match: 78,
+              subjects: ['Embedded Systems', 'Microprocessors and Microcontrollers', 'Digital Electronics'],
+              sameLevel: 'Same embedded device layer, but extended toward connected product behavior and smart-device integration.',
+              sameWork: 'Same system-output logic of firmware-controlled hardware functioning correctly on embedded device platforms.',
+              accent: 'swiss-rose',
+              accentBg: 'bg-gradient-to-br from-swiss-rose to-swiss-rose/60',
+              accentBorder: 'border-swiss-rose-foreground/12',
+              accentText: 'text-swiss-rose-foreground',
+              accentRing: 'ring-swiss-rose-foreground/20',
+            },
+          ].map((item, i) => (
+            <details key={i} className={`group rounded-xl border ${item.accentBorder} ${item.accentBg} shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-300`}>
+              <summary className="cursor-pointer p-4 sm:p-5 flex items-center justify-between gap-3 list-none [&::-webkit-details-marker]:hidden">
+                <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white/70 border border-white/80 backdrop-blur-sm flex items-center justify-center shadow-sm">
+                    <span className={`text-sm sm:text-base font-bold ${item.accentText}`}>{item.match}%</span>
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="text-sm sm:text-base font-semibold text-foreground tracking-tight">{item.role}</h3>
+                    <p className="text-[0.625rem] sm:text-xs text-muted-foreground mt-0.5 truncate">
+                      {item.altTitles.join(' · ')}
+                    </p>
+                  </div>
+                </div>
+                <ChevronRight className="w-4 h-4 text-muted-foreground transition-transform duration-200 group-open:rotate-90 flex-shrink-0" />
+              </summary>
+
+              <div className="px-4 sm:px-5 pb-4 sm:pb-5 space-y-3 sm:space-y-4">
+                {/* Match Bar */}
+                <div>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className={`text-[0.5625rem] sm:text-[0.625rem] font-semibold tracking-[0.15em] uppercase ${item.accentText}`}>Match Score</span>
+                    <span className="text-xs font-bold text-foreground">{item.match}%</span>
+                  </div>
+                  <div className="w-full h-2 rounded-full bg-white/60 overflow-hidden">
+                    <div className={`h-full rounded-full bg-gradient-to-r from-primary to-accent transition-all duration-500`} style={{ width: `${item.match}%` }} />
+                  </div>
+                </div>
+
+                {/* Sharing Subjects */}
+                <div className="p-3 sm:p-3.5 bg-white/50 border border-white/70 rounded-lg backdrop-blur-sm">
+                  <p className={`text-[0.5625rem] sm:text-[0.625rem] font-semibold tracking-[0.15em] uppercase ${item.accentText} mb-2`}>Sharing Subjects</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {item.subjects.map((s, j) => (
+                      <span key={j} className={`inline-flex items-center px-2 py-1 rounded-md text-[0.625rem] sm:text-xs font-medium bg-white/70 border border-white/80 text-foreground`}>
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Same Level & Same Work */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="p-3 sm:p-3.5 bg-white/50 border border-white/70 rounded-lg backdrop-blur-sm">
+                    <p className={`text-[0.5625rem] sm:text-[0.625rem] font-semibold tracking-[0.15em] uppercase ${item.accentText} mb-1.5`}>Same Level</p>
+                    <p className="text-[0.6875rem] sm:text-xs text-muted-foreground leading-relaxed">{item.sameLevel}</p>
+                  </div>
+                  <div className="p-3 sm:p-3.5 bg-white/50 border border-white/70 rounded-lg backdrop-blur-sm">
+                    <p className={`text-[0.5625rem] sm:text-[0.625rem] font-semibold tracking-[0.15em] uppercase ${item.accentText} mb-1.5`}>Same Work</p>
+                    <p className="text-[0.6875rem] sm:text-xs text-muted-foreground leading-relaxed">{item.sameWork}</p>
+                  </div>
+                </div>
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
       {/* Disclaimer */}
       <section className="bg-gradient-to-r from-swiss-sand/60 to-swiss-sand/30 border border-swiss-sand-foreground/10 rounded-xl p-4 sm:p-5">
         <div className="flex items-start gap-2.5">
