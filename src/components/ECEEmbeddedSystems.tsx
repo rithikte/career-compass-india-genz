@@ -689,6 +689,7 @@ const ECEEmbeddedSystems = () => {
               accentBorder: 'border-swiss-sky-foreground/12',
               accentText: 'text-swiss-sky-foreground',
               dotColor: 'bg-swiss-sky-foreground/60',
+              whyMatterMost: 'This is the hardest filter because if you cannot control registers, interrupts, memory, and peripherals, board bring-up breaks immediately.',
             },
             {
               name: 'Embedded Systems',
@@ -705,6 +706,7 @@ const ECEEmbeddedSystems = () => {
               accentBorder: 'border-swiss-sage-foreground/12',
               accentText: 'text-swiss-sage-foreground',
               dotColor: 'bg-swiss-sage-foreground/60',
+              whyMatterMost: 'This decides whether you understand real hardware-software integration or only know isolated code concepts.',
             },
             {
               name: 'Digital Electronics',
@@ -721,6 +723,7 @@ const ECEEmbeddedSystems = () => {
               accentBorder: 'border-swiss-lavender-foreground/12',
               accentText: 'text-swiss-lavender-foreground',
               dotColor: 'bg-swiss-lavender-foreground/60',
+              whyMatterMost: 'This helps you read logic behavior, interface states, and timing flow during embedded debugging.',
             },
             {
               name: 'Electronic Circuits',
@@ -737,6 +740,7 @@ const ECEEmbeddedSystems = () => {
               accentBorder: 'border-swiss-rose-foreground/12',
               accentText: 'text-swiss-rose-foreground',
               dotColor: 'bg-swiss-rose-foreground/60',
+              whyMatterMost: 'This helps you find board-side faults in power, analog stages, and signal-conditioning paths during bring-up.',
             },
             {
               name: 'Electronic Measurements and Instrumentation',
@@ -753,6 +757,7 @@ const ECEEmbeddedSystems = () => {
               accentBorder: 'border-swiss-sand-foreground/12',
               accentText: 'text-swiss-sand-foreground',
               dotColor: 'bg-swiss-sand-foreground/60',
+              whyMatterMost: 'This helps you prove failures using real measurement evidence instead of guessing.',
             },
           ].map((subject, i) => (
             <details key={i} className={`group ${subject.accentBg} ${subject.accentBorder} border rounded-xl overflow-hidden transition-all duration-300 hover:shadow-md`}>
@@ -817,6 +822,18 @@ const ECEEmbeddedSystems = () => {
                     </p>
                     <p className="text-[0.6875rem] sm:text-xs text-slate-600">
                       {subject.recognitionAnchor}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Why Matter Most */}
+                <div className="p-3 sm:p-3.5 bg-gradient-to-r from-swiss-rose/40 to-swiss-rose/20 border border-swiss-rose-foreground/15 rounded-lg">
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-[0.5625rem] sm:text-[0.625rem] font-bold tracking-[0.15em] uppercase text-swiss-rose-foreground whitespace-nowrap mt-0.5">
+                      Why Matter Most
+                    </span>
+                    <p className="text-[0.6875rem] sm:text-xs text-slate-700 leading-relaxed font-medium">
+                      {subject.whyMatterMost}
                     </p>
                   </div>
                 </div>
