@@ -56,16 +56,21 @@
     --text-muted: 215 15% 50%;
 
     /* Swiss Accent Palette — 5 Soft Category Colors */
-    --swiss-sage: 152 30% 92%;
-    --swiss-sage-fg: 152 30% 38%;
-    --swiss-sky: 205 35% 92%;
-    --swiss-sky-fg: 205 35% 38%;
-    --swiss-sand: 35 30% 92%;
-    --swiss-sand-fg: 35 30% 40%;
-    --swiss-rose: 350 30% 93%;
-    --swiss-rose-fg: 350 30% 42%;
-    --swiss-lavender: 265 28% 93%;
-    --swiss-lavender-fg: 265 28% 42%;
+    --swiss-sage: 152 24% 94%;
+    --swiss-sage-fg: 152 32% 35%;
+    --swiss-sage-mid: 152 22% 85%;
+    --swiss-sky: 210 32% 94%;
+    --swiss-sky-fg: 210 38% 35%;
+    --swiss-sky-mid: 210 28% 85%;
+    --swiss-sand: 38 28% 93%;
+    --swiss-sand-fg: 38 32% 38%;
+    --swiss-sand-mid: 38 24% 84%;
+    --swiss-rose: 348 28% 94%;
+    --swiss-rose-fg: 348 32% 40%;
+    --swiss-rose-mid: 348 24% 86%;
+    --swiss-lavender: 262 26% 94%;
+    --swiss-lavender-fg: 262 30% 40%;
+    --swiss-lavender-mid: 262 22% 86%;
 
     /* Consolidated Gradients - 3 standard variations */
     --gradient-primary: linear-gradient(135deg, hsl(238 90% 60%), hsl(275 85% 65%));
@@ -141,16 +146,21 @@
     --text-muted: 215 15% 60%;
 
     /* Swiss Accent Palette — Dark Mode */
-    --swiss-sage: 152 25% 16%;
-    --swiss-sage-fg: 152 30% 72%;
-    --swiss-sky: 205 30% 16%;
-    --swiss-sky-fg: 205 35% 72%;
-    --swiss-sand: 35 25% 16%;
-    --swiss-sand-fg: 35 30% 72%;
-    --swiss-rose: 350 25% 16%;
-    --swiss-rose-fg: 350 30% 72%;
-    --swiss-lavender: 265 22% 16%;
-    --swiss-lavender-fg: 265 28% 72%;
+    --swiss-sage: 152 20% 14%;
+    --swiss-sage-fg: 152 28% 72%;
+    --swiss-sage-mid: 152 18% 22%;
+    --swiss-sky: 210 25% 14%;
+    --swiss-sky-fg: 210 32% 72%;
+    --swiss-sky-mid: 210 22% 22%;
+    --swiss-sand: 38 20% 14%;
+    --swiss-sand-fg: 38 28% 72%;
+    --swiss-sand-mid: 38 18% 22%;
+    --swiss-rose: 348 20% 14%;
+    --swiss-rose-fg: 348 28% 72%;
+    --swiss-rose-mid: 348 18% 22%;
+    --swiss-lavender: 262 18% 14%;
+    --swiss-lavender-fg: 262 26% 72%;
+    --swiss-lavender-mid: 262 16% 22%;
 
     /* Dark Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(238 85% 65%), hsl(275 80% 70%));
