@@ -613,6 +613,143 @@ const ECEEmbeddedSystems = () => {
         </div>
       </section>
 
+      {/* Skills & Certifications Section */}
+      <section>
+        <div className="flex items-center gap-2.5 mb-6">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-swiss-sky to-swiss-sky/60 flex items-center justify-center">
+            <Award className="w-4 h-4 text-swiss-sky-foreground" />
+          </div>
+          <div>
+            <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight">Skills & Certifications</h2>
+            <p className="text-[0.6875rem] sm:text-xs text-muted-foreground">Industry-aligned skills and certifications mapped to this role</p>
+          </div>
+        </div>
+
+        <div className="grid gap-4 sm:gap-5">
+          {/* Skills */}
+          {[
+            {
+              type: 'skill',
+              name: 'Embedded C firmware development and peripheral interfacing using microcontroller IDE/debug workflow',
+              whyFits: 'This is the core execution skill for writing, building, flashing, and validating controller-side firmware that makes the embedded board actually function.',
+              interviewTasks: 'Write or explain GPIO/UART/SPI/I2C/interrupt logic, debug register-level behavior, and explain how firmware controls peripherals on a real MCU board.',
+              bestTiming: 'Start in 2nd/3rd year after Digital Electronics; become interview-ready by 3rd year summer through board-based practice.',
+              accent: 'swiss-sage',
+              accentBg: 'bg-gradient-to-br from-swiss-sage to-swiss-sage/60',
+              accentBorder: 'border-swiss-sage-foreground/12',
+              accentText: 'text-swiss-sage-foreground',
+            },
+            {
+              type: 'skill',
+              name: 'Board bring-up and hardware-firmware debugging using oscilloscope/logic-analyzer style validation',
+              whyFits: 'Embedded freshers fail early not because they cannot code syntax, but because they cannot prove whether the problem is in power, signal, interface timing, or firmware behavior.',
+              interviewTasks: 'Explain boot failure isolation, voltage/signal checking, interface-debug steps, and how to confirm whether the board or firmware is causing the fault.',
+              bestTiming: 'Start in 3rd year once analog circuits and measurements are covered; strengthen through mini-projects and final-year hardware debugging.',
+              accent: 'swiss-sand',
+              accentBg: 'bg-gradient-to-br from-swiss-sand to-swiss-sand/60',
+              accentBorder: 'border-swiss-sand-foreground/12',
+              accentText: 'text-swiss-sand-foreground',
+            },
+          ].map((skill, i) => (
+            <details key={`skill-${i}`} className={`group rounded-xl border ${skill.accentBorder} ${skill.accentBg} shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-300`}>
+              <summary className="cursor-pointer p-4 sm:p-5 flex items-center justify-between gap-3 list-none [&::-webkit-details-marker]:hidden">
+                <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white/70 border border-white/80 backdrop-blur-sm flex items-center justify-center shadow-sm">
+                    <Target className={`w-4 h-4 sm:w-5 sm:h-5 ${skill.accentText}`} />
+                  </div>
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2 mb-0.5">
+                      <span className={`text-[0.5625rem] sm:text-[0.625rem] font-semibold tracking-[0.15em] uppercase ${skill.accentText}`}>Skill {i + 1}</span>
+                    </div>
+                    <h3 className="text-sm sm:text-base font-semibold text-foreground tracking-tight leading-snug">{skill.name}</h3>
+                  </div>
+                </div>
+                <ChevronRight className="w-4 h-4 text-muted-foreground transition-transform duration-200 group-open:rotate-90 flex-shrink-0" />
+              </summary>
+
+              <div className="px-4 sm:px-5 pb-4 sm:pb-5 space-y-3 sm:space-y-4">
+                <div className="p-3 sm:p-3.5 bg-white/50 border border-white/70 rounded-lg backdrop-blur-sm">
+                  <p className={`text-[0.5625rem] sm:text-[0.625rem] font-semibold tracking-[0.15em] uppercase ${skill.accentText} mb-1.5`}>Why It Fits</p>
+                  <p className="text-[0.6875rem] sm:text-xs text-muted-foreground leading-relaxed">{skill.whyFits}</p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="p-3 sm:p-3.5 bg-white/50 border border-white/70 rounded-lg backdrop-blur-sm">
+                    <p className={`text-[0.5625rem] sm:text-[0.625rem] font-semibold tracking-[0.15em] uppercase ${skill.accentText} mb-1.5`}>Interview Tasks</p>
+                    <p className="text-[0.6875rem] sm:text-xs text-muted-foreground leading-relaxed">{skill.interviewTasks}</p>
+                  </div>
+                  <div className="p-3 sm:p-3.5 bg-white/50 border border-white/70 rounded-lg backdrop-blur-sm">
+                    <p className={`text-[0.5625rem] sm:text-[0.625rem] font-semibold tracking-[0.15em] uppercase ${skill.accentText} mb-1.5`}>Best Timing</p>
+                    <p className="text-[0.6875rem] sm:text-xs text-muted-foreground leading-relaxed">{skill.bestTiming}</p>
+                  </div>
+                </div>
+              </div>
+            </details>
+          ))}
+
+          {/* Certifications */}
+          {[
+            {
+              name: 'Embedded Systems Essentials with Arm Professional Certificate',
+              whyFits: 'It directly strengthens firmware development, microcontroller architecture understanding, and real embedded design/programming workflow for Arm-based systems.',
+              supports: 'Skill 1',
+              bestTiming: 'Best after basic C and microcontroller fundamentals, ideally during 3rd year or summer break.',
+              accent: 'swiss-sky',
+              accentBg: 'bg-gradient-to-br from-swiss-sky to-swiss-sky/60',
+              accentBorder: 'border-swiss-sky-foreground/12',
+              accentText: 'text-swiss-sky-foreground',
+            },
+            {
+              name: 'NPTEL — Embedded System Design with ARM',
+              whyFits: 'It is India-relevant, directly tied to embedded system design concepts, ARM-based microcontroller work, and hardware-software interaction that supports both firmware execution and embedded debugging.',
+              supports: 'Skill 2',
+              bestTiming: 'Best in 3rd year or during a structured gap-recovery cycle after basic embedded/system fundamentals are already in place.',
+              accent: 'swiss-lavender',
+              accentBg: 'bg-gradient-to-br from-swiss-lavender to-swiss-lavender/60',
+              accentBorder: 'border-swiss-lavender-foreground/12',
+              accentText: 'text-swiss-lavender-foreground',
+            },
+          ].map((cert, i) => (
+            <details key={`cert-${i}`} className={`group rounded-xl border ${cert.accentBorder} ${cert.accentBg} shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-300`}>
+              <summary className="cursor-pointer p-4 sm:p-5 flex items-center justify-between gap-3 list-none [&::-webkit-details-marker]:hidden">
+                <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white/70 border border-white/80 backdrop-blur-sm flex items-center justify-center shadow-sm">
+                    <Award className={`w-4 h-4 sm:w-5 sm:h-5 ${cert.accentText}`} />
+                  </div>
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2 mb-0.5">
+                      <span className={`text-[0.5625rem] sm:text-[0.625rem] font-semibold tracking-[0.15em] uppercase ${cert.accentText}`}>Certification</span>
+                    </div>
+                    <h3 className="text-sm sm:text-base font-semibold text-foreground tracking-tight leading-snug">{cert.name}</h3>
+                  </div>
+                </div>
+                <ChevronRight className="w-4 h-4 text-muted-foreground transition-transform duration-200 group-open:rotate-90 flex-shrink-0" />
+              </summary>
+
+              <div className="px-4 sm:px-5 pb-4 sm:pb-5 space-y-3 sm:space-y-4">
+                <div className="p-3 sm:p-3.5 bg-white/50 border border-white/70 rounded-lg backdrop-blur-sm">
+                  <p className={`text-[0.5625rem] sm:text-[0.625rem] font-semibold tracking-[0.15em] uppercase ${cert.accentText} mb-1.5`}>Why It Fits</p>
+                  <p className="text-[0.6875rem] sm:text-xs text-muted-foreground leading-relaxed">{cert.whyFits}</p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="p-3 sm:p-3.5 bg-white/50 border border-white/70 rounded-lg backdrop-blur-sm">
+                    <p className={`text-[0.5625rem] sm:text-[0.625rem] font-semibold tracking-[0.15em] uppercase ${cert.accentText} mb-1.5`}>Supports</p>
+                    <span className="inline-flex items-center px-2 py-1 rounded-md text-[0.625rem] sm:text-xs font-medium bg-white/70 border border-white/80 text-foreground">
+                      {cert.supports}
+                    </span>
+                  </div>
+                  <div className="p-3 sm:p-3.5 bg-white/50 border border-white/70 rounded-lg backdrop-blur-sm">
+                    <p className={`text-[0.5625rem] sm:text-[0.625rem] font-semibold tracking-[0.15em] uppercase ${cert.accentText} mb-1.5`}>Best Timing</p>
+                    <p className="text-[0.6875rem] sm:text-xs text-muted-foreground leading-relaxed">{cert.bestTiming}</p>
+                  </div>
+                </div>
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
       {/* Related Roles Section */}
       <section>
         <div className="flex items-center gap-2.5 mb-6">
