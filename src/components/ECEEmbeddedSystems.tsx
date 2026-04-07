@@ -108,6 +108,147 @@ const ECEEmbeddedSystems = () => {
         </div>
       </section>
 
+      {/* Role Overview */}
+      <section className="bg-gradient-to-br from-swiss-sky/30 via-white to-swiss-lavender/20 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
+        <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-400 mb-2 sm:mb-3">
+          Role Overview
+        </h2>
+        <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light mb-6 sm:mb-8">
+          You build and debug controller-based electronic boards where firmware must correctly talk to real hardware, peripherals, and signals.
+        </p>
+
+        {/* What You Actually Do Daily */}
+        <div className="mb-6 sm:mb-8">
+          <h3 className="text-xs sm:text-sm font-semibold tracking-[0.12em] uppercase text-swiss-sky-foreground mb-4">
+            What You Actually Do Daily
+          </h3>
+          <div className="space-y-3">
+            {[
+              'Bring up firmware on microcontroller-based boards and make basic features run correctly.',
+              'Debug peripheral interfaces and check whether hardware response matches firmware logic.',
+              'Create test/debug evidence that proves the board behavior is valid or shows exactly where it fails.',
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-3 p-3 sm:p-3.5 bg-white/60 border border-swiss-sky-foreground/8 rounded-lg backdrop-blur-sm">
+                <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-md bg-swiss-sky/60 border border-swiss-sky-foreground/10 flex items-center justify-center mt-0.5">
+                  <span className="text-[0.6rem] sm:text-[0.625rem] font-bold text-swiss-sky-foreground">{String(i + 1).padStart(2, '0')}</span>
+                </div>
+                <p className="text-sm sm:text-base text-slate-700 leading-relaxed">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* How To Enter This Role */}
+        <div className="mb-6 sm:mb-8 bg-gradient-to-br from-swiss-sage/30 to-swiss-sage/10 border border-swiss-sage-foreground/10 rounded-xl p-4 sm:p-6">
+          <h3 className="text-xs sm:text-sm font-semibold tracking-[0.12em] uppercase text-swiss-sage-foreground mb-1.5">
+            How To Enter This Role
+          </h3>
+          <p className="text-[0.6875rem] sm:text-xs text-slate-500 font-medium mb-4">
+            Entry Job Title: Embedded Engineer / Firmware Engineer / Junior Embedded Systems Engineer
+          </p>
+
+          <div className="space-y-4">
+            <div>
+              <p className="text-[0.625rem] sm:text-[0.6875rem] font-semibold tracking-[0.15em] uppercase text-slate-400 mb-2.5">How to get in</p>
+              <div className="space-y-2">
+                {[
+                  'Build 1 strong board-based project where firmware controls real peripherals, not just simulator output.',
+                  'Become solid in Microcontrollers + Embedded Systems + Digital Electronics, because these are screening subjects, not just academic subjects.',
+                  'Practice firmware debugging and hardware validation on a real MCU board before interviews.',
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2.5 px-3 py-2 bg-white/50 border border-white/70 rounded-lg">
+                    <div className="w-1.5 h-1.5 rounded-full bg-swiss-sage-foreground/50 mt-1.5 flex-shrink-0" />
+                    <p className="text-[0.8125rem] sm:text-sm text-slate-600 leading-relaxed">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <p className="text-[0.625rem] sm:text-[0.6875rem] font-semibold tracking-[0.15em] uppercase text-slate-400 mb-2.5">What companies check</p>
+              <div className="space-y-2">
+                {[
+                  'Whether you can explain GPIO, UART, SPI, I2C, interrupts, timers, and register-level control clearly.',
+                  'Whether you can debug whether a failure is coming from firmware logic, interface mismatch, or board-side signal/power issue.',
+                  'Whether you have real proof of embedded work, because resume-only embedded claims get rejected fast.',
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2.5 px-3 py-2 bg-white/50 border border-white/70 rounded-lg">
+                    <div className="w-1.5 h-1.5 rounded-full bg-swiss-sage-foreground/50 mt-1.5 flex-shrink-0" />
+                    <p className="text-[0.8125rem] sm:text-sm text-slate-600 leading-relaxed">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Major Project Direction */}
+        <div className="mb-6 sm:mb-8 bg-gradient-to-br from-swiss-lavender/30 to-swiss-lavender/10 border border-swiss-lavender-foreground/10 rounded-xl p-4 sm:p-6">
+          <div className="flex items-center gap-2.5 mb-3">
+            <div className="p-1.5 bg-white/70 rounded-md border border-swiss-lavender-foreground/10 shadow-sm">
+              <Target className="w-3.5 h-3.5 text-swiss-lavender-foreground" />
+            </div>
+            <h3 className="text-xs sm:text-sm font-semibold tracking-[0.12em] uppercase text-swiss-lavender-foreground">
+              Major Project Direction
+            </h3>
+          </div>
+          <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-medium mb-2">
+            Build a microcontroller-based smart control board that reads sensors, drives outputs, communicates through UART/I2C/SPI, and includes full debug/test evidence.
+          </p>
+          <p className="text-[0.8125rem] sm:text-sm text-slate-500 leading-relaxed font-light">
+            Why it helps: It proves you can write firmware, interface peripherals, debug hardware behavior, and validate output on a real board instead of only talking theory.
+          </p>
+        </div>
+
+        {/* What Makes Students Fail */}
+        <div className="mb-6 sm:mb-8 bg-gradient-to-br from-swiss-rose/30 to-swiss-rose/10 border border-swiss-rose-foreground/10 rounded-xl p-4 sm:p-6">
+          <div className="flex items-center gap-2.5 mb-3">
+            <div className="p-1.5 bg-white/70 rounded-md border border-swiss-rose-foreground/10 shadow-sm">
+              <AlertTriangle className="w-3.5 h-3.5 text-swiss-rose-foreground" />
+            </div>
+            <h3 className="text-xs sm:text-sm font-semibold tracking-[0.12em] uppercase text-swiss-rose-foreground">
+              What Makes Students Fail
+            </h3>
+          </div>
+          <div className="space-y-2">
+            {[
+              'They know Embedded C syntax but fail Microcontrollers, so they cannot handle interrupts, registers, timers, or peripheral interfacing when interviewers push deeper.',
+              'They know code but fail Embedded Systems understanding, so hardware-software integration breaks during board bring-up and feature validation.',
+              'They ignore Measurements/Circuits, so when the board does not behave correctly, they cannot prove whether the fault is from power, signal path, interface timing, or firmware.',
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-2.5 px-3 py-2.5 bg-white/50 border border-swiss-rose-foreground/6 rounded-lg">
+                <div className="w-1.5 h-1.5 rounded-full bg-swiss-rose-foreground/50 mt-1.5 flex-shrink-0" />
+                <p className="text-[0.8125rem] sm:text-sm text-slate-600 leading-relaxed">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* If You Have a 2-Year Gap */}
+        <div className="bg-gradient-to-br from-swiss-sand/30 to-swiss-sand/10 border border-swiss-sand-foreground/10 rounded-xl p-4 sm:p-6">
+          <div className="flex items-center gap-2.5 mb-3">
+            <div className="p-1.5 bg-white/70 rounded-md border border-swiss-sand-foreground/10 shadow-sm">
+              <BookOpen className="w-3.5 h-3.5 text-swiss-sand-foreground" />
+            </div>
+            <h3 className="text-xs sm:text-sm font-semibold tracking-[0.12em] uppercase text-swiss-sand-foreground">
+              If You Have a 2-Year Gap
+            </h3>
+          </div>
+          <div className="space-y-2">
+            {[
+              'Rebuild first: Microcontrollers, Embedded Systems, and one real board-based project with firmware + peripheral interfacing + debug logs.',
+              'Interviewers still expect: clear answers on interrupts, communication protocols, register-level behavior, board bring-up logic, and real failure isolation.',
+              'Proof that can reduce distrust: one working embedded project, firmware code, test/debug evidence, and certifications that match embedded role screening.',
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-2.5 px-3 py-2.5 bg-white/50 border border-swiss-sand-foreground/6 rounded-lg">
+                <div className="w-1.5 h-1.5 rounded-full bg-swiss-sand-foreground/50 mt-1.5 flex-shrink-0" />
+                <p className="text-[0.8125rem] sm:text-sm text-slate-600 leading-relaxed">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Job Titles + Alternate Titles - Two Column */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
         {/* Job Titles */}
