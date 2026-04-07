@@ -241,6 +241,285 @@ const ECEEmbeddedSystems = () => {
         </div>
       </section>
 
+      {/* Embedded Hiring Industries */}
+      <section className="bg-gradient-to-br from-white via-swiss-sand/20 to-swiss-sage/20 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
+        <div className="flex items-center gap-2.5 mb-6 sm:mb-8">
+          <div className="p-1.5 bg-gradient-to-br from-swiss-sand to-swiss-sand/70 rounded-md border border-swiss-sand-foreground/10 shadow-sm">
+            <Factory className="w-3.5 h-3.5 text-swiss-sand-foreground" />
+          </div>
+          <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
+            Embedded Hiring Industries
+          </h2>
+        </div>
+
+        <div className="space-y-5 sm:space-y-6">
+
+          {/* Cluster 1: Consumer Electronics – IoT */}
+          {(() => {
+            const cluster = {
+              industry: 'Consumer Electronics',
+              subindustry: 'IoT and Connected Devices',
+              cluster: 'Smart Device Firmware and Edge-Controller Products',
+              accentBg: 'from-swiss-sky/40 via-swiss-sky/15 to-white',
+              accentBorder: 'border-swiss-sky-foreground/12',
+              accentText: 'text-swiss-sky-foreground',
+              dotColor: 'bg-swiss-sky-foreground/60',
+              switchDifficulty: 'LOW',
+              switchColor: 'bg-swiss-sage/70 text-swiss-sage-foreground',
+              sections: {
+                roleMatch: 'The role stays pure embedded systems work: controller firmware, peripheral integration, board bring-up, and device-level debug remain the core job.',
+                jobDemand: 'This cluster has repeated India-side embedded demand because the ESDM sector is expanding and consumer/connected-device work keeps using embedded software, device controllers, and product electronics.',
+                entryAccess: 'Entry remains fresher-safe because the same microcontroller, interfacing, and embedded-debug proof still works here without forcing a new subject base outside SLP.',
+                roleValue: 'The role keeps strong technical identity here because product functionality depends directly on firmware-controlled hardware behavior, not generic plant support.',
+                dailyWork: 'Build, flash, test, and debug controller-driven firmware for connected devices, then validate sensors, interfaces, and board behavior on working prototypes.',
+              },
+              whyFits: {
+                subjects: 'S1, S2, S3, S5',
+                skills: 'Skill 1 and Skill 2',
+                output: 'Working embedded board behavior, peripheral response, and validated feature execution remain the same output family.',
+              },
+              certifications: [
+                { name: 'NPTEL — Introduction to Internet of Things', why: 'It strengthens connected-device architecture, sensors, and embedded IoT application thinking without replacing the locked embedded core.', supports: 'Skill 1' },
+                { name: 'STMicroelectronics STM32 Online Training', why: 'It sharpens MCU-board implementation and debug depth that is directly usable in connected embedded-device work.', supports: 'Skill 1 and Skill 2' },
+              ],
+            };
+            return (
+              <details className="group">
+                <summary className={`flex items-center justify-between cursor-pointer p-4 sm:p-5 bg-gradient-to-br ${cluster.accentBg} ${cluster.accentBorder} border rounded-xl hover:shadow-md transition-all duration-300`}>
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="p-2 bg-white/70 rounded-lg border border-slate-200/40 shadow-sm">
+                      <Radio className="w-4 h-4 text-swiss-sky-foreground" />
+                    </div>
+                    <div>
+                      <p className="text-[0.625rem] sm:text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-slate-400 mb-0.5">{cluster.industry} · {cluster.subindustry}</p>
+                      <p className="text-sm sm:text-base font-semibold text-slate-800">{cluster.cluster}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className={`text-[0.625rem] sm:text-xs font-bold tracking-wider px-2.5 py-1 rounded-md ${cluster.switchColor}`}>SWITCH: {cluster.switchDifficulty}</span>
+                    <ChevronRight className="w-4 h-4 text-slate-400 transition-transform duration-300 group-open:rotate-90" />
+                  </div>
+                </summary>
+                <div className="mt-3 space-y-3 px-1 sm:px-2">
+                  {/* Analysis Cards */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {[
+                      { label: 'Role Match', text: cluster.sections.roleMatch },
+                      { label: 'Job Demand', text: cluster.sections.jobDemand },
+                      { label: 'Entry Access', text: cluster.sections.entryAccess },
+                      { label: 'Role Value', text: cluster.sections.roleValue },
+                    ].map((item, i) => (
+                      <div key={i} className="p-3.5 sm:p-4 bg-white/50 border border-slate-200/60 rounded-lg backdrop-blur-sm">
+                        <p className="text-[0.625rem] sm:text-[0.6875rem] font-semibold tracking-[0.15em] uppercase text-swiss-sky-foreground mb-1.5">{item.label}</p>
+                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">{item.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                  {/* Daily Work */}
+                  <div className="p-3.5 sm:p-4 bg-gradient-to-r from-swiss-sky/30 to-white border border-swiss-sky-foreground/8 rounded-lg">
+                    <p className="text-[0.625rem] sm:text-[0.6875rem] font-semibold tracking-[0.15em] uppercase text-slate-400 mb-1.5">Daily Work</p>
+                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">{cluster.sections.dailyWork}</p>
+                  </div>
+                  {/* Why This Cluster Fits */}
+                  <div className="p-3.5 sm:p-4 bg-white/40 border border-slate-200/60 rounded-lg backdrop-blur-sm">
+                    <p className="text-[0.625rem] sm:text-[0.6875rem] font-semibold tracking-[0.15em] uppercase text-slate-400 mb-2">Why This Cluster Fits</p>
+                    <div className="space-y-1.5">
+                      <div className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-swiss-sky-foreground/50 mt-1.5 flex-shrink-0" /><p className="text-xs sm:text-sm text-slate-600"><span className="font-medium text-slate-700">Subjects:</span> {cluster.whyFits.subjects}</p></div>
+                      <div className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-swiss-sky-foreground/50 mt-1.5 flex-shrink-0" /><p className="text-xs sm:text-sm text-slate-600"><span className="font-medium text-slate-700">Skills:</span> {cluster.whyFits.skills}</p></div>
+                      <div className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-swiss-sky-foreground/50 mt-1.5 flex-shrink-0" /><p className="text-xs sm:text-sm text-slate-600"><span className="font-medium text-slate-700">Output:</span> {cluster.whyFits.output}</p></div>
+                    </div>
+                  </div>
+                  {/* Industry Certifications */}
+                  <div className="p-3.5 sm:p-4 bg-gradient-to-r from-swiss-lavender/30 to-white border border-swiss-lavender-foreground/8 rounded-lg">
+                    <p className="text-[0.625rem] sm:text-[0.6875rem] font-semibold tracking-[0.15em] uppercase text-slate-400 mb-3">Industry Certifications</p>
+                    <div className="space-y-2.5">
+                      {cluster.certifications.map((cert, ci) => (
+                        <div key={ci} className="p-3 bg-white/60 border border-white/80 rounded-lg backdrop-blur-sm">
+                          <p className="text-xs sm:text-sm font-semibold text-slate-700 mb-1">{cert.name}</p>
+                          <p className="text-xs text-slate-500 leading-relaxed mb-1.5">{cert.why}</p>
+                          <span className="text-[0.625rem] font-medium tracking-wider uppercase text-swiss-lavender-foreground">Supports: {cert.supports}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </details>
+            );
+          })()}
+
+          {/* Cluster 2: Industrial Electronics */}
+          {(() => {
+            const cluster = {
+              industry: 'Industrial Electronics',
+              subindustry: 'Industrial Automation and Machine Control',
+              cluster: 'Embedded Control Boards for Automation Equipment',
+              switchDifficulty: 'LOW',
+              switchColor: 'bg-swiss-sage/70 text-swiss-sage-foreground',
+              sections: {
+                roleMatch: 'The role remains embedded systems work because the core job is still controller-side firmware, hardware interfacing, and board-level validation inside control equipment.',
+                jobDemand: "This cluster is strong because India's industrial automation market is growing and automation environments repeatedly use controller boards, industrial interfacing, and embedded control logic.",
+                entryAccess: 'Entry is realistic for freshers when they already have MCU firmware, digital logic, and board-debug proof; it does not force a full domain conversion outside the locked skill base.',
+                roleValue: 'The role has strong long-term value because industrial control electronics usually require reliable real-time behavior, interface stability, and fault isolation rather than generic software-only output.',
+                dailyWork: 'Develop or debug controller boards for machines, verify I/O and communication behavior, and isolate hardware-firmware faults that affect control-system response.',
+              },
+              whyFits: {
+                subjects: 'S1, S2, S3, S4, S5',
+                skills: 'Skill 1 and Skill 2',
+                output: 'Validated controller-board operation and reliable interface behavior remain the same output family.',
+              },
+              certifications: [
+                { name: 'Schneider Electric PLC / PAC Training', why: 'It adds industrial control context around controller behavior and machine-side automation without replacing the embedded core role logic.', supports: 'Skill 2' },
+                { name: 'No Extra Certification Needed', why: 'Focus on skills and projects.', supports: '—' },
+              ],
+            };
+            return (
+              <details className="group">
+                <summary className="flex items-center justify-between cursor-pointer p-4 sm:p-5 bg-gradient-to-br from-swiss-sage/40 via-swiss-sage/15 to-white border border-swiss-sage-foreground/12 rounded-xl hover:shadow-md transition-all duration-300">
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="p-2 bg-white/70 rounded-lg border border-slate-200/40 shadow-sm">
+                      <Wrench className="w-4 h-4 text-swiss-sage-foreground" />
+                    </div>
+                    <div>
+                      <p className="text-[0.625rem] sm:text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-slate-400 mb-0.5">{cluster.industry} · {cluster.subindustry}</p>
+                      <p className="text-sm sm:text-base font-semibold text-slate-800">{cluster.cluster}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className={`text-[0.625rem] sm:text-xs font-bold tracking-wider px-2.5 py-1 rounded-md ${cluster.switchColor}`}>SWITCH: {cluster.switchDifficulty}</span>
+                    <ChevronRight className="w-4 h-4 text-slate-400 transition-transform duration-300 group-open:rotate-90" />
+                  </div>
+                </summary>
+                <div className="mt-3 space-y-3 px-1 sm:px-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {[
+                      { label: 'Role Match', text: cluster.sections.roleMatch },
+                      { label: 'Job Demand', text: cluster.sections.jobDemand },
+                      { label: 'Entry Access', text: cluster.sections.entryAccess },
+                      { label: 'Role Value', text: cluster.sections.roleValue },
+                    ].map((item, i) => (
+                      <div key={i} className="p-3.5 sm:p-4 bg-white/50 border border-slate-200/60 rounded-lg backdrop-blur-sm">
+                        <p className="text-[0.625rem] sm:text-[0.6875rem] font-semibold tracking-[0.15em] uppercase text-swiss-sage-foreground mb-1.5">{item.label}</p>
+                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">{item.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="p-3.5 sm:p-4 bg-gradient-to-r from-swiss-sage/30 to-white border border-swiss-sage-foreground/8 rounded-lg">
+                    <p className="text-[0.625rem] sm:text-[0.6875rem] font-semibold tracking-[0.15em] uppercase text-slate-400 mb-1.5">Daily Work</p>
+                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">{cluster.sections.dailyWork}</p>
+                  </div>
+                  <div className="p-3.5 sm:p-4 bg-white/40 border border-slate-200/60 rounded-lg backdrop-blur-sm">
+                    <p className="text-[0.625rem] sm:text-[0.6875rem] font-semibold tracking-[0.15em] uppercase text-slate-400 mb-2">Why This Cluster Fits</p>
+                    <div className="space-y-1.5">
+                      <div className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-swiss-sage-foreground/50 mt-1.5 flex-shrink-0" /><p className="text-xs sm:text-sm text-slate-600"><span className="font-medium text-slate-700">Subjects:</span> {cluster.whyFits.subjects}</p></div>
+                      <div className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-swiss-sage-foreground/50 mt-1.5 flex-shrink-0" /><p className="text-xs sm:text-sm text-slate-600"><span className="font-medium text-slate-700">Skills:</span> {cluster.whyFits.skills}</p></div>
+                      <div className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-swiss-sage-foreground/50 mt-1.5 flex-shrink-0" /><p className="text-xs sm:text-sm text-slate-600"><span className="font-medium text-slate-700">Output:</span> {cluster.whyFits.output}</p></div>
+                    </div>
+                  </div>
+                  <div className="p-3.5 sm:p-4 bg-gradient-to-r from-swiss-lavender/30 to-white border border-swiss-lavender-foreground/8 rounded-lg">
+                    <p className="text-[0.625rem] sm:text-[0.6875rem] font-semibold tracking-[0.15em] uppercase text-slate-400 mb-3">Industry Certifications</p>
+                    <div className="space-y-2.5">
+                      {cluster.certifications.map((cert, ci) => (
+                        <div key={ci} className="p-3 bg-white/60 border border-white/80 rounded-lg backdrop-blur-sm">
+                          <p className="text-xs sm:text-sm font-semibold text-slate-700 mb-1">{cert.name}</p>
+                          <p className="text-xs text-slate-500 leading-relaxed mb-1.5">{cert.why}</p>
+                          <span className="text-[0.625rem] font-medium tracking-wider uppercase text-swiss-lavender-foreground">Supports: {cert.supports}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </details>
+            );
+          })()}
+
+          {/* Cluster 3: Automotive Electronics */}
+          {(() => {
+            const cluster = {
+              industry: 'Automotive Electronics',
+              subindustry: 'ECU and Electronic Control Systems',
+              cluster: 'Embedded Firmware for Vehicle Control Modules',
+              switchDifficulty: 'MODERATE',
+              switchColor: 'bg-swiss-sand/70 text-swiss-sand-foreground',
+              sections: {
+                roleMatch: 'The role remains the same embedded-systems family because the work still revolves around MCU-based control, board behavior, interfacing, and embedded validation.',
+                jobDemand: "This cluster is meaningful because automotive electronics remains a growth area within India's broader electronics and component-manufacturing push, and embedded control is a stable engineering need in that stack.",
+                entryAccess: 'Entry is acceptable but slightly tighter than IoT or industrial clusters; still, the same embedded-firmware and board-debug proof remains relevant without forcing a new mandatory subject family.',
+                roleValue: 'The role value is strong because control modules are reliability-sensitive, hardware-linked, and technically deeper than generic support work.',
+                dailyWork: 'Implement and validate firmware on controller-based automotive electronic modules, check signals and interfaces, and debug failures that block reliable control behavior.',
+              },
+              whyFits: {
+                subjects: 'S1, S2, S3, S4',
+                skills: 'Skill 1 and Skill 2',
+                output: 'Working controller firmware plus validated board-level response stays the same output family.',
+              },
+              certifications: [
+                { name: 'STMicroelectronics STM32 Online Training', why: 'Automotive controller work often benefits from stronger MCU-family depth, peripheral control, and embedded debugging discipline, which this training supports directly.', supports: 'Skill 1 and Skill 2' },
+                { name: 'No Extra Certification Needed', why: 'Focus on skills and projects.', supports: '—' },
+              ],
+            };
+            return (
+              <details className="group">
+                <summary className="flex items-center justify-between cursor-pointer p-4 sm:p-5 bg-gradient-to-br from-swiss-sand/40 via-swiss-sand/15 to-white border border-swiss-sand-foreground/12 rounded-xl hover:shadow-md transition-all duration-300">
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="p-2 bg-white/70 rounded-lg border border-slate-200/40 shadow-sm">
+                      <Zap className="w-4 h-4 text-swiss-sand-foreground" />
+                    </div>
+                    <div>
+                      <p className="text-[0.625rem] sm:text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-slate-400 mb-0.5">{cluster.industry} · {cluster.subindustry}</p>
+                      <p className="text-sm sm:text-base font-semibold text-slate-800">{cluster.cluster}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className={`text-[0.625rem] sm:text-xs font-bold tracking-wider px-2.5 py-1 rounded-md ${cluster.switchColor}`}>SWITCH: {cluster.switchDifficulty}</span>
+                    <ChevronRight className="w-4 h-4 text-slate-400 transition-transform duration-300 group-open:rotate-90" />
+                  </div>
+                </summary>
+                <div className="mt-3 space-y-3 px-1 sm:px-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {[
+                      { label: 'Role Match', text: cluster.sections.roleMatch },
+                      { label: 'Job Demand', text: cluster.sections.jobDemand },
+                      { label: 'Entry Access', text: cluster.sections.entryAccess },
+                      { label: 'Role Value', text: cluster.sections.roleValue },
+                    ].map((item, i) => (
+                      <div key={i} className="p-3.5 sm:p-4 bg-white/50 border border-slate-200/60 rounded-lg backdrop-blur-sm">
+                        <p className="text-[0.625rem] sm:text-[0.6875rem] font-semibold tracking-[0.15em] uppercase text-swiss-sand-foreground mb-1.5">{item.label}</p>
+                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">{item.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="p-3.5 sm:p-4 bg-gradient-to-r from-swiss-sand/30 to-white border border-swiss-sand-foreground/8 rounded-lg">
+                    <p className="text-[0.625rem] sm:text-[0.6875rem] font-semibold tracking-[0.15em] uppercase text-slate-400 mb-1.5">Daily Work</p>
+                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">{cluster.sections.dailyWork}</p>
+                  </div>
+                  <div className="p-3.5 sm:p-4 bg-white/40 border border-slate-200/60 rounded-lg backdrop-blur-sm">
+                    <p className="text-[0.625rem] sm:text-[0.6875rem] font-semibold tracking-[0.15em] uppercase text-slate-400 mb-2">Why This Cluster Fits</p>
+                    <div className="space-y-1.5">
+                      <div className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-swiss-sand-foreground/50 mt-1.5 flex-shrink-0" /><p className="text-xs sm:text-sm text-slate-600"><span className="font-medium text-slate-700">Subjects:</span> {cluster.whyFits.subjects}</p></div>
+                      <div className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-swiss-sand-foreground/50 mt-1.5 flex-shrink-0" /><p className="text-xs sm:text-sm text-slate-600"><span className="font-medium text-slate-700">Skills:</span> {cluster.whyFits.skills}</p></div>
+                      <div className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-swiss-sand-foreground/50 mt-1.5 flex-shrink-0" /><p className="text-xs sm:text-sm text-slate-600"><span className="font-medium text-slate-700">Output:</span> {cluster.whyFits.output}</p></div>
+                    </div>
+                  </div>
+                  <div className="p-3.5 sm:p-4 bg-gradient-to-r from-swiss-lavender/30 to-white border border-swiss-lavender-foreground/8 rounded-lg">
+                    <p className="text-[0.625rem] sm:text-[0.6875rem] font-semibold tracking-[0.15em] uppercase text-slate-400 mb-3">Industry Certifications</p>
+                    <div className="space-y-2.5">
+                      {cluster.certifications.map((cert, ci) => (
+                        <div key={ci} className="p-3 bg-white/60 border border-white/80 rounded-lg backdrop-blur-sm">
+                          <p className="text-xs sm:text-sm font-semibold text-slate-700 mb-1">{cert.name}</p>
+                          <p className="text-xs text-slate-500 leading-relaxed mb-1.5">{cert.why}</p>
+                          <span className="text-[0.625rem] font-medium tracking-wider uppercase text-swiss-lavender-foreground">Supports: {cert.supports}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </details>
+            );
+          })()}
+
+        </div>
+      </section>
+
       {/* Key Subjects */}
       <section className="bg-gradient-to-br from-white via-swiss-sky/20 to-swiss-lavender/20 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
         <div className="flex items-center gap-2.5 mb-6 sm:mb-8">
