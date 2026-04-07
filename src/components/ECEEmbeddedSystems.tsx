@@ -406,6 +406,213 @@ const ECEEmbeddedSystems = () => {
         </div>
       </section>
 
+      {/* Subject Scoring */}
+      <section className="bg-gradient-to-br from-white via-swiss-lavender/20 to-swiss-sky/20 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
+        <div className="flex items-center gap-2.5 mb-6 sm:mb-8">
+          <div className="p-1.5 bg-swiss-lavender rounded-md border border-swiss-lavender-foreground/10 shadow-sm">
+            <TrendingUp className="w-3.5 h-3.5 text-swiss-lavender-foreground" />
+          </div>
+          <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
+            Subject Scoring
+          </h2>
+        </div>
+
+        <div className="space-y-4 sm:space-y-5">
+          {[
+            {
+              code: 'S1',
+              name: 'Microprocessors and Microcontrollers',
+              score: 95,
+              level: 'Dominant Subject',
+              dailyUsage: 'HIGH',
+              askedInInterviews: 'HIGH',
+              riskIfIgnored: 'HIGH',
+              breakdown: [
+                { label: 'Subject Usage in Role', value: '29/30' },
+                { label: 'Asked in Interview', value: '18/20' },
+                { label: 'Failure Risk in Interview', value: '18/20' },
+                { label: 'Role Fit', value: '15/15' },
+                { label: 'Industry Use', value: '10/10' },
+                { label: 'Understanding Level', value: '5/5' },
+              ],
+              industryChain: 'Subject → controller bring-up and peripheral interfacing → register-level programming / interrupt handling / GPIO-UART-SPI-I2C debugging → working firmware-controlled embedded board output',
+              evidenceAnchor: 'Microcontrollers is the clearest interview filter for embedded roles because freshers get rejected on register/interfacing questions, and without it board bring-up and peripheral control fail immediately.',
+              accentBg: 'bg-swiss-sky/50',
+              accentBorder: 'border-swiss-sky-foreground/12',
+              accentText: 'text-swiss-sky-foreground',
+              barColor: 'bg-swiss-sky-foreground',
+            },
+            {
+              code: 'S2',
+              name: 'Embedded Systems',
+              score: 91,
+              level: 'Dominant Subject',
+              dailyUsage: 'HIGH',
+              askedInInterviews: 'HIGH',
+              riskIfIgnored: 'HIGH',
+              breakdown: [
+                { label: 'Subject Usage in Role', value: '28/30' },
+                { label: 'Asked in Interview', value: '17/20' },
+                { label: 'Failure Risk in Interview', value: '17/20' },
+                { label: 'Role Fit', value: '15/15' },
+                { label: 'Industry Use', value: '9/10' },
+                { label: 'Understanding Level', value: '5/5' },
+              ],
+              industryChain: 'Subject → firmware-hardware integration and real-time embedded behavior validation → embedded architecture reasoning / scheduling / interface integration / board-level debugging → stable feature execution on product hardware',
+              evidenceAnchor: 'Embedded Systems is a direct role-identity subject because companies use it to test whether a fresher can connect firmware behavior to real hardware execution, not just write generic code.',
+              accentBg: 'bg-swiss-sage/50',
+              accentBorder: 'border-swiss-sage-foreground/12',
+              accentText: 'text-swiss-sage-foreground',
+              barColor: 'bg-swiss-sage-foreground',
+            },
+            {
+              code: 'S3',
+              name: 'Digital Electronics',
+              score: 81,
+              level: 'High-Leverage Subject',
+              dailyUsage: 'HIGH',
+              askedInInterviews: 'HIGH',
+              riskIfIgnored: 'HIGH',
+              breakdown: [
+                { label: 'Subject Usage in Role', value: '24/30' },
+                { label: 'Asked in Interview', value: '15/20' },
+                { label: 'Failure Risk in Interview', value: '15/20' },
+                { label: 'Role Fit', value: '12/15' },
+                { label: 'Industry Use', value: '10/10' },
+                { label: 'Understanding Level', value: '5/5' },
+              ],
+              industryChain: 'Subject → digital I/O state tracing and logic-level behavior debugging → timing/logic analysis / flip-flop-register-counter reasoning / interface-state checking → correct controller-linked board logic behavior',
+              evidenceAnchor: 'Digital Electronics, usually remembered from Sem 2/3 as gates and flip-flops, remains a major elimination subject because embedded debugging breaks when the fresher cannot read logic states, timing flow, or register-linked behavior.',
+              accentBg: 'bg-swiss-lavender/50',
+              accentBorder: 'border-swiss-lavender-foreground/12',
+              accentText: 'text-swiss-lavender-foreground',
+              barColor: 'bg-swiss-lavender-foreground',
+            },
+            {
+              code: 'S4',
+              name: 'Electronic Circuits',
+              score: 73,
+              level: 'Strong Support Subject',
+              dailyUsage: 'MEDIUM',
+              askedInInterviews: 'MEDIUM',
+              riskIfIgnored: 'HIGH',
+              breakdown: [
+                { label: 'Subject Usage in Role', value: '22/30' },
+                { label: 'Asked in Interview', value: '13/20' },
+                { label: 'Failure Risk in Interview', value: '14/20' },
+                { label: 'Role Fit', value: '11/15' },
+                { label: 'Industry Use', value: '9/10' },
+                { label: 'Understanding Level', value: '4/5' },
+              ],
+              industryChain: 'Subject → power/interface stage debugging and analog signal-path checking → multimeter/oscilloscope-based board diagnosis / op-amp-transistor stage analysis → stable hardware-side behavior during firmware-hardware bring-up',
+              evidenceAnchor: 'Analog Circuits becomes an early survival subject because even when interviews focus less on it than microcontrollers, board bring-up fails if the fresher cannot detect power-stage, transistor, or signal-conditioning faults.',
+              accentBg: 'bg-swiss-rose/50',
+              accentBorder: 'border-swiss-rose-foreground/12',
+              accentText: 'text-swiss-rose-foreground',
+              barColor: 'bg-swiss-rose-foreground',
+            },
+            {
+              code: 'S5',
+              name: 'Electronic Measurements and Instrumentation',
+              score: 68,
+              level: 'Strong Support Subject',
+              dailyUsage: 'MEDIUM',
+              askedInInterviews: 'MEDIUM',
+              riskIfIgnored: 'HIGH',
+              breakdown: [
+                { label: 'Subject Usage in Role', value: '21/30' },
+                { label: 'Asked in Interview', value: '11/20' },
+                { label: 'Failure Risk in Interview', value: '14/20' },
+                { label: 'Role Fit', value: '10/15' },
+                { label: 'Industry Use', value: '8/10' },
+                { label: 'Understanding Level', value: '4/5' },
+              ],
+              industryChain: 'Subject → signal measurement and interface validation during debugging → CRO/DSO probing / sensor-signal observation / measurement-error-aware testing → reliable debug evidence and test-log-backed hardware confirmation',
+              evidenceAnchor: 'Measurements & Instrumentation is not the first fame subject students recall, but freshers fail early when they cannot use DSO/CRO-style validation to prove whether the hardware issue is real or only assumed.',
+              accentBg: 'bg-swiss-sand/50',
+              accentBorder: 'border-swiss-sand-foreground/12',
+              accentText: 'text-swiss-sand-foreground',
+              barColor: 'bg-swiss-sand-foreground',
+            },
+          ].map((subject, i) => (
+            <details key={i} className={`group ${subject.accentBg} ${subject.accentBorder} border rounded-xl overflow-hidden transition-all duration-300 hover:shadow-md`}>
+              <summary className="flex items-center gap-3 sm:gap-4 p-4 sm:p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <div className="flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-white/80 border border-slate-200/50 flex items-center justify-center shadow-sm">
+                  <span className={`text-[0.625rem] sm:text-xs font-bold ${subject.accentText}`}>
+                    {subject.code}
+                  </span>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3">
+                    <h3 className="text-sm sm:text-base font-semibold text-slate-800 leading-snug">{subject.name}</h3>
+                    <span className={`inline-flex items-center px-2 py-0.5 rounded-md text-[0.5625rem] sm:text-[0.625rem] font-semibold tracking-wide ${subject.accentBg} ${subject.accentText} border ${subject.accentBorder} w-fit mt-1 sm:mt-0`}>
+                      {subject.level}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 mt-1.5">
+                    <div className="flex-1 max-w-[120px] sm:max-w-[160px] h-1.5 bg-slate-200/60 rounded-full overflow-hidden">
+                      <div className={`h-full ${subject.barColor} rounded-full transition-all duration-500`} style={{ width: `${subject.score}%` }} />
+                    </div>
+                    <span className={`text-[0.625rem] sm:text-xs font-bold ${subject.accentText}`}>{subject.score}/100</span>
+                  </div>
+                </div>
+                <ChevronRight className="w-4 h-4 text-slate-400 transition-transform duration-200 group-open:rotate-90 flex-shrink-0" />
+              </summary>
+
+              <div className="px-4 sm:px-5 pb-4 sm:pb-5 space-y-3 sm:space-y-4">
+                {/* Score Breakdown Grid */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-2.5">
+                  {subject.breakdown.map((item, k) => (
+                    <div key={k} className="p-2.5 sm:p-3 bg-white/50 border border-white/70 rounded-lg backdrop-blur-sm text-center">
+                      <p className={`text-[0.5rem] sm:text-[0.5625rem] font-semibold tracking-[0.12em] uppercase ${subject.accentText} mb-1`}>
+                        {item.label}
+                      </p>
+                      <p className="text-sm sm:text-base font-bold text-slate-700">{item.value}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Usage Indicators */}
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { label: 'Daily Usage', value: subject.dailyUsage },
+                    { label: 'Asked in Interviews', value: subject.askedInInterviews },
+                    { label: 'Risk if Ignored', value: subject.riskIfIgnored },
+                  ].map((tag, t) => (
+                    <div key={t} className="inline-flex items-center gap-1.5 px-2.5 py-1.5 bg-white/60 border border-white/80 rounded-lg backdrop-blur-sm">
+                      <span className="text-[0.5rem] sm:text-[0.5625rem] font-medium tracking-wider uppercase text-slate-400">{tag.label}:</span>
+                      <span className={`text-[0.5625rem] sm:text-[0.625rem] font-bold ${tag.value === 'HIGH' ? 'text-swiss-sage-foreground' : 'text-swiss-sand-foreground'}`}>
+                        {tag.value}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Industry Chain */}
+                <div className="p-3 sm:p-3.5 bg-white/50 border border-white/70 rounded-lg backdrop-blur-sm">
+                  <p className={`text-[0.5625rem] sm:text-[0.625rem] font-semibold tracking-[0.15em] uppercase ${subject.accentText} mb-1.5`}>
+                    Industry Chain
+                  </p>
+                  <p className="text-[0.6875rem] sm:text-xs text-slate-600 leading-relaxed">
+                    {subject.industryChain}
+                  </p>
+                </div>
+
+                {/* Evidence Anchor */}
+                <div className="p-3 sm:p-3.5 bg-white/50 border border-white/70 rounded-lg backdrop-blur-sm">
+                  <p className={`text-[0.5625rem] sm:text-[0.625rem] font-semibold tracking-[0.15em] uppercase ${subject.accentText} mb-1.5`}>
+                    Evidence Anchor
+                  </p>
+                  <p className="text-[0.6875rem] sm:text-xs text-slate-600 leading-relaxed italic">
+                    "{subject.evidenceAnchor}"
+                  </p>
+                </div>
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
       {/* Disclaimer */}
       <section className="bg-gradient-to-r from-swiss-sand/60 to-swiss-sand/30 border border-swiss-sand-foreground/10 rounded-xl p-4 sm:p-5">
         <div className="flex items-start gap-2.5">
