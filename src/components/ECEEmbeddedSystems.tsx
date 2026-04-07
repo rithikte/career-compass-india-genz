@@ -241,6 +241,171 @@ const ECEEmbeddedSystems = () => {
         </div>
       </section>
 
+      {/* Key Subjects */}
+      <section className="bg-gradient-to-br from-white via-swiss-sky/20 to-swiss-lavender/20 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
+        <div className="flex items-center gap-2.5 mb-6 sm:mb-8">
+          <div className="p-1.5 bg-swiss-sky rounded-md border border-swiss-sky-foreground/10 shadow-sm">
+            <BookOpen className="w-3.5 h-3.5 text-swiss-sky-foreground" />
+          </div>
+          <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
+            Key Subjects
+          </h2>
+        </div>
+
+        <div className="space-y-4 sm:space-y-5">
+          {[
+            {
+              name: 'Microprocessors and Microcontrollers',
+              altNames: ['Microprocessors & Microcontrollers', 'Microcontroller Systems', 'Microprocessor and Microcontroller Applications'],
+              whatItDoes: 'Governs controller-based computation, register-level behavior, memory mapping, and peripheral control for embedded boards.',
+              studentHint: 'This is the subject where students learn 8086/8051/ARM basics, ports, timers, interrupts, and interfacing logic.',
+              semester: 'Sem 4 / 5',
+              semesterRange: 'Sem 3 to Sem 6',
+              usedFor: 'Required for firmware bring-up on controller-based boards and peripheral-level hardware control.',
+              confusionReason: 'Very commonly named and strongly recognized across ECE transcripts in India.',
+              recognitionAnchor: 'canonical name + controller/interfacing function',
+              studentLabel: 'Microcontrollers',
+              accentBg: 'bg-swiss-sky/50',
+              accentBorder: 'border-swiss-sky-foreground/12',
+              accentText: 'text-swiss-sky-foreground',
+              dotColor: 'bg-swiss-sky-foreground/60',
+            },
+            {
+              name: 'Embedded Systems',
+              altNames: ['Embedded System Design', 'Embedded Systems Design', 'Embedded Controllers and Applications'],
+              whatItDoes: 'Governs hardware-software integration, real-time controller behavior, embedded architecture, and product-level board functionality.',
+              studentHint: 'This is the subject where students learn how software runs inside hardware products like IoT devices, control boards, and smart electronics.',
+              semester: 'Sem 6 / 7',
+              semesterRange: 'Sem 5 to Sem 8',
+              usedFor: 'Directly required for embedded feature validation and hardware-behavior-confirmed firmware execution.',
+              confusionReason: 'Highly recognizable in ECE, though naming varies slightly across universities.',
+              recognitionAnchor: 'canonical name + hardware-software integration function',
+              studentLabel: 'Embedded Systems',
+              accentBg: 'bg-swiss-sage/50',
+              accentBorder: 'border-swiss-sage-foreground/12',
+              accentText: 'text-swiss-sage-foreground',
+              dotColor: 'bg-swiss-sage-foreground/60',
+            },
+            {
+              name: 'Digital Electronics',
+              altNames: ['Digital Circuits', 'Digital Logic Design', 'Switching Theory and Logic Design'],
+              whatItDoes: 'Governs logic gates, combinational/sequential design, timing logic, and digital behavior needed to understand controller-linked hardware operation.',
+              studentHint: 'This is the subject where students learn gates, flip-flops, counters, registers, and digital logic building blocks.',
+              semester: 'Sem 2 / 3',
+              semesterRange: 'Sem 2 to Sem 4',
+              usedFor: 'Required for understanding digital I/O behavior, board logic states, and interface-level debugging during bring-up.',
+              confusionReason: 'One of the most universal and transcript-stable ECE subjects across India.',
+              recognitionAnchor: 'equivalent name + gate/flip-flop logic function',
+              studentLabel: 'Digital Electronics',
+              accentBg: 'bg-swiss-lavender/50',
+              accentBorder: 'border-swiss-lavender-foreground/12',
+              accentText: 'text-swiss-lavender-foreground',
+              dotColor: 'bg-swiss-lavender-foreground/60',
+            },
+            {
+              name: 'Electronic Circuits',
+              altNames: ['Analog Electronic Circuits', 'Analog Circuits', 'Electronic Devices and Circuits'],
+              whatItDoes: 'Governs transistor/op-amp-based circuit behavior, signal conditioning, power/interface stages, and practical board-level electrical understanding.',
+              studentHint: 'This is the subject where students learn diodes, transistors, amplifiers, op-amps, and practical circuit behavior.',
+              semester: 'Sem 3 / 4',
+              semesterRange: 'Sem 2 to Sem 5',
+              usedFor: 'Required for board debugging, power/interface verification, and identifying hardware-side causes during firmware-hardware bring-up.',
+              confusionReason: 'Very familiar to ECE students, though exact transcript naming may shift between analog-focused variants.',
+              recognitionAnchor: 'equivalent name + analog circuit behavior function',
+              studentLabel: 'Analog Circuits',
+              accentBg: 'bg-swiss-rose/50',
+              accentBorder: 'border-swiss-rose-foreground/12',
+              accentText: 'text-swiss-rose-foreground',
+              dotColor: 'bg-swiss-rose-foreground/60',
+            },
+            {
+              name: 'Electronic Measurements and Instrumentation',
+              altNames: ['Measurements and Instrumentation', 'Electronic Instrumentation', 'Industrial Instrumentation and Measurements'],
+              whatItDoes: 'Governs measurement methods, signal observation, instrument usage, and hardware validation discipline during embedded debugging.',
+              studentHint: 'This is the subject where students learn CRO/DSO, transducers, measurement errors, sensors, and instrument-based testing basics.',
+              semester: 'Sem 4 / 5',
+              semesterRange: 'Sem 3 to Sem 6',
+              usedFor: 'Required for interface validation, signal observation, and test-log generation with confirmed hardware behavior.',
+              confusionReason: 'Recognizable across Indian universities, but exact naming sometimes shifts between instrumentation-heavy and measurements-heavy versions.',
+              recognitionAnchor: 'equivalent name + testing/instrument usage function',
+              studentLabel: 'Measurements & Instrumentation',
+              accentBg: 'bg-swiss-sand/50',
+              accentBorder: 'border-swiss-sand-foreground/12',
+              accentText: 'text-swiss-sand-foreground',
+              dotColor: 'bg-swiss-sand-foreground/60',
+            },
+          ].map((subject, i) => (
+            <details key={i} className={`group ${subject.accentBg} ${subject.accentBorder} border rounded-xl overflow-hidden transition-all duration-300 hover:shadow-md`}>
+              <summary className="flex items-center gap-3 sm:gap-4 p-4 sm:p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <div className="flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-white/80 border border-slate-200/50 flex items-center justify-center shadow-sm">
+                  <span className={`text-[0.625rem] sm:text-xs font-bold ${subject.accentText}`}>
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-sm sm:text-base font-semibold text-slate-800 leading-snug">{subject.name}</h3>
+                  <p className={`text-[0.625rem] sm:text-xs font-medium ${subject.accentText} mt-0.5`}>
+                    Best label: {subject.studentLabel} · {subject.semester}
+                  </p>
+                </div>
+                <ChevronRight className={`w-4 h-4 text-slate-400 transition-transform duration-200 group-open:rotate-90 flex-shrink-0`} />
+              </summary>
+
+              <div className="px-4 sm:px-5 pb-4 sm:pb-5 space-y-3 sm:space-y-4">
+                {/* Alternate Names */}
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  {subject.altNames.map((alt, j) => (
+                    <span key={j} className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white/60 border border-white/80 rounded-md backdrop-blur-sm text-[0.625rem] sm:text-xs text-slate-600 font-medium">
+                      <div className={`w-1 h-1 rounded-full ${subject.dotColor}`} />
+                      {alt}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Info Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
+                  {[
+                    { label: 'What It Does', value: subject.whatItDoes },
+                    { label: 'Student Hint', value: subject.studentHint },
+                    { label: 'Used For', value: subject.usedFor },
+                    { label: 'Confusion Reason', value: subject.confusionReason },
+                  ].map((info, k) => (
+                    <div key={k} className="p-3 sm:p-3.5 bg-white/50 border border-white/70 rounded-lg backdrop-blur-sm">
+                      <p className={`text-[0.5625rem] sm:text-[0.625rem] font-semibold tracking-[0.15em] uppercase ${subject.accentText} mb-1`}>
+                        {info.label}
+                      </p>
+                      <p className="text-[0.6875rem] sm:text-xs text-slate-600 leading-relaxed">
+                        {info.value}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Semester + Recognition */}
+                <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3">
+                  <div className="flex-1 p-3 sm:p-3.5 bg-white/50 border border-white/70 rounded-lg backdrop-blur-sm">
+                    <p className={`text-[0.5625rem] sm:text-[0.625rem] font-semibold tracking-[0.15em] uppercase ${subject.accentText} mb-1`}>
+                      Semester
+                    </p>
+                    <p className="text-[0.6875rem] sm:text-xs text-slate-600">
+                      <span className="font-medium text-slate-700">{subject.semester}</span> · Varies: {subject.semesterRange}
+                    </p>
+                  </div>
+                  <div className="flex-1 p-3 sm:p-3.5 bg-white/50 border border-white/70 rounded-lg backdrop-blur-sm">
+                    <p className={`text-[0.5625rem] sm:text-[0.625rem] font-semibold tracking-[0.15em] uppercase ${subject.accentText} mb-1`}>
+                      Recognition Anchor
+                    </p>
+                    <p className="text-[0.6875rem] sm:text-xs text-slate-600">
+                      {subject.recognitionAnchor}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
       {/* Disclaimer */}
       <section className="bg-gradient-to-r from-swiss-sand/60 to-swiss-sand/30 border border-swiss-sand-foreground/10 rounded-xl p-4 sm:p-5">
         <div className="flex items-start gap-2.5">
