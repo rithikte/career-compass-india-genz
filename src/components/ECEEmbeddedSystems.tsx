@@ -1457,6 +1457,76 @@ const ECEEmbeddedSystems = () => {
         </div>
       </section>
 
+      {/* Why Embedded Systems Won't Disappear */}
+      <section className="bg-gradient-to-br from-swiss-blue/5 via-swiss-sand/30 to-swiss-green/5 border border-swiss-border rounded-2xl p-5 sm:p-7 md:p-8">
+        <div className="text-center mb-6 sm:mb-8">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-swiss-charcoal tracking-tight">
+            Why Embedded Systems Jobs Won't Disappear
+          </h3>
+        </div>
+
+        <div className="space-y-6 sm:space-y-8">
+          {/* Core Explanation */}
+          <div className="bg-white/60 backdrop-blur-sm border border-swiss-border/60 rounded-xl p-4 sm:p-6">
+            <p className="text-sm sm:text-base text-swiss-charcoal/85 leading-relaxed mb-4">
+              Embedded systems run real devices — cars, medical machines, mobiles, satellites, factories.
+              These things must work in the real world, not just on screen.
+            </p>
+            <p className="text-sm sm:text-base text-swiss-charcoal/80 mb-3 font-medium">
+              So companies always need people who can:
+            </p>
+            <ul className="space-y-2.5 ml-1">
+              {[
+                "Connect software with hardware",
+                "Debug real signals and devices",
+                "Fix problems in physical systems"
+              ].map((point, i) => (
+                <li key={i} className="flex items-center gap-2.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-swiss-green flex-shrink-0" />
+                  <span className="text-sm sm:text-base text-swiss-charcoal/80">{point}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-sm sm:text-base text-swiss-charcoal font-semibold mt-4">
+              This work is hard to replace and hard to automate.
+            </p>
+          </div>
+
+          {/* Why Important Today */}
+          <div className="bg-white/60 backdrop-blur-sm border border-swiss-border/60 rounded-xl p-4 sm:p-6">
+            <h4 className="text-base sm:text-lg font-bold text-swiss-charcoal mb-3">
+              Why Embedded Systems Is Important Today
+            </h4>
+            <p className="text-sm sm:text-base text-swiss-charcoal/80 mb-3">
+              Every smart product depends on embedded systems:
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
+              {[
+                { label: "EV Vehicles", icon: "⚡" },
+                { label: "IoT Devices", icon: "📡" },
+                { label: "Healthcare Machines", icon: "🏥" },
+                { label: "Telecom Systems", icon: "📶" }
+              ].map((item, i) => (
+                <div key={i} className="bg-swiss-sand/40 border border-swiss-border/40 rounded-lg p-3 text-center">
+                  <span className="text-xl sm:text-2xl block mb-1">{item.icon}</span>
+                  <span className="text-xs sm:text-sm font-medium text-swiss-charcoal/80">{item.label}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-sm sm:text-base text-swiss-charcoal font-semibold mt-4">
+              Without embedded engineers, these products cannot work.
+            </p>
+          </div>
+
+          {/* One Line */}
+          <div className="bg-gradient-to-r from-swiss-charcoal to-swiss-charcoal/90 rounded-xl p-4 sm:p-6 text-center">
+            <p className="text-sm sm:text-base md:text-lg text-white/95 font-medium italic">
+              "Apps can stop and restart. Machines cannot. That's why embedded engineers are always needed."
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Bottom-line Truth */}
       <section className="bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-2xl p-5 sm:p-7 md:p-8 shadow-lg">
         <div className="text-center mb-5 sm:mb-6">
