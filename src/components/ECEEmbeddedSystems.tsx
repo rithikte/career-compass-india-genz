@@ -1527,7 +1527,7 @@ const ECEEmbeddedSystems = () => {
       </section>
 
       {/* Bottom-line Truth */}
-      <section className="bg-gradient-to-r from-slate-800 via-slate-900 to-slate-800 rounded-2xl p-5 sm:p-7 md:p-8 shadow-lg">
+      <section className="bg-gradient-to-r from-slate-600 via-slate-700 to-slate-600 rounded-2xl p-5 sm:p-7 md:p-8 shadow-lg">
         <div className="text-center mb-5 sm:mb-6">
           <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white tracking-tight">
             Bottom-line Truth
