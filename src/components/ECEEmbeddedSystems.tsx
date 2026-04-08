@@ -1224,6 +1224,7 @@ const ECEEmbeddedSystems = () => {
               subjects: ['Microprocessors and Microcontrollers', 'Embedded Systems', 'Digital Electronics', 'Electronic Circuits', 'Electronic Measurements and Instrumentation'],
               sameLevel: 'Same controller-level embedded board layer where firmware directly drives hardware behavior.',
               sameWork: 'Same working output logic of board bring-up, peripheral response, and validated embedded feature execution.',
+              whyNearestFitRole: 'Reachable because it reuses all 5 locked subjects and keeps the same controller-level board output logic.',
               accent: 'swiss-sky',
               accentBg: 'bg-gradient-to-br from-swiss-sky to-swiss-sky/60',
               accentBorder: 'border-swiss-sky-foreground/12',
@@ -1237,6 +1238,7 @@ const ECEEmbeddedSystems = () => {
               subjects: ['Embedded Systems', 'Microprocessors and Microcontrollers', 'Digital Electronics', 'Electronic Measurements and Instrumentation'],
               sameLevel: 'Same embedded product layer where firmware behavior must be tested against actual board-level response.',
               sameWork: 'Same validation outcome of proving whether the embedded board/system works correctly under test conditions.',
+              whyNearestFitRole: 'Reachable because it reuses embedded, microcontroller, digital, and measurement logic to test whether the board/system works correctly.',
               accent: 'swiss-sage',
               accentBg: 'bg-gradient-to-br from-swiss-sage to-swiss-sage/60',
               accentBorder: 'border-swiss-sage-foreground/12',
@@ -1250,6 +1252,7 @@ const ECEEmbeddedSystems = () => {
               subjects: ['Microprocessors and Microcontrollers', 'Embedded Systems', 'Electronic Circuits', 'Electronic Measurements and Instrumentation'],
               sameLevel: 'Same prototype-board and controller-interface layer where first-time hardware activation and debug happen.',
               sameWork: 'Same output family of boot-ready boards, interface verification, and fault-isolated bring-up evidence.',
+              whyNearestFitRole: 'Reachable because it reuses microcontrollers, embedded systems, circuits, and measurements for first-time board activation and fault isolation.',
               accent: 'swiss-sand',
               accentBg: 'bg-gradient-to-br from-swiss-sand to-swiss-sand/60',
               accentBorder: 'border-swiss-sand-foreground/12',
@@ -1263,6 +1266,7 @@ const ECEEmbeddedSystems = () => {
               subjects: ['Embedded Systems', 'Microprocessors and Microcontrollers', 'Digital Electronics'],
               sameLevel: 'Same embedded device layer, but extended toward connected product behavior and smart-device integration.',
               sameWork: 'Same system-output logic of firmware-controlled hardware functioning correctly on embedded device platforms.',
+              whyNearestFitRole: 'Reachable because it still uses embedded systems, microcontrollers, and digital electronics for firmware-controlled smart-device behavior.',
               accent: 'swiss-rose',
               accentBg: 'bg-gradient-to-br from-swiss-rose to-swiss-rose/60',
               accentBorder: 'border-swiss-rose-foreground/12',
@@ -1319,6 +1323,14 @@ const ECEEmbeddedSystems = () => {
                   <div className="p-3 sm:p-3.5 bg-white/50 border border-white/70 rounded-lg backdrop-blur-sm">
                     <p className={`text-[0.5625rem] sm:text-[0.625rem] font-semibold tracking-[0.15em] uppercase ${item.accentText} mb-1.5`}>Same Work</p>
                     <p className="text-[0.6875rem] sm:text-xs text-muted-foreground leading-relaxed">{item.sameWork}</p>
+                  </div>
+                </div>
+
+                {/* WHY NEAREST FIT ROLE */}
+                <div className="p-3 sm:p-3.5 bg-gradient-to-r from-swiss-rose/40 to-swiss-rose/20 border border-swiss-rose-foreground/15 rounded-lg">
+                  <div className="flex items-start gap-2.5">
+                    <p className="text-[0.5625rem] sm:text-[0.625rem] font-bold tracking-[0.15em] uppercase text-swiss-rose-foreground whitespace-nowrap mt-0.5">WHY NEAREST FIT ROLE</p>
+                    <p className="text-[0.6875rem] sm:text-xs font-medium text-swiss-rose-foreground/90 leading-relaxed">{item.whyNearestFitRole}</p>
                   </div>
                 </div>
               </div>
