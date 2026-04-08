@@ -1071,6 +1071,7 @@ const ECEEmbeddedSystems = () => {
               whyFits: 'This is the core execution skill for writing, building, flashing, and validating controller-side firmware that makes the embedded board actually function.',
               interviewTasks: 'Write or explain GPIO/UART/SPI/I2C/interrupt logic, debug register-level behavior, and explain how firmware controls peripherals on a real MCU board.',
               bestTiming: 'Start in 2nd/3rd year after Digital Electronics; become interview-ready by 3rd year summer through board-based practice.',
+              whyMatterMost: 'This is a selection filter because interviewers use it to test whether you can actually make a microcontroller board work.',
               accent: 'swiss-sage',
               accentBg: 'bg-gradient-to-br from-swiss-sage to-swiss-sage/60',
               accentBorder: 'border-swiss-sage-foreground/12',
@@ -1082,6 +1083,7 @@ const ECEEmbeddedSystems = () => {
               whyFits: 'Embedded freshers fail early not because they cannot code syntax, but because they cannot prove whether the problem is in power, signal, interface timing, or firmware behavior.',
               interviewTasks: 'Explain boot failure isolation, voltage/signal checking, interface-debug steps, and how to confirm whether the board or firmware is causing the fault.',
               bestTiming: 'Start in 3rd year once analog circuits and measurements are covered; strengthen through mini-projects and final-year hardware debugging.',
+              whyMatterMost: 'This is a selection filter because freshers get rejected when they cannot isolate whether the failure is in firmware, signal timing, interface, or hardware.',
               accent: 'swiss-sand',
               accentBg: 'bg-gradient-to-br from-swiss-sand to-swiss-sand/60',
               accentBorder: 'border-swiss-sand-foreground/12',
@@ -1120,6 +1122,12 @@ const ECEEmbeddedSystems = () => {
                     <p className="text-[0.6875rem] sm:text-xs text-muted-foreground leading-relaxed">{skill.bestTiming}</p>
                   </div>
                 </div>
+
+                {/* WHY MATTER MOST */}
+                <div className="p-3 sm:p-3.5 bg-gradient-to-r from-swiss-rose/40 to-swiss-rose/20 border border-swiss-rose-foreground/12 rounded-lg">
+                  <p className="text-[0.5625rem] sm:text-[0.625rem] font-bold tracking-[0.15em] uppercase text-swiss-rose-foreground mb-1.5">WHY MATTER MOST</p>
+                  <p className="text-[0.6875rem] sm:text-xs font-medium text-swiss-rose-foreground/90 leading-relaxed">{skill.whyMatterMost}</p>
+                </div>
               </div>
             </details>
           ))}
@@ -1131,6 +1139,7 @@ const ECEEmbeddedSystems = () => {
               whyFits: 'It directly strengthens firmware development, microcontroller architecture understanding, and real embedded design/programming workflow for Arm-based systems.',
               supports: 'Skill 1',
               bestTiming: 'Best after basic C and microcontroller fundamentals, ideally during 3rd year or summer break.',
+              whyMatterMost: 'Good because it directly strengthens firmware logic, controller understanding, and embedded design workflow.',
               accent: 'swiss-sky',
               accentBg: 'bg-gradient-to-br from-swiss-sky to-swiss-sky/60',
               accentBorder: 'border-swiss-sky-foreground/12',
@@ -1141,6 +1150,7 @@ const ECEEmbeddedSystems = () => {
               whyFits: 'It is India-relevant, directly tied to embedded system design concepts, ARM-based microcontroller work, and hardware-software interaction that supports both firmware execution and embedded debugging.',
               supports: 'Skill 2',
               bestTiming: 'Best in 3rd year or during a structured gap-recovery cycle after basic embedded/system fundamentals are already in place.',
+              whyMatterMost: 'Good because it strengthens embedded system behavior, ARM-side understanding, and hardware-software interaction.',
               accent: 'swiss-lavender',
               accentBg: 'bg-gradient-to-br from-swiss-lavender to-swiss-lavender/60',
               accentBorder: 'border-swiss-lavender-foreground/12',
@@ -1180,6 +1190,12 @@ const ECEEmbeddedSystems = () => {
                     <p className={`text-[0.5625rem] sm:text-[0.625rem] font-semibold tracking-[0.15em] uppercase ${cert.accentText} mb-1.5`}>Best Timing</p>
                     <p className="text-[0.6875rem] sm:text-xs text-muted-foreground leading-relaxed">{cert.bestTiming}</p>
                   </div>
+                </div>
+
+                {/* WHY MATTER MOST */}
+                <div className="p-3 sm:p-3.5 bg-gradient-to-r from-swiss-rose/40 to-swiss-rose/20 border border-swiss-rose-foreground/12 rounded-lg">
+                  <p className="text-[0.5625rem] sm:text-[0.625rem] font-bold tracking-[0.15em] uppercase text-swiss-rose-foreground mb-1.5">WHY MATTER MOST</p>
+                  <p className="text-[0.6875rem] sm:text-xs font-medium text-swiss-rose-foreground/90 leading-relaxed">{cert.whyMatterMost}</p>
                 </div>
               </div>
             </details>
