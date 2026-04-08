@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Cpu, Shield, TrendingUp, Briefcase, MapPin, Building2, Wrench, Tag, AlertTriangle, ChevronRight, Zap, Radio, Heart, BookOpen, Award, Target, Factory } from 'lucide-react';
+import { Cpu, Shield, TrendingUp, Briefcase, MapPin, Building2, Wrench, Tag, AlertTriangle, ChevronRight, Zap, Radio, Heart, BookOpen, Award, Target, Factory, CheckCircle, XCircle } from 'lucide-react';
 
 const ECEEmbeddedSystems = () => {
   return (
@@ -242,6 +242,114 @@ const ECEEmbeddedSystems = () => {
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-2.5 px-3 py-2.5 bg-white/50 border border-swiss-sand-foreground/6 rounded-lg">
                 <div className="w-1.5 h-1.5 rounded-full bg-swiss-sand-foreground/50 mt-1.5 flex-shrink-0" />
+                <p className="text-[0.8125rem] sm:text-sm text-slate-600 leading-relaxed">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Reality Alignment Check */}
+      <section className="bg-gradient-to-br from-swiss-rose/10 via-white to-swiss-sand/10 border border-swiss-rose-foreground/10 rounded-xl p-5 sm:p-7 shadow-[var(--shadow-sm)]">
+        <div className="flex items-center gap-2.5 mb-5">
+          <div className="p-1.5 bg-white/70 rounded-md border border-swiss-rose-foreground/10 shadow-sm">
+            <AlertTriangle className="w-3.5 h-3.5 text-swiss-rose-foreground" />
+          </div>
+          <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
+            Reality Alignment Check
+          </h2>
+        </div>
+
+        <p className="text-[0.8125rem] sm:text-sm text-slate-600 mb-5 leading-relaxed">
+          Before choosing this role, be honest:
+        </p>
+
+        <div className="space-y-2 mb-6">
+          {[
+            'Can you consistently handle the top 2 subjects (S1, S2)?',
+            'Can you study 8–12 hours/week without external pressure?',
+            'Are you comfortable doing this type of work daily?',
+            'Are you okay with the actual work environment of this role?',
+            'Are you choosing this role for fit, not prestige?',
+          ].map((q, i) => (
+            <div key={i} className="flex items-start gap-2.5 px-3 py-2.5 bg-white/50 border border-swiss-rose-foreground/6 rounded-lg">
+              <div className="w-1.5 h-1.5 rounded-full bg-swiss-rose-foreground/50 mt-1.5 flex-shrink-0" />
+              <p className="text-[0.8125rem] sm:text-sm text-slate-600 leading-relaxed">{q}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Effort Match */}
+        <div className="mb-6">
+          <h3 className="text-xs sm:text-sm font-semibold tracking-[0.12em] uppercase text-swiss-rose-foreground mb-3">
+            Effort Match
+          </h3>
+          <div className="space-y-2">
+            {[
+              'S1 and S2 are dominant subjects with very high pressure: this role punishes weak control over microcontrollers and embedded systems.',
+              'Entry is not theory-only; core interview filters check firmware logic, peripheral interfacing, and debug thinking.',
+              'The role needs consistent board-level work, not last-minute preparation.',
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-2.5 px-3 py-2.5 bg-swiss-rose/5 border border-swiss-rose-foreground/6 rounded-lg">
+                <div className="w-1.5 h-1.5 rounded-full bg-swiss-rose-foreground/40 mt-1.5 flex-shrink-0" />
+                <p className="text-[0.8125rem] sm:text-sm text-slate-600 leading-relaxed">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Work-Style Fit */}
+        <div className="mb-6">
+          <h3 className="text-xs sm:text-sm font-semibold tracking-[0.12em] uppercase text-swiss-rose-foreground mb-3">
+            Work-Style Fit
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-gradient-to-br from-swiss-mint/20 to-white border border-swiss-mint-foreground/10 rounded-lg p-4">
+              <p className="text-xs font-semibold tracking-[0.1em] uppercase text-swiss-mint-foreground mb-3">This role suits you better if</p>
+              <div className="space-y-2">
+                {[
+                  'You like debugging real hardware behavior, not just writing code on a screen.',
+                  'You are comfortable with patient, repetitive problem-solving when boards, signals, or interfaces fail.',
+                  'You prefer product/R&D lab work where firmware and electronics must work together.',
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    <CheckCircle className="w-3.5 h-3.5 text-swiss-mint-foreground mt-0.5 flex-shrink-0" />
+                    <p className="text-[0.8125rem] sm:text-sm text-slate-600 leading-relaxed">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-gradient-to-br from-swiss-rose/15 to-white border border-swiss-rose-foreground/10 rounded-lg p-4">
+              <p className="text-xs font-semibold tracking-[0.1em] uppercase text-swiss-rose-foreground mb-3">This role may not suit you if</p>
+              <div className="space-y-2">
+                {[
+                  'You dislike low-level technical depth like registers, interrupts, and peripheral control.',
+                  'You want fast visible results without repeated testing and fault isolation.',
+                  'You mainly like generic software work and not board-level hardware interaction.',
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    <XCircle className="w-3.5 h-3.5 text-swiss-rose-foreground mt-0.5 flex-shrink-0" />
+                    <p className="text-[0.8125rem] sm:text-sm text-slate-600 leading-relaxed">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Risk of Wrong Choice */}
+        <div>
+          <h3 className="text-xs sm:text-sm font-semibold tracking-[0.12em] uppercase text-swiss-rose-foreground mb-3">
+            Risk of Wrong Choice
+          </h3>
+          <div className="space-y-2">
+            {[
+              'S1 and S2 are heavy filters, so weak subject control creates fast rejection risk.',
+              'Students who choose embedded for prestige or trend usually break at firmware-debug and hardware-validation stage.',
+              'Fit roles exist, but they still stay inside the same embedded cluster, so escaping weak fundamentals is hard.',
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-2.5 px-3 py-2.5 bg-swiss-rose/8 border border-swiss-rose-foreground/8 rounded-lg">
+                <AlertTriangle className="w-3.5 h-3.5 text-swiss-rose-foreground mt-0.5 flex-shrink-0" />
                 <p className="text-[0.8125rem] sm:text-sm text-slate-600 leading-relaxed">{item}</p>
               </div>
             ))}
