@@ -1520,7 +1520,7 @@ const ECEEmbeddedSystems = () => {
 
           {/* One Line */}
           <div className="bg-gradient-to-r from-swiss-charcoal to-swiss-charcoal/90 rounded-xl p-4 sm:p-6 text-center">
-            <p className="text-sm sm:text-base md:text-lg text-amber-300 font-medium italic">
+            <p className="text-sm sm:text-base md:text-lg text-red-400 font-medium italic">
               "Apps can stop and restart. Machines cannot. That's why embedded engineers are always needed."
             </p>
           </div>
