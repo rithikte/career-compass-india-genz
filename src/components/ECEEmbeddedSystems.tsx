@@ -1508,7 +1508,6 @@ const ECEEmbeddedSystems = () => {
                 { label: "Telecom Systems", icon: "📶" }
               ].map((item, i) => (
                 <div key={i} className="bg-swiss-sand/40 border border-swiss-border/40 rounded-lg p-3 text-center">
-                  <span className="text-xl sm:text-2xl block mb-1">{item.icon}</span>
                   <span className="text-xs sm:text-sm font-medium text-swiss-charcoal/80">{item.label}</span>
                 </div>
               ))}
