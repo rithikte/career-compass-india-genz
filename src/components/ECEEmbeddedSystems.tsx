@@ -1325,6 +1325,14 @@ const ECEEmbeddedSystems = () => {
                     <p className="text-[0.6875rem] sm:text-xs text-muted-foreground leading-relaxed">{item.sameWork}</p>
                   </div>
                 </div>
+
+                {/* WHY NEAREST FIT ROLE */}
+                <div className="p-3 sm:p-3.5 bg-gradient-to-r from-swiss-rose/40 to-swiss-rose/20 border border-swiss-rose-foreground/15 rounded-lg">
+                  <div className="flex items-start gap-2.5">
+                    <p className="text-[0.5625rem] sm:text-[0.625rem] font-bold tracking-[0.15em] uppercase text-swiss-rose-foreground whitespace-nowrap mt-0.5">WHY NEAREST FIT ROLE</p>
+                    <p className="text-[0.6875rem] sm:text-xs font-medium text-swiss-rose-foreground/90 leading-relaxed">{item.whyNearestFitRole}</p>
+                  </div>
+                </div>
               </div>
             </details>
           ))}
