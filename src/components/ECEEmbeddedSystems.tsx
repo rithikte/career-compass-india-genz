@@ -28,6 +28,9 @@ const ECEEmbeddedSystems = () => {
   const keySubjects = useScrollGlow();
   const subjectScoring = useScrollGlow();
   const wontDisappear = useScrollGlow();
+  const realityCheck = useScrollGlow();
+  const skillsCerts = useScrollGlow();
+  const relatedRoles = useScrollGlow();
 
   return (
     <div className="space-y-8 sm:space-y-12">
@@ -290,7 +293,13 @@ const ECEEmbeddedSystems = () => {
       </section>
 
       {/* Reality Alignment Check */}
-      <section className="bg-gradient-to-br from-swiss-rose/10 via-white to-swiss-sand/10 border border-swiss-rose-foreground/10 rounded-xl p-5 sm:p-7 shadow-[var(--shadow-sm)]">
+      <section
+        ref={realityCheck.ref}
+        className={`bg-gradient-to-br from-swiss-rose/10 via-white to-swiss-sand/10 rounded-xl p-5 sm:p-7 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+          realityCheck.inView
+            ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+            : 'border border-swiss-rose-foreground/10'
+        }`}>
         <div className="flex items-center gap-2.5 mb-5">
           <div className="p-1.5 bg-white/70 rounded-md border border-swiss-rose-foreground/10 shadow-sm">
             <AlertTriangle className="w-3.5 h-3.5 text-swiss-rose-foreground" />
@@ -1227,7 +1236,13 @@ const ECEEmbeddedSystems = () => {
       </section>
 
       {/* Skills & Certifications Section */}
-      <section>
+      <section
+        ref={skillsCerts.ref}
+        className={`rounded-xl p-5 sm:p-8 transition-all duration-700 ease-in-out ${
+          skillsCerts.inView
+            ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+            : 'border border-slate-200/80'
+        }`}>
         <div className="mb-6">
           <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight">Skills & Certifications</h2>
           <p className="text-[0.6875rem] sm:text-xs text-muted-foreground">Industry-aligned skills and certifications mapped to this role</p>
@@ -1375,7 +1390,13 @@ const ECEEmbeddedSystems = () => {
       </section>
 
       {/* Related Roles Section */}
-      <section>
+      <section
+        ref={relatedRoles.ref}
+        className={`rounded-xl p-5 sm:p-8 transition-all duration-700 ease-in-out ${
+          relatedRoles.inView
+            ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+            : 'border border-slate-200/80'
+        }`}>
         <div className="mb-6">
           <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight">Related Roles</h2>
           <p className="text-[0.6875rem] sm:text-xs text-muted-foreground">Roles sharing the same subject foundation and work layer</p>
