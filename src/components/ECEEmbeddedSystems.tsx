@@ -357,109 +357,114 @@ const ECEEmbeddedSystems = () => {
         </div>
       </section>
 
-      {/* Job Titles + Alternate Titles - Two Column */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
-        {/* Job Titles */}
-        <section className="bg-gradient-to-br from-swiss-sky via-swiss-sky/50 to-white border border-swiss-sky-foreground/10 rounded-xl p-5 sm:p-7 shadow-[var(--shadow-sm)]">
-          <div className="flex items-center gap-2.5 mb-5">
-            <div className="p-1.5 bg-white/70 rounded-md border border-swiss-sky-foreground/10 shadow-sm">
-              <Briefcase className="w-3.5 h-3.5 text-swiss-sky-foreground" />
-            </div>
-            <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
-              Job Titles
-            </h2>
-          </div>
-          <div className="space-y-2.5">
-            {[
-              'Embedded Engineer',
-              'Firmware Engineer',
-              'Junior Embedded Systems Engineer',
-            ].map((title, i) => (
-              <div key={i} className="flex items-center gap-3 px-3.5 py-2.5 bg-white/60 border border-white/80 rounded-lg backdrop-blur-sm hover:bg-white/90 hover:shadow-sm transition-all duration-200">
-                <div className="w-1.5 h-1.5 rounded-full bg-swiss-sky-foreground/60" />
-                <span className="text-sm text-slate-700 font-medium">{title}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Alternate Titles */}
-        <section className="bg-gradient-to-br from-swiss-lavender via-swiss-lavender/50 to-white border border-swiss-lavender-foreground/10 rounded-xl p-5 sm:p-7 shadow-[var(--shadow-sm)]">
-          <div className="flex items-center gap-2.5 mb-5">
-            <div className="p-1.5 bg-white/70 rounded-md border border-swiss-lavender-foreground/10 shadow-sm">
-              <Tag className="w-3.5 h-3.5 text-swiss-lavender-foreground" />
-            </div>
-            <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
-              Alternate Job Titles
-            </h2>
-          </div>
-          <div className="space-y-2.5">
-            {[
-              'Firmware Engineer',
-              'Embedded Firmware Engineer',
-              'Junior Embedded Engineer',
-              'Embedded Software Engineer',
-            ].map((title, i) => (
-              <div key={i} className="flex items-center gap-3 px-3.5 py-2.5 bg-white/60 border border-white/80 rounded-lg backdrop-blur-sm hover:bg-white/90 hover:shadow-sm transition-all duration-200">
-                <div className="w-1.5 h-1.5 rounded-full bg-swiss-lavender-foreground/60" />
-                <span className="text-sm text-slate-700 font-medium">{title}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-      </div>
-
-      {/* Core Industries */}
-      <section className="bg-gradient-to-br from-swiss-sand/40 via-white to-swiss-rose/30 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
-        <div className="flex items-center gap-2.5 mb-5 sm:mb-6">
-          <div className="p-1.5 bg-swiss-sand rounded-md border border-swiss-sand-foreground/10 shadow-sm">
-            <TrendingUp className="w-3.5 h-3.5 text-swiss-sand-foreground" />
-          </div>
-          <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
-            Core Industries
+      {/* WHERE EMBEDDED SYSTEMS JOBS EXIST — Combined Section */}
+      <section className="bg-gradient-to-br from-slate-50 via-white to-swiss-sky/10 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
+        <div className="mb-6 sm:mb-8">
+          <h2 className="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-slate-500 mb-2">
+            Where Embedded Systems Jobs Exist
           </h2>
+          <p className="text-sm text-slate-500 max-w-2xl">
+            Know the real job titles, industries, and company types where embedded engineers get hired.
+          </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {[
-            { name: 'Consumer Electronics', icon: Cpu, bgClass: 'bg-swiss-sky/60 hover:bg-swiss-sky', iconBg: 'bg-white/70' },
-            { name: 'Industrial Electronics', icon: Wrench, bgClass: 'bg-swiss-sage/60 hover:bg-swiss-sage', iconBg: 'bg-white/70' },
-            { name: 'IoT Devices', icon: Radio, bgClass: 'bg-swiss-lavender/60 hover:bg-swiss-lavender', iconBg: 'bg-white/70' },
-            { name: 'Automotive Electronics', icon: Zap, bgClass: 'bg-swiss-sand/60 hover:bg-swiss-sand', iconBg: 'bg-white/70' },
-            { name: 'MedTech Devices', icon: Heart, bgClass: 'bg-swiss-rose/60 hover:bg-swiss-rose', iconBg: 'bg-white/70' },
-          ].map((industry, i) => (
-            <div key={i} className={`flex items-center gap-3 p-3.5 sm:p-4 ${industry.bgClass} border border-slate-200/40 rounded-lg transition-all duration-200 hover:shadow-sm`}>
-              <div className={`p-2 ${industry.iconBg} rounded-lg border border-slate-200/30 shadow-sm`}>
-                <industry.icon className="w-3.5 h-3.5 text-slate-600" />
+        <div className="space-y-4 sm:space-y-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+            <div className="bg-gradient-to-br from-swiss-sky via-swiss-sky/50 to-white border border-swiss-sky-foreground/10 rounded-xl p-5 sm:p-7 shadow-[var(--shadow-sm)]">
+              <div className="flex items-center gap-2.5 mb-5">
+                <div className="p-1.5 bg-white/70 rounded-md border border-swiss-sky-foreground/10 shadow-sm">
+                  <Briefcase className="w-3.5 h-3.5 text-swiss-sky-foreground" />
+                </div>
+                <h3 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
+                  Job Titles
+                </h3>
               </div>
-              <span className="text-sm text-slate-700 font-medium">{industry.name}</span>
+              <div className="space-y-2.5">
+                {[
+                  'Embedded Engineer',
+                  'Firmware Engineer',
+                  'Junior Embedded Systems Engineer',
+                ].map((title, i) => (
+                  <div key={i} className="flex items-center gap-3 px-3.5 py-2.5 bg-white/60 border border-white/80 rounded-lg backdrop-blur-sm hover:bg-white/90 hover:shadow-sm transition-all duration-200">
+                    <div className="w-1.5 h-1.5 rounded-full bg-swiss-sky-foreground/60" />
+                    <span className="text-sm text-slate-700 font-medium">{title}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Company Types */}
-      <section className="bg-gradient-to-br from-swiss-rose via-swiss-rose/40 to-swiss-sand/30 border border-swiss-rose-foreground/10 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
-        <div className="flex items-center gap-2.5 mb-5 sm:mb-6">
-          <div className="p-1.5 bg-white/70 rounded-md border border-swiss-rose-foreground/10 shadow-sm">
-            <Building2 className="w-3.5 h-3.5 text-swiss-rose-foreground" />
+            <div className="bg-gradient-to-br from-swiss-lavender via-swiss-lavender/50 to-white border border-swiss-lavender-foreground/10 rounded-xl p-5 sm:p-7 shadow-[var(--shadow-sm)]">
+              <div className="flex items-center gap-2.5 mb-5">
+                <div className="p-1.5 bg-white/70 rounded-md border border-swiss-lavender-foreground/10 shadow-sm">
+                  <Tag className="w-3.5 h-3.5 text-swiss-lavender-foreground" />
+                </div>
+                <h3 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
+                  Alternate Job Titles
+                </h3>
+              </div>
+              <div className="space-y-2.5">
+                {[
+                  'Firmware Engineer',
+                  'Embedded Firmware Engineer',
+                  'Junior Embedded Engineer',
+                  'Embedded Software Engineer',
+                ].map((title, i) => (
+                  <div key={i} className="flex items-center gap-3 px-3.5 py-2.5 bg-white/60 border border-white/80 rounded-lg backdrop-blur-sm hover:bg-white/90 hover:shadow-sm transition-all duration-200">
+                    <div className="w-1.5 h-1.5 rounded-full bg-swiss-lavender-foreground/60" />
+                    <span className="text-sm text-slate-700 font-medium">{title}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
-            Company Types
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {[
-            { name: 'Embedded product companies', numColor: 'text-swiss-sky-foreground' },
-            { name: 'Electronics startups', numColor: 'text-swiss-sage-foreground' },
-            { name: 'Automotive electronics suppliers', numColor: 'text-swiss-sand-foreground' },
-            { name: 'Industrial device manufacturers', numColor: 'text-swiss-lavender-foreground' },
-            { name: 'R&D engineering firms', numColor: 'text-swiss-rose-foreground' },
-          ].map((company, i) => (
-            <div key={i} className="flex items-center gap-3 p-3.5 sm:p-4 bg-white/50 border border-white/60 rounded-lg hover:bg-white/80 hover:shadow-sm backdrop-blur-sm transition-all duration-200">
-              <span className={`text-[0.625rem] font-bold ${company.numColor} tracking-wider`}>{String(i + 1).padStart(2, '0')}</span>
-              <span className="text-sm text-slate-700 font-medium">{company.name}</span>
+          <div className="bg-gradient-to-br from-swiss-sand/40 via-white to-swiss-rose/30 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
+            <div className="flex items-center gap-2.5 mb-5 sm:mb-6">
+              <div className="p-1.5 bg-swiss-sand rounded-md border border-swiss-sand-foreground/10 shadow-sm">
+                <TrendingUp className="w-3.5 h-3.5 text-swiss-sand-foreground" />
+              </div>
+              <h3 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
+                Core Industries
+              </h3>
             </div>
-          ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {[
+                { name: 'Consumer Electronics', icon: Cpu, bgClass: 'bg-swiss-sky/60 hover:bg-swiss-sky', iconBg: 'bg-white/70' },
+                { name: 'Industrial Electronics', icon: Wrench, bgClass: 'bg-swiss-sage/60 hover:bg-swiss-sage', iconBg: 'bg-white/70' },
+                { name: 'IoT Devices', icon: Radio, bgClass: 'bg-swiss-lavender/60 hover:bg-swiss-lavender', iconBg: 'bg-white/70' },
+                { name: 'Automotive Electronics', icon: Zap, bgClass: 'bg-swiss-sand/60 hover:bg-swiss-sand', iconBg: 'bg-white/70' },
+                { name: 'MedTech Devices', icon: Heart, bgClass: 'bg-swiss-rose/60 hover:bg-swiss-rose', iconBg: 'bg-white/70' },
+              ].map((industry, i) => (
+                <div key={i} className={`flex items-center gap-3 p-3.5 sm:p-4 ${industry.bgClass} border border-slate-200/40 rounded-lg transition-all duration-200 hover:shadow-sm`}>
+                  <div className={`p-2 ${industry.iconBg} rounded-lg border border-slate-200/30 shadow-sm`}>
+                    <industry.icon className="w-3.5 h-3.5 text-slate-600" />
+                  </div>
+                  <span className="text-sm text-slate-700 font-medium">{industry.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="bg-gradient-to-br from-swiss-rose via-swiss-rose/40 to-swiss-sand/30 border border-swiss-rose-foreground/10 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
+            <div className="flex items-center gap-2.5 mb-5 sm:mb-6">
+              <div className="p-1.5 bg-white/70 rounded-md border border-swiss-rose-foreground/10 shadow-sm">
+                <Building2 className="w-3.5 h-3.5 text-swiss-rose-foreground" />
+              </div>
+              <h3 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
+                Company Types
+              </h3>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                { name: 'Embedded product companies', numColor: 'text-swiss-sky-foreground' },
+                { name: 'Electronics startups', numColor: 'text-swiss-sage-foreground' },
+                { name: 'Automotive electronics suppliers', numColor: 'text-swiss-sand-foreground' },
+                { name: 'Industrial device manufacturers', numColor: 'text-swiss-lavender-foreground' },
+                { name: 'R&D engineering firms', numColor: 'text-swiss-rose-foreground' },
+              ].map((company, i) => (
+                <div key={i} className="flex items-center gap-3 p-3.5 sm:p-4 bg-white/50 border border-white/60 rounded-lg hover:bg-white/80 hover:shadow-sm backdrop-blur-sm transition-all duration-200">
+                  <span className={`text-[0.625rem] font-bold ${company.numColor} tracking-wider`}>{String(i + 1).padStart(2, '0')}</span>
+                  <span className="text-sm text-slate-700 font-medium">{company.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
