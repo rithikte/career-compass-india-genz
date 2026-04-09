@@ -369,14 +369,9 @@ const ECEEmbeddedSystems = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
           <div className="bg-gradient-to-br from-swiss-sky via-swiss-sky/50 to-white border border-swiss-sky-foreground/10 rounded-xl p-5 sm:p-7 shadow-[var(--shadow-sm)]">
-            <div className="flex items-center gap-2.5 mb-5">
-              <div className="p-1.5 bg-white/70 rounded-md border border-swiss-sky-foreground/10 shadow-sm">
-                <Briefcase className="w-3.5 h-3.5 text-swiss-sky-foreground" />
-              </div>
-              <h3 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
+            <h3 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500 mb-5">
                 Job Titles
-              </h3>
-            </div>
+            </h3>
             <div className="space-y-2.5">
               {[
                 'Embedded Engineer',
@@ -391,14 +386,9 @@ const ECEEmbeddedSystems = () => {
             </div>
           </div>
           <div className="bg-gradient-to-br from-swiss-lavender via-swiss-lavender/50 to-white border border-swiss-lavender-foreground/10 rounded-xl p-5 sm:p-7 shadow-[var(--shadow-sm)]">
-            <div className="flex items-center gap-2.5 mb-5">
-              <div className="p-1.5 bg-white/70 rounded-md border border-swiss-lavender-foreground/10 shadow-sm">
-                <Tag className="w-3.5 h-3.5 text-swiss-lavender-foreground" />
-              </div>
-              <h3 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
+            <h3 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500 mb-5">
                 Alternate Job Titles
-              </h3>
-            </div>
+            </h3>
             <div className="space-y-2.5">
               {[
                 'Firmware Engineer',
@@ -429,14 +419,9 @@ const ECEEmbeddedSystems = () => {
         <div className="space-y-4 sm:space-y-5">
           {/* Core Industries */}
           <div className="bg-gradient-to-br from-swiss-sand/40 via-white to-swiss-rose/30 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
-            <div className="flex items-center gap-2.5 mb-5 sm:mb-6">
-              <div className="p-1.5 bg-swiss-sand rounded-md border border-swiss-sand-foreground/10 shadow-sm">
-                <TrendingUp className="w-3.5 h-3.5 text-swiss-sand-foreground" />
-              </div>
-              <h3 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
+            <h3 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500 mb-5 sm:mb-6">
                 Core Industries
-              </h3>
-            </div>
+            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {[
                 { name: 'Consumer Electronics', icon: Cpu, bgClass: 'bg-swiss-sky/60 hover:bg-swiss-sky', iconBg: 'bg-white/70' },
@@ -456,14 +441,9 @@ const ECEEmbeddedSystems = () => {
           </div>
           {/* Company Types */}
           <div className="bg-gradient-to-br from-swiss-rose via-swiss-rose/40 to-swiss-sand/30 border border-swiss-rose-foreground/10 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
-            <div className="flex items-center gap-2.5 mb-5 sm:mb-6">
-              <div className="p-1.5 bg-white/70 rounded-md border border-swiss-rose-foreground/10 shadow-sm">
-                <Building2 className="w-3.5 h-3.5 text-swiss-rose-foreground" />
-              </div>
-              <h3 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
+            <h3 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500 mb-5 sm:mb-6">
                 Company Types
-              </h3>
-            </div>
+            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 { name: 'Embedded product companies', numColor: 'text-swiss-sky-foreground' },
@@ -481,14 +461,9 @@ const ECEEmbeddedSystems = () => {
           </div>
           {/* Workplace */}
           <div className="bg-gradient-to-br from-swiss-sage/40 via-white to-swiss-sky/30 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
-            <div className="flex items-center gap-2.5 mb-5 sm:mb-6">
-              <div className="p-1.5 bg-swiss-sage rounded-md border border-swiss-sage-foreground/10 shadow-sm">
-                <MapPin className="w-3.5 h-3.5 text-swiss-sage-foreground" />
-              </div>
-              <h3 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
+            <h3 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500 mb-5 sm:mb-6">
                 Workplace
-              </h3>
-            </div>
+            </h3>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
               {[
                 { place: 'Embedded Lab', bgClass: 'bg-swiss-sky/70 hover:bg-swiss-sky border-swiss-sky-foreground/10', iconColor: 'text-swiss-sky-foreground', icon: Cpu },
@@ -510,18 +485,13 @@ const ECEEmbeddedSystems = () => {
 
       {/* Embedded Hiring Industries */}
       <section className="bg-gradient-to-br from-white via-swiss-sand/20 to-swiss-sage/20 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
-        <div className="flex items-center gap-2.5 mb-6 sm:mb-8">
-          <div className="p-1.5 bg-gradient-to-br from-swiss-sand to-swiss-sand/70 rounded-md border border-swiss-sand-foreground/10 shadow-sm flex items-center justify-center w-7 h-7">
-            <span className="text-[0.625rem] font-bold text-swiss-sand-foreground tracking-tight">EHI</span>
-          </div>
-          <div>
-            <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
-              Embedded Hiring Industries
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-500 mt-1">
-              See which industries hire for this role and what kind of work happens inside each cluster.
-            </p>
-          </div>
+        <div className="mb-6 sm:mb-8">
+          <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
+            Embedded Hiring Industries
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-500 mt-1">
+            See which industries hire for this role and what kind of work happens inside each cluster.
+          </p>
         </div>
 
         <div className="space-y-5 sm:space-y-6">
@@ -794,18 +764,13 @@ const ECEEmbeddedSystems = () => {
 
       {/* Key Subjects */}
       <section className="bg-gradient-to-br from-white via-swiss-sky/20 to-swiss-lavender/20 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
-        <div className="flex items-center gap-2.5 mb-6 sm:mb-8">
-          <div className="p-1.5 bg-swiss-sky rounded-md border border-swiss-sky-foreground/10 shadow-sm">
-            <BookOpen className="w-3.5 h-3.5 text-swiss-sky-foreground" />
-          </div>
-          <div>
-            <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
-              Key Subjects
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-500 mt-1">
-              These are the subjects that directly decide your interview performance and on-job readiness.
-            </p>
-          </div>
+        <div className="mb-6 sm:mb-8">
+          <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
+            Key Subjects
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-500 mt-1">
+            These are the subjects that directly decide your interview performance and on-job readiness.
+          </p>
         </div>
 
         <div className="space-y-4 sm:space-y-5">
@@ -981,18 +946,13 @@ const ECEEmbeddedSystems = () => {
 
       {/* Subject Scoring */}
       <section className="bg-gradient-to-br from-white via-swiss-lavender/20 to-swiss-sky/20 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
-        <div className="flex items-center gap-2.5 mb-6 sm:mb-8">
-          <div className="p-1.5 bg-swiss-lavender rounded-md border border-swiss-lavender-foreground/10 shadow-sm">
-            <TrendingUp className="w-3.5 h-3.5 text-swiss-lavender-foreground" />
-          </div>
-          <div>
-            <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
-              Subject Scoring
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-500 mt-1">
-              How much each subject actually counts in hiring, interviews, and daily work — scored by real industry weight.
-            </p>
-          </div>
+        <div className="mb-6 sm:mb-8">
+          <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
+            Subject Scoring
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-500 mt-1">
+            How much each subject actually counts in hiring, interviews, and daily work — scored by real industry weight.
+          </p>
         </div>
 
         <div className="space-y-4 sm:space-y-5">
@@ -1193,14 +1153,9 @@ const ECEEmbeddedSystems = () => {
 
       {/* Skills & Certifications Section */}
       <section>
-        <div className="flex items-center gap-2.5 mb-6">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-swiss-sky to-swiss-sky/60 flex items-center justify-center">
-            <Award className="w-4 h-4 text-swiss-sky-foreground" />
-          </div>
-          <div>
-            <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight">Skills & Certifications</h2>
-            <p className="text-[0.6875rem] sm:text-xs text-muted-foreground">Industry-aligned skills and certifications mapped to this role</p>
-          </div>
+        <div className="mb-6">
+          <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight">Skills & Certifications</h2>
+          <p className="text-[0.6875rem] sm:text-xs text-muted-foreground">Industry-aligned skills and certifications mapped to this role</p>
         </div>
 
         <div className="grid gap-4 sm:gap-5">
@@ -1346,14 +1301,9 @@ const ECEEmbeddedSystems = () => {
 
       {/* Related Roles Section */}
       <section>
-        <div className="flex items-center gap-2.5 mb-6">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-swiss-lavender to-swiss-lavender/60 flex items-center justify-center">
-            <Briefcase className="w-4 h-4 text-swiss-lavender-foreground" />
-          </div>
-          <div>
-            <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight">Related Roles</h2>
-            <p className="text-[0.6875rem] sm:text-xs text-muted-foreground">Roles sharing the same subject foundation and work layer</p>
-          </div>
+        <div className="mb-6">
+          <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight">Related Roles</h2>
+          <p className="text-[0.6875rem] sm:text-xs text-muted-foreground">Roles sharing the same subject foundation and work layer</p>
         </div>
 
         <div className="grid gap-4 sm:gap-5">
