@@ -798,9 +798,14 @@ const ECEEmbeddedSystems = () => {
           <div className="p-1.5 bg-swiss-sky rounded-md border border-swiss-sky-foreground/10 shadow-sm">
             <BookOpen className="w-3.5 h-3.5 text-swiss-sky-foreground" />
           </div>
-          <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
-            Key Subjects
-          </h2>
+          <div>
+            <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
+              Key Subjects
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-500 mt-1">
+              These are the subjects that directly decide your interview performance and on-job readiness.
+            </p>
+          </div>
         </div>
 
         <div className="space-y-4 sm:space-y-5">
