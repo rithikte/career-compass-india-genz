@@ -3,6 +3,20 @@ import React, { useRef, useEffect, useState } from 'react';
 import { Cpu, Shield, MapPin, Building2, Wrench, AlertTriangle, ChevronRight, Zap, Radio, Heart, BookOpen, Award, Target, CheckCircle, XCircle } from 'lucide-react';
 
 const ECEEmbeddedSystems = () => {
+  const subjectScoringRef = useRef<HTMLElement>(null);
+  const [subjectScoringInView, setSubjectScoringInView] = useState(false);
+
+  useEffect(() => {
+    const el = subjectScoringRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setSubjectScoringInView(entry.isIntersecting),
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="space-y-8 sm:space-y-12">
 
