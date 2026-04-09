@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { Cpu, Shield, MapPin, Building2, Wrench, AlertTriangle, ChevronRight, Zap, Radio, Heart, BookOpen, Award, Target, CheckCircle, XCircle } from 'lucide-react';
 
 const ECEEmbeddedSystems = () => {
