@@ -1480,15 +1480,6 @@ const ECEEmbeddedSystems = () => {
         </div>
       </section>
 
-      {/* Disclaimer */}
-      <section className="bg-gradient-to-r from-swiss-sand/60 to-swiss-sand/30 border border-swiss-sand-foreground/10 rounded-xl p-4 sm:p-5">
-        <div className="flex items-start gap-2.5">
-          <AlertTriangle className="w-3.5 h-3.5 text-swiss-sand-foreground mt-0.5 flex-shrink-0" />
-          <p className="text-[0.6875rem] sm:text-xs text-slate-500 leading-relaxed">
-            Career paths shown are patterns, not guarantees. Outcomes depend on company, skills, performance, location, and market conditions.
-          </p>
-        </div>
-      </section>
 
       {/* Why Embedded Systems Won't Disappear */}
       <section className="bg-gradient-to-br from-swiss-blue/5 via-swiss-sand/30 to-swiss-green/5 border border-swiss-border rounded-2xl p-5 sm:p-7 md:p-8">
@@ -1582,6 +1573,16 @@ const ECEEmbeddedSystems = () => {
               Forget society's fake expectations — in today's AI era, only skilled people get jobs and grow.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Disclaimer */}
+      <section className="bg-gradient-to-r from-swiss-sand/60 to-swiss-sand/30 border border-swiss-sand-foreground/10 rounded-xl p-4 sm:p-5">
+        <div className="flex items-start gap-2.5">
+          <AlertTriangle className="w-3.5 h-3.5 text-swiss-sand-foreground mt-0.5 flex-shrink-0" />
+          <p className="text-[0.6875rem] sm:text-xs text-slate-500 leading-relaxed">
+            Career paths shown are patterns, not guarantees. Outcomes depend on company, skills, performance, location, and market conditions.
+          </p>
         </div>
       </section>
 
