@@ -18,12 +18,6 @@ const useScrollGlow = () => {
   return { ref, inView };
 };
 
-const glowClass = (inView: boolean, base: string) =>
-  `${base.replace(/\bborder\s+border-\S+/g, '')} transition-all duration-700 ease-in-out ${
-    inView
-      ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
-      : 'border border-slate-200/80'
-  }`;
 
 const ECEEmbeddedSystems = () => {
   const dailyWork = useScrollGlow();
