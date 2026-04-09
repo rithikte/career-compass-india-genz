@@ -116,7 +116,14 @@ const ECEEmbeddedSystems = () => {
       </section>
 
       {/* Daily Work */}
-      <section className="bg-gradient-to-br from-white via-swiss-sky/20 to-swiss-lavender/20 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] py-[15px] px-[5px]">
+      <section
+        ref={dailyWork.ref}
+        className={`bg-gradient-to-br from-white via-swiss-sky/20 to-swiss-lavender/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] py-[15px] px-[5px] transition-all duration-700 ease-in-out ${
+          dailyWork.inView
+            ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+            : 'border border-slate-200/80'
+        }`}
+      >
         <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
           Daily Work
         </h2>
@@ -141,7 +148,14 @@ const ECEEmbeddedSystems = () => {
       </section>
 
       {/* Role Overview */}
-      <section className="bg-gradient-to-br from-swiss-sky/30 via-white to-swiss-lavender/20 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
+      <section
+        ref={roleOverview.ref}
+        className={`bg-gradient-to-br from-swiss-sky/30 via-white to-swiss-lavender/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+          roleOverview.inView
+            ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+            : 'border border-slate-200/80'
+        }`}
+      >
         <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2 sm:mb-3">
           Role Overview
         </h2>
@@ -390,7 +404,14 @@ const ECEEmbeddedSystems = () => {
       </section>
 
       {/* WHAT COMPANIES SEARCH FOR — Job Titles Section */}
-      <section className="bg-gradient-to-br from-slate-50 via-white to-swiss-sky/10 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
+      <section
+        ref={companiesSearch.ref}
+        className={`bg-gradient-to-br from-slate-50 via-white to-swiss-sky/10 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+          companiesSearch.inView
+            ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+            : 'border border-slate-200/80'
+        }`}
+      >
         <div className="mb-6 sm:mb-8">
           <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
             What Companies Search For
@@ -439,7 +460,14 @@ const ECEEmbeddedSystems = () => {
       </section>
 
       {/* WHERE EMBEDDED SYSTEMS JOBS EXIST — Combined Section */}
-      <section className="bg-gradient-to-br from-slate-50 via-white to-swiss-sky/10 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
+      <section
+        ref={whereJobs.ref}
+        className={`bg-gradient-to-br from-slate-50 via-white to-swiss-sky/10 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+          whereJobs.inView
+            ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+            : 'border border-slate-200/80'
+        }`}
+      >
         <div className="mb-6 sm:mb-8">
           <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
             Where Embedded Systems Jobs Exist
@@ -516,7 +544,14 @@ const ECEEmbeddedSystems = () => {
       </section>
 
       {/* Embedded Hiring Industries */}
-      <section className="bg-gradient-to-br from-white via-swiss-sand/20 to-swiss-sage/20 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
+      <section
+        ref={hiringIndustries.ref}
+        className={`bg-gradient-to-br from-white via-swiss-sand/20 to-swiss-sage/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+          hiringIndustries.inView
+            ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+            : 'border border-slate-200/80'
+        }`}
+      >
         <div className="mb-6 sm:mb-8">
           <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight">
             Embedded Hiring Industries
@@ -795,7 +830,14 @@ const ECEEmbeddedSystems = () => {
       </section>
 
       {/* Key Subjects */}
-      <section className="bg-gradient-to-br from-white via-swiss-sky/20 to-swiss-lavender/20 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
+      <section
+        ref={keySubjects.ref}
+        className={`bg-gradient-to-br from-white via-swiss-sky/20 to-swiss-lavender/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+          keySubjects.inView
+            ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+            : 'border border-slate-200/80'
+        }`}
+      >
         <div className="mb-6 sm:mb-8">
           <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight">
             Key Subjects
