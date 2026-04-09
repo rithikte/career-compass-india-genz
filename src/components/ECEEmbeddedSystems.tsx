@@ -1020,9 +1020,9 @@ const ECEEmbeddedSystems = () => {
 
       {/* Subject Scoring */}
       <section
-        ref={subjectScoringRef}
+        ref={subjectScoring.ref}
         className={`bg-gradient-to-br from-white via-swiss-lavender/20 to-swiss-sky/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
-          subjectScoringInView
+          subjectScoring.inView
             ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
             : 'border border-slate-200/80'
         }`}
@@ -1513,7 +1513,14 @@ const ECEEmbeddedSystems = () => {
 
 
       {/* Why Embedded Systems Won't Disappear */}
-      <section className="bg-gradient-to-br from-swiss-blue/5 via-swiss-sand/30 to-swiss-green/5 border border-swiss-border rounded-2xl p-5 sm:p-7 md:p-8">
+      <section
+        ref={wontDisappear.ref}
+        className={`bg-gradient-to-br from-swiss-blue/5 via-swiss-sand/30 to-swiss-green/5 rounded-2xl p-5 sm:p-7 md:p-8 transition-all duration-700 ease-in-out ${
+          wontDisappear.inView
+            ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+            : 'border border-swiss-border'
+        }`}
+      >
         <div className="text-center mb-6 sm:mb-8">
           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-swiss-charcoal tracking-tight">
             Why Embedded Systems Jobs Won't Disappear
