@@ -959,7 +959,14 @@ const ECEEmbeddedSystems = () => {
       </section>
 
       {/* Subject Scoring */}
-      <section className="bg-gradient-to-br from-white via-swiss-lavender/20 to-swiss-sky/20 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
+      <section
+        ref={subjectScoringRef}
+        className={`bg-gradient-to-br from-white via-swiss-lavender/20 to-swiss-sky/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+          subjectScoringInView
+            ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+            : 'border border-slate-200/80'
+        }`}
+      >
         <div className="mb-6 sm:mb-8">
           <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight">
             Subject Scoring
