@@ -84,7 +84,7 @@ const ECEEmbeddedSystems = () => {
       </section>
 
       {/* Daily Work */}
-      <section className="bg-gradient-to-br from-white via-swiss-sky/20 to-swiss-lavender/20 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
+      <section className="bg-gradient-to-br from-white via-swiss-sky/20 to-swiss-lavender/20 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] py-[15px] px-[5px]">
         <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
           Daily Work
         </h2>
