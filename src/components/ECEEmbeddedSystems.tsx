@@ -514,9 +514,14 @@ const ECEEmbeddedSystems = () => {
           <div className="p-1.5 bg-gradient-to-br from-swiss-sand to-swiss-sand/70 rounded-md border border-swiss-sand-foreground/10 shadow-sm">
             <Factory className="w-3.5 h-3.5 text-swiss-sand-foreground" />
           </div>
-          <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
-            Embedded Hiring Industries
-          </h2>
+          <div>
+            <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
+              Embedded Hiring Industries
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-500 mt-1">
+              See which industries hire for this role and what kind of work happens inside each cluster.
+            </p>
+          </div>
         </div>
 
         <div className="space-y-5 sm:space-y-6">
