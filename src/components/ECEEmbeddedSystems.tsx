@@ -85,7 +85,7 @@ const ECEEmbeddedSystems = () => {
 
       {/* Daily Work */}
       <section className="bg-gradient-to-br from-white via-swiss-sky/20 to-swiss-lavender/20 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
-        <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-400 mb-5 sm:mb-6">
+        <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
           Daily Work
         </h2>
         <div className="space-y-3.5">
@@ -110,7 +110,7 @@ const ECEEmbeddedSystems = () => {
 
       {/* Role Overview */}
       <section className="bg-gradient-to-br from-swiss-sky/30 via-white to-swiss-lavender/20 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
-        <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-400 mb-2 sm:mb-3">
+        <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2 sm:mb-3">
           Role Overview
         </h2>
         <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light mb-6 sm:mb-8">
@@ -360,7 +360,7 @@ const ECEEmbeddedSystems = () => {
       {/* WHAT COMPANIES SEARCH FOR — Job Titles Section */}
       <section className="bg-gradient-to-br from-slate-50 via-white to-swiss-sky/10 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
         <div className="mb-6 sm:mb-8">
-          <h2 className="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-slate-500 mb-2">
+          <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
             What Companies Search For
           </h2>
           <p className="text-sm text-slate-500 max-w-2xl">
@@ -409,7 +409,7 @@ const ECEEmbeddedSystems = () => {
       {/* WHERE EMBEDDED SYSTEMS JOBS EXIST — Combined Section */}
       <section className="bg-gradient-to-br from-slate-50 via-white to-swiss-sky/10 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
         <div className="mb-6 sm:mb-8">
-          <h2 className="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-slate-500 mb-2">
+          <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
             Where Embedded Systems Jobs Exist
           </h2>
           <p className="text-sm text-slate-500 max-w-2xl">
@@ -486,7 +486,7 @@ const ECEEmbeddedSystems = () => {
       {/* Embedded Hiring Industries */}
       <section className="bg-gradient-to-br from-white via-swiss-sand/20 to-swiss-sage/20 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
         <div className="mb-6 sm:mb-8">
-          <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
+          <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight">
             Embedded Hiring Industries
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 mt-1">
@@ -765,7 +765,7 @@ const ECEEmbeddedSystems = () => {
       {/* Key Subjects */}
       <section className="bg-gradient-to-br from-white via-swiss-sky/20 to-swiss-lavender/20 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
         <div className="mb-6 sm:mb-8">
-          <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
+          <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight">
             Key Subjects
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 mt-1">
@@ -947,7 +947,7 @@ const ECEEmbeddedSystems = () => {
       {/* Subject Scoring */}
       <section className="bg-gradient-to-br from-white via-swiss-lavender/20 to-swiss-sky/20 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
         <div className="mb-6 sm:mb-8">
-          <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
+          <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight">
             Subject Scoring
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 mt-1">
