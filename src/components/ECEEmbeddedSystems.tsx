@@ -985,9 +985,14 @@ const ECEEmbeddedSystems = () => {
           <div className="p-1.5 bg-swiss-lavender rounded-md border border-swiss-lavender-foreground/10 shadow-sm">
             <TrendingUp className="w-3.5 h-3.5 text-swiss-lavender-foreground" />
           </div>
-          <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
-            Subject Scoring
-          </h2>
+          <div>
+            <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
+              Subject Scoring
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-500 mt-1">
+              How much each subject actually counts in hiring, interviews, and daily work — scored by real industry weight.
+            </p>
+          </div>
         </div>
 
         <div className="space-y-4 sm:space-y-5">
