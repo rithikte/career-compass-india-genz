@@ -511,8 +511,8 @@ const ECEEmbeddedSystems = () => {
       {/* Embedded Hiring Industries */}
       <section className="bg-gradient-to-br from-white via-swiss-sand/20 to-swiss-sage/20 border border-slate-200/80 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)]">
         <div className="flex items-center gap-2.5 mb-6 sm:mb-8">
-          <div className="p-1.5 bg-gradient-to-br from-swiss-sand to-swiss-sand/70 rounded-md border border-swiss-sand-foreground/10 shadow-sm">
-            <Factory className="w-3.5 h-3.5 text-swiss-sand-foreground" />
+          <div className="p-1.5 bg-gradient-to-br from-swiss-sand to-swiss-sand/70 rounded-md border border-swiss-sand-foreground/10 shadow-sm flex items-center justify-center w-7 h-7">
+            <span className="text-[0.625rem] font-bold text-swiss-sand-foreground tracking-tight">EHI</span>
           </div>
           <div>
             <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-slate-500">
@@ -559,8 +559,8 @@ const ECEEmbeddedSystems = () => {
               <details className="group">
                 <summary className={`flex items-center justify-between cursor-pointer p-4 sm:p-5 bg-gradient-to-br ${cluster.accentBg} ${cluster.accentBorder} border rounded-xl hover:shadow-md transition-all duration-300`}>
                   <div className="flex items-center gap-3 sm:gap-4">
-                    <div className="p-2 bg-white/70 rounded-lg border border-slate-200/40 shadow-sm">
-                      <Radio className="w-4 h-4 text-swiss-sky-foreground" />
+                    <div className="p-2 bg-white/70 rounded-lg border border-slate-200/40 shadow-sm flex items-center justify-center min-w-[2rem] h-8">
+                      <span className="text-xs font-bold text-swiss-sky-foreground tracking-tight">R1</span>
                     </div>
                     <div>
                       <p className="text-[0.625rem] sm:text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-slate-400 mb-0.5">{cluster.industry} · {cluster.subindustry}</p>
@@ -648,8 +648,8 @@ const ECEEmbeddedSystems = () => {
               <details className="group">
                 <summary className="flex items-center justify-between cursor-pointer p-4 sm:p-5 bg-gradient-to-br from-swiss-sage/40 via-swiss-sage/15 to-white border border-swiss-sage-foreground/12 rounded-xl hover:shadow-md transition-all duration-300">
                   <div className="flex items-center gap-3 sm:gap-4">
-                    <div className="p-2 bg-white/70 rounded-lg border border-slate-200/40 shadow-sm">
-                      <Wrench className="w-4 h-4 text-swiss-sage-foreground" />
+                    <div className="p-2 bg-white/70 rounded-lg border border-slate-200/40 shadow-sm flex items-center justify-center min-w-[2rem] h-8">
+                      <span className="text-xs font-bold text-swiss-sage-foreground tracking-tight">R2</span>
                     </div>
                     <div>
                       <p className="text-[0.625rem] sm:text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-slate-400 mb-0.5">{cluster.industry} · {cluster.subindustry}</p>
@@ -733,8 +733,8 @@ const ECEEmbeddedSystems = () => {
               <details className="group">
                 <summary className="flex items-center justify-between cursor-pointer p-4 sm:p-5 bg-gradient-to-br from-swiss-sand/40 via-swiss-sand/15 to-white border border-swiss-sand-foreground/12 rounded-xl hover:shadow-md transition-all duration-300">
                   <div className="flex items-center gap-3 sm:gap-4">
-                    <div className="p-2 bg-white/70 rounded-lg border border-slate-200/40 shadow-sm">
-                      <Zap className="w-4 h-4 text-swiss-sand-foreground" />
+                    <div className="p-2 bg-white/70 rounded-lg border border-slate-200/40 shadow-sm flex items-center justify-center min-w-[2rem] h-8">
+                      <span className="text-xs font-bold text-swiss-sand-foreground tracking-tight">R3</span>
                     </div>
                     <div>
                       <p className="text-[0.625rem] sm:text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-slate-400 mb-0.5">{cluster.industry} · {cluster.subindustry}</p>
