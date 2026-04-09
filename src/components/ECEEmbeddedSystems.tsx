@@ -147,7 +147,7 @@ const ECEEmbeddedSystems = () => {
       {/* Role Overview */}
       <section
         ref={roleOverview.ref}
-        className={`bg-gradient-to-br from-swiss-sky/30 via-white to-swiss-lavender/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+        className={`bg-gradient-to-br from-swiss-sky/30 via-white to-swiss-lavender/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] py-[15px] px-[10px] transition-all duration-700 ease-in-out ${
           roleOverview.inView
             ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
             : 'border border-slate-200/80'
@@ -295,7 +295,7 @@ const ECEEmbeddedSystems = () => {
       {/* Reality Alignment Check */}
       <section
         ref={realityCheck.ref}
-        className={`bg-gradient-to-br from-swiss-rose/10 via-white to-swiss-sand/10 rounded-xl p-5 sm:p-7 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+        className={`bg-gradient-to-br from-swiss-rose/10 via-white to-swiss-sand/10 rounded-xl p-5 sm:p-7 shadow-[var(--shadow-sm)] py-[15px] px-[15px] transition-all duration-700 ease-in-out ${
           realityCheck.inView
             ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
             : 'border border-swiss-rose-foreground/10'
@@ -409,7 +409,7 @@ const ECEEmbeddedSystems = () => {
       {/* WHAT COMPANIES SEARCH FOR — Job Titles Section */}
       <section
         ref={companiesSearch.ref}
-        className={`bg-gradient-to-br from-slate-50 via-white to-swiss-sky/10 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+        className={`bg-gradient-to-br from-slate-50 via-white to-swiss-sky/10 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] px-[10px] py-[15px] transition-all duration-700 ease-in-out ${
           companiesSearch.inView
             ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
             : 'border border-slate-200/80'
@@ -465,7 +465,7 @@ const ECEEmbeddedSystems = () => {
       {/* WHERE EMBEDDED SYSTEMS JOBS EXIST — Combined Section */}
       <section
         ref={whereJobs.ref}
-        className={`bg-gradient-to-br from-slate-50 via-white to-swiss-sky/10 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+        className={`bg-gradient-to-br from-slate-50 via-white to-swiss-sky/10 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] px-[10px] py-[15px] transition-all duration-700 ease-in-out ${
           whereJobs.inView
             ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
             : 'border border-slate-200/80'
@@ -549,7 +549,7 @@ const ECEEmbeddedSystems = () => {
       {/* Embedded Hiring Industries */}
       <section
         ref={hiringIndustries.ref}
-        className={`bg-gradient-to-br from-white via-swiss-sand/20 to-swiss-sage/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+        className={`bg-gradient-to-br from-white via-swiss-sand/20 to-swiss-sage/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] px-[10px] py-[15px] transition-all duration-700 ease-in-out ${
           hiringIndustries.inView
             ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
             : 'border border-slate-200/80'
@@ -835,7 +835,7 @@ const ECEEmbeddedSystems = () => {
       {/* Key Subjects */}
       <section
         ref={keySubjects.ref}
-        className={`bg-gradient-to-br from-white via-swiss-sky/20 to-swiss-lavender/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+        className={`bg-gradient-to-br from-white via-swiss-sky/20 to-swiss-lavender/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] px-[10px] py-[15px] transition-all duration-700 ease-in-out ${
           keySubjects.inView
             ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
             : 'border border-slate-200/80'
@@ -1024,7 +1024,7 @@ const ECEEmbeddedSystems = () => {
       {/* Subject Scoring */}
       <section
         ref={subjectScoring.ref}
-        className={`bg-gradient-to-br from-white via-swiss-lavender/20 to-swiss-sky/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+        className={`bg-gradient-to-br from-white via-swiss-lavender/20 to-swiss-sky/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] px-[10px] py-[15px] transition-all duration-700 ease-in-out ${
           subjectScoring.inView
             ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
             : 'border border-slate-200/80'
@@ -1238,7 +1238,7 @@ const ECEEmbeddedSystems = () => {
       {/* Skills & Certifications Section */}
       <section
         ref={skillsCerts.ref}
-        className={`rounded-xl p-5 sm:p-8 transition-all duration-700 ease-in-out ${
+        className={`rounded-xl p-5 sm:p-8 px-[10px] py-[15px] transition-all duration-700 ease-in-out ${
           skillsCerts.inView
             ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
             : 'border border-slate-200/80'
@@ -1392,7 +1392,7 @@ const ECEEmbeddedSystems = () => {
       {/* Related Roles Section */}
       <section
         ref={relatedRoles.ref}
-        className={`rounded-xl p-5 sm:p-8 transition-all duration-700 ease-in-out ${
+        className={`rounded-xl p-5 sm:p-8 px-[10px] py-[15px] transition-all duration-700 ease-in-out ${
           relatedRoles.inView
             ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
             : 'border border-slate-200/80'
@@ -1530,7 +1530,7 @@ const ECEEmbeddedSystems = () => {
       {/* Why Embedded Systems Won't Disappear */}
       <section
         ref={wontDisappear.ref}
-        className={`bg-gradient-to-br from-swiss-blue/5 via-swiss-sand/30 to-swiss-green/5 rounded-2xl p-5 sm:p-7 md:p-8 transition-all duration-700 ease-in-out ${
+        className={`bg-gradient-to-br from-swiss-blue/5 via-swiss-sand/30 to-swiss-green/5 rounded-2xl p-5 sm:p-7 md:p-8 px-[10px] py-[15px] transition-all duration-700 ease-in-out ${
           wontDisappear.inView
             ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
             : 'border border-swiss-border'
