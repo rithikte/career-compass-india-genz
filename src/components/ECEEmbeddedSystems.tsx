@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Cpu, Shield, TrendingUp, Briefcase, MapPin, Building2, Wrench, Tag, AlertTriangle, ChevronRight, Zap, Radio, Heart, BookOpen, Award, Target, Factory, CheckCircle, XCircle } from 'lucide-react';
+import { Cpu, Shield, TrendingUp, Briefcase, MapPin, Building2, Tag, AlertTriangle, ChevronRight, Heart, BookOpen, Award, Target, CheckCircle, XCircle } from 'lucide-react';
 
 const ECEEmbeddedSystems = () => {
   return (
