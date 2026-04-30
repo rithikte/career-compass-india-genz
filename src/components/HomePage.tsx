@@ -492,11 +492,6 @@ export const HomePage = () => {
                     </div>
                   ))}
                 </div>
-
-                {/* Footer caption */}
-                <p className="text-center text-xs sm:text-sm uppercase tracking-[0.25em] text-muted-foreground font-semibold mt-6 sm:mt-8">
-                  Stream &nbsp;→&nbsp; Subject &nbsp;→&nbsp; Career &nbsp;→&nbsp; Skills &nbsp;→&nbsp; Job
-                </p>
               </div>
             </div>
           </div>
