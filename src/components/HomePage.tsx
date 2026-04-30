@@ -255,6 +255,179 @@ export const HomePage = () => {
           </div>
         </div>
 
+        {/* Why most students feel confused */}
+        <div className="mb-16 sm:mb-24 px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+              <div className="lg:col-span-5 lg:border-r lg:border-foreground/20 lg:pr-12">
+                <div className="border-l-4 border-destructive pl-4 sm:pl-6">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground leading-tight tracking-tight">
+                    Why most students feel confused
+                  </h2>
+                  <p className="text-base sm:text-lg md:text-xl text-muted-foreground mt-3 font-medium">
+                    The system gives information, not direction.
+                  </p>
+                </div>
+              </div>
+              <div className="lg:col-span-7">
+                <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-muted-foreground font-semibold mb-6 sm:mb-8">
+                  The common gaps
+                </p>
+                <div className="space-y-0">
+                  {[
+                    "Too many choices, no clear direction",
+                    "What you study doesn't match real jobs",
+                    "Projects don't help in interviews",
+                  ].map((text, i) => (
+                    <div key={i} className={`group border-t ${i === 2 ? "border-b" : ""} border-foreground/10 py-4 sm:py-5`}>
+                      <div className="flex items-baseline gap-4 sm:gap-6">
+                        <span className="text-3xl sm:text-4xl md:text-5xl font-black text-destructive/30 group-hover:text-destructive transition-colors">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <p className="text-base sm:text-lg md:text-xl text-foreground font-medium leading-snug">
+                          {text}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* What makes this different */}
+        <div className="mb-16 sm:mb-24 px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+              <div className="lg:col-span-5 lg:border-r lg:border-foreground/20 lg:pr-12">
+                <div className="border-l-4 border-accent pl-4 sm:pl-6">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground leading-tight tracking-tight">
+                    What makes this different
+                  </h2>
+                  <p className="text-base sm:text-lg md:text-xl text-muted-foreground mt-3 font-medium">
+                    Built around real hiring, not generic advice.
+                  </p>
+                </div>
+              </div>
+              <div className="lg:col-span-7">
+                <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-muted-foreground font-semibold mb-6 sm:mb-8">
+                  What you get here
+                </p>
+                <div className="space-y-0">
+                  {[
+                    "Shows what skills companies actually expect",
+                    "Connects your subjects to real careers",
+                    "Gives step-by-step path to reach that job",
+                  ].map((text, i) => (
+                    <div key={i} className={`group border-t ${i === 2 ? "border-b" : ""} border-foreground/10 py-4 sm:py-5`}>
+                      <div className="flex items-baseline gap-4 sm:gap-6">
+                        <span className="text-3xl sm:text-4xl md:text-5xl font-black text-accent/30 group-hover:text-accent transition-colors">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <p className="text-base sm:text-lg md:text-xl text-foreground font-medium leading-snug">
+                          {text}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Quote Banner */}
+            <div className="mt-10 sm:mt-14">
+              <div className="relative bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 rounded-2xl p-6 sm:p-10 border border-primary/20 shadow-layer-2">
+                <p className="text-center text-lg sm:text-2xl md:text-3xl font-bold text-foreground leading-snug italic">
+                  "Every career path is built step by step — not guessed"
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* This is not for everyone */}
+        <div className="mb-16 sm:mb-24 px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+              <div className="lg:col-span-5 lg:border-r lg:border-foreground/20 lg:pr-12">
+                <div className="border-l-4 border-warning pl-4 sm:pl-6">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground leading-tight tracking-tight">
+                    This is not for everyone
+                  </h2>
+                  <p className="text-base sm:text-lg md:text-xl text-muted-foreground mt-3 font-medium">
+                    Honest about who this actually helps.
+                  </p>
+                </div>
+              </div>
+              <div className="lg:col-span-7">
+                <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-muted-foreground font-semibold mb-6 sm:mb-8">
+                  Who it fits
+                </p>
+                <div className="space-y-0">
+                  {[
+                    "If you just want options → this won't help",
+                    "If you want shortcuts → this won't help",
+                    "If you want a clear career path → this will",
+                  ].map((text, i) => (
+                    <div key={i} className={`group border-t ${i === 2 ? "border-b" : ""} border-foreground/10 py-4 sm:py-5`}>
+                      <div className="flex items-baseline gap-4 sm:gap-6">
+                        <span className="text-3xl sm:text-4xl md:text-5xl font-black text-warning/30 group-hover:text-warning transition-colors">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <p className="text-base sm:text-lg md:text-xl text-foreground font-medium leading-snug">
+                          {text}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* What you'll actually get */}
+        <div className="mb-16 sm:mb-24 px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+              <div className="lg:col-span-5 lg:border-r lg:border-foreground/20 lg:pr-12">
+                <div className="border-l-4 border-success pl-4 sm:pl-6">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground leading-tight tracking-tight">
+                    What you'll actually get
+                  </h2>
+                  <p className="text-base sm:text-lg md:text-xl text-muted-foreground mt-3 font-medium">
+                    Nothing extra. Nothing confusing.
+                  </p>
+                </div>
+              </div>
+              <div className="lg:col-span-7">
+                <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-muted-foreground font-semibold mb-6 sm:mb-8">
+                  The deliverables
+                </p>
+                <div className="space-y-0">
+                  {[
+                    "A clear step-by-step career path",
+                    "Skills that match real job requirements",
+                    "Mini & major projects that match real job requirements",
+                  ].map((text, i) => (
+                    <div key={i} className={`group border-t ${i === 2 ? "border-b" : ""} border-foreground/10 py-4 sm:py-5`}>
+                      <div className="flex items-baseline gap-4 sm:gap-6">
+                        <span className="text-3xl sm:text-4xl md:text-5xl font-black text-success/30 group-hover:text-success transition-colors">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <p className="text-base sm:text-lg md:text-xl text-foreground font-medium leading-snug">
+                          {text}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Workflow Diagram */}
         <div className="mb-16 sm:mb-24 px-4">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-center text-foreground mb-12 sm:mb-20">
