@@ -441,7 +441,7 @@ export const HomePage = () => {
             {/* Glass Pipeline */}
             <div className="relative">
               {/* Soft gradient backdrop */}
-              <div className="absolute inset-0 -m-4 sm:-m-8 rounded-[2rem] bg-gradient-to-br from-primary/5 via-accent/5 to-primary/10 blur-2xl pointer-events-none" aria-hidden="true"></div>
+              <div className="absolute inset-0 -m-4 sm:-m-8 rounded-[2rem] bg-gradient-to-br from-sky-200/40 via-sky-100/30 to-sky-300/40 blur-2xl pointer-events-none" aria-hidden="true"></div>
 
               <div className="relative rounded-[1.75rem] bg-white/60 backdrop-blur-xl border border-white/60 shadow-layer-2 p-5 sm:p-8 md:p-10">
                 {/* Desktop: horizontal pipeline */}
