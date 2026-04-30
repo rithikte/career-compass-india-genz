@@ -487,7 +487,7 @@ export const HomePage = () => {
                         </div>
                       </div>
                       {i < arr.length - 1 && (
-                        <div className="h-5 w-px bg-gradient-to-b from-primary/50 to-accent/30 my-1" aria-hidden="true"></div>
+                        <div className="h-5 w-px bg-gradient-to-b from-sky-500/60 to-sky-300/40 my-1" aria-hidden="true"></div>
                       )}
                     </div>
                   ))}
