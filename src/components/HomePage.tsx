@@ -480,9 +480,6 @@ export const HomePage = () => {
                             {String(i + 1).padStart(2, "0")}
                           </span>
                           <div className="flex-1 min-w-0">
-                            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-semibold">
-                              Step {i + 1}
-                            </p>
                             <p className="text-lg font-black text-foreground tracking-tight">
                               {text}
                             </p>
