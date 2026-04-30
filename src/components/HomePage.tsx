@@ -422,145 +422,40 @@ export const HomePage = () => {
           </div>
         </div>
 
-        {/* Workflow Diagram */}
+        {/* How this helps you choose the right career */}
         <div className="mb-16 sm:mb-24 px-4">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-center text-foreground mb-12 sm:mb-20">
-            How the Platform Works
-          </h2>
-          
-          {/* Desktop Circular Layout */}
-          <div className="hidden lg:block relative max-w-5xl mx-auto">
-            <div className="relative w-full aspect-square max-w-[800px] mx-auto">
-              <div className="absolute inset-0 rounded-full border-4 border-dashed border-primary/20"></div>
-              
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                <div className="w-48 h-48 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-layer-3">
-                  <div className="text-center text-white px-6">
-                    <Sparkles className="w-16 h-16 mx-auto mb-3" />
-                    <p className="font-bold text-lg leading-tight">AI-Powered Career Mapping</p>
-                  </div>
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+              <div className="lg:col-span-5 lg:border-r lg:border-foreground/20 lg:pr-12">
+                <div className="border-l-4 border-primary pl-4 sm:pl-6">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground leading-tight tracking-tight">
+                    How this helps you choose the right career
+                  </h2>
+                  <p className="text-base sm:text-lg md:text-xl text-muted-foreground mt-3 font-medium">
+                    No confusion. Just one clear path.
+                  </p>
                 </div>
               </div>
-
-              {/* Workflow Items */}
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="flex flex-col items-center gap-3">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-layer-2 border-4 border-white">
-                    <Target className="w-10 h-10 text-white" />
-                  </div>
-                  <div className="text-center bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-layer-1 border border-border min-w-[200px]">
-                    <p className="font-bold text-foreground text-sm mb-1">Choose Your Stream</p>
-                    <p className="text-xs text-muted-foreground">Pick Subjects You Enjoy</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute top-[15%] right-[5%] transform translate-x-1/4">
-                <div className="flex flex-col items-center gap-3">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-layer-2 border-4 border-white">
-                    <Filter className="w-10 h-10 text-white" />
-                  </div>
-                  <div className="text-center bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-layer-1 border border-border min-w-[200px]">
-                    <p className="font-bold text-foreground text-sm mb-1">Pick the Core Topics</p>
-                    <p className="text-xs text-muted-foreground">Topics You're Interested In</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2">
-                <div className="flex flex-col items-center gap-3">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center shadow-layer-2 border-4 border-white">
-                    <Zap className="w-10 h-10 text-white" />
-                  </div>
-                  <div className="text-center bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-layer-1 border border-border min-w-[200px]">
-                    <p className="font-bold text-foreground text-sm mb-1">Behind every click</p>
-                    <p className="text-xs text-muted-foreground">Science calculates the perfect fit</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute bottom-[15%] right-[5%] transform translate-x-1/4">
-                <div className="flex flex-col items-center gap-3">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center shadow-layer-2 border-4 border-white">
-                    <Award className="w-10 h-10 text-white" />
-                  </div>
-                  <div className="text-center bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-layer-1 border border-border min-w-[200px]">
-                    <p className="font-bold text-foreground text-sm mb-1">Get Your 2 Best-Fit</p>
-                    <p className="text-xs text-muted-foreground">Degrees & Industries</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2">
-                <div className="flex flex-col items-center gap-3">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-layer-2 border-4 border-white">
-                    <TrendingUp className="w-10 h-10 text-white" />
-                  </div>
-                  <div className="text-center bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-layer-1 border border-border min-w-[200px]">
-                    <p className="font-bold text-foreground text-sm mb-1">See The Careers</p>
-                    <p className="text-xs text-muted-foreground">You're Made For & Growth Ahead</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="flex flex-col items-center gap-3">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-teal-500 to-blue-500 flex items-center justify-center shadow-layer-2 border-4 border-white">
-                    <BookOpen className="w-10 h-10 text-white" />
-                  </div>
-                  <div className="text-center bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-layer-1 border border-border min-w-[200px]">
-                    <p className="font-bold text-foreground text-sm mb-1">Science-Backed</p>
-                    <p className="text-xs text-muted-foreground">Verified Data & Research</p>
-                  </div>
+              <div className="lg:col-span-7">
+                <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-muted-foreground font-semibold mb-6 sm:mb-8">
+                  The clear path
+                </p>
+                <div className="space-y-0">
+                  {["Stream", "Subject", "Career", "Skills", "Job"].map((text, i, arr) => (
+                    <div key={i} className={`group border-t ${i === arr.length - 1 ? "border-b" : ""} border-foreground/10 py-4 sm:py-5`}>
+                      <div className="flex items-baseline gap-4 sm:gap-6">
+                        <span className="text-3xl sm:text-4xl md:text-5xl font-black text-primary/30 group-hover:text-primary transition-colors">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <p className="text-base sm:text-lg md:text-xl text-foreground font-medium leading-snug">
+                          {text}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Tablet & Mobile Linear Layout */}
-          <div className="lg:hidden space-y-6">
-            {[{
-            icon: Target,
-            title: 'Choose Your Stream',
-            desc: 'Pick Subjects You Enjoy',
-            color: 'from-blue-500 to-cyan-500'
-          }, {
-            icon: Filter,
-            title: 'Pick the Core Topics',
-            desc: 'Topics You\'re Interested In',
-            color: 'from-purple-500 to-pink-500'
-          }, {
-            icon: Zap,
-            title: 'Behind every click',
-            desc: 'Science calculates the perfect fit',
-            color: 'from-green-500 to-emerald-500'
-          }, {
-            icon: Award,
-            title: 'Get Your 2 Best-Fit',
-            desc: 'Degrees & Industries',
-            color: 'from-orange-500 to-red-500'
-          }, {
-            icon: TrendingUp,
-            title: 'See The Careers',
-            desc: 'You\'re Made For & Growth Ahead',
-            color: 'from-indigo-500 to-purple-600'
-          }, {
-            icon: BookOpen,
-            title: 'Science-Backed',
-            desc: 'Verified Data & Research',
-            color: 'from-teal-500 to-blue-500'
-          }].map((item, index) => {
-            const Icon = item.icon;
-            return <div key={index} className="magnetic-container flex items-center gap-4 sm:gap-6 bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-layer-2 border border-border hover:shadow-layer-3 transition-all duration-300">
-                  <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br ${item.color} flex items-center justify-center flex-shrink-0 shadow-layer-1`}>
-                    <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-bold text-foreground text-base sm:text-lg mb-1">{item.title}</h3>
-                    <p className="text-sm sm:text-base text-muted-foreground">{item.desc}</p>
-                  </div>
-                </div>;
-          })}
           </div>
         </div>
 
