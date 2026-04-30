@@ -427,7 +427,7 @@ export const HomePage = () => {
           <div className="max-w-6xl mx-auto">
             {/* Header */}
             <div className="text-center mb-10 sm:mb-14 max-w-3xl mx-auto">
-              <p className="text-xs sm:text-sm uppercase tracking-[0.25em] text-primary font-semibold mb-4">
+              <p className="text-xs sm:text-sm uppercase tracking-[0.25em] text-sky-500 font-semibold mb-4">
                 The Clear Path
               </p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground leading-tight tracking-tight">
