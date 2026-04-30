@@ -422,38 +422,87 @@ export const HomePage = () => {
           </div>
         </div>
 
-        {/* How this helps you choose the right career */}
+        {/* How this helps you choose the right career — Glass Pipeline */}
         <div className="mb-16 sm:mb-24 px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-              <div className="lg:col-span-5 lg:border-r lg:border-foreground/20 lg:pr-12">
-                <div className="border-l-4 border-primary pl-4 sm:pl-6">
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground leading-tight tracking-tight">
-                    How this helps you choose the right career
-                  </h2>
-                  <p className="text-base sm:text-lg md:text-xl text-muted-foreground mt-3 font-medium">
-                    No confusion. Just one clear path.
-                  </p>
-                </div>
-              </div>
-              <div className="lg:col-span-7">
-                <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-muted-foreground font-semibold mb-6 sm:mb-8">
-                  The clear path
-                </p>
-                <div className="space-y-0">
+          <div className="max-w-6xl mx-auto">
+            {/* Header */}
+            <div className="text-center mb-10 sm:mb-14 max-w-3xl mx-auto">
+              <p className="text-xs sm:text-sm uppercase tracking-[0.25em] text-primary font-semibold mb-4">
+                The Clear Path
+              </p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground leading-tight tracking-tight">
+                How this helps you choose the right career
+              </h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground mt-4 font-medium">
+                No confusion. Just one clear path.
+              </p>
+            </div>
+
+            {/* Glass Pipeline */}
+            <div className="relative">
+              {/* Soft gradient backdrop */}
+              <div className="absolute inset-0 -m-4 sm:-m-8 rounded-[2rem] bg-gradient-to-br from-primary/5 via-accent/5 to-primary/10 blur-2xl pointer-events-none" aria-hidden="true"></div>
+
+              <div className="relative rounded-[1.75rem] bg-white/60 backdrop-blur-xl border border-white/60 shadow-layer-2 p-5 sm:p-8 md:p-10">
+                {/* Desktop: horizontal pipeline */}
+                <div className="hidden md:flex items-stretch justify-between gap-2 lg:gap-3">
                   {["Stream", "Subject", "Career", "Skills", "Job"].map((text, i, arr) => (
-                    <div key={i} className={`group border-t ${i === arr.length - 1 ? "border-b" : ""} border-foreground/10 py-4 sm:py-5`}>
-                      <div className="flex items-baseline gap-4 sm:gap-6">
-                        <span className="text-3xl sm:text-4xl md:text-5xl font-black text-primary/30 group-hover:text-primary transition-colors">
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
-                        <p className="text-base sm:text-lg md:text-xl text-foreground font-medium leading-snug">
-                          {text}
-                        </p>
+                    <div key={i} className="flex items-center flex-1 last:flex-initial">
+                      {/* Pill stage */}
+                      <div className="group relative flex-1">
+                        <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500" aria-hidden="true"></div>
+                        <div className="relative rounded-full bg-white/80 backdrop-blur-md border border-white/80 shadow-layer-1 px-4 lg:px-6 py-4 lg:py-5 flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-1 hover:shadow-layer-3 hover:border-primary/40">
+                          <span className="text-[10px] lg:text-xs uppercase tracking-[0.2em] text-muted-foreground font-semibold mb-1">
+                            Step {String(i + 1).padStart(2, "0")}
+                          </span>
+                          <span className="text-base lg:text-xl font-black text-foreground tracking-tight">
+                            {text}
+                          </span>
+                        </div>
                       </div>
+
+                      {/* Connector */}
+                      {i < arr.length - 1 && (
+                        <div className="flex items-center justify-center px-1 lg:px-2 shrink-0" aria-hidden="true">
+                          <div className="h-px w-4 lg:w-6 bg-gradient-to-r from-primary/40 to-accent/40"></div>
+                          <span className="text-primary/60 text-lg lg:text-xl font-light leading-none -mt-0.5">›</span>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
+
+                {/* Mobile: vertical pipeline */}
+                <div className="md:hidden flex flex-col gap-3">
+                  {["Stream", "Subject", "Career", "Skills", "Job"].map((text, i, arr) => (
+                    <div key={i} className="flex flex-col items-center">
+                      <div className="group relative w-full">
+                        <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500" aria-hidden="true"></div>
+                        <div className="relative rounded-2xl bg-white/80 backdrop-blur-md border border-white/80 shadow-layer-1 px-5 py-4 flex items-center gap-4 transition-all duration-500 hover:border-primary/40">
+                          <span className="text-2xl font-black text-primary/40 tabular-nums w-10 shrink-0">
+                            {String(i + 1).padStart(2, "0")}
+                          </span>
+                          <div className="flex-1 min-w-0">
+                            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-semibold">
+                              Step {i + 1}
+                            </p>
+                            <p className="text-lg font-black text-foreground tracking-tight">
+                              {text}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {i < arr.length - 1 && (
+                        <div className="h-5 w-px bg-gradient-to-b from-primary/50 to-accent/30 my-1" aria-hidden="true"></div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Footer caption */}
+                <p className="text-center text-xs sm:text-sm uppercase tracking-[0.25em] text-muted-foreground font-semibold mt-6 sm:mt-8">
+                  Stream &nbsp;→&nbsp; Subject &nbsp;→&nbsp; Career &nbsp;→&nbsp; Skills &nbsp;→&nbsp; Job
+                </p>
               </div>
             </div>
           </div>
