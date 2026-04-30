@@ -450,8 +450,8 @@ export const HomePage = () => {
                     <div key={i} className="flex items-center flex-1 last:flex-initial">
                       {/* Pill stage */}
                       <div className="group relative flex-1">
-                        <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500" aria-hidden="true"></div>
-                        <div className="relative rounded-full bg-white/80 backdrop-blur-md border border-white/80 shadow-layer-1 px-4 lg:px-6 py-5 lg:py-6 flex items-center justify-center text-center transition-all duration-500 hover:-translate-y-1 hover:shadow-layer-3 hover:border-primary/40">
+                        <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-sky-300/40 via-sky-400/40 to-sky-300/40 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500" aria-hidden="true"></div>
+                        <div className="relative rounded-full bg-white/80 backdrop-blur-md border border-sky-200/70 shadow-layer-1 px-4 lg:px-6 py-5 lg:py-6 flex items-center justify-center text-center transition-all duration-500 hover:-translate-y-1 hover:shadow-layer-3 hover:border-sky-400/60">
                           <span className="text-base lg:text-xl font-black text-foreground tracking-tight">
                             {text}
                           </span>
