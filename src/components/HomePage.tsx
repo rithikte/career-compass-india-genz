@@ -474,9 +474,9 @@ export const HomePage = () => {
                   {["Stream", "Subject", "Career", "Skills", "Job"].map((text, i, arr) => (
                     <div key={i} className="flex flex-col items-center">
                       <div className="group relative w-full">
-                        <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500" aria-hidden="true"></div>
-                        <div className="relative rounded-2xl bg-white/80 backdrop-blur-md border border-white/80 shadow-layer-1 px-5 py-4 flex items-center gap-4 transition-all duration-500 hover:border-primary/40">
-                          <span className="text-2xl font-black text-primary/40 tabular-nums w-10 shrink-0">
+                        <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-sky-300/40 via-sky-400/40 to-sky-300/40 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500" aria-hidden="true"></div>
+                        <div className="relative rounded-2xl bg-white/80 backdrop-blur-md border border-sky-200/70 shadow-layer-1 px-5 py-4 flex items-center gap-4 transition-all duration-500 hover:border-sky-400/60">
+                          <span className="text-2xl font-black text-sky-500/60 tabular-nums w-10 shrink-0">
                             {String(i + 1).padStart(2, "0")}
                           </span>
                           <div className="flex-1 min-w-0">
