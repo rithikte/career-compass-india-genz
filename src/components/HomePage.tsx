@@ -461,8 +461,8 @@ export const HomePage = () => {
                       {/* Connector */}
                       {i < arr.length - 1 && (
                         <div className="flex items-center justify-center px-1 lg:px-2 shrink-0" aria-hidden="true">
-                          <div className="h-px w-4 lg:w-6 bg-gradient-to-r from-primary/40 to-accent/40"></div>
-                          <span className="text-primary/60 text-lg lg:text-xl font-light leading-none -mt-0.5">›</span>
+                          <div className="h-px w-4 lg:w-6 bg-gradient-to-r from-sky-400/60 to-sky-500/60"></div>
+                          <span className="text-sky-500/80 text-lg lg:text-xl font-light leading-none -mt-0.5">›</span>
                         </div>
                       )}
                     </div>
