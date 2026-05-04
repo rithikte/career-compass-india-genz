@@ -240,7 +240,167 @@ const EmbeddedProductEngineering = () => {
 
       {/* Tool Identification */}
       <ToolIdentification />
+
+      {/* Mini Projects */}
+      <MiniProjects />
     </div>
+  );
+};
+
+const miniProjectRows = [
+  {
+    project: 'GPIO LED + Button Control',
+    alternates: ['Digital I/O Demo', 'Switch-Controlled LED'],
+    build: 'Button input controls LED output with debounce logic.',
+    skillTool: 'Embedded C + Arduino/STM32',
+    why: 'First proof of input-output control.',
+    interviewWeak: 'Cannot explain basic GPIO.',
+    jobWeak: 'Struggles with simple board control.',
+    interviewStrong: 'Shows real peripheral start.',
+    jobStrong: 'Builds control logic foundation.',
+  },
+  {
+    project: 'Timer-Based PWM Buzzer/LED Dimmer',
+    alternates: ['PWM Demo', 'Timer Output Control'],
+    build: 'Use timer/PWM to control LED brightness or buzzer tone.',
+    skillTool: 'Peripheral Control + STM32/Arduino',
+    why: 'Teaches timing, registers, PWM behavior.',
+    interviewWeak: 'Weak on timers/PWM.',
+    jobWeak: 'Cannot control motors/buzzers/outputs properly.',
+    interviewStrong: 'Stronger than basic blink project.',
+    jobStrong: 'Useful for actuator control.',
+  },
+  {
+    project: 'ADC Sensor Reading Project',
+    alternates: ['Analog Sensor Interface', 'Sensor Data Logger'],
+    build: 'Read potentiometer/temperature/light sensor and display serial values.',
+    skillTool: 'Sensor Interfacing + Multimeter',
+    why: 'Converts analog input into firmware data.',
+    interviewWeak: 'Cannot explain ADC.',
+    jobWeak: 'Cannot handle sensor-based boards.',
+    interviewStrong: 'Shows practical sensor handling.',
+    jobStrong: 'Helps in real product input testing.',
+  },
+  {
+    project: 'UART Serial Debug Logger',
+    alternates: ['Serial Debug Tool', 'UART Monitor Project'],
+    build: 'Send debug messages and sensor values to serial monitor.',
+    skillTool: 'Embedded C + UART + IDE',
+    why: 'Serial debug is core fresher debugging habit.',
+    interviewWeak: 'Cannot explain debugging method.',
+    jobWeak: 'Debugging becomes guesswork.',
+    interviewStrong: 'Shows structured debug thinking.',
+    jobStrong: 'Helps isolate bugs faster.',
+  },
+];
+
+const MiniProjects = () => {
+  const sec = useScrollGlow();
+  return (
+    <section
+      ref={sec.ref}
+      className={`bg-gradient-to-br from-swiss-sky/20 via-white to-swiss-lavender/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+        sec.inView
+          ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+          : 'border border-slate-200/80'
+      }`}
+    >
+      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sky-foreground mb-2">
+        Mini
+      </p>
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
+        Projects
+      </h2>
+
+      {/* Desktop table */}
+      <div className="hidden xl:block">
+        <div className="grid px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold gap-x-3" style={{ gridTemplateColumns: 'repeat(18, minmax(0, 1fr))' }}>
+          <div className="col-span-2">Project</div>
+          <div className="col-span-2">Alternate Names</div>
+          <div className="col-span-3">What You Build</div>
+          <div className="col-span-2">Skill + Tool</div>
+          <div className="col-span-2">Why Essential</div>
+          <div className="col-span-2">Interview — Weak</div>
+          <div className="col-span-2">Job — Weak</div>
+          <div className="col-span-1.5">Interview — Strong</div>
+          <div className="col-span-1.5">Job — Strong</div>
+        </div>
+        <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
+          {miniProjectRows.map((r, i) => (
+            <div
+              key={r.project}
+              className={`grid px-4 py-4 items-start text-sm gap-x-3 ${
+                i !== miniProjectRows.length - 1 ? 'border-b border-slate-200/60' : ''
+              } hover:bg-white/70 transition-colors`}
+              style={{ gridTemplateColumns: 'repeat(18, minmax(0, 1fr))' }}
+            >
+              <div className="col-span-2 text-slate-800 font-semibold leading-snug">{r.project}</div>
+              <div className="col-span-2">
+                <ul className="space-y-1">
+                  {r.alternates.map((a) => (
+                    <li key={a} className="flex items-start gap-1.5 text-slate-600">
+                      <span className="w-1.5 h-1.5 rounded-full bg-swiss-lavender-foreground/50 mt-1.5 flex-shrink-0" />
+                      <span className="leading-relaxed">{a}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="col-span-3 text-slate-700 leading-relaxed">{r.build}</div>
+              <div className="col-span-2 text-swiss-sky-foreground font-medium leading-relaxed">{r.skillTool}</div>
+              <div className="col-span-2 text-slate-600 leading-relaxed">{r.why}</div>
+              <div className="col-span-2 text-rose-700/85 font-light leading-relaxed">{r.interviewWeak}</div>
+              <div className="col-span-2 text-rose-700/85 font-light leading-relaxed">{r.jobWeak}</div>
+              <div style={{ gridColumn: 'span 1.5 / span 1.5' }} className="text-emerald-700 font-medium leading-relaxed">{r.interviewStrong}</div>
+              <div style={{ gridColumn: 'span 1.5 / span 1.5' }} className="text-emerald-700 font-medium leading-relaxed">{r.jobStrong}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile / tablet cards */}
+      <div className="xl:hidden space-y-3.5">
+        {miniProjectRows.map((r) => (
+          <div
+            key={r.project}
+            className="p-4 sm:p-5 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm"
+          >
+            <div className="mb-3 pb-3 border-b border-slate-200/60">
+              <p className="text-sm sm:text-base font-semibold text-slate-800 leading-snug mb-2">
+                {r.project}
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {r.alternates.map((a) => (
+                  <span
+                    key={a}
+                    className="inline-flex items-center px-2 py-0.5 rounded-md bg-swiss-lavender/40 border border-swiss-lavender-foreground/15 text-[0.6875rem] text-swiss-lavender-foreground font-medium"
+                  >
+                    {a}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="space-y-3">
+              {[
+                { l: 'What You Build', v: r.build, tone: 'text-slate-700' },
+                { l: 'Skill + Tool Used', v: r.skillTool, tone: 'text-swiss-sky-foreground font-medium' },
+                { l: 'Why Essential', v: r.why, tone: 'text-slate-700' },
+                { l: 'Interview — If Weak', v: r.interviewWeak, tone: 'text-rose-700/85 font-light' },
+                { l: 'Job — If Weak', v: r.jobWeak, tone: 'text-rose-700/85 font-light' },
+                { l: 'Interview — If Strong', v: r.interviewStrong, tone: 'text-emerald-700 font-medium' },
+                { l: 'Job — If Strong', v: r.jobStrong, tone: 'text-emerald-700 font-medium' },
+              ].map((f) => (
+                <div key={f.l} className="flex flex-col gap-1">
+                  <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+                    {f.l}
+                  </span>
+                  <span className={`text-sm leading-relaxed ${f.tone}`}>{f.v}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
