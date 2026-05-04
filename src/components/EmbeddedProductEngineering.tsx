@@ -231,7 +231,82 @@ const EmbeddedProductEngineering = () => {
 
       {/* Behavior Gap */}
       <BehaviorGap />
+
+      {/* Job Execution Task Lock */}
+      <JobExecutionTaskLock />
     </div>
+  );
+};
+
+const jobExecutionTasks = [
+  'Write Embedded C code for GPIO, timers, ADC, PWM, UART, SPI, I2C.',
+  'Read datasheets and configure microcontroller registers/peripherals.',
+  'Test firmware behavior on a real microcontroller board.',
+  'Debug hardware-firmware issues using serial output, LEDs, multimeter, and oscilloscope/basic DSO.',
+  'Interface sensors, switches, relays, displays, motors, or buzzers with microcontroller boards.',
+  'Document test results, observed bugs, fixes, and final working behavior.',
+];
+
+const JobExecutionTaskLock = () => {
+  const sec = useScrollGlow();
+  return (
+    <section
+      ref={sec.ref}
+      className={`bg-gradient-to-br from-swiss-sky/25 via-white to-swiss-sage/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+        sec.inView
+          ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+          : 'border border-slate-200/80'
+      }`}
+    >
+      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sky-foreground mb-2">
+        Job Execution
+      </p>
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
+        Task Lock
+      </h2>
+
+      {/* Desktop table */}
+      <div className="hidden md:block">
+        <div className="grid grid-cols-12 px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+          <div className="col-span-1">No.</div>
+          <div className="col-span-11">Real Fresher-Level Task</div>
+        </div>
+        <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
+          {jobExecutionTasks.map((task, i) => (
+            <div
+              key={i}
+              className={`grid grid-cols-12 px-4 py-3.5 items-center text-sm gap-x-4 ${
+                i !== jobExecutionTasks.length - 1 ? 'border-b border-slate-200/60' : ''
+              } hover:bg-white/70 transition-colors`}
+            >
+              <div className="col-span-1">
+                <span className="inline-flex items-center justify-center w-7 h-7 rounded-md bg-swiss-sky/50 border border-swiss-sky-foreground/15 text-xs font-bold text-swiss-sky-foreground">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+              </div>
+              <div className="col-span-11 text-slate-700 leading-relaxed">{task}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile cards */}
+      <div className="md:hidden space-y-2.5">
+        {jobExecutionTasks.map((task, i) => (
+          <div
+            key={i}
+            className="flex items-start gap-3 p-3.5 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm"
+          >
+            <div className="flex-shrink-0 w-7 h-7 rounded-md bg-swiss-sky/50 border border-swiss-sky-foreground/15 flex items-center justify-center">
+              <span className="text-[0.625rem] font-bold text-swiss-sky-foreground">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+            </div>
+            <p className="text-sm text-slate-700 leading-relaxed pt-0.5">{task}</p>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
