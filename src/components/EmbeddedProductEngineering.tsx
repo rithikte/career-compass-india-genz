@@ -222,7 +222,130 @@ const EmbeddedProductEngineering = () => {
 
       {/* Subject Timeline Table */}
       <SubjectTimelineTable />
+
+      {/* Impact */}
+      <ImpactTable />
     </div>
+  );
+};
+
+const impactRows = [
+  {
+    subject: 'Microprocessors and Microcontrollers',
+    interview: 'Explain interrupts, timers, registers, memory, UART/SPI/I2C, ADC/PWM.',
+    work: 'Configure and debug peripherals on boards.',
+    ignoredInterview: 'Cannot answer "how does UART/interrupt/timer work?"',
+    ignoredWork: 'Code becomes copy-paste without control understanding.',
+    why: 'This is the heart of bare-metal work.',
+  },
+  {
+    subject: 'Embedded Systems',
+    interview: 'Explain firmware flow, real-time behavior, hardware-software interaction.',
+    work: 'Convert board requirements into working device behavior.',
+    ignoredInterview: 'Cannot explain complete embedded project flow.',
+    ignoredWork: 'Fails to connect code with product behavior.',
+    why: 'This turns subject knowledge into product execution.',
+  },
+  {
+    subject: 'C Programming / Programming in C',
+    interview: 'Explain pointers, memory, structures, bitwise operations, debugging logic.',
+    work: 'Write firmware logic and fix bugs.',
+    ignoredInterview: 'Fails basic embedded C rounds.',
+    ignoredWork: 'Cannot write clean peripheral-control code.',
+    why: 'No C = no embedded firmware entry.',
+  },
+  {
+    subject: 'Electronic Measurements and Instrumentation',
+    interview: 'Explain how to test voltage, signal, sensor, timing, and failure behavior.',
+    work: 'Use instruments to verify board output.',
+    ignoredInterview: 'Cannot prove real hardware debugging.',
+    ignoredWork: 'Cannot identify whether bug is hardware or firmware.',
+    why: 'Firmware freshers must verify behavior, not just code.',
+  },
+  {
+    subject: 'Digital Electronics',
+    interview: 'Explain logic levels, flip-flops, counters, timing, multiplexers.',
+    work: 'Understand GPIO states, timing, digital signal behavior.',
+    ignoredInterview: 'Weak on basic electronics logic questions.',
+    ignoredWork: 'Misreads signal behavior and timing issues.',
+    why: 'It gives the logic foundation behind microcontroller pins.',
+  },
+];
+
+const ImpactTable = () => {
+  const sec = useScrollGlow();
+  return (
+    <section
+      ref={sec.ref}
+      className={`bg-gradient-to-br from-swiss-rose/15 via-white to-swiss-sand/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+        sec.inView
+          ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+          : 'border border-slate-200/80'
+      }`}
+    >
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
+        Impact
+      </h2>
+
+      {/* Desktop table */}
+      <div className="hidden xl:block">
+        <div className="grid grid-cols-12 px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold gap-x-4">
+          <div className="col-span-2">Subject</div>
+          <div className="col-span-2">Interview Use</div>
+          <div className="col-span-2">Daily Work Use</div>
+          <div className="col-span-2">If Ignored — Interview</div>
+          <div className="col-span-2">If Ignored — Work</div>
+          <div className="col-span-2">Why Essential</div>
+        </div>
+        <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
+          {impactRows.map((r, i) => (
+            <div
+              key={r.subject}
+              className={`grid grid-cols-12 px-4 py-4 items-start text-sm gap-x-4 ${
+                i !== impactRows.length - 1 ? 'border-b border-slate-200/60' : ''
+              } hover:bg-white/70 transition-colors`}
+            >
+              <div className="col-span-2 text-slate-800 font-semibold leading-snug">{r.subject}</div>
+              <div className="col-span-2 text-slate-600 leading-relaxed">{r.interview}</div>
+              <div className="col-span-2 text-slate-600 leading-relaxed">{r.work}</div>
+              <div className="col-span-2 text-rose-700/90 font-light leading-relaxed">{r.ignoredInterview}</div>
+              <div className="col-span-2 text-rose-700/90 font-light leading-relaxed">{r.ignoredWork}</div>
+              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.why}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile / tablet cards */}
+      <div className="xl:hidden space-y-3.5">
+        {impactRows.map((r) => (
+          <div
+            key={r.subject}
+            className="p-4 sm:p-5 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm"
+          >
+            <p className="text-sm sm:text-base font-semibold text-slate-800 leading-snug mb-3 pb-3 border-b border-slate-200/60">
+              {r.subject}
+            </p>
+            <div className="space-y-3">
+              {[
+                { l: 'Interview Use', v: r.interview, tone: 'text-slate-700' },
+                { l: 'Daily Work Use', v: r.work, tone: 'text-slate-700' },
+                { l: 'If Ignored — Interview', v: r.ignoredInterview, tone: 'text-rose-700/90' },
+                { l: 'If Ignored — Work', v: r.ignoredWork, tone: 'text-rose-700/90' },
+                { l: 'Why Essential', v: r.why, tone: 'text-emerald-700 font-medium' },
+              ].map((f) => (
+                <div key={f.l} className="flex flex-col gap-1">
+                  <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+                    {f.l}
+                  </span>
+                  <span className={`text-sm leading-relaxed ${f.tone}`}>{f.v}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
