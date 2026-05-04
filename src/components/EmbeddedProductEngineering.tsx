@@ -213,7 +213,213 @@ const EmbeddedProductEngineering = () => {
 
       {/* Industry → Sub-industry → Cluster Mapping */}
       <IndustryClusterMapping />
+
+      {/* Fresher Work Tasks */}
+      <FresherWorkTasks />
     </div>
+  );
+};
+
+const fresherTasks = [
+  'Write basic Embedded C code for microcontroller peripherals.',
+  'Configure GPIO, timers, ADC, PWM, UART, SPI, and I2C.',
+  'Debug firmware behavior on a real development board.',
+  'Read schematics/datasheets to connect firmware with hardware pins and signals.',
+  'Test board-level input/output behavior and document failures.',
+];
+
+const coverageRows = [
+  { coverage: 'Core Understanding', subject: 'Microprocessors and Microcontrollers' },
+  { coverage: 'Execution', subject: 'C Programming / Programming in C' },
+  { coverage: 'Debugging', subject: 'Electronic Measurements and Instrumentation' },
+  { coverage: 'Design/Application', subject: 'Embedded Systems' },
+  { coverage: 'Testing/Field', subject: 'Digital Electronics + Instrumentation' },
+];
+
+const finalSubjects = [
+  {
+    rank: 1,
+    subject: 'Microprocessors and Microcontrollers',
+    score: 100,
+    why: 'Direct heart of bare-metal peripheral control. Without this, the student cannot understand registers, timers, interrupts, GPIO, ADC, UART, SPI, or I2C.',
+    task: 'Peripheral configuration and board-level control',
+  },
+  {
+    rank: 2,
+    subject: 'Embedded Systems',
+    score: 97,
+    why: 'Connects firmware with real product behavior: timing, interrupts, hardware-software interaction, real-time constraints.',
+    task: 'Firmware-product integration',
+  },
+  {
+    rank: 3,
+    subject: 'C Programming / Programming in C',
+    score: 95,
+    why: 'Bare-metal firmware is mostly written and debugged through C-level logic. Weak C means weak firmware.',
+    task: 'Embedded code writing and debugging',
+  },
+  {
+    rank: 4,
+    subject: 'Electronic Measurements and Instrumentation',
+    score: 88,
+    why: 'Critical for testing real boards. Freshers must verify voltage, signals, sensor behavior, and failure conditions.',
+    task: 'Board testing and debug proof',
+  },
+  {
+    rank: 5,
+    subject: 'Digital Electronics',
+    score: 83,
+    why: 'Supports GPIO logic, timing, counters, flip-flops, signal states, and digital behavior behind microcontroller pins.',
+    task: 'Logic-level understanding and signal behavior',
+  },
+];
+
+const scoreTone = (score: number) =>
+  score >= 95 ? 'text-emerald-700' : score >= 85 ? 'text-amber-700' : 'text-orange-700';
+
+const FresherWorkTasks = () => {
+  const sec = useScrollGlow();
+  return (
+    <section
+      ref={sec.ref}
+      className={`bg-gradient-to-br from-swiss-sky/20 via-white to-swiss-sage/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+        sec.inView
+          ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+          : 'border border-slate-200/80'
+      }`}
+    >
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
+        Fresher Work Tasks
+      </h2>
+
+      {/* Tasks list */}
+      <div className="space-y-2.5 mb-8 sm:mb-10">
+        {fresherTasks.map((task, i) => (
+          <div
+            key={i}
+            className="flex items-start gap-3 sm:gap-4 p-3.5 sm:p-4 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm hover:bg-white/80 transition-colors"
+          >
+            <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-swiss-sky/50 border border-swiss-sky-foreground/15 flex items-center justify-center">
+              <span className="text-[0.625rem] sm:text-xs font-bold text-swiss-sky-foreground">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+            </div>
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed pt-1">{task}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Required Coverage */}
+      <h3 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-swiss-lavender-foreground mb-4">
+        Required Coverage
+      </h3>
+
+      {/* Desktop coverage table */}
+      <div className="hidden md:block mb-8 sm:mb-10">
+        <div className="grid grid-cols-12 px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+          <div className="col-span-5">Required Coverage</div>
+          <div className="col-span-7">Subject Used</div>
+        </div>
+        <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
+          {coverageRows.map((r, i) => (
+            <div
+              key={i}
+              className={`grid grid-cols-12 px-4 py-3.5 items-center text-sm ${
+                i !== coverageRows.length - 1 ? 'border-b border-slate-200/60' : ''
+              } hover:bg-white/70 transition-colors`}
+            >
+              <div className="col-span-5 text-slate-500 font-medium">{r.coverage}</div>
+              <div className="col-span-7 text-slate-700 font-semibold">{r.subject}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile coverage cards */}
+      <div className="md:hidden space-y-2.5 mb-8">
+        {coverageRows.map((r, i) => (
+          <div
+            key={i}
+            className="flex flex-col gap-1 p-3.5 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm"
+          >
+            <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+              {r.coverage}
+            </span>
+            <span className="text-sm text-slate-700 font-semibold">{r.subject}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Final 5 Subjects */}
+      <h3 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-swiss-sage-foreground mb-4">
+        Final 5 Subjects
+      </h3>
+
+      {/* Desktop final-subjects table */}
+      <div className="hidden lg:block">
+        <div className="grid grid-cols-12 px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold gap-x-4">
+          <div className="col-span-1">Rank</div>
+          <div className="col-span-3">Subject</div>
+          <div className="col-span-1">Score</div>
+          <div className="col-span-4">Why Selected</div>
+          <div className="col-span-3">Job Task Supported</div>
+        </div>
+        <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
+          {finalSubjects.map((s, i) => (
+            <div
+              key={s.rank}
+              className={`grid grid-cols-12 px-4 py-4 items-start text-sm gap-x-4 ${
+                i !== finalSubjects.length - 1 ? 'border-b border-slate-200/60' : ''
+              } hover:bg-white/70 transition-colors`}
+            >
+              <div className="col-span-1">
+                <span className="inline-flex items-center justify-center w-7 h-7 rounded-md bg-swiss-sage/50 border border-swiss-sage-foreground/15 text-xs font-bold text-swiss-sage-foreground">
+                  {s.rank}
+                </span>
+              </div>
+              <div className="col-span-3 text-slate-700 font-semibold">{s.subject}</div>
+              <div className={`col-span-1 font-bold tracking-wide ${scoreTone(s.score)}`}>{s.score}</div>
+              <div className="col-span-4 text-slate-500 font-light leading-relaxed">{s.why}</div>
+              <div className="col-span-3 text-slate-600 leading-relaxed">{s.task}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile / tablet final-subjects cards */}
+      <div className="lg:hidden space-y-3">
+        {finalSubjects.map((s) => (
+          <div
+            key={s.rank}
+            className="p-4 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm"
+          >
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-2.5">
+                <span className="inline-flex items-center justify-center w-7 h-7 rounded-md bg-swiss-sage/50 border border-swiss-sage-foreground/15 text-xs font-bold text-swiss-sage-foreground">
+                  {s.rank}
+                </span>
+                <span className="text-sm sm:text-base font-semibold text-slate-800">{s.subject}</span>
+              </div>
+              <span className={`text-sm font-bold tracking-wide ${scoreTone(s.score)}`}>{s.score}</span>
+            </div>
+            <div className="space-y-2.5">
+              <div className="flex flex-col gap-0.5">
+                <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+                  Why Selected
+                </span>
+                <span className="text-sm text-slate-600 leading-relaxed font-light">{s.why}</span>
+              </div>
+              <div className="flex flex-col gap-0.5">
+                <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+                  Job Task Supported
+                </span>
+                <span className="text-sm text-slate-700 leading-relaxed">{s.task}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
