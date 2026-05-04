@@ -246,7 +246,126 @@ const EmbeddedProductEngineering = () => {
 
       {/* Major Projects */}
       <MajorProjects />
+
+      {/* Lab / Hands-On */}
+      <LabHandsOn />
     </div>
+  );
+};
+
+const labRows = [
+  {
+    requirement: 'Build and test on real MCU board',
+    why: 'Embedded cannot be learned only on paper.',
+    interviewWeak: 'No practical proof.',
+    jobWeak: 'Cannot handle board-level work.',
+    interviewStrong: 'Shows real execution.',
+    jobStrong: 'Faster job adaptation.',
+  },
+  {
+    requirement: 'Use multimeter for voltage/continuity checks',
+    why: 'First-level hardware debugging.',
+    interviewWeak: 'Cannot explain power/fault checks.',
+    jobWeak: 'Wastes time blaming code.',
+    interviewStrong: 'Shows hardware awareness.',
+    jobStrong: 'Prevents blind debugging.',
+  },
+  {
+    requirement: 'Observe PWM/UART/basic signal on DSO/CRO',
+    why: 'Timing and signal behavior matters.',
+    interviewWeak: 'Weak waveform explanation.',
+    jobWeak: 'Cannot debug signal issues.',
+    interviewStrong: 'Strong practical credibility.',
+    jobStrong: 'Better board validation.',
+  },
+  {
+    requirement: 'Maintain test notes and bug-fix log',
+    why: 'Jobs require documented debugging.',
+    interviewWeak: 'Cannot explain failures clearly.',
+    jobWeak: 'Poor handover and debugging trace.',
+    interviewStrong: 'Interviewer sees maturity.',
+    jobStrong: 'Better team reliability.',
+  },
+];
+
+const LabHandsOn = () => {
+  const sec = useScrollGlow();
+  return (
+    <section
+      ref={sec.ref}
+      className={`bg-gradient-to-br from-swiss-sky/20 via-white to-swiss-sand/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+        sec.inView
+          ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+          : 'border border-slate-200/80'
+      }`}
+    >
+      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sky-foreground mb-2">
+        Lab
+      </p>
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
+        Hands-On
+      </h2>
+
+      {/* Desktop table */}
+      <div className="hidden xl:block">
+        <div className="grid grid-cols-13 px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold gap-x-4" style={{ gridTemplateColumns: 'repeat(13, minmax(0, 1fr))' }}>
+          <div className="col-span-3">Lab Requirement</div>
+          <div className="col-span-2">Why Essential</div>
+          <div className="col-span-2">Interview — Weak</div>
+          <div className="col-span-2">Job — Weak</div>
+          <div className="col-span-2">Interview — Strong</div>
+          <div className="col-span-2">Job — Strong</div>
+        </div>
+        <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
+          {labRows.map((r, i) => (
+            <div
+              key={r.requirement}
+              className={`grid px-4 py-4 items-start text-sm gap-x-4 ${
+                i !== labRows.length - 1 ? 'border-b border-slate-200/60' : ''
+              } hover:bg-white/70 transition-colors`}
+              style={{ gridTemplateColumns: 'repeat(13, minmax(0, 1fr))' }}
+            >
+              <div className="col-span-3 text-slate-800 font-semibold leading-snug">{r.requirement}</div>
+              <div className="col-span-2 text-slate-700 leading-relaxed">{r.why}</div>
+              <div className="col-span-2 text-rose-700/85 font-light leading-relaxed">{r.interviewWeak}</div>
+              <div className="col-span-2 text-rose-700/85 font-light leading-relaxed">{r.jobWeak}</div>
+              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.interviewStrong}</div>
+              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.jobStrong}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile / tablet cards */}
+      <div className="xl:hidden space-y-3.5">
+        {labRows.map((r) => (
+          <div
+            key={r.requirement}
+            className="p-4 sm:p-5 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm"
+          >
+            <p className="text-sm sm:text-base font-semibold text-slate-800 leading-snug mb-3 pb-3 border-b border-slate-200/60">
+              {r.requirement}
+            </p>
+            <div className="space-y-3">
+              {[
+                { l: 'Why Essential', v: r.why, tone: 'text-slate-700' },
+                { l: 'Interview — If Weak', v: r.interviewWeak, tone: 'text-rose-700/85 font-light' },
+                { l: 'Job — If Weak', v: r.jobWeak, tone: 'text-rose-700/85 font-light' },
+                { l: 'Interview — If Strong', v: r.interviewStrong, tone: 'text-emerald-700 font-medium' },
+                { l: 'Job — If Strong', v: r.jobStrong, tone: 'text-emerald-700 font-medium' },
+              ].map((f) => (
+                <div key={f.l} className="flex flex-col gap-1">
+                  <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+                    {f.l}
+                  </span>
+                  <span className={`text-sm leading-relaxed ${f.tone}`}>{f.v}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
