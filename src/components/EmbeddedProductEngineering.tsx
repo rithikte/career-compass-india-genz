@@ -210,7 +210,132 @@ const EmbeddedProductEngineering = () => {
           ))}
         </div>
       </section>
+
+      {/* Industry → Sub-industry → Cluster Mapping */}
+      <IndustryClusterMapping />
     </div>
+  );
+};
+
+const clusterRows = [
+  {
+    industry: 'Electronics Product Engineering',
+    sub: 'Embedded Consumer/Industrial Devices',
+    cluster: 'Microcontroller-based control boards',
+    work: 'Firmware for buttons, sensors, displays, motors, relays.',
+  },
+  {
+    industry: 'Electronics Product Engineering',
+    sub: 'Embedded Consumer/Industrial Devices',
+    cluster: 'Sensor-interface product boards',
+    work: 'ADC/I2C/SPI sensor reading, calibration, logging.',
+  },
+  {
+    industry: 'Smart Energy & Metering Devices',
+    sub: 'Smart Electricity Metering',
+    cluster: 'Single/three-phase meter boards',
+    work: 'Firmware testing for metering ICs, display, communication.',
+  },
+  {
+    industry: 'Smart Energy & Metering Devices',
+    sub: 'Energy monitoring devices',
+    cluster: 'IoT energy monitor boards',
+    work: 'Sensor reading, data transmission, field testing support.',
+  },
+];
+
+const IndustryClusterMapping = () => {
+  const sec = useScrollGlow();
+  return (
+    <section
+      ref={sec.ref}
+      className={`bg-gradient-to-br from-swiss-lavender/20 via-white to-swiss-sky/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+        sec.inView
+          ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+          : 'border border-slate-200/80'
+      }`}
+    >
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-1.5">
+        Industry → Sub-industry → Cluster Mapping
+      </h2>
+      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.15em] uppercase text-swiss-lavender-foreground mb-5 sm:mb-6">
+        Junior Embedded Firmware Engineer
+      </p>
+
+      {/* Desktop table */}
+      <div className="hidden lg:block">
+        <div className="grid grid-cols-12 px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+          <div className="col-span-3">Industry</div>
+          <div className="col-span-3">Sub-industry</div>
+          <div className="col-span-3">Cluster</div>
+          <div className="col-span-3">Cluster Work</div>
+        </div>
+        <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
+          {clusterRows.map((r, i) => (
+            <div
+              key={i}
+              className={`grid grid-cols-12 px-4 py-3.5 items-start text-sm gap-x-4 ${
+                i !== clusterRows.length - 1 ? 'border-b border-slate-200/60' : ''
+              } hover:bg-white/70 transition-colors`}
+            >
+              <div className="col-span-3 text-slate-700 font-medium">{r.industry}</div>
+              <div className="col-span-3 text-slate-600">{r.sub}</div>
+              <div className="col-span-3 text-slate-600">{r.cluster}</div>
+              <div className="col-span-3 text-slate-500 font-light leading-relaxed">{r.work}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile / tablet cards */}
+      <div className="lg:hidden space-y-3">
+        {clusterRows.map((r, i) => (
+          <div
+            key={i}
+            className="p-4 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm space-y-2.5"
+          >
+            {[
+              { l: 'Industry', v: r.industry },
+              { l: 'Sub-industry', v: r.sub },
+              { l: 'Cluster', v: r.cluster },
+              { l: 'Cluster Work', v: r.work },
+            ].map((f) => (
+              <div key={f.l} className="flex flex-col gap-0.5">
+                <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+                  {f.l}
+                </span>
+                <span className="text-sm text-slate-700 leading-relaxed">{f.v}</span>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+
+      {/* Fresher Role + Alternate Names */}
+      <div className="mt-6 sm:mt-8 grid gap-4 sm:grid-cols-2">
+        <div className="p-4 sm:p-5 bg-white/60 border border-swiss-sage-foreground/15 rounded-lg backdrop-blur-sm">
+          <p className="text-[0.625rem] sm:text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold mb-1.5">
+            Fresher Role
+          </p>
+          <p className="text-sm sm:text-base font-semibold text-swiss-sage-foreground tracking-wide">
+            Junior Embedded Firmware Engineer
+          </p>
+        </div>
+        <div className="p-4 sm:p-5 bg-white/60 border border-swiss-sky-foreground/15 rounded-lg backdrop-blur-sm">
+          <p className="text-[0.625rem] sm:text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold mb-2">
+            Alternate Market Names
+          </p>
+          <ul className="space-y-1.5">
+            {['Embedded Software Engineer', 'Embedded Systems Engineer'].map((n) => (
+              <li key={n} className="flex items-center gap-2 text-sm text-slate-700">
+                <span className="w-1.5 h-1.5 rounded-full bg-swiss-sky-foreground/60" />
+                {n}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
   );
 };
 
