@@ -216,7 +216,165 @@ const EmbeddedProductEngineering = () => {
 
       {/* Fresher Work Tasks */}
       <FresherWorkTasks />
+
+      {/* Subject Recognition Table */}
+      <SubjectRecognitionTable />
     </div>
+  );
+};
+
+const subjectRecognitionRows = [
+  {
+    rank: 1,
+    primary: 'Microprocessors and Microcontrollers',
+    alternates: ['Microprocessors & Interfacing', 'Microcontroller Architecture', 'Microcontroller-Based Systems'],
+    identity: 'Core peripheral-control subject',
+    semester: 'Sem 4–6',
+    notFound: 'Look for 8085/8086 + 8051/ARM + interfacing topics',
+  },
+  {
+    rank: 2,
+    primary: 'Embedded Systems',
+    alternates: ['Embedded System Design', 'Real-Time Embedded Systems', 'Embedded Controllers'],
+    identity: 'Firmware-to-product behavior subject',
+    semester: 'Sem 5–7',
+    notFound: 'Look for RTOS basics, embedded C, sensors, actuators, device control',
+  },
+  {
+    rank: 3,
+    primary: 'C Programming / Programming in C',
+    alternates: ['Problem Solving Using C', 'Computer Programming', 'Programming for Engineers'],
+    identity: 'Firmware coding foundation',
+    semester: 'Sem 1–3',
+    notFound: 'Look for functions, arrays, pointers, structures, memory, bitwise operators',
+  },
+  {
+    rank: 4,
+    primary: 'Electronic Measurements and Instrumentation',
+    alternates: ['Measurements and Instrumentation', 'Electronic Instrumentation', 'Electrical & Electronic Measurements'],
+    identity: 'Testing and debug subject',
+    semester: 'Sem 4–6',
+    notFound: 'Look for CRO/DSO, multimeter, sensors, transducers, measurement errors',
+  },
+  {
+    rank: 5,
+    primary: 'Digital Electronics',
+    alternates: ['Digital Logic Design', 'Switching Theory and Logic Design', 'Digital Circuits'],
+    identity: 'Logic and timing foundation',
+    semester: 'Sem 3–5',
+    notFound: 'Look for gates, flip-flops, counters, registers, multiplexers, logic families',
+  },
+];
+
+const SubjectRecognitionTable = () => {
+  const sec = useScrollGlow();
+  return (
+    <section
+      ref={sec.ref}
+      className={`bg-gradient-to-br from-swiss-sage/20 via-white to-swiss-lavender/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+        sec.inView
+          ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+          : 'border border-slate-200/80'
+      }`}
+    >
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
+        Subject Recognition Table
+      </h2>
+
+      {/* Desktop table */}
+      <div className="hidden xl:block">
+        <div className="grid grid-cols-12 px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold gap-x-4">
+          <div className="col-span-1">Rank</div>
+          <div className="col-span-2">Primary Name</div>
+          <div className="col-span-3">Alternate Names (Top 3)</div>
+          <div className="col-span-2">Functional Identity</div>
+          <div className="col-span-1">Semester</div>
+          <div className="col-span-3">If Not Found</div>
+        </div>
+        <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
+          {subjectRecognitionRows.map((r, i) => (
+            <div
+              key={r.rank}
+              className={`grid grid-cols-12 px-4 py-4 items-start text-sm gap-x-4 ${
+                i !== subjectRecognitionRows.length - 1 ? 'border-b border-slate-200/60' : ''
+              } hover:bg-white/70 transition-colors`}
+            >
+              <div className="col-span-1">
+                <span className="inline-flex items-center justify-center w-7 h-7 rounded-md bg-swiss-sage/50 border border-swiss-sage-foreground/15 text-xs font-bold text-swiss-sage-foreground">
+                  {r.rank}
+                </span>
+              </div>
+              <div className="col-span-2 text-slate-700 font-semibold leading-snug">{r.primary}</div>
+              <div className="col-span-3">
+                <ul className="space-y-1">
+                  {r.alternates.map((a) => (
+                    <li key={a} className="flex items-start gap-2 text-slate-600">
+                      <span className="w-1.5 h-1.5 rounded-full bg-swiss-lavender-foreground/50 mt-1.5 flex-shrink-0" />
+                      <span className="leading-relaxed">{a}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="col-span-2 text-slate-600 leading-relaxed">{r.identity}</div>
+              <div className="col-span-1 text-swiss-sky-foreground font-medium">{r.semester}</div>
+              <div className="col-span-3 text-slate-500 font-light leading-relaxed">{r.notFound}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile / tablet cards */}
+      <div className="xl:hidden space-y-3.5">
+        {subjectRecognitionRows.map((r) => (
+          <div
+            key={r.rank}
+            className="p-4 sm:p-5 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm"
+          >
+            <div className="flex items-start gap-3 mb-4 pb-3 border-b border-slate-200/60">
+              <span className="inline-flex items-center justify-center w-7 h-7 rounded-md bg-swiss-sage/50 border border-swiss-sage-foreground/15 text-xs font-bold text-swiss-sage-foreground flex-shrink-0">
+                {r.rank}
+              </span>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm sm:text-base font-semibold text-slate-800 leading-snug">{r.primary}</p>
+                <p className="text-[0.6875rem] tracking-[0.15em] uppercase text-swiss-sky-foreground font-medium mt-1">
+                  {r.semester}
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <div className="flex flex-col gap-1">
+                <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+                  Alternate Names (Top 3)
+                </span>
+                <ul className="space-y-1 mt-0.5">
+                  {r.alternates.map((a) => (
+                    <li key={a} className="flex items-start gap-2 text-sm text-slate-600">
+                      <span className="w-1.5 h-1.5 rounded-full bg-swiss-lavender-foreground/50 mt-1.5 flex-shrink-0" />
+                      <span className="leading-relaxed">{a}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="flex flex-col gap-1">
+                <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+                  Functional Identity
+                </span>
+                <span className="text-sm text-slate-700 leading-relaxed">{r.identity}</span>
+              </div>
+
+              <div className="flex flex-col gap-1">
+                <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+                  If Not Found
+                </span>
+                <span className="text-sm text-slate-500 font-light leading-relaxed">{r.notFound}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
