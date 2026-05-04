@@ -225,7 +225,143 @@ const EmbeddedProductEngineering = () => {
 
       {/* Impact */}
       <ImpactTable />
+
+      {/* Recovery */}
+      <RecoveryTable />
     </div>
+  );
+};
+
+const recoveryRows = [
+  {
+    subject: 'C Programming',
+    missed: 'Passed exam but cannot code independently',
+    minimum: 'Write small C programs without copying',
+    plan: 'Daily 1–2 programs: pointers, arrays, structures, bitwise operations',
+    time: '4–6 weeks',
+    skip: 'File handling depth, advanced algorithms',
+    mustNotSkip: 'Pointers, structures, bitwise operators, memory',
+  },
+  {
+    subject: 'Microprocessors and Microcontrollers',
+    missed: 'Studied theory but cannot use peripherals',
+    minimum: 'Configure GPIO, timers, UART, ADC on one board',
+    plan: 'Pick one MCU board and implement 5 peripheral demos',
+    time: '6–8 weeks',
+    skip: 'Long 8086 theory depth',
+    mustNotSkip: 'Interrupts, timers, GPIO, UART, SPI/I2C, ADC',
+  },
+  {
+    subject: 'Embedded Systems',
+    missed: 'Knows definitions but no working project',
+    minimum: 'Build one sensor/control product flow',
+    plan: 'Build one mini embedded product with input, processing, output, test notes',
+    time: '6–8 weeks',
+    skip: 'OS-level theory overload',
+    mustNotSkip: 'System flow, timing, sensor-actuator logic',
+  },
+  {
+    subject: 'Measurements and Instrumentation',
+    missed: 'Cannot use testing instruments',
+    minimum: 'Measure voltage, waveform, sensor output',
+    plan: 'Practice multimeter + DSO/CRO basics and document readings',
+    time: '3–4 weeks',
+    skip: 'Deep metrology theory',
+    mustNotSkip: 'Voltage, current, waveform, sensor measurement, error',
+  },
+  {
+    subject: 'Digital Electronics',
+    missed: 'Forgot logic fundamentals',
+    minimum: 'Explain gates, flip-flops, counters, timing',
+    plan: 'Revise logic circuits + timing diagrams + counters',
+    time: '3–4 weeks',
+    skip: 'Boolean theorem depth beyond need',
+    mustNotSkip: 'Logic gates, flip-flops, counters, registers, timing',
+  },
+];
+
+const RecoveryTable = () => {
+  const sec = useScrollGlow();
+  return (
+    <section
+      ref={sec.ref}
+      className={`bg-gradient-to-br from-swiss-sage/20 via-white to-swiss-sand/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+        sec.inView
+          ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+          : 'border border-slate-200/80'
+      }`}
+    >
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
+        Recovery
+      </h2>
+
+      {/* Desktop table */}
+      <div className="hidden xl:block">
+        <div className="grid grid-cols-14 px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold gap-x-3" style={{ gridTemplateColumns: 'repeat(14, minmax(0, 1fr))' }}>
+          <div className="col-span-2">Subject</div>
+          <div className="col-span-2">Missed Situation</div>
+          <div className="col-span-2">Minimum Level</div>
+          <div className="col-span-3">Fast Plan</div>
+          <div className="col-span-1">Time</div>
+          <div className="col-span-2">Skip</div>
+          <div className="col-span-2">Must Not Skip</div>
+        </div>
+        <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
+          {recoveryRows.map((r, i) => (
+            <div
+              key={r.subject}
+              className={`grid px-4 py-4 items-start text-sm gap-x-3 ${
+                i !== recoveryRows.length - 1 ? 'border-b border-slate-200/60' : ''
+              } hover:bg-white/70 transition-colors`}
+              style={{ gridTemplateColumns: 'repeat(14, minmax(0, 1fr))' }}
+            >
+              <div className="col-span-2 text-slate-800 font-semibold leading-snug">{r.subject}</div>
+              <div className="col-span-2 text-slate-600 leading-relaxed">{r.missed}</div>
+              <div className="col-span-2 text-slate-600 leading-relaxed">{r.minimum}</div>
+              <div className="col-span-3 text-slate-700 leading-relaxed">{r.plan}</div>
+              <div className="col-span-1 text-swiss-sky-foreground font-semibold tracking-wide">{r.time}</div>
+              <div className="col-span-2 text-rose-700/85 font-light leading-relaxed">{r.skip}</div>
+              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.mustNotSkip}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile / tablet cards */}
+      <div className="xl:hidden space-y-3.5">
+        {recoveryRows.map((r) => (
+          <div
+            key={r.subject}
+            className="p-4 sm:p-5 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm"
+          >
+            <div className="flex items-start justify-between gap-3 mb-3 pb-3 border-b border-slate-200/60">
+              <p className="text-sm sm:text-base font-semibold text-slate-800 leading-snug flex-1 min-w-0">
+                {r.subject}
+              </p>
+              <span className="inline-flex items-center px-2 py-0.5 rounded-md border border-swiss-sky-foreground/20 bg-swiss-sky/40 text-[0.6875rem] font-bold tracking-wide text-swiss-sky-foreground flex-shrink-0">
+                {r.time}
+              </span>
+            </div>
+            <div className="space-y-3">
+              {[
+                { l: 'Missed Situation', v: r.missed, tone: 'text-slate-600' },
+                { l: 'Minimum Level', v: r.minimum, tone: 'text-slate-700' },
+                { l: 'Fast Plan', v: r.plan, tone: 'text-slate-700' },
+                { l: 'Skip', v: r.skip, tone: 'text-rose-700/85 font-light' },
+                { l: 'Must Not Skip', v: r.mustNotSkip, tone: 'text-emerald-700 font-medium' },
+              ].map((f) => (
+                <div key={f.l} className="flex flex-col gap-1">
+                  <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+                    {f.l}
+                  </span>
+                  <span className={`text-sm leading-relaxed ${f.tone}`}>{f.v}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
