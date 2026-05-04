@@ -219,7 +219,206 @@ const EmbeddedProductEngineering = () => {
 
       {/* Subject Recognition Table */}
       <SubjectRecognitionTable />
+
+      {/* Subject Timeline Table */}
+      <SubjectTimelineTable />
     </div>
+  );
+};
+
+const timelineRows: { subject: string; when: string; priority: 'HIGH' | 'MEDIUM'; whatToDo: string; ifIgnored: string }[] = [
+  {
+    subject: 'C Programming / Programming in C',
+    when: 'Early: Sem 1–3',
+    priority: 'HIGH',
+    whatToDo: 'Master loops, functions, arrays, pointers, structures, bitwise operations.',
+    ifIgnored: 'You may understand electronics but fail firmware coding interviews.',
+  },
+  {
+    subject: 'Digital Electronics',
+    when: 'Core: Sem 3–5',
+    priority: 'MEDIUM',
+    whatToDo: 'Learn logic gates, flip-flops, counters, timing diagrams, digital signal behavior.',
+    ifIgnored: 'GPIO/timing behavior becomes guesswork.',
+  },
+  {
+    subject: 'Microprocessors and Microcontrollers',
+    when: 'Core: Sem 4–6',
+    priority: 'HIGH',
+    whatToDo: 'Focus on registers, memory, interrupts, timers, ADC, serial communication, interfacing.',
+    ifIgnored: 'You cannot explain bare-metal control; embedded interviews become weak.',
+  },
+  {
+    subject: 'Electronic Measurements and Instrumentation',
+    when: 'Core: Sem 4–6',
+    priority: 'MEDIUM',
+    whatToDo: 'Learn multimeter, CRO/DSO, sensors, transducers, voltage/current/signal measurement.',
+    ifIgnored: 'You cannot prove board debugging or real hardware testing ability.',
+  },
+  {
+    subject: 'Embedded Systems',
+    when: 'Final/Core: Sem 5–7',
+    priority: 'HIGH',
+    whatToDo: 'Connect C + microcontroller + peripherals + timing + hardware behavior into product-level execution.',
+    ifIgnored: 'You may know subjects separately but fail to build working embedded products.',
+  },
+];
+
+const priorityBadge = (p: 'HIGH' | 'MEDIUM') =>
+  p === 'HIGH'
+    ? 'bg-rose-100 text-rose-700 border-rose-200'
+    : 'bg-amber-100 text-amber-700 border-amber-200';
+
+const SubjectTimelineTable = () => {
+  const sec = useScrollGlow();
+  return (
+    <section
+      ref={sec.ref}
+      className={`bg-gradient-to-br from-swiss-sand/20 via-white to-swiss-sky/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+        sec.inView
+          ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+          : 'border border-slate-200/80'
+      }`}
+    >
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
+        Subject Timeline Table
+      </h2>
+
+      {/* Desktop table */}
+      <div className="hidden xl:block">
+        <div className="grid grid-cols-12 px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold gap-x-4">
+          <div className="col-span-3">Subject</div>
+          <div className="col-span-2">When To Focus</div>
+          <div className="col-span-1">Priority</div>
+          <div className="col-span-3">What To Do</div>
+          <div className="col-span-3">If Ignored</div>
+        </div>
+        <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
+          {timelineRows.map((r, i) => (
+            <div
+              key={r.subject}
+              className={`grid grid-cols-12 px-4 py-4 items-start text-sm gap-x-4 ${
+                i !== timelineRows.length - 1 ? 'border-b border-slate-200/60' : ''
+              } hover:bg-white/70 transition-colors`}
+            >
+              <div className="col-span-3 text-slate-700 font-semibold leading-snug">{r.subject}</div>
+              <div className="col-span-2 text-swiss-sky-foreground font-medium">{r.when}</div>
+              <div className="col-span-1">
+                <span className={`inline-flex items-center px-2 py-0.5 rounded-md border text-[0.6875rem] font-bold tracking-wide ${priorityBadge(r.priority)}`}>
+                  {r.priority}
+                </span>
+              </div>
+              <div className="col-span-3 text-slate-600 leading-relaxed">{r.whatToDo}</div>
+              <div className="col-span-3 text-slate-500 font-light leading-relaxed">{r.ifIgnored}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile / tablet cards */}
+      <div className="xl:hidden space-y-3.5">
+        {timelineRows.map((r) => (
+          <div
+            key={r.subject}
+            className="p-4 sm:p-5 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm"
+          >
+            <div className="flex items-start justify-between gap-3 mb-3 pb-3 border-b border-slate-200/60">
+              <div className="flex-1 min-w-0">
+                <p className="text-sm sm:text-base font-semibold text-slate-800 leading-snug">{r.subject}</p>
+                <p className="text-[0.6875rem] tracking-[0.15em] uppercase text-swiss-sky-foreground font-medium mt-1">
+                  {r.when}
+                </p>
+              </div>
+              <span className={`inline-flex items-center px-2 py-0.5 rounded-md border text-[0.6875rem] font-bold tracking-wide flex-shrink-0 ${priorityBadge(r.priority)}`}>
+                {r.priority}
+              </span>
+            </div>
+
+            <div className="space-y-3">
+              <div className="flex flex-col gap-1">
+                <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+                  What To Do
+                </span>
+                <span className="text-sm text-slate-700 leading-relaxed">{r.whatToDo}</span>
+              </div>
+              <div className="flex flex-col gap-1">
+                <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+                  If Ignored
+                </span>
+                <span className="text-sm text-slate-500 font-light leading-relaxed">{r.ifIgnored}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Student Summary */}
+      <div className="mt-8 sm:mt-10 grid gap-4 md:grid-cols-2">
+        <div className="p-4 sm:p-5 bg-white/60 border border-swiss-sky-foreground/15 rounded-lg backdrop-blur-sm">
+          <p className="text-[0.625rem] sm:text-[0.6875rem] tracking-[0.15em] uppercase text-swiss-sky-foreground font-semibold mb-2">
+            Most Important Semesters
+          </p>
+          <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+            Sem 4–6 matter the most because Microcontrollers, Instrumentation, Digital Electronics, and Embedded Systems usually become active here.
+          </p>
+        </div>
+
+        <div className="p-4 sm:p-5 bg-white/60 border border-swiss-sage-foreground/15 rounded-lg backdrop-blur-sm">
+          <p className="text-[0.625rem] sm:text-[0.6875rem] tracking-[0.15em] uppercase text-swiss-sage-foreground font-semibold mb-2">
+            Critical Subjects
+          </p>
+          <ol className="space-y-1 text-sm text-slate-700">
+            {['Microprocessors and Microcontrollers', 'Embedded Systems', 'C Programming'].map((s, i) => (
+              <li key={s} className="flex items-start gap-2">
+                <span className="text-swiss-sage-foreground font-bold">{i + 1}.</span>
+                <span>{s}</span>
+              </li>
+            ))}
+          </ol>
+          <p className="text-xs sm:text-sm text-slate-500 font-light leading-relaxed mt-2.5">
+            These three decide whether the student can actually write and explain firmware.
+          </p>
+        </div>
+
+        <div className="p-4 sm:p-5 bg-white/60 border border-swiss-lavender-foreground/15 rounded-lg backdrop-blur-sm">
+          <p className="text-[0.625rem] sm:text-[0.6875rem] tracking-[0.15em] uppercase text-swiss-lavender-foreground font-semibold mb-2">
+            Support Subjects
+          </p>
+          <ol start={4} className="space-y-1 text-sm text-slate-700">
+            {['Electronic Measurements and Instrumentation', 'Digital Electronics'].map((s, i) => (
+              <li key={s} className="flex items-start gap-2">
+                <span className="text-swiss-lavender-foreground font-bold">{i + 4}.</span>
+                <span>{s}</span>
+              </li>
+            ))}
+          </ol>
+          <p className="text-xs sm:text-sm text-slate-500 font-light leading-relaxed mt-2.5">
+            These decide whether the student can debug real boards instead of only writing code on paper.
+          </p>
+        </div>
+
+        <div className="p-4 sm:p-5 bg-white/60 border border-swiss-rose-foreground/15 rounded-lg backdrop-blur-sm">
+          <p className="text-[0.625rem] sm:text-[0.6875rem] tracking-[0.15em] uppercase text-swiss-rose-foreground font-semibold mb-2">
+            What Happens If Delayed
+          </p>
+          <ul className="space-y-1.5 text-sm text-slate-700">
+            {[
+              ['C', 'coding becomes weak.'],
+              ['Microcontrollers', 'peripheral control becomes weak.'],
+              ['Instrumentation', 'hardware debugging becomes fake.'],
+              ['Embedded Systems', 'projects remain toy-level instead of job-relevant.'],
+            ].map(([k, v]) => (
+              <li key={k} className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-swiss-rose-foreground/60 mt-1.5 flex-shrink-0" />
+                <span className="leading-relaxed">
+                  <span className="font-semibold text-slate-800">If {k} is delayed,</span> {v}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
   );
 };
 
