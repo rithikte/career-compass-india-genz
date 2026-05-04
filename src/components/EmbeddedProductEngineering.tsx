@@ -228,7 +228,207 @@ const EmbeddedProductEngineering = () => {
 
       {/* Recovery */}
       <RecoveryTable />
+
+      {/* Behavior Gap */}
+      <BehaviorGap />
     </div>
+  );
+};
+
+const behaviorRows = [
+  {
+    area: 'Subject learning',
+    top: 'Learns subjects as job tools.',
+    bottom: 'Learns subjects as exam units.',
+    interview: 'Top student gives execution examples.',
+    job: 'Top student adapts faster on boards.',
+  },
+  {
+    area: 'Timing',
+    top: 'Starts C early and microcontroller work by Sem 4–5.',
+    bottom: 'Waits until final year project.',
+    interview: 'Top student has proof before placements.',
+    job: 'Bottom student needs training from zero.',
+  },
+  {
+    area: 'Projects',
+    top: 'Builds peripheral-based projects with test notes.',
+    bottom: 'Builds copied Arduino/IoT demos.',
+    interview: 'Top student explains failures/debugging.',
+    job: 'Bottom student cannot handle real bugs.',
+  },
+  {
+    area: 'Focus',
+    top: 'Prioritizes C, microcontrollers, embedded systems.',
+    bottom: 'Chases random AI/ML/web certificates.',
+    interview: 'Top student looks role-aligned.',
+    job: 'Bottom student looks confused.',
+  },
+  {
+    area: 'Recovery',
+    top: 'Fixes missed subjects with board practice.',
+    bottom: 'Watches theory videos endlessly.',
+    interview: 'Top student shows working proof.',
+    job: 'Bottom student still cannot execute.',
+  },
+  {
+    area: 'Interview prep',
+    top: 'Prepares UART/SPI/I2C, interrupts, timers, pointers, debugging.',
+    bottom: 'Memorizes definitions.',
+    interview: 'Top student survives technical probing.',
+    job: 'Bottom student collapses after first practical question.',
+  },
+  {
+    area: 'Consistency',
+    top: 'Practices small code + board tests weekly.',
+    bottom: 'Studies only before exams/interviews.',
+    interview: 'Top student has confidence.',
+    job: 'Bottom student is slow and dependent.',
+  },
+  {
+    area: 'Skill conversion',
+    top: 'Converts subject into code, test, debug, documentation.',
+    bottom: 'Keeps subject and project separate.',
+    interview: 'Top student sounds job-ready.',
+    job: 'Bottom student becomes training burden.',
+  },
+];
+
+const BehaviorGap = () => {
+  const sec = useScrollGlow();
+  return (
+    <section
+      ref={sec.ref}
+      className={`bg-gradient-to-br from-swiss-lavender/20 via-white to-swiss-rose/15 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+        sec.inView
+          ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+          : 'border border-slate-200/80'
+      }`}
+    >
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
+        Behavior Gap
+      </h2>
+
+      {/* Desktop table */}
+      <div className="hidden xl:block">
+        <div className="grid grid-cols-12 px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold gap-x-4">
+          <div className="col-span-2">Area</div>
+          <div className="col-span-3">Top 20% Behavior</div>
+          <div className="col-span-3">Bottom 80% Behavior</div>
+          <div className="col-span-2">Interview Impact</div>
+          <div className="col-span-2">Job Impact</div>
+        </div>
+        <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
+          {behaviorRows.map((r, i) => (
+            <div
+              key={r.area}
+              className={`grid grid-cols-12 px-4 py-4 items-start text-sm gap-x-4 ${
+                i !== behaviorRows.length - 1 ? 'border-b border-slate-200/60' : ''
+              } hover:bg-white/70 transition-colors`}
+            >
+              <div className="col-span-2 text-slate-800 font-semibold leading-snug">{r.area}</div>
+              <div className="col-span-3 text-emerald-700 font-medium leading-relaxed">{r.top}</div>
+              <div className="col-span-3 text-rose-700/85 font-light leading-relaxed">{r.bottom}</div>
+              <div className="col-span-2 text-slate-600 leading-relaxed">{r.interview}</div>
+              <div className="col-span-2 text-slate-600 leading-relaxed">{r.job}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile / tablet cards */}
+      <div className="xl:hidden space-y-3.5">
+        {behaviorRows.map((r) => (
+          <div
+            key={r.area}
+            className="p-4 sm:p-5 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm"
+          >
+            <p className="text-sm sm:text-base font-semibold text-slate-800 leading-snug mb-3 pb-3 border-b border-slate-200/60">
+              {r.area}
+            </p>
+            <div className="space-y-3">
+              {[
+                { l: 'Top 20% Behavior', v: r.top, tone: 'text-emerald-700 font-medium' },
+                { l: 'Bottom 80% Behavior', v: r.bottom, tone: 'text-rose-700/85 font-light' },
+                { l: 'Interview Impact', v: r.interview, tone: 'text-slate-700' },
+                { l: 'Job Impact', v: r.job, tone: 'text-slate-700' },
+              ].map((f) => (
+                <div key={f.l} className="flex flex-col gap-1">
+                  <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+                    {f.l}
+                  </span>
+                  <span className={`text-sm leading-relaxed ${f.tone}`}>{f.v}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Final Summary */}
+      <div className="mt-8 sm:mt-10">
+        <h3 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-swiss-lavender-foreground mb-4">
+          Final Summary
+        </h3>
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="p-4 sm:p-5 bg-white/60 border border-swiss-sage-foreground/15 rounded-lg backdrop-blur-sm">
+            <p className="text-[0.625rem] sm:text-[0.6875rem] tracking-[0.15em] uppercase text-swiss-sage-foreground font-semibold mb-2">
+              Subjects That Matter Most
+            </p>
+            <ol className="space-y-1 text-sm text-slate-700">
+              {['Microprocessors and Microcontrollers', 'Embedded Systems', 'C Programming'].map((s, i) => (
+                <li key={s} className="flex items-start gap-2">
+                  <span className="text-swiss-sage-foreground font-bold">{i + 1}.</span>
+                  <span>{s}</span>
+                </li>
+              ))}
+            </ol>
+            <p className="text-xs sm:text-sm text-slate-500 font-light leading-relaxed mt-2.5">
+              These three decide whether the student can actually enter embedded firmware.
+            </p>
+          </div>
+
+          <div className="p-4 sm:p-5 bg-white/60 border border-swiss-sky-foreground/15 rounded-lg backdrop-blur-sm">
+            <p className="text-[0.625rem] sm:text-[0.6875rem] tracking-[0.15em] uppercase text-swiss-sky-foreground font-semibold mb-2">
+              Critical Semesters
+            </p>
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+              Sem 4–6 are the most important. This is where microcontrollers, instrumentation, digital electronics, and embedded systems start becoming job-relevant.
+            </p>
+          </div>
+
+          <div className="p-4 sm:p-5 bg-white/60 border border-swiss-rose-foreground/15 rounded-lg backdrop-blur-sm">
+            <p className="text-[0.625rem] sm:text-[0.6875rem] tracking-[0.15em] uppercase text-swiss-rose-foreground font-semibold mb-2">
+              What Happens If Delayed
+            </p>
+            <ul className="space-y-1.5 text-sm text-slate-700">
+              {[
+                ['C', 'coding fails.'],
+                ['microcontrollers', 'peripheral control fails.'],
+                ['instrumentation', 'debugging becomes fake.'],
+                ['embedded systems', 'projects remain demo-level, not job-level.'],
+              ].map(([k, v]) => (
+                <li key={k} className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-swiss-rose-foreground/60 mt-1.5 flex-shrink-0" />
+                  <span className="leading-relaxed">
+                    <span className="font-semibold text-slate-800">If {k} is delayed,</span> {v}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="p-4 sm:p-5 bg-white/60 border border-swiss-lavender-foreground/15 rounded-lg backdrop-blur-sm">
+            <p className="text-[0.625rem] sm:text-[0.6875rem] tracking-[0.15em] uppercase text-swiss-lavender-foreground font-semibold mb-2">
+              What Top Students Do Differently
+            </p>
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+              They do not "study embedded." They convert each subject into board proof: one peripheral, one bug, one test result, one explanation. That is what separates a fresher who gets shortlisted from a fresher who only has a degree.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
