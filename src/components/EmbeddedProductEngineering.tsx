@@ -234,7 +234,153 @@ const EmbeddedProductEngineering = () => {
 
       {/* Job Execution Task Lock */}
       <JobExecutionTaskLock />
+
+      {/* Skill Extraction */}
+      <SkillExtraction />
     </div>
+  );
+};
+
+const skillRows = [
+  {
+    skill: 'Embedded C Programming',
+    alternates: ['Firmware C', 'Low-level C'],
+    why: 'Firmware is written mostly in C.',
+    interviewWeak: 'Fails coding/peripheral logic questions.',
+    jobWeak: 'Cannot write reliable board code.',
+    interviewStrong: 'Can explain code, pointers, bitwise logic.',
+    jobStrong: 'Can implement features independently.',
+  },
+  {
+    skill: 'Microcontroller Peripheral Control',
+    alternates: ['MCU Interfacing', 'Register-level Programming'],
+    why: 'Bare-metal role depends on controlling GPIO, timers, ADC, UART, SPI, I2C.',
+    interviewWeak: 'Cannot explain how peripherals work.',
+    jobWeak: 'Becomes dependent on copied libraries.',
+    interviewStrong: 'Can answer register/peripheral flow clearly.',
+    jobStrong: 'Can configure and debug real hardware behavior.',
+  },
+  {
+    skill: 'Hardware-Firmware Debugging',
+    alternates: ['Board Debugging', 'Embedded Debugging'],
+    why: 'Firmware bugs often look like hardware bugs.',
+    interviewWeak: 'Cannot explain why a board failed.',
+    jobWeak: 'Wastes time guessing instead of isolating faults.',
+    interviewStrong: 'Can show real debugging maturity.',
+    jobStrong: 'Can fix issues faster in product testing.',
+  },
+  {
+    skill: 'Sensor/Actuator Interfacing',
+    alternates: ['Device Interfacing', 'I/O Integration'],
+    why: 'Microcontroller boards usually connect to sensors, displays, relays, motors, buzzers.',
+    interviewWeak: 'Project explanation looks shallow.',
+    jobWeak: 'Cannot integrate real product inputs/outputs.',
+    interviewStrong: 'Can explain full input-process-output flow.',
+    jobStrong: 'Can build working product-level features.',
+  },
+];
+
+const SkillExtraction = () => {
+  const sec = useScrollGlow();
+  return (
+    <section
+      ref={sec.ref}
+      className={`bg-gradient-to-br from-swiss-sage/20 via-white to-swiss-lavender/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+        sec.inView
+          ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+          : 'border border-slate-200/80'
+      }`}
+    >
+      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sage-foreground mb-2">
+        Skill
+      </p>
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
+        Extraction
+      </h2>
+
+      {/* Desktop table */}
+      <div className="hidden xl:block">
+        <div className="grid grid-cols-14 px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold gap-x-3" style={{ gridTemplateColumns: 'repeat(14, minmax(0, 1fr))' }}>
+          <div className="col-span-2">Skill</div>
+          <div className="col-span-2">Alternate Names</div>
+          <div className="col-span-2">Why Essential</div>
+          <div className="col-span-2">Interview — If Weak</div>
+          <div className="col-span-2">Job — If Weak</div>
+          <div className="col-span-2">Interview — If Strong</div>
+          <div className="col-span-2">Job — If Strong</div>
+        </div>
+        <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
+          {skillRows.map((r, i) => (
+            <div
+              key={r.skill}
+              className={`grid px-4 py-4 items-start text-sm gap-x-3 ${
+                i !== skillRows.length - 1 ? 'border-b border-slate-200/60' : ''
+              } hover:bg-white/70 transition-colors`}
+              style={{ gridTemplateColumns: 'repeat(14, minmax(0, 1fr))' }}
+            >
+              <div className="col-span-2 text-slate-800 font-semibold leading-snug">{r.skill}</div>
+              <div className="col-span-2">
+                <ul className="space-y-1">
+                  {r.alternates.map((a) => (
+                    <li key={a} className="flex items-start gap-1.5 text-slate-600">
+                      <span className="w-1.5 h-1.5 rounded-full bg-swiss-lavender-foreground/50 mt-1.5 flex-shrink-0" />
+                      <span className="leading-relaxed">{a}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="col-span-2 text-slate-600 leading-relaxed">{r.why}</div>
+              <div className="col-span-2 text-rose-700/85 font-light leading-relaxed">{r.interviewWeak}</div>
+              <div className="col-span-2 text-rose-700/85 font-light leading-relaxed">{r.jobWeak}</div>
+              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.interviewStrong}</div>
+              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.jobStrong}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile / tablet cards */}
+      <div className="xl:hidden space-y-3.5">
+        {skillRows.map((r) => (
+          <div
+            key={r.skill}
+            className="p-4 sm:p-5 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm"
+          >
+            <div className="mb-3 pb-3 border-b border-slate-200/60">
+              <p className="text-sm sm:text-base font-semibold text-slate-800 leading-snug mb-2">
+                {r.skill}
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {r.alternates.map((a) => (
+                  <span
+                    key={a}
+                    className="inline-flex items-center px-2 py-0.5 rounded-md bg-swiss-lavender/40 border border-swiss-lavender-foreground/15 text-[0.6875rem] text-swiss-lavender-foreground font-medium"
+                  >
+                    {a}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="space-y-3">
+              {[
+                { l: 'Why Essential', v: r.why, tone: 'text-slate-700' },
+                { l: 'Interview — If Weak', v: r.interviewWeak, tone: 'text-rose-700/85 font-light' },
+                { l: 'Job — If Weak', v: r.jobWeak, tone: 'text-rose-700/85 font-light' },
+                { l: 'Interview — If Strong', v: r.interviewStrong, tone: 'text-emerald-700 font-medium' },
+                { l: 'Job — If Strong', v: r.jobStrong, tone: 'text-emerald-700 font-medium' },
+              ].map((f) => (
+                <div key={f.l} className="flex flex-col gap-1">
+                  <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+                    {f.l}
+                  </span>
+                  <span className={`text-sm leading-relaxed ${f.tone}`}>{f.v}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
