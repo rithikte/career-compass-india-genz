@@ -314,7 +314,7 @@ const MiniProjects = () => {
 
       {/* Desktop table */}
       <div className="hidden xl:block">
-        <div className="grid px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold gap-x-3" style={{ gridTemplateColumns: 'repeat(18, minmax(0, 1fr))' }}>
+        <div className="grid px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold gap-x-3" style={{ gridTemplateColumns: 'repeat(19, minmax(0, 1fr))' }}>
           <div className="col-span-2">Project</div>
           <div className="col-span-2">Alternate Names</div>
           <div className="col-span-3">What You Build</div>
@@ -322,8 +322,8 @@ const MiniProjects = () => {
           <div className="col-span-2">Why Essential</div>
           <div className="col-span-2">Interview — Weak</div>
           <div className="col-span-2">Job — Weak</div>
-          <div className="col-span-1.5">Interview — Strong</div>
-          <div className="col-span-1.5">Job — Strong</div>
+          <div className="col-span-2">Interview — Strong</div>
+          <div className="col-span-2">Job — Strong</div>
         </div>
         <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
           {miniProjectRows.map((r, i) => (
@@ -332,7 +332,7 @@ const MiniProjects = () => {
               className={`grid px-4 py-4 items-start text-sm gap-x-3 ${
                 i !== miniProjectRows.length - 1 ? 'border-b border-slate-200/60' : ''
               } hover:bg-white/70 transition-colors`}
-              style={{ gridTemplateColumns: 'repeat(18, minmax(0, 1fr))' }}
+              style={{ gridTemplateColumns: 'repeat(19, minmax(0, 1fr))' }}
             >
               <div className="col-span-2 text-slate-800 font-semibold leading-snug">{r.project}</div>
               <div className="col-span-2">
@@ -350,8 +350,8 @@ const MiniProjects = () => {
               <div className="col-span-2 text-slate-600 leading-relaxed">{r.why}</div>
               <div className="col-span-2 text-rose-700/85 font-light leading-relaxed">{r.interviewWeak}</div>
               <div className="col-span-2 text-rose-700/85 font-light leading-relaxed">{r.jobWeak}</div>
-              <div style={{ gridColumn: 'span 1.5 / span 1.5' }} className="text-emerald-700 font-medium leading-relaxed">{r.interviewStrong}</div>
-              <div style={{ gridColumn: 'span 1.5 / span 1.5' }} className="text-emerald-700 font-medium leading-relaxed">{r.jobStrong}</div>
+              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.interviewStrong}</div>
+              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.jobStrong}</div>
             </div>
           ))}
         </div>
