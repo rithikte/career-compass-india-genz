@@ -308,28 +308,29 @@ const LabHandsOn = () => {
 
       {/* Desktop table */}
       <div className="hidden xl:block">
-        <div className="grid grid-cols-12 px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold gap-x-4">
+        <div className="grid grid-cols-13 px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold gap-x-4" style={{ gridTemplateColumns: 'repeat(13, minmax(0, 1fr))' }}>
           <div className="col-span-3">Lab Requirement</div>
           <div className="col-span-2">Why Essential</div>
           <div className="col-span-2">Interview — Weak</div>
           <div className="col-span-2">Job — Weak</div>
-          <div className="col-span-1.5" style={{ gridColumn: 'span 1.5 / span 1.5' }}>Interview — Strong</div>
-          <div className="col-span-1.5" style={{ gridColumn: 'span 1.5 / span 1.5' }}>Job — Strong</div>
+          <div className="col-span-2">Interview — Strong</div>
+          <div className="col-span-2">Job — Strong</div>
         </div>
         <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
           {labRows.map((r, i) => (
             <div
               key={r.requirement}
-              className={`grid grid-cols-12 px-4 py-4 items-start text-sm gap-x-4 ${
+              className={`grid px-4 py-4 items-start text-sm gap-x-4 ${
                 i !== labRows.length - 1 ? 'border-b border-slate-200/60' : ''
               } hover:bg-white/70 transition-colors`}
+              style={{ gridTemplateColumns: 'repeat(13, minmax(0, 1fr))' }}
             >
               <div className="col-span-3 text-slate-800 font-semibold leading-snug">{r.requirement}</div>
               <div className="col-span-2 text-slate-700 leading-relaxed">{r.why}</div>
               <div className="col-span-2 text-rose-700/85 font-light leading-relaxed">{r.interviewWeak}</div>
               <div className="col-span-2 text-rose-700/85 font-light leading-relaxed">{r.jobWeak}</div>
-              <div style={{ gridColumn: 'span 1.5 / span 1.5' }} className="text-emerald-700 font-medium leading-relaxed">{r.interviewStrong}</div>
-              <div style={{ gridColumn: 'span 1.5 / span 1.5' }} className="text-emerald-700 font-medium leading-relaxed">{r.jobStrong}</div>
+              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.interviewStrong}</div>
+              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.jobStrong}</div>
             </div>
           ))}
         </div>
