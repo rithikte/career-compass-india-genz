@@ -2372,9 +2372,12 @@ const FresherWorkTasks = () => {
       </div>
 
       {/* Required Coverage */}
-      <h3 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-swiss-lavender-foreground mb-4">
+      <h3 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-swiss-lavender-foreground mb-2">
         Required Coverage
       </h3>
+      <p className="text-sm text-slate-600 mb-4">
+        The core topics you must learn — and the college subjects where you actually study them.
+      </p>
 
       {/* Desktop coverage table */}
       <div className="hidden md:block mb-8 sm:mb-10">
