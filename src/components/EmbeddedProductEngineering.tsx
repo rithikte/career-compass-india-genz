@@ -262,7 +262,7 @@ const EmbeddedProductEngineering = () => {
   );
 };
 
-const embTimelineRows = [
+const learnTimelineRows = [
   { component: 'C Programming basics', when: 'Early: Sem 1–3', why: 'Coding foundation must start before MCU subjects.', interviewStrong: 'Clears C questions.', jobStrong: 'Enables firmware writing.' },
   { component: 'Digital Electronics', when: 'Early/Core: Sem 3–5', why: 'Needed before microcontroller pin/timing logic.', interviewStrong: 'Handles logic/timing questions.', jobStrong: 'Understands signal states.' },
   { component: 'Microcontrollers', when: 'Core: Sem 4–6', why: 'Main subject for bare-metal control.', interviewStrong: 'Strong peripheral answers.', jobStrong: 'Direct job execution.' },
@@ -302,11 +302,11 @@ const LearningTimeline = () => {
           <div className="col-span-2">Job Benefit</div>
         </div>
         <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
-          {embTimelineRows.map((r, i) => (
+          {learnTimelineRows.map((r, i) => (
             <div
               key={r.component}
               className={`grid px-4 py-4 items-start text-sm gap-x-4 ${
-                i !== embTimelineRows.length - 1 ? 'border-b border-slate-200/60' : ''
+                i !== learnTimelineRows.length - 1 ? 'border-b border-slate-200/60' : ''
               } hover:bg-white/70 transition-colors`}
               style={{ gridTemplateColumns: 'repeat(12, minmax(0, 1fr))' }}
             >
@@ -322,7 +322,7 @@ const LearningTimeline = () => {
 
       {/* Mobile / tablet cards */}
       <div className="xl:hidden space-y-3.5">
-        {embTimelineRows.map((r) => (
+        {learnTimelineRows.map((r) => (
           <div
             key={r.component}
             className="p-4 sm:p-5 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm"
