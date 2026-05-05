@@ -1918,8 +1918,11 @@ const RecoveryTable = () => {
           : 'border border-slate-200/80'
       }`}
     >
-      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
+      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sage-foreground mb-2">
         Recovery
+      </p>
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
+        Catching Up If You Missed A Subject
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
         Missed a subject in college? Here's the fastest way to catch up to a job-ready level.
