@@ -778,11 +778,11 @@ const DebuggingExpectation = () => {
           : 'border border-slate-200/80'
       }`}
     >
-      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sky-foreground mb-2">
-        Debugging
+      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-rose-foreground mb-2">
+        Debugging Expectation
       </p>
       <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
-        Expectation
+        Bugs You Must Be Ready To Fix
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
         The exact bugs you're expected to debug on the job — from GPIO and UART faults to hardware-vs-firmware issues.
