@@ -774,49 +774,26 @@ const DebuggingExpectation = () => {
         The exact bugs you're expected to debug on the job — from GPIO and UART faults to hardware-vs-firmware issues.
       </p>
 
-      {/* Desktop table */}
-      <div className="hidden xl:block">
-        <div className="grid px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold gap-x-4" style={{ gridTemplateColumns: 'repeat(15, minmax(0, 1fr))' }}>
-          <div className="col-span-2">Debug Type</div>
-          <div className="col-span-3">What You Must Fix</div>
-          <div className="col-span-2">Why Essential</div>
-          <div className="col-span-2">Interview — Weak</div>
-          <div className="col-span-2">Job — Weak</div>
-          <div className="col-span-2">Interview — Strong</div>
-          <div className="col-span-2">Job — Strong</div>
-        </div>
-        <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
-          {debuggingRows.map((r, i) => (
-            <div
-              key={r.type}
-              className={`grid px-4 py-4 items-start text-sm gap-x-4 ${
-                i !== debuggingRows.length - 1 ? 'border-b border-slate-200/60' : ''
-              } hover:bg-white/70 transition-colors`}
-              style={{ gridTemplateColumns: 'repeat(15, minmax(0, 1fr))' }}
-            >
-              <div className="col-span-2 text-slate-800 font-semibold leading-snug">{r.type}</div>
-              <div className="col-span-3 text-slate-700 leading-relaxed">{r.fix}</div>
-              <div className="col-span-2 text-slate-700 leading-relaxed">{r.why}</div>
-              <div className="col-span-2 text-rose-700/85 font-light leading-relaxed">{r.interviewWeak}</div>
-              <div className="col-span-2 text-rose-700/85 font-light leading-relaxed">{r.jobWeak}</div>
-              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.interviewStrong}</div>
-              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.jobStrong}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Mobile / tablet cards */}
-      <div className="xl:hidden space-y-3.5">
-        {debuggingRows.map((r) => (
-          <div
+      {/* Accordion dropdown per debug type */}
+      <div className="space-y-2.5">
+        {debuggingRows.map((r, i) => (
+          <details
             key={r.type}
-            className="p-4 sm:p-5 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm"
+            className="group bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm overflow-hidden"
+            open={i === 0}
           >
-            <p className="text-sm sm:text-base font-semibold text-slate-800 leading-snug mb-3 pb-3 border-b border-slate-200/60">
-              {r.type}
-            </p>
-            <div className="space-y-3">
+            <summary className="flex items-center justify-between gap-3 cursor-pointer list-none px-4 sm:px-5 py-3.5 hover:bg-white/80 transition-colors">
+              <div className="flex items-center gap-3 min-w-0">
+                <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold flex-shrink-0">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span className="text-sm sm:text-base font-semibold text-slate-800 leading-snug truncate">
+                  {r.type}
+                </span>
+              </div>
+              <ChevronDown className="w-4 h-4 text-slate-500 transition-transform duration-200 group-open:rotate-180 flex-shrink-0" />
+            </summary>
+            <div className="px-4 sm:px-5 pb-4 pt-1 border-t border-slate-200/60 grid gap-3 sm:grid-cols-2">
               {[
                 { l: 'What You Must Fix', v: r.fix, tone: 'text-slate-700' },
                 { l: 'Why Essential', v: r.why, tone: 'text-slate-700' },
@@ -833,7 +810,7 @@ const DebuggingExpectation = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </details>
         ))}
       </div>
     </section>
