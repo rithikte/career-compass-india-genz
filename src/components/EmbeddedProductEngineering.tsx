@@ -252,7 +252,134 @@ const EmbeddedProductEngineering = () => {
 
       {/* Debugging Expectation */}
       <DebuggingExpectation />
+
+      {/* Explanation Capability */}
+      <ExplanationCapability />
     </div>
+  );
+};
+
+const explanationRows = [
+  {
+    what: 'Subject → Skill link',
+    why: 'Shows learning is not random.',
+    interviewWeak: 'Answers sound memorized.',
+    jobWeak: 'Cannot apply concepts.',
+    interviewStrong: 'Clear role-fit story.',
+    jobStrong: 'Better task understanding.',
+  },
+  {
+    what: 'Code → Peripheral behavior',
+    why: 'Bare-metal work requires this.',
+    interviewWeak: 'Cannot explain how code affects pins/signals.',
+    jobWeak: 'Firmware becomes copy-paste.',
+    interviewStrong: 'Strong technical confidence.',
+    jobStrong: 'Better implementation.',
+  },
+  {
+    what: 'Datasheet → Register/configuration logic',
+    why: 'Real MCU work needs datasheet reading.',
+    interviewWeak: 'Fails deeper probing.',
+    jobWeak: 'Cannot work on unfamiliar boards.',
+    interviewStrong: 'Shows professional readiness.',
+    jobStrong: 'Adapts to new MCUs.',
+  },
+  {
+    what: 'Bug → Debug method → Fix',
+    why: 'Interviewers value failure explanation.',
+    interviewWeak: 'Project looks fake.',
+    jobWeak: 'Cannot debug independently.',
+    interviewStrong: 'Builds trust.',
+    jobStrong: 'Real job productivity improves.',
+  },
+  {
+    what: 'Project input → processing → output flow',
+    why: 'Every embedded project must be explainable.',
+    interviewWeak: 'Project sounds copied.',
+    jobWeak: 'Cannot maintain or extend product logic.',
+    interviewStrong: 'Strong project defense.',
+    jobStrong: 'Better product thinking.',
+  },
+];
+
+const ExplanationCapability = () => {
+  const sec = useScrollGlow();
+  return (
+    <section
+      ref={sec.ref}
+      className={`bg-gradient-to-br from-swiss-lavender/20 via-white to-swiss-sky/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+        sec.inView
+          ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+          : 'border border-slate-200/80'
+      }`}
+    >
+      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sky-foreground mb-2">
+        Explanation
+      </p>
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
+        Capability
+      </h2>
+
+      {/* Desktop table */}
+      <div className="hidden xl:block">
+        <div className="grid px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold gap-x-4" style={{ gridTemplateColumns: 'repeat(13, minmax(0, 1fr))' }}>
+          <div className="col-span-3">What To Explain</div>
+          <div className="col-span-2">Why Essential</div>
+          <div className="col-span-2">Interview — Weak</div>
+          <div className="col-span-2">Job — Weak</div>
+          <div className="col-span-2">Interview — Strong</div>
+          <div className="col-span-2">Job — Strong</div>
+        </div>
+        <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
+          {explanationRows.map((r, i) => (
+            <div
+              key={r.what}
+              className={`grid px-4 py-4 items-start text-sm gap-x-4 ${
+                i !== explanationRows.length - 1 ? 'border-b border-slate-200/60' : ''
+              } hover:bg-white/70 transition-colors`}
+              style={{ gridTemplateColumns: 'repeat(13, minmax(0, 1fr))' }}
+            >
+              <div className="col-span-3 text-slate-800 font-semibold leading-snug">{r.what}</div>
+              <div className="col-span-2 text-slate-700 leading-relaxed">{r.why}</div>
+              <div className="col-span-2 text-rose-700/85 font-light leading-relaxed">{r.interviewWeak}</div>
+              <div className="col-span-2 text-rose-700/85 font-light leading-relaxed">{r.jobWeak}</div>
+              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.interviewStrong}</div>
+              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.jobStrong}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile / tablet cards */}
+      <div className="xl:hidden space-y-3.5">
+        {explanationRows.map((r) => (
+          <div
+            key={r.what}
+            className="p-4 sm:p-5 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm"
+          >
+            <p className="text-sm sm:text-base font-semibold text-slate-800 leading-snug mb-3 pb-3 border-b border-slate-200/60">
+              {r.what}
+            </p>
+            <div className="space-y-3">
+              {[
+                { l: 'Why Essential', v: r.why, tone: 'text-slate-700' },
+                { l: 'Interview — If Weak', v: r.interviewWeak, tone: 'text-rose-700/85 font-light' },
+                { l: 'Job — If Weak', v: r.jobWeak, tone: 'text-rose-700/85 font-light' },
+                { l: 'Interview — If Strong', v: r.interviewStrong, tone: 'text-emerald-700 font-medium' },
+                { l: 'Job — If Strong', v: r.jobStrong, tone: 'text-emerald-700 font-medium' },
+              ].map((f) => (
+                <div key={f.l} className="flex flex-col gap-1">
+                  <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+                    {f.l}
+                  </span>
+                  <span className={`text-sm leading-relaxed ${f.tone}`}>{f.v}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
