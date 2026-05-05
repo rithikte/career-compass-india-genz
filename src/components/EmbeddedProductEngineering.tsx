@@ -79,6 +79,115 @@ const EmbeddedProductEngineering = () => {
         </div>
       </section>
 
+      {/* Why Embedded Firmware Jobs Won't Disappear */}
+      <section className="bg-gradient-to-br from-white via-swiss-mint/20 to-swiss-sky/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] border border-slate-200/80">
+        <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
+          Why Embedded Firmware (Bare-Metal) Jobs Won't Disappear
+        </h2>
+        <p className="text-sm text-slate-600 mb-5 sm:mb-6">
+          The role where software directly controls hardware — and why it stays in demand.
+        </p>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5">
+          {/* Intro */}
+          <div className="lg:col-span-2 bg-white/70 rounded-lg p-4 sm:p-5 border border-slate-200/60">
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+              This role is where <span className="font-semibold text-foreground">software directly controls hardware</span>.
+            </p>
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed mt-2">
+              You are not building apps. You are controlling real signals, timing, and device behavior.
+            </p>
+          </div>
+
+          {/* What You Actually Do */}
+          <div className="bg-white/70 rounded-lg p-4 sm:p-5 border border-slate-200/60">
+            <h3 className="text-[0.7rem] sm:text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">
+              What You Actually Do
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 mb-2">Companies need people who can:</p>
+            <ul className="space-y-2">
+              {[
+                'Control microcontroller parts (GPIO, ADC, PWM, UART, SPI, I2C)',
+                'Read datasheets and set registers correctly',
+                'Debug real boards when things don\'t work',
+                'Fix problems where code + hardware both are involved',
+              ].map((t, i) => (
+                <li key={i} className="flex items-start gap-2 text-sm text-slate-700">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Why This Cannot Be Easily Replaced */}
+          <div className="bg-white/70 rounded-lg p-4 sm:p-5 border border-slate-200/60">
+            <h3 className="text-[0.7rem] sm:text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">
+              Why This Cannot Be Easily Replaced
+            </h3>
+            <ul className="space-y-2">
+              {[
+                'Every hardware board is different',
+                'Problems are unpredictable (noise, timing errors, wiring issues)',
+                'Needs real testing on physical boards, not just coding',
+              ].map((t, i) => (
+                <li key={i} className="flex items-start gap-2 text-sm text-slate-700">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 flex-shrink-0" />
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Why This Role Is Important */}
+          <div className="lg:col-span-2 bg-white/70 rounded-lg p-4 sm:p-5 border border-slate-200/60">
+            <h3 className="text-[0.7rem] sm:text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">
+              Why This Role Is Important
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 mb-3">Every smart device depends on this:</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
+              {[
+                'Consumer products (TV, washing machine, smart devices)',
+                'Industrial machines (motors, automation panels)',
+                'Cars (ECUs, sensors)',
+                'IoT devices (meters, trackers, home automation)',
+              ].map((t, i) => (
+                <div key={i} className="flex items-start gap-2 text-sm text-slate-700">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 flex-shrink-0" />
+                  <span>{t}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs sm:text-sm text-slate-600 mb-2">Without firmware engineers:</p>
+            <ul className="space-y-1.5">
+              {[
+                'Sensors won\'t send data',
+                'Controllers won\'t act',
+                'Devices won\'t respond',
+              ].map((t, i) => (
+                <li key={i} className="flex items-start gap-2 text-sm text-slate-700">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-2 flex-shrink-0" />
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Ground Reality */}
+          <div className="lg:col-span-2 bg-gradient-to-r from-slate-700 to-slate-800 rounded-lg p-4 sm:p-5 border border-slate-700">
+            <h3 className="text-[0.7rem] sm:text-xs font-bold uppercase tracking-wider text-white/70 mb-2">
+              Ground Reality
+            </h3>
+            <p className="text-sm sm:text-base text-white leading-relaxed">
+              High-level software can crash and restart.
+            </p>
+            <p className="text-sm sm:text-base text-white font-semibold leading-relaxed mt-1">
+              Firmware controls machines — if it fails, the device fails.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Profile Grid / Mobile Cards */}
       <section
         ref={profile.ref}
