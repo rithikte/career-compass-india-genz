@@ -261,6 +261,32 @@ const EmbeddedProductEngineering = () => {
 
       {/* Final Stack Summary */}
       <FinalStackSummary />
+
+      {/* Bottom-line Truth */}
+      <section className="bg-gradient-to-r from-slate-600 via-slate-700 to-slate-600 rounded-2xl p-5 sm:p-7 md:p-8 shadow-lg">
+        <div className="text-center mb-5 sm:mb-6">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white tracking-tight">
+            Bottom-line Truth
+          </h3>
+        </div>
+        <div className="space-y-4 sm:space-y-5 max-w-3xl mx-auto">
+          <div className="bg-white/15 backdrop-blur-sm rounded-xl p-3.5 sm:p-4 border border-white/20">
+            <p className="text-sm sm:text-base text-white font-semibold leading-relaxed">
+              Jobs are not less — skilled and prepared students are less. Companies don't pay for degrees, they pay for real skills.
+            </p>
+          </div>
+          <div className="bg-white/15 backdrop-blur-sm rounded-xl p-3.5 sm:p-4 border border-white/20">
+            <p className="text-sm sm:text-base text-white font-semibold leading-relaxed">
+              In the first 2 years, don't expect high salary — focus on learning, work exposure, and communication. As your skills grow, your salary will grow.
+            </p>
+          </div>
+          <div className="bg-white/15 backdrop-blur-sm rounded-xl p-3.5 sm:p-4 border border-white/20">
+            <p className="text-sm sm:text-base text-white font-semibold leading-relaxed">
+              Forget society's fake expectations — in today's AI era, only skilled people get jobs and grow.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
