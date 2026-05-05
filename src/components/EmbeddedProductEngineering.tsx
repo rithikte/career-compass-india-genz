@@ -2052,8 +2052,11 @@ const ImpactTable = () => {
           : 'border border-slate-200/80'
       }`}
     >
+      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-rose-foreground mb-2">
+        Subject Impact
+      </p>
       <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
-        Impact
+        How Each Subject Decides Your Career
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
         How each subject directly affects your interviews and daily job — and what you lose if you ignore it.
