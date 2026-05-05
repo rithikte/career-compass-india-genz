@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { ChevronRight, MapPin, Cpu, AlertTriangle, Shield, Target, XCircle } from 'lucide-react';
+import { ChevronRight, ChevronDown, MapPin, Cpu, AlertTriangle, Shield, Target, XCircle } from 'lucide-react';
 
 const useScrollGlow = () => {
   const ref = useRef<HTMLElement>(null);
