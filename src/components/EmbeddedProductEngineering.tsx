@@ -2416,9 +2416,12 @@ const FresherWorkTasks = () => {
       </div>
 
       {/* Final 5 Subjects */}
-      <h3 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-swiss-sage-foreground mb-4">
+      <h3 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-swiss-sage-foreground mb-2">
         Final 5 Subjects
       </h3>
+      <p className="text-sm text-slate-600 mb-4">
+        The five must-focus subjects from your syllabus that directly decide your embedded job readiness.
+      </p>
 
       {/* Desktop final-subjects table */}
       <div className="hidden lg:block">
