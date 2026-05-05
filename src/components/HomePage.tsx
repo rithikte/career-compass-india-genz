@@ -328,15 +328,6 @@ export const HomePage = () => {
                 </div>
               </div>
             </div>
-
-            {/* Quote Banner */}
-            <div className="mt-10 sm:mt-14">
-              <div className="relative bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 rounded-2xl p-6 sm:p-10 border border-primary/20 shadow-layer-2">
-                <p className="text-center text-lg sm:text-2xl md:text-3xl font-bold text-foreground leading-snug italic">
-                  "Every career path is built step by step — not guessed"
-                </p>
-              </div>
-            </div>
           </div>
         </div>
 
