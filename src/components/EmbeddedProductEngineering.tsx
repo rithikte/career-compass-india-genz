@@ -2181,9 +2181,12 @@ const SubjectRecognitionTable = () => {
           : 'border border-slate-200/80'
       }`}
     >
-      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
         Subject Recognition Table
       </h2>
+      <p className="text-sm text-slate-600 mb-5 sm:mb-6">
+        How to spot the same subject under different names your college may use — so you never miss what to study.
+      </p>
 
       {/* Desktop table */}
       <div className="hidden xl:block">
