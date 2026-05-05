@@ -255,7 +255,100 @@ const EmbeddedProductEngineering = () => {
 
       {/* Explanation Capability */}
       <ExplanationCapability />
+
+      {/* Learning Timeline */}
+      <LearningTimeline />
     </div>
+  );
+};
+
+const timelineRows = [
+  { component: 'C Programming basics', when: 'Early: Sem 1–3', why: 'Coding foundation must start before MCU subjects.', interviewStrong: 'Clears C questions.', jobStrong: 'Enables firmware writing.' },
+  { component: 'Digital Electronics', when: 'Early/Core: Sem 3–5', why: 'Needed before microcontroller pin/timing logic.', interviewStrong: 'Handles logic/timing questions.', jobStrong: 'Understands signal states.' },
+  { component: 'Microcontrollers', when: 'Core: Sem 4–6', why: 'Main subject for bare-metal control.', interviewStrong: 'Strong peripheral answers.', jobStrong: 'Direct job execution.' },
+  { component: 'Measurements + Multimeter', when: 'Core: Sem 4–6', why: 'Hardware testing must grow with MCU work.', interviewStrong: 'Shows practical proof.', jobStrong: 'Prevents blind debugging.' },
+  { component: 'Arduino mini projects', when: 'Core: Sem 4–5', why: 'Fastest way to start hardware execution.', interviewStrong: 'Working project proof.', jobStrong: 'Builds confidence.' },
+  { component: 'STM32/Keil/CubeIDE', when: 'Core/Final: Sem 5–7', why: 'Move from hobby-level to stronger MCU workflow.', interviewStrong: 'Better than only Arduino.', jobStrong: 'Closer to job workflow.' },
+  { component: 'DSO/CRO signal checking', when: 'Core/Final: Sem 5–7', why: 'Needed after PWM/UART/timing basics.', interviewStrong: 'Strong debugging credibility.', jobStrong: 'Real board validation.' },
+  { component: 'Major project', when: 'Final: Sem 7–8', why: 'Requires combined subjects + tools + debugging.', interviewStrong: 'Strongest resume proof.', jobStrong: 'Simulates job tasks.' },
+  { component: 'Interview explanation', when: 'Final: Sem 7–8', why: 'Must convert project into clear story.', interviewStrong: 'Survives technical probing.', jobStrong: 'Better team communication.' },
+];
+
+const LearningTimeline = () => {
+  const sec = useScrollGlow();
+  return (
+    <section
+      ref={sec.ref}
+      className={`bg-gradient-to-br from-swiss-sage/20 via-white to-swiss-sky/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+        sec.inView
+          ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+          : 'border border-slate-200/80'
+      }`}
+    >
+      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sky-foreground mb-2">
+        Learning
+      </p>
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
+        Timeline
+      </h2>
+
+      {/* Desktop table */}
+      <div className="hidden xl:block">
+        <div className="grid px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold gap-x-4" style={{ gridTemplateColumns: 'repeat(12, minmax(0, 1fr))' }}>
+          <div className="col-span-3">Component</div>
+          <div className="col-span-2">When To Learn</div>
+          <div className="col-span-3">Why At This Time</div>
+          <div className="col-span-2">Interview Benefit</div>
+          <div className="col-span-2">Job Benefit</div>
+        </div>
+        <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
+          {timelineRows.map((r, i) => (
+            <div
+              key={r.component}
+              className={`grid px-4 py-4 items-start text-sm gap-x-4 ${
+                i !== timelineRows.length - 1 ? 'border-b border-slate-200/60' : ''
+              } hover:bg-white/70 transition-colors`}
+              style={{ gridTemplateColumns: 'repeat(12, minmax(0, 1fr))' }}
+            >
+              <div className="col-span-3 text-slate-800 font-semibold leading-snug">{r.component}</div>
+              <div className="col-span-2 text-slate-700 leading-relaxed">{r.when}</div>
+              <div className="col-span-3 text-slate-700 leading-relaxed">{r.why}</div>
+              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.interviewStrong}</div>
+              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.jobStrong}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile / tablet cards */}
+      <div className="xl:hidden space-y-3.5">
+        {timelineRows.map((r) => (
+          <div
+            key={r.component}
+            className="p-4 sm:p-5 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm"
+          >
+            <p className="text-sm sm:text-base font-semibold text-slate-800 leading-snug mb-3 pb-3 border-b border-slate-200/60">
+              {r.component}
+            </p>
+            <div className="space-y-3">
+              {[
+                { l: 'When To Learn', v: r.when, tone: 'text-slate-700' },
+                { l: 'Why At This Time', v: r.why, tone: 'text-slate-700' },
+                { l: 'Interview Benefit', v: r.interviewStrong, tone: 'text-emerald-700 font-medium' },
+                { l: 'Job Benefit', v: r.jobStrong, tone: 'text-emerald-700 font-medium' },
+              ].map((f) => (
+                <div key={f.l} className="flex flex-col gap-1">
+                  <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+                    {f.l}
+                  </span>
+                  <span className={`text-sm leading-relaxed ${f.tone}`}>{f.v}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
