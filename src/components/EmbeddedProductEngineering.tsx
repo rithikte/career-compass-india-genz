@@ -436,10 +436,10 @@ const FinalStackSummary = () => {
         Final Stack
       </p>
       <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
-        Summary
+        Your Complete Job-Ready Stack
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
-        The complete embedded job-ready stack at a glance — subjects, skills, tools, projects, labs, and debugging combined.
+        Everything an embedded fresher must own — subjects, skills, tools, projects, labs, and debugging — in one view.
       </p>
 
       {/* Desktop table */}
@@ -523,10 +523,10 @@ const LearningTimeline = () => {
       }`}
     >
       <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sky-foreground mb-2">
-        Learning
+        Learning Timeline
       </p>
       <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
-        Timeline
+        What To Learn In Which Semester
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
         Semester-wise plan showing what to learn when — so you build skills in the right order across B.Tech.
@@ -647,10 +647,10 @@ const ExplanationCapability = () => {
       }`}
     >
       <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sky-foreground mb-2">
-        Explanation
+        Explanation Capability
       </p>
       <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
-        Capability
+        What You Must Be Able To Explain
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
         What you must be able to clearly explain in interviews — projects, code behavior, debugging steps, and logic.
@@ -778,11 +778,11 @@ const DebuggingExpectation = () => {
           : 'border border-slate-200/80'
       }`}
     >
-      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sky-foreground mb-2">
-        Debugging
+      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-rose-foreground mb-2">
+        Debugging Expectation
       </p>
       <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
-        Expectation
+        Bugs You Must Be Ready To Fix
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
         The exact bugs you're expected to debug on the job — from GPIO and UART faults to hardware-vs-firmware issues.
@@ -900,11 +900,11 @@ const LabHandsOn = () => {
           : 'border border-slate-200/80'
       }`}
     >
-      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sky-foreground mb-2">
-        Lab
+      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sage-foreground mb-2">
+        Lab / Hands-On
       </p>
       <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
-        Hands-On
+        Real Lab Work You Must Complete
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
         The real lab work you must do on actual boards and instruments — embedded cannot be learned only from books.
@@ -1021,10 +1021,10 @@ const MajorProjects = () => {
       }`}
     >
       <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-lavender-foreground mb-2">
-        Major
+        Major Projects
       </p>
       <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
-        Projects
+        Final-Year Projects That Win Interviews
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
         Job-grade final-year projects that prove you can build a real product — and what they decide in interviews.
@@ -1181,10 +1181,10 @@ const MiniProjects = () => {
       }`}
     >
       <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sky-foreground mb-2">
-        Mini
+        Mini Projects
       </p>
       <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
-        Projects
+        Starter Projects To Prove Your Basics
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
         Small starter projects you must build to prove your basics — and what each one signals to interviewers.
@@ -1337,10 +1337,10 @@ const ToolIdentification = () => {
       }`}
     >
       <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sand-foreground mb-2">
-        Tool
+        Tool Identification
       </p>
       <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
-        Identification
+        Tools You Must Know To Get Hired
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
         The exact tools used in real embedded jobs — what they're called, where they're used, and why you must know them.
@@ -1486,10 +1486,10 @@ const SkillExtraction = () => {
       }`}
     >
       <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sage-foreground mb-2">
-        Skill
+        Skill Extraction
       </p>
       <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
-        Extraction
+        Which Skills Actually Get You Hired
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
         The exact skills you must pull out of your subjects — and what happens in interviews and jobs if they're weak or strong.
@@ -1602,10 +1602,10 @@ const JobExecutionTaskLock = () => {
       }`}
     >
       <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sky-foreground mb-2">
-        Job Execution
+        Job Execution Task Lock
       </p>
       <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
-        Task Lock
+        Day-One Tasks As A Fresher
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
         The exact tasks a fresher embedded engineer is expected to handle on day one of the job.
@@ -1726,8 +1726,11 @@ const BehaviorGap = () => {
           : 'border border-slate-200/80'
       }`}
     >
-      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
+      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-lavender-foreground mb-2">
         Behavior Gap
+      </p>
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
+        Top 20% vs Bottom 80% — What's Different
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
         What top 20% students do differently from the bottom 80% — and how it decides interviews and jobs.
@@ -1915,8 +1918,11 @@ const RecoveryTable = () => {
           : 'border border-slate-200/80'
       }`}
     >
-      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
+      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sage-foreground mb-2">
         Recovery
+      </p>
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
+        Catching Up If You Missed A Subject
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
         Missed a subject in college? Here's the fastest way to catch up to a job-ready level.
@@ -2046,8 +2052,11 @@ const ImpactTable = () => {
           : 'border border-slate-200/80'
       }`}
     >
+      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-rose-foreground mb-2">
+        Subject Impact
+      </p>
       <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
-        Impact
+        How Each Subject Decides Your Career
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
         How each subject directly affects your interviews and daily job — and what you lose if you ignore it.
@@ -2169,8 +2178,11 @@ const SubjectTimelineTable = () => {
           : 'border border-slate-200/80'
       }`}
     >
+      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sand-foreground mb-2">
+        Subject Timeline
+      </p>
       <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
-        Subject Timeline Table
+        When Each Subject Hits Your Semesters
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
         Which semester each subject usually appears in — so you know exactly when to start preparing.
@@ -2368,8 +2380,11 @@ const SubjectRecognitionTable = () => {
           : 'border border-slate-200/80'
       }`}
     >
+      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sage-foreground mb-2">
+        Subject Recognition
+      </p>
       <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
-        Subject Recognition Table
+        Same Subject, Different Names In Colleges
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
         How to spot the same subject under different names your college may use — so you never miss what to study.
