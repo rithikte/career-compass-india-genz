@@ -290,9 +290,12 @@ const FinalStackSummary = () => {
       <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sky-foreground mb-2">
         Final Stack
       </p>
-      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
         Summary
       </h2>
+      <p className="text-sm text-slate-600 mb-5 sm:mb-6">
+        The complete embedded job-ready stack at a glance — subjects, skills, tools, projects, labs, and debugging combined.
+      </p>
 
       {/* Desktop table */}
       <div className="hidden xl:block">
