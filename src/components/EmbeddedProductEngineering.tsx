@@ -249,7 +249,142 @@ const EmbeddedProductEngineering = () => {
 
       {/* Lab / Hands-On */}
       <LabHandsOn />
+
+      {/* Debugging Expectation */}
+      <DebuggingExpectation />
     </div>
+  );
+};
+
+const debuggingRows = [
+  {
+    type: 'GPIO Bug',
+    fix: 'LED/button not responding due to wrong pin/configuration',
+    why: 'Basic embedded debugging starts here.',
+    interviewWeak: 'Fails simple practical questions.',
+    jobWeak: 'Cannot handle basic I/O faults.',
+    interviewStrong: 'Shows fundamentals.',
+    jobStrong: 'Fixes simple board issues quickly.',
+  },
+  {
+    type: 'UART Bug',
+    fix: 'No serial output / wrong baud rate / garbage data',
+    why: 'UART is common debug path.',
+    interviewWeak: 'Cannot explain serial debugging.',
+    jobWeak: 'Cannot inspect firmware behavior.',
+    interviewStrong: 'Shows real debug method.',
+    jobStrong: 'Makes testing faster.',
+  },
+  {
+    type: 'ADC Bug',
+    fix: 'Sensor value unstable/wrong',
+    why: 'Sensor boards need reliable readings.',
+    interviewWeak: 'Weak sensor explanation.',
+    jobWeak: 'Product readings become unreliable.',
+    interviewStrong: 'Shows measurement thinking.',
+    jobStrong: 'Improves data reliability.',
+  },
+  {
+    type: 'Timer/PWM Bug',
+    fix: 'Wrong frequency/duty cycle',
+    why: 'Actuator/control outputs depend on timing.',
+    interviewWeak: 'Cannot explain timing control.',
+    jobWeak: 'Motor/buzzer/display control fails.',
+    interviewStrong: 'Shows peripheral depth.',
+    jobStrong: 'Enables real control behavior.',
+  },
+  {
+    type: 'Hardware vs Firmware Fault',
+    fix: 'Identify whether issue is code, wiring, power, or sensor',
+    why: 'Real jobs mix hardware and firmware problems.',
+    interviewWeak: 'Interviewer sees guesswork.',
+    jobWeak: 'Debug time increases badly.',
+    interviewStrong: 'Strongest fresher proof.',
+    jobStrong: 'Reduces dependency on seniors.',
+  },
+];
+
+const DebuggingExpectation = () => {
+  const sec = useScrollGlow();
+  return (
+    <section
+      ref={sec.ref}
+      className={`bg-gradient-to-br from-swiss-sand/20 via-white to-swiss-lavender/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+        sec.inView
+          ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+          : 'border border-slate-200/80'
+      }`}
+    >
+      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sky-foreground mb-2">
+        Debugging
+      </p>
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
+        Expectation
+      </h2>
+
+      {/* Desktop table */}
+      <div className="hidden xl:block">
+        <div className="grid px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold gap-x-4" style={{ gridTemplateColumns: 'repeat(15, minmax(0, 1fr))' }}>
+          <div className="col-span-2">Debug Type</div>
+          <div className="col-span-3">What You Must Fix</div>
+          <div className="col-span-2">Why Essential</div>
+          <div className="col-span-2">Interview — Weak</div>
+          <div className="col-span-2">Job — Weak</div>
+          <div className="col-span-2">Interview — Strong</div>
+          <div className="col-span-2">Job — Strong</div>
+        </div>
+        <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
+          {debuggingRows.map((r, i) => (
+            <div
+              key={r.type}
+              className={`grid px-4 py-4 items-start text-sm gap-x-4 ${
+                i !== debuggingRows.length - 1 ? 'border-b border-slate-200/60' : ''
+              } hover:bg-white/70 transition-colors`}
+              style={{ gridTemplateColumns: 'repeat(15, minmax(0, 1fr))' }}
+            >
+              <div className="col-span-2 text-slate-800 font-semibold leading-snug">{r.type}</div>
+              <div className="col-span-3 text-slate-700 leading-relaxed">{r.fix}</div>
+              <div className="col-span-2 text-slate-700 leading-relaxed">{r.why}</div>
+              <div className="col-span-2 text-rose-700/85 font-light leading-relaxed">{r.interviewWeak}</div>
+              <div className="col-span-2 text-rose-700/85 font-light leading-relaxed">{r.jobWeak}</div>
+              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.interviewStrong}</div>
+              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.jobStrong}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile / tablet cards */}
+      <div className="xl:hidden space-y-3.5">
+        {debuggingRows.map((r) => (
+          <div
+            key={r.type}
+            className="p-4 sm:p-5 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm"
+          >
+            <p className="text-sm sm:text-base font-semibold text-slate-800 leading-snug mb-3 pb-3 border-b border-slate-200/60">
+              {r.type}
+            </p>
+            <div className="space-y-3">
+              {[
+                { l: 'What You Must Fix', v: r.fix, tone: 'text-slate-700' },
+                { l: 'Why Essential', v: r.why, tone: 'text-slate-700' },
+                { l: 'Interview — If Weak', v: r.interviewWeak, tone: 'text-rose-700/85 font-light' },
+                { l: 'Job — If Weak', v: r.jobWeak, tone: 'text-rose-700/85 font-light' },
+                { l: 'Interview — If Strong', v: r.interviewStrong, tone: 'text-emerald-700 font-medium' },
+                { l: 'Job — If Strong', v: r.jobStrong, tone: 'text-emerald-700 font-medium' },
+              ].map((f) => (
+                <div key={f.l} className="flex flex-col gap-1">
+                  <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+                    {f.l}
+                  </span>
+                  <span className={`text-sm leading-relaxed ${f.tone}`}>{f.v}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
