@@ -1080,92 +1080,61 @@ const MiniProjects = () => {
         Small starter projects you must build to prove your basics — and what each one signals to interviewers.
       </p>
 
-      {/* Desktop table */}
-      <div className="hidden xl:block">
-        <div className="grid px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold gap-x-3" style={{ gridTemplateColumns: 'repeat(19, minmax(0, 1fr))' }}>
-          <div className="col-span-2">Project</div>
-          <div className="col-span-2">Alternate Names</div>
-          <div className="col-span-3">What You Build</div>
-          <div className="col-span-2">Skill + Tool</div>
-          <div className="col-span-2">Why Essential</div>
-          <div className="col-span-2">Interview — Weak</div>
-          <div className="col-span-2">Job — Weak</div>
-          <div className="col-span-2">Interview — Strong</div>
-          <div className="col-span-2">Job — Strong</div>
-        </div>
-        <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
-          {miniProjectRows.map((r, i) => (
-            <div
-              key={r.project}
-              className={`grid px-4 py-4 items-start text-sm gap-x-3 ${
-                i !== miniProjectRows.length - 1 ? 'border-b border-slate-200/60' : ''
-              } hover:bg-white/70 transition-colors`}
-              style={{ gridTemplateColumns: 'repeat(19, minmax(0, 1fr))' }}
-            >
-              <div className="col-span-2 text-slate-800 font-semibold leading-snug">{r.project}</div>
-              <div className="col-span-2">
-                <ul className="space-y-1">
-                  {r.alternates.map((a) => (
-                    <li key={a} className="flex items-start gap-1.5 text-slate-600">
-                      <span className="w-1.5 h-1.5 rounded-full bg-swiss-lavender-foreground/50 mt-1.5 flex-shrink-0" />
-                      <span className="leading-relaxed">{a}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="col-span-3 text-slate-700 leading-relaxed">{r.build}</div>
-              <div className="col-span-2 text-swiss-sky-foreground font-medium leading-relaxed">{r.skillTool}</div>
-              <div className="col-span-2 text-slate-600 leading-relaxed">{r.why}</div>
-              <div className="col-span-2 text-rose-700/85 font-light leading-relaxed">{r.interviewWeak}</div>
-              <div className="col-span-2 text-rose-700/85 font-light leading-relaxed">{r.jobWeak}</div>
-              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.interviewStrong}</div>
-              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.jobStrong}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Mobile / tablet cards */}
-      <div className="xl:hidden space-y-3.5">
-        {miniProjectRows.map((r) => (
-          <div
+      {/* Accordion dropdown per project */}
+      <div className="space-y-2.5">
+        {miniProjectRows.map((r, i) => (
+          <details
             key={r.project}
-            className="p-4 sm:p-5 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm"
+            className="group bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm overflow-hidden"
+            open={i === 0}
           >
-            <div className="mb-3 pb-3 border-b border-slate-200/60">
-              <p className="text-sm sm:text-base font-semibold text-slate-800 leading-snug mb-2">
-                {r.project}
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                {r.alternates.map((a) => (
-                  <span
-                    key={a}
-                    className="inline-flex items-center px-2 py-0.5 rounded-md bg-swiss-lavender/40 border border-swiss-lavender-foreground/15 text-[0.6875rem] text-swiss-lavender-foreground font-medium"
-                  >
-                    {a}
-                  </span>
+            <summary className="flex items-center justify-between gap-3 cursor-pointer list-none px-4 sm:px-5 py-3.5 hover:bg-white/80 transition-colors">
+              <div className="flex items-center gap-3 min-w-0">
+                <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold flex-shrink-0">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span className="text-sm sm:text-base font-semibold text-slate-800 leading-snug truncate">
+                  {r.project}
+                </span>
+              </div>
+              <ChevronDown className="w-4 h-4 text-slate-500 transition-transform duration-200 group-open:rotate-180 flex-shrink-0" />
+            </summary>
+            <div className="px-4 sm:px-5 pb-4 pt-3 border-t border-slate-200/60">
+              <div className="mb-3">
+                <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+                  Alternate Names
+                </span>
+                <div className="flex flex-wrap gap-1.5 mt-1.5">
+                  {r.alternates.map((a) => (
+                    <span
+                      key={a}
+                      className="inline-flex items-center px-2 py-0.5 rounded-md bg-swiss-lavender/40 border border-swiss-lavender-foreground/15 text-[0.6875rem] text-swiss-lavender-foreground font-medium"
+                    >
+                      {a}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {[
+                  { l: 'What You Build', v: r.build, tone: 'text-slate-700' },
+                  { l: 'Skill + Tool Used', v: r.skillTool, tone: 'text-swiss-sky-foreground font-medium' },
+                  { l: 'Why Essential', v: r.why, tone: 'text-slate-700' },
+                  { l: 'Interview — If Weak', v: r.interviewWeak, tone: 'text-rose-700/85 font-light' },
+                  { l: 'Job — If Weak', v: r.jobWeak, tone: 'text-rose-700/85 font-light' },
+                  { l: 'Interview — If Strong', v: r.interviewStrong, tone: 'text-emerald-700 font-medium' },
+                  { l: 'Job — If Strong', v: r.jobStrong, tone: 'text-emerald-700 font-medium' },
+                ].map((f) => (
+                  <div key={f.l} className="flex flex-col gap-1">
+                    <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
+                      {f.l}
+                    </span>
+                    <span className={`text-sm leading-relaxed ${f.tone}`}>{f.v}</span>
+                  </div>
                 ))}
               </div>
             </div>
-            <div className="space-y-3">
-              {[
-                { l: 'What You Build', v: r.build, tone: 'text-slate-700' },
-                { l: 'Skill + Tool Used', v: r.skillTool, tone: 'text-swiss-sky-foreground font-medium' },
-                { l: 'Why Essential', v: r.why, tone: 'text-slate-700' },
-                { l: 'Interview — If Weak', v: r.interviewWeak, tone: 'text-rose-700/85 font-light' },
-                { l: 'Job — If Weak', v: r.jobWeak, tone: 'text-rose-700/85 font-light' },
-                { l: 'Interview — If Strong', v: r.interviewStrong, tone: 'text-emerald-700 font-medium' },
-                { l: 'Job — If Strong', v: r.jobStrong, tone: 'text-emerald-700 font-medium' },
-              ].map((f) => (
-                <div key={f.l} className="flex flex-col gap-1">
-                  <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold">
-                    {f.l}
-                  </span>
-                  <span className={`text-sm leading-relaxed ${f.tone}`}>{f.v}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          </details>
         ))}
       </div>
     </section>
