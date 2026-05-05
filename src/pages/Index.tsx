@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Seo from "@/components/Seo";
 import { Header } from '../components/Header';
 import { HomePage } from '../components/HomePage';
-import ECEEmbeddedSystems from '../components/ECEEmbeddedSystems';
 import EmbeddedProductEngineering from '../components/EmbeddedProductEngineering';
 
 const Index = () => {
@@ -11,7 +10,6 @@ const Index = () => {
 
   const sections = [
     { id: 'home', title: 'Home', component: HomePage },
-    { id: 'ece-embedded', title: 'ECE – Embedded Systems', component: ECEEmbeddedSystems },
     { id: 'embedded-product', title: 'Embedded Product Engineering', component: EmbeddedProductEngineering },
   ];
 
