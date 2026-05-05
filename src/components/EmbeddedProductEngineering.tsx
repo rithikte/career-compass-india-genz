@@ -1842,46 +1842,26 @@ const ImpactTable = () => {
         How each subject directly affects your interviews and daily job — and what you lose if you ignore it.
       </p>
 
-      {/* Desktop table */}
-      <div className="hidden xl:block">
-        <div className="grid grid-cols-12 px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold gap-x-4">
-          <div className="col-span-2">Subject</div>
-          <div className="col-span-2">Interview Use</div>
-          <div className="col-span-2">Daily Work Use</div>
-          <div className="col-span-2">If Ignored — Interview</div>
-          <div className="col-span-2">If Ignored — Work</div>
-          <div className="col-span-2">Why Essential</div>
-        </div>
-        <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
-          {impactRows.map((r, i) => (
-            <div
-              key={r.subject}
-              className={`grid grid-cols-12 px-4 py-4 items-start text-sm gap-x-4 ${
-                i !== impactRows.length - 1 ? 'border-b border-slate-200/60' : ''
-              } hover:bg-white/70 transition-colors`}
-            >
-              <div className="col-span-2 text-slate-800 font-semibold leading-snug">{r.subject}</div>
-              <div className="col-span-2 text-slate-600 leading-relaxed">{r.interview}</div>
-              <div className="col-span-2 text-slate-600 leading-relaxed">{r.work}</div>
-              <div className="col-span-2 text-rose-700/90 font-light leading-relaxed">{r.ignoredInterview}</div>
-              <div className="col-span-2 text-rose-700/90 font-light leading-relaxed">{r.ignoredWork}</div>
-              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.why}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Mobile / tablet cards */}
-      <div className="xl:hidden space-y-3.5">
-        {impactRows.map((r) => (
-          <div
+      {/* Accordion dropdown per subject */}
+      <div className="space-y-2.5">
+        {impactRows.map((r, i) => (
+          <details
             key={r.subject}
-            className="p-4 sm:p-5 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm"
+            className="group bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm overflow-hidden"
+            open={i === 0}
           >
-            <p className="text-sm sm:text-base font-semibold text-slate-800 leading-snug mb-3 pb-3 border-b border-slate-200/60">
-              {r.subject}
-            </p>
-            <div className="space-y-3">
+            <summary className="flex items-center justify-between gap-3 cursor-pointer list-none px-4 sm:px-5 py-3.5 hover:bg-white/80 transition-colors">
+              <div className="flex items-center gap-3 min-w-0">
+                <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold flex-shrink-0">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span className="text-sm sm:text-base font-semibold text-slate-800 leading-snug truncate">
+                  {r.subject}
+                </span>
+              </div>
+              <ChevronDown className="w-4 h-4 text-slate-500 transition-transform duration-200 group-open:rotate-180 flex-shrink-0" />
+            </summary>
+            <div className="px-4 sm:px-5 pb-4 pt-3 border-t border-slate-200/60 grid gap-3 sm:grid-cols-2">
               {[
                 { l: 'Interview Use', v: r.interview, tone: 'text-slate-700' },
                 { l: 'Daily Work Use', v: r.work, tone: 'text-slate-700' },
@@ -1897,7 +1877,7 @@ const ImpactTable = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </details>
         ))}
       </div>
     </section>
