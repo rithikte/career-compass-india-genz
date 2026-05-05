@@ -498,9 +498,12 @@ const ExplanationCapability = () => {
       <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sky-foreground mb-2">
         Explanation
       </p>
-      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
         Capability
       </h2>
+      <p className="text-sm text-slate-600 mb-5 sm:mb-6">
+        What you must be able to clearly explain in interviews — projects, code behavior, debugging steps, and logic.
+      </p>
 
       {/* Desktop table */}
       <div className="hidden xl:block">
