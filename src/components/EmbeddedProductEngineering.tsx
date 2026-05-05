@@ -1737,9 +1737,12 @@ const RecoveryTable = () => {
           : 'border border-slate-200/80'
       }`}
     >
-      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
         Recovery
       </h2>
+      <p className="text-sm text-slate-600 mb-5 sm:mb-6">
+        Missed a subject in college? Here's the fastest way to catch up to a job-ready level.
+      </p>
 
       {/* Desktop table */}
       <div className="hidden xl:block">
