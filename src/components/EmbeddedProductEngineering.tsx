@@ -1726,8 +1726,11 @@ const BehaviorGap = () => {
           : 'border border-slate-200/80'
       }`}
     >
-      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
+      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-lavender-foreground mb-2">
         Behavior Gap
+      </p>
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
+        Top 20% vs Bottom 80% — What's Different
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
         What top 20% students do differently from the bottom 80% — and how it decides interviews and jobs.
