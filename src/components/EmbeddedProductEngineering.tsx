@@ -2380,8 +2380,11 @@ const SubjectRecognitionTable = () => {
           : 'border border-slate-200/80'
       }`}
     >
+      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sage-foreground mb-2">
+        Subject Recognition
+      </p>
       <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
-        Subject Recognition Table
+        Same Subject, Different Names In Colleges
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
         How to spot the same subject under different names your college may use — so you never miss what to study.
