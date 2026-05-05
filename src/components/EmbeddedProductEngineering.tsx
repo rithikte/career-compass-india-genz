@@ -258,7 +258,96 @@ const EmbeddedProductEngineering = () => {
 
       {/* Learning Timeline */}
       <LearningTimeline />
+
+      {/* Final Stack Summary */}
+      <FinalStackSummary />
     </div>
+  );
+};
+
+const finalStackRows: { layer: string; components: string[] }[] = [
+  { layer: 'Subjects', components: ['Microprocessors and Microcontrollers', 'Embedded Systems', 'C Programming', 'Electronic Measurements and Instrumentation', 'Digital Electronics'] },
+  { layer: 'Skills', components: ['Embedded C Programming', 'Microcontroller Peripheral Control', 'Hardware-Firmware Debugging', 'Sensor/Actuator Interfacing'] },
+  { layer: 'Tools', components: ['Arduino IDE', 'STM32CubeIDE/Keil uVision', 'Multimeter', 'Oscilloscope/Basic DSO'] },
+  { layer: 'Mini Projects', components: ['GPIO Button-LED Control', 'PWM Buzzer/LED Dimmer', 'ADC Sensor Reading', 'UART Serial Debug Logger'] },
+  { layer: 'Major Projects', components: ['Temperature Control System', 'Digital Metering/Monitoring Prototype', 'Multi-Peripheral Control Board'] },
+  { layer: 'Labs', components: ['MCU board practice, multimeter testing, DSO/CRO signal checks, test-note documentation'] },
+  { layer: 'Debugging', components: ['GPIO, UART, ADC, PWM/timer, hardware-vs-firmware fault isolation'] },
+  { layer: 'Explanation', components: ['Subject → Skill → Tool → Project → Debugging → Job execution story.'] },
+];
+
+const FinalStackSummary = () => {
+  const sec = useScrollGlow();
+  return (
+    <section
+      ref={sec.ref}
+      className={`bg-gradient-to-br from-swiss-sky/20 via-white to-swiss-lavender/20 rounded-xl p-5 sm:p-8 shadow-[var(--shadow-sm)] transition-all duration-700 ease-in-out ${
+        sec.inView
+          ? 'border-2 border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.25),0_0_40px_hsl(var(--accent)/0.15)]'
+          : 'border border-slate-200/80'
+      }`}
+    >
+      <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sky-foreground mb-2">
+        Final Stack
+      </p>
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
+        Summary
+      </h2>
+
+      {/* Desktop table */}
+      <div className="hidden xl:block">
+        <div className="grid grid-cols-12 px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold gap-x-4">
+          <div className="col-span-3">Layer</div>
+          <div className="col-span-9">Components</div>
+        </div>
+        <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
+          {finalStackRows.map((r, i) => (
+            <div
+              key={r.layer}
+              className={`grid grid-cols-12 px-4 py-4 items-start text-sm gap-x-4 ${
+                i !== finalStackRows.length - 1 ? 'border-b border-slate-200/60' : ''
+              } hover:bg-white/70 transition-colors`}
+            >
+              <div className="col-span-3 text-slate-800 font-semibold leading-snug">{r.layer}</div>
+              <div className="col-span-9 flex flex-wrap gap-2">
+                {r.components.map((c) => (
+                  <span key={c} className="px-2.5 py-1 bg-white/70 border border-slate-200/70 rounded text-slate-700 text-[0.8125rem] leading-snug">
+                    {c}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile / tablet cards */}
+      <div className="xl:hidden space-y-3.5">
+        {finalStackRows.map((r) => (
+          <div
+            key={r.layer}
+            className="p-4 sm:p-5 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm"
+          >
+            <p className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold mb-2">
+              Layer
+            </p>
+            <p className="text-sm sm:text-base font-semibold text-slate-800 leading-snug mb-3 pb-3 border-b border-slate-200/60">
+              {r.layer}
+            </p>
+            <p className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold mb-2">
+              Components
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {r.components.map((c) => (
+                <span key={c} className="px-2.5 py-1 bg-white/70 border border-slate-200/70 rounded text-slate-700 text-[0.8125rem] leading-snug">
+                  {c}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
