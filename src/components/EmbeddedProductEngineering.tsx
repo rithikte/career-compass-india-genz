@@ -1181,10 +1181,10 @@ const MiniProjects = () => {
       }`}
     >
       <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sky-foreground mb-2">
-        Mini
+        Mini Projects
       </p>
       <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
-        Projects
+        Starter Projects To Prove Your Basics
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
         Small starter projects you must build to prove your basics — and what each one signals to interviewers.
