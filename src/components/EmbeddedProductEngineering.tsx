@@ -532,45 +532,31 @@ const LearningTimeline = () => {
         Semester-wise plan showing what to learn when — so you build skills in the right order across B.Tech.
       </p>
 
-      {/* Desktop table */}
-      <div className="hidden xl:block">
-        <div className="grid px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold gap-x-4" style={{ gridTemplateColumns: 'repeat(12, minmax(0, 1fr))' }}>
-          <div className="col-span-3">Component</div>
-          <div className="col-span-2">When To Learn</div>
-          <div className="col-span-3">Why At This Time</div>
-          <div className="col-span-2">Interview Benefit</div>
-          <div className="col-span-2">Job Benefit</div>
-        </div>
-        <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
-          {learnTimelineRows.map((r, i) => (
-            <div
-              key={r.component}
-              className={`grid px-4 py-4 items-start text-sm gap-x-4 ${
-                i !== learnTimelineRows.length - 1 ? 'border-b border-slate-200/60' : ''
-              } hover:bg-white/70 transition-colors`}
-              style={{ gridTemplateColumns: 'repeat(12, minmax(0, 1fr))' }}
-            >
-              <div className="col-span-3 text-slate-800 font-semibold leading-snug">{r.component}</div>
-              <div className="col-span-2 text-slate-700 leading-relaxed">{r.when}</div>
-              <div className="col-span-3 text-slate-700 leading-relaxed">{r.why}</div>
-              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.interviewStrong}</div>
-              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.jobStrong}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Mobile / tablet cards */}
-      <div className="xl:hidden space-y-3.5">
-        {learnTimelineRows.map((r) => (
-          <div
+      {/* Accordion dropdown per component */}
+      <div className="space-y-2.5">
+        {learnTimelineRows.map((r, i) => (
+          <details
             key={r.component}
-            className="p-4 sm:p-5 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm"
+            className="group bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm overflow-hidden"
+            open={i === 0}
           >
-            <p className="text-sm sm:text-base font-semibold text-slate-800 leading-snug mb-3 pb-3 border-b border-slate-200/60">
-              {r.component}
-            </p>
-            <div className="space-y-3">
+            <summary className="flex items-center justify-between gap-3 cursor-pointer list-none px-4 sm:px-5 py-3.5 hover:bg-white/80 transition-colors">
+              <div className="flex items-center gap-3 min-w-0">
+                <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold flex-shrink-0">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span className="text-sm sm:text-base font-semibold text-slate-800 leading-snug truncate">
+                  {r.component}
+                </span>
+              </div>
+              <div className="flex items-center gap-3 flex-shrink-0">
+                <span className="hidden sm:inline text-[0.6875rem] sm:text-xs text-slate-500">
+                  {r.when}
+                </span>
+                <ChevronDown className="w-4 h-4 text-slate-500 transition-transform duration-200 group-open:rotate-180" />
+              </div>
+            </summary>
+            <div className="px-4 sm:px-5 pb-4 pt-1 border-t border-slate-200/60 grid gap-3 sm:grid-cols-2">
               {[
                 { l: 'When To Learn', v: r.when, tone: 'text-slate-700' },
                 { l: 'Why At This Time', v: r.why, tone: 'text-slate-700' },
@@ -585,7 +571,7 @@ const LearningTimeline = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </details>
         ))}
       </div>
     </section>
