@@ -1865,9 +1865,12 @@ const ImpactTable = () => {
           : 'border border-slate-200/80'
       }`}
     >
-      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
         Impact
       </h2>
+      <p className="text-sm text-slate-600 mb-5 sm:mb-6">
+        How each subject directly affects your interviews and daily job — and what you lose if you ignore it.
+      </p>
 
       {/* Desktop table */}
       <div className="hidden xl:block">
