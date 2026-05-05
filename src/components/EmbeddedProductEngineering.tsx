@@ -1731,54 +1731,31 @@ const RecoveryTable = () => {
         Missed a subject in college? Here's the fastest way to catch up to a job-ready level.
       </p>
 
-      {/* Desktop table */}
-      <div className="hidden xl:block">
-        <div className="grid grid-cols-14 px-4 py-3 bg-white/60 border border-slate-200/70 rounded-t-lg text-[0.6875rem] tracking-[0.15em] uppercase text-slate-400 font-semibold gap-x-3" style={{ gridTemplateColumns: 'repeat(14, minmax(0, 1fr))' }}>
-          <div className="col-span-2">Subject</div>
-          <div className="col-span-2">Missed Situation</div>
-          <div className="col-span-2">Minimum Level</div>
-          <div className="col-span-3">Fast Plan</div>
-          <div className="col-span-1">Time</div>
-          <div className="col-span-2">Skip</div>
-          <div className="col-span-2">Must Not Skip</div>
-        </div>
-        <div className="border-x border-b border-slate-200/70 rounded-b-lg overflow-hidden bg-white/40 backdrop-blur-sm">
-          {recoveryRows.map((r, i) => (
-            <div
-              key={r.subject}
-              className={`grid px-4 py-4 items-start text-sm gap-x-3 ${
-                i !== recoveryRows.length - 1 ? 'border-b border-slate-200/60' : ''
-              } hover:bg-white/70 transition-colors`}
-              style={{ gridTemplateColumns: 'repeat(14, minmax(0, 1fr))' }}
-            >
-              <div className="col-span-2 text-slate-800 font-semibold leading-snug">{r.subject}</div>
-              <div className="col-span-2 text-slate-600 leading-relaxed">{r.missed}</div>
-              <div className="col-span-2 text-slate-600 leading-relaxed">{r.minimum}</div>
-              <div className="col-span-3 text-slate-700 leading-relaxed">{r.plan}</div>
-              <div className="col-span-1 text-swiss-sky-foreground font-semibold tracking-wide">{r.time}</div>
-              <div className="col-span-2 text-rose-700/85 font-light leading-relaxed">{r.skip}</div>
-              <div className="col-span-2 text-emerald-700 font-medium leading-relaxed">{r.mustNotSkip}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Mobile / tablet cards */}
-      <div className="xl:hidden space-y-3.5">
-        {recoveryRows.map((r) => (
-          <div
+      {/* Accordion dropdown per subject */}
+      <div className="space-y-2.5">
+        {recoveryRows.map((r, i) => (
+          <details
             key={r.subject}
-            className="p-4 sm:p-5 bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm"
+            className="group bg-white/60 border border-slate-200/70 rounded-lg backdrop-blur-sm overflow-hidden"
+            open={i === 0}
           >
-            <div className="flex items-start justify-between gap-3 mb-3 pb-3 border-b border-slate-200/60">
-              <p className="text-sm sm:text-base font-semibold text-slate-800 leading-snug flex-1 min-w-0">
-                {r.subject}
-              </p>
-              <span className="inline-flex items-center px-2 py-0.5 rounded-md border border-swiss-sky-foreground/20 bg-swiss-sky/40 text-[0.6875rem] font-bold tracking-wide text-swiss-sky-foreground flex-shrink-0">
-                {r.time}
-              </span>
-            </div>
-            <div className="space-y-3">
+            <summary className="flex items-center justify-between gap-3 cursor-pointer list-none px-4 sm:px-5 py-3.5 hover:bg-white/80 transition-colors">
+              <div className="flex items-center gap-3 min-w-0">
+                <span className="text-[0.625rem] tracking-[0.15em] uppercase text-slate-400 font-semibold flex-shrink-0">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span className="text-sm sm:text-base font-semibold text-slate-800 leading-snug truncate">
+                  {r.subject}
+                </span>
+              </div>
+              <div className="flex items-center gap-3 flex-shrink-0">
+                <span className="inline-flex items-center px-2 py-0.5 rounded-md border border-swiss-sky-foreground/20 bg-swiss-sky/40 text-[0.6875rem] font-bold tracking-wide text-swiss-sky-foreground">
+                  {r.time}
+                </span>
+                <ChevronDown className="w-4 h-4 text-slate-500 transition-transform duration-200 group-open:rotate-180" />
+              </div>
+            </summary>
+            <div className="px-4 sm:px-5 pb-4 pt-3 border-t border-slate-200/60 grid gap-3 sm:grid-cols-2">
               {[
                 { l: 'Missed Situation', v: r.missed, tone: 'text-slate-600' },
                 { l: 'Minimum Level', v: r.minimum, tone: 'text-slate-700' },
@@ -1794,7 +1771,7 @@ const RecoveryTable = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </details>
         ))}
       </div>
     </section>
