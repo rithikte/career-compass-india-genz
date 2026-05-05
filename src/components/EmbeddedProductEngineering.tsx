@@ -287,6 +287,16 @@ const EmbeddedProductEngineering = () => {
           </div>
         </div>
       </section>
+
+      {/* Disclaimer */}
+      <section className="bg-gradient-to-r from-swiss-sand/60 to-swiss-sand/30 border border-swiss-sand-foreground/10 rounded-xl p-4 sm:p-5">
+        <div className="flex items-start gap-2.5">
+          <AlertTriangle className="w-3.5 h-3.5 text-swiss-sand-foreground mt-0.5 flex-shrink-0" />
+          <p className="text-[0.6875rem] sm:text-xs text-slate-500 leading-relaxed">
+            Career paths shown are patterns, not guarantees. Outcomes depend on company, skills, performance, location, and market conditions.
+          </p>
+        </div>
+      </section>
     </div>
   );
 };
