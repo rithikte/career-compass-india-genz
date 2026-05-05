@@ -1337,10 +1337,10 @@ const ToolIdentification = () => {
       }`}
     >
       <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sand-foreground mb-2">
-        Tool
+        Tool Identification
       </p>
       <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
-        Identification
+        Tools You Must Know To Get Hired
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
         The exact tools used in real embedded jobs — what they're called, where they're used, and why you must know them.
