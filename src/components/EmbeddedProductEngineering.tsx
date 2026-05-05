@@ -746,9 +746,12 @@ const LabHandsOn = () => {
       <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sky-foreground mb-2">
         Lab
       </p>
-      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
         Hands-On
       </h2>
+      <p className="text-sm text-slate-600 mb-5 sm:mb-6">
+        The real lab work you must do on actual boards and instruments — embedded cannot be learned only from books.
+      </p>
 
       {/* Desktop table */}
       <div className="hidden xl:block">
