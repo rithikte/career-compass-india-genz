@@ -1985,9 +1985,12 @@ const SubjectTimelineTable = () => {
           : 'border border-slate-200/80'
       }`}
     >
-      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-5 sm:mb-6">
+      <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
         Subject Timeline Table
       </h2>
+      <p className="text-sm text-slate-600 mb-5 sm:mb-6">
+        Which semester each subject usually appears in — so you know exactly when to start preparing.
+      </p>
 
       {/* Desktop table */}
       <div className="hidden xl:block">
