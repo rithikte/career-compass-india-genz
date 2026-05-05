@@ -523,10 +523,10 @@ const LearningTimeline = () => {
       }`}
     >
       <p className="text-[0.6875rem] sm:text-xs font-semibold tracking-[0.2em] uppercase text-swiss-sky-foreground mb-2">
-        Learning
+        Learning Timeline
       </p>
       <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
-        Timeline
+        What To Learn In Which Semester
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
         Semester-wise plan showing what to learn when — so you build skills in the right order across B.Tech.
