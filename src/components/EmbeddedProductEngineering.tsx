@@ -436,10 +436,10 @@ const FinalStackSummary = () => {
         Final Stack
       </p>
       <h2 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-2">
-        Summary
+        Your Complete Job-Ready Stack
       </h2>
       <p className="text-sm text-slate-600 mb-5 sm:mb-6">
-        The complete embedded job-ready stack at a glance — subjects, skills, tools, projects, labs, and debugging combined.
+        Everything an embedded fresher must own — subjects, skills, tools, projects, labs, and debugging — in one view.
       </p>
 
       {/* Desktop table */}
