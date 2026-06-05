@@ -302,6 +302,77 @@ const PremiumHomePage = () => {
           Undergraduate Maps was built to make career paths visible before years are invested blindly.
         </p>
       </section>
+
+      <div style={{ height: 1, backgroundColor: C.hairline }} />
+
+      {/* ── Career Decisions ─────────────────────────────────────── */}
+      <section className="px-5 sm:px-10 lg:px-16 py-16 sm:py-24">
+        <div className="max-w-3xl">
+          <Label>Career decisions</Label>
+          <h2
+            className="mt-6 sm:mt-8"
+            style={{
+              fontFamily: 'Satoshi, Inter, sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(1.5rem, 3.8vw, 2.4rem)',
+              lineHeight: 1.18,
+              letterSpacing: '-0.02em',
+            }}
+          >
+            Career decisions should not be shaped by:
+          </h2>
+        </div>
+
+        <div
+          className="mt-10 grid gap-4 sm:grid-cols-2"
+          style={{ color: C.muted, fontSize: '1rem', lineHeight: 1.75 }}
+        >
+          {[
+            { no: 'Not Trends', yes: 'But Genuine Interest' },
+            { no: 'No Relatives', yes: 'But Academic Strengths' },
+            { no: 'No Hype', yes: 'But Real Industry Opportunities' },
+            { no: 'Or Random Advice', yes: 'But Long-term Career Fit' },
+          ].map((item) => (
+            <div
+              key={item.no}
+              className="p-6 sm:p-8"
+              style={{
+                backgroundColor: 'rgba(18,26,47,0.6)',
+                border: `1px solid ${C.hairline}`,
+                borderRadius: 14,
+              }}
+            >
+              <p style={{ color: C.faint }}>{item.no}</p>
+              <p className="mt-2 font-semibold" style={{ color: C.accent }}>
+                {item.yes}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10 max-w-3xl">
+          <p className="font-semibold" style={{ color: C.text }}>
+            A Career Affects:
+          </p>
+          <ul
+            className="mt-3 space-y-2"
+            style={{ color: C.muted, fontSize: '1rem', lineHeight: 1.75 }}
+          >
+            <li>Time,</li>
+            <li>Confidence,</li>
+            <li>Money,</li>
+            <li>Identity,</li>
+            <li>And Future Stability.</li>
+          </ul>
+        </div>
+
+        <p
+          className="mt-10 max-w-3xl"
+          style={{ color: C.muted, fontSize: '1.0625rem', lineHeight: 1.7 }}
+        >
+          Students deserve deeper clarity before they commit to that path.
+        </p>
+      </section>
     </div>
   );
 };
