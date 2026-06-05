@@ -63,6 +63,63 @@ const PremiumHomePage = () => {
           </p>
         </div>
       </section>
+
+      <div style={{ height: 1, backgroundColor: C.hairline }} />
+
+      {/* ── The Problem ────────────────────────────────────────── */}
+      <section className="px-5 sm:px-10 lg:px-16 py-16 sm:py-24">
+        <div className="max-w-3xl">
+          <Label>The gap</Label>
+          <h2
+            className="mt-6 sm:mt-8"
+            style={{
+              fontFamily: 'Satoshi, Inter, sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(1.75rem, 4.5vw, 3rem)',
+              lineHeight: 1.12,
+              letterSpacing: '-0.02em',
+            }}
+          >
+            The problem is not lack of talent.
+            <br />
+            It is lack of clarity before choosing a path.
+          </h2>
+
+          <div
+            className="mt-8 sm:mt-10 grid gap-6 sm:grid-cols-2"
+            style={{ color: C.muted, fontSize: '1rem', lineHeight: 1.75 }}
+          >
+            <div>
+              <p className="font-semibold" style={{ color: C.text }}>
+                Most students know:
+              </p>
+              <ul className="mt-3 space-y-2">
+                <li>courses,</li>
+                <li>colleges,</li>
+                <li>and salary trends.</li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-semibold" style={{ color: C.text }}>
+                Very few understand:
+              </p>
+              <ul className="mt-3 space-y-2">
+                <li>actual daily work,</li>
+                <li>industry pressure,</li>
+                <li>hiring difficulty,</li>
+                <li>or long-term survivability.</li>
+              </ul>
+            </div>
+          </div>
+
+          <p
+            className="mt-8 sm:mt-10"
+            style={{ color: C.muted, fontSize: '1.0625rem', lineHeight: 1.7, maxWidth: '65ch' }}
+          >
+            That gap silently wastes years.
+          </p>
+        </div>
+      </section>
     </div>
   );
 };
