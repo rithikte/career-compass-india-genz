@@ -119,6 +119,82 @@ const PremiumHomePage = () => {
           </p>
         </div>
       </section>
+
+      <div style={{ height: 1, backgroundColor: C.hairline }} />
+
+      {/* ── Visibility Before Investment ───────────────────────── */}
+      <section className="px-5 sm:px-10 lg:px-16 py-16 sm:py-24">
+        <div className="max-w-3xl">
+          <Label>What is needed</Label>
+          <h2
+            className="mt-6 sm:mt-8"
+            style={{
+              fontFamily: 'Satoshi, Inter, sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(1.6rem, 4vw, 2.6rem)',
+              lineHeight: 1.15,
+              letterSpacing: '-0.02em',
+            }}
+          >
+            Students need visibility before they invest years in a direction.
+          </h2>
+        </div>
+
+        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+          {[
+            {
+              title: 'Degree → Work Reality',
+              body: 'Understand what the degree becomes in real industry environments.',
+            },
+            {
+              title: 'Industry → Execution Mapping',
+              body: 'See where the work actually happens.',
+            },
+            {
+              title: 'Subjects → Real Usage',
+              body: 'Understand which subjects continue to matter in actual jobs.',
+            },
+            {
+              title: 'Skills → Hiring Visibility',
+              body: 'Know what companies truly expect from freshers.',
+            },
+          ].map((card) => (
+            <div
+              key={card.title}
+              className="p-6 sm:p-8"
+              style={{
+                backgroundColor: 'rgba(18,26,47,0.6)',
+                border: `1px solid ${C.hairline}`,
+                borderRadius: 14,
+              }}
+            >
+              <h3
+                style={{
+                  fontFamily: 'Satoshi, Inter, sans-serif',
+                  fontWeight: 600,
+                  fontSize: '1.0625rem',
+                  color: C.accent,
+                }}
+              >
+                {card.title}
+              </h3>
+              <p
+                className="mt-3"
+                style={{ color: C.muted, fontSize: '0.9375rem', lineHeight: 1.7 }}
+              >
+                {card.body}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <p
+          className="mt-10 max-w-3xl"
+          style={{ color: C.muted, fontSize: '1.0625rem', lineHeight: 1.7 }}
+        >
+          Understand the path before entering blindly.
+        </p>
+      </section>
     </div>
   );
 };
