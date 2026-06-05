@@ -861,7 +861,7 @@ const PremiumHomePage = () => {
           </h2>
         </motion.div>
 
-        <div className="relative mt-10 sm:mt-14 grid gap-5 sm:grid-cols-2 items-start">
+        <div className="relative mt-10 sm:mt-14 grid gap-5 sm:grid-cols-2 items-stretch">
           {[
             {
               tag: 'A nation is not built only by',
@@ -887,42 +887,88 @@ const PremiumHomePage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.6, delay: 0.1 + ci * 0.12, ease: [0.22, 1, 0.36, 1] }}
-              className="relative rounded-2xl p-6 sm:p-8"
+              className="group relative h-full overflow-hidden rounded-2xl p-6 sm:p-8 transition-transform duration-500 hover:-translate-y-1"
               style={{
-                border: `1px solid ${col.dim ? C.hairline : 'rgba(109,212,200,0.28)'}`,
+                border: `1px solid ${col.dim ? C.hairline : 'rgba(109,212,200,0.32)'}`,
                 background: col.dim
-                  ? 'rgba(245,247,250,0.02)'
-                  : 'linear-gradient(160deg, rgba(109,212,200,0.10), rgba(109,212,200,0.02))',
+                  ? 'linear-gradient(165deg, rgba(245,247,250,0.045), rgba(245,247,250,0.01))'
+                  : 'linear-gradient(160deg, rgba(109,212,200,0.14), rgba(109,212,200,0.02))',
+                boxShadow: col.dim
+                  ? 'inset 0 1px 0 rgba(245,247,250,0.04)'
+                  : '0 24px 60px -28px rgba(109,212,200,0.45), inset 0 1px 0 rgba(109,212,200,0.18)',
               }}
             >
-              <span
-                className="inline-block uppercase"
+              {/* top accent strip */}
+              <div
+                className="pointer-events-none absolute inset-x-0 top-0 h-px"
                 style={{
-                  fontFamily: 'Inter, sans-serif',
-                  fontSize: '0.6875rem',
-                  letterSpacing: '0.18em',
-                  fontWeight: 600,
-                  color: col.tone,
+                  background: col.dim
+                    ? 'linear-gradient(90deg, transparent, rgba(245,247,250,0.18), transparent)'
+                    : 'linear-gradient(90deg, transparent, rgba(109,212,200,0.7), transparent)',
                 }}
-              >
-                {col.tag}
-              </span>
-              <ul className="mt-5 space-y-3">
+              />
+              {/* ambient glow for the highlighted card */}
+              {!col.dim && (
+                <div
+                  className="pointer-events-none absolute -top-16 -right-16 h-44 w-44 rounded-full blur-3xl"
+                  style={{ background: 'radial-gradient(circle, rgba(109,212,200,0.28), transparent 70%)' }}
+                />
+              )}
+
+              <div className="relative flex items-center gap-3">
+                <span
+                  className="flex h-7 w-7 items-center justify-center rounded-full"
+                  style={{
+                    border: `1px solid ${col.dim ? C.hairline : 'rgba(109,212,200,0.4)'}`,
+                    background: col.dim ? 'rgba(245,247,250,0.03)' : 'rgba(109,212,200,0.12)',
+                    color: col.tone,
+                    fontSize: '0.85rem',
+                    fontWeight: 600,
+                  }}
+                >
+                  {col.dim ? '–' : '✓'}
+                </span>
+                <span
+                  className="inline-block uppercase"
+                  style={{
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: '0.6875rem',
+                    letterSpacing: '0.18em',
+                    fontWeight: 600,
+                    color: col.tone,
+                  }}
+                >
+                  {col.tag}
+                </span>
+              </div>
+
+              <div
+                className="relative mt-5 mb-1 h-px"
+                style={{ backgroundColor: col.dim ? C.hairline : 'rgba(109,212,200,0.2)' }}
+              />
+
+              <ul className="relative mt-5 space-y-1">
                 {col.items.map((item) => (
                   <li
                     key={item}
-                    className="flex items-center gap-3"
+                    className="flex items-center gap-3 rounded-lg px-2 py-2 -mx-2 transition-colors duration-300"
                     style={{ fontSize: '1.0625rem', color: col.dim ? C.muted : C.text }}
                   >
                     <span
+                      className="flex items-center justify-center"
                       style={{
-                        width: 6,
-                        height: 6,
+                        width: 18,
+                        height: 18,
                         borderRadius: 999,
-                        backgroundColor: col.dim ? C.faint : C.accent,
                         flexShrink: 0,
+                        background: col.dim ? 'rgba(245,247,250,0.05)' : 'rgba(109,212,200,0.16)',
+                        color: col.dim ? C.faint : C.accent,
+                        fontSize: '0.7rem',
+                        lineHeight: 1,
                       }}
-                    />
+                    >
+                      {col.dim ? '✕' : '✓'}
+                    </span>
                     {item}
                   </li>
                 ))}
@@ -930,6 +976,7 @@ const PremiumHomePage = () => {
             </motion.div>
           ))}
         </div>
+
 
         <motion.div
           initial={{ opacity: 0, y: 28 }}
