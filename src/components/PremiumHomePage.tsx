@@ -735,7 +735,7 @@ const PremiumHomePage = () => {
         <div className="relative mt-10 sm:mt-14 grid gap-4 sm:grid-cols-2">
           {[
             { no: 'Not On Trends', yes: 'But On Genuine Interest' },
-            { no: 'No Relatives', yes: 'But Academic Strengths' },
+            { no: 'Not By Relatives', yes: 'But On Academic Strengths' },
             { no: 'No Hype', yes: 'But Real Industry Opportunities' },
             { no: 'Or Random Advice', yes: 'But Long-term Career Fit' },
           ].map((item, i) => (
