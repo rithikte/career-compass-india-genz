@@ -83,6 +83,7 @@ const PremiumHomePage = () => {
               </span>{' '}
               Undergraduate Maps helps them see the reality before they commit.
             </p>
+          </div>
 
           {/* Content module — the four real mapping pillars */}
           <div className="lg:col-span-5">
