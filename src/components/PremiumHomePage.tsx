@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 /**
  * Premium Intelligence Homepage — Hero Only
@@ -59,18 +60,30 @@ const PremiumHomePage = () => {
         <div className="relative grid items-center gap-12 lg:grid-cols-12">
           {/* Copy */}
           <div className="lg:col-span-7">
-            <div className="flex items-center gap-3">
-              <span
-                className="inline-block animate-pulse"
+            <motion.div
+              className="flex items-center gap-3"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <motion.span
+                className="inline-block"
+                animate={{ scaleX: [1, 1.3, 1], opacity: [0.7, 1, 0.7] }}
+                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                 style={{ width: 40, height: 2, borderRadius: 2, backgroundColor: C.accent }}
               />
-              <span
+              <motion.span
                 className="inline-block"
-                style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: C.accent, opacity: 0.5 }}
+                animate={{ scale: [1, 1.4, 1], opacity: [0.4, 0.8, 0.4] }}
+                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 0.3 }}
+                style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: C.accent }}
               />
-            </div>
-            <h1
+            </motion.div>
+            <motion.h1
               className="mt-5 sm:mt-7"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
               style={{
                 fontFamily: 'Satoshi, Inter, sans-serif',
                 fontWeight: 700,
@@ -82,16 +95,19 @@ const PremiumHomePage = () => {
               Careers don’t fail.
               <br />
               <span style={{ color: 'rgba(245,247,250,0.55)' }}>Wrong direction does.</span>
-            </h1>
-            <p
+            </motion.h1>
+            <motion.p
               className="mt-6 sm:mt-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
               style={{ color: C.muted, fontSize: '1.0625rem', lineHeight: 1.7, maxWidth: '54ch' }}
             >
               <span style={{ color: C.text, fontWeight: 500 }}>
                 Most students choose a path without knowing where it leads.
               </span>{' '}
               Undergraduate Maps helps them see the reality before they commit.
-            </p>
+            </motion.p>
           </div>
 
           {/* Content module — the four real mapping pillars */}
