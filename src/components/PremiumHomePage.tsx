@@ -373,6 +373,68 @@ const PremiumHomePage = () => {
           Students deserve deeper clarity before they commit to that path.
         </p>
       </section>
+
+      <div style={{ height: 1, backgroundColor: C.hairline }} />
+
+      {/* ── National Impact ─────────────────────────────────────── */}
+      <section className="px-5 sm:px-10 lg:px-16 py-16 sm:py-24">
+        <div className="max-w-3xl">
+          <Label>The bigger picture</Label>
+          <h2
+            className="mt-6 sm:mt-8"
+            style={{
+              fontFamily: 'Satoshi, Inter, sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(1.5rem, 3.8vw, 2.4rem)',
+              lineHeight: 1.18,
+              letterSpacing: '-0.02em',
+            }}
+          >
+            A country grows faster when its youth move with clarity.
+          </h2>
+        </div>
+
+        <div
+          className="mt-10 grid gap-6 sm:grid-cols-2"
+          style={{ color: C.muted, fontSize: '1rem', lineHeight: 1.75 }}
+        >
+          <div>
+            <p className="font-semibold" style={{ color: C.text }}>
+              The future of a nation is not built only by:
+            </p>
+            <ul className="mt-3 space-y-2">
+              <li>degrees,</li>
+              <li>marks,</li>
+              <li>or placements.</li>
+            </ul>
+          </div>
+          <div>
+            <p className="font-semibold" style={{ color: C.text }}>
+              It is built when students:
+            </p>
+            <ul className="mt-3 space-y-2">
+              <li>understand their direction,</li>
+              <li>develop relevant skills,</li>
+              <li>enter the right industries,</li>
+              <li>and grow with long-term awareness.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p
+          className="mt-10 max-w-3xl"
+          style={{ color: C.muted, fontSize: '1.0625rem', lineHeight: 1.7 }}
+        >
+          India has talent. What it still lacks is structured career clarity before commitment.
+        </p>
+
+        <p
+          className="mt-6 max-w-3xl"
+          style={{ color: C.muted, fontSize: '1.0625rem', lineHeight: 1.7 }}
+        >
+          That is the gap Undergraduate Maps was built to solve.
+        </p>
+      </section>
     </div>
   );
 };
