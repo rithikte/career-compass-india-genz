@@ -60,16 +60,25 @@ const PremiumHomePage = () => {
         <div className="relative grid items-center gap-12 lg:grid-cols-12">
           {/* Copy */}
           <div className="lg:col-span-7">
-            <div className="flex items-center gap-3">
-              <span
-                className="inline-block animate-pulse"
+            <motion.div
+              className="flex items-center gap-3"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <motion.span
+                className="inline-block"
+                animate={{ scaleX: [1, 1.3, 1], opacity: [0.7, 1, 0.7] }}
+                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                 style={{ width: 40, height: 2, borderRadius: 2, backgroundColor: C.accent }}
               />
-              <span
+              <motion.span
                 className="inline-block"
-                style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: C.accent, opacity: 0.5 }}
+                animate={{ scale: [1, 1.4, 1], opacity: [0.4, 0.8, 0.4] }}
+                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 0.3 }}
+                style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: C.accent }}
               />
-            </div>
+            </motion.div>
             <h1
               className="mt-5 sm:mt-7"
               style={{
