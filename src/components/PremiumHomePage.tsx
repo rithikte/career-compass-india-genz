@@ -78,9 +78,10 @@ const PremiumHomePage = () => {
               className="mt-6 sm:mt-8"
               style={{ color: C.muted, fontSize: '1.0625rem', lineHeight: 1.7, maxWidth: '54ch' }}
             >
-              Millions of students work hard for their future.
-              Very few get a clear view of where their path actually leads.
-              Undergraduate Maps was built to bring career reality into view before commitment.
+              <span style={{ color: C.text, fontWeight: 500 }}>
+                Most students choose a path without knowing where it leads.
+              </span>{' '}
+              Undergraduate Maps helps them see the reality before they commit.
             </p>
 
             <div className="mt-9 flex flex-col sm:flex-row sm:items-center gap-4">
