@@ -36,31 +36,145 @@ const PremiumHomePage = () => {
       className="rounded-2xl overflow-hidden"
     >
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="px-5 sm:px-10 lg:px-16 pt-20 sm:pt-32 pb-20 sm:pb-32">
-        <div className="max-w-3xl">
-          <Label>Undergraduate Maps</Label>
-          <h1
-            className="mt-6 sm:mt-8"
-            style={{
-              fontFamily: 'Satoshi, Inter, sans-serif',
-              fontWeight: 700,
-              fontSize: 'clamp(2.4rem, 6.5vw, 4.5rem)',
-              lineHeight: 1.08,
-              letterSpacing: '-0.02em',
-            }}
-          >
-            Careers don’t fail.
-            <br />
-            Wrong direction does.
-          </h1>
-          <p
-            className="mt-6 sm:mt-8"
-            style={{ color: C.muted, fontSize: '1.0625rem', lineHeight: 1.7, maxWidth: '65ch' }}
-          >
-            Millions of students work hard for their future.
-            Very few get a clear view of where their path actually leads.
-            Undergraduate Maps was built to bring career reality into view before commitment.
-          </p>
+      <section className="relative px-5 sm:px-10 lg:px-16 pt-20 sm:pt-28 lg:pt-32 pb-20 sm:pb-28 lg:pb-32 overflow-hidden">
+        {/* Ambient depth */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              'radial-gradient(110% 80% at 80% 0%, rgba(109,212,200,0.10), transparent 55%), radial-gradient(90% 70% at 0% 100%, rgba(109,212,200,0.05), transparent 60%)',
+          }}
+        />
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.05]"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgba(199,204,214,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(199,204,214,0.5) 1px, transparent 1px)',
+            backgroundSize: '64px 64px',
+            maskImage: 'radial-gradient(120% 100% at 75% 0%, #000, transparent 70%)',
+            WebkitMaskImage: 'radial-gradient(120% 100% at 75% 0%, #000, transparent 70%)',
+          }}
+        />
+
+        <div className="relative grid items-center gap-12 lg:grid-cols-12">
+          {/* Copy */}
+          <div className="lg:col-span-7">
+            <Label>Undergraduate Maps</Label>
+            <h1
+              className="mt-6 sm:mt-8"
+              style={{
+                fontFamily: 'Satoshi, Inter, sans-serif',
+                fontWeight: 700,
+                fontSize: 'clamp(2.4rem, 6.5vw, 4.5rem)',
+                lineHeight: 1.08,
+                letterSpacing: '-0.02em',
+              }}
+            >
+              Careers don’t fail.
+              <br />
+              <span style={{ color: 'rgba(245,247,250,0.55)' }}>Wrong direction does.</span>
+            </h1>
+            <p
+              className="mt-6 sm:mt-8"
+              style={{ color: C.muted, fontSize: '1.0625rem', lineHeight: 1.7, maxWidth: '54ch' }}
+            >
+              Millions of students work hard for their future.
+              Very few get a clear view of where their path actually leads.
+              Undergraduate Maps was built to bring career reality into view before commitment.
+            </p>
+
+            <div className="mt-9 flex flex-col sm:flex-row sm:items-center gap-4">
+              <a
+                href="#explore"
+                className="inline-flex items-center justify-center px-7 py-3.5 transition-transform hover:-translate-y-0.5"
+                style={{
+                  backgroundColor: C.accent,
+                  color: C.bg,
+                  borderRadius: 10,
+                  fontWeight: 600,
+                  fontSize: '0.9375rem',
+                }}
+              >
+                Explore career maps
+              </a>
+              <a
+                href="#explore"
+                className="inline-flex items-center justify-center px-7 py-3.5 transition-colors"
+                style={{
+                  border: `1px solid ${C.hairline}`,
+                  color: C.text,
+                  borderRadius: 10,
+                  fontWeight: 500,
+                  fontSize: '0.9375rem',
+                }}
+              >
+                See how it works
+              </a>
+            </div>
+          </div>
+
+          {/* Content module — the four real mapping pillars */}
+          <div className="lg:col-span-5">
+            <div
+              className="p-6 sm:p-8"
+              style={{
+                backgroundColor: 'rgba(18,26,47,0.55)',
+                border: `1px solid ${C.hairline}`,
+                borderRadius: 18,
+                backdropFilter: 'blur(8px)',
+              }}
+            >
+              <div className="flex items-center justify-between">
+                <span
+                  className="uppercase"
+                  style={{
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: '0.625rem',
+                    letterSpacing: '0.22em',
+                    fontWeight: 500,
+                    color: C.faint,
+                  }}
+                >
+                  What you’ll see
+                </span>
+                <span
+                  className="inline-block"
+                  style={{ width: 28, height: 1, backgroundColor: C.accent, opacity: 0.6 }}
+                />
+              </div>
+
+              <ul className="mt-6 space-y-5">
+                {[
+                  ['Degree → Work Reality', 'What the degree becomes in industry.'],
+                  ['Industry → Execution', 'Where the work actually happens.'],
+                  ['Subjects → Real Usage', 'Which subjects matter in real jobs.'],
+                  ['Skills → Hiring Visibility', 'What companies expect from freshers.'],
+                ].map(([title, body], i, arr) => (
+                  <li
+                    key={title}
+                    className="pb-5"
+                    style={{
+                      borderBottom: i < arr.length - 1 ? `1px solid ${C.hairline}` : 'none',
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontFamily: 'Satoshi, Inter, sans-serif',
+                        fontWeight: 600,
+                        fontSize: '0.9375rem',
+                        color: C.accent,
+                      }}
+                    >
+                      {title}
+                    </p>
+                    <p className="mt-1.5" style={{ color: C.muted, fontSize: '0.875rem', lineHeight: 1.6 }}>
+                      {body}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
