@@ -247,6 +247,61 @@ const PremiumHomePage = () => {
           </div>
         </div>
       </section>
+
+      <div style={{ height: 1, backgroundColor: C.hairline }} />
+
+      {/* ── The Reality ────────────────────────────────────────── */}
+      <section className="px-5 sm:px-10 lg:px-16 py-16 sm:py-24">
+        <div className="max-w-3xl">
+          <Label>The reality</Label>
+          <h2
+            className="mt-6 sm:mt-8"
+            style={{
+              fontFamily: 'Satoshi, Inter, sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(1.5rem, 3.8vw, 2.4rem)',
+              lineHeight: 1.18,
+              letterSpacing: '-0.02em',
+            }}
+          >
+            Students have rarely been shown what careers actually look like before entering them.
+          </h2>
+        </div>
+
+        <div
+          className="mt-10 grid gap-6 sm:grid-cols-2"
+          style={{ color: C.muted, fontSize: '1rem', lineHeight: 1.75 }}
+        >
+          <div>
+            <p className="font-semibold" style={{ color: C.text }}>
+              For years, students were told:
+            </p>
+            <ul className="mt-3 space-y-2">
+              <li>what to study,</li>
+              <li>which college to choose,</li>
+              <li>and which careers are "good."</li>
+            </ul>
+          </div>
+          <div>
+            <p className="font-semibold" style={{ color: C.text }}>
+              Very few were shown:
+            </p>
+            <ul className="mt-3 space-y-2">
+              <li>how the work actually feels,</li>
+              <li>where freshers struggle,</li>
+              <li>what industries truly expect,</li>
+              <li>or what survives after entering the field.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p
+          className="mt-10 max-w-3xl"
+          style={{ color: C.muted, fontSize: '1.0625rem', lineHeight: 1.7 }}
+        >
+          Undergraduate Maps was built to make career paths visible before years are invested blindly.
+        </p>
+      </section>
     </div>
   );
 };
