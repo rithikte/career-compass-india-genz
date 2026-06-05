@@ -209,7 +209,7 @@ const PremiumHomePage = () => {
             >
               The problem is not lack of talent.
               <br />
-              It is lack of clarity before choosing a path.
+              <span style={{ color: 'rgba(245,247,250,0.55)' }}>It is lack of clarity before choosing a path.</span>
             </h2>
           </motion.div>
 
