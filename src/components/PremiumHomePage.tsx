@@ -79,8 +79,11 @@ const PremiumHomePage = () => {
                 style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: C.accent }}
               />
             </motion.div>
-            <h1
+            <motion.h1
               className="mt-5 sm:mt-7"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
               style={{
                 fontFamily: 'Satoshi, Inter, sans-serif',
                 fontWeight: 700,
@@ -92,16 +95,19 @@ const PremiumHomePage = () => {
               Careers don’t fail.
               <br />
               <span style={{ color: 'rgba(245,247,250,0.55)' }}>Wrong direction does.</span>
-            </h1>
-            <p
+            </motion.h1>
+            <motion.p
               className="mt-6 sm:mt-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
               style={{ color: C.muted, fontSize: '1.0625rem', lineHeight: 1.7, maxWidth: '54ch' }}
             >
               <span style={{ color: C.text, fontWeight: 500 }}>
                 Most students choose a path without knowing where it leads.
               </span>{' '}
               Undergraduate Maps helps them see the reality before they commit.
-            </p>
+            </motion.p>
           </div>
 
           {/* Content module — the four real mapping pillars */}
