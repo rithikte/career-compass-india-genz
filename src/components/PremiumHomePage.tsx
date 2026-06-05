@@ -417,8 +417,23 @@ const PremiumHomePage = () => {
       <div style={{ height: 1, backgroundColor: C.hairline }} />
 
       {/* ── The Difference ─────────────────────────────────────── */}
-      <section className="px-5 sm:px-10 lg:px-16 py-16 sm:py-24">
-        <div className="max-w-3xl">
+      <section className="relative px-5 sm:px-10 lg:px-16 py-16 sm:py-24 overflow-hidden">
+        {/* Ambient depth */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              'radial-gradient(75% 55% at 100% 0%, rgba(109,212,200,0.07), transparent 55%), radial-gradient(70% 60% at 0% 100%, rgba(109,212,200,0.04), transparent 60%)',
+          }}
+        />
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="relative max-w-3xl"
+        >
           <Label>The difference</Label>
           <h2
             className="mt-6 sm:mt-8"
@@ -434,37 +449,80 @@ const PremiumHomePage = () => {
             <br />
             We go further — into work reality.
           </h2>
-        </div>
+        </motion.div>
 
-        <div
-          className="mt-10 grid gap-6 sm:grid-cols-2"
-          style={{ color: C.muted, fontSize: '1rem', lineHeight: 1.75 }}
-        >
-          <div>
-            <p className="font-semibold" style={{ color: C.text }}>
-              Others show:
-            </p>
-            <ul className="mt-3 space-y-2">
-              <li>career names</li>
-              <li>salary estimates</li>
-              <li>generic roadmaps</li>
-              <li>motivational advice</li>
-            </ul>
-          </div>
-          <div>
-            <p className="font-semibold" style={{ color: C.accent }}>
-              Undergraduate Maps shows:
-            </p>
-            <ul className="mt-3 space-y-2">
-              <li>real fresher work</li>
-              <li>execution systems</li>
-              <li>industry clusters</li>
-              <li>subject-to-job connection</li>
-              <li>first 3-year reality</li>
-            </ul>
-          </div>
+        <div className="relative mt-10 sm:mt-14 grid gap-5 sm:grid-cols-2 items-start">
+          {[
+            {
+              tag: 'Others show',
+              tone: C.muted,
+              dim: true,
+              items: ['Career names', 'Salary estimates', 'Generic roadmaps', 'Motivational advice'],
+            },
+            {
+              tag: 'Undergraduate Maps shows',
+              tone: C.accent,
+              dim: false,
+              items: [
+                'Real fresher work',
+                'Execution systems',
+                'Industry clusters',
+                'Subject-to-job connection',
+                'First 3-year reality',
+              ],
+            },
+          ].map((col, ci) => (
+            <motion.div
+              key={col.tag}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.6, delay: 0.1 + ci * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              className="relative rounded-2xl p-6 sm:p-8"
+              style={{
+                border: `1px solid ${col.dim ? C.hairline : 'rgba(109,212,200,0.28)'}`,
+                background: col.dim
+                  ? 'rgba(245,247,250,0.02)'
+                  : 'linear-gradient(160deg, rgba(109,212,200,0.10), rgba(109,212,200,0.02))',
+              }}
+            >
+              <span
+                className="inline-block uppercase"
+                style={{
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '0.6875rem',
+                  letterSpacing: '0.18em',
+                  fontWeight: 600,
+                  color: col.tone,
+                }}
+              >
+                {col.tag}
+              </span>
+              <ul className="mt-5 space-y-3">
+                {col.items.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-center gap-3"
+                    style={{ fontSize: '1.0625rem', color: col.dim ? C.muted : C.text }}
+                  >
+                    <span
+                      style={{
+                        width: 6,
+                        height: 6,
+                        borderRadius: 999,
+                        backgroundColor: col.dim ? C.faint : C.accent,
+                        flexShrink: 0,
+                      }}
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
         </div>
       </section>
+
 
       <div style={{ height: 1, backgroundColor: C.hairline }} />
 
