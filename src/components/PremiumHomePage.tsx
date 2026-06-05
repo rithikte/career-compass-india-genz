@@ -324,7 +324,9 @@ const PremiumHomePage = () => {
               letterSpacing: '-0.02em',
             }}
           >
-            Students need visibility before they invest years in a direction.
+            Students need visibility
+            <br />
+            <span style={{ color: 'rgba(245,247,250,0.55)' }}>before they invest years in a direction.</span>
           </h2>
         </motion.div>
 
