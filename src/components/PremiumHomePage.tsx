@@ -808,7 +808,9 @@ const PremiumHomePage = () => {
               letterSpacing: '-0.02em',
             }}
           >
-            A country grows faster when its youth move with clarity.
+            <span>A country grows faster</span>
+            <br />
+            <span style={{ color: 'rgba(245,247,250,0.55)' }}>when its youth move with clarity.</span>
           </h2>
         </motion.div>
 
