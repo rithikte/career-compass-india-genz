@@ -178,56 +178,118 @@ const PremiumHomePage = () => {
       <div style={{ height: 1, backgroundColor: C.hairline }} />
 
       {/* ── The Problem ────────────────────────────────────────── */}
-      <section className="px-5 sm:px-10 lg:px-16 py-16 sm:py-24">
-        <div className="max-w-3xl">
-          <Label>The gap</Label>
-          <h2
-            className="mt-6 sm:mt-8"
-            style={{
-              fontFamily: 'Satoshi, Inter, sans-serif',
-              fontWeight: 700,
-              fontSize: 'clamp(1.75rem, 4.5vw, 3rem)',
-              lineHeight: 1.12,
-              letterSpacing: '-0.02em',
-            }}
-          >
-            The problem is not lack of talent.
-            <br />
-            It is lack of clarity before choosing a path.
-          </h2>
+      <section className="relative px-5 sm:px-10 lg:px-16 py-16 sm:py-24 overflow-hidden">
+        {/* Ambient depth */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              'radial-gradient(80% 60% at 100% 0%, rgba(109,212,200,0.08), transparent 55%), radial-gradient(70% 60% at 0% 100%, rgba(109,212,200,0.04), transparent 60%)',
+          }}
+        />
 
-          <div
-            className="mt-8 sm:mt-10 grid gap-6 sm:grid-cols-2"
-            style={{ color: C.muted, fontSize: '1rem', lineHeight: 1.75 }}
+        <div className="relative max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div>
-              <p className="font-semibold" style={{ color: C.text }}>
-                Most students know:
-              </p>
-              <ul className="mt-3 space-y-2">
-                <li>courses,</li>
-                <li>colleges,</li>
-                <li>and salary trends.</li>
-              </ul>
-            </div>
-            <div>
-              <p className="font-semibold" style={{ color: C.text }}>
-                Very few understand:
-              </p>
-              <ul className="mt-3 space-y-2">
-                <li>actual daily work,</li>
-                <li>industry pressure,</li>
-                <li>or hiring difficulty.</li>
-              </ul>
-            </div>
+            <Label>The gap</Label>
+            <h2
+              className="mt-6 sm:mt-8"
+              style={{
+                fontFamily: 'Satoshi, Inter, sans-serif',
+                fontWeight: 700,
+                fontSize: 'clamp(1.75rem, 4.5vw, 3rem)',
+                lineHeight: 1.12,
+                letterSpacing: '-0.02em',
+                maxWidth: '20ch',
+              }}
+            >
+              The problem is not lack of talent.
+              <br />
+              It is lack of clarity before choosing a path.
+            </h2>
+          </motion.div>
+
+          <div className="mt-10 sm:mt-14 grid gap-5 sm:grid-cols-2">
+            {[
+              {
+                tag: 'What most students know',
+                tone: C.muted,
+                items: ['Courses', 'Colleges', 'Salary trends'],
+              },
+              {
+                tag: 'What very few understand',
+                tone: C.accent,
+                items: ['Actual daily work', 'Industry pressure', 'Hiring difficulty'],
+              },
+            ].map((col, ci) => (
+              <motion.div
+                key={col.tag}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.6, delay: 0.1 + ci * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                className="relative rounded-2xl p-6 sm:p-8"
+                style={{
+                  border: `1px solid ${C.hairline}`,
+                  background:
+                    ci === 1
+                      ? 'linear-gradient(160deg, rgba(109,212,200,0.10), rgba(109,212,200,0.02))'
+                      : 'rgba(245,247,250,0.02)',
+                }}
+              >
+                <span
+                  className="inline-block uppercase"
+                  style={{
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: '0.6875rem',
+                    letterSpacing: '0.18em',
+                    fontWeight: 600,
+                    color: col.tone,
+                  }}
+                >
+                  {col.tag}
+                </span>
+                <ul className="mt-5 space-y-3">
+                  {col.items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-3"
+                      style={{ fontSize: '1.0625rem', color: C.text }}
+                    >
+                      <span
+                        style={{
+                          width: 6,
+                          height: 6,
+                          borderRadius: 999,
+                          backgroundColor: ci === 1 ? C.accent : C.faint,
+                          flexShrink: 0,
+                        }}
+                      />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
           </div>
 
-          <p
-            className="mt-8 sm:mt-10"
-            style={{ color: C.muted, fontSize: '1.0625rem', lineHeight: 1.7, maxWidth: '65ch' }}
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="mt-10 sm:mt-12 flex items-center gap-4"
+            style={{ fontSize: '1.0625rem', lineHeight: 1.7 }}
           >
-            That gap silently wastes years.
-          </p>
+            <span style={{ width: 32, height: 1, backgroundColor: C.accent, flexShrink: 0 }} />
+            <span style={{ color: C.muted }}>
+              That gap silently <span style={{ color: C.text, fontWeight: 600 }}>wastes years.</span>
+            </span>
+          </motion.p>
         </div>
       </section>
 
