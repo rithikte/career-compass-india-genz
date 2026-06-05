@@ -83,35 +83,6 @@ const PremiumHomePage = () => {
               </span>{' '}
               Undergraduate Maps helps them see the reality before they commit.
             </p>
-
-            <div className="mt-9 flex flex-col sm:flex-row sm:items-center gap-4">
-              <a
-                href="#explore"
-                className="inline-flex items-center justify-center px-7 py-3.5 transition-transform hover:-translate-y-0.5"
-                style={{
-                  backgroundColor: C.accent,
-                  color: C.bg,
-                  borderRadius: 10,
-                  fontWeight: 600,
-                  fontSize: '0.9375rem',
-                }}
-              >
-                Explore career maps
-              </a>
-              <a
-                href="#explore"
-                className="inline-flex items-center justify-center px-7 py-3.5 transition-colors"
-                style={{
-                  border: `1px solid ${C.hairline}`,
-                  color: C.text,
-                  borderRadius: 10,
-                  fontWeight: 500,
-                  fontSize: '0.9375rem',
-                }}
-              >
-                See how it works
-              </a>
-            </div>
           </div>
 
           {/* Content module — the four real mapping pillars */}
