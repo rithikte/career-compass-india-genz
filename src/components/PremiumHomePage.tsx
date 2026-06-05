@@ -59,9 +59,18 @@ const PremiumHomePage = () => {
         <div className="relative grid items-center gap-12 lg:grid-cols-12">
           {/* Copy */}
           <div className="lg:col-span-7">
-            <Label>Undergraduate Maps</Label>
+            <div className="flex items-center gap-3">
+              <span
+                className="inline-block animate-pulse"
+                style={{ width: 40, height: 2, borderRadius: 2, backgroundColor: C.accent }}
+              />
+              <span
+                className="inline-block"
+                style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: C.accent, opacity: 0.5 }}
+              />
+            </div>
             <h1
-              className="mt-6 sm:mt-8"
+              className="mt-5 sm:mt-7"
               style={{
                 fontFamily: 'Satoshi, Inter, sans-serif',
                 fontWeight: 700,
