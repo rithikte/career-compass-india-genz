@@ -1,4 +1,5 @@
 import React from 'react';
+import heroPaths from '@/assets/hero-paths.jpg';
 
 /**
  * Premium Intelligence Homepage — Hero Only
@@ -36,33 +37,149 @@ const PremiumHomePage = () => {
       className="rounded-2xl overflow-hidden"
     >
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="px-5 sm:px-10 lg:px-16 pt-20 sm:pt-32 pb-20 sm:pb-32">
-        <div className="max-w-3xl">
-          <Label>Undergraduate Maps</Label>
-          <h1
-            className="mt-6 sm:mt-8"
+      <section
+        className="px-5 sm:px-10 lg:px-16 pt-24 pb-16 sm:py-24"
+        style={{
+          background:
+            'linear-gradient(180deg, #0B1020 0%, #18233D 100%)',
+        }}
+      >
+        <div className="grid items-center gap-12 lg:gap-10 lg:grid-cols-[2fr_3fr]">
+          {/* ── Content (40%) ─────────────────────────── */}
+          <div className="max-w-[34rem]">
+            {/* Trust layer */}
+            <span
+              className="inline-block uppercase"
+              style={{
+                fontFamily: 'Inter, sans-serif',
+                fontSize: '0.75rem',
+                letterSpacing: '0.18em',
+                fontWeight: 500,
+                color: C.accent,
+              }}
+            >
+              Understand the path before you commit to it
+            </span>
+
+            <h1
+              style={{
+                marginTop: 24,
+                fontFamily: 'Satoshi, Inter, sans-serif',
+                fontWeight: 700,
+                fontSize: 'clamp(2.4rem, 6.5vw, 4.25rem)',
+                lineHeight: 1.08,
+                letterSpacing: '-0.02em',
+              }}
+            >
+              Careers don’t fail.
+              <br />
+              <span style={{ color: C.text }}>Wrong direction does.</span>
+            </h1>
+
+            <p
+              style={{
+                marginTop: 24,
+                color: C.muted,
+                fontSize: '1.0625rem',
+                lineHeight: 1.7,
+                maxWidth: '68ch',
+              }}
+            >
+              Millions of students work hard for their future. Very few get a
+              clear view of where their path actually leads. Undergraduate Maps
+              was built to bring career reality into view before commitment.
+            </p>
+
+            {/* Primary CTA */}
+            <div style={{ marginTop: 24 }}>
+              <a
+                href="#explore"
+                className="inline-flex items-center justify-center w-full sm:w-auto"
+                style={{
+                  backgroundColor: C.accent,
+                  color: '#06231F',
+                  fontFamily: 'Inter, sans-serif',
+                  fontWeight: 600,
+                  fontSize: '1rem',
+                  padding: '16px 32px',
+                  borderRadius: 12,
+                  letterSpacing: '0.01em',
+                }}
+              >
+                Start With Clarity
+              </a>
+            </div>
+
+            {/* Secondary trust block */}
+            <div style={{ marginTop: 16 }}>
+              <p
+                style={{
+                  color: C.faint,
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '0.8125rem',
+                  letterSpacing: '0.02em',
+                }}
+              >
+                Explore careers through:
+              </p>
+              <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
+                {[
+                  'Real Work',
+                  'Industry Reality',
+                  'Subject Usage',
+                  'Long-Term Career Visibility',
+                ].map((item) => (
+                  <span
+                    key={item}
+                    className="inline-flex items-center"
+                    style={{
+                      color: C.muted,
+                      fontFamily: 'Inter, sans-serif',
+                      fontSize: '0.875rem',
+                    }}
+                  >
+                    <span
+                      style={{
+                        width: 4,
+                        height: 4,
+                        borderRadius: '50%',
+                        backgroundColor: C.accent,
+                        marginRight: 8,
+                        display: 'inline-block',
+                      }}
+                    />
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* ── Visual story (60%) ─────────────────────── */}
+          <div
+            className="relative w-full overflow-hidden"
             style={{
-              fontFamily: 'Satoshi, Inter, sans-serif',
-              fontWeight: 700,
-              fontSize: 'clamp(2.4rem, 6.5vw, 4.5rem)',
-              lineHeight: 1.08,
-              letterSpacing: '-0.02em',
+              borderRadius: 18,
+              border: '1px solid rgba(255,255,255,0.08)',
+              boxShadow: '0 30px 80px -40px rgba(0,0,0,0.8)',
             }}
           >
-            Careers don’t fail.
-            <br />
-            Wrong direction does.
-          </h1>
-          <p
-            className="mt-6 sm:mt-8"
-            style={{ color: C.muted, fontSize: '1.0625rem', lineHeight: 1.7, maxWidth: '65ch' }}
-          >
-            Millions of students work hard for their future.
-            Very few get a clear view of where their path actually leads.
-            Undergraduate Maps was built to bring career reality into view before commitment.
-          </p>
+            <img
+              src={heroPaths}
+              alt="A student standing before multiple paths leading toward different futures"
+              width={1080}
+              height={1600}
+              className="w-full h-full object-cover"
+              style={{ aspectRatio: '4 / 5', maxHeight: 560 }}
+            />
+            <div
+              className="absolute inset-0"
+              style={{ backgroundColor: 'rgba(255,255,255,0.03)' }}
+            />
+          </div>
         </div>
       </section>
+
 
       <div style={{ height: 1, backgroundColor: C.hairline }} />
 
