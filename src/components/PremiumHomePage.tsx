@@ -879,34 +879,60 @@ const PremiumHomePage = () => {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mt-6 rounded-2xl p-7 sm:p-10 text-center"
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mt-6 overflow-hidden rounded-3xl p-9 sm:p-14 text-center"
           style={{
-            border: `1px solid rgba(109,212,200,0.22)`,
-            background: 'linear-gradient(160deg, rgba(109,212,200,0.08), rgba(109,212,200,0.015))',
+            border: `1px solid rgba(109,212,200,0.3)`,
+            background: 'linear-gradient(165deg, rgba(109,212,200,0.12), rgba(11,16,32,0.2) 60%)',
+            boxShadow: '0 40px 120px -40px rgba(109,212,200,0.35)',
           }}
         >
+          {/* Glow halo */}
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              backgroundImage:
+                'radial-gradient(60% 80% at 50% 0%, rgba(109,212,200,0.18), transparent 60%)',
+            }}
+          />
+
+          <motion.span
+            aria-hidden
+            className="relative mx-auto block"
+            initial={{ scaleX: 0.4, opacity: 0 }}
+            whileInView={{ scaleX: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            style={{ width: 48, height: 2, borderRadius: 2, backgroundColor: C.accent }}
+          />
+
           <p
+            className="relative mt-7"
             style={{
               fontFamily: 'Satoshi, Inter, sans-serif',
               fontWeight: 700,
-              fontSize: 'clamp(1.25rem, 2.6vw, 1.75rem)',
-              lineHeight: 1.3,
-              letterSpacing: '-0.01em',
+              fontSize: 'clamp(1.5rem, 3.4vw, 2.25rem)',
+              lineHeight: 1.22,
+              letterSpacing: '-0.02em',
               color: C.text,
             }}
           >
             India has talent. What it still lacks is{' '}
             <span style={{ color: C.accent }}>structured career clarity before commitment.</span>
           </p>
-          <p className="mt-4" style={{ color: C.muted, fontSize: '1.0625rem', lineHeight: 1.7 }}>
-            That is the gap Undergraduate Maps was built to solve.
+          <p
+            className="relative mx-auto mt-5"
+            style={{ color: C.muted, fontSize: '1.125rem', lineHeight: 1.7, maxWidth: '46ch' }}
+          >
+            That is the gap{' '}
+            <span style={{ color: C.text, fontWeight: 600 }}>Undergraduate Maps</span> was built to solve.
           </p>
         </motion.div>
       </section>
+
 
     </div>
   );
