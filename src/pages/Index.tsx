@@ -4,6 +4,7 @@ import Seo from "@/components/Seo";
 import { Header } from '../components/Header';
 import { HomePage } from '../components/HomePage';
 import EmbeddedProductEngineering from '../components/EmbeddedProductEngineering';
+import PremiumHomePage from '../components/PremiumHomePage';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -11,6 +12,7 @@ const Index = () => {
   const sections = [
     { id: 'home', title: 'Home', component: HomePage },
     { id: 'embedded-product', title: 'Embedded Product Engineering', component: EmbeddedProductEngineering },
+    { id: 'home-page', title: 'Home Page', component: PremiumHomePage },
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
