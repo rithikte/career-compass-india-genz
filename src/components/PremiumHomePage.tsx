@@ -180,7 +180,6 @@ const PremiumHomePage = () => {
         </div>
       </section>
 
-      </section>
 
       <div style={{ height: 1, backgroundColor: C.hairline }} />
 
