@@ -106,8 +106,7 @@ const PremiumHomePage = () => {
               <ul className="mt-3 space-y-2">
                 <li>actual daily work,</li>
                 <li>industry pressure,</li>
-                <li>hiring difficulty,</li>
-                <li>or long-term survivability.</li>
+                <li>or hiring difficulty.</li>
               </ul>
             </div>
           </div>
