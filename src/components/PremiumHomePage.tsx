@@ -447,9 +447,9 @@ const PremiumHomePage = () => {
               letterSpacing: '-0.02em',
             }}
           >
-            Most platforms stop at guidance.
+            <span>Most platforms stop at guidance.</span>
             <br />
-            We go further — into work reality.
+            <span style={{ color: 'rgba(245,247,250,0.55)' }}>We go further — into work reality.</span>
           </h2>
         </motion.div>
 
