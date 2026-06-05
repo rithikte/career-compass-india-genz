@@ -221,7 +221,7 @@ const PremiumHomePage = () => {
                 items: ['Courses', 'Colleges', 'Salary trends'],
               },
               {
-                tag: 'What very few understand',
+                tag: 'What Most Students Miss',
                 tone: C.accent,
                 items: ['Actual daily work', 'Industry pressure', 'Hiring difficulty'],
               },
