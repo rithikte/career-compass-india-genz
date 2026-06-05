@@ -195,6 +195,58 @@ const PremiumHomePage = () => {
           Understand the path before entering blindly.
         </p>
       </section>
+
+      <div style={{ height: 1, backgroundColor: C.hairline }} />
+
+      {/* ── The Difference ─────────────────────────────────────── */}
+      <section className="px-5 sm:px-10 lg:px-16 py-16 sm:py-24">
+        <div className="max-w-3xl">
+          <Label>The difference</Label>
+          <h2
+            className="mt-6 sm:mt-8"
+            style={{
+              fontFamily: 'Satoshi, Inter, sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(1.6rem, 4vw, 2.6rem)',
+              lineHeight: 1.15,
+              letterSpacing: '-0.02em',
+            }}
+          >
+            Most platforms stop at guidance.
+            <br />
+            We go further — into work reality.
+          </h2>
+        </div>
+
+        <div
+          className="mt-10 grid gap-6 sm:grid-cols-2"
+          style={{ color: C.muted, fontSize: '1rem', lineHeight: 1.75 }}
+        >
+          <div>
+            <p className="font-semibold" style={{ color: C.text }}>
+              Others show:
+            </p>
+            <ul className="mt-3 space-y-2">
+              <li>career names</li>
+              <li>salary estimates</li>
+              <li>generic roadmaps</li>
+              <li>motivational advice</li>
+            </ul>
+          </div>
+          <div>
+            <p className="font-semibold" style={{ color: C.accent }}>
+              Undergraduate Maps shows:
+            </p>
+            <ul className="mt-3 space-y-2">
+              <li>real fresher work</li>
+              <li>execution systems</li>
+              <li>industry clusters</li>
+              <li>subject-to-job connection</li>
+              <li>first 3-year reality</li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
