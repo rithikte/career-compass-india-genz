@@ -296,8 +296,23 @@ const PremiumHomePage = () => {
       <div style={{ height: 1, backgroundColor: C.hairline }} />
 
       {/* ── Visibility Before Investment ───────────────────────── */}
-      <section className="px-5 sm:px-10 lg:px-16 py-16 sm:py-24">
-        <div className="max-w-3xl">
+      <section className="relative px-5 sm:px-10 lg:px-16 py-16 sm:py-24 overflow-hidden">
+        {/* Ambient depth */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              'radial-gradient(75% 55% at 0% 0%, rgba(109,212,200,0.07), transparent 55%), radial-gradient(70% 60% at 100% 100%, rgba(109,212,200,0.04), transparent 60%)',
+          }}
+        />
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="relative max-w-3xl"
+        >
           <Label>What is needed</Label>
           <h2
             className="mt-6 sm:mt-8"
@@ -311,9 +326,9 @@ const PremiumHomePage = () => {
           >
             Students need visibility before they invest years in a direction.
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+        <div className="relative mt-10 sm:mt-14 grid gap-4 sm:grid-cols-2">
           {[
             {
               title: 'Degree → Work Reality',
@@ -331,17 +346,39 @@ const PremiumHomePage = () => {
               title: 'Skills → Hiring Visibility',
               body: 'Know what companies truly expect from freshers.',
             },
-          ].map((card) => (
-            <div
+          ].map((card, i) => (
+            <motion.div
               key={card.title}
-              className="p-6 sm:p-8"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              className="group relative p-6 sm:p-8 transition-colors duration-300"
               style={{
-                backgroundColor: 'rgba(18,26,47,0.6)',
+                background: 'linear-gradient(160deg, rgba(18,26,47,0.7), rgba(18,26,47,0.35))',
                 border: `1px solid ${C.hairline}`,
-                borderRadius: 14,
+                borderRadius: 16,
               }}
             >
+              {/* Accent edge */}
+              <span
+                className="absolute left-0 top-6 bottom-6"
+                style={{ width: 2, borderRadius: 2, backgroundColor: C.accent, opacity: 0.5 }}
+              />
+              <span
+                className="block"
+                style={{
+                  fontFamily: 'Satoshi, Inter, sans-serif',
+                  fontWeight: 700,
+                  fontSize: '0.75rem',
+                  letterSpacing: '0.08em',
+                  color: C.faint,
+                }}
+              >
+                {String(i + 1).padStart(2, '0')}
+              </span>
               <h3
+                className="mt-3"
                 style={{
                   fontFamily: 'Satoshi, Inter, sans-serif',
                   fontWeight: 600,
@@ -352,22 +389,30 @@ const PremiumHomePage = () => {
                 {card.title}
               </h3>
               <p
-                className="mt-3"
+                className="mt-2.5"
                 style={{ color: C.muted, fontSize: '0.9375rem', lineHeight: 1.7 }}
               >
                 {card.body}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        <p
-          className="mt-10 max-w-3xl"
-          style={{ color: C.muted, fontSize: '1.0625rem', lineHeight: 1.7 }}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="relative mt-10 sm:mt-12 flex items-center gap-4 max-w-3xl"
+          style={{ fontSize: '1.0625rem', lineHeight: 1.7 }}
         >
-          Understand the path before entering blindly.
-        </p>
+          <span style={{ width: 32, height: 1, backgroundColor: C.accent, flexShrink: 0 }} />
+          <span style={{ color: C.muted }}>
+            Understand the path before <span style={{ color: C.text, fontWeight: 600 }}>entering blindly.</span>
+          </span>
+        </motion.p>
       </section>
+
 
       <div style={{ height: 1, backgroundColor: C.hairline }} />
 
