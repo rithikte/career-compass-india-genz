@@ -173,7 +173,7 @@ const PremiumHomePage = () => {
                   fontFamily: 'Satoshi, Inter, sans-serif',
                   fontWeight: 600,
                   fontSize: '1.0625rem',
-                  color: C.accent2 || C.accent,
+                  color: C.accent,
                 }}
               >
                 {card.title}
