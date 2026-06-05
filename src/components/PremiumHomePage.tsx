@@ -737,7 +737,7 @@ const PremiumHomePage = () => {
             { no: 'Not On Trends', yes: 'But On Genuine Interest' },
             { no: 'Not By Relatives', yes: 'But On Academic Strengths' },
             { no: 'Not On Hype', yes: 'But On Real Industry Opportunities' },
-            { no: 'Or Random Advice', yes: 'But Long-term Career Fit' },
+            { no: 'Not On Random Advice', yes: 'But On long-term career Fit' },
           ].map((item, i) => (
             <motion.div
               key={item.no}
