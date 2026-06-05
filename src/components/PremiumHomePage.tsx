@@ -527,8 +527,23 @@ const PremiumHomePage = () => {
       <div style={{ height: 1, backgroundColor: C.hairline }} />
 
       {/* ── The Reality ────────────────────────────────────────── */}
-      <section className="px-5 sm:px-10 lg:px-16 py-16 sm:py-24">
-        <div className="max-w-3xl">
+      <section className="relative px-5 sm:px-10 lg:px-16 py-16 sm:py-24 overflow-hidden">
+        {/* Ambient depth */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              'radial-gradient(75% 55% at 0% 0%, rgba(109,212,200,0.07), transparent 55%), radial-gradient(70% 60% at 100% 100%, rgba(109,212,200,0.04), transparent 60%)',
+          }}
+        />
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="relative max-w-3xl"
+        >
           <Label>The reality</Label>
           <h2
             className="mt-6 sm:mt-8"
@@ -542,42 +557,94 @@ const PremiumHomePage = () => {
           >
             Students have rarely been shown what careers actually look like before entering them.
           </h2>
+        </motion.div>
+
+        <div className="relative mt-10 sm:mt-14 grid gap-5 sm:grid-cols-2 items-start">
+          {[
+            {
+              tag: 'For years, students were told',
+              tone: C.muted,
+              dim: true,
+              items: ['What to study', 'Which college to choose', 'Which careers are "good"'],
+            },
+            {
+              tag: 'Very few were shown',
+              tone: C.accent,
+              dim: false,
+              items: [
+                'How the work actually feels',
+                'Where freshers struggle',
+                'What industries truly expect',
+                'What survives after entering the field',
+              ],
+            },
+          ].map((col, ci) => (
+            <motion.div
+              key={col.tag}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.6, delay: 0.1 + ci * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              className="relative rounded-2xl p-6 sm:p-8"
+              style={{
+                border: `1px solid ${col.dim ? C.hairline : 'rgba(109,212,200,0.28)'}`,
+                background: col.dim
+                  ? 'rgba(245,247,250,0.02)'
+                  : 'linear-gradient(160deg, rgba(109,212,200,0.10), rgba(109,212,200,0.02))',
+              }}
+            >
+              <span
+                className="inline-block uppercase"
+                style={{
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '0.6875rem',
+                  letterSpacing: '0.18em',
+                  fontWeight: 600,
+                  color: col.tone,
+                }}
+              >
+                {col.tag}
+              </span>
+              <ul className="mt-5 space-y-3">
+                {col.items.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-center gap-3"
+                    style={{ fontSize: '1.0625rem', color: col.dim ? C.muted : C.text }}
+                  >
+                    <span
+                      style={{
+                        width: 6,
+                        height: 6,
+                        borderRadius: 999,
+                        backgroundColor: col.dim ? C.faint : C.accent,
+                        flexShrink: 0,
+                      }}
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
         </div>
 
-        <div
-          className="mt-10 grid gap-6 sm:grid-cols-2"
-          style={{ color: C.muted, fontSize: '1rem', lineHeight: 1.75 }}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="relative mt-10 sm:mt-12 flex items-center gap-4 max-w-3xl"
+          style={{ fontSize: '1.0625rem', lineHeight: 1.7 }}
         >
-          <div>
-            <p className="font-semibold" style={{ color: C.text }}>
-              For years, students were told:
-            </p>
-            <ul className="mt-3 space-y-2">
-              <li>what to study,</li>
-              <li>which college to choose,</li>
-              <li>and which careers are "good."</li>
-            </ul>
-          </div>
-          <div>
-            <p className="font-semibold" style={{ color: C.text }}>
-              Very few were shown:
-            </p>
-            <ul className="mt-3 space-y-2">
-              <li>how the work actually feels,</li>
-              <li>where freshers struggle,</li>
-              <li>what industries truly expect,</li>
-              <li>or what survives after entering the field.</li>
-            </ul>
-          </div>
-        </div>
-
-        <p
-          className="mt-10 max-w-3xl"
-          style={{ color: C.muted, fontSize: '1.0625rem', lineHeight: 1.7 }}
-        >
-          Undergraduate Maps was built to make career paths visible before years are invested blindly.
-        </p>
+          <span style={{ width: 32, height: 1, backgroundColor: C.accent, flexShrink: 0 }} />
+          <span style={{ color: C.muted }}>
+            Undergraduate Maps was built to make career paths{' '}
+            <span style={{ color: C.text, fontWeight: 600 }}>visible before years are invested blindly.</span>
+          </span>
+        </motion.p>
       </section>
+
 
       <div style={{ height: 1, backgroundColor: C.hairline }} />
 
