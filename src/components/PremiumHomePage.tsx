@@ -1,4 +1,5 @@
 import React from 'react';
+import heroPaths from '@/assets/hero-paths.jpg';
 
 /**
  * Premium Intelligence Homepage — Hero Only
