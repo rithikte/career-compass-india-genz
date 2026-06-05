@@ -557,7 +557,9 @@ const PremiumHomePage = () => {
               letterSpacing: '-0.02em',
             }}
           >
-            Students have rarely been shown what careers actually look like before entering them.
+            <span>Students have rarely been shown what careers actually look like</span>
+            <br />
+            <span style={{ color: 'rgba(245,247,250,0.55)' }}>before entering them.</span>
           </h2>
         </motion.div>
 
