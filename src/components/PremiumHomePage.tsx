@@ -649,8 +649,23 @@ const PremiumHomePage = () => {
       <div style={{ height: 1, backgroundColor: C.hairline }} />
 
       {/* ── Career Decisions ─────────────────────────────────────── */}
-      <section className="px-5 sm:px-10 lg:px-16 py-16 sm:py-24">
-        <div className="max-w-3xl">
+      <section className="relative px-5 sm:px-10 lg:px-16 py-16 sm:py-24 overflow-hidden">
+        {/* Ambient depth */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              'radial-gradient(75% 55% at 100% 0%, rgba(109,212,200,0.07), transparent 55%), radial-gradient(70% 60% at 0% 100%, rgba(109,212,200,0.04), transparent 60%)',
+          }}
+        />
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="relative max-w-3xl"
+        >
           <Label>Career decisions</Label>
           <h2
             className="mt-6 sm:mt-8"
@@ -664,58 +679,99 @@ const PremiumHomePage = () => {
           >
             Career decisions should not be shaped by:
           </h2>
-        </div>
+        </motion.div>
 
-        <div
-          className="mt-10 grid gap-4 sm:grid-cols-2"
-          style={{ color: C.muted, fontSize: '1rem', lineHeight: 1.75 }}
-        >
+        <div className="relative mt-10 sm:mt-14 grid gap-4 sm:grid-cols-2">
           {[
             { no: 'Not Trends', yes: 'But Genuine Interest' },
             { no: 'No Relatives', yes: 'But Academic Strengths' },
             { no: 'No Hype', yes: 'But Real Industry Opportunities' },
             { no: 'Or Random Advice', yes: 'But Long-term Career Fit' },
-          ].map((item) => (
-            <div
+          ].map((item, i) => (
+            <motion.div
               key={item.no}
-              className="p-6 sm:p-8"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              className="relative p-6 sm:p-8"
               style={{
-                backgroundColor: 'rgba(18,26,47,0.6)',
+                background: 'linear-gradient(160deg, rgba(18,26,47,0.7), rgba(18,26,47,0.35))',
                 border: `1px solid ${C.hairline}`,
-                borderRadius: 14,
+                borderRadius: 16,
               }}
             >
-              <p style={{ color: C.faint }}>{item.no}</p>
-              <p className="mt-2 font-semibold" style={{ color: C.accent }}>
+              <p
+                className="flex items-center gap-2"
+                style={{ color: C.faint, fontSize: '0.9375rem', textDecoration: 'line-through' }}
+              >
+                {item.no}
+              </p>
+              <p
+                className="mt-3 flex items-center gap-2 font-semibold"
+                style={{ color: C.accent, fontSize: '1.0625rem' }}
+              >
+                <span style={{ width: 14, height: 1, backgroundColor: C.accent, flexShrink: 0 }} />
                 {item.yes}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        <div className="mt-10 max-w-3xl">
-          <p className="font-semibold" style={{ color: C.text }}>
-            A Career Affects:
-          </p>
-          <ul
-            className="mt-3 space-y-2"
-            style={{ color: C.muted, fontSize: '1rem', lineHeight: 1.75 }}
-          >
-            <li>Time,</li>
-            <li>Confidence,</li>
-            <li>Money,</li>
-            <li>Identity,</li>
-            <li>And Future Stability.</li>
-          </ul>
-        </div>
-
-        <p
-          className="mt-10 max-w-3xl"
-          style={{ color: C.muted, fontSize: '1.0625rem', lineHeight: 1.7 }}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mt-6 rounded-2xl p-6 sm:p-8"
+          style={{
+            border: `1px solid rgba(109,212,200,0.28)`,
+            background: 'linear-gradient(160deg, rgba(109,212,200,0.10), rgba(109,212,200,0.02))',
+          }}
         >
-          Students deserve deeper clarity before they commit to that path.
-        </p>
+          <span
+            className="inline-block uppercase"
+            style={{
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '0.6875rem',
+              letterSpacing: '0.18em',
+              fontWeight: 600,
+              color: C.accent,
+            }}
+          >
+            A Career Affects
+          </span>
+          <div className="mt-5 flex flex-wrap gap-x-8 gap-y-3">
+            {['Time', 'Confidence', 'Money', 'Identity', 'Future Stability'].map((item) => (
+              <span
+                key={item}
+                className="flex items-center gap-3"
+                style={{ fontSize: '1.0625rem', color: C.text }}
+              >
+                <span
+                  style={{ width: 6, height: 6, borderRadius: 999, backgroundColor: C.accent, flexShrink: 0 }}
+                />
+                {item}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="relative mt-10 sm:mt-12 flex items-center gap-4 max-w-3xl"
+          style={{ fontSize: '1.0625rem', lineHeight: 1.7 }}
+        >
+          <span style={{ width: 32, height: 1, backgroundColor: C.accent, flexShrink: 0 }} />
+          <span style={{ color: C.muted }}>
+            Students deserve <span style={{ color: C.text, fontWeight: 600 }}>deeper clarity</span> before they commit to that path.
+          </span>
+        </motion.p>
       </section>
+
 
       <div style={{ height: 1, backgroundColor: C.hairline }} />
 
