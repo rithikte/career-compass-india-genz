@@ -776,8 +776,23 @@ const PremiumHomePage = () => {
       <div style={{ height: 1, backgroundColor: C.hairline }} />
 
       {/* ── National Impact ─────────────────────────────────────── */}
-      <section className="px-5 sm:px-10 lg:px-16 py-16 sm:py-24">
-        <div className="max-w-3xl">
+      <section className="relative px-5 sm:px-10 lg:px-16 py-16 sm:py-24 overflow-hidden">
+        {/* Ambient depth */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              'radial-gradient(80% 60% at 50% 0%, rgba(109,212,200,0.09), transparent 55%), radial-gradient(70% 60% at 0% 100%, rgba(109,212,200,0.04), transparent 60%)',
+          }}
+        />
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="relative max-w-3xl"
+        >
           <Label>The bigger picture</Label>
           <h2
             className="mt-6 sm:mt-8"
@@ -791,49 +806,108 @@ const PremiumHomePage = () => {
           >
             A country grows faster when its youth move with clarity.
           </h2>
+        </motion.div>
+
+        <div className="relative mt-10 sm:mt-14 grid gap-5 sm:grid-cols-2 items-start">
+          {[
+            {
+              tag: 'A nation is not built only by',
+              tone: C.muted,
+              dim: true,
+              items: ['Degrees', 'Marks', 'Placements'],
+            },
+            {
+              tag: 'It is built when students',
+              tone: C.accent,
+              dim: false,
+              items: [
+                'Understand their direction',
+                'Develop relevant skills',
+                'Enter the right industries',
+                'Grow with long-term awareness',
+              ],
+            },
+          ].map((col, ci) => (
+            <motion.div
+              key={col.tag}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.6, delay: 0.1 + ci * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              className="relative rounded-2xl p-6 sm:p-8"
+              style={{
+                border: `1px solid ${col.dim ? C.hairline : 'rgba(109,212,200,0.28)'}`,
+                background: col.dim
+                  ? 'rgba(245,247,250,0.02)'
+                  : 'linear-gradient(160deg, rgba(109,212,200,0.10), rgba(109,212,200,0.02))',
+              }}
+            >
+              <span
+                className="inline-block uppercase"
+                style={{
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '0.6875rem',
+                  letterSpacing: '0.18em',
+                  fontWeight: 600,
+                  color: col.tone,
+                }}
+              >
+                {col.tag}
+              </span>
+              <ul className="mt-5 space-y-3">
+                {col.items.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-center gap-3"
+                    style={{ fontSize: '1.0625rem', color: col.dim ? C.muted : C.text }}
+                  >
+                    <span
+                      style={{
+                        width: 6,
+                        height: 6,
+                        borderRadius: 999,
+                        backgroundColor: col.dim ? C.faint : C.accent,
+                        flexShrink: 0,
+                      }}
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
         </div>
 
-        <div
-          className="mt-10 grid gap-6 sm:grid-cols-2"
-          style={{ color: C.muted, fontSize: '1rem', lineHeight: 1.75 }}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mt-6 rounded-2xl p-7 sm:p-10 text-center"
+          style={{
+            border: `1px solid rgba(109,212,200,0.22)`,
+            background: 'linear-gradient(160deg, rgba(109,212,200,0.08), rgba(109,212,200,0.015))',
+          }}
         >
-          <div>
-            <p className="font-semibold" style={{ color: C.text }}>
-              The future of a nation is not built only by:
-            </p>
-            <ul className="mt-3 space-y-2">
-              <li>degrees,</li>
-              <li>marks,</li>
-              <li>or placements.</li>
-            </ul>
-          </div>
-          <div>
-            <p className="font-semibold" style={{ color: C.text }}>
-              It is built when students:
-            </p>
-            <ul className="mt-3 space-y-2">
-              <li>understand their direction,</li>
-              <li>develop relevant skills,</li>
-              <li>enter the right industries,</li>
-              <li>and grow with long-term awareness.</li>
-            </ul>
-          </div>
-        </div>
-
-        <p
-          className="mt-10 max-w-3xl"
-          style={{ color: C.muted, fontSize: '1.0625rem', lineHeight: 1.7 }}
-        >
-          India has talent. What it still lacks is structured career clarity before commitment.
-        </p>
-
-        <p
-          className="mt-6 max-w-3xl"
-          style={{ color: C.muted, fontSize: '1.0625rem', lineHeight: 1.7 }}
-        >
-          That is the gap Undergraduate Maps was built to solve.
-        </p>
+          <p
+            style={{
+              fontFamily: 'Satoshi, Inter, sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(1.25rem, 2.6vw, 1.75rem)',
+              lineHeight: 1.3,
+              letterSpacing: '-0.01em',
+              color: C.text,
+            }}
+          >
+            India has talent. What it still lacks is{' '}
+            <span style={{ color: C.accent }}>structured career clarity before commitment.</span>
+          </p>
+          <p className="mt-4" style={{ color: C.muted, fontSize: '1.0625rem', lineHeight: 1.7 }}>
+            That is the gap Undergraduate Maps was built to solve.
+          </p>
+        </motion.div>
       </section>
+
     </div>
   );
 };
