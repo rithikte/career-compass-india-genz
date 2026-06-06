@@ -110,15 +110,20 @@ const PremiumHomePage = () => {
             </motion.p>
           </div>
 
-          {/* Content module — the four real mapping pillars */}
+          {/* Content module — credibility / outcome snapshot */}
           <div className="lg:col-span-5">
-            <div
+            <motion.div
               className="p-6 sm:p-8"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
               style={{
                 backgroundColor: 'rgba(18,26,47,0.55)',
                 border: `1px solid ${C.hairline}`,
                 borderRadius: 18,
                 backdropFilter: 'blur(8px)',
+                backgroundImage:
+                  'radial-gradient(120% 80% at 0% 0%, rgba(109,212,200,0.10), transparent 55%)',
               }}
             >
               <div className="flex items-center justify-between">
@@ -132,7 +137,7 @@ const PremiumHomePage = () => {
                     color: C.faint,
                   }}
                 >
-                  What you’ll see
+                  Clarity before commitment
                 </span>
                 <span
                   className="inline-block"
@@ -140,38 +145,50 @@ const PremiumHomePage = () => {
                 />
               </div>
 
-              <ul className="mt-6 space-y-5">
+              <div className="mt-7 grid grid-cols-2 gap-y-7 gap-x-4">
                 {[
-                  ['Degree → Work Reality', 'What the degree becomes in industry.'],
-                  ['Industry → Execution', 'Where the work actually happens.'],
-                  ['Subjects → Real Usage', 'Which subjects matter in real jobs.'],
-                  ['Skills → Hiring Visibility', 'What companies expect from freshers.'],
-                ].map(([title, body], i, arr) => (
-                  <li
-                    key={title}
-                    className="pb-5"
-                    style={{
-                      borderBottom: i < arr.length - 1 ? `1px solid ${C.hairline}` : 'none',
-                    }}
-                  >
+                  ['120+', 'Career paths mapped'],
+                  ['40+', 'Industries decoded'],
+                  ['1:1', 'Degree → job reality'],
+                  ['0', 'Guesswork involved'],
+                ].map(([stat, label]) => (
+                  <div key={label}>
                     <p
                       style={{
                         fontFamily: 'Satoshi, Inter, sans-serif',
-                        fontWeight: 600,
-                        fontSize: '0.9375rem',
+                        fontWeight: 700,
+                        fontSize: 'clamp(1.75rem, 4vw, 2.25rem)',
+                        lineHeight: 1,
                         color: C.accent,
+                        letterSpacing: '-0.02em',
                       }}
                     >
-                      {title}
+                      {stat}
                     </p>
-                    <p className="mt-1.5" style={{ color: C.muted, fontSize: '0.875rem', lineHeight: 1.6 }}>
-                      {body}
+                    <p
+                      className="mt-2"
+                      style={{ color: C.muted, fontSize: '0.8125rem', lineHeight: 1.5 }}
+                    >
+                      {label}
                     </p>
-                  </li>
+                  </div>
                 ))}
-              </ul>
-            </div>
+              </div>
+
+              <div
+                className="mt-7 pt-6"
+                style={{ borderTop: `1px solid ${C.hairline}` }}
+              >
+                <p style={{ color: C.text, fontSize: '0.9375rem', lineHeight: 1.6, fontWeight: 500 }}>
+                  See the real path before you pick one.
+                </p>
+                <p className="mt-1.5" style={{ color: C.muted, fontSize: '0.8125rem', lineHeight: 1.6 }}>
+                  No hype, no hearsay — just where each choice actually leads.
+                </p>
+              </div>
+            </motion.div>
           </div>
+
         </div>
       </section>
 
