@@ -559,9 +559,40 @@ export const HomePage = () => {
           </div>
         </div>
 
+        {/* Social Media Links */}
+        <div className="flex justify-center gap-6 py-8 relative z-10">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="magnetic-container group">
+            <div className="w-12 h-12 rounded-full bg-white/95 backdrop-blur-xl shadow-layer-2 border border-border/50 flex items-center justify-center hover:shadow-layer-3 hover:scale-110 transition-all duration-300">
+              <Instagram className="w-5 h-5 text-foreground group-hover:text-primary transition-colors" />
+            </div>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="magnetic-container group">
+            <div className="w-12 h-12 rounded-full bg-white/95 backdrop-blur-xl shadow-layer-2 border border-border/50 flex items-center justify-center hover:shadow-layer-3 hover:scale-110 transition-all duration-300">
+              <Twitter className="w-5 h-5 text-foreground group-hover:text-primary transition-colors" />
+            </div>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="magnetic-container group">
+            <div className="w-12 h-12 rounded-full bg-white/95 backdrop-blur-xl shadow-layer-2 border border-border/50 flex items-center justify-center hover:shadow-layer-3 hover:scale-110 transition-all duration-300">
+              <Linkedin className="w-5 h-5 text-foreground group-hover:text-primary transition-colors" />
+            </div>
+          </a>
+        </div>
+
+        {/* Career Explorer Integration */}
+        {showCareerExplorer && <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+            <div className="relative w-full max-w-6xl my-8">
+              <CareerExplorer />
+              <button onClick={() => setShowCareerExplorer(false)} className="absolute top-4 right-4 z-50 bg-white hover:bg-gray-100 text-gray-800 rounded-full p-2 shadow-lg transition-all duration-200">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>}
+
         {/* Statistics Section */}
         <div className="mb-16 sm:mb-24 relative px-4">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-50/30 via-purple-50/30 to-cyan-50/30 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 via-white/30 to-slate-50/50 rounded-3xl"></div>
           
           <div className="relative z-10 text-center mb-12 sm:mb-16 py-12 sm:py-16">
             <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-xl border border-border rounded-full px-6 py-2 mb-8 shadow-layer-1">
@@ -611,37 +642,6 @@ export const HomePage = () => {
             </div>
           </div>
         </div>
-
-        {/* Social Media Links */}
-        <div className="flex justify-center gap-6 py-8 relative z-10">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="magnetic-container group">
-            <div className="w-12 h-12 rounded-full bg-white/95 backdrop-blur-xl shadow-layer-2 border border-border/50 flex items-center justify-center hover:shadow-layer-3 hover:scale-110 transition-all duration-300">
-              <Instagram className="w-5 h-5 text-foreground group-hover:text-primary transition-colors" />
-            </div>
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="magnetic-container group">
-            <div className="w-12 h-12 rounded-full bg-white/95 backdrop-blur-xl shadow-layer-2 border border-border/50 flex items-center justify-center hover:shadow-layer-3 hover:scale-110 transition-all duration-300">
-              <Twitter className="w-5 h-5 text-foreground group-hover:text-primary transition-colors" />
-            </div>
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="magnetic-container group">
-            <div className="w-12 h-12 rounded-full bg-white/95 backdrop-blur-xl shadow-layer-2 border border-border/50 flex items-center justify-center hover:shadow-layer-3 hover:scale-110 transition-all duration-300">
-              <Linkedin className="w-5 h-5 text-foreground group-hover:text-primary transition-colors" />
-            </div>
-          </a>
-        </div>
-
-        {/* Career Explorer Integration */}
-        {showCareerExplorer && <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-            <div className="relative w-full max-w-6xl my-8">
-              <CareerExplorer />
-              <button onClick={() => setShowCareerExplorer(false)} className="absolute top-4 right-4 z-50 bg-white hover:bg-gray-100 text-gray-800 rounded-full p-2 shadow-lg transition-all duration-200">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-          </div>}
 
       </div>
 
