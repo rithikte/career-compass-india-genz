@@ -57,9 +57,38 @@ const PremiumHomePage = () => {
           }}
         />
 
+        {/* Floating ambient orbs — motion accent */}
+        <motion.div
+          className="pointer-events-none absolute rounded-full"
+          animate={{ y: [0, -28, 0], x: [0, 14, 0], opacity: [0.4, 0.7, 0.4] }}
+          transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
+          style={{
+            top: '12%',
+            right: '14%',
+            width: 220,
+            height: 220,
+            background: 'radial-gradient(circle, rgba(109,212,200,0.18), transparent 70%)',
+            filter: 'blur(10px)',
+          }}
+        />
+        <motion.div
+          className="pointer-events-none absolute rounded-full"
+          animate={{ y: [0, 24, 0], x: [0, -18, 0], opacity: [0.25, 0.5, 0.25] }}
+          transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+          style={{
+            bottom: '8%',
+            right: '32%',
+            width: 160,
+            height: 160,
+            background: 'radial-gradient(circle, rgba(109,212,200,0.14), transparent 70%)',
+            filter: 'blur(8px)',
+          }}
+        />
+
         <div className="relative grid items-center gap-12 lg:grid-cols-12">
           {/* Copy */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-9">
+
             <motion.div
               className="flex items-center gap-3"
               initial={{ opacity: 0, x: -20 }}
