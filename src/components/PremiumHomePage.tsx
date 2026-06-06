@@ -141,7 +141,7 @@ const PremiumHomePage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              style={{ color: C.muted, fontSize: T.body, lineHeight: 1.7, maxWidth: '54ch' }}
+              style={{ color: C.muted, fontSize: T.heroPara, lineHeight: 1.7, maxWidth: '54ch' }}
             >
               <span style={{ color: C.text, fontWeight: 500 }}>
                 Most students choose a path without knowing where it leads.
@@ -362,7 +362,7 @@ const PremiumHomePage = () => {
                 style={{
                   fontFamily: 'Satoshi, Inter, sans-serif',
                   fontWeight: 600,
-                  fontSize: T.body,
+                  fontSize: T.cardTitle,
                   color: C.accent,
                 }}
               >
