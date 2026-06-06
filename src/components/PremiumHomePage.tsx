@@ -15,12 +15,23 @@ const C = {
   hairline: 'rgba(199,204,214,0.14)',
 };
 
+/** Unified fluid type scale — 45% Swiss · 35% Apple · 20% editorial. 100% responsive. */
+const T = {
+  label: 'clamp(0.65rem, 0.6rem + 0.2vw, 0.6875rem)',
+  eyebrow: 'clamp(0.7rem, 0.66rem + 0.2vw, 0.75rem)',
+  body: 'clamp(0.95rem, 0.9rem + 0.45vw, 1.0625rem)',
+  cardBody: 'clamp(0.875rem, 0.84rem + 0.3vw, 0.9375rem)',
+  cardTitle: 'clamp(1rem, 0.95rem + 0.4vw, 1.125rem)',
+  heroPara: 'clamp(1rem, 0.95rem + 0.6vw, 1.1875rem)',
+  closing: 'clamp(1.0625rem, 1rem + 0.5vw, 1.25rem)',
+};
+
 const Label = ({ children }: { children: React.ReactNode }) => (
   <span
     className="inline-block uppercase"
     style={{
       fontFamily: 'Inter, sans-serif',
-      fontSize: '0.6875rem',
+      fontSize: T.label,
       letterSpacing: '0.22em',
       fontWeight: 500,
       color: C.accent,
@@ -130,7 +141,7 @@ const PremiumHomePage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              style={{ color: C.muted, fontSize: '1.0625rem', lineHeight: 1.7, maxWidth: '54ch' }}
+              style={{ color: C.muted, fontSize: T.heroPara, lineHeight: 1.7, maxWidth: '54ch' }}
             >
               <span style={{ color: C.text, fontWeight: 500 }}>
                 Most students choose a path without knowing where it leads.
@@ -212,7 +223,7 @@ const PremiumHomePage = () => {
                   className="inline-block uppercase"
                   style={{
                     fontFamily: 'Inter, sans-serif',
-                    fontSize: '0.6875rem',
+                    fontSize: T.label,
                     letterSpacing: '0.18em',
                     fontWeight: 600,
                     color: col.tone,
@@ -225,7 +236,7 @@ const PremiumHomePage = () => {
                     <li
                       key={item}
                       className="flex items-center gap-3"
-                      style={{ fontSize: '1.0625rem', color: C.text }}
+                      style={{ fontSize: T.body, color: C.text }}
                     >
                       <span
                         style={{
@@ -250,7 +261,7 @@ const PremiumHomePage = () => {
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.7, delay: 0.3 }}
             className="mt-10 sm:mt-12 flex items-center gap-4"
-            style={{ fontSize: '1.0625rem', lineHeight: 1.7 }}
+            style={{ fontSize: T.body, lineHeight: 1.7 }}
           >
             <span style={{ width: 32, height: 1, backgroundColor: C.accent, flexShrink: 0 }} />
             <span style={{ color: C.muted }}>
@@ -339,7 +350,7 @@ const PremiumHomePage = () => {
                 style={{
                   fontFamily: 'Satoshi, Inter, sans-serif',
                   fontWeight: 700,
-                  fontSize: '0.75rem',
+                  fontSize: T.eyebrow,
                   letterSpacing: '0.08em',
                   color: C.faint,
                 }}
@@ -351,7 +362,7 @@ const PremiumHomePage = () => {
                 style={{
                   fontFamily: 'Satoshi, Inter, sans-serif',
                   fontWeight: 600,
-                  fontSize: '1.0625rem',
+                  fontSize: T.cardTitle,
                   color: C.accent,
                 }}
               >
@@ -359,7 +370,7 @@ const PremiumHomePage = () => {
               </h3>
               <p
                 className="mt-2.5"
-                style={{ color: C.muted, fontSize: '0.9375rem', lineHeight: 1.7 }}
+                style={{ color: C.muted, fontSize: T.cardBody, lineHeight: 1.7 }}
               >
                 {card.body}
               </p>
@@ -373,7 +384,7 @@ const PremiumHomePage = () => {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, delay: 0.2 }}
           className="relative mt-10 sm:mt-12 flex items-center gap-4 max-w-3xl"
-          style={{ fontSize: '1.0625rem', lineHeight: 1.7 }}
+          style={{ fontSize: T.body, lineHeight: 1.7 }}
         >
           <span style={{ width: 32, height: 1, backgroundColor: C.accent, flexShrink: 0 }} />
           <span style={{ color: C.muted }}>
@@ -492,7 +503,7 @@ const PremiumHomePage = () => {
                   className="inline-block uppercase"
                   style={{
                     fontFamily: 'Inter, sans-serif',
-                    fontSize: '0.6875rem',
+                    fontSize: T.label,
                     letterSpacing: '0.18em',
                     fontWeight: 600,
                     color: col.tone,
@@ -512,7 +523,7 @@ const PremiumHomePage = () => {
                   <li
                     key={item}
                     className="flex items-center gap-3 rounded-lg px-2 py-2 -mx-2 transition-colors duration-300"
-                    style={{ fontSize: '1.0625rem', color: col.dim ? C.muted : C.text }}
+                    style={{ fontSize: T.body, color: col.dim ? C.muted : C.text }}
                   >
                     <span
                       className="flex items-center justify-center"
@@ -615,7 +626,7 @@ const PremiumHomePage = () => {
                 className="inline-block uppercase"
                 style={{
                   fontFamily: 'Inter, sans-serif',
-                  fontSize: '0.6875rem',
+                  fontSize: T.label,
                   letterSpacing: '0.18em',
                   fontWeight: 600,
                   color: col.tone,
@@ -628,7 +639,7 @@ const PremiumHomePage = () => {
                   <li
                     key={item}
                     className="flex items-center gap-3"
-                    style={{ fontSize: '1.0625rem', color: col.dim ? C.muted : C.text }}
+                    style={{ fontSize: T.body, color: col.dim ? C.muted : C.text }}
                   >
                     <span
                       style={{
@@ -653,7 +664,7 @@ const PremiumHomePage = () => {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, delay: 0.2 }}
           className="relative mt-10 sm:mt-12 flex items-center gap-4 max-w-3xl"
-          style={{ fontSize: '1.0625rem', lineHeight: 1.7 }}
+          style={{ fontSize: T.body, lineHeight: 1.7 }}
         >
           <span style={{ width: 32, height: 1, backgroundColor: C.accent, flexShrink: 0 }} />
           <span style={{ color: C.muted }}>
@@ -721,13 +732,13 @@ const PremiumHomePage = () => {
             >
               <p
                 className="flex items-center gap-2"
-                style={{ color: C.faint, fontSize: '0.9375rem', textDecoration: 'line-through' }}
+                style={{ color: C.faint, fontSize: T.cardBody, textDecoration: 'line-through' }}
               >
                 {item.no}
               </p>
               <p
                 className="mt-3 flex items-center gap-2 font-semibold"
-                style={{ color: C.accent, fontSize: '1.0625rem' }}
+                style={{ color: C.accent, fontSize: T.body }}
               >
                 <span style={{ width: 14, height: 1, backgroundColor: C.accent, flexShrink: 0 }} />
                 {item.yes}
@@ -751,7 +762,7 @@ const PremiumHomePage = () => {
             className="inline-block uppercase"
             style={{
               fontFamily: 'Inter, sans-serif',
-              fontSize: '0.6875rem',
+              fontSize: T.label,
               letterSpacing: '0.18em',
               fontWeight: 600,
               color: C.accent,
@@ -764,7 +775,7 @@ const PremiumHomePage = () => {
               <span
                 key={item}
                 className="flex items-center gap-3"
-                style={{ fontSize: '1.0625rem', color: C.text }}
+                style={{ fontSize: T.body, color: C.text }}
               >
                 <span
                   style={{ width: 6, height: 6, borderRadius: 999, backgroundColor: C.accent, flexShrink: 0 }}
@@ -781,7 +792,7 @@ const PremiumHomePage = () => {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, delay: 0.2 }}
           className="relative mt-10 sm:mt-12 flex items-center gap-4 max-w-3xl"
-          style={{ fontSize: '1.0625rem', lineHeight: 1.7 }}
+          style={{ fontSize: T.body, lineHeight: 1.7 }}
         >
           <span style={{ width: 32, height: 1, backgroundColor: C.accent, flexShrink: 0 }} />
           <span style={{ color: C.muted }}>
@@ -899,7 +910,7 @@ const PremiumHomePage = () => {
                   className="inline-block uppercase"
                   style={{
                     fontFamily: 'Inter, sans-serif',
-                    fontSize: '0.6875rem',
+                    fontSize: T.label,
                     letterSpacing: '0.18em',
                     fontWeight: 600,
                     color: col.tone,
@@ -919,7 +930,7 @@ const PremiumHomePage = () => {
                   <li
                     key={item}
                     className="flex items-center gap-3 rounded-lg px-2 py-2 -mx-2 transition-colors duration-300"
-                    style={{ fontSize: '1.0625rem', color: col.dim ? C.muted : C.text }}
+                    style={{ fontSize: T.body, color: col.dim ? C.muted : C.text }}
                   >
                     <span
                       className="flex items-center justify-center"
@@ -992,7 +1003,7 @@ const PremiumHomePage = () => {
           </p>
           <p
             className="relative mx-auto mt-5"
-            style={{ color: C.muted, fontSize: '1.125rem', lineHeight: 1.7, maxWidth: '46ch' }}
+            style={{ color: C.muted, fontSize: T.closing, lineHeight: 1.7, maxWidth: '46ch' }}
           >
             That is the gap{' '}
             <span style={{ color: C.text, fontWeight: 600 }}>Undergraduate Maps</span> was built to solve.
