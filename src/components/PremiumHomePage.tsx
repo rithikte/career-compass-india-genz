@@ -338,7 +338,7 @@ const PremiumHomePage = () => {
             },
             {
               title: 'Industry → Execution Mapping',
-              body: 'See where the work actually happens.',
+              body: 'Know where the work actually happens.',
             },
             {
               title: 'Subjects → Real Usage',
