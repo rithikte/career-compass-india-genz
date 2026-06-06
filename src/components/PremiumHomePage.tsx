@@ -15,6 +15,17 @@ const C = {
   hairline: 'rgba(199,204,214,0.14)',
 };
 
+/** Unified fluid type scale — 45% Swiss · 35% Apple · 20% editorial. 100% responsive. */
+const T = {
+  label: 'clamp(0.65rem, 0.6rem + 0.2vw, 0.6875rem)',
+  eyebrow: 'clamp(0.7rem, 0.66rem + 0.2vw, 0.75rem)',
+  body: 'clamp(0.95rem, 0.9rem + 0.45vw, 1.0625rem)',
+  cardBody: 'clamp(0.875rem, 0.84rem + 0.3vw, 0.9375rem)',
+  cardTitle: 'clamp(1rem, 0.95rem + 0.4vw, 1.125rem)',
+  heroPara: 'clamp(1rem, 0.95rem + 0.6vw, 1.1875rem)',
+  closing: 'clamp(1.0625rem, 1rem + 0.5vw, 1.25rem)',
+};
+
 const Label = ({ children }: { children: React.ReactNode }) => (
   <span
     className="inline-block uppercase"
