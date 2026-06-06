@@ -38,7 +38,50 @@ const workflowStages = [{
 export const HomePage = () => {
   const [selectedState, setSelectedState] = useState('');
   const [isStateDropdownOpen, setIsStateDropdownOpen] = useState(false);
-  const [animatedStats, setAnimatedStats] = useState([]);
+  const STATS = [{
+    value: 247,
+    label: 'Colleges',
+    sublabel: 'Collaborated',
+    gradient: 'from-blue-600 to-cyan-600',
+    icon: Shield
+  }, {
+    value: 156,
+    label: 'Institutes',
+    sublabel: 'Partnered',
+    gradient: 'from-purple-600 to-pink-600',
+    icon: Building2
+  }, {
+    value: 142,
+    label: 'Online Institutes',
+    sublabel: 'Listed',
+    gradient: 'from-green-600 to-emerald-600',
+    icon: BookOpen
+  }, {
+    value: 189,
+    label: 'Degrees',
+    sublabel: 'Available',
+    gradient: 'from-orange-600 to-red-600',
+    icon: Award
+  }, {
+    value: 117,
+    label: 'Industries',
+    sublabel: 'Covered',
+    gradient: 'from-indigo-600 to-purple-600',
+    icon: TrendingUp
+  }, {
+    value: 834,
+    label: 'Job Roles',
+    sublabel: 'Covered',
+    gradient: 'from-teal-600 to-blue-600',
+    icon: Users
+  }, {
+    value: 15678,
+    label: 'Students',
+    sublabel: 'Guided',
+    gradient: 'from-pink-600 to-rose-600',
+    icon: Sparkles
+  }];
+  const [animatedStats, setAnimatedStats] = useState(STATS);
   const [showCareerExplorer, setShowCareerExplorer] = useState(false);
   useEffect(() => {
     // Animate stats when component mounts
