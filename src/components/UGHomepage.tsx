@@ -243,6 +243,9 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
           transition: transform 350ms cubic-bezier(0.22,1,0.36,1);
         }
         .ug-lift:hover .ug-underline::after { transform: scaleX(1); }
+        .ug-step:hover { border-color: rgba(110,159,154,0.7) !important; }
+        .ug-step-num { transition: color 250ms ease, letter-spacing 250ms ease; }
+        .ug-step:hover .ug-step-num { color: #8fbfa3; letter-spacing: 0.06em; }
         .ug-glow-word {
           text-shadow: 0 0 26px rgba(109, 212, 200, 0.25);
           animation: ug-glow 3.5s ease-in-out infinite alternate;
