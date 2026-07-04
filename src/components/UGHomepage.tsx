@@ -302,32 +302,35 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
 
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
         {/* ============ HERO ============ */}
-        <section className="pt-12 pb-12 sm:pt-24 sm:pb-16">
-          <Reveal delay={60}>
-            <SplitHeading
-              className="mt-6 text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.15]"
-              style={{ ...headingFont, maxWidth: '18ch' }}
-            />
-          </Reveal>
-          <Reveal delay={120}>
-            <p
-              className="mt-6 text-base sm:text-lg leading-[1.7]"
-              style={{ color: COLORS.muted, maxWidth: '65ch' }}
-            >
-              Students know the subjects they like, but don't know where those
-              subjects can lead.
-            </p>
-          </Reveal>
-          <Reveal delay={160}>
-            <p
-              className="mt-4 text-base sm:text-lg leading-[1.7]"
-              style={{ color: COLORS.muted, maxWidth: '68ch' }}
-            >
-              Undergraduate Maps shows you real career paths, what freshers
-              actually do, and the skills, projects &amp; knowledge companies
-              expect.
-            </p>
-          </Reveal>
+        <section className="relative overflow-hidden pt-12 pb-12 sm:pt-24 sm:pb-16">
+          <div className="ug-hero-glow" aria-hidden="true" />
+          <div className="relative z-10">
+            <Reveal delay={60}>
+              <SplitHeading
+                className="mt-6 text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.15]"
+                style={{ ...headingFont, maxWidth: '18ch' }}
+              />
+            </Reveal>
+            <Reveal delay={120}>
+              <p
+                className="mt-6 text-base sm:text-lg leading-[1.7]"
+                style={{ color: COLORS.muted, maxWidth: '65ch' }}
+              >
+                Students know the subjects they like, but don't know where those
+                subjects can lead.
+              </p>
+            </Reveal>
+            <Reveal delay={160}>
+              <p
+                className="mt-4 text-base sm:text-lg leading-[1.7]"
+                style={{ color: COLORS.muted, maxWidth: '68ch' }}
+              >
+                Undergraduate Maps shows you real career paths, what freshers
+                actually do, and the skills, projects &amp; knowledge companies
+                expect.
+              </p>
+            </Reveal>
+          </div>
         </section>
 
         {/* ============ WHY START WITH SUBJECTS ============ */}
