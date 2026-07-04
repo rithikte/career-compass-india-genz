@@ -188,13 +188,10 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
         {/* ============ HERO ============ */}
         <section className="pt-12 pb-12 sm:pt-24 sm:pb-16">
           <Reveal delay={60}>
-            <h1
+            <SplitHeading
               className="mt-6 text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.15]"
               style={{ ...headingFont, maxWidth: '18ch' }}
-            >
-              Start with what you like.{' '}
-              <span style={{ color: '#6DD4C8' }}>See where it can take you.</span>
-            </h1>
+            />
           </Reveal>
           <Reveal delay={120}>
             <p
