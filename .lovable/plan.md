@@ -1,42 +1,43 @@
-# Unified Responsive Typography — PremiumHomePage
-
 ## Goal
-Keep the current (well-liked) sizes as the desktop anchor, but make every text element scale fluidly on all screens and feel coherent as one type system: **45% Swiss precision · 35% Apple storytelling · 20% editorial contrast**.
 
-## The design blend, translated to type
-- **Swiss (45%)** — one consistent scale reused everywhere, generous uppercase tracking on labels, tight controlled heading tracking (`-0.02em`), no random one-off sizes.
-- **Apple (35%)** — confident large display headlines, comfortable body line-height (~1.7), calm hierarchy, soft muted secondary lines.
-- **Editorial (20%)** — clear contrast between big display type and refined small body/labels, steady rhythm down the page.
+Add a new page/tab called **UG Homepage** right after "Home Page" in the top navigation of `/home`. It's a self-contained, dark "Dark Intelligence Interface" landing experience — 100% responsive (mobile-first) — following the exact content, color, typography, spacing, and motion spec provided.
 
-## What changes
-Only font-size / line-height values in `src/components/PremiumHomePage.tsx`. No layout, color, spacing, content, or animation changes. Headlines already use `clamp()` and stay essentially as-is (only minor smoothing for consistency); the fixed-size elements become fluid.
+## Where it plugs in
 
-### Fluid type scale (applied consistently across all 7 sections)
-```text
-Label (uppercase)   0.6875rem            -> clamp(0.65rem, 0.6rem + 0.2vw, 0.6875rem)
-Card eyebrow no.    0.75rem              -> clamp(0.7rem, 0.66rem + 0.2vw, 0.75rem)
-Body / list item    1.0625rem (fixed)    -> clamp(0.95rem, 0.9rem + 0.45vw, 1.0625rem)
-Card body           0.9375rem (fixed)    -> clamp(0.875rem, 0.84rem + 0.3vw, 0.9375rem)
-Card title (h3)     1.0625rem (fixed)    -> clamp(1rem, 0.95rem + 0.4vw, 1.125rem)
-Hero paragraph      1.0625rem (fixed)    -> clamp(1rem, 0.95rem + 0.6vw, 1.1875rem)
-Closing emphasis p  1.125rem (fixed)     -> clamp(1.0625rem, 1rem + 0.5vw, 1.25rem)
-```
+The app renders "pages" as switchable sections inside `src/pages/Index.tsx` via a `sections` array (Home, Embedded Product Engineering, Home Page). I'll add a new entry `{ id: 'ug-homepage', title: 'UG Homepage', component: UGHomepage }` placed **after** the `home-page` entry, so a new "UG Homepage" tab appears after "Home Page".
 
-### Headlines (already fluid — kept, lightly normalized)
-- Hero h1: `clamp(2.4rem, 6.5vw, 4.5rem)` (unchanged)
-- Section h2 (Problem): `clamp(1.75rem, 4.5vw, 3rem)` (unchanged)
-- Section h2 (others): `clamp(1.6rem, 4vw, 2.6rem)` / `clamp(1.5rem, 3.8vw, 2.4rem)` (unchanged)
-- National Impact closing statement: `clamp(1.5rem, 3.4vw, 2.25rem)` (unchanged)
-- Line-heights kept: 1.7 for body, ~1.12–1.22 for headings.
+## New component
 
-### Consistency cleanups
-- Every "body / list item" instance across the 7 sections (currently each hardcoded `1.0625rem`) uses the same fluid token, so all lists, comparison cards, and closing lines match exactly.
-- Labels in all sections use the same fluid label token.
+Create `src/components/UGHomepage.tsx` — a single scoped, dark-themed component. Because this page uses its own palette (deep navy `#0B1020`, cards `#121A2F`) that intentionally differs from the app's light Swiss theme, the component wraps everything in its own container with these colors applied via inline style tokens / arbitrary Tailwind values, so it stays isolated and doesn't disturb the global light theme or other sections.
 
-## Result
-- Identical look on desktop to what you already approved.
-- Smooth, proportional scaling on tablet and mobile (no abrupt jumps), text never too large or cramped on small screens.
-- One coherent Swiss/Apple/editorial type system across all 7 sections.
+### Sections (in order, matching spec)
 
-## Technical note
-All edits are isolated to inline `style` `fontSize`/`lineHeight` values in `src/components/PremiumHomePage.tsx`. No other files touched.
+1. **Hero** (accent `#6DD4C8`) — Editorial hero: headline "Start with what you like. See where it can take you.", supporting paragraphs, primary CTA, plus a simple animated "career journey line" graphic (Subject → Domain → … reveal).
+2. **Why Start With Subjects** (`#89C2D9`) — Split layout with two comparison/outcome cards ("Better career alignment", "Better prepared freshers").
+3. **What is Undergraduate Maps** (`#6E9F9A`) — Horizontal process flow: Subject → Domain → Industry → Career Path → Fresher Role → Skills → Projects → Hiring Reality, with sequential reveal (wraps to vertical on mobile).
+4. **What You Will Discover** (`#7FC8A9`) — Bento grid of 7 items (Domains & industries, Fresher roles, Skills & tools, Mini & major projects, Hiring expectations, Placement prep, Career growth) with staggered reveal + hover lift.
+5. **Why This Matters** (`#FF7B72` problem / `#8FBFA3` solution) — Problem vs Solution cards.
+6. **Our Approach** (`#8FA7BF`) — Connected system diagram linking subjects → domains → roles → skills → projects → hiring.
+7. **CTA** (`#6DD4C8`) — Minimal CTA block "Start Exploring Career Maps" + "Explore Now" button.
+
+### Design implementation
+
+- **Colors**: base bg `#0B1020`, cards `#121A2F`, text `#F5F7FA`, borders `#232C44`, per-section accents as listed. Subtle glass overlay `rgba(255,255,255,0.03)` on cards.
+- **Cards**: radius 20px, 1px `#232C44` border, 24px padding, soft shadow.
+- **Buttons**: primary bg `#6DD4C8`, text `#0B1020`, radius 16px, padding 16×28, hover = brightness up + 2–4px lift, 250ms ease-out.
+- **Typography**: add Satoshi (via Fontshare CDN), IBM Plex Sans + Inter (Google Fonts) links in `index.html`. Hero/section headings = Satoshi, body/cards/buttons = Inter, diagram/process/technical labels = IBM Plex Sans. Max text width 60–75ch, line-height 1.6–1.8, only Regular/Medium/Bold.
+- **Spacing**: section gaps 48px desktop / 32px mobile, hero gap 64–96 / 48–64, consistent vertical rhythm.
+- **Icons**: outline-only, 2px stroke, rounded (lucide-react, already in project), uniform size, no fills.
+- **Motion**: use existing `animate-fade-in` plus a lightweight in-view reveal (IntersectionObserver hook) so cards/lines/process steps animate once on entering the viewport, 200–300ms ease-out, staggered where specified. Respect `prefers-reduced-motion`.
+- **Responsive**: mobile-first; process flow and system diagram stack vertically on small screens, bento grid collapses to 1 column, split layouts stack.
+
+## Files touched
+
+- `src/pages/Index.tsx` — add the new section entry after "Home Page".
+- `src/components/UGHomepage.tsx` — new component (all 7 sections + a small in-view reveal helper).
+- `index.html` — add Satoshi / Inter / IBM Plex Sans font `<link>`s.
+
+## Notes
+
+- The CTA "Explore Now" button will scroll back to / switch to the existing Home section (career explorer) unless you'd prefer it link elsewhere.
+- No backend, routing, or business-logic changes — this is a presentation-only addition. The rest of the app's light theme is untouched.
