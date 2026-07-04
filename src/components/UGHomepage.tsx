@@ -178,9 +178,6 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
         {/* ============ HERO ============ */}
         <section className="pt-12 pb-12 sm:pt-24 sm:pb-16">
-          <Reveal>
-            <SectionLabel accent="#6DD4C8">Undergraduate Maps</SectionLabel>
-          </Reveal>
           <Reveal delay={60}>
             <h1
               className="mt-6 text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.15]"
