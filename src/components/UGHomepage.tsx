@@ -295,12 +295,15 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
         .ug-approach-chip:hover .ug-approach-num { transform: scale(1.12); background: #a6c0d9 !important; }
         .ug-approach-arrow { transition: transform 250ms ease-out; }
         .ug-approach-chip:hover + .ug-approach-arrow { transform: translateX(4px); }
-        .ug-stat-card { transition: transform 250ms ease-out, box-shadow 250ms ease-out, border-color 300ms ease-out; }
-        .ug-stat-card:hover { transform: translateY(-4px); box-shadow: 0 18px 44px rgba(0,0,0,0.32); border-color: rgba(109,212,200,0.5) !important; }
-        .ug-stat-card:hover .ug-stat-icon { transform: translateY(-2px) scale(1.08) rotate(-3deg); }
-        .ug-stat-card:hover .ug-stat-value { filter: brightness(1.12); }
+        .ug-stat-card { transition: transform 300ms cubic-bezier(0.22,1,0.36,1), box-shadow 300ms ease-out, border-color 300ms ease-out, background 300ms ease-out; --stat-color: #6DD4C8; }
+        .ug-stat-card:hover { transform: translateY(-6px); background: rgba(255,255,255,0.04) !important; border-color: color-mix(in srgb, var(--stat-color) 32%, transparent) !important; box-shadow: 0 18px 44px rgba(0,0,0,0.32), 0 0 30px -10px color-mix(in srgb, var(--stat-color) 18%, transparent); }
+        .ug-stat-card:hover .ug-stat-icon { transform: translateY(-3px) scale(1.14); background: color-mix(in srgb, var(--stat-color) 18%, transparent) !important; }
+        .ug-stat-card:hover .ug-stat-value { filter: brightness(1.15); transform: scale(1.05); }
         .ug-stat-icon { transition: transform 300ms cubic-bezier(0.22,1,0.36,1), background 300ms ease; }
-        .ug-stat-value { transition: filter 250ms ease-out; }
+        .ug-stat-value { transition: filter 250ms ease-out, transform 250ms ease-out; }
+        .ug-stat-trust { transition: border-color 300ms ease-out, background 300ms ease-out; }
+        .ug-stat-trust:hover { border-color: rgba(109,212,200,0.35) !important; background: rgba(109,212,200,0.08) !important; }
+        .ug-stat-pulse { animation: ug-stat-pulse 2.4s ease-in-out infinite; }
         .ug-stat-dot { animation: ug-dot-pulse 2s ease-in-out infinite; }
         @keyframes ug-dot-pulse {
           0%, 100% { opacity: 1; transform: scale(1); }
