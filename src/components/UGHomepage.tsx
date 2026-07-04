@@ -282,39 +282,55 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
           from { text-shadow: 0 0 18px rgba(109, 212, 200, 0.22); }
           to { text-shadow: 0 0 46px rgba(109, 212, 200, 0.55); }
         }
+        .ug-hero-glow {
+          position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+          width: 120%; height: 120%;
+          background: radial-gradient(circle at 50% 40%, rgba(109,212,200,0.10) 0%, rgba(109,212,200,0) 55%);
+          filter: blur(80px);
+          animation: ug-hero-breathe 8s ease-in-out infinite alternate;
+          pointer-events: none;
+          z-index: 0;
+        }
+        @keyframes ug-hero-breathe {
+          from { transform: translateX(-50%) scale(0.95); opacity: 0.45; }
+          to { transform: translateX(-50%) scale(1.08); opacity: 0.75; }
+        }
         @media (prefers-reduced-motion: reduce) {
-          .ug-reveal-line, .ug-lift, .ug-primary-btn, .ug-glow-word, .ug-icon-box, .ug-underline::after, .ug-step-num, .ug-discover-card, .ug-discover-icon, .ug-discover-title::after, .ug-matters-card, .ug-matters-icon, .ug-matters-title::after, .ug-cta-card, .ug-cta-icon, .ug-cta-arrow { transition: none !important; animation: none !important; }
+          .ug-reveal-line, .ug-lift, .ug-primary-btn, .ug-glow-word, .ug-icon-box, .ug-underline::after, .ug-step-num, .ug-discover-card, .ug-discover-icon, .ug-discover-title::after, .ug-matters-card, .ug-matters-icon, .ug-matters-title::after, .ug-cta-card, .ug-cta-icon, .ug-cta-arrow, .ug-hero-glow { transition: none !important; animation: none !important; }
         }
       `}</style>
 
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
         {/* ============ HERO ============ */}
-        <section className="pt-12 pb-12 sm:pt-24 sm:pb-16">
-          <Reveal delay={60}>
-            <SplitHeading
-              className="mt-6 text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.15]"
-              style={{ ...headingFont, maxWidth: '18ch' }}
-            />
-          </Reveal>
-          <Reveal delay={120}>
-            <p
-              className="mt-6 text-base sm:text-lg leading-[1.7]"
-              style={{ color: COLORS.muted, maxWidth: '65ch' }}
-            >
-              Students know the subjects they like, but don't know where those
-              subjects can lead.
-            </p>
-          </Reveal>
-          <Reveal delay={160}>
-            <p
-              className="mt-4 text-base sm:text-lg leading-[1.7]"
-              style={{ color: COLORS.muted, maxWidth: '68ch' }}
-            >
-              Undergraduate Maps shows you real career paths, what freshers
-              actually do, and the skills, projects &amp; knowledge companies
-              expect.
-            </p>
-          </Reveal>
+        <section className="relative overflow-hidden pt-12 pb-12 sm:pt-24 sm:pb-16">
+          <div className="ug-hero-glow" aria-hidden="true" />
+          <div className="relative z-10">
+            <Reveal delay={60}>
+              <SplitHeading
+                className="mt-6 text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.15]"
+                style={{ ...headingFont, maxWidth: '18ch' }}
+              />
+            </Reveal>
+            <Reveal delay={120}>
+              <p
+                className="mt-6 text-base sm:text-lg leading-[1.7]"
+                style={{ color: COLORS.muted, maxWidth: '65ch' }}
+              >
+                Students know the subjects they like, but don't know where those
+                subjects can lead.
+              </p>
+            </Reveal>
+            <Reveal delay={160}>
+              <p
+                className="mt-4 text-base sm:text-lg leading-[1.7]"
+                style={{ color: COLORS.muted, maxWidth: '68ch' }}
+              >
+                Undergraduate Maps shows you real career paths, what freshers
+                actually do, and the skills, projects &amp; knowledge companies
+                expect.
+              </p>
+            </Reveal>
+          </div>
         </section>
 
         {/* ============ WHY START WITH SUBJECTS ============ */}
