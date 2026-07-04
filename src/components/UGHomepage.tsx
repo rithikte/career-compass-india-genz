@@ -656,7 +656,8 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
                     style={{
                       ...cardStyle,
                       padding: '20px 12px',
-                    }}
+                      '--stat-color': stat.color,
+                    } as React.CSSProperties}
                   >
                     <div
                       className="ug-stat-icon mx-auto flex h-11 w-11 items-center justify-center rounded-xl"
