@@ -5,6 +5,7 @@ import { Header } from '../components/Header';
 import { HomePage } from '../components/HomePage';
 import EmbeddedProductEngineering from '../components/EmbeddedProductEngineering';
 import PremiumHomePage from '../components/PremiumHomePage';
+import UGHomepage from '../components/UGHomepage';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
