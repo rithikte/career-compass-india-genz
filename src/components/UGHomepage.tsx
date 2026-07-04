@@ -13,6 +13,10 @@ import {
   AlertCircle,
   CheckCircle2,
   ArrowRight,
+  Shield,
+  Users,
+  FileText,
+  Monitor,
 } from 'lucide-react';
 
 /* ---------- In-view reveal helper ---------- */
