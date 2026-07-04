@@ -612,6 +612,82 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
           </Reveal>
         </section>
 
+        {/* ============ TRUSTED BY THOUSANDS ============ */}
+        <section className="py-12 sm:py-16">
+          <Reveal>
+            <div className="flex justify-center">
+              <span
+                className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium uppercase tracking-[0.12em] border"
+                style={{ ...techFont, background: 'rgba(109,212,200,0.08)', borderColor: 'rgba(109,212,200,0.25)', color: '#6DD4C8' }}
+              >
+                <TrendingUp strokeWidth={2} className="h-4 w-4" />
+                Live Statistics
+                <span className="h-2 w-2 rounded-full bg-[#6DD4C8] ug-stat-dot" />
+              </span>
+            </div>
+          </Reveal>
+
+          <Reveal delay={80}>
+            <h2
+              className="mt-6 text-center text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight"
+              style={{ ...headingFont, maxWidth: '22ch', marginLeft: 'auto', marginRight: 'auto' }}
+            >
+              Trusted by{' '}
+              <span style={{ color: '#6DD4C8' }}>Thousands</span>
+              <br className="hidden sm:block" /> Across India
+            </h2>
+          </Reveal>
+
+          <div className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4">
+            {STATS.map((stat, i) => {
+              const Icon = stat.icon;
+              return (
+                <Reveal key={stat.label} delay={i * 60}>
+                  <div
+                    className="ug-stat-card text-center h-full"
+                    style={{
+                      ...cardStyle,
+                      padding: '20px 12px',
+                    }}
+                  >
+                    <div
+                      className="ug-stat-icon mx-auto flex h-11 w-11 items-center justify-center rounded-xl"
+                      style={{ background: `${stat.color}14` }}
+                    >
+                      <Icon strokeWidth={2} className="h-6 w-6" style={{ color: stat.color }} />
+                    </div>
+                    <div
+                      className="ug-stat-value mt-4 text-2xl sm:text-3xl font-bold"
+                      style={{ color: stat.color, ...headingFont }}
+                    >
+                      {stat.value}
+                    </div>
+                    <div className="mt-1 text-sm font-medium" style={{ color: COLORS.text }}>
+                      {stat.label}
+                    </div>
+                    <div className="text-xs" style={{ color: COLORS.muted }}>
+                      {stat.sub}
+                    </div>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
+
+          <Reveal delay={120}>
+            <div className="mt-8 sm:mt-10 flex justify-center">
+              <span
+                className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm font-medium border"
+                style={{ ...techFont, background: 'rgba(143,191,163,0.08)', borderColor: 'rgba(143,191,163,0.25)', color: '#8FBFA3' }}
+              >
+                <Shield strokeWidth={2} className="h-4 w-4" />
+                100% Secure &amp; Privacy-Protected Platform
+                <span className="h-2 w-2 rounded-full bg-[#8FBFA3] ug-stat-dot" />
+              </span>
+            </div>
+          </Reveal>
+        </section>
+
         {/* ============ CTA ============ */}
         <section className="py-14 sm:py-20">
           <Reveal>
