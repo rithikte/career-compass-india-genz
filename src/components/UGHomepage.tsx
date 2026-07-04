@@ -628,7 +628,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
                 className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium uppercase tracking-[0.12em] border"
                 style={{ ...techFont, background: 'rgba(109,212,200,0.08)', borderColor: 'rgba(109,212,200,0.25)', color: '#6DD4C8' }}
               >
-                <TrendingUp strokeWidth={2} className="h-4 w-4" />
+                <TrendingUp strokeWidth={2} className="h-4 w-4 ug-stat-pulse" />
                 Live Statistics
                 <span className="h-2 w-2 rounded-full bg-[#6DD4C8] ug-stat-dot" />
               </span>
@@ -683,7 +683,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
           <Reveal delay={120}>
             <div className="mt-8 sm:mt-10 flex justify-center">
               <span
-                className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm font-medium border"
+                className="ug-stat-trust inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm font-medium border"
                 style={{ ...techFont, background: 'rgba(143,191,163,0.08)', borderColor: 'rgba(143,191,163,0.25)', color: '#8FBFA3' }}
               >
                 <Shield strokeWidth={2} className="h-4 w-4" />
