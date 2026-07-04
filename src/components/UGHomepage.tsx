@@ -295,16 +295,23 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
         .ug-approach-chip:hover .ug-approach-num { transform: scale(1.12); background: #a6c0d9 !important; }
         .ug-approach-arrow { transition: transform 250ms ease-out; }
         .ug-approach-chip:hover + .ug-approach-arrow { transform: translateX(4px); }
-        .ug-stat-card { transition: transform 250ms ease-out, box-shadow 250ms ease-out, border-color 300ms ease-out; }
-        .ug-stat-card:hover { transform: translateY(-4px); box-shadow: 0 18px 44px rgba(0,0,0,0.32); border-color: rgba(109,212,200,0.5) !important; }
-        .ug-stat-card:hover .ug-stat-icon { transform: translateY(-2px) scale(1.08) rotate(-3deg); }
-        .ug-stat-card:hover .ug-stat-value { filter: brightness(1.12); }
+        .ug-stat-card { transition: transform 300ms cubic-bezier(0.22,1,0.36,1), box-shadow 300ms ease-out, border-color 300ms ease-out, background 300ms ease-out; --stat-color: #6DD4C8; }
+        .ug-stat-card:hover { transform: translateY(-6px); background: rgba(255,255,255,0.04) !important; border-color: color-mix(in srgb, var(--stat-color) 32%, transparent) !important; box-shadow: 0 18px 44px rgba(0,0,0,0.32), 0 0 30px -10px color-mix(in srgb, var(--stat-color) 18%, transparent); }
+        .ug-stat-card:hover .ug-stat-icon { transform: translateY(-3px) scale(1.14); background: color-mix(in srgb, var(--stat-color) 18%, transparent) !important; }
+        .ug-stat-card:hover .ug-stat-value { filter: brightness(1.15); transform: scale(1.05); }
         .ug-stat-icon { transition: transform 300ms cubic-bezier(0.22,1,0.36,1), background 300ms ease; }
-        .ug-stat-value { transition: filter 250ms ease-out; }
+        .ug-stat-value { transition: filter 250ms ease-out, transform 250ms ease-out; }
+        .ug-stat-trust { transition: border-color 300ms ease-out, background 300ms ease-out; }
+        .ug-stat-trust:hover { border-color: rgba(109,212,200,0.35) !important; background: rgba(109,212,200,0.08) !important; }
+        .ug-stat-pulse { animation: ug-stat-pulse 2.4s ease-in-out infinite; }
         .ug-stat-dot { animation: ug-dot-pulse 2s ease-in-out infinite; }
         @keyframes ug-dot-pulse {
           0%, 100% { opacity: 1; transform: scale(1); }
           50% { opacity: 0.6; transform: scale(0.85); }
+        }
+        @keyframes ug-stat-pulse {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.72; transform: scale(1.08); }
         }
         .ug-glow-word {
           text-shadow: 0 0 26px rgba(109, 212, 200, 0.25);
@@ -328,7 +335,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
           to { transform: translateX(-50%) scale(1.08); opacity: 0.75; }
         }
         @media (prefers-reduced-motion: reduce) {
-          .ug-reveal-line, .ug-lift, .ug-primary-btn, .ug-glow-word, .ug-icon-box, .ug-underline::after, .ug-step-num, .ug-discover-card, .ug-discover-icon, .ug-discover-title::after, .ug-matters-card, .ug-matters-icon, .ug-matters-title::after, .ug-cta-card, .ug-cta-icon, .ug-cta-arrow, .ug-hero-glow, .ug-approach-chip, .ug-approach-num, .ug-approach-arrow, .ug-stat-card, .ug-stat-icon, .ug-stat-value, .ug-stat-dot { transition: none !important; animation: none !important; }
+          .ug-reveal-line, .ug-lift, .ug-primary-btn, .ug-glow-word, .ug-icon-box, .ug-underline::after, .ug-step-num, .ug-discover-card, .ug-discover-icon, .ug-discover-title::after, .ug-matters-card, .ug-matters-icon, .ug-matters-title::after, .ug-cta-card, .ug-cta-icon, .ug-cta-arrow, .ug-hero-glow, .ug-approach-chip, .ug-approach-num, .ug-approach-arrow, .ug-stat-card, .ug-stat-icon, .ug-stat-value, .ug-stat-dot, .ug-stat-trust, .ug-stat-pulse { transition: none !important; animation: none !important; }
         }
       `}</style>
 
@@ -621,7 +628,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
                 className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium uppercase tracking-[0.12em] border"
                 style={{ ...techFont, background: 'rgba(109,212,200,0.08)', borderColor: 'rgba(109,212,200,0.25)', color: '#6DD4C8' }}
               >
-                <TrendingUp strokeWidth={2} className="h-4 w-4" />
+                <TrendingUp strokeWidth={2} className="h-4 w-4 ug-stat-pulse" />
                 Live Statistics
                 <span className="h-2 w-2 rounded-full bg-[#6DD4C8] ug-stat-dot" />
               </span>
@@ -649,7 +656,8 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
                     style={{
                       ...cardStyle,
                       padding: '20px 12px',
-                    }}
+                      '--stat-color': stat.color,
+                    } as React.CSSProperties}
                   >
                     <div
                       className="ug-stat-icon mx-auto flex h-11 w-11 items-center justify-center rounded-xl"
@@ -663,7 +671,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
                     >
                       {stat.value}
                     </div>
-                    <div className="mt-1 text-sm font-medium" style={{ color: COLORS.text }}>
+                    <div className="mt-2 text-xs font-medium uppercase tracking-wider text-center leading-tight" style={{ color: COLORS.muted }}>
                       {stat.label}
                     </div>
                   </div>
@@ -675,7 +683,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
           <Reveal delay={120}>
             <div className="mt-8 sm:mt-10 flex justify-center">
               <span
-                className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm font-medium border"
+                className="ug-stat-trust inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm font-medium border"
                 style={{ ...techFont, background: 'rgba(143,191,163,0.08)', borderColor: 'rgba(143,191,163,0.25)', color: '#8FBFA3' }}
               >
                 <Shield strokeWidth={2} className="h-4 w-4" />
