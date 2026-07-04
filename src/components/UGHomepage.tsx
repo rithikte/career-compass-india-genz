@@ -466,15 +466,15 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
 
           <div className="mt-8 grid gap-4 sm:gap-6 md:grid-cols-2">
             <Reveal>
-              <div className="ug-lift h-full" style={{ ...cardStyle, borderColor: 'rgba(255,123,114,0.4)' }}>
+              <div className="ug-lift ug-matters-card h-full" style={{ ...cardStyle, borderColor: 'rgba(255,123,114,0.4)', '--accent-color': 'rgba(255,123,114,0.75)', '--accent-bg': 'rgba(255,123,114,0.18)' } as React.CSSProperties}>
                 <div
-                  className="flex h-11 w-11 items-center justify-center rounded-xl"
+                  className="ug-matters-icon flex h-11 w-11 items-center justify-center rounded-xl"
                   style={{ background: 'rgba(255,123,114,0.12)' }}
                 >
                   <AlertCircle strokeWidth={2} className="h-6 w-6" style={{ color: '#FF7B72' }} />
                 </div>
                 <h3 className="mt-4 text-lg font-medium" style={{ ...headingFont, color: '#FF7B72' }}>
-                  The gap
+                  <span className="ug-matters-title">The gap</span>
                 </h3>
                 <p className="mt-2 leading-[1.7]" style={{ color: COLORS.muted }}>
                   Companies also look for practical skills, project experience, and
@@ -483,15 +483,15 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
               </div>
             </Reveal>
             <Reveal delay={80}>
-              <div className="ug-lift h-full" style={{ ...cardStyle, borderColor: 'rgba(143,191,163,0.4)' }}>
+              <div className="ug-lift ug-matters-card h-full" style={{ ...cardStyle, borderColor: 'rgba(143,191,163,0.4)', '--accent-color': 'rgba(143,191,163,0.75)', '--accent-bg': 'rgba(143,191,163,0.18)' } as React.CSSProperties}>
                 <div
-                  className="flex h-11 w-11 items-center justify-center rounded-xl"
+                  className="ug-matters-icon flex h-11 w-11 items-center justify-center rounded-xl"
                   style={{ background: 'rgba(143,191,163,0.12)' }}
                 >
                   <CheckCircle2 strokeWidth={2} className="h-6 w-6" style={{ color: '#8FBFA3' }} />
                 </div>
                 <h3 className="mt-4 text-lg font-medium" style={{ ...headingFont, color: '#8FBFA3' }}>
-                  The way forward
+                  <span className="ug-matters-title">The way forward</span>
                 </h3>
                 <p className="mt-2 leading-[1.7]" style={{ color: COLORS.muted }}>
                   Knowing the path early helps you prepare with direction from the
