@@ -666,9 +666,6 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
                     <div className="mt-1 text-sm font-medium" style={{ color: COLORS.text }}>
                       {stat.label}
                     </div>
-                    <div className="text-xs" style={{ color: COLORS.muted }}>
-                      {stat.sub}
-                    </div>
                   </div>
                 </Reveal>
               );
