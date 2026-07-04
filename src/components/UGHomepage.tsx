@@ -671,7 +671,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
                     >
                       {stat.value}
                     </div>
-                    <div className="mt-1 text-sm font-medium" style={{ color: COLORS.text }}>
+                    <div className="mt-2 text-xs font-medium uppercase tracking-wider text-center leading-tight" style={{ color: COLORS.muted }}>
                       {stat.label}
                     </div>
                   </div>
