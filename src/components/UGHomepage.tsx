@@ -220,13 +220,14 @@ const DISCOVER = [
 const APPROACH = ['Subjects', 'Domains', 'Fresher Roles', 'Skills', 'Projects', 'Hiring'];
 
 const STATS = [
-  { value: '247+', label: 'Colleges', sub: 'Collaborated', icon: Building2, color: '#89C2D9' },
-  { value: '156+', label: 'Institutes', sub: 'Partnered', icon: FileText, color: '#6E9F9A' },
-  { value: '142+', label: 'Online Institutes', sub: 'Listed', icon: Monitor, color: '#7FC8A9' },
-  { value: '189+', label: 'Degrees', sub: 'Available', icon: GraduationCap, color: '#FF7B72' },
-  { value: '117+', label: 'Industries', sub: 'Covered', icon: TrendingUp, color: '#8FA7BF' },
-  { value: '834+', label: 'Job Roles', sub: 'Covered', icon: Briefcase, color: '#6DD4C8' },
-  { value: '15,678', label: 'Students', sub: 'Guided', icon: Users, color: '#8FBFA3' },
+  { value: '60+', label: 'Engineering Degrees', icon: GraduationCap, color: '#89C2D9' },
+  { value: '250+', label: 'Degree Variants', icon: Layers, color: '#6DD4C8' },
+  { value: '300+', label: 'Subjects Mapped', icon: FileText, color: '#8FBFA3' },
+  { value: '120+', label: 'Career Domains', icon: Target, color: '#7FC8A9' },
+  { value: '350+', label: 'Industries Covered', icon: Building2, color: '#6E9F9A' },
+  { value: '1,500+', label: 'Fresher Job Roles', icon: Briefcase, color: '#FF7B72' },
+  { value: '2,000+', label: 'Skills & Tools', icon: Wrench, color: '#8FA7BF' },
+  { value: '3,000+', label: 'Projects & Workflows', icon: FolderKanban, color: '#A7D4E8' },
 ];
 
 interface UGHomepageProps {
@@ -638,7 +639,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
             </h2>
           </Reveal>
 
-          <div className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4">
+          <div className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 sm:gap-4">
             {STATS.map((stat, i) => {
               const Icon = stat.icon;
               return (
@@ -664,9 +665,6 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
                     </div>
                     <div className="mt-1 text-sm font-medium" style={{ color: COLORS.text }}>
                       {stat.label}
-                    </div>
-                    <div className="text-xs" style={{ color: COLORS.muted }}>
-                      {stat.sub}
                     </div>
                   </div>
                 </Reveal>
