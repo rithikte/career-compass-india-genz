@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
-  Compass,
   Sparkles,
   Layers,
   Building2,
@@ -210,16 +209,6 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
               expect.
             </p>
           </Reveal>
-          <Reveal delay={220}>
-            <div className="mt-8">
-              <PrimaryButton onClick={handleExplore}>
-                <Compass strokeWidth={2} className="h-5 w-5" />
-                Explore Career Maps
-              </PrimaryButton>
-            </div>
-          </Reveal>
-
-          {/* Journey line graphic */}
           <Reveal delay={280}>
             <div
               className="mt-12 sm:mt-16 flex flex-wrap items-center gap-x-3 gap-y-3"
