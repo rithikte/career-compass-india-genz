@@ -309,6 +309,10 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
           0%, 100% { opacity: 1; transform: scale(1); }
           50% { opacity: 0.6; transform: scale(0.85); }
         }
+        @keyframes ug-stat-pulse {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.72; transform: scale(1.08); }
+        }
         .ug-glow-word {
           text-shadow: 0 0 26px rgba(109, 212, 200, 0.25);
           animation: ug-glow 3.5s ease-in-out infinite alternate;
