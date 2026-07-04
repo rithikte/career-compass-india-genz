@@ -268,6 +268,12 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
           transition: transform 350ms cubic-bezier(0.22,1,0.36,1);
         }
         .ug-matters-card:hover .ug-matters-title::after { transform: scaleX(1); }
+        .ug-cta-card { transition: transform 250ms ease-out, box-shadow 250ms ease-out, border-color 300ms ease-out; }
+        .ug-cta-card:hover { border-color: rgba(109,212,200,0.75) !important; box-shadow: 0 22px 50px rgba(0,0,0,0.35); transform: translateY(-5px); }
+        .ug-cta-icon { transition: transform 300ms cubic-bezier(0.22,1,0.36,1), background 300ms ease; }
+        .ug-cta-card:hover .ug-cta-icon { transform: translateY(-2px) scale(1.08) rotate(-4deg); background: rgba(109,212,200,0.22) !important; }
+        .ug-cta-arrow { transition: transform 250ms ease-out; }
+        .ug-primary-btn:hover .ug-cta-arrow { transform: translateX(3px); }
         .ug-glow-word {
           text-shadow: 0 0 26px rgba(109, 212, 200, 0.25);
           animation: ug-glow 3.5s ease-in-out infinite alternate;
@@ -277,7 +283,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
           to { text-shadow: 0 0 46px rgba(109, 212, 200, 0.55); }
         }
         @media (prefers-reduced-motion: reduce) {
-          .ug-reveal-line, .ug-lift, .ug-primary-btn, .ug-glow-word, .ug-icon-box, .ug-underline::after, .ug-step-num, .ug-discover-card, .ug-discover-icon, .ug-discover-title::after, .ug-matters-card, .ug-matters-icon, .ug-matters-title::after { transition: none !important; animation: none !important; }
+          .ug-reveal-line, .ug-lift, .ug-primary-btn, .ug-glow-word, .ug-icon-box, .ug-underline::after, .ug-step-num, .ug-discover-card, .ug-discover-icon, .ug-discover-title::after, .ug-matters-card, .ug-matters-icon, .ug-matters-title::after, .ug-cta-card, .ug-cta-icon, .ug-cta-arrow { transition: none !important; animation: none !important; }
         }
       `}</style>
 
