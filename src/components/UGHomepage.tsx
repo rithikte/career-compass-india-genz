@@ -362,7 +362,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
               <Reveal key={step} delay={i * 70} className="md:contents">
                 <div className="flex items-center gap-3 md:flex-col md:items-stretch">
                   <div
-                    className="flex-1 md:w-40"
+                    className="ug-lift ug-step flex-1 md:w-40"
                     style={{
                       ...cardStyle,
                       padding: '16px 18px',
@@ -370,7 +370,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
                     }}
                   >
                     <span
-                      className="text-xs"
+                      className="ug-step-num text-xs"
                       style={{ ...techFont, color: '#6E9F9A' }}
                     >
                       Step {i + 1}
