@@ -234,6 +234,15 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
         .ug-primary-btn:hover { transform: translateY(-3px); filter: brightness(1.08); }
         .ug-lift { transition: transform 250ms ease-out, box-shadow 250ms ease-out; }
         .ug-lift:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.35); }
+        .ug-icon-box { transition: transform 300ms cubic-bezier(0.22,1,0.36,1), background 300ms ease; }
+        .ug-lift:hover .ug-icon-box { transform: translateY(-2px) scale(1.08) rotate(-3deg); background: rgba(137,194,217,0.2) !important; }
+        .ug-underline { position: relative; display: inline-block; }
+        .ug-underline::after {
+          content: ''; position: absolute; left: 0; bottom: -4px; height: 2px; width: 100%;
+          background: #89C2D9; transform: scaleX(0); transform-origin: left;
+          transition: transform 350ms cubic-bezier(0.22,1,0.36,1);
+        }
+        .ug-lift:hover .ug-underline::after { transform: scaleX(1); }
         .ug-glow-word {
           text-shadow: 0 0 26px rgba(109, 212, 200, 0.25);
           animation: ug-glow 3.5s ease-in-out infinite alternate;
