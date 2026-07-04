@@ -257,6 +257,17 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
           transition: transform 350ms cubic-bezier(0.22,1,0.36,1);
         }
         .ug-discover-card:hover .ug-discover-title::after { transform: scaleX(1); }
+        .ug-matters-card { transition: transform 250ms ease-out, box-shadow 250ms ease-out, border-color 300ms ease-out; }
+        .ug-matters-card:hover { border-color: var(--accent-color) !important; box-shadow: 0 18px 44px rgba(0,0,0,0.32); transform: translateY(-4px); }
+        .ug-matters-icon { transition: transform 300ms cubic-bezier(0.22,1,0.36,1), background 300ms ease; }
+        .ug-matters-card:hover .ug-matters-icon { transform: translateY(-2px) scale(1.08) rotate(-3deg); background: var(--accent-bg) !important; }
+        .ug-matters-title { position: relative; display: inline-block; }
+        .ug-matters-title::after {
+          content: ''; position: absolute; left: 0; bottom: -4px; height: 2px; width: 100%;
+          background: var(--accent-color); transform: scaleX(0); transform-origin: left;
+          transition: transform 350ms cubic-bezier(0.22,1,0.36,1);
+        }
+        .ug-matters-card:hover .ug-matters-title::after { transform: scaleX(1); }
         .ug-glow-word {
           text-shadow: 0 0 26px rgba(109, 212, 200, 0.25);
           animation: ug-glow 3.5s ease-in-out infinite alternate;
@@ -266,7 +277,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
           to { text-shadow: 0 0 46px rgba(109, 212, 200, 0.55); }
         }
         @media (prefers-reduced-motion: reduce) {
-          .ug-reveal-line, .ug-lift, .ug-primary-btn, .ug-glow-word, .ug-icon-box, .ug-underline::after, .ug-step-num, .ug-discover-card, .ug-discover-icon, .ug-discover-title::after { transition: none !important; animation: none !important; }
+          .ug-reveal-line, .ug-lift, .ug-primary-btn, .ug-glow-word, .ug-icon-box, .ug-underline::after, .ug-step-num, .ug-discover-card, .ug-discover-icon, .ug-discover-title::after, .ug-matters-card, .ug-matters-icon, .ug-matters-title::after { transition: none !important; animation: none !important; }
         }
       `}</style>
 
