@@ -67,6 +67,69 @@ const Reveal: React.FC<RevealProps> = ({ children, delay = 0, className = '' }) 
   );
 };
 
+/* ---------- Staggered word-reveal heading ---------- */
+const wordVariants = {
+  hidden: { opacity: 0, y: 28 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.06,
+      duration: 0.55,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  }),
+};
+
+const SplitHeading: React.FC<{ className?: string; style?: React.CSSProperties }> = ({
+  className,
+  style,
+}) => {
+  const ref = useRef<HTMLHeadingElement>(null);
+  const isInView = useFramerInView(ref, { once: true, amount: 0.6 });
+  const first = ['Start', 'with', 'what', 'you', 'like.'];
+  const second = ['See', 'where', 'it', 'can', 'take', 'you.'];
+
+  return (
+    <h1 ref={ref} className={className} style={style}>
+      {first.map((word, i) => (
+        <span key={`f-${i}`} className="inline-block overflow-hidden align-bottom">
+          <motion.span
+            className="inline-block"
+            custom={i}
+            initial="hidden"
+            animate={isInView ? 'visible' : 'hidden'}
+            variants={wordVariants}
+          >
+            {word}&nbsp;
+          </motion.span>
+        </span>
+      ))}
+      {second.map((word, j) => {
+        const i = first.length + j;
+        return (
+          <span
+            key={`s-${j}`}
+            className="inline-block overflow-hidden align-bottom"
+          >
+            <motion.span
+              className="ug-glow-word inline-block"
+              style={{ color: '#6DD4C8' }}
+              custom={i}
+              initial="hidden"
+              animate={isInView ? 'visible' : 'hidden'}
+              variants={wordVariants}
+            >
+              {word}
+              {j < second.length - 1 ? '\u00A0' : ''}
+            </motion.span>
+          </span>
+        );
+      })}
+    </h1>
+  );
+};
+
 /* ---------- Design tokens ---------- */
 const COLORS = {
   bg: '#0B1020',
