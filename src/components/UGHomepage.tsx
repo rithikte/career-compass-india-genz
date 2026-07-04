@@ -556,11 +556,11 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
                 {APPROACH.map((node, i) => (
                   <React.Fragment key={node}>
                     <div
-                      className="flex items-center gap-3 rounded-xl px-4 py-3"
+                      className="ug-approach-chip flex items-center gap-3 rounded-xl px-4 py-3"
                       style={{ background: 'rgba(143,167,191,0.1)', border: '1px solid rgba(143,167,191,0.3)' }}
                     >
                       <span
-                        className="flex h-6 w-6 items-center justify-center rounded-full text-xs"
+                        className="ug-approach-num flex h-6 w-6 items-center justify-center rounded-full text-xs"
                         style={{ ...techFont, background: '#8FA7BF', color: COLORS.bg }}
                       >
                         {i + 1}
@@ -572,7 +572,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
                     {i < APPROACH.length - 1 && (
                       <ArrowRight
                         strokeWidth={2}
-                        className="hidden sm:block h-4 w-4 flex-shrink-0"
+                        className="ug-approach-arrow hidden sm:block h-4 w-4 flex-shrink-0"
                         style={{ color: '#8FA7BF' }}
                       />
                     )}
