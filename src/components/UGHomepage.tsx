@@ -274,6 +274,12 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
         .ug-cta-card:hover .ug-cta-icon { transform: translateY(-2px) scale(1.08) rotate(-4deg); background: rgba(109,212,200,0.22) !important; }
         .ug-cta-arrow { transition: transform 250ms ease-out; }
         .ug-primary-btn:hover .ug-cta-arrow { transform: translateX(3px); }
+        .ug-approach-chip { transition: transform 250ms ease-out, border-color 250ms ease-out, background 250ms ease-out; }
+        .ug-approach-chip:hover { transform: translateY(-3px); border-color: rgba(143,167,191,0.6) !important; background: rgba(143,167,191,0.16) !important; }
+        .ug-approach-num { transition: transform 250ms cubic-bezier(0.22,1,0.36,1), background 250ms ease; }
+        .ug-approach-chip:hover .ug-approach-num { transform: scale(1.12); background: #a6c0d9 !important; }
+        .ug-approach-arrow { transition: transform 250ms ease-out; }
+        .ug-approach-chip:hover + .ug-approach-arrow { transform: translateX(4px); }
         .ug-glow-word {
           text-shadow: 0 0 26px rgba(109, 212, 200, 0.25);
           animation: ug-glow 3.5s ease-in-out infinite alternate;
