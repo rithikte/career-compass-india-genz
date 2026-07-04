@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
+  Compass,
   Sparkles,
   Layers,
   Building2,
@@ -149,6 +150,8 @@ const DISCOVER = [
   { icon: TrendingUp, title: 'Career Growth', desc: 'How your path evolves over time.' },
 ];
 
+const APPROACH = ['Subjects', 'Domains', 'Fresher Roles', 'Skills', 'Projects', 'Hiring'];
+
 interface UGHomepageProps {
   onExplore?: () => void;
 }
@@ -158,8 +161,6 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
     if (onExplore) onExplore();
     else window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
-  const APPROACH = ['Subjects', 'Domains', 'Fresher Roles', 'Skills', 'Projects', 'Hiring'];
 
   return (
     <div
@@ -176,6 +177,70 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
       `}</style>
 
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        {/* ============ HERO ============ */}
+        <section className="pt-12 pb-12 sm:pt-24 sm:pb-16">
+          <Reveal>
+            <SectionLabel accent="#6DD4C8">Undergraduate Maps</SectionLabel>
+          </Reveal>
+          <Reveal delay={60}>
+            <h1
+              className="mt-6 text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.15]"
+              style={{ ...headingFont, maxWidth: '18ch' }}
+            >
+              Start with what you like.{' '}
+              <span style={{ color: '#6DD4C8' }}>See where it can take you.</span>
+            </h1>
+          </Reveal>
+          <Reveal delay={120}>
+            <p
+              className="mt-6 text-base sm:text-lg leading-[1.7]"
+              style={{ color: COLORS.muted, maxWidth: '65ch' }}
+            >
+              Students know the subjects they like, but don't know where those
+              subjects can lead.
+            </p>
+          </Reveal>
+          <Reveal delay={160}>
+            <p
+              className="mt-4 text-base sm:text-lg leading-[1.7]"
+              style={{ color: COLORS.muted, maxWidth: '68ch' }}
+            >
+              Undergraduate Maps shows you real career paths, what freshers
+              actually do, and the skills, projects &amp; knowledge companies
+              expect.
+            </p>
+          </Reveal>
+          <Reveal delay={220}>
+            <div className="mt-8">
+              <PrimaryButton onClick={handleExplore}>
+                <Compass strokeWidth={2} className="h-5 w-5" />
+                Explore Career Maps
+              </PrimaryButton>
+            </div>
+          </Reveal>
+
+          {/* Journey line graphic */}
+          <Reveal delay={280}>
+            <div
+              className="mt-12 sm:mt-16 flex flex-wrap items-center gap-x-3 gap-y-3"
+              style={cardStyle}
+            >
+              {JOURNEY.map((step, i) => (
+                <React.Fragment key={step}>
+                  <JourneyChip label={step} index={i} accent="#6DD4C8" />
+                  {i < JOURNEY.length - 1 && (
+                    <ArrowRight
+                      strokeWidth={2}
+                      className="h-4 w-4 flex-shrink-0"
+                      style={{ color: COLORS.muted }}
+                    />
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+          </Reveal>
+        </section>
+
         {/* ============ WHY START WITH SUBJECTS ============ */}
         <section className="py-12 sm:py-16">
           <Reveal>
@@ -465,6 +530,34 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
         </section>
       </div>
     </div>
+  );
+};
+
+/* ---------- Journey chip with sequential reveal ---------- */
+const JourneyChip: React.FC<{ label: string; index: number; accent: string }> = ({
+  label,
+  index,
+  accent,
+}) => {
+  const { ref, inView } = useInView<HTMLSpanElement>();
+  return (
+    <span
+      ref={ref}
+      className="rounded-lg px-3 py-1.5 text-sm font-medium ug-reveal-line"
+      style={{
+        ...techFont,
+        color: accent,
+        background: 'rgba(109,212,200,0.1)',
+        border: `1px solid rgba(109,212,200,0.3)`,
+        opacity: inView ? 1 : 0,
+        transform: inView ? 'translateY(0)' : 'translateY(8px)',
+        transition: 'opacity 250ms ease-out, transform 250ms ease-out',
+        transitionDelay: `${index * 80}ms`,
+        whiteSpace: 'nowrap',
+      }}
+    >
+      {label}
+    </span>
   );
 };
 
