@@ -569,7 +569,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
         <section className="py-14 sm:py-20">
           <Reveal>
             <div
-              className="text-center"
+              className="ug-cta-card text-center"
               style={{
                 ...cardStyle,
                 padding: '48px 24px',
@@ -577,7 +577,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
               }}
             >
               <div
-                className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl"
+                className="ug-cta-icon mx-auto flex h-12 w-12 items-center justify-center rounded-2xl"
                 style={{ background: 'rgba(109,212,200,0.12)' }}
               >
                 <Sparkles strokeWidth={2} className="h-6 w-6" style={{ color: '#6DD4C8' }} />
@@ -598,7 +598,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
               <div className="mt-8 flex justify-center">
                 <PrimaryButton onClick={handleExplore}>
                   Explore Now
-                  <ArrowRight strokeWidth={2} className="h-5 w-5" />
+                  <ArrowRight strokeWidth={2} className="ug-cta-arrow h-5 w-5" />
                 </PrimaryButton>
               </div>
             </div>
