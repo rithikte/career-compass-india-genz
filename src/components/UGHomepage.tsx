@@ -274,6 +274,12 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
         .ug-cta-card:hover .ug-cta-icon { transform: translateY(-2px) scale(1.08) rotate(-4deg); background: rgba(109,212,200,0.22) !important; }
         .ug-cta-arrow { transition: transform 250ms ease-out; }
         .ug-primary-btn:hover .ug-cta-arrow { transform: translateX(3px); }
+        .ug-approach-chip { transition: transform 250ms ease-out, border-color 250ms ease-out, background 250ms ease-out; }
+        .ug-approach-chip:hover { transform: translateY(-3px); border-color: rgba(143,167,191,0.6) !important; background: rgba(143,167,191,0.16) !important; }
+        .ug-approach-num { transition: transform 250ms cubic-bezier(0.22,1,0.36,1), background 250ms ease; }
+        .ug-approach-chip:hover .ug-approach-num { transform: scale(1.12); background: #a6c0d9 !important; }
+        .ug-approach-arrow { transition: transform 250ms ease-out; }
+        .ug-approach-chip:hover + .ug-approach-arrow { transform: translateX(4px); }
         .ug-glow-word {
           text-shadow: 0 0 26px rgba(109, 212, 200, 0.25);
           animation: ug-glow 3.5s ease-in-out infinite alternate;
@@ -296,7 +302,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
           to { transform: translateX(-50%) scale(1.08); opacity: 0.75; }
         }
         @media (prefers-reduced-motion: reduce) {
-          .ug-reveal-line, .ug-lift, .ug-primary-btn, .ug-glow-word, .ug-icon-box, .ug-underline::after, .ug-step-num, .ug-discover-card, .ug-discover-icon, .ug-discover-title::after, .ug-matters-card, .ug-matters-icon, .ug-matters-title::after, .ug-cta-card, .ug-cta-icon, .ug-cta-arrow, .ug-hero-glow { transition: none !important; animation: none !important; }
+          .ug-reveal-line, .ug-lift, .ug-primary-btn, .ug-glow-word, .ug-icon-box, .ug-underline::after, .ug-step-num, .ug-discover-card, .ug-discover-icon, .ug-discover-title::after, .ug-matters-card, .ug-matters-icon, .ug-matters-title::after, .ug-cta-card, .ug-cta-icon, .ug-cta-arrow, .ug-hero-glow, .ug-approach-chip, .ug-approach-num, .ug-approach-arrow { transition: none !important; animation: none !important; }
         }
       `}</style>
 
@@ -550,11 +556,11 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
                 {APPROACH.map((node, i) => (
                   <React.Fragment key={node}>
                     <div
-                      className="flex items-center gap-3 rounded-xl px-4 py-3"
+                      className="ug-approach-chip flex items-center gap-3 rounded-xl px-4 py-3"
                       style={{ background: 'rgba(143,167,191,0.1)', border: '1px solid rgba(143,167,191,0.3)' }}
                     >
                       <span
-                        className="flex h-6 w-6 items-center justify-center rounded-full text-xs"
+                        className="ug-approach-num flex h-6 w-6 items-center justify-center rounded-full text-xs"
                         style={{ ...techFont, background: '#8FA7BF', color: COLORS.bg }}
                       >
                         {i + 1}
@@ -566,7 +572,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
                     {i < APPROACH.length - 1 && (
                       <ArrowRight
                         strokeWidth={2}
-                        className="hidden sm:block h-4 w-4 flex-shrink-0"
+                        className="ug-approach-arrow hidden sm:block h-4 w-4 flex-shrink-0"
                         style={{ color: '#8FA7BF' }}
                       />
                     )}
