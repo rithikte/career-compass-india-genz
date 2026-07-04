@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "sdk_version": "0.20.0",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "undergraduate-maps-mcp",
+      "version": "0.1.0",
+      "title": "Undergraduate Maps MCP"
+    },
+    "tools": [
+      {
+        "name": "list_degree_paths",
+        "title": "List degree paths",
+        "description": "List the undergraduate degree domains and 11th/12th subject combinations covered by Undergraduate Maps.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "explore_careers",
+        "title": "Explore careers",
+        "description": "Explore engineering branches with an honest overview, core job roles, and a reality check. Optionally filter by branch id.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "branchId": {
+              "description": "Optional branch id to filter to a single branch.",
+              "type": "string",
+              "enum": [
+                "ece",
+                "mechanical",
+                "civil",
+                "cse"
+              ]
+            }
+          }
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
