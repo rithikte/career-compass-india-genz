@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { motion, useInView as useFramerInView } from 'framer-motion';
 import {
   Sparkles,
   Layers,
