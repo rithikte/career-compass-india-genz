@@ -255,7 +255,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
           to { text-shadow: 0 0 46px rgba(109, 212, 200, 0.55); }
         }
         @media (prefers-reduced-motion: reduce) {
-          .ug-reveal-line, .ug-lift, .ug-primary-btn, .ug-glow-word, .ug-icon-box, .ug-underline::after { transition: none !important; animation: none !important; }
+          .ug-reveal-line, .ug-lift, .ug-primary-btn, .ug-glow-word, .ug-icon-box, .ug-underline::after, .ug-step-num { transition: none !important; animation: none !important; }
         }
       `}</style>
 
