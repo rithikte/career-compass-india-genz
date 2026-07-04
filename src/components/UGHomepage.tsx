@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { motion, useInView as useFramerInView } from 'framer-motion';
 import {
   Sparkles,
   Layers,
@@ -63,6 +64,69 @@ const Reveal: React.FC<RevealProps> = ({ children, delay = 0, className = '' }) 
     >
       {children}
     </div>
+  );
+};
+
+/* ---------- Staggered word-reveal heading ---------- */
+const wordVariants = {
+  hidden: { opacity: 0, y: 28 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.06,
+      duration: 0.55,
+      ease: [0.22, 1, 0.36, 1] as const,
+    },
+  }),
+};
+
+const SplitHeading: React.FC<{ className?: string; style?: React.CSSProperties }> = ({
+  className,
+  style,
+}) => {
+  const ref = useRef<HTMLHeadingElement>(null);
+  const isInView = useFramerInView(ref, { once: true, amount: 0.6 });
+  const first = ['Start', 'with', 'what', 'you', 'like.'];
+  const second = ['See', 'where', 'it', 'can', 'take', 'you.'];
+
+  return (
+    <h1 ref={ref} className={className} style={style}>
+      {first.map((word, i) => (
+        <span key={`f-${i}`} className="inline-block overflow-hidden align-bottom">
+          <motion.span
+            className="inline-block"
+            custom={i}
+            initial="hidden"
+            animate={isInView ? 'visible' : 'hidden'}
+            variants={wordVariants}
+          >
+            {word}&nbsp;
+          </motion.span>
+        </span>
+      ))}
+      {second.map((word, j) => {
+        const i = first.length + j;
+        return (
+          <span
+            key={`s-${j}`}
+            className="inline-block overflow-hidden align-bottom"
+          >
+            <motion.span
+              className="ug-glow-word inline-block"
+              style={{ color: '#6DD4C8' }}
+              custom={i}
+              initial="hidden"
+              animate={isInView ? 'visible' : 'hidden'}
+              variants={wordVariants}
+            >
+              {word}
+              {j < second.length - 1 ? '\u00A0' : ''}
+            </motion.span>
+          </span>
+        );
+      })}
+    </h1>
   );
 };
 
@@ -170,8 +234,16 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
         .ug-primary-btn:hover { transform: translateY(-3px); filter: brightness(1.08); }
         .ug-lift { transition: transform 250ms ease-out, box-shadow 250ms ease-out; }
         .ug-lift:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.35); }
+        .ug-glow-word {
+          text-shadow: 0 0 26px rgba(109, 212, 200, 0.25);
+          animation: ug-glow 3.5s ease-in-out infinite alternate;
+        }
+        @keyframes ug-glow {
+          from { text-shadow: 0 0 18px rgba(109, 212, 200, 0.22); }
+          to { text-shadow: 0 0 46px rgba(109, 212, 200, 0.55); }
+        }
         @media (prefers-reduced-motion: reduce) {
-          .ug-reveal-line, .ug-lift, .ug-primary-btn { transition: none !important; }
+          .ug-reveal-line, .ug-lift, .ug-primary-btn, .ug-glow-word { transition: none !important; animation: none !important; }
         }
       `}</style>
 
@@ -179,13 +251,10 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
         {/* ============ HERO ============ */}
         <section className="pt-12 pb-12 sm:pt-24 sm:pb-16">
           <Reveal delay={60}>
-            <h1
+            <SplitHeading
               className="mt-6 text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.15]"
               style={{ ...headingFont, maxWidth: '18ch' }}
-            >
-              Start with what you like.{' '}
-              <span style={{ color: '#6DD4C8' }}>See where it can take you.</span>
-            </h1>
+            />
           </Reveal>
           <Reveal delay={120}>
             <p
