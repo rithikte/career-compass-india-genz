@@ -219,6 +219,16 @@ const DISCOVER = [
 
 const APPROACH = ['Subjects', 'Domains', 'Fresher Roles', 'Skills', 'Projects', 'Hiring'];
 
+const STATS = [
+  { value: '247+', label: 'Colleges', sub: 'Collaborated', icon: Building2, color: '#89C2D9' },
+  { value: '156+', label: 'Institutes', sub: 'Partnered', icon: FileText, color: '#6E9F9A' },
+  { value: '142+', label: 'Online Institutes', sub: 'Listed', icon: Monitor, color: '#7FC8A9' },
+  { value: '189+', label: 'Degrees', sub: 'Available', icon: GraduationCap, color: '#FF7B72' },
+  { value: '117+', label: 'Industries', sub: 'Covered', icon: TrendingUp, color: '#8FA7BF' },
+  { value: '834+', label: 'Job Roles', sub: 'Covered', icon: Briefcase, color: '#6DD4C8' },
+  { value: '15,678', label: 'Students', sub: 'Guided', icon: Users, color: '#8FBFA3' },
+];
+
 interface UGHomepageProps {
   onExplore?: () => void;
 }
