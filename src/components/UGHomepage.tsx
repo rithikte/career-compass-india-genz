@@ -209,25 +209,6 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
               expect.
             </p>
           </Reveal>
-          <Reveal delay={280}>
-            <div
-              className="mt-12 sm:mt-16 flex flex-wrap items-center gap-x-3 gap-y-3"
-              style={cardStyle}
-            >
-              {JOURNEY.map((step, i) => (
-                <React.Fragment key={step}>
-                  <JourneyChip label={step} index={i} accent="#6DD4C8" />
-                  {i < JOURNEY.length - 1 && (
-                    <ArrowRight
-                      strokeWidth={2}
-                      className="h-4 w-4 flex-shrink-0"
-                      style={{ color: COLORS.muted }}
-                    />
-                  )}
-                </React.Fragment>
-              ))}
-            </div>
-          </Reveal>
         </section>
 
         {/* ============ WHY START WITH SUBJECTS ============ */}
