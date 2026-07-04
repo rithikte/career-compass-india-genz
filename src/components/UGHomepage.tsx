@@ -171,8 +171,16 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
         .ug-primary-btn:hover { transform: translateY(-3px); filter: brightness(1.08); }
         .ug-lift { transition: transform 250ms ease-out, box-shadow 250ms ease-out; }
         .ug-lift:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.35); }
+        .ug-glow-word {
+          text-shadow: 0 0 26px rgba(109, 212, 200, 0.25);
+          animation: ug-glow 3.5s ease-in-out infinite alternate;
+        }
+        @keyframes ug-glow {
+          from { text-shadow: 0 0 18px rgba(109, 212, 200, 0.22); }
+          to { text-shadow: 0 0 46px rgba(109, 212, 200, 0.55); }
+        }
         @media (prefers-reduced-motion: reduce) {
-          .ug-reveal-line, .ug-lift, .ug-primary-btn { transition: none !important; }
+          .ug-reveal-line, .ug-lift, .ug-primary-btn, .ug-glow-word { transition: none !important; animation: none !important; }
         }
       `}</style>
 
