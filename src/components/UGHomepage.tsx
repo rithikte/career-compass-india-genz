@@ -169,8 +169,10 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
     >
       <style>{`
         .ug-primary-btn:hover { transform: translateY(-3px); filter: brightness(1.08); }
+        .ug-lift { transition: transform 250ms ease-out, box-shadow 250ms ease-out; }
+        .ug-lift:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.35); }
         @media (prefers-reduced-motion: reduce) {
-          .ug-reveal-line { transition: none !important; }
+          .ug-reveal-line, .ug-lift, .ug-primary-btn { transition: none !important; }
         }
       `}</style>
 
