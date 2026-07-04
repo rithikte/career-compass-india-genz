@@ -421,15 +421,15 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
                   delay={i * 70}
                   className={featured ? 'sm:col-span-2 lg:col-span-1 lg:row-span-2' : ''}
                 >
-                  <div className="ug-lift h-full" style={cardStyle}>
+                  <div className="ug-lift ug-discover-card h-full" style={cardStyle}>
                     <div
-                      className="flex h-11 w-11 items-center justify-center rounded-xl"
+                      className="ug-discover-icon flex h-11 w-11 items-center justify-center rounded-xl"
                       style={{ background: 'rgba(127,200,169,0.12)' }}
                     >
                       <Icon strokeWidth={2} className="h-6 w-6" style={{ color: '#7FC8A9' }} />
                     </div>
                     <h3 className="mt-4 text-lg font-medium" style={headingFont}>
-                      {item.title}
+                      <span className="ug-discover-title">{item.title}</span>
                     </h3>
                     <p className="mt-2 leading-[1.7]" style={{ color: COLORS.muted }}>
                       {item.desc}
