@@ -246,6 +246,17 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
         .ug-step:hover { border-color: rgba(110,159,154,0.7) !important; }
         .ug-step-num { transition: color 250ms ease, letter-spacing 250ms ease; }
         .ug-step:hover .ug-step-num { color: #8fbfa3; letter-spacing: 0.06em; }
+        .ug-discover-card { transition: transform 250ms ease-out, box-shadow 250ms ease-out, border-color 300ms ease-out; }
+        .ug-discover-card:hover { border-color: rgba(127,200,169,0.7) !important; box-shadow: 0 18px 44px rgba(0,0,0,0.32); transform: translateY(-4px); }
+        .ug-discover-icon { transition: transform 300ms cubic-bezier(0.22,1,0.36,1), background 300ms ease; }
+        .ug-discover-card:hover .ug-discover-icon { transform: translateY(-2px) scale(1.08) rotate(-3deg); background: rgba(127,200,169,0.22) !important; }
+        .ug-discover-title { position: relative; display: inline-block; }
+        .ug-discover-title::after {
+          content: ''; position: absolute; left: 0; bottom: -4px; height: 2px; width: 100%;
+          background: #7FC8A9; transform: scaleX(0); transform-origin: left;
+          transition: transform 350ms cubic-bezier(0.22,1,0.36,1);
+        }
+        .ug-discover-card:hover .ug-discover-title::after { transform: scaleX(1); }
         .ug-glow-word {
           text-shadow: 0 0 26px rgba(109, 212, 200, 0.25);
           animation: ug-glow 3.5s ease-in-out infinite alternate;
@@ -255,7 +266,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
           to { text-shadow: 0 0 46px rgba(109, 212, 200, 0.55); }
         }
         @media (prefers-reduced-motion: reduce) {
-          .ug-reveal-line, .ug-lift, .ug-primary-btn, .ug-glow-word, .ug-icon-box, .ug-underline::after, .ug-step-num { transition: none !important; animation: none !important; }
+          .ug-reveal-line, .ug-lift, .ug-primary-btn, .ug-glow-word, .ug-icon-box, .ug-underline::after, .ug-step-num, .ug-discover-card, .ug-discover-icon, .ug-discover-title::after { transition: none !important; animation: none !important; }
         }
       `}</style>
 
@@ -410,15 +421,15 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
                   delay={i * 70}
                   className={featured ? 'sm:col-span-2 lg:col-span-1 lg:row-span-2' : ''}
                 >
-                  <div className="ug-lift h-full" style={cardStyle}>
+                  <div className="ug-lift ug-discover-card h-full" style={cardStyle}>
                     <div
-                      className="flex h-11 w-11 items-center justify-center rounded-xl"
+                      className="ug-discover-icon flex h-11 w-11 items-center justify-center rounded-xl"
                       style={{ background: 'rgba(127,200,169,0.12)' }}
                     >
                       <Icon strokeWidth={2} className="h-6 w-6" style={{ color: '#7FC8A9' }} />
                     </div>
                     <h3 className="mt-4 text-lg font-medium" style={headingFont}>
-                      {item.title}
+                      <span className="ug-discover-title">{item.title}</span>
                     </h3>
                     <p className="mt-2 leading-[1.7]" style={{ color: COLORS.muted }}>
                       {item.desc}
