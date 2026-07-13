@@ -106,7 +106,7 @@ const SearchDegree: React.FC = () => {
             className="mt-4 font-bold"
             style={{ ...headingFont, fontSize: 'clamp(1.9rem, 5vw, 3.2rem)', lineHeight: 1.1 }}
           >
-            Find the right engineering degree
+            Search your engineering degree
           </h1>
           <p
             className="mx-auto mt-4"
@@ -118,8 +118,7 @@ const SearchDegree: React.FC = () => {
               lineHeight: 1.7,
             }}
           >
-            Search across engineering degrees and explore what each path leads to in the real
-            world.
+            Explore the careers, skills, industries, and opportunities connected to it.
           </p>
         </div>
 
