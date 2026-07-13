@@ -163,92 +163,96 @@ const SearchDegree: React.FC = () => {
               </button>
             )}
           </div>
-          <p
-            className="mt-3 text-center"
-            style={{ ...techFont, color: COLORS.muted, fontSize: '0.8rem' }}
-          >
-            {filtered.length} {filtered.length === 1 ? 'degree' : 'degrees'} found
-          </p>
+          {query.trim() && (
+            <p
+              className="mt-3 text-center"
+              style={{ ...techFont, color: COLORS.muted, fontSize: '0.8rem' }}
+            >
+              {filtered.length} {filtered.length === 1 ? 'degree' : 'degrees'} found
+            </p>
+          )}
         </div>
 
-        {/* Results grid */}
-        {filtered.length > 0 ? (
-          <div
-            className="mt-10 grid gap-4"
-            style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))' }}
-          >
-            {filtered.map((deg, i) => (
-              <motion.div
-                key={deg.name}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={cardVariants}
-                className="ug-degree-card"
+        {/* Results grid - only shown once the user has typed a query */}
+        {query.trim() ? (
+          filtered.length > 0 ? (
+            <div
+              className="mt-10 grid gap-4"
+              style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))' }}
+            >
+              {filtered.map((deg, i) => (
+                <motion.div
+                  key={deg.name}
+                  custom={i}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.2 }}
+                  variants={cardVariants}
+                  className="ug-degree-card"
+                  style={{
+                    background: COLORS.card,
+                    border: `1px solid ${COLORS.border}`,
+                    borderRadius: 18,
+                    padding: 20,
+                    backgroundImage: `linear-gradient(${COLORS.glass}, ${COLORS.glass})`,
+                  }}
+                >
+                  <div className="flex items-start gap-4">
+                    <div
+                      className="flex items-center justify-center flex-shrink-0"
+                      style={{
+                        background: 'rgba(109,212,200,0.1)',
+                        borderRadius: 12,
+                        width: 44,
+                        height: 44,
+                      }}
+                    >
+                      <GraduationCap size={22} className="ug-degree-icon" style={{ color: COLORS.muted }} />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <span
+                        className="inline-block text-[0.68rem] font-medium uppercase tracking-[0.14em]"
+                        style={{ ...techFont, color: COLORS.accent }}
+                      >
+                        {deg.group}
+                      </span>
+                      <h3
+                        className="mt-1 font-semibold"
+                        style={{ ...headingFont, color: COLORS.text, fontSize: '1.02rem', lineHeight: 1.4 }}
+                      >
+                        {deg.name}
+                      </h3>
+                    </div>
+                    <ArrowRight
+                      size={18}
+                      className="ug-degree-arrow flex-shrink-0 mt-1"
+                      style={{ color: COLORS.accent }}
+                    />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          ) : (
+            <div className="mt-12 text-center">
+              <p style={{ ...bodyFont, color: COLORS.muted, fontSize: '1.05rem' }}>
+                No degrees match “{query}”.
+              </p>
+              <button
+                onClick={() => setQuery('')}
+                className="mt-4 inline-flex items-center gap-2 font-medium"
                 style={{
-                  background: COLORS.card,
-                  border: `1px solid ${COLORS.border}`,
-                  borderRadius: 18,
-                  padding: 20,
-                  backgroundImage: `linear-gradient(${COLORS.glass}, ${COLORS.glass})`,
+                  ...bodyFont,
+                  background: COLORS.accent,
+                  color: COLORS.bg,
+                  borderRadius: 14,
+                  padding: '12px 22px',
                 }}
               >
-                <div className="flex items-start gap-4">
-                  <div
-                    className="flex items-center justify-center flex-shrink-0"
-                    style={{
-                      background: 'rgba(109,212,200,0.1)',
-                      borderRadius: 12,
-                      width: 44,
-                      height: 44,
-                    }}
-                  >
-                    <GraduationCap size={22} className="ug-degree-icon" style={{ color: COLORS.muted }} />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <span
-                      className="inline-block text-[0.68rem] font-medium uppercase tracking-[0.14em]"
-                      style={{ ...techFont, color: COLORS.accent }}
-                    >
-                      {deg.group}
-                    </span>
-                    <h3
-                      className="mt-1 font-semibold"
-                      style={{ ...headingFont, color: COLORS.text, fontSize: '1.02rem', lineHeight: 1.4 }}
-                    >
-                      {deg.name}
-                    </h3>
-                  </div>
-                  <ArrowRight
-                    size={18}
-                    className="ug-degree-arrow flex-shrink-0 mt-1"
-                    style={{ color: COLORS.accent }}
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        ) : (
-          <div className="mt-12 text-center">
-            <p style={{ ...bodyFont, color: COLORS.muted, fontSize: '1.05rem' }}>
-              No degrees match “{query}”.
-            </p>
-            <button
-              onClick={() => setQuery('')}
-              className="mt-4 inline-flex items-center gap-2 font-medium"
-              style={{
-                ...bodyFont,
-                background: COLORS.accent,
-                color: COLORS.bg,
-                borderRadius: 14,
-                padding: '12px 22px',
-              }}
-            >
-              Clear search
-            </button>
-          </div>
-        )}
+                Clear search
+              </button>
+            </div>
+          )
+        ) : null}
       </div>
     </div>
   );
