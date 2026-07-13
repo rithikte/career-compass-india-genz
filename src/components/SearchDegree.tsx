@@ -163,12 +163,14 @@ const SearchDegree: React.FC = () => {
               </button>
             )}
           </div>
-          <p
-            className="mt-3 text-center"
-            style={{ ...techFont, color: COLORS.muted, fontSize: '0.8rem' }}
-          >
-            {filtered.length} {filtered.length === 1 ? 'degree' : 'degrees'} found
-          </p>
+          {query.trim() && (
+            <p
+              className="mt-3 text-center"
+              style={{ ...techFont, color: COLORS.muted, fontSize: '0.8rem' }}
+            >
+              {filtered.length} {filtered.length === 1 ? 'degree' : 'degrees'} found
+            </p>
+          )}
         </div>
 
         {/* Results grid - only shown once the user has typed a query */}
