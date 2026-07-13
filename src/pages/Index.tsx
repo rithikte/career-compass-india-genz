@@ -16,6 +16,7 @@ const Index = () => {
     { id: 'embedded-product', title: 'Embedded Product Engineering', component: EmbeddedProductEngineering },
     { id: 'home-page', title: 'Home Page', component: PremiumHomePage },
     { id: 'ug-homepage', title: 'UG Homepage', component: () => <UGHomepage onExplore={() => setActiveSection('home')} /> },
+    { id: 'search-degree', title: 'Search Degree', component: SearchDegree },
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
