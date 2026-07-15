@@ -1,6 +1,16 @@
 import React, { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Search, BookOpen, ArrowRight, X } from 'lucide-react';
+import {
+  Search,
+  ArrowRight,
+  X,
+  Check,
+  HardHat,
+  Ruler,
+  Hammer,
+  ClipboardList,
+  Boxes,
+} from 'lucide-react';
 
 /* ---------- Design tokens (UG Homepage palette) ---------- */
 const COLORS = {
@@ -11,16 +21,46 @@ const COLORS = {
   border: '#232C44',
   glass: 'rgba(255,255,255,0.03)',
   accent: '#6DD4C8',
-  accent2: '#89C2D9',
-  accent3: '#7FC8A9',
-  accent4: '#8FA7BF',
+};
+
+const SECTIONS_META = [
+  {
+    accent: '#6DD4C8',
+    glow: 'rgba(109,212,200,0.22)',
+    icon: HardHat,
+    label: 'Foundation First',
+  },
+  {
+    accent: '#89C2D9',
+    glow: 'rgba(137,194,217,0.22)',
+    icon: Boxes,
+    label: 'Materials & Methods',
+  },
+  {
+    accent: '#7FC8A9',
+    glow: 'rgba(127,200,169,0.22)',
+    icon: ClipboardList,
+    label: 'Cost & Control',
+  },
+  {
+    accent: '#8FA7BF',
+    glow: 'rgba(143,167,191,0.22)',
+    icon: Ruler,
+    label: 'Layout & Precision',
+  },
+];
+
+const SUBJECT_ICONS: Record<string, React.ElementType> = {
+  'Reinforced Cement Concrete / RCC Design': HardHat,
+  'Building Construction / Construction Technology': Hammer,
+  'Concrete Technology': Boxes,
+  'Surveying': Ruler,
+  'Estimation and Costing / Quantity Surveying': ClipboardList,
 };
 
 const headingFont = { fontFamily: "'Satoshi', 'Inter', sans-serif" };
 const bodyFont = { fontFamily: "'Inter', sans-serif" };
 const techFont = { fontFamily: "'IBM Plex Sans', 'Inter', sans-serif" };
-
-const SECTION_ACCENTS = [COLORS.accent, COLORS.accent2, COLORS.accent3, COLORS.accent4];
 
 interface Subject {
   name: string;
@@ -141,11 +181,11 @@ const SECTIONS: Section[] = [
 ];
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 18 },
+  hidden: { opacity: 0, y: 22 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.05, duration: 0.45, ease: [0.22, 1, 0.36, 1] as const },
+    transition: { delay: i * 0.08, duration: 0.55, ease: [0.22, 1, 0.36, 1] as const },
   }),
 };
 
@@ -174,20 +214,20 @@ const DomainSubjects: React.FC = () => {
         .ug-domain-subjects { position: relative; overflow: hidden; }
         .ug-domain-input::placeholder { color: ${COLORS.muted}; }
         .ug-domain-input:focus { outline: none; border-color: ${COLORS.accent}; box-shadow: 0 0 0 3px rgba(109,212,200,0.15); }
-        .ug-section-card { transition: transform 250ms ease-out, border-color 250ms ease-out, box-shadow 250ms ease-out; }
+        .ug-section-card { transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1), border-color 350ms ease, box-shadow 350ms ease; }
         @media (hover: hover) {
-          .ug-section-card:hover { transform: translateY(-4px); border-color: ${COLORS.accent}; box-shadow: 0 14px 40px rgba(0,0,0,0.4); }
-          .ug-section-card:hover .ug-section-arrow { transform: translateX(4px); opacity: 1; }
-          .ug-section-card:hover .ug-section-icon { color: ${COLORS.accent}; }
+          .ug-section-card:hover { transform: translateY(-6px); }
+          .ug-section-card:hover .ug-section-arrow { transform: translateX(5px); }
+          .ug-section-card:hover .ug-card-shine { opacity: 1; }
         }
-        .ug-section-arrow { transition: transform 250ms ease-out, opacity 250ms ease-out; opacity: 0.4; }
-        .ug-section-icon { transition: color 250ms ease-out; }
+        .ug-section-arrow { transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1); }
+        .ug-card-shine { opacity: 0; transition: opacity 350ms ease; }
         .ug-skill-row { transition: background-color 200ms ease-out; }
         @media (hover: hover) {
-          .ug-skill-row:hover { background-color: rgba(255,255,255,0.03); }
+          .ug-skill-row:hover { background-color: rgba(255,255,255,0.04); }
         }
         @media (prefers-reduced-motion: reduce) {
-          .ug-section-card, .ug-section-arrow, .ug-section-icon, .ug-skill-row { transition: none !important; }
+          .ug-section-card, .ug-section-arrow, .ug-card-shine, .ug-skill-row { transition: none !important; }
         }
       `}</style>
 
@@ -196,11 +236,11 @@ const DomainSubjects: React.FC = () => {
         aria-hidden
         style={{
           position: 'absolute',
-          top: -120,
+          top: -160,
           left: '50%',
           transform: 'translateX(-50%)',
-          width: 520,
-          height: 520,
+          width: 600,
+          height: 600,
           background: 'radial-gradient(circle, rgba(109,212,200,0.12), transparent 60%)',
           pointerEvents: 'none',
         }}
@@ -303,11 +343,13 @@ const DomainSubjects: React.FC = () => {
 
         {/* Sections grid */}
         <div
-          className="mt-10 grid gap-6"
-          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))' }}
+          className="mt-12 grid gap-5"
+          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))' }}
         >
           {filteredSections.map((section, sectionIndex) => {
-            const accent = SECTION_ACCENTS[sectionIndex % SECTION_ACCENTS.length];
+            const meta = SECTIONS_META[sectionIndex % SECTIONS_META.length];
+            const SectionIcon = meta.icon;
+            const number = String(section.id).padStart(2, '0');
             return (
               <motion.div
                 key={section.id}
@@ -318,94 +360,162 @@ const DomainSubjects: React.FC = () => {
                 variants={cardVariants}
                 className="ug-section-card"
                 style={{
+                  position: 'relative',
                   background: COLORS.card,
                   border: `1px solid ${COLORS.border}`,
-                  borderRadius: 20,
-                  padding: 'clamp(20px, 4vw, 28px)',
-                  backgroundImage: `linear-gradient(${COLORS.glass}, ${COLORS.glass})`,
+                  borderRadius: 22,
+                  overflow: 'hidden',
+                  backgroundImage: `linear-gradient(180deg, ${meta.glow} 0%, transparent 35%)`,
                 }}
               >
-                {/* Section header */}
-                <div className="flex items-start gap-4">
-                  <div
-                    className="flex items-center justify-center flex-shrink-0"
-                    style={{
-                      background: `${accent}15`,
-                      borderRadius: 12,
-                      width: 44,
-                      height: 44,
-                    }}
-                  >
-                    <BookOpen size={22} className="ug-section-icon" style={{ color: accent }} />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <span
-                      className="inline-block text-[0.68rem] font-medium uppercase tracking-[0.14em]"
-                      style={{ ...techFont, color: accent }}
-                    >
-                      Section {section.id}
-                    </span>
-                    <h3
-                      className="mt-1 font-semibold"
-                      style={{ ...headingFont, color: COLORS.text, fontSize: '1.05rem', lineHeight: 1.4 }}
-                    >
-                      {section.title}
-                    </h3>
-                  </div>
-                  <ArrowRight
-                    size={18}
-                    className="ug-section-arrow flex-shrink-0 mt-1"
-                    style={{ color: accent }}
-                  />
-                </div>
-
-                {/* Divider */}
+                {/* Top accent bar */}
                 <div
-                  className="mt-5 mb-4"
-                  style={{ height: 1, background: COLORS.border }}
+                  style={{
+                    height: 3,
+                    width: '100%',
+                    background: `linear-gradient(90deg, ${meta.accent}, ${meta.accent}80)`,
+                  }}
                 />
 
-                {/* Subjects list */}
-                <div className="space-y-4">
-                  {section.subjects.map((subject, subjectIndex) => (
+                {/* Shine overlay on hover */}
+                <div
+                  className="ug-card-shine"
+                  aria-hidden
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: `linear-gradient(135deg, ${meta.glow} 0%, transparent 50%)`,
+                    pointerEvents: 'none',
+                  }}
+                />
+
+                <div style={{ padding: 'clamp(22px, 4vw, 28px)' }}>
+                  {/* Section header */}
+                  <div className="flex items-start gap-4">
                     <div
-                      key={`${section.id}-${subjectIndex}`}
-                      className="ug-skill-row rounded-xl"
-                      style={{ padding: '12px 14px' }}
+                      className="flex items-center justify-center flex-shrink-0"
+                      style={{
+                        background: `${meta.accent}12`,
+                        border: `1px solid ${meta.accent}25`,
+                        borderRadius: 14,
+                        width: 52,
+                        height: 52,
+                      }}
                     >
-                      <div className="flex items-start gap-3">
-                        <div
-                          className="flex-shrink-0 mt-1.5"
-                          style={{
-                            width: 6,
-                            height: 6,
-                            borderRadius: '50%',
-                            background: accent,
-                          }}
-                        />
-                        <div className="flex-1 min-w-0">
-                          <h4
-                            className="font-medium"
-                            style={{ ...headingFont, color: COLORS.text, fontSize: '0.98rem', lineHeight: 1.4 }}
-                          >
-                            {subject.name}
-                          </h4>
-                          <ul className="mt-2 space-y-1.5">
-                            {subject.skills.map((skill, skillIndex) => (
-                              <li
-                                key={skillIndex}
-                                className="flex items-start gap-2"
-                                style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.88rem', lineHeight: 1.55 }}
-                              >
-                                <span style={{ color: accent, flexShrink: 0 }}>—</span>
-                                <span>{skill}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
+                      <SectionIcon size={24} style={{ color: meta.accent }} />
                     </div>
-                  ))}
+                    <div className="min-w-0 flex-1">
+                      <span
+                        className="inline-block text-[0.65rem] font-semibold uppercase tracking-[0.16em]"
+                        style={{ ...techFont, color: meta.accent }}
+                      >
+                        {meta.label}
+                      </span>
+                      <h3
+                        className="mt-1 font-semibold"
+                        style={{ ...headingFont, color: COLORS.text, fontSize: '1.1rem', lineHeight: 1.3 }}
+                      >
+                        {section.title}
+                      </h3>
+                    </div>
+                    <div
+                      className="flex-shrink-0 flex items-center justify-center"
+                      style={{
+                        width: 44,
+                        height: 44,
+                        borderRadius: 12,
+                        background: `${meta.accent}10`,
+                        border: `1px solid ${meta.accent}20`,
+                      }}
+                    >
+                      <span
+                        className="font-bold"
+                        style={{ ...techFont, color: meta.accent, fontSize: '0.95rem' }}
+                      >
+                        {number}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Divider */}
+                  <div
+                    className="mt-5 mb-4"
+                    style={{ height: 1, background: `linear-gradient(90deg, ${meta.accent}30, transparent)` }}
+                  />
+
+                  {/* Subjects list */}
+                  <div className="space-y-3">
+                    {section.subjects.map((subject, subjectIndex) => {
+                      const SubjectIcon = SUBJECT_ICONS[subject.name] || Boxes;
+                      return (
+                        <div
+                          key={`${section.id}-${subjectIndex}`}
+                          className="ug-skill-row rounded-xl"
+                          style={{ padding: '14px 16px' }}
+                        >
+                          <div className="flex items-start gap-3">
+                            <div
+                              className="flex items-center justify-center flex-shrink-0 mt-0.5"
+                              style={{
+                                width: 22,
+                                height: 22,
+                                borderRadius: 6,
+                                background: `${meta.accent}14`,
+                              }}
+                            >
+                              <SubjectIcon size={12} style={{ color: meta.accent }} />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h4
+                                className="font-medium"
+                                style={{ ...headingFont, color: COLORS.text, fontSize: '0.95rem', lineHeight: 1.4 }}
+                              >
+                                {subject.name}
+                              </h4>
+                              <ul className="mt-2 space-y-1.5">
+                                {subject.skills.map((skill, skillIndex) => (
+                                  <li
+                                    key={skillIndex}
+                                    className="flex items-start gap-2"
+                                    style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.85rem', lineHeight: 1.6 }}
+                                  >
+                                    <Check
+                                      size={12}
+                                      className="flex-shrink-0 mt-0.5"
+                                      style={{ color: meta.accent }}
+                                    />
+                                    <span>{skill}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Bottom action hint */}
+                <div
+                  className="flex items-center justify-between"
+                  style={{
+                    padding: '14px 22px',
+                    background: `${meta.accent}08`,
+                    borderTop: `1px solid ${meta.accent}15`,
+                  }}
+                >
+                  <span
+                    className="text-xs font-medium uppercase tracking-[0.12em]"
+                    style={{ ...techFont, color: meta.accent }}
+                  >
+                    {section.subjects.length} subjects
+                  </span>
+                  <ArrowRight
+                    size={18}
+                    className="ug-section-arrow"
+                    style={{ color: meta.accent }}
+                  />
                 </div>
               </motion.div>
             );
