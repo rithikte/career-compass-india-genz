@@ -369,7 +369,7 @@ const DomainChapters: React.FC = () => {
                                 </div>
                                 <div
                                   className="mt-1 flex items-start gap-2"
-                                  style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.78rem', lineHeight: 1.55 }}
+                                  style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.74rem', lineHeight: 1.55 }}
                                 >
                                   <span style={{ color: accent, flexShrink: 0 }}>—</span>
                                   <span>{ch.tags}</span>
