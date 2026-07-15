@@ -8,6 +8,7 @@ import PremiumHomePage from '../components/PremiumHomePage';
 import UGHomepage from '../components/UGHomepage';
 import SearchDegree from '../components/SearchDegree';
 import DomainSubjects from '../components/DomainSubjects';
+import DomainSubjectsDetail from '../components/DomainSubjectsDetail';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
