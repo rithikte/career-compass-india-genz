@@ -1,0 +1,440 @@
+import React, { useMemo, useState } from 'react';
+import { motion } from 'framer-motion';
+import { Search, BookOpen, ArrowRight, X } from 'lucide-react';
+
+/* ---------- Design tokens (UG Homepage palette) ---------- */
+const COLORS = {
+  bg: '#0B1020',
+  card: '#121A2F',
+  text: '#F5F7FA',
+  muted: '#9BA6BF',
+  border: '#232C44',
+  glass: 'rgba(255,255,255,0.03)',
+  accent: '#6DD4C8',
+  accent2: '#89C2D9',
+  accent3: '#7FC8A9',
+  accent4: '#8FA7BF',
+};
+
+const headingFont = { fontFamily: "'Satoshi', 'Inter', sans-serif" };
+const bodyFont = { fontFamily: "'Inter', sans-serif" };
+const techFont = { fontFamily: "'IBM Plex Sans', 'Inter', sans-serif" };
+
+const SECTION_ACCENTS = [COLORS.accent, COLORS.accent2, COLORS.accent3, COLORS.accent4];
+
+interface Subject {
+  name: string;
+  skills: string[];
+}
+
+interface Section {
+  id: number;
+  title: string;
+  subjects: Subject[];
+}
+
+const SECTIONS: Section[] = [
+  {
+    id: 1,
+    title: 'Subjects Section - 1',
+    subjects: [
+      {
+        name: 'Reinforced Cement Concrete / RCC Design',
+        skills: ['Check slab, beam, column, footing reinforcement against drawings'],
+      },
+      {
+        name: 'Building Construction / Construction Technology',
+        skills: ['Understand and follow apartment execution sequence from excavation to finishing'],
+      },
+      {
+        name: 'Concrete Technology',
+        skills: ['Observe concrete pouring, slump, compaction, curing, and concrete testing'],
+      },
+      {
+        name: 'Surveying',
+        skills: ['Support layout marking, level checking, benchmark use, and RL understanding'],
+      },
+      {
+        name: 'Estimation and Costing / Quantity Surveying',
+        skills: ['Support quantity take-off, BBS understanding, BOQ/MB records, and material tracking'],
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: 'Subjects Section - 2',
+    subjects: [
+      {
+        name: 'Concrete Technology',
+        skills: ['Observe concrete pouring, slump, compaction, curing, and concrete testing'],
+      },
+      {
+        name: 'Estimation and Costing / Quantity Surveying',
+        skills: ['Support quantity take-off, BBS understanding, BOQ/MB records, and material tracking'],
+      },
+      {
+        name: 'Surveying',
+        skills: ['Support layout marking, level checking, benchmark use, and RL understanding'],
+      },
+      {
+        name: 'Building Construction / Construction Technology',
+        skills: ['Understand and follow apartment execution sequence from excavation to finishing'],
+      },
+      {
+        name: 'Reinforced Cement Concrete / RCC Design',
+        skills: ['Check slab, beam, column, footing reinforcement against drawings'],
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: 'Subjects Section - 3',
+    subjects: [
+      {
+        name: 'Estimation and Costing / Quantity Surveying',
+        skills: ['Support quantity take-off, BBS understanding, BOQ/MB records, and material tracking'],
+      },
+      {
+        name: 'Building Construction / Construction Technology',
+        skills: ['Understand and follow apartment execution sequence from excavation to finishing'],
+      },
+      {
+        name: 'Concrete Technology',
+        skills: ['Observe concrete pouring, slump, compaction, curing, and concrete testing'],
+      },
+      {
+        name: 'Reinforced Cement Concrete / RCC Design',
+        skills: ['Check slab, beam, column, footing reinforcement against drawings'],
+      },
+      {
+        name: 'Surveying',
+        skills: ['Support layout marking, level checking, benchmark use, and RL understanding'],
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: 'Subjects Section - 4',
+    subjects: [
+      {
+        name: 'Surveying',
+        skills: ['Support layout marking, level checking, benchmark use, and RL understanding'],
+      },
+      {
+        name: 'Building Construction / Construction Technology',
+        skills: ['Understand and follow apartment execution sequence from excavation to finishing'],
+      },
+      {
+        name: 'Estimation and Costing / Quantity Surveying',
+        skills: ['Support quantity take-off, BBS understanding, BOQ/MB records, and material tracking'],
+      },
+      {
+        name: 'Concrete Technology',
+        skills: ['Observe concrete pouring, slump, compaction, curing, and concrete testing'],
+      },
+      {
+        name: 'Reinforced Cement Concrete / RCC Design',
+        skills: ['Check slab, beam, column, footing reinforcement against drawings'],
+      },
+    ],
+  },
+];
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 18 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.05, duration: 0.45, ease: [0.22, 1, 0.36, 1] as const },
+  }),
+};
+
+const DomainSubjects: React.FC = () => {
+  const [query, setQuery] = useState('');
+
+  const filteredSections = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return SECTIONS;
+    return SECTIONS.map((section) => ({
+      ...section,
+      subjects: section.subjects.filter(
+        (s) =>
+          s.name.toLowerCase().includes(q) ||
+          s.skills.some((skill) => skill.toLowerCase().includes(q))
+      ),
+    })).filter((section) => section.subjects.length > 0);
+  }, [query]);
+
+  return (
+    <div
+      className="ug-domain-subjects"
+      style={{ background: COLORS.bg, color: COLORS.text, borderRadius: 24 }}
+    >
+      <style>{`
+        .ug-domain-subjects { position: relative; overflow: hidden; }
+        .ug-domain-input::placeholder { color: ${COLORS.muted}; }
+        .ug-domain-input:focus { outline: none; border-color: ${COLORS.accent}; box-shadow: 0 0 0 3px rgba(109,212,200,0.15); }
+        .ug-section-card { transition: transform 250ms ease-out, border-color 250ms ease-out, box-shadow 250ms ease-out; }
+        @media (hover: hover) {
+          .ug-section-card:hover { transform: translateY(-4px); border-color: ${COLORS.accent}; box-shadow: 0 14px 40px rgba(0,0,0,0.4); }
+          .ug-section-card:hover .ug-section-arrow { transform: translateX(4px); opacity: 1; }
+          .ug-section-card:hover .ug-section-icon { color: ${COLORS.accent}; }
+        }
+        .ug-section-arrow { transition: transform 250ms ease-out, opacity 250ms ease-out; opacity: 0.4; }
+        .ug-section-icon { transition: color 250ms ease-out; }
+        .ug-skill-row { transition: background-color 200ms ease-out; }
+        @media (hover: hover) {
+          .ug-skill-row:hover { background-color: rgba(255,255,255,0.03); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .ug-section-card, .ug-section-arrow, .ug-section-icon, .ug-skill-row { transition: none !important; }
+        }
+      `}</style>
+
+      {/* ambient glow */}
+      <div
+        aria-hidden
+        style={{
+          position: 'absolute',
+          top: -120,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: 520,
+          height: 520,
+          background: 'radial-gradient(circle, rgba(109,212,200,0.12), transparent 60%)',
+          pointerEvents: 'none',
+        }}
+      />
+
+      <div
+        className="relative mx-auto"
+        style={{ maxWidth: 1200, padding: 'clamp(32px, 6vw, 72px) clamp(20px, 5vw, 48px)' }}
+      >
+        {/* Header */}
+        <div className="text-center">
+          <motion.span
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
+            className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em]"
+            style={{ ...techFont, color: COLORS.accent }}
+          >
+            <span className="h-1.5 w-1.5 rounded-full" style={{ background: COLORS.accent }} />
+            Domain Subjects
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, delay: 0.08, ease: [0.22, 1, 0.36, 1] as const }}
+            className="mt-4 font-bold"
+            style={{ ...headingFont, fontSize: 'clamp(1.9rem, 5vw, 3.2rem)', lineHeight: 1.1 }}
+          >
+            Pick the subjects you are interested in
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, delay: 0.18, ease: [0.22, 1, 0.36, 1] as const }}
+            className="mx-auto mt-4"
+            style={{
+              ...bodyFont,
+              color: COLORS.muted,
+              maxWidth: '60ch',
+              fontSize: 'clamp(0.95rem, 2.2vw, 1.1rem)',
+              lineHeight: 1.7,
+            }}
+          >
+            Explore civil engineering core subjects and the real site-level skills each one builds.
+          </motion.p>
+        </div>
+
+        {/* Search bar */}
+        <div className="mx-auto mt-8" style={{ maxWidth: 640 }}>
+          <div
+            className="flex items-center gap-3"
+            style={{
+              background: COLORS.card,
+              border: `1px solid ${COLORS.border}`,
+              borderRadius: 18,
+              padding: '4px 4px 4px 18px',
+              backgroundImage: `linear-gradient(${COLORS.glass}, ${COLORS.glass})`,
+            }}
+          >
+            <Search size={20} style={{ color: COLORS.muted, flexShrink: 0 }} />
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search a subject or skill, e.g. RCC, surveying…"
+              aria-label="Search subjects"
+              className="ug-domain-input w-full bg-transparent border-0 py-3 text-base"
+              style={{ ...bodyFont, color: COLORS.text }}
+            />
+            {query && (
+              <button
+                onClick={() => setQuery('')}
+                aria-label="Clear search"
+                className="flex items-center justify-center"
+                style={{
+                  background: COLORS.border,
+                  color: COLORS.text,
+                  borderRadius: 12,
+                  width: 40,
+                  height: 40,
+                  flexShrink: 0,
+                }}
+              >
+                <X size={18} />
+              </button>
+            )}
+          </div>
+          {query.trim() && (
+            <p
+              className="mt-3 text-center"
+              style={{ ...techFont, color: COLORS.muted, fontSize: '0.8rem' }}
+            >
+              {filteredSections.reduce((acc, sec) => acc + sec.subjects.length, 0)} subjects found
+            </p>
+          )}
+        </div>
+
+        {/* Sections grid */}
+        <div
+          className="mt-10 grid gap-6"
+          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))' }}
+        >
+          {filteredSections.map((section, sectionIndex) => {
+            const accent = SECTION_ACCENTS[sectionIndex % SECTION_ACCENTS.length];
+            return (
+              <motion.div
+                key={section.id}
+                custom={sectionIndex}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.15 }}
+                variants={cardVariants}
+                className="ug-section-card"
+                style={{
+                  background: COLORS.card,
+                  border: `1px solid ${COLORS.border}`,
+                  borderRadius: 20,
+                  padding: 'clamp(20px, 4vw, 28px)',
+                  backgroundImage: `linear-gradient(${COLORS.glass}, ${COLORS.glass})`,
+                }}
+              >
+                {/* Section header */}
+                <div className="flex items-start gap-4">
+                  <div
+                    className="flex items-center justify-center flex-shrink-0"
+                    style={{
+                      background: `${accent}15`,
+                      borderRadius: 12,
+                      width: 44,
+                      height: 44,
+                    }}
+                  >
+                    <BookOpen size={22} className="ug-section-icon" style={{ color: accent }} />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <span
+                      className="inline-block text-[0.68rem] font-medium uppercase tracking-[0.14em]"
+                      style={{ ...techFont, color: accent }}
+                    >
+                      Section {section.id}
+                    </span>
+                    <h3
+                      className="mt-1 font-semibold"
+                      style={{ ...headingFont, color: COLORS.text, fontSize: '1.05rem', lineHeight: 1.4 }}
+                    >
+                      {section.title}
+                    </h3>
+                  </div>
+                  <ArrowRight
+                    size={18}
+                    className="ug-section-arrow flex-shrink-0 mt-1"
+                    style={{ color: accent }}
+                  />
+                </div>
+
+                {/* Divider */}
+                <div
+                  className="mt-5 mb-4"
+                  style={{ height: 1, background: COLORS.border }}
+                />
+
+                {/* Subjects list */}
+                <div className="space-y-4">
+                  {section.subjects.map((subject, subjectIndex) => (
+                    <div
+                      key={`${section.id}-${subjectIndex}`}
+                      className="ug-skill-row rounded-xl"
+                      style={{ padding: '12px 14px' }}
+                    >
+                      <div className="flex items-start gap-3">
+                        <div
+                          className="flex-shrink-0 mt-1.5"
+                          style={{
+                            width: 6,
+                            height: 6,
+                            borderRadius: '50%',
+                            background: accent,
+                          }}
+                        />
+                        <div className="flex-1 min-w-0">
+                          <h4
+                            className="font-medium"
+                            style={{ ...headingFont, color: COLORS.text, fontSize: '0.98rem', lineHeight: 1.4 }}
+                          >
+                            {subject.name}
+                          </h4>
+                          <ul className="mt-2 space-y-1.5">
+                            {subject.skills.map((skill, skillIndex) => (
+                              <li
+                                key={skillIndex}
+                                className="flex items-start gap-2"
+                                style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.88rem', lineHeight: 1.55 }}
+                              >
+                                <span style={{ color: accent, flexShrink: 0 }}>—</span>
+                                <span>{skill}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {query.trim() && filteredSections.length === 0 && (
+          <div className="mt-12 text-center">
+            <p style={{ ...bodyFont, color: COLORS.muted, fontSize: '1.05rem' }}>
+              No subjects match “{query}”.
+            </p>
+            <button
+              onClick={() => setQuery('')}
+              className="mt-4 inline-flex items-center gap-2 font-medium"
+              style={{
+                ...bodyFont,
+                background: COLORS.accent,
+                color: COLORS.bg,
+                borderRadius: 14,
+                padding: '12px 22px',
+              }}
+            >
+              Clear search
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default DomainSubjects;
