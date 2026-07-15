@@ -395,7 +395,7 @@ const DomainSubjects: React.FC = () => {
                               <li
                                 key={skillIndex}
                                 className="flex items-start gap-2"
-                                style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.88rem', lineHeight: 1.55 }}
+                                style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.84rem', lineHeight: 1.55 }}
                               >
                                 <span style={{ color: accent, flexShrink: 0 }}>—</span>
                                 <span>{skill}</span>
