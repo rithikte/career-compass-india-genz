@@ -8,6 +8,7 @@ import PremiumHomePage from '../components/PremiumHomePage';
 import UGHomepage from '../components/UGHomepage';
 import SearchDegree from '../components/SearchDegree';
 import DomainSubjects from '../components/DomainSubjects';
+import DomainSubjectsDetail from '../components/DomainSubjectsDetail';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -19,6 +20,7 @@ const Index = () => {
     { id: 'ug-homepage', title: 'UG Homepage', component: () => <UGHomepage onExplore={() => setActiveSection('home')} /> },
     { id: 'search-degree', title: 'Search Degree', component: SearchDegree },
     { id: 'domain-subjects', title: 'Domain Subjects', component: DomainSubjects },
+    { id: 'domain-subjects-detail', title: 'Domain Subjects', component: DomainSubjectsDetail },
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
