@@ -180,8 +180,17 @@ const DomainSubjects: React.FC = () => {
         @media (hover: hover) {
           .ug-skill-row:hover { background-color: rgba(255,255,255,0.03); }
         }
+        .ug-subj-skills-wrap { overflow: hidden; transition: max-height 300ms ease-out, opacity 250ms ease-out; }
+        .ug-subj-skills-wrap[data-open="true"] { max-height: 400px; opacity: 1; }
+        .ug-subj-skills-wrap[data-open="false"] { max-height: 0; opacity: 0; }
+        .ug-subj-chevron { transition: transform 250ms ease-out; }
+        .ug-subj-chevron[data-open="true"] { transform: rotate(180deg); }
+        .ug-subj-toggle { transition: background-color 200ms ease-out, color 200ms ease-out; }
+        @media (hover: hover) {
+          .ug-subj-toggle:hover { background-color: rgba(255,255,255,0.06); }
+        }
         @media (prefers-reduced-motion: reduce) {
-          .ug-section-card, .ug-section-arrow, .ug-section-icon, .ug-skill-row { transition: none !important; }
+          .ug-section-card, .ug-section-arrow, .ug-section-icon, .ug-skill-row, .ug-subj-skills-wrap, .ug-subj-chevron, .ug-subj-toggle { transition: none !important; }
         }
       `}</style>
 
