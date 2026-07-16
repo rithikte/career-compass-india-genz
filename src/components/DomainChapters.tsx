@@ -193,7 +193,7 @@ const DomainChapters: React.FC = () => {
             className="mt-4 font-bold"
             style={{ ...headingFont, fontSize: 'clamp(1.9rem, 5vw, 3.2rem)', lineHeight: 1.1 }}
           >
-            Pick the chapters you want to master
+            Pick the chapters you are interested in
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
