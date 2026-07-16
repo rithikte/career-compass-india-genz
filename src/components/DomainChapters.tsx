@@ -112,6 +112,7 @@ const cardVariants = {
 
 const DomainChapters: React.FC = () => {
   const [query, setQuery] = useState('');
+  const [expanded, setExpanded] = useState<Set<string>>(new Set());
 
   const filteredSections = useMemo(() => {
     const q = query.trim().toLowerCase();
