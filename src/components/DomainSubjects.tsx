@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, ArrowRight } from 'lucide-react';
+import { BookOpen, ArrowRight, ChevronDown } from 'lucide-react';
 
 /* ---------- Design tokens (UG Homepage palette) ---------- */
 const COLORS = {
@@ -150,6 +150,17 @@ const cardVariants = {
 };
 
 const DomainSubjects: React.FC = () => {
+  const [expanded, setExpanded] = useState<Set<string>>(new Set());
+
+  const toggleKey = (key: string) => {
+    setExpanded((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  };
+
   return (
     <div
       className="ug-domain-subjects"
@@ -169,8 +180,17 @@ const DomainSubjects: React.FC = () => {
         @media (hover: hover) {
           .ug-skill-row:hover { background-color: rgba(255,255,255,0.03); }
         }
+        .ug-subj-skills-wrap { overflow: hidden; transition: max-height 300ms ease-out, opacity 250ms ease-out; }
+        .ug-subj-skills-wrap[data-open="true"] { max-height: 400px; opacity: 1; }
+        .ug-subj-skills-wrap[data-open="false"] { max-height: 0; opacity: 0; }
+        .ug-subj-chevron { transition: transform 250ms ease-out; }
+        .ug-subj-chevron[data-open="true"] { transform: rotate(180deg); }
+        .ug-subj-toggle { transition: background-color 200ms ease-out, color 200ms ease-out; }
+        @media (hover: hover) {
+          .ug-subj-toggle:hover { background-color: rgba(255,255,255,0.06); }
+        }
         @media (prefers-reduced-motion: reduce) {
-          .ug-section-card, .ug-section-arrow, .ug-section-icon, .ug-skill-row { transition: none !important; }
+          .ug-section-card, .ug-section-arrow, .ug-section-icon, .ug-skill-row, .ug-subj-skills-wrap, .ug-subj-chevron, .ug-subj-toggle { transition: none !important; }
         }
       `}</style>
 
@@ -323,18 +343,50 @@ const DomainSubjects: React.FC = () => {
                           >
                             {subject.name}
                           </h4>
-                          <ul className="mt-2 space-y-1.5">
-                            {subject.skills.map((skill, skillIndex) => (
-                              <li
-                                key={skillIndex}
-                                className="flex items-start gap-2"
-                                style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.84rem', lineHeight: 1.55 }}
-                              >
-                                <span style={{ color: accent, flexShrink: 0 }}>—</span>
-                                <span>{skill}</span>
-                              </li>
-                            ))}
-                          </ul>
+                          {
+                            (() => {
+                              const subjKey = `${section.id}-${subjectIndex}`;
+                              const isOpen = expanded.has(subjKey);
+                              return (
+                                <>
+                                  <button
+                                    type="button"
+                                    onClick={() => toggleKey(subjKey)}
+                                    aria-expanded={isOpen}
+                                    aria-controls={`subj-skills-${subjKey}`}
+                                    className="ug-subj-toggle mt-2 inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[0.68rem] font-medium uppercase tracking-wider"
+                                    style={{ ...techFont, color: accent, background: 'transparent' }}
+                                  >
+                                    Skills
+                                    <ChevronDown
+                                      size={14}
+                                      className="ug-subj-chevron"
+                                      data-open={isOpen}
+                                      style={{ color: accent }}
+                                    />
+                                  </button>
+                                  <div
+                                    id={`subj-skills-${subjKey}`}
+                                    className="ug-subj-skills-wrap"
+                                    data-open={isOpen}
+                                  >
+                                    <ul className="mt-2 space-y-1.5">
+                                      {subject.skills.map((skill, skillIndex) => (
+                                        <li
+                                          key={skillIndex}
+                                          className="flex items-start gap-2"
+                                          style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.84rem', lineHeight: 1.55 }}
+                                        >
+                                          <span style={{ color: accent, flexShrink: 0 }}>—</span>
+                                          <span>{skill}</span>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                </>
+                              );
+                            })()
+                          }
                         </div>
                       </div>
                     </div>
