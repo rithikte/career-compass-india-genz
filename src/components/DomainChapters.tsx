@@ -1,6 +1,6 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Search, Layers, X, ChevronDown } from 'lucide-react';
+import { Layers, ChevronDown } from 'lucide-react';
 
 const COLORS = {
   bg: '#0B1020',
@@ -111,32 +111,7 @@ const cardVariants = {
 };
 
 const DomainChapters: React.FC = () => {
-  const [query, setQuery] = useState('');
   const [expanded, setExpanded] = useState<Set<string>>(new Set());
-
-  const filteredSections = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return SECTIONS;
-    return SECTIONS.map((section) => ({
-      ...section,
-      subjects: section.subjects
-        .map((s) => ({
-          ...s,
-          chapters: s.chapters.filter(
-            (c) =>
-              c.title.toLowerCase().includes(q) ||
-              c.tags.toLowerCase().includes(q) ||
-              s.name.toLowerCase().includes(q)
-          ),
-        }))
-        .filter((s) => s.chapters.length > 0),
-    })).filter((section) => section.subjects.length > 0);
-  }, [query]);
-
-  const totalChapters = filteredSections.reduce(
-    (acc, sec) => acc + sec.subjects.reduce((a, s) => a + s.chapters.length, 0),
-    0
-  );
 
   const toggleKey = (key: string) => {
     setExpanded((prev) => {
@@ -238,60 +213,11 @@ const DomainChapters: React.FC = () => {
           </motion.p>
         </div>
 
-        <div className="mx-auto mt-8" style={{ maxWidth: 640 }}>
-          <div
-            className="flex items-center gap-3"
-            style={{
-              background: COLORS.card,
-              border: `1px solid ${COLORS.border}`,
-              borderRadius: 18,
-              padding: '4px 4px 4px 18px',
-              backgroundImage: `linear-gradient(${COLORS.glass}, ${COLORS.glass})`,
-            }}
-          >
-            <Search size={20} style={{ color: COLORS.muted, flexShrink: 0 }} />
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search a chapter, subject or keyword, e.g. BBS, slab, curing…"
-              aria-label="Search chapters"
-              className="ug-chap-input w-full bg-transparent border-0 py-3 text-base"
-              style={{ ...bodyFont, color: COLORS.text }}
-            />
-            {query && (
-              <button
-                onClick={() => setQuery('')}
-                aria-label="Clear search"
-                className="flex items-center justify-center"
-                style={{
-                  background: COLORS.border,
-                  color: COLORS.text,
-                  borderRadius: 12,
-                  width: 40,
-                  height: 40,
-                  flexShrink: 0,
-                }}
-              >
-                <X size={18} />
-              </button>
-            )}
-          </div>
-          {query.trim() && (
-            <p
-              className="mt-3 text-center"
-              style={{ ...techFont, color: COLORS.muted, fontSize: '0.8rem' }}
-            >
-              {totalChapters} chapters found
-            </p>
-          )}
-        </div>
-
         <div
           className="mt-10 grid gap-6"
           style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))' }}
         >
-          {filteredSections.map((section, sectionIndex) => {
+          {SECTIONS.map((section, sectionIndex) => {
             const accent = SECTION_ACCENTS[sectionIndex % SECTION_ACCENTS.length];
             return (
               <motion.div
@@ -438,26 +364,6 @@ const DomainChapters: React.FC = () => {
           })}
         </div>
 
-        {query.trim() && filteredSections.length === 0 && (
-          <div className="mt-12 text-center">
-            <p style={{ ...bodyFont, color: COLORS.muted, fontSize: '1.05rem' }}>
-              No chapters match “{query}”.
-            </p>
-            <button
-              onClick={() => setQuery('')}
-              className="mt-4 inline-flex items-center gap-2 font-medium"
-              style={{
-                ...bodyFont,
-                background: COLORS.accent,
-                color: COLORS.bg,
-                borderRadius: 14,
-                padding: '12px 22px',
-              }}
-            >
-              Clear search
-            </button>
-          </div>
-        )}
       </div>
     </div>
   );
