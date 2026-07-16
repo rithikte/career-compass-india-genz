@@ -209,7 +209,7 @@ const DomainChapters: React.FC = () => {
               lineHeight: 1.7,
             }}
           >
-            Drill down from each subject into the exact chapters and site-ready concepts that shape real civil engineering work.
+            Learn the concepts that build real civil engineering knowledge.
           </motion.p>
         </div>
 
