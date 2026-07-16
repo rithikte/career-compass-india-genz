@@ -400,7 +400,7 @@ const DomainChapters: React.FC = () => {
                                           className="ug-chap-toggle mt-2 inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[0.68rem] font-medium uppercase tracking-wider"
                                           style={{ ...techFont, color: accent, background: 'transparent' }}
                                         >
-                                          Concepts
+                                          Also Called
                                           <ChevronDown
                                             size={14}
                                             className="ug-chap-chevron"
