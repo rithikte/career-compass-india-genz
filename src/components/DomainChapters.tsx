@@ -213,55 +213,6 @@ const DomainChapters: React.FC = () => {
           </motion.p>
         </div>
 
-        <div className="mx-auto mt-8" style={{ maxWidth: 640 }}>
-          <div
-            className="flex items-center gap-3"
-            style={{
-              background: COLORS.card,
-              border: `1px solid ${COLORS.border}`,
-              borderRadius: 18,
-              padding: '4px 4px 4px 18px',
-              backgroundImage: `linear-gradient(${COLORS.glass}, ${COLORS.glass})`,
-            }}
-          >
-            <Search size={20} style={{ color: COLORS.muted, flexShrink: 0 }} />
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search a chapter, subject or keyword, e.g. BBS, slab, curing…"
-              aria-label="Search chapters"
-              className="ug-chap-input w-full bg-transparent border-0 py-3 text-base"
-              style={{ ...bodyFont, color: COLORS.text }}
-            />
-            {query && (
-              <button
-                onClick={() => setQuery('')}
-                aria-label="Clear search"
-                className="flex items-center justify-center"
-                style={{
-                  background: COLORS.border,
-                  color: COLORS.text,
-                  borderRadius: 12,
-                  width: 40,
-                  height: 40,
-                  flexShrink: 0,
-                }}
-              >
-                <X size={18} />
-              </button>
-            )}
-          </div>
-          {query.trim() && (
-            <p
-              className="mt-3 text-center"
-              style={{ ...techFont, color: COLORS.muted, fontSize: '0.8rem' }}
-            >
-              {totalChapters} chapters found
-            </p>
-          )}
-        </div>
-
         <div
           className="mt-10 grid gap-6"
           style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))' }}
