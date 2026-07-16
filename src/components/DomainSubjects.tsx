@@ -157,8 +157,6 @@ const DomainSubjects: React.FC = () => {
     >
       <style>{`
         .ug-domain-subjects { position: relative; overflow: hidden; }
-        .ug-domain-input::placeholder { color: ${COLORS.muted}; }
-        .ug-domain-input:focus { outline: none; border-color: ${COLORS.accent}; box-shadow: 0 0 0 3px rgba(109,212,200,0.15); }
         .ug-section-card { transition: transform 250ms ease-out, border-color 250ms ease-out, box-shadow 250ms ease-out; }
         @media (hover: hover) {
           .ug-section-card:hover { transform: translateY(-4px); border-color: ${COLORS.accent}; box-shadow: 0 14px 40px rgba(0,0,0,0.4); }
@@ -236,62 +234,12 @@ const DomainSubjects: React.FC = () => {
           </motion.p>
         </div>
 
-        {/* Search bar */}
-        <div className="mx-auto mt-8" style={{ maxWidth: 640 }}>
-          <div
-            className="flex items-center gap-3"
-            style={{
-              background: COLORS.card,
-              border: `1px solid ${COLORS.border}`,
-              borderRadius: 18,
-              padding: '4px 4px 4px 18px',
-              backgroundImage: `linear-gradient(${COLORS.glass}, ${COLORS.glass})`,
-            }}
-          >
-            <Search size={20} style={{ color: COLORS.muted, flexShrink: 0 }} />
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search a subject or skill, e.g. RCC, surveying…"
-              aria-label="Search subjects"
-              className="ug-domain-input w-full bg-transparent border-0 py-3 text-base"
-              style={{ ...bodyFont, color: COLORS.text }}
-            />
-            {query && (
-              <button
-                onClick={() => setQuery('')}
-                aria-label="Clear search"
-                className="flex items-center justify-center"
-                style={{
-                  background: COLORS.border,
-                  color: COLORS.text,
-                  borderRadius: 12,
-                  width: 40,
-                  height: 40,
-                  flexShrink: 0,
-                }}
-              >
-                <X size={18} />
-              </button>
-            )}
-          </div>
-          {query.trim() && (
-            <p
-              className="mt-3 text-center"
-              style={{ ...techFont, color: COLORS.muted, fontSize: '0.8rem' }}
-            >
-              {filteredSections.reduce((acc, sec) => acc + sec.subjects.length, 0)} subjects found
-            </p>
-          )}
-        </div>
-
         {/* Sections grid */}
         <div
           className="mt-10 grid gap-6"
           style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))' }}
         >
-          {filteredSections.map((section, sectionIndex) => {
+          {SECTIONS.map((section, sectionIndex) => {
             const accent = SECTION_ACCENTS[sectionIndex % SECTION_ACCENTS.length];
             return (
               <motion.div
@@ -397,26 +345,6 @@ const DomainSubjects: React.FC = () => {
           })}
         </div>
 
-        {query.trim() && filteredSections.length === 0 && (
-          <div className="mt-12 text-center">
-            <p style={{ ...bodyFont, color: COLORS.muted, fontSize: '1.05rem' }}>
-              No subjects match “{query}”.
-            </p>
-            <button
-              onClick={() => setQuery('')}
-              className="mt-4 inline-flex items-center gap-2 font-medium"
-              style={{
-                ...bodyFont,
-                background: COLORS.accent,
-                color: COLORS.bg,
-                borderRadius: 14,
-                padding: '12px 22px',
-              }}
-            >
-              Clear search
-            </button>
-          </div>
-        )}
       </div>
     </div>
   );
