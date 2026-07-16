@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Search, Layers, X } from 'lucide-react';
+import { Search, Layers, X, ChevronDown } from 'lucide-react';
 
 const COLORS = {
   bg: '#0B1020',
