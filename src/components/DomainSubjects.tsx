@@ -1,6 +1,6 @@
-import React, { useMemo, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Search, BookOpen, ArrowRight, X } from 'lucide-react';
+import { BookOpen, ArrowRight } from 'lucide-react';
 
 /* ---------- Design tokens (UG Homepage palette) ---------- */
 const COLORS = {
