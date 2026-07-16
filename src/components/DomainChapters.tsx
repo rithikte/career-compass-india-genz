@@ -138,6 +138,15 @@ const DomainChapters: React.FC = () => {
     0
   );
 
+  const toggleKey = (key: string) => {
+    setExpanded((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  };
+
   return (
     <div
       className="ug-domain-chapters"
