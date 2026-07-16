@@ -343,18 +343,50 @@ const DomainSubjects: React.FC = () => {
                           >
                             {subject.name}
                           </h4>
-                          <ul className="mt-2 space-y-1.5">
-                            {subject.skills.map((skill, skillIndex) => (
-                              <li
-                                key={skillIndex}
-                                className="flex items-start gap-2"
-                                style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.84rem', lineHeight: 1.55 }}
-                              >
-                                <span style={{ color: accent, flexShrink: 0 }}>—</span>
-                                <span>{skill}</span>
-                              </li>
-                            ))}
-                          </ul>
+                          {
+                            (() => {
+                              const subjKey = `${section.id}-${subjectIndex}`;
+                              const isOpen = expanded.has(subjKey);
+                              return (
+                                <>
+                                  <button
+                                    type="button"
+                                    onClick={() => toggleKey(subjKey)}
+                                    aria-expanded={isOpen}
+                                    aria-controls={`subj-skills-${subjKey}`}
+                                    className="ug-subj-toggle mt-2 inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[0.68rem] font-medium uppercase tracking-wider"
+                                    style={{ ...techFont, color: accent, background: 'transparent' }}
+                                  >
+                                    Skills
+                                    <ChevronDown
+                                      size={14}
+                                      className="ug-subj-chevron"
+                                      data-open={isOpen}
+                                      style={{ color: accent }}
+                                    />
+                                  </button>
+                                  <div
+                                    id={`subj-skills-${subjKey}`}
+                                    className="ug-subj-skills-wrap"
+                                    data-open={isOpen}
+                                  >
+                                    <ul className="mt-2 space-y-1.5">
+                                      {subject.skills.map((skill, skillIndex) => (
+                                        <li
+                                          key={skillIndex}
+                                          className="flex items-start gap-2"
+                                          style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.84rem', lineHeight: 1.55 }}
+                                        >
+                                          <span style={{ color: accent, flexShrink: 0 }}>—</span>
+                                          <span>{skill}</span>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                </>
+                              );
+                            })()
+                          }
                         </div>
                       </div>
                     </div>
