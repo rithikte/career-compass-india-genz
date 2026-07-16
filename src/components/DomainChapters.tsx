@@ -386,13 +386,45 @@ const DomainChapters: React.FC = () => {
                                 >
                                   {ch.title}
                                 </div>
-                                <div
-                                  className="mt-1 flex items-start gap-2"
-                                  style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.74rem', lineHeight: 1.55 }}
-                                >
-                                  <span style={{ color: accent, flexShrink: 0 }}>—</span>
-                                  <span>{ch.tags}</span>
-                                </div>
+                                {
+                                  (() => {
+                                    const chapKey = `${section.id}-${si}-${ci}`;
+                                    const isOpen = expanded.has(chapKey);
+                                    return (
+                                      <>
+                                        <button
+                                          type="button"
+                                          onClick={() => toggleKey(chapKey)}
+                                          aria-expanded={isOpen}
+                                          aria-controls={`chap-tags-${chapKey}`}
+                                          className="ug-chap-toggle mt-2 inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[0.68rem] font-medium uppercase tracking-wider"
+                                          style={{ ...techFont, color: accent, background: 'transparent' }}
+                                        >
+                                          Concepts
+                                          <ChevronDown
+                                            size={14}
+                                            className="ug-chap-chevron"
+                                            data-open={isOpen}
+                                            style={{ color: accent }}
+                                          />
+                                        </button>
+                                        <div
+                                          id={`chap-tags-${chapKey}`}
+                                          className="ug-chap-tags-wrap"
+                                          data-open={isOpen}
+                                        >
+                                          <div
+                                            className="pt-2 flex items-start gap-2"
+                                            style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.74rem', lineHeight: 1.55 }}
+                                          >
+                                            <span style={{ color: accent, flexShrink: 0 }}>—</span>
+                                            <span>{ch.tags}</span>
+                                          </div>
+                                        </div>
+                                      </>
+                                    );
+                                  })()
+                                }
                               </div>
                             </div>
                           </div>
