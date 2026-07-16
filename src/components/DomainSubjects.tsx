@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, ArrowRight } from 'lucide-react';
+import { BookOpen, ArrowRight, ChevronDown } from 'lucide-react';
 
 /* ---------- Design tokens (UG Homepage palette) ---------- */
 const COLORS = {
