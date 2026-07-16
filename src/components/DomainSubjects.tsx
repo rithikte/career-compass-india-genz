@@ -150,6 +150,17 @@ const cardVariants = {
 };
 
 const DomainSubjects: React.FC = () => {
+  const [expanded, setExpanded] = useState<Set<string>>(new Set());
+
+  const toggleKey = (key: string) => {
+    setExpanded((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  };
+
   return (
     <div
       className="ug-domain-subjects"
