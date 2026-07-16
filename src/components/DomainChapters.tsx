@@ -166,8 +166,17 @@ const DomainChapters: React.FC = () => {
         @media (hover: hover) {
           .ug-chap-row:hover { background-color: rgba(255,255,255,0.04); transform: translateX(2px); }
         }
+        .ug-chap-tags-wrap { overflow: hidden; transition: max-height 300ms ease-out, opacity 250ms ease-out; }
+        .ug-chap-tags-wrap[data-open="true"] { max-height: 200px; opacity: 1; }
+        .ug-chap-tags-wrap[data-open="false"] { max-height: 0; opacity: 0; }
+        .ug-chap-chevron { transition: transform 250ms ease-out; }
+        .ug-chap-chevron[data-open="true"] { transform: rotate(180deg); }
+        .ug-chap-toggle { transition: background-color 200ms ease-out, color 200ms ease-out; }
+        @media (hover: hover) {
+          .ug-chap-toggle:hover { background-color: rgba(255,255,255,0.06); }
+        }
         @media (prefers-reduced-motion: reduce) {
-          .ug-chap-card, .ug-chap-icon, .ug-chap-row { transition: none !important; }
+          .ug-chap-card, .ug-chap-icon, .ug-chap-row, .ug-chap-tags-wrap, .ug-chap-chevron { transition: none !important; }
         }
       `}</style>
 
