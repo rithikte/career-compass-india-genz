@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Search, Layers, X } from 'lucide-react';
+import { Search, Layers, X, ChevronDown } from 'lucide-react';
 
 const COLORS = {
   bg: '#0B1020',
@@ -112,6 +112,7 @@ const cardVariants = {
 
 const DomainChapters: React.FC = () => {
   const [query, setQuery] = useState('');
+  const [expanded, setExpanded] = useState<Set<string>>(new Set());
 
   const filteredSections = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -137,6 +138,15 @@ const DomainChapters: React.FC = () => {
     0
   );
 
+  const toggleKey = (key: string) => {
+    setExpanded((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  };
+
   return (
     <div
       className="ug-domain-chapters"
@@ -156,8 +166,17 @@ const DomainChapters: React.FC = () => {
         @media (hover: hover) {
           .ug-chap-row:hover { background-color: rgba(255,255,255,0.04); transform: translateX(2px); }
         }
+        .ug-chap-tags-wrap { overflow: hidden; transition: max-height 300ms ease-out, opacity 250ms ease-out; }
+        .ug-chap-tags-wrap[data-open="true"] { max-height: 200px; opacity: 1; }
+        .ug-chap-tags-wrap[data-open="false"] { max-height: 0; opacity: 0; }
+        .ug-chap-chevron { transition: transform 250ms ease-out; }
+        .ug-chap-chevron[data-open="true"] { transform: rotate(180deg); }
+        .ug-chap-toggle { transition: background-color 200ms ease-out, color 200ms ease-out; }
+        @media (hover: hover) {
+          .ug-chap-toggle:hover { background-color: rgba(255,255,255,0.06); }
+        }
         @media (prefers-reduced-motion: reduce) {
-          .ug-chap-card, .ug-chap-icon, .ug-chap-row { transition: none !important; }
+          .ug-chap-card, .ug-chap-icon, .ug-chap-row, .ug-chap-tags-wrap, .ug-chap-chevron { transition: none !important; }
         }
       `}</style>
 
@@ -367,13 +386,45 @@ const DomainChapters: React.FC = () => {
                                 >
                                   {ch.title}
                                 </div>
-                                <div
-                                  className="mt-1 flex items-start gap-2"
-                                  style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.74rem', lineHeight: 1.55 }}
-                                >
-                                  <span style={{ color: accent, flexShrink: 0 }}>—</span>
-                                  <span>{ch.tags}</span>
-                                </div>
+                                {
+                                  (() => {
+                                    const chapKey = `${section.id}-${si}-${ci}`;
+                                    const isOpen = expanded.has(chapKey);
+                                    return (
+                                      <>
+                                        <button
+                                          type="button"
+                                          onClick={() => toggleKey(chapKey)}
+                                          aria-expanded={isOpen}
+                                          aria-controls={`chap-tags-${chapKey}`}
+                                          className="ug-chap-toggle mt-2 inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[0.68rem] font-medium uppercase tracking-wider"
+                                          style={{ ...techFont, color: accent, background: 'transparent' }}
+                                        >
+                                          Concepts
+                                          <ChevronDown
+                                            size={14}
+                                            className="ug-chap-chevron"
+                                            data-open={isOpen}
+                                            style={{ color: accent }}
+                                          />
+                                        </button>
+                                        <div
+                                          id={`chap-tags-${chapKey}`}
+                                          className="ug-chap-tags-wrap"
+                                          data-open={isOpen}
+                                        >
+                                          <div
+                                            className="pt-2 flex items-start gap-2"
+                                            style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.74rem', lineHeight: 1.55 }}
+                                          >
+                                            <span style={{ color: accent, flexShrink: 0 }}>—</span>
+                                            <span>{ch.tags}</span>
+                                          </div>
+                                        </div>
+                                      </>
+                                    );
+                                  })()
+                                }
                               </div>
                             </div>
                           </div>
