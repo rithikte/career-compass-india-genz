@@ -217,7 +217,7 @@ const DomainChapters: React.FC = () => {
           className="mt-10 grid gap-6"
           style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))' }}
         >
-          {filteredSections.map((section, sectionIndex) => {
+          {SECTIONS.map((section, sectionIndex) => {
             const accent = SECTION_ACCENTS[sectionIndex % SECTION_ACCENTS.length];
             return (
               <motion.div
@@ -364,26 +364,6 @@ const DomainChapters: React.FC = () => {
           })}
         </div>
 
-        {query.trim() && filteredSections.length === 0 && (
-          <div className="mt-12 text-center">
-            <p style={{ ...bodyFont, color: COLORS.muted, fontSize: '1.05rem' }}>
-              No chapters match “{query}”.
-            </p>
-            <button
-              onClick={() => setQuery('')}
-              className="mt-4 inline-flex items-center gap-2 font-medium"
-              style={{
-                ...bodyFont,
-                background: COLORS.accent,
-                color: COLORS.bg,
-                borderRadius: 14,
-                padding: '12px 22px',
-              }}
-            >
-              Clear search
-            </button>
-          </div>
-        )}
       </div>
     </div>
   );
