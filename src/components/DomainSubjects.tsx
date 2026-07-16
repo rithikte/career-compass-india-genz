@@ -150,21 +150,6 @@ const cardVariants = {
 };
 
 const DomainSubjects: React.FC = () => {
-  const [query, setQuery] = useState('');
-
-  const filteredSections = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return SECTIONS;
-    return SECTIONS.map((section) => ({
-      ...section,
-      subjects: section.subjects.filter(
-        (s) =>
-          s.name.toLowerCase().includes(q) ||
-          s.skills.some((skill) => skill.toLowerCase().includes(q))
-      ),
-    })).filter((section) => section.subjects.length > 0);
-  }, [query]);
-
   return (
     <div
       className="ug-domain-subjects"
