@@ -111,32 +111,7 @@ const cardVariants = {
 };
 
 const DomainChapters: React.FC = () => {
-  const [query, setQuery] = useState('');
   const [expanded, setExpanded] = useState<Set<string>>(new Set());
-
-  const filteredSections = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return SECTIONS;
-    return SECTIONS.map((section) => ({
-      ...section,
-      subjects: section.subjects
-        .map((s) => ({
-          ...s,
-          chapters: s.chapters.filter(
-            (c) =>
-              c.title.toLowerCase().includes(q) ||
-              c.tags.toLowerCase().includes(q) ||
-              s.name.toLowerCase().includes(q)
-          ),
-        }))
-        .filter((s) => s.chapters.length > 0),
-    })).filter((section) => section.subjects.length > 0);
-  }, [query]);
-
-  const totalChapters = filteredSections.reduce(
-    (acc, sec) => acc + sec.subjects.reduce((a, s) => a + s.chapters.length, 0),
-    0
-  );
 
   const toggleKey = (key: string) => {
     setExpanded((prev) => {
