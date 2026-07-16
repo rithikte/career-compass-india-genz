@@ -357,7 +357,7 @@ const DomainSubjects: React.FC = () => {
                                     className="ug-subj-toggle mt-2 inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[0.68rem] font-medium uppercase tracking-wider"
                                     style={{ ...techFont, color: accent, background: 'transparent' }}
                                   >
-                                    Skills
+                                    Also Called
                                     <ChevronDown
                                       size={14}
                                       className="ug-subj-chevron"
