@@ -370,12 +370,14 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
               </p>
             </Reveal>
             <Reveal delay={200}>
-              <div
-                className="mt-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm font-medium border"
-                style={{ ...techFont, background: 'rgba(109,212,200,0.08)', borderColor: 'rgba(109,212,200,0.25)', color: '#6DD4C8' }}
-              >
-                <span className="h-2 w-2 rounded-full bg-[#6DD4C8]" />
-                Built in Telangana. Built for India.
+              <div className="text-center mt-6">
+                <div
+                  className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm font-medium border"
+                  style={{ ...techFont, background: 'rgba(109,212,200,0.08)', borderColor: 'rgba(109,212,200,0.25)', color: '#6DD4C8' }}
+                >
+                  <span className="h-2 w-2 rounded-full bg-[#6DD4C8]" />
+                  Built in Telangana. Built for India.
+                </div>
               </div>
             </Reveal>
           </div>
