@@ -505,7 +505,6 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
 
           <div className="mt-8 grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {DISCOVER.map((item, i) => {
-              const Icon = item.icon;
               const featured = i === 0;
               return (
                 <Reveal
@@ -514,12 +513,6 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
                   className={featured ? 'sm:col-span-2 lg:col-span-1 lg:row-span-2' : ''}
                 >
                   <div className="ug-lift ug-discover-card h-full" style={cardStyle}>
-                    <div
-                      className="ug-discover-icon flex h-11 w-11 items-center justify-center rounded-xl"
-                      style={{ background: 'rgba(127,200,169,0.12)' }}
-                    >
-                      <Icon strokeWidth={2} className="h-6 w-6" style={{ color: '#7FC8A9' }} />
-                    </div>
                     <h3 className="mt-4 text-lg font-medium" style={headingFont}>
                       <span className="ug-discover-title">{item.title}</span>
                     </h3>
