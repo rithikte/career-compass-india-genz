@@ -357,7 +357,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
           50% { opacity: 0.85; transform: scale(1.15); box-shadow: 0 0 10px rgba(109,212,200,0.5); }
         }
         @media (prefers-reduced-motion: reduce) {
-          .ug-reveal-line, .ug-lift, .ug-primary-btn, .ug-glow-word, .ug-icon-box, .ug-underline::after, .ug-step-num, .ug-discover-card, .ug-discover-icon, .ug-discover-title::after, .ug-matters-card, .ug-matters-icon, .ug-matters-title::after, .ug-cta-card, .ug-cta-icon, .ug-cta-arrow, .ug-hero-glow, .ug-approach-chip, .ug-approach-num, .ug-approach-arrow, .ug-stat-card, .ug-stat-icon, .ug-stat-value, .ug-stat-dot, .ug-stat-trust, .ug-stat-pulse, .ug-hero-badge, .ug-hero-badge-dot { transition: none !important; animation: none !important; }
+          .ug-reveal-line, .ug-lift, .ug-primary-btn, .ug-glow-word, .ug-icon-box, .ug-underline::after, .ug-step-num, .ug-discover-card, .ug-discover-icon, .ug-discover-title::after, .ug-matters-card, .ug-matters-icon, .ug-matters-title::after, .ug-cta-card, .ug-cta-icon, .ug-cta-arrow, .ug-hero-glow, .ug-approach-chip, .ug-approach-num, .ug-approach-arrow, .ug-stat-card, .ug-stat-icon, .ug-stat-value, .ug-stat-divider, .ug-stat-divider::after, .ug-stat-dot, .ug-stat-trust, .ug-stat-pulse, .ug-hero-badge, .ug-hero-badge-dot { transition: none !important; animation: none !important; }
         }
       `}</style>
 
