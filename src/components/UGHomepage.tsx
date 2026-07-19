@@ -554,12 +554,6 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
           <div className="mt-8 grid gap-4 sm:gap-6 md:grid-cols-2">
             <Reveal>
               <div className="ug-lift ug-matters-card h-full" style={{ ...cardStyle, borderColor: 'rgba(255,123,114,0.4)', '--accent-color': 'rgba(255,123,114,0.75)', '--accent-bg': 'rgba(255,123,114,0.18)' } as React.CSSProperties}>
-                <div
-                  className="ug-matters-icon flex h-11 w-11 items-center justify-center rounded-xl"
-                  style={{ background: 'rgba(255,123,114,0.12)' }}
-                >
-                  <AlertCircle strokeWidth={2} className="h-6 w-6" style={{ color: '#FF7B72' }} />
-                </div>
                 <h3 className="mt-4 text-lg font-medium" style={{ ...headingFont, color: '#FF7B72' }}>
                   <span className="ug-matters-title">The gap</span>
                 </h3>
