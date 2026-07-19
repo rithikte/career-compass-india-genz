@@ -431,12 +431,6 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
             ].map((item, i) => (
               <Reveal key={item.title} delay={i * 80}>
                 <div className="ug-lift h-full" style={cardStyle}>
-                  <div
-                    className="ug-icon-box flex h-11 w-11 items-center justify-center rounded-xl"
-                    style={{ background: 'rgba(137,194,217,0.12)' }}
-                  >
-                    <CheckCircle2 strokeWidth={2} className="h-6 w-6" style={{ color: '#89C2D9' }} />
-                  </div>
                   <h3 className="mt-4 text-lg font-medium" style={headingFont}>
                     <span className="ug-underline">{item.title}</span>
                   </h3>
