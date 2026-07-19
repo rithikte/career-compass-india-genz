@@ -301,6 +301,13 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
         .ug-stat-card:hover .ug-stat-value { filter: brightness(1.15); transform: scale(1.05); }
         .ug-stat-icon { transition: transform 300ms cubic-bezier(0.22,1,0.36,1), background 300ms ease; }
         .ug-stat-value { transition: filter 250ms ease-out, transform 250ms ease-out; }
+        .ug-stat-divider { position: relative; width: 32px; height: 2px; margin: 0.4rem auto; background: transparent; }
+        .ug-stat-divider::after {
+          content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+          background: var(--stat-color); transform: scaleX(0); transform-origin: center;
+          transition: transform 400ms cubic-bezier(0.22,1,0.36,1);
+        }
+        .ug-stat-card:hover .ug-stat-divider::after { transform: scaleX(1); }
         .ug-stat-trust { transition: border-color 300ms ease-out, background 300ms ease-out; }
         .ug-stat-trust:hover { border-color: rgba(109,212,200,0.35) !important; background: rgba(109,212,200,0.08) !important; }
         .ug-stat-pulse { animation: ug-stat-pulse 2.4s ease-in-out infinite; }
