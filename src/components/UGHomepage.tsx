@@ -565,12 +565,6 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
             </Reveal>
             <Reveal delay={80}>
               <div className="ug-lift ug-matters-card h-full" style={{ ...cardStyle, borderColor: 'rgba(143,191,163,0.4)', '--accent-color': 'rgba(143,191,163,0.75)', '--accent-bg': 'rgba(143,191,163,0.18)' } as React.CSSProperties}>
-                <div
-                  className="ug-matters-icon flex h-11 w-11 items-center justify-center rounded-xl"
-                  style={{ background: 'rgba(143,191,163,0.12)' }}
-                >
-                  <CheckCircle2 strokeWidth={2} className="h-6 w-6" style={{ color: '#8FBFA3' }} />
-                </div>
                 <h3 className="mt-4 text-lg font-medium" style={{ ...headingFont, color: '#8FBFA3' }}>
                   <span className="ug-matters-title">The way forward</span>
                 </h3>
