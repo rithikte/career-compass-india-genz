@@ -341,7 +341,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
 
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
         {/* ============ HERO ============ */}
-        <section className="relative overflow-hidden pt-12 pb-12 sm:pt-24 sm:pb-16">
+        <section className="relative overflow-hidden pt-12 pb-6 sm:pt-24 sm:pb-8">
           <div className="ug-hero-glow" aria-hidden="true" />
           <div className="relative z-10">
             <Reveal delay={60}>
