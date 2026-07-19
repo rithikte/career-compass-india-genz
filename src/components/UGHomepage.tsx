@@ -334,8 +334,23 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
           from { transform: translateX(-50%) scale(0.95); opacity: 0.45; }
           to { transform: translateX(-50%) scale(1.08); opacity: 0.75; }
         }
+        .ug-hero-badge {
+          transition: transform 300ms cubic-bezier(0.22,1,0.36,1), box-shadow 300ms ease, border-color 300ms ease;
+        }
+        .ug-hero-badge:hover {
+          transform: translateY(-2px) scale(1.02);
+          box-shadow: 0 0 24px rgba(109, 212, 200, 0.20);
+          border-color: rgba(109, 212, 200, 0.45) !important;
+        }
+        .ug-hero-badge-dot {
+          animation: ug-badge-dot-pulse 2.4s ease-in-out infinite;
+        }
+        @keyframes ug-badge-dot-pulse {
+          0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 rgba(109,212,200,0); }
+          50% { opacity: 0.85; transform: scale(1.15); box-shadow: 0 0 10px rgba(109,212,200,0.5); }
+        }
         @media (prefers-reduced-motion: reduce) {
-          .ug-reveal-line, .ug-lift, .ug-primary-btn, .ug-glow-word, .ug-icon-box, .ug-underline::after, .ug-step-num, .ug-discover-card, .ug-discover-icon, .ug-discover-title::after, .ug-matters-card, .ug-matters-icon, .ug-matters-title::after, .ug-cta-card, .ug-cta-icon, .ug-cta-arrow, .ug-hero-glow, .ug-approach-chip, .ug-approach-num, .ug-approach-arrow, .ug-stat-card, .ug-stat-icon, .ug-stat-value, .ug-stat-dot, .ug-stat-trust, .ug-stat-pulse { transition: none !important; animation: none !important; }
+          .ug-reveal-line, .ug-lift, .ug-primary-btn, .ug-glow-word, .ug-icon-box, .ug-underline::after, .ug-step-num, .ug-discover-card, .ug-discover-icon, .ug-discover-title::after, .ug-matters-card, .ug-matters-icon, .ug-matters-title::after, .ug-cta-card, .ug-cta-icon, .ug-cta-arrow, .ug-hero-glow, .ug-approach-chip, .ug-approach-num, .ug-approach-arrow, .ug-stat-card, .ug-stat-icon, .ug-stat-value, .ug-stat-dot, .ug-stat-trust, .ug-stat-pulse, .ug-hero-badge, .ug-hero-badge-dot { transition: none !important; animation: none !important; }
         }
       `}</style>
 
