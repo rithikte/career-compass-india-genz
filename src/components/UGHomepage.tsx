@@ -648,37 +648,29 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
           </Reveal>
 
           <div className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 sm:gap-4">
-            {STATS.map((stat, i) => {
-              const Icon = stat.icon;
-              return (
-                <Reveal key={stat.label} delay={i * 60}>
+            {STATS.map((stat, i) => (
+              <Reveal key={stat.label} delay={i * 60}>
+                <div
+                  className="ug-stat-card text-center h-full flex flex-col items-center justify-center"
+                  style={{
+                    ...cardStyle,
+                    padding: '20px 12px',
+                    '--stat-color': stat.color,
+                  } as React.CSSProperties}
+                >
                   <div
-                    className="ug-stat-card text-center h-full"
-                    style={{
-                      ...cardStyle,
-                      padding: '20px 12px',
-                      '--stat-color': stat.color,
-                    } as React.CSSProperties}
+                    className="ug-stat-value text-2xl sm:text-3xl font-bold"
+                    style={{ color: stat.color, ...headingFont }}
                   >
-                    <div
-                      className="ug-stat-icon mx-auto flex h-11 w-11 items-center justify-center rounded-xl"
-                      style={{ background: `${stat.color}14` }}
-                    >
-                      <Icon strokeWidth={2} className="h-6 w-6" style={{ color: stat.color }} />
-                    </div>
-                    <div
-                      className="ug-stat-value mt-4 text-2xl sm:text-3xl font-bold"
-                      style={{ color: stat.color, ...headingFont }}
-                    >
-                      {stat.value}
-                    </div>
-                    <div className="mt-2 text-xs font-medium uppercase tracking-wider text-center leading-tight" style={{ color: COLORS.muted }}>
-                      {stat.label}
-                    </div>
+                    {stat.value}
                   </div>
-                </Reveal>
-              );
-            })}
+                  <div className="ug-stat-divider" />
+                  <div className="text-xs font-medium uppercase tracking-wider text-center leading-tight" style={{ color: COLORS.muted }}>
+                    {stat.label}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
 
           <Reveal delay={120}>
