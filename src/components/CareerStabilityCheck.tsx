@@ -148,7 +148,7 @@ const CareerStabilityCheck: React.FC = () => {
           {survivalFactors.map((f) => {
             const c = ratingColor(f.rating);
             return (
-              <div key={f.factor} style={cardStyle()}>
+              <div key={f.factor} className="cs-card" tabIndex={0} style={cardStyle()}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 10 }}>
                   <span style={{ fontSize: fs.label, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 600 }}>
                     Factor
@@ -170,7 +170,7 @@ const CareerStabilityCheck: React.FC = () => {
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           }}
         >
-          <div style={cardStyle()}>
+          <div className="cs-card" tabIndex={0} style={cardStyle()}>
             <EyebrowLabel>Fresher Hiring Reality</EyebrowLabel>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginTop: 8 }}>
               <span style={{ fontSize: fs.h2, fontWeight: 700, color: '#34d399' }}>Strong Hiring</span>
@@ -182,7 +182,7 @@ const CareerStabilityCheck: React.FC = () => {
             </ul>
           </div>
 
-          <div style={cardStyle()}>
+          <div className="cs-card" tabIndex={0} style={cardStyle()}>
             <EyebrowLabel>Degree Fit Strength</EyebrowLabel>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginTop: 8 }}>
               <span style={{ fontSize: fs.h1, fontWeight: 800, background: 'linear-gradient(180deg,#e2e8f0,#94a3b8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', letterSpacing: '-0.02em' }}>
@@ -209,7 +209,7 @@ const CareerStabilityCheck: React.FC = () => {
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           }}
         >
-          <div style={cardStyle()}>
+          <div className="cs-card" tabIndex={0} style={cardStyle()}>
             <EyebrowLabel>Why This Career Continues To Survive</EyebrowLabel>
             <ul style={ulStyle()}>
               <Li>Buildings cannot be executed only from software</Li>
@@ -219,7 +219,7 @@ const CareerStabilityCheck: React.FC = () => {
               <Li>Physical execution still needs human checking</Li>
             </ul>
           </div>
-          <div style={cardStyle()}>
+          <div className="cs-card" tabIndex={0} style={cardStyle()}>
             <EyebrowLabel>What Freshers Actually Work On</EyebrowLabel>
             <ul style={ulStyle()}>
               <Li>Reinforcement checking</Li>
@@ -229,7 +229,7 @@ const CareerStabilityCheck: React.FC = () => {
               <Li>Daily progress records</Li>
             </ul>
           </div>
-          <div style={cardStyle()}>
+          <div className="cs-card" tabIndex={0} style={cardStyle()}>
             <EyebrowLabel>Why Freshers Usually Struggle</EyebrowLabel>
             <ul style={ulStyle()}>
               <Li>Cannot read RCC drawings</Li>
@@ -243,7 +243,7 @@ const CareerStabilityCheck: React.FC = () => {
 
         {/* Top Failure Points */}
         <SectionTitle eyebrow="Top Failure Points" title="Where Freshers Break First" />
-        <div style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+        <div className="cs-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
           <div className="cs-table" role="table" aria-label="Top failure points">
             <div className="cs-thead" role="row">
               <div role="columnheader">Failure Point</div>
@@ -267,7 +267,7 @@ const CareerStabilityCheck: React.FC = () => {
 
         {/* Reality Shock Areas */}
         <SectionTitle eyebrow="Reality Shock Areas" title="Expectation vs Reality" />
-        <div style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+        <div className="cs-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
           <div className="cs-table cs-table-3" role="table" aria-label="Reality shock areas">
             <div className="cs-thead" role="row">
               <div role="columnheader">Reality Shock Area</div>
@@ -286,7 +286,7 @@ const CareerStabilityCheck: React.FC = () => {
 
         {/* Reality Check final block */}
         <SectionTitle eyebrow="Reality Check" title="The Honest Picture" />
-        <div style={cardStyle({ background: 'linear-gradient(180deg, rgba(56,189,248,0.06), rgba(168,85,247,0.06))' })}>
+        <div className="cs-card" tabIndex={0} style={cardStyle({ background: 'linear-gradient(180deg, rgba(56,189,248,0.06), rgba(168,85,247,0.06))' })}>
           <p style={pStyle()}>
             Most students think <b style={{ color: '#f1f5f9' }}>Junior Site Engineer</b> means designing structures. In reality, freshers mostly check, observe, measure, document, and follow up.
           </p>
@@ -303,6 +303,33 @@ const CareerStabilityCheck: React.FC = () => {
       </div>
 
       <style>{`
+        .cs-card {
+          position: relative;
+          outline: none;
+          transition: border-color 260ms ease, box-shadow 320ms ease, transform 260ms ease;
+        }
+        .cs-card:hover,
+        .cs-card:focus-visible,
+        .cs-card:focus-within,
+        .cs-card:active {
+          border-color: rgba(56,189,248,0.55) !important;
+          box-shadow:
+            0 0 0 1px rgba(56,189,248,0.35),
+            0 0 18px rgba(56,189,248,0.28),
+            0 0 42px rgba(168,85,247,0.22),
+            0 1px 0 rgba(255,255,255,0.05) inset,
+            0 20px 40px -30px rgba(0,0,0,0.6);
+          transform: translateY(-1px);
+        }
+        @media (hover: none) {
+          .cs-card:active {
+            border-color: rgba(56,189,248,0.6) !important;
+            box-shadow:
+              0 0 0 1px rgba(56,189,248,0.4),
+              0 0 22px rgba(56,189,248,0.32),
+              0 0 46px rgba(168,85,247,0.26);
+          }
+        }
         .cs-table { display: grid; }
         .cs-table .cs-thead,
         .cs-table .cs-row {
@@ -420,6 +447,8 @@ const SectionTitle: React.FC<{ eyebrow: string; title: string }> = ({ eyebrow, t
 
 const VerdictCard: React.FC<{ eyebrow: string; title: string; tint: string; body: string }> = ({ eyebrow, title, tint, body }) => (
   <div
+    className="cs-card"
+    tabIndex={0}
     style={{
       ...cardStyle(),
       position: 'relative', overflow: 'hidden',
