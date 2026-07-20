@@ -235,7 +235,7 @@ const EcosystemGrowth: React.FC = () => {
         }
         .ug-eg-tl-cell:hover { transform: translateY(-2px); border-color: var(--accent-border); }
         .ug-eg-tl-period {
-          font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+          font-size: clamp(8px, 1.1vw, 10px); letter-spacing: 0.28em; text-transform: uppercase;
           color: #64748B; margin-bottom: 10px; font-weight: 600;
         }
         .ug-eg-tl-outlook {
