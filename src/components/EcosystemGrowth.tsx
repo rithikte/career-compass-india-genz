@@ -445,20 +445,6 @@ const EcosystemGrowth: React.FC = () => {
         </div>
       </div>
 
-      {/* Takeaway */}
-      <motion.div
-        className="ug-eg-takeaway"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
-      >
-        <div className="ug-eg-takeaway-label">One-line Memory Takeaway</div>
-        <div className="ug-eg-takeaway-text">
-          The Junior Site Engineer ecosystem is built on recurring physical execution work —
-          so it stays relevant, but it moves in real estate cycles.
-        </div>
-      </motion.div>
     </div>
   );
 };
