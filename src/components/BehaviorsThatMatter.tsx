@@ -370,38 +370,21 @@ const BehaviorsThatMatter: React.FC = () => {
               A side-by-side look at where strong and weak freshers differ in real work situations.
             </p>
 
-            {/* Table header */}
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'minmax(110px, 1fr) minmax(140px, 1.4fr) minmax(160px, 1.6fr) minmax(130px, 1.3fr)',
-                gap: 8,
-                marginTop: 18,
-                padding: '12px 10px',
-                borderRadius: 10,
-                background: 'rgba(148,163,184,0.10)',
-                fontSize: fs.labelLg,
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                color: muted,
-                fontWeight: 700,
-              }}
-            >
+            {/* Desktop table header */}
+            <div className="btm-table-header">
               <div>Career Area</div>
               <div>Weak Fresher</div>
               <div>Strong Fresher</div>
               <div>Why It Matters</div>
             </div>
 
-            {/* Table rows */}
-            <div style={{ display: 'grid', gap: 8, marginTop: 8 }}>
+            {/* Desktop table rows */}
+            <div className="btm-table-desktop" style={{ display: 'grid', gap: 8, marginTop: 8 }}>
               {comparisonRows.map((row, i) => (
                 <div
                   key={i}
+                  className="btm-table-row"
                   style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'minmax(110px, 1fr) minmax(140px, 1.4fr) minmax(160px, 1.6fr) minmax(130px, 1.3fr)',
-                    gap: 8,
                     alignItems: 'stretch',
                     padding: '12px 10px',
                     borderRadius: 10,
@@ -414,6 +397,39 @@ const BehaviorsThatMatter: React.FC = () => {
                   <div style={{ color: '#fecaca', display: 'flex', alignItems: 'center' }}>{row.weak}</div>
                   <div style={{ color: '#a7f3d0', display: 'flex', alignItems: 'center' }}>{row.strong}</div>
                   <div style={{ color: textSoft, display: 'flex', alignItems: 'center' }}>{row.why}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile stacked cards */}
+            <div className="btm-table-mobile" style={{ display: 'grid', gap: 10, marginTop: 12 }}>
+              {comparisonRows.map((row, i) => (
+                <div
+                  key={i}
+                  style={{
+                    background: 'rgba(255,255,255,0.03)',
+                    border: '1px solid rgba(148,163,184,0.14)',
+                    borderRadius: 12,
+                    padding: 14,
+                    display: 'grid',
+                    gap: 10,
+                  }}
+                >
+                  <div style={{ fontSize: fs.labelLg, letterSpacing: '0.1em', textTransform: 'uppercase', color: accentTeal, fontWeight: 700 }}>
+                    {row.area}
+                  </div>
+                  <div>
+                    <div style={{ fontSize: fs.label, letterSpacing: '0.1em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 4 }}>Weak Fresher</div>
+                    <div style={{ fontSize: fs.body, color: '#fecaca', lineHeight: 1.5 }}>{row.weak}</div>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: fs.label, letterSpacing: '0.1em', textTransform: 'uppercase', color: success, fontWeight: 700, marginBottom: 4 }}>Strong Fresher</div>
+                    <div style={{ fontSize: fs.body, color: '#a7f3d0', lineHeight: 1.5 }}>{row.strong}</div>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: fs.label, letterSpacing: '0.1em', textTransform: 'uppercase', color: muted, fontWeight: 700, marginBottom: 4 }}>Why It Matters</div>
+                    <div style={{ fontSize: fs.body, color: textSoft, lineHeight: 1.5 }}>{row.why}</div>
+                  </div>
                 </div>
               ))}
             </div>
