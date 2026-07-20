@@ -259,7 +259,7 @@ const EcosystemGrowth: React.FC = () => {
           border-radius: 3px;
         }
         .ug-eg-tl-reality {
-          font-size: 0.82rem; color: #CBD5E1; line-height: 1.55;
+          font-size: clamp(0.74rem, 1.3vw, 0.82rem); color: #CBD5E1; line-height: 1.55;
         }
 
         /* Reasoning row */
