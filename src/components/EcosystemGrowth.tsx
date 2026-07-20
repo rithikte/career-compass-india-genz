@@ -105,15 +105,6 @@ const growthSections: GrowthSection[] = [
   },
 ];
 
-const rankedSummary = [
-  { rank: 1, layer: 'Residential Building Construction', strength: 'Strong', reason: 'Strong housing demand supports long-term project flow.' },
-  { rank: 2, layer: 'Construction Site Execution', strength: 'Strong', reason: 'Physical execution cannot be fully automated.' },
-  { rank: 3, layer: 'Building Construction Companies', strength: 'Strong', reason: 'Large market growth keeps site manpower needed.' },
-  { rank: 4, layer: 'Site Engineering', strength: 'Strong', reason: 'Freshers support daily checking and reporting.' },
-  { rank: 5, layer: 'RCC Structural Execution', strength: 'Strong', reason: 'RCC frame work still needs physical verification.' },
-  { rank: 6, layer: 'RCC Apartment Projects', strength: 'Strong', reason: 'Strong but more exposed to real estate cycles.' },
-];
-
 const accentMap: Record<string, { dot: string; label: string; glow: string; border: string; bg: string }> = {
   sky: { dot: '#7DD3FC', label: '#BAE6FD', glow: 'rgba(56,189,248,0.18)', border: 'rgba(56,189,248,0.30)', bg: 'rgba(56,189,248,0.06)' },
   teal: { dot: '#5EEAD4', label: '#99F6E4', glow: 'rgba(45,212,191,0.18)', border: 'rgba(45,212,191,0.30)', bg: 'rgba(45,212,191,0.06)' },
