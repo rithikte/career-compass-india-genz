@@ -209,7 +209,7 @@ const CareerStabilityCheck: React.FC = () => {
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           }}
         >
-          <div style={cardStyle()}>
+          <div className="cs-card" tabIndex={0} style={cardStyle()}>
             <EyebrowLabel>Why This Career Continues To Survive</EyebrowLabel>
             <ul style={ulStyle()}>
               <Li>Buildings cannot be executed only from software</Li>
@@ -219,7 +219,7 @@ const CareerStabilityCheck: React.FC = () => {
               <Li>Physical execution still needs human checking</Li>
             </ul>
           </div>
-          <div style={cardStyle()}>
+          <div className="cs-card" tabIndex={0} style={cardStyle()}>
             <EyebrowLabel>What Freshers Actually Work On</EyebrowLabel>
             <ul style={ulStyle()}>
               <Li>Reinforcement checking</Li>
@@ -229,7 +229,7 @@ const CareerStabilityCheck: React.FC = () => {
               <Li>Daily progress records</Li>
             </ul>
           </div>
-          <div style={cardStyle()}>
+          <div className="cs-card" tabIndex={0} style={cardStyle()}>
             <EyebrowLabel>Why Freshers Usually Struggle</EyebrowLabel>
             <ul style={ulStyle()}>
               <Li>Cannot read RCC drawings</Li>
