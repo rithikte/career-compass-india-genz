@@ -420,6 +420,8 @@ const SectionTitle: React.FC<{ eyebrow: string; title: string }> = ({ eyebrow, t
 
 const VerdictCard: React.FC<{ eyebrow: string; title: string; tint: string; body: string }> = ({ eyebrow, title, tint, body }) => (
   <div
+    className="cs-card"
+    tabIndex={0}
     style={{
       ...cardStyle(),
       position: 'relative', overflow: 'hidden',
