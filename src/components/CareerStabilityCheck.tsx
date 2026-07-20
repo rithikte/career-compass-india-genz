@@ -267,7 +267,7 @@ const CareerStabilityCheck: React.FC = () => {
 
         {/* Reality Shock Areas */}
         <SectionTitle eyebrow="Reality Shock Areas" title="Expectation vs Reality" />
-        <div style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+        <div className="cs-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
           <div className="cs-table cs-table-3" role="table" aria-label="Reality shock areas">
             <div className="cs-thead" role="row">
               <div role="columnheader">Reality Shock Area</div>
