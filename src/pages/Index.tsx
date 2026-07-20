@@ -20,6 +20,7 @@ import MostImportantSubjects from '../components/MostImportantSubjects';
 import SubjectsRecognition from '../components/SubjectsRecognition';
 import SubjectToChapter from '../components/SubjectToChapter';
 import WhenToFocusSubjects from '../components/WhenToFocusSubjects';
+import BehaviorsThatMatter from '../components/BehaviorsThatMatter';
 
 
 
