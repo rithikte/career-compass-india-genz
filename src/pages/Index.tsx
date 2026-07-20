@@ -14,6 +14,7 @@ import DomainExplore from '../components/DomainExplore';
 import EcosystemGrowth from '../components/EcosystemGrowth';
 import CareerStabilityCheck from '../components/CareerStabilityCheck';
 import FresherDailyWork from '../components/FresherDailyWork';
+import EntryBarrierVerdict from '../components/EntryBarrierVerdict';
 
 
 
@@ -35,10 +36,11 @@ const Index = () => {
     { id: 'ecosystem-growth', title: 'Ecosystem Growth', component: EcosystemGrowth },
     { id: 'career-stability', title: 'Career Stability Check', component: CareerStabilityCheck },
     { id: 'fresher-daily-work', title: 'What Freshers Actually Do', component: FresherDailyWork },
+    { id: 'entry-barrier-verdict', title: 'Entry Barrier Verdict', component: EntryBarrierVerdict },
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
-  const fullBleedIds = new Set(['ug-homepage', 'search-degree', 'domain-subjects', 'domain-chapters', 'role-profile', 'domain-explore', 'ecosystem-growth', 'career-stability', 'fresher-daily-work']);
+  const fullBleedIds = new Set(['ug-homepage', 'search-degree', 'domain-subjects', 'domain-chapters', 'role-profile', 'domain-explore', 'ecosystem-growth', 'career-stability', 'fresher-daily-work', 'entry-barrier-verdict']);
   const isFullBleed = fullBleedIds.has(activeSection);
 
   return (
