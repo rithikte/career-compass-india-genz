@@ -311,21 +311,6 @@ const RoleProfile: React.FC = () => {
             A complete map from your degree to the exact fresher role you can step into on day one.
           </motion.p>
 
-          {/* meta strip */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.55, delay: 0.25, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3"
-            style={{ ...techFont, fontSize: '0.72rem', letterSpacing: '0.16em', color: COLORS.mutedSoft }}
-          >
-            <span className="uppercase">B.Tech Civil</span>
-            <span style={{ width: 4, height: 4, borderRadius: 999, background: COLORS.borderStrong }} />
-            <span className="uppercase">Site Engineering</span>
-            <span style={{ width: 4, height: 4, borderRadius: 999, background: COLORS.borderStrong }} />
-            <span className="uppercase">Entry Level</span>
-          </motion.div>
         </div>
 
         {/* ========== SECTION LABEL ========== */}
