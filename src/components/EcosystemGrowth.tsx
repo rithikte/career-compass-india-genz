@@ -154,7 +154,7 @@ const EcosystemGrowth: React.FC = () => {
           font-size: clamp(1.35rem, 2.6vw, 1.9rem); letter-spacing: -0.01em;
           color: #F1F5F9; margin-bottom: 8px;
         }
-        .ug-eg-section-tag { color: #64748B; font-size: 0.9rem; margin-bottom: 28px; }
+        .ug-eg-section-tag { color: #64748B; font-size: clamp(0.8rem, 1.4vw, 0.9rem); margin-bottom: 28px; }
 
         /* ===== Redesigned Layer Card ===== */
         .ug-eg-grid {
