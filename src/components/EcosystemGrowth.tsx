@@ -277,7 +277,7 @@ const EcosystemGrowth: React.FC = () => {
         }
         .ug-eg-reason-label {
           display: inline-flex; align-items: center; gap: 8px;
-          font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+          font-size: clamp(8px, 1.1vw, 10px); letter-spacing: 0.28em; text-transform: uppercase;
           font-weight: 700; margin-bottom: 10px;
         }
         .ug-eg-reason-label::before {
