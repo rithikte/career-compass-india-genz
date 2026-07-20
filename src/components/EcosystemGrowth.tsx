@@ -105,6 +105,21 @@ const growthSections: GrowthSection[] = [
   },
 ];
 
+const rankedSummary = [
+  { rank: 1, layer: 'Residential Building Construction', strength: 89, reason: 'Strong housing demand supports long-term project flow.' },
+  { rank: 2, layer: 'Construction Site Execution', strength: 88, reason: 'Physical execution cannot be fully automated.' },
+  { rank: 3, layer: 'Building Construction Companies', strength: 87, reason: 'Large market growth keeps site manpower needed.' },
+  { rank: 4, layer: 'Site Engineering', strength: 86, reason: 'Freshers support daily checking and reporting.' },
+  { rank: 5, layer: 'RCC Structural Execution', strength: 85, reason: 'RCC frame work still needs physical verification.' },
+  { rank: 6, layer: 'RCC Apartment Projects', strength: 84, reason: 'Strong but more exposed to real estate cycles.' },
+];
+
+const finalReality = {
+  survival: 'This ecosystem is likely to survive because homes, apartments, RCC structures, and physical construction execution remain recurring needs. The fresher role benefits directly because daily site checking, measurement, documentation, and reporting cannot be fully replaced by AI or remote work.',
+  weaken: ['Real estate slowdowns', 'High material costs', 'Weak builder funding', 'Delayed approvals', 'Affordability pressure', 'Project cancellations'],
+  strengthen: ['Urban housing demand', 'Tier-2 city growth', 'Formal project management', 'Stricter quality expectations', 'Faster project delivery pressure', 'Better site documentation systems'],
+};
+
 const accentMap: Record<string, { dot: string; label: string; glow: string; border: string; bg: string }> = {
   sky: { dot: '#7DD3FC', label: '#BAE6FD', glow: 'rgba(56,189,248,0.18)', border: 'rgba(56,189,248,0.30)', bg: 'rgba(56,189,248,0.06)' },
   teal: { dot: '#5EEAD4', label: '#99F6E4', glow: 'rgba(45,212,191,0.18)', border: 'rgba(45,212,191,0.30)', bg: 'rgba(45,212,191,0.06)' },
