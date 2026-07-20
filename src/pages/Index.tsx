@@ -24,6 +24,7 @@ const Index = () => {
     { id: 'search-degree', title: 'Search Degree', component: SearchDegree },
     { id: 'domain-subjects', title: 'Domain subjects', component: DomainSubjects },
     { id: 'domain-chapters', title: 'Domain chapters', component: DomainChapters },
+    { id: 'role-profile', title: 'Role Profile', component: RoleProfile },
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
