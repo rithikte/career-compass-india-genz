@@ -61,6 +61,17 @@ const RoleProfile: React.FC = () => {
       <style>{`
         .ug-role-profile { position: relative; overflow: hidden; }
 
+        @keyframes ug-title-shimmer {
+          0% { background-position: 0% 50%; }
+          100% { background-position: 200% 50%; }
+        }
+        .ug-role-title-accent {
+          animation: ug-title-shimmer 6s linear infinite;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .ug-role-title-accent { animation: none !important; }
+        }
+
         .ug-tile {
           position: relative;
           transition: transform 300ms cubic-bezier(.22,1,.36,1),
