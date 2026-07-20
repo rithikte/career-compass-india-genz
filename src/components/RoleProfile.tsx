@@ -1,19 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import {
-  GraduationCap,
-  Compass,
-  Layers,
-  Focus,
-  Building2,
-  Home,
-  Boxes,
-  UserRound,
-  Target,
-  Briefcase,
-  ClipboardList,
-  type LucideIcon,
-} from 'lucide-react';
 
 const COLORS = {
   bg: '#0B1020',
@@ -36,19 +22,18 @@ interface HierarchyItem {
   label: string;
   hint: string;
   value: string;
-  icon: LucideIcon;
   accent: string;
 }
 
 const HIERARCHY: HierarchyItem[] = [
-  { label: 'Degree', hint: 'The course you study', value: 'B.Tech Civil Engineering', icon: GraduationCap, accent: COLORS.accent },
-  { label: 'Domain', hint: 'The career field your degree prepares you for', value: 'Construction Site Execution', icon: Compass, accent: COLORS.accent2 },
-  { label: 'Core Family Role', hint: 'The main type of work you can build your career in', value: 'Site Engineering', icon: Layers, accent: COLORS.accent3 },
-  { label: 'Sub-function', hint: 'The specific area of work you can specialize in', value: 'RCC Structural Execution', icon: Focus, accent: COLORS.accent4 },
-  { label: 'Industry', hint: 'The industries where this work is available', value: 'Building Construction Companies', icon: Building2, accent: COLORS.accent },
-  { label: 'Sub-industry', hint: 'The specialized sector within an industry', value: 'Residential Building Construction', icon: Home, accent: COLORS.accent2 },
-  { label: 'Cluster', hint: 'The actual business area where the work happens', value: 'RCC Apartment Projects', icon: Boxes, accent: COLORS.accent3 },
-  { label: 'Fresher Role', hint: 'The entry-level job you can get after graduation', value: 'Junior Site Engineer', icon: UserRound, accent: COLORS.accent4 },
+  { label: 'Degree', hint: 'The course you study', value: 'B.Tech Civil Engineering', accent: COLORS.accent },
+  { label: 'Domain', hint: 'The career field your degree prepares you for', value: 'Construction Site Execution', accent: COLORS.accent2 },
+  { label: 'Core Family Role', hint: 'The main type of work you can build your career in', value: 'Site Engineering', accent: COLORS.accent3 },
+  { label: 'Sub-function', hint: 'The specific area of work you can specialize in', value: 'RCC Structural Execution', accent: COLORS.accent4 },
+  { label: 'Industry', hint: 'The industries where this work is available', value: 'Building Construction Companies', accent: COLORS.accent },
+  { label: 'Sub-industry', hint: 'The specialized sector within an industry', value: 'Residential Building Construction', accent: COLORS.accent2 },
+  { label: 'Cluster', hint: 'The actual business area where the work happens', value: 'RCC Apartment Projects', accent: COLORS.accent3 },
+  { label: 'Fresher Role', hint: 'The entry-level job you can get after graduation', value: 'Junior Site Engineer', accent: COLORS.accent4 },
 ];
 
 const RESPONSIBILITIES: { title: string; desc: string }[] = [
