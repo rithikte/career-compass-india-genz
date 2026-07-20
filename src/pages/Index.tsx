@@ -10,6 +10,7 @@ import SearchDegree from '../components/SearchDegree';
 import DomainSubjects from '../components/DomainSubjects';
 import DomainChapters from '../components/DomainChapters';
 import RoleProfile from '../components/RoleProfile';
+import DomainExplore from '../components/DomainExplore';
 
 
 
