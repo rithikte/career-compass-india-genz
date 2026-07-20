@@ -465,6 +465,37 @@ const BehaviorsThatMatter: React.FC = () => {
               0 0 46px rgba(167,139,250,0.26);
           }
         }
+        .btm-table-header {
+          display: grid;
+          grid-template-columns: minmax(110px, 1fr) minmax(140px, 1.4fr) minmax(160px, 1.6fr) minmax(130px, 1.3fr);
+          gap: 8px;
+          margin-top: 18px;
+          padding: 12px 10px;
+          border-radius: 10px;
+          background: rgba(148,163,184,0.10);
+          font-size: ${fs.labelLg};
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: ${muted};
+          font-weight: 700;
+        }
+        .btm-table-row {
+          display: grid;
+          grid-template-columns: minmax(110px, 1fr) minmax(140px, 1.4fr) minmax(160px, 1.6fr) minmax(130px, 1.3fr);
+          gap: 8px;
+        }
+        .btm-table-mobile {
+          display: none;
+        }
+        @media (max-width: 640px) {
+          .btm-table-header,
+          .btm-table-desktop {
+            display: none !important;
+          }
+          .btm-table-mobile {
+            display: grid !important;
+          }
+        }
       `}</style>
     </div>
   );
