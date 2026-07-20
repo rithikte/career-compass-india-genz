@@ -371,6 +371,55 @@ const EcosystemGrowth: React.FC = () => {
         @media (prefers-reduced-motion: reduce) {
           .ug-ecosystem-growth * { animation: none !important; transition: none !important; }
         }
+
+        /* ===== Mobile: drop uniform scaling, use responsive layout ===== */
+        .ug-eg-mobile .ug-ecosystem-growth {
+          width: 100%;
+          min-width: 0;
+          padding: 32px 20px;
+          border-radius: 18px;
+        }
+        .ug-eg-mobile .ug-eg-h1 { font-size: 2rem; margin: 14px 0 12px; }
+        .ug-eg-mobile .ug-eg-sub { font-size: 0.92rem; line-height: 1.65; }
+        .ug-eg-mobile .ug-eg-eyebrow { font-size: 10px; }
+        .ug-eg-mobile .ug-eg-section-label { font-size: 10px; }
+        .ug-eg-mobile .ug-eg-section-title { font-size: 1.4rem; }
+        .ug-eg-mobile .ug-eg-section-tag { font-size: 0.88rem; }
+        .ug-eg-mobile .ug-eg-block { margin-top: 48px; }
+        .ug-eg-mobile .ug-eg-grid { gap: 20px; }
+        .ug-eg-mobile .ug-eg-card {
+          padding: 24px 20px 22px;
+          padding-left: 26px;
+          border-radius: 18px;
+        }
+        .ug-eg-mobile .ug-eg-card-top {
+          grid-template-columns: 1fr;
+          gap: 14px;
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+        }
+        .ug-eg-mobile .ug-eg-index { gap: 10px; }
+        .ug-eg-mobile .ug-eg-index-num { font-size: 3.2rem; }
+        .ug-eg-mobile .ug-eg-index-tag { font-size: 9px; padding: 4px 8px; }
+        .ug-eg-mobile .ug-eg-card-title { font-size: 1.15rem; }
+        .ug-eg-mobile .ug-eg-meaning-line { font-size: 0.86rem; }
+        .ug-eg-mobile .ug-eg-timeline {
+          grid-template-columns: 1fr;
+          gap: 10px;
+          margin-bottom: 20px;
+        }
+        .ug-eg-mobile .ug-eg-tl-cell { padding: 14px; }
+        .ug-eg-mobile .ug-eg-tl-period { font-size: 10px; margin-bottom: 8px; }
+        .ug-eg-mobile .ug-eg-tl-outlook { font-size: 0.9rem; margin-bottom: 8px; }
+        .ug-eg-mobile .ug-eg-tl-reality { font-size: 0.82rem; }
+        .ug-eg-mobile .ug-eg-reason-row { grid-template-columns: 1fr; gap: 12px; }
+        .ug-eg-mobile .ug-eg-reason { padding: 16px; }
+        .ug-eg-mobile .ug-eg-reason-label { font-size: 10px; }
+        .ug-eg-mobile .ug-eg-reason-text { font-size: 0.85rem; line-height: 1.65; }
+        .ug-eg-mobile .ug-eg-remember { padding: 16px 16px 16px 38px; }
+        .ug-eg-mobile .ug-eg-remember::before { font-size: 2.4rem; left: 12px; }
+        .ug-eg-mobile .ug-eg-remember-label { font-size: 10px; }
+        .ug-eg-mobile .ug-eg-remember-text { font-size: 0.92rem; }
       `}</style>
 
       {/* Hero */}
