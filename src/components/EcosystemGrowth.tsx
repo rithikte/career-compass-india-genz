@@ -216,7 +216,7 @@ const EcosystemGrowth: React.FC = () => {
           letter-spacing: -0.015em; line-height: 1.2;
         }
         .ug-eg-meaning-line {
-          font-size: 0.88rem; color: #94A3B8; line-height: 1.65;
+          font-size: clamp(0.78rem, 1.4vw, 0.88rem); color: #94A3B8; line-height: 1.65;
         }
         .ug-eg-meaning-line strong { color: #F1F5F9; font-weight: 600; }
 
