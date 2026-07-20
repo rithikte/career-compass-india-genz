@@ -12,6 +12,7 @@ import DomainChapters from '../components/DomainChapters';
 import RoleProfile from '../components/RoleProfile';
 import DomainExplore from '../components/DomainExplore';
 import EcosystemGrowth from '../components/EcosystemGrowth';
+import CareerStabilityCheck from '../components/CareerStabilityCheck';
 
 
 
@@ -31,10 +32,11 @@ const Index = () => {
     { id: 'role-profile', title: 'Role Profile', component: () => <RoleProfile onExplore={() => setActiveSection('domain-explore')} /> },
     { id: 'domain-explore', title: 'Domain Explore', component: DomainExplore },
     { id: 'ecosystem-growth', title: 'Ecosystem Growth', component: EcosystemGrowth },
+    { id: 'career-stability', title: 'Career Stability Check', component: CareerStabilityCheck },
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
-  const fullBleedIds = new Set(['ug-homepage', 'search-degree', 'domain-subjects', 'domain-chapters', 'role-profile', 'domain-explore', 'ecosystem-growth']);
+  const fullBleedIds = new Set(['ug-homepage', 'search-degree', 'domain-subjects', 'domain-chapters', 'role-profile', 'domain-explore', 'ecosystem-growth', 'career-stability']);
   const isFullBleed = fullBleedIds.has(activeSection);
 
   return (
