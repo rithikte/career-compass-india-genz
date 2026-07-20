@@ -116,23 +116,32 @@ const accentMap: Record<string, { dot: string; label: string; glow: string; bord
 
 const EcosystemGrowth: React.FC = () => {
   return (
-    <div className="ug-ecosystem-growth">
+    <div className="ug-eg-scroll">
+      <div className="ug-ecosystem-growth">
       <style>{`
+        .ug-eg-scroll {
+          width: 100%;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+        }
         .ug-ecosystem-growth {
           position: relative;
           overflow: hidden;
           min-height: 100%;
+          width: 1240px;
+          min-width: 1240px;
+          margin: 0 auto;
           background:
             radial-gradient(1200px 600px at 15% -10%, rgba(56,189,248,0.10), transparent 60%),
             radial-gradient(900px 500px at 100% 10%, rgba(168,85,247,0.10), transparent 60%),
             #070B18;
           color: #E6ECF5;
           border-radius: 24px;
-          padding: clamp(24px, 5vw, 72px) clamp(18px, 4vw, 56px);
+          padding: 72px 56px;
         }
         .ug-eg-eyebrow {
           display: inline-flex; align-items: center; gap: 10px;
-          font-size: clamp(9px, 1.2vw, 11px); letter-spacing: 0.28em; text-transform: uppercase;
+          font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
           color: #7DD3FC; padding: 8px 14px; border-radius: 999px;
           background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.25);
         }
@@ -140,31 +149,31 @@ const EcosystemGrowth: React.FC = () => {
         .ug-eg-h1 {
           font-family: 'Poppins', 'Inter', sans-serif;
           font-weight: 700; letter-spacing: -0.02em; line-height: 1.05;
-          font-size: clamp(1.9rem, 4.5vw, 3.4rem); margin: 18px 0 14px;
+          font-size: 3.4rem; margin: 18px 0 14px;
           background: linear-gradient(135deg, #F8FAFC 0%, #A5B4FC 55%, #7DD3FC 100%);
           -webkit-background-clip: text; background-clip: text; color: transparent;
         }
-        .ug-eg-sub { max-width: 820px; color: #94A3B8; font-size: clamp(0.9rem, 1.6vw, 1rem); line-height: 1.7; }
+        .ug-eg-sub { max-width: 820px; color: #94A3B8; font-size: 1rem; line-height: 1.7; }
         .ug-eg-section-label {
-          font-size: clamp(9px, 1.2vw, 11px); letter-spacing: 0.32em; text-transform: uppercase;
+          font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
           color: #94A3B8; margin-bottom: 12px;
         }
         .ug-eg-section-title {
           font-family: 'Poppins', sans-serif; font-weight: 600;
-          font-size: clamp(1.35rem, 2.6vw, 1.9rem); letter-spacing: -0.01em;
+          font-size: 1.9rem; letter-spacing: -0.01em;
           color: #F1F5F9; margin-bottom: 8px;
         }
-        .ug-eg-section-tag { color: #64748B; font-size: clamp(0.8rem, 1.4vw, 0.9rem); margin-bottom: 28px; }
+        .ug-eg-section-tag { color: #64748B; font-size: 0.9rem; margin-bottom: 28px; }
 
         /* ===== Redesigned Layer Card ===== */
         .ug-eg-grid {
-          display: grid; gap: clamp(20px, 2.4vw, 28px);
+          display: grid; gap: 28px;
           grid-template-columns: 1fr;
         }
         .ug-eg-card {
           position: relative;
-          padding: clamp(24px, 3vw, 40px);
-          padding-left: clamp(28px, 3.5vw, 52px);
+          padding: 40px;
+          padding-left: 52px;
           background:
             radial-gradient(600px 200px at 0% 0%, var(--accent-tint, rgba(56,189,248,0.06)), transparent 60%),
             linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01));
@@ -182,27 +191,24 @@ const EcosystemGrowth: React.FC = () => {
         .ug-eg-card:hover { transform: translateY(-4px); border-color: var(--accent-border); }
 
         .ug-eg-card-top {
-          display: grid; gap: clamp(18px, 2.4vw, 32px);
-          grid-template-columns: 1fr; align-items: start;
-          padding-bottom: clamp(20px, 2.4vw, 28px);
+          display: grid; gap: 32px;
+          grid-template-columns: minmax(220px, 320px) 1fr; align-items: start;
+          padding-bottom: 28px;
           border-bottom: 1px solid rgba(255,255,255,0.06);
-          margin-bottom: clamp(20px, 2.4vw, 28px);
-        }
-        @media (min-width: 820px) {
-          .ug-eg-card-top { grid-template-columns: minmax(220px, 320px) 1fr; }
+          margin-bottom: 28px;
         }
         .ug-eg-index {
           display: flex; align-items: baseline; gap: 14px;
         }
         .ug-eg-index-num {
           font-family: 'Poppins', sans-serif; font-weight: 700;
-          font-size: clamp(3.4rem, 7vw, 5.2rem); line-height: 0.9;
+          font-size: 5.2rem; line-height: 0.9;
           letter-spacing: -0.04em;
           background: linear-gradient(180deg, var(--accent-label) 0%, rgba(255,255,255,0.08) 100%);
           -webkit-background-clip: text; background-clip: text; color: transparent;
         }
         .ug-eg-index-tag {
-          font-size: clamp(8px, 1.1vw, 10px); letter-spacing: 0.3em; text-transform: uppercase;
+          font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
           color: var(--accent-label); padding: 5px 10px; border-radius: 999px;
           background: var(--accent-tint); border: 1px solid var(--accent-border);
           white-space: nowrap;
@@ -212,19 +218,19 @@ const EcosystemGrowth: React.FC = () => {
         }
         .ug-eg-card-title {
           font-family: 'Poppins', sans-serif; font-weight: 600;
-          font-size: clamp(1.25rem, 2.1vw, 1.6rem); color: #F8FAFC;
+          font-size: 1.6rem; color: #F8FAFC;
           letter-spacing: -0.015em; line-height: 1.2;
         }
         .ug-eg-meaning-line {
-          font-size: clamp(0.78rem, 1.4vw, 0.88rem); color: #94A3B8; line-height: 1.65;
+          font-size: 0.88rem; color: #94A3B8; line-height: 1.65;
         }
         .ug-eg-meaning-line strong { color: #F1F5F9; font-weight: 600; }
 
         /* Timeline outlook */
         .ug-eg-timeline {
           display: grid; gap: 12px;
-          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-          margin-bottom: clamp(20px, 2.4vw, 28px);
+          grid-template-columns: repeat(3, 1fr);
+          margin-bottom: 28px;
         }
         .ug-eg-tl-cell {
           position: relative; padding: 16px 16px 14px;
@@ -235,13 +241,13 @@ const EcosystemGrowth: React.FC = () => {
         }
         .ug-eg-tl-cell:hover { transform: translateY(-2px); border-color: var(--accent-border); }
         .ug-eg-tl-period {
-          font-size: clamp(8px, 1.1vw, 10px); letter-spacing: 0.28em; text-transform: uppercase;
+          font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
           color: #64748B; margin-bottom: 10px; font-weight: 600;
         }
         .ug-eg-tl-outlook {
           display: inline-flex; align-items: center; gap: 8px;
           font-family: 'Poppins', sans-serif; font-weight: 600;
-          font-size: clamp(0.82rem, 1.5vw, 0.92rem); color: var(--accent-label);
+          font-size: 0.92rem; color: var(--accent-label);
           margin-bottom: 10px; letter-spacing: -0.005em;
         }
         .ug-eg-tl-outlook-dot {
@@ -259,16 +265,13 @@ const EcosystemGrowth: React.FC = () => {
           border-radius: 3px;
         }
         .ug-eg-tl-reality {
-          font-size: clamp(0.74rem, 1.3vw, 0.82rem); color: #CBD5E1; line-height: 1.55;
+          font-size: 0.82rem; color: #CBD5E1; line-height: 1.55;
         }
 
         /* Reasoning row */
         .ug-eg-reason-row {
           display: grid; gap: 14px;
-          grid-template-columns: 1fr;
-        }
-        @media (min-width: 820px) {
-          .ug-eg-reason-row { grid-template-columns: 1fr 1fr; }
+          grid-template-columns: 1fr 1fr;
         }
         .ug-eg-reason {
           padding: 18px 20px; border-radius: 16px;
@@ -277,13 +280,13 @@ const EcosystemGrowth: React.FC = () => {
         }
         .ug-eg-reason-label {
           display: inline-flex; align-items: center; gap: 8px;
-          font-size: clamp(8px, 1.1vw, 10px); letter-spacing: 0.28em; text-transform: uppercase;
+          font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
           font-weight: 700; margin-bottom: 10px;
         }
         .ug-eg-reason-label::before {
           content: ''; width: 14px; height: 1px; background: currentColor; opacity: 0.6;
         }
-        .ug-eg-reason-text { font-size: clamp(0.76rem, 1.3vw, 0.85rem); color: #CBD5E1; line-height: 1.7; }
+        .ug-eg-reason-text { font-size: 0.85rem; color: #CBD5E1; line-height: 1.7; }
         .ug-eg-remember {
           position: relative;
           padding: 18px 20px 18px 44px; border-radius: 16px;
@@ -295,28 +298,26 @@ const EcosystemGrowth: React.FC = () => {
           content: '"'; position: absolute;
           left: 14px; top: 4px;
           font-family: 'Poppins', sans-serif; font-weight: 700;
-          font-size: clamp(2.4rem, 4vw, 3.2rem); line-height: 1;
+          font-size: 3.2rem; line-height: 1;
           color: var(--accent-label); opacity: 0.4;
         }
         .ug-eg-remember-label {
-          font-size: clamp(8px, 1.1vw, 10px); letter-spacing: 0.28em; text-transform: uppercase;
+          font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
           font-weight: 700; margin-bottom: 8px; color: var(--accent-label);
         }
         .ug-eg-remember-text {
           font-family: 'Poppins', sans-serif; font-weight: 500;
-          font-size: clamp(0.82rem, 1.5vw, 0.92rem); color: #F8FAFC; line-height: 1.55;
+          font-size: 0.92rem; color: #F8FAFC; line-height: 1.55;
           letter-spacing: -0.005em;
         }
         .ug-eg-panel {
-          padding: clamp(24px, 3.5vw, 40px);
+          padding: 40px;
           border-radius: 22px;
           background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
           border: 1px solid rgba(255,255,255,0.08);
           backdrop-filter: blur(12px);
         }
-        .ug-eg-block { margin-top: clamp(40px, 6vw, 72px); }
-
-
+        .ug-eg-block { margin-top: 72px; }
 
         @media (prefers-reduced-motion: reduce) {
           .ug-ecosystem-growth * { animation: none !important; transition: none !important; }
