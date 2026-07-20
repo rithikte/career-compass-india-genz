@@ -671,6 +671,93 @@ const RoleProfile: React.FC<RoleProfileProps> = ({ onExplore }) => {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* ========== EXPLORE THE DOMAIN ========== */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5 }}
+          className="mt-16 flex items-end justify-between gap-6"
+        >
+          <div>
+            <span
+              className="text-[0.66rem] font-semibold uppercase"
+              style={{ ...techFont, color: COLORS.accent, letterSpacing: '0.28em' }}
+            >
+              Continue
+            </span>
+            <h2
+              className="mt-2 font-semibold"
+              style={{
+                ...headingFont,
+                fontSize: 'clamp(1.35rem, 2.4vw, 1.7rem)',
+                letterSpacing: '-0.01em',
+              }}
+            >
+              Explore the domain
+            </h2>
+            <p
+              className="mt-2"
+              style={{ ...bodyFont, color: COLORS.mutedSoft, fontSize: '0.85rem', lineHeight: 1.55 }}
+            >
+              See the skills, tools, and career paths that shape this field.
+            </p>
+          </div>
+          <div className="hidden sm:block flex-1" style={{ height: 1, background: COLORS.border }} />
+        </motion.div>
+
+        <motion.button
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] as const }}
+          onClick={onExplore}
+          className="ug-explore-card mt-6 w-full text-left"
+          style={{
+            background: COLORS.card,
+            border: `1px solid ${COLORS.border}`,
+            borderRadius: 22,
+            padding: 'clamp(22px, 3.5vw, 32px)',
+          }}
+          whileHover={{ scale: 1.01 }}
+          whileTap={{ scale: 0.99 }}
+        >
+          <div className="flex items-center justify-between gap-5">
+            <div className="min-w-0 flex-1">
+              <h3
+                className="font-semibold"
+                style={{
+                  ...headingFont,
+                  color: COLORS.text,
+                  fontSize: 'clamp(1.05rem, 2vw, 1.25rem)',
+                  lineHeight: 1.35,
+                  letterSpacing: '-0.005em',
+                }}
+              >
+                Open the domain explorer
+              </h3>
+              <p
+                className="mt-1"
+                style={{
+                  ...bodyFont,
+                  color: COLORS.mutedSoft,
+                  fontSize: '0.85rem',
+                  lineHeight: 1.55,
+                }}
+              >
+                A deeper look at the skills, tools, and projects behind this role.
+              </p>
+            </div>
+            <span
+              className="ug-explore-arrow flex-shrink-0"
+              style={{ ...techFont, color: COLORS.mutedSoft, fontSize: '1.4rem' }}
+              aria-hidden
+            >
+              →
+            </span>
+          </div>
+        </motion.button>
       </div>
     </div>
   );
