@@ -316,28 +316,6 @@ const EcosystemGrowth: React.FC = () => {
         }
         .ug-eg-block { margin-top: clamp(40px, 6vw, 72px); }
 
-        .ug-eg-takeaway {
-          margin-top: clamp(32px, 4vw, 48px);
-          padding: clamp(24px, 4vw, 40px);
-          border-radius: 22px; text-align: center;
-          background: linear-gradient(135deg, rgba(56,189,248,0.10), rgba(168,85,247,0.10));
-          border: 1px solid rgba(125,211,252,0.25);
-          position: relative; overflow: hidden;
-        }
-        .ug-eg-takeaway::before {
-          content: ''; position: absolute; inset: 0;
-          background: radial-gradient(600px 200px at 50% 0%, rgba(125,211,252,0.15), transparent);
-          pointer-events: none;
-        }
-        .ug-eg-takeaway-label {
-          font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase;
-          color: #7DD3FC; margin-bottom: 14px;
-        }
-        .ug-eg-takeaway-text {
-          font-family: 'Poppins', sans-serif; font-weight: 500;
-          font-size: clamp(0.9rem, 1.8vw, 1.25rem); line-height: 1.55;
-          color: #F8FAFC; letter-spacing: -0.01em; max-width: 920px; margin: 0 auto;
-        }
 
 
         @media (prefers-reduced-motion: reduce) {
