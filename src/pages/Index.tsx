@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Seo from "@/components/Seo";
 import { Header } from '../components/Header';
@@ -15,6 +14,7 @@ import EcosystemGrowth from '../components/EcosystemGrowth';
 import CareerStabilityCheck from '../components/CareerStabilityCheck';
 import FresherDailyWork from '../components/FresherDailyWork';
 import EntryBarrierVerdict from '../components/EntryBarrierVerdict';
+import WhereFreshersGetHired from '../components/WhereFreshersGetHired';
 
 
 
