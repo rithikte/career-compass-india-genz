@@ -754,16 +754,21 @@ const EcosystemGrowth: React.FC = () => {
           transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
         >
           <div className="ug-eg-summary-panel">
-            <div className="ug-eg-rank-head">
-              <span>Rank</span>
-              <span>Ecosystem Layer</span>
-              <span>Relative Strength</span>
-              <span>Why It Ranks Here</span>
+            <div className="ug-eg-chart-head">
+              <span className="ug-eg-chart-head-label">Rank</span>
+              <span className="ug-eg-chart-head-label">Ecosystem Layer</span>
+              <div className="ug-eg-chart-scale">
+                <span>Low</span>
+                <span>Relative Strength</span>
+                <span>High</span>
+              </div>
+              <span className="ug-eg-chart-head-label">Why It Ranks Here</span>
             </div>
 
             <div className="ug-eg-rank-list">
               {rankedSummary.map((item, idx) => {
-                const width = 100 - idx * 6; // 100, 94, 88, 82, 76, 70
+                const pct = 100 - idx * 6; // 100, 94, 88, 82, 76, 70
+                const filled = Math.round((pct / 100) * 20);
                 return (
                   <motion.div
                     key={item.rank}
@@ -772,25 +777,36 @@ const EcosystemGrowth: React.FC = () => {
                     initial={{ opacity: 0, x: -16 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.45, delay: idx * 0.07, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 0.5, delay: idx * 0.07, ease: [0.22, 1, 0.36, 1] }}
                   >
-                    <div className="ug-eg-rank-badge">{item.rank}</div>
-                    <div className="ug-eg-rank-layer">{item.layer}</div>
-                    <div className="ug-eg-rank-meter">
-                      <div className="ug-eg-rank-meter-top">
-                        <span><span className="dot" />{item.strength}</span>
-                        <span className="pct">{width}%</span>
-                      </div>
-                      <div className="ug-eg-rank-bar">
-                        <motion.i
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${width}%` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.9, delay: 0.15 + idx * 0.07, ease: [0.22, 1, 0.36, 1] }}
-                          style={{ width: `${width}%` }}
-                        />
+                    <div className="ug-eg-rank-numeral">{String(item.rank).padStart(2, '0')}</div>
+
+                    <div className="ug-eg-rank-layer-wrap">
+                      <div className="ug-eg-rank-layer">{item.layer}</div>
+                      <div className="ug-eg-rank-sub">
+                        <span className="dot" /> {item.strength} · Fresher-relevant
                       </div>
                     </div>
+
+                    <div className="ug-eg-gauge">
+                      <div className="ug-eg-gauge-track">
+                        {Array.from({ length: 20 }).map((_, i) => (
+                          <motion.span
+                            key={i}
+                            className={`seg ${i < filled ? 'on' : ''}`}
+                            initial={{ opacity: 0, scaleY: 0.4 }}
+                            whileInView={{ opacity: 1, scaleY: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.25, delay: 0.15 + idx * 0.06 + i * 0.018, ease: [0.22, 1, 0.36, 1] }}
+                          />
+                        ))}
+                      </div>
+                      <div className="ug-eg-gauge-meta">
+                        <span className="label">Strength Index</span>
+                        <span className="value">{pct}<span style={{ fontSize: '0.75rem', color: 'rgba(203,213,225,0.55)', marginLeft: 2 }}>/100</span></span>
+                      </div>
+                    </div>
+
                     <div className="ug-eg-rank-reason">{item.reason}</div>
                   </motion.div>
                 );
@@ -806,7 +822,7 @@ const EcosystemGrowth: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.05 }}
               >
-                <div className="ug-eg-pillar-num">01 / 03</div>
+                <div className="ug-eg-pillar-step">01</div>
                 <div className="ug-eg-pillar-tag">Likely to Survive</div>
                 <div className="ug-eg-pillar-title">Recurring physical work keeps freshers relevant.</div>
                 <div className="ug-eg-pillar-text">
@@ -824,7 +840,7 @@ const EcosystemGrowth: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.12 }}
               >
-                <div className="ug-eg-pillar-num">02 / 03</div>
+                <div className="ug-eg-pillar-step">02</div>
                 <div className="ug-eg-pillar-tag">What Could Weaken It</div>
                 <div className="ug-eg-pillar-title">Real estate cycles, not automation.</div>
                 <div className="ug-eg-pillar-text">
@@ -842,7 +858,7 @@ const EcosystemGrowth: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.19 }}
               >
-                <div className="ug-eg-pillar-num">03 / 03</div>
+                <div className="ug-eg-pillar-step">03</div>
                 <div className="ug-eg-pillar-tag">What Could Strengthen It</div>
                 <div className="ug-eg-pillar-title">Urbanisation and quality expectations.</div>
                 <div className="ug-eg-pillar-text">
@@ -852,6 +868,7 @@ const EcosystemGrowth: React.FC = () => {
               </motion.div>
             </div>
           </div>
+
         </motion.div>
       </div>
 
