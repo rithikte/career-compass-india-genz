@@ -52,7 +52,11 @@ const fadeUp = {
   }),
 };
 
-const RoleProfile: React.FC = () => {
+interface RoleProfileProps {
+  onExplore?: () => void;
+}
+
+const RoleProfile: React.FC<RoleProfileProps> = ({ onExplore }) => {
   return (
     <div
       className="ug-role-profile"
