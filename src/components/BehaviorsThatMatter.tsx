@@ -402,7 +402,7 @@ const BehaviorsThatMatter: React.FC = () => {
             </div>
 
             {/* Mobile stacked cards */}
-            <div className="btm-table-mobile" style={{ display: 'grid', gap: 10, marginTop: 12 }}>
+            <div className="btm-table-mobile" style={{ gap: 10, marginTop: 12 }}>
               {comparisonRows.map((row, i) => (
                 <div
                   key={i}
