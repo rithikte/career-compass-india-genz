@@ -299,7 +299,7 @@ const EcosystemGrowth: React.FC = () => {
           color: var(--accent-label); opacity: 0.4;
         }
         .ug-eg-remember-label {
-          font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+          font-size: clamp(8px, 1.1vw, 10px); letter-spacing: 0.28em; text-transform: uppercase;
           font-weight: 700; margin-bottom: 8px; color: var(--accent-label);
         }
         .ug-eg-remember-text {
