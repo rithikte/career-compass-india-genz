@@ -19,6 +19,7 @@ import HowSubjectsAffectRealWork from '../components/HowSubjectsAffectRealWork';
 import MostImportantSubjects from '../components/MostImportantSubjects';
 import SubjectsRecognition from '../components/SubjectsRecognition';
 import SubjectToChapter from '../components/SubjectToChapter';
+import WhenToFocusSubjects from '../components/WhenToFocusSubjects';
 
 
 
