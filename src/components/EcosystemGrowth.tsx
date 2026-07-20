@@ -132,7 +132,7 @@ const EcosystemGrowth: React.FC = () => {
         }
         .ug-eg-eyebrow {
           display: inline-flex; align-items: center; gap: 10px;
-          font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
+          font-size: clamp(9px, 1.2vw, 11px); letter-spacing: 0.28em; text-transform: uppercase;
           color: #7DD3FC; padding: 8px 14px; border-radius: 999px;
           background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.25);
         }
