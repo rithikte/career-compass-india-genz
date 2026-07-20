@@ -41,10 +41,11 @@ const Index = () => {
     { id: 'entry-barrier-verdict', title: 'Entry Barrier Verdict', component: EntryBarrierVerdict },
     { id: 'where-freshers-get-hired', title: 'Where Freshers Get Hired', component: WhereFreshersGetHired },
     { id: 'how-subjects-affect-real-work', title: 'How Subjects Affect Real Work', component: HowSubjectsAffectRealWork },
+    { id: 'most-important-subjects', title: 'Most Important Subjects', component: MostImportantSubjects },
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
-  const fullBleedIds = new Set(['ug-homepage', 'search-degree', 'domain-subjects', 'domain-chapters', 'role-profile', 'domain-explore', 'ecosystem-growth', 'career-stability', 'fresher-daily-work', 'entry-barrier-verdict', 'where-freshers-get-hired', 'how-subjects-affect-real-work']);
+  const fullBleedIds = new Set(['ug-homepage', 'search-degree', 'domain-subjects', 'domain-chapters', 'role-profile', 'domain-explore', 'ecosystem-growth', 'career-stability', 'fresher-daily-work', 'entry-barrier-verdict', 'where-freshers-get-hired', 'how-subjects-affect-real-work', 'most-important-subjects']);
   const isFullBleed = fullBleedIds.has(activeSection);
 
   return (
