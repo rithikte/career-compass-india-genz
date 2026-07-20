@@ -304,7 +304,7 @@ const EcosystemGrowth: React.FC = () => {
         }
         .ug-eg-remember-text {
           font-family: 'Poppins', sans-serif; font-weight: 500;
-          font-size: 0.92rem; color: #F8FAFC; line-height: 1.55;
+          font-size: clamp(0.82rem, 1.5vw, 0.92rem); color: #F8FAFC; line-height: 1.55;
           letter-spacing: -0.005em;
         }
         .ug-eg-panel {
