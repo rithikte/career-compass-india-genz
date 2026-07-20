@@ -241,7 +241,7 @@ const EcosystemGrowth: React.FC = () => {
         .ug-eg-tl-outlook {
           display: inline-flex; align-items: center; gap: 8px;
           font-family: 'Poppins', sans-serif; font-weight: 600;
-          font-size: 0.92rem; color: var(--accent-label);
+          font-size: clamp(0.82rem, 1.5vw, 0.92rem); color: var(--accent-label);
           margin-bottom: 10px; letter-spacing: -0.005em;
         }
         .ug-eg-tl-outlook-dot {
