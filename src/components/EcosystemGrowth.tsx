@@ -424,6 +424,7 @@ const EcosystemGrowth: React.FC = () => {
         </div>
       </div>
 
+      </div>
     </div>
   );
 };
