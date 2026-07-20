@@ -413,74 +413,73 @@ const EcosystemGrowth: React.FC = () => {
         <div className="ug-eg-grid">
           {growthSections.map((section, i) => {
             const a = accentMap[section.accent];
+            const outlookWidth = (o: string) => {
+              const s = o.toLowerCase();
+              if (s.includes('growing') && !s.includes('stable')) return '92%';
+              if (s.includes('stable to growing')) return '78%';
+              if (s === 'stable' || s.includes('stable')) return '62%';
+              return '55%';
+            };
+            const [meaningHead, meaningTail] = section.meaning.split(' — ');
             return (
               <motion.div
                 key={section.id}
                 className="ug-eg-card"
-                style={{ boxShadow: `0 0 0 1px transparent, 0 20px 40px -20px ${a.glow}` }}
+                style={{
+                  boxShadow: `0 24px 60px -30px ${a.glow}`,
+                  ['--accent-solid' as any]: a.dot,
+                  ['--accent-label' as any]: a.label,
+                  ['--accent-tint' as any]: a.bg,
+                  ['--accent-border' as any]: a.border,
+                  ['--accent-glow' as any]: a.glow,
+                }}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.55, delay: i * 0.08, ease: [0.34, 1.56, 0.64, 1] }}
-                whileHover={{ borderColor: a.border } as any}
               >
-                <div className="ug-eg-card-header">
-                  <div>
-                    <div className="ug-eg-card-num" style={{ color: a.label }}>{section.number} — Layer</div>
-                    <div className="ug-eg-card-title" style={{ marginTop: 6 }}>{section.title}</div>
+                <div className="ug-eg-card-top">
+                  <div className="ug-eg-index">
+                    <div className="ug-eg-index-num">{section.number}</div>
+                    <div className="ug-eg-index-tag">Layer {section.number}</div>
+                  </div>
+                  <div className="ug-eg-headline-wrap">
+                    <div className="ug-eg-card-title">{section.title}</div>
+                    <div className="ug-eg-meaning-line">
+                      <strong>{meaningHead}</strong>{meaningTail ? ` — ${meaningTail}` : ''}
+                    </div>
                   </div>
                 </div>
 
-                <div className="ug-eg-card-meaning">
-                  <strong style={{ color: '#F1F5F9' }}>{section.meaning.split(' — ')[0]}</strong>
-                  {' — '}{section.meaning.split(' — ')[1]}
+                <div className="ug-eg-timeline">
+                  {section.rows.map((row, idx) => (
+                    <div key={idx} className="ug-eg-tl-cell">
+                      <div className="ug-eg-tl-period">{row.period}</div>
+                      <div className="ug-eg-tl-outlook">
+                        <span className="ug-eg-tl-outlook-dot" />
+                        {row.outlook}
+                      </div>
+                      <div className="ug-eg-tl-bar">
+                        <motion.span
+                          initial={{ width: 0 }}
+                          whileInView={{ width: outlookWidth(row.outlook) }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.9, delay: 0.15 + idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                        />
+                      </div>
+                      <div className="ug-eg-tl-reality">{row.reality}</div>
+                    </div>
+                  ))}
                 </div>
 
-                <div className="ug-eg-table-wrap">
-                  <table className="ug-eg-table">
-                    <thead>
-                      <tr>
-                        <th>Period</th>
-                        <th>Growth Outlook</th>
-                        <th>Ground Reality</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {section.rows.map((row, idx) => (
-                        <tr key={idx}>
-                          <td>{row.period}</td>
-                          <td>
-                            <span
-                              className="ug-eg-outlook"
-                              style={{ background: a.bg, color: a.label, border: `1px solid ${a.border}` }}
-                            >
-                              <span className="ug-eg-outlook-dot" style={{ background: a.dot }} />
-                              {row.outlook}
-                            </span>
-                          </td>
-                          <td>{row.reality}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-
-                <div className="ug-eg-card-block">
-                  <div className="ug-eg-block-label" style={{ color: a.label }}>Score Reason</div>
-                  <div className="ug-eg-block-text">{section.scoreReason}</div>
-                </div>
-
-                <div className="ug-eg-card-block">
-                  <div className="ug-eg-block-label" style={{ color: '#FDE68A' }}>Student Understanding</div>
-                  <div className="ug-eg-block-text">{section.studentUnderstanding}</div>
-                  <div
-                    className="ug-eg-block-highlight"
-                    style={{ background: a.bg, border: `1px solid ${a.border}` }}
-                  >
-                    <strong style={{ color: a.label }}>Remember this:</strong>{' '}
-                    <span style={{ color: '#F8FAFC' }}>
-                      {section.studentUnderstanding}
-                    </span>
+                <div className="ug-eg-reason-row">
+                  <div className="ug-eg-reason">
+                    <div className="ug-eg-reason-label" style={{ color: a.label }}>Score Reason</div>
+                    <div className="ug-eg-reason-text">{section.scoreReason}</div>
+                  </div>
+                  <div className="ug-eg-remember">
+                    <div className="ug-eg-remember-label">Remember this</div>
+                    <div className="ug-eg-remember-text">{section.studentUnderstanding}</div>
                   </div>
                 </div>
               </motion.div>
