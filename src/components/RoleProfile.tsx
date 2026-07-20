@@ -169,6 +169,39 @@ const RoleProfile: React.FC<RoleProfileProps> = ({ onExplore }) => {
           opacity: 0.4;
         }
 
+        .ug-explore-card {
+          position: relative;
+          overflow: hidden;
+          transition: transform 350ms cubic-bezier(.22,1,.36,1), border-color 350ms ease, box-shadow 350ms ease;
+          cursor: pointer;
+        }
+        .ug-explore-card::before {
+          content: '';
+          position: absolute; inset: 0;
+          background: radial-gradient(120% 120% at 100% 0%, rgba(45,212,191,0.12), transparent 55%);
+          opacity: 0;
+          transition: opacity 400ms ease;
+          pointer-events: none;
+        }
+        .ug-explore-card::after {
+          content: '';
+          position: absolute; left: 28px; right: 28px; bottom: 0;
+          height: 1px;
+          background: linear-gradient(90deg, transparent, ${COLORS.accent}, transparent);
+          transform: scaleX(0);
+          transform-origin: left center;
+          transition: transform 500ms cubic-bezier(.22,1,.36,1);
+        }
+        @media (hover: hover) {
+          .ug-explore-card:hover { transform: translateY(-4px); border-color: rgba(45,212,191,0.35); box-shadow: 0 24px 60px -30px rgba(45,212,191,0.28); }
+          .ug-explore-card:hover::before { opacity: 1; }
+          .ug-explore-card:hover::after { transform: scaleX(1); }
+          .ug-explore-card:hover .ug-explore-arrow { transform: translateX(6px); color: ${COLORS.accent}; }
+        }
+        .ug-explore-arrow {
+          transition: transform 350ms cubic-bezier(.22,1,.36,1), color 350ms ease;
+        }
+
         @media (prefers-reduced-motion: reduce) {
           .ug-tile, .ug-tile::after, .ug-context, .ug-resp-row, .ug-resp-num, .ug-resp-arrow { transition: none !important; }
         }
