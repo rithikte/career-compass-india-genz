@@ -303,6 +303,33 @@ const CareerStabilityCheck: React.FC = () => {
       </div>
 
       <style>{`
+        .cs-card {
+          position: relative;
+          outline: none;
+          transition: border-color 260ms ease, box-shadow 320ms ease, transform 260ms ease;
+        }
+        .cs-card:hover,
+        .cs-card:focus-visible,
+        .cs-card:focus-within,
+        .cs-card:active {
+          border-color: rgba(56,189,248,0.55) !important;
+          box-shadow:
+            0 0 0 1px rgba(56,189,248,0.35),
+            0 0 18px rgba(56,189,248,0.28),
+            0 0 42px rgba(168,85,247,0.22),
+            0 1px 0 rgba(255,255,255,0.05) inset,
+            0 20px 40px -30px rgba(0,0,0,0.6);
+          transform: translateY(-1px);
+        }
+        @media (hover: none) {
+          .cs-card:active {
+            border-color: rgba(56,189,248,0.6) !important;
+            box-shadow:
+              0 0 0 1px rgba(56,189,248,0.4),
+              0 0 22px rgba(56,189,248,0.32),
+              0 0 46px rgba(168,85,247,0.26);
+          }
+        }
         .cs-table { display: grid; }
         .cs-table .cs-thead,
         .cs-table .cs-row {
