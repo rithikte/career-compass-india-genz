@@ -314,41 +314,6 @@ const EcosystemGrowth: React.FC = () => {
           border: 1px solid rgba(255,255,255,0.08);
           backdrop-filter: blur(12px);
         }
-        .ug-eg-rank-table-wrap {
-          overflow-x: auto;
-          border-radius: 16px;
-          border: 1px solid rgba(255,255,255,0.08);
-        }
-        .ug-eg-rank-table {
-          width: 100%; min-width: 640px; border-collapse: collapse;
-          font-size: 0.85rem;
-        }
-        .ug-eg-rank-table th {
-          text-align: left; padding: 14px 16px;
-          background: rgba(255,255,255,0.06);
-          color: #F1F5F9; font-weight: 600; letter-spacing: 0.02em;
-          border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-        .ug-eg-rank-table td {
-          padding: 14px 16px; color: #CBD5E1; line-height: 1.55;
-          border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .ug-eg-rank-table tr:last-child td { border-bottom: none; }
-        .ug-eg-rank-table tr:nth-child(even) { background: rgba(255,255,255,0.02); }
-        .ug-eg-rank-cell {
-          width: 32px; height: 32px; border-radius: 50%;
-          display: inline-flex; align-items: center; justify-content: center;
-          font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.78rem;
-          color: #0B1220; background: #7DD3FC;
-        }
-        .ug-eg-strength-pill {
-          display: inline-flex; padding: 5px 12px; border-radius: 999px;
-          font-size: 0.75rem; font-weight: 600; letter-spacing: 0.02em;
-          background: rgba(74,222,128,0.12); color: #86EFAC; border: 1px solid rgba(74,222,128,0.25);
-        }
-        .ug-eg-final-copy { color: #CBD5E1; font-size: 0.92rem; line-height: 1.75; }
-        .ug-eg-final-copy p { margin-bottom: 14px; }
-        .ug-eg-final-copy strong { color: #F1F5F9; font-weight: 600; }
         .ug-eg-block { margin-top: clamp(40px, 6vw, 72px); }
 
         .ug-eg-takeaway {
