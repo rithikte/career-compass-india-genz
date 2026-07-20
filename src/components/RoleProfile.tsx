@@ -203,7 +203,7 @@ const RoleProfile: React.FC<RoleProfileProps> = ({ onExplore }) => {
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .ug-tile, .ug-tile::after, .ug-context, .ug-resp-row, .ug-resp-num, .ug-resp-arrow { transition: none !important; }
+          .ug-tile, .ug-tile::after, .ug-context, .ug-resp-row, .ug-resp-num, .ug-resp-arrow, .ug-explore-card, .ug-explore-card::before, .ug-explore-card::after, .ug-explore-arrow { transition: none !important; }
         }
       `}</style>
 
