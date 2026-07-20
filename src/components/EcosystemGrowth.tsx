@@ -295,7 +295,7 @@ const EcosystemGrowth: React.FC = () => {
           content: '"'; position: absolute;
           left: 14px; top: 4px;
           font-family: 'Poppins', sans-serif; font-weight: 700;
-          font-size: 3.2rem; line-height: 1;
+          font-size: clamp(2.4rem, 4vw, 3.2rem); line-height: 1;
           color: var(--accent-label); opacity: 0.4;
         }
         .ug-eg-remember-label {
