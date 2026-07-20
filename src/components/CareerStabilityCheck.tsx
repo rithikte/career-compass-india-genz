@@ -148,7 +148,7 @@ const CareerStabilityCheck: React.FC = () => {
           {survivalFactors.map((f) => {
             const c = ratingColor(f.rating);
             return (
-              <div key={f.factor} style={cardStyle()}>
+              <div key={f.factor} className="cs-card" tabIndex={0} style={cardStyle()}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 10 }}>
                   <span style={{ fontSize: fs.label, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 600 }}>
                     Factor
