@@ -45,6 +45,7 @@ const Index = () => {
     { id: 'how-subjects-affect-real-work', title: 'How Subjects Affect Real Work', component: HowSubjectsAffectRealWork },
     { id: 'most-important-subjects', title: 'Most Important Subjects', component: MostImportantSubjects },
     { id: 'subjects-recognition', title: 'Subjects Recognition', component: SubjectsRecognition },
+    { id: 'subject-to-chapter', title: 'What to Learn', component: SubjectToChapter },
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
