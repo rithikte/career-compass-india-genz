@@ -235,7 +235,7 @@ const DomainExplore: React.FC = () => {
         }
         .ug-takeaway-text {
           font-family: 'Poppins', sans-serif; font-weight: 500;
-          font-size: clamp(1.05rem, 2.4vw, 1.5rem); line-height: 1.5;
+          font-size: clamp(0.7875rem, 1.8vw, 1.125rem); line-height: 1.5;
           color: #F8FAFC; letter-spacing: -0.01em; max-width: 820px; margin: 0 auto;
         }
 
