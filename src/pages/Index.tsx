@@ -53,7 +53,7 @@ const Index = () => {
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
-  const fullBleedIds = new Set(['ug-homepage', 'search-degree', 'domain-subjects', 'domain-chapters', 'role-profile', 'domain-explore', 'ecosystem-growth', 'career-stability', 'fresher-daily-work', 'entry-barrier-verdict', 'where-freshers-get-hired', 'how-subjects-affect-real-work', 'most-important-subjects', 'subjects-recognition', 'subject-to-chapter', 'when-to-focus']);
+  const fullBleedIds = new Set(['ug-homepage', 'search-degree', 'domain-subjects', 'domain-chapters', 'role-profile', 'domain-explore', 'ecosystem-growth', 'career-stability', 'fresher-daily-work', 'entry-barrier-verdict', 'where-freshers-get-hired', 'how-subjects-affect-real-work', 'most-important-subjects', 'subjects-recognition', 'subject-to-chapter', 'when-to-focus', 'behaviors-that-matter']);
   const isFullBleed = fullBleedIds.has(activeSection);
 
   return (
