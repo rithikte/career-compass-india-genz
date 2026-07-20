@@ -342,12 +342,6 @@ const RoleProfile: React.FC = () => {
                     >
                       {r.title}
                     </div>
-                    <p
-                      className="mt-1"
-                      style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.84rem', lineHeight: 1.6 }}
-                    >
-                      {r.desc}
-                    </p>
                   </div>
                 </div>
               </motion.div>
