@@ -383,6 +383,122 @@ const EcosystemGrowth: React.FC = () => {
           color: #F8FAFC; letter-spacing: -0.01em; max-width: 920px; margin: 0 auto;
         }
 
+        /* ===== Redesigned Final Summary ===== */
+        .ug-eg-summary-panel {
+          padding: clamp(24px, 3.5vw, 44px);
+          border-radius: 24px;
+          background:
+            radial-gradient(800px 300px at 100% 0%, rgba(168,85,247,0.08), transparent 60%),
+            radial-gradient(600px 250px at 0% 100%, rgba(56,189,248,0.08), transparent 60%),
+            linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01));
+          border: 1px solid rgba(255,255,255,0.08);
+          backdrop-filter: blur(14px);
+        }
+        .ug-eg-rank-list {
+          display: flex; flex-direction: column;
+          gap: 10px;
+        }
+        .ug-eg-rank-item {
+          position: relative;
+          display: grid; gap: 16px;
+          grid-template-columns: 56px 1fr;
+          align-items: center;
+          padding: 16px 18px;
+          border-radius: 16px;
+          background: rgba(255,255,255,0.02);
+          border: 1px solid rgba(255,255,255,0.06);
+          transition: transform .35s cubic-bezier(.34,1.56,.64,1), border-color .3s, background .3s;
+        }
+        .ug-eg-rank-item:hover {
+          transform: translateX(4px);
+          border-color: rgba(125,211,252,0.30);
+          background: rgba(56,189,248,0.04);
+        }
+        .ug-eg-rank-badge {
+          display: inline-flex; align-items: center; justify-content: center;
+          width: 44px; height: 44px; border-radius: 14px;
+          font-family: 'Poppins', sans-serif; font-weight: 700;
+          font-size: 1.15rem; letter-spacing: -0.02em;
+          color: #F8FAFC;
+          background: linear-gradient(135deg, rgba(56,189,248,0.20), rgba(168,85,247,0.20));
+          border: 1px solid rgba(125,211,252,0.30);
+          box-shadow: 0 8px 24px -12px rgba(56,189,248,0.4);
+        }
+        .ug-eg-rank-item[data-top="true"] .ug-eg-rank-badge {
+          background: linear-gradient(135deg, #FDE68A, #FCD34D);
+          color: #422006; border-color: rgba(251,191,36,0.5);
+          box-shadow: 0 10px 24px -10px rgba(251,191,36,0.5);
+        }
+        .ug-eg-rank-body {
+          display: grid; gap: 4px 20px;
+          grid-template-columns: 1fr; align-items: center;
+        }
+        @media (min-width: 720px) {
+          .ug-eg-rank-body {
+            grid-template-columns: minmax(220px, 1fr) 130px 1.4fr;
+          }
+        }
+        .ug-eg-rank-layer {
+          font-family: 'Poppins', sans-serif; font-weight: 600;
+          font-size: 1rem; color: #F1F5F9; letter-spacing: -0.01em;
+        }
+        .ug-eg-rank-strength {
+          display: inline-flex; align-items: center; gap: 8px;
+          padding: 5px 12px; border-radius: 999px;
+          font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em;
+          text-transform: uppercase; width: fit-content;
+          background: rgba(74,222,128,0.10); color: #86EFAC;
+          border: 1px solid rgba(74,222,128,0.28);
+        }
+        .ug-eg-rank-strength::before {
+          content: ''; width: 6px; height: 6px; border-radius: 50%;
+          background: #86EFAC; box-shadow: 0 0 10px #86EFAC;
+        }
+        .ug-eg-rank-reason {
+          font-size: 0.85rem; color: #94A3B8; line-height: 1.55;
+        }
+
+        /* Pillars */
+        .ug-eg-pillars {
+          margin-top: clamp(32px, 4vw, 44px);
+          display: grid; gap: 16px;
+          grid-template-columns: 1fr;
+        }
+        @media (min-width: 900px) {
+          .ug-eg-pillars { grid-template-columns: repeat(3, 1fr); }
+        }
+        .ug-eg-pillar {
+          position: relative; overflow: hidden;
+          padding: 22px 24px; border-radius: 18px;
+          background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01));
+          border: 1px solid rgba(255,255,255,0.07);
+          transition: transform .3s ease, border-color .3s;
+        }
+        .ug-eg-pillar:hover { transform: translateY(-3px); }
+        .ug-eg-pillar::after {
+          content: ''; position: absolute; left: 0; right: 0; top: 0;
+          height: 2px; background: var(--pillar-color);
+          box-shadow: 0 0 20px var(--pillar-color);
+        }
+        .ug-eg-pillar-tag {
+          display: inline-flex; align-items: center; gap: 8px;
+          font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+          font-weight: 700; color: var(--pillar-color); margin-bottom: 12px;
+        }
+        .ug-eg-pillar-tag::before {
+          content: ''; width: 6px; height: 6px; border-radius: 50%;
+          background: var(--pillar-color);
+          box-shadow: 0 0 10px var(--pillar-color);
+        }
+        .ug-eg-pillar-title {
+          font-family: 'Poppins', sans-serif; font-weight: 600;
+          font-size: 1.02rem; color: #F8FAFC; line-height: 1.35;
+          margin-bottom: 10px; letter-spacing: -0.01em;
+        }
+        .ug-eg-pillar-text {
+          font-size: 0.85rem; color: #CBD5E1; line-height: 1.65;
+        }
+
         @media (prefers-reduced-motion: reduce) {
           .ug-ecosystem-growth * { animation: none !important; transition: none !important; }
         }
@@ -495,60 +611,85 @@ const EcosystemGrowth: React.FC = () => {
         <p className="ug-eg-section-tag">Layers ranked by how strongly they support fresher opportunities over the next decade.</p>
 
         <motion.div
-          className="ug-eg-panel"
+          className="ug-eg-summary-panel"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
         >
-          <div className="ug-eg-rank-table-wrap">
-            <table className="ug-eg-rank-table">
-              <thead>
-                <tr>
-                  <th>Rank</th>
-                  <th>Layer</th>
-                  <th>10-Year Strength</th>
-                  <th>Why It Ranks Here</th>
-                </tr>
-              </thead>
-              <tbody>
-                {rankedSummary.map((item, idx) => (
-                  <motion.tr
-                    key={item.rank}
-                    initial={{ opacity: 0, x: -12 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: idx * 0.06 }}
-                  >
-                    <td><span className="ug-eg-rank-cell">{item.rank}</span></td>
-                    <td><strong style={{ color: '#F1F5F9', fontWeight: 600 }}>{item.layer}</strong></td>
-                    <td><span className="ug-eg-strength-pill">{item.strength}</span></td>
-                    <td>{item.reason}</td>
-                  </motion.tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="ug-eg-rank-list">
+            {rankedSummary.map((item, idx) => (
+              <motion.div
+                key={item.rank}
+                className="ug-eg-rank-item"
+                data-top={item.rank === 1 ? 'true' : 'false'}
+                initial={{ opacity: 0, x: -16 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: idx * 0.07, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <div className="ug-eg-rank-badge">{item.rank}</div>
+                <div className="ug-eg-rank-body">
+                  <div className="ug-eg-rank-layer">{item.layer}</div>
+                  <span className="ug-eg-rank-strength">{item.strength}</span>
+                  <div className="ug-eg-rank-reason">{item.reason}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="ug-eg-pillars">
+            <motion.div
+              className="ug-eg-pillar"
+              style={{ ['--pillar-color' as any]: '#7DD3FC' }}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.05 }}
+            >
+              <div className="ug-eg-pillar-tag">Likely to Survive</div>
+              <div className="ug-eg-pillar-title">Recurring physical work keeps freshers relevant.</div>
+              <div className="ug-eg-pillar-text">
+                Homes, apartments, RCC structures, and physical execution remain recurring needs.
+                Daily site checking, measurement, documentation, and reporting cannot be fully
+                replaced by AI or remote work.
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="ug-eg-pillar"
+              style={{ ['--pillar-color' as any]: '#FDA4AF' }}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.12 }}
+            >
+              <div className="ug-eg-pillar-tag">What Could Weaken It</div>
+              <div className="ug-eg-pillar-title">Real estate cycles, not automation.</div>
+              <div className="ug-eg-pillar-text">
+                Real estate slowdowns, high material costs, weak builder funding, delayed approvals,
+                affordability pressure, and project cancellations. These affect hiring speed more
+                than long-term role survival.
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="ug-eg-pillar"
+              style={{ ['--pillar-color' as any]: '#86EFAC' }}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.19 }}
+            >
+              <div className="ug-eg-pillar-tag">What Could Strengthen It</div>
+              <div className="ug-eg-pillar-title">Urbanisation and quality expectations.</div>
+              <div className="ug-eg-pillar-text">
+                Urban housing demand, tier-2 city growth, formal project management, stricter quality
+                expectations, faster project delivery pressure, and better site documentation systems.
+              </div>
+            </motion.div>
           </div>
         </motion.div>
-
-        <div className="ug-eg-final-copy" style={{ marginTop: 28 }}>
-          <p>
-            This ecosystem is <strong>likely to survive</strong> because homes, apartments, RCC structures,
-            and physical construction execution remain recurring needs. The fresher role benefits directly
-            because daily site checking, measurement, documentation, and reporting cannot be fully replaced
-            by AI or remote work.
-          </p>
-          <p>
-            <strong>What could weaken it:</strong> real estate slowdowns, high material costs, weak builder
-            funding, delayed approvals, affordability pressure, and project cancellations. These risks affect
-            hiring speed more than long-term role survival.
-          </p>
-          <p>
-            <strong>What could strengthen it:</strong> urban housing demand, tier-2 city growth, formal
-            project management, stricter quality expectations, faster project delivery pressure, and better
-            site documentation systems.
-          </p>
-        </div>
       </div>
 
       {/* Takeaway */}
