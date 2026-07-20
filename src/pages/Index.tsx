@@ -47,6 +47,7 @@ const Index = () => {
     { id: 'most-important-subjects', title: 'Most Important Subjects', component: MostImportantSubjects },
     { id: 'subjects-recognition', title: 'Subjects Recognition', component: SubjectsRecognition },
     { id: 'subject-to-chapter', title: 'What to Learn', component: SubjectToChapter },
+    { id: 'when-to-focus', title: 'When to Focus', component: WhenToFocusSubjects },
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
