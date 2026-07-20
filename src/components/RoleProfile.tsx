@@ -64,16 +64,14 @@ const RoleProfile: React.FC = () => {
         .ug-role-card { transition: transform 250ms ease-out, border-color 250ms ease-out, box-shadow 250ms ease-out; }
         @media (hover: hover) {
           .ug-role-card:hover { transform: translateY(-4px); border-color: ${COLORS.accent}; box-shadow: 0 14px 40px rgba(0,0,0,0.4); }
-          .ug-role-card:hover .ug-role-icon { color: ${COLORS.accent}; }
         }
-        .ug-role-icon { transition: color 250ms ease-out; }
         .ug-role-resp { transition: background-color 200ms ease-out, transform 200ms ease-out, border-color 200ms ease-out; }
         @media (hover: hover) {
           .ug-role-resp:hover { background-color: rgba(255,255,255,0.04); transform: translateX(2px); border-color: ${COLORS.accent}; }
         }
         .ug-role-num { transition: background-color 200ms ease-out, color 200ms ease-out; }
         @media (prefers-reduced-motion: reduce) {
-          .ug-role-card, .ug-role-icon, .ug-role-resp, .ug-role-num { transition: none !important; }
+          .ug-role-card, .ug-role-resp, .ug-role-num { transition: none !important; }
         }
       `}</style>
 
