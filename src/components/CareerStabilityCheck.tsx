@@ -170,7 +170,7 @@ const CareerStabilityCheck: React.FC = () => {
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           }}
         >
-          <div style={cardStyle()}>
+          <div className="cs-card" tabIndex={0} style={cardStyle()}>
             <EyebrowLabel>Fresher Hiring Reality</EyebrowLabel>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginTop: 8 }}>
               <span style={{ fontSize: fs.h2, fontWeight: 700, color: '#34d399' }}>Strong Hiring</span>
@@ -182,7 +182,7 @@ const CareerStabilityCheck: React.FC = () => {
             </ul>
           </div>
 
-          <div style={cardStyle()}>
+          <div className="cs-card" tabIndex={0} style={cardStyle()}>
             <EyebrowLabel>Degree Fit Strength</EyebrowLabel>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginTop: 8 }}>
               <span style={{ fontSize: fs.h1, fontWeight: 800, background: 'linear-gradient(180deg,#e2e8f0,#94a3b8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', letterSpacing: '-0.02em' }}>
