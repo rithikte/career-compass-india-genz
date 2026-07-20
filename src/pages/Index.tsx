@@ -34,6 +34,8 @@ const Index = () => {
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
+  const fullBleedIds = new Set(['ug-homepage', 'ecosystem-growth']);
+  const isFullBleed = fullBleedIds.has(activeSection);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -62,7 +64,7 @@ const Index = () => {
       </nav>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+      <main className={isFullBleed ? 'w-full' : 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8'}>
         <div className="animate-fade-in">
           <ActiveComponent />
         </div>
