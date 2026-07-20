@@ -156,9 +156,7 @@ const RoleProfile: React.FC = () => {
           className="mt-10 grid gap-4 sm:gap-5"
           style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))' }}
         >
-          {HIERARCHY.map((item, i) => {
-            const Icon = item.icon;
-            return (
+          {HIERARCHY.map((item, i) => (
               <motion.div
                 key={item.label}
                 custom={i}
@@ -176,17 +174,6 @@ const RoleProfile: React.FC = () => {
                 }}
               >
                 <div className="flex items-start gap-3">
-                  <div
-                    className="flex items-center justify-center flex-shrink-0"
-                    style={{
-                      background: `${item.accent}15`,
-                      borderRadius: 12,
-                      width: 42,
-                      height: 42,
-                    }}
-                  >
-                    <Icon size={20} className="ug-role-icon" style={{ color: item.accent }} />
-                  </div>
                   <div className="min-w-0 flex-1">
                     <span
                       className="inline-block text-[0.66rem] font-medium uppercase tracking-[0.16em]"
