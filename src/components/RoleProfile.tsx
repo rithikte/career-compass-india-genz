@@ -209,29 +209,78 @@ const RoleProfile: React.FC = () => {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.65, delay: 0.05, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mt-5 font-bold"
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
+            }}
+            className="ug-role-title mt-5 font-bold"
             style={{
               ...headingFont,
               fontSize: 'clamp(2.2rem, 6vw, 4.2rem)',
               lineHeight: 1.02,
               letterSpacing: '-0.02em',
+              display: 'inline-block',
+              position: 'relative',
             }}
           >
-            Junior Site{' '}
-            <span
+            {['Junior', 'Site'].map((w, i) => (
+              <motion.span
+                key={w + i}
+                variants={{
+                  hidden: { opacity: 0, y: 28, filter: 'blur(8px)' },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    filter: 'blur(0px)',
+                    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
+                  },
+                }}
+                style={{ display: 'inline-block', marginRight: '0.28em' }}
+              >
+                {w}
+              </motion.span>
+            ))}
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 28, filter: 'blur(10px)' },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  filter: 'blur(0px)',
+                  transition: { duration: 0.85, ease: [0.22, 1, 0.36, 1] as const },
+                },
+              }}
+              className="ug-role-title-accent"
               style={{
-                backgroundImage: `linear-gradient(90deg, ${COLORS.accentDeep}, #A7F3D0)`,
+                display: 'inline-block',
+                backgroundImage: `linear-gradient(90deg, ${COLORS.accentDeep}, #A7F3D0, ${COLORS.accentDeep})`,
+                backgroundSize: '200% 100%',
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
                 color: 'transparent',
               }}
             >
               Engineer
-            </span>
+            </motion.span>
+            <motion.span
+              aria-hidden
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.9, delay: 0.55, ease: [0.22, 1, 0.36, 1] as const }}
+              style={{
+                display: 'block',
+                marginTop: '0.35em',
+                height: 2,
+                width: 'clamp(60px, 14vw, 140px)',
+                background: `linear-gradient(90deg, ${COLORS.accentDeep}, transparent)`,
+                transformOrigin: 'left center',
+                borderRadius: 2,
+              }}
+            />
           </motion.h1>
 
           <motion.p
