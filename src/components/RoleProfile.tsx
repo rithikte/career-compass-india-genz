@@ -37,7 +37,6 @@ const HIERARCHY: HierarchyItem[] = [
 ];
 
 const RESPONSIBILITIES: { title: string; desc: string }[] = [
-  { title: 'Reinforcement Verification', desc: 'Check slab, beam, column and footing reinforcement against drawings before concreting.' },
   { title: 'Formwork and Level Verification', desc: 'Verify shuttering alignment, plumb, and levels prior to pour.' },
   { title: 'Concrete Execution Monitoring', desc: 'Supervise pouring, compaction, curing and slump/cube tests on site.' },
   { title: 'Layout and Survey Verification', desc: 'Confirm grid lines, column positions and floor levels using total station and auto level.' },
