@@ -11,6 +11,9 @@ import DomainSubjects from '../components/DomainSubjects';
 import DomainChapters from '../components/DomainChapters';
 import RoleProfile from '../components/RoleProfile';
 import DomainExplore from '../components/DomainExplore';
+import EcosystemGrowth from '../components/EcosystemGrowth';
+
+
 
 
 
@@ -27,6 +30,7 @@ const Index = () => {
     { id: 'domain-chapters', title: 'Domain chapters', component: DomainChapters },
     { id: 'role-profile', title: 'Role Profile', component: () => <RoleProfile onExplore={() => setActiveSection('domain-explore')} /> },
     { id: 'domain-explore', title: 'Domain Explore', component: DomainExplore },
+    { id: 'ecosystem-growth', title: 'Ecosystem Growth', component: EcosystemGrowth },
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
