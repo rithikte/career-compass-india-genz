@@ -686,86 +686,114 @@ const EcosystemGrowth: React.FC = () => {
         <p className="ug-eg-section-tag">Layers ranked by how strongly they support fresher opportunities over the next decade.</p>
 
         <motion.div
-          className="ug-eg-summary-panel"
+          className="ug-eg-summary-scroll"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
         >
-          <div className="ug-eg-rank-list">
-            {rankedSummary.map((item, idx) => (
+          <div className="ug-eg-summary-panel">
+            <div className="ug-eg-rank-head">
+              <span>Rank</span>
+              <span>Ecosystem Layer</span>
+              <span>Relative Strength</span>
+              <span>Why It Ranks Here</span>
+            </div>
+
+            <div className="ug-eg-rank-list">
+              {rankedSummary.map((item, idx) => {
+                const width = 100 - idx * 6; // 100, 94, 88, 82, 76, 70
+                return (
+                  <motion.div
+                    key={item.rank}
+                    className="ug-eg-rank-item"
+                    data-top={item.rank === 1 ? 'true' : 'false'}
+                    initial={{ opacity: 0, x: -16 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.45, delay: idx * 0.07, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <div className="ug-eg-rank-badge">{item.rank}</div>
+                    <div className="ug-eg-rank-layer">{item.layer}</div>
+                    <div className="ug-eg-rank-meter">
+                      <div className="ug-eg-rank-meter-top">
+                        <span><span className="dot" />{item.strength}</span>
+                        <span className="pct">{width}%</span>
+                      </div>
+                      <div className="ug-eg-rank-bar">
+                        <motion.i
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${width}%` }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.9, delay: 0.15 + idx * 0.07, ease: [0.22, 1, 0.36, 1] }}
+                          style={{ width: `${width}%` }}
+                        />
+                      </div>
+                    </div>
+                    <div className="ug-eg-rank-reason">{item.reason}</div>
+                  </motion.div>
+                );
+              })}
+            </div>
+
+            <div className="ug-eg-pillars">
               <motion.div
-                key={item.rank}
-                className="ug-eg-rank-item"
-                data-top={item.rank === 1 ? 'true' : 'false'}
-                initial={{ opacity: 0, x: -16 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="ug-eg-pillar"
+                style={{ ['--pillar-color' as any]: '#7DD3FC' }}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: idx * 0.07, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.5, delay: 0.05 }}
               >
-                <div className="ug-eg-rank-badge">{item.rank}</div>
-                <div className="ug-eg-rank-body">
-                  <div className="ug-eg-rank-layer">{item.layer}</div>
-                  <span className="ug-eg-rank-strength">{item.strength}</span>
-                  <div className="ug-eg-rank-reason">{item.reason}</div>
+                <div className="ug-eg-pillar-num">01 / 03</div>
+                <div className="ug-eg-pillar-tag">Likely to Survive</div>
+                <div className="ug-eg-pillar-title">Recurring physical work keeps freshers relevant.</div>
+                <div className="ug-eg-pillar-text">
+                  Homes, apartments, RCC structures, and physical execution remain recurring needs.
+                  Daily site checking, measurement, documentation, and reporting cannot be fully
+                  replaced by AI or remote work.
                 </div>
               </motion.div>
-            ))}
-          </div>
 
-          <div className="ug-eg-pillars">
-            <motion.div
-              className="ug-eg-pillar"
-              style={{ ['--pillar-color' as any]: '#7DD3FC' }}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.05 }}
-            >
-              <div className="ug-eg-pillar-tag">Likely to Survive</div>
-              <div className="ug-eg-pillar-title">Recurring physical work keeps freshers relevant.</div>
-              <div className="ug-eg-pillar-text">
-                Homes, apartments, RCC structures, and physical execution remain recurring needs.
-                Daily site checking, measurement, documentation, and reporting cannot be fully
-                replaced by AI or remote work.
-              </div>
-            </motion.div>
+              <motion.div
+                className="ug-eg-pillar"
+                style={{ ['--pillar-color' as any]: '#FDA4AF' }}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.12 }}
+              >
+                <div className="ug-eg-pillar-num">02 / 03</div>
+                <div className="ug-eg-pillar-tag">What Could Weaken It</div>
+                <div className="ug-eg-pillar-title">Real estate cycles, not automation.</div>
+                <div className="ug-eg-pillar-text">
+                  Real estate slowdowns, high material costs, weak builder funding, delayed approvals,
+                  affordability pressure, and project cancellations. These affect hiring speed more
+                  than long-term role survival.
+                </div>
+              </motion.div>
 
-            <motion.div
-              className="ug-eg-pillar"
-              style={{ ['--pillar-color' as any]: '#FDA4AF' }}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.12 }}
-            >
-              <div className="ug-eg-pillar-tag">What Could Weaken It</div>
-              <div className="ug-eg-pillar-title">Real estate cycles, not automation.</div>
-              <div className="ug-eg-pillar-text">
-                Real estate slowdowns, high material costs, weak builder funding, delayed approvals,
-                affordability pressure, and project cancellations. These affect hiring speed more
-                than long-term role survival.
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="ug-eg-pillar"
-              style={{ ['--pillar-color' as any]: '#86EFAC' }}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.19 }}
-            >
-              <div className="ug-eg-pillar-tag">What Could Strengthen It</div>
-              <div className="ug-eg-pillar-title">Urbanisation and quality expectations.</div>
-              <div className="ug-eg-pillar-text">
-                Urban housing demand, tier-2 city growth, formal project management, stricter quality
-                expectations, faster project delivery pressure, and better site documentation systems.
-              </div>
-            </motion.div>
+              <motion.div
+                className="ug-eg-pillar"
+                style={{ ['--pillar-color' as any]: '#86EFAC' }}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.19 }}
+              >
+                <div className="ug-eg-pillar-num">03 / 03</div>
+                <div className="ug-eg-pillar-tag">What Could Strengthen It</div>
+                <div className="ug-eg-pillar-title">Urbanisation and quality expectations.</div>
+                <div className="ug-eg-pillar-text">
+                  Urban housing demand, tier-2 city growth, formal project management, stricter quality
+                  expectations, faster project delivery pressure, and better site documentation systems.
+                </div>
+              </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>
+
 
       {/* Takeaway */}
       <motion.div
