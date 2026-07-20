@@ -21,6 +21,7 @@ import SubjectsRecognition from '../components/SubjectsRecognition';
 import SubjectToChapter from '../components/SubjectToChapter';
 import WhenToFocusSubjects from '../components/WhenToFocusSubjects';
 import BehaviorsThatMatter from '../components/BehaviorsThatMatter';
+import Skills from '../components/Skills';
 
 
 
@@ -50,10 +51,11 @@ const Index = () => {
     { id: 'subject-to-chapter', title: 'What to Learn', component: SubjectToChapter },
     { id: 'when-to-focus', title: 'When to Focus', component: WhenToFocusSubjects },
     { id: 'behaviors-that-matter', title: 'Behaviors That Matter', component: BehaviorsThatMatter },
+    { id: 'skills', title: 'Skills', component: Skills },
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
-  const fullBleedIds = new Set(['ug-homepage', 'search-degree', 'domain-subjects', 'domain-chapters', 'role-profile', 'domain-explore', 'ecosystem-growth', 'career-stability', 'fresher-daily-work', 'entry-barrier-verdict', 'where-freshers-get-hired', 'how-subjects-affect-real-work', 'most-important-subjects', 'subjects-recognition', 'subject-to-chapter', 'when-to-focus', 'behaviors-that-matter']);
+  const fullBleedIds = new Set(['ug-homepage', 'search-degree', 'domain-subjects', 'domain-chapters', 'role-profile', 'domain-explore', 'ecosystem-growth', 'career-stability', 'fresher-daily-work', 'entry-barrier-verdict', 'where-freshers-get-hired', 'how-subjects-affect-real-work', 'most-important-subjects', 'subjects-recognition', 'subject-to-chapter', 'when-to-focus', 'behaviors-that-matter', 'skills']);
   const isFullBleed = fullBleedIds.has(activeSection);
 
   return (
