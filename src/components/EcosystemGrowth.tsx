@@ -121,12 +121,25 @@ const EcosystemGrowth: React.FC = () => {
   const stageRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
   const [scaledHeight, setScaledHeight] = useState<number | undefined>(undefined);
+  const [isMobile, setIsMobile] = useState<boolean>(() =>
+    typeof window !== 'undefined' ? window.matchMedia('(max-width: 767px)').matches : false
+  );
 
   useLayoutEffect(() => {
+    const mql = window.matchMedia('(max-width: 767px)');
+    const onMql = () => setIsMobile(mql.matches);
+    onMql();
+    mql.addEventListener('change', onMql);
+
     const recompute = () => {
       const outer = outerRef.current;
       const stage = stageRef.current;
       if (!outer || !stage) return;
+      if (mql.matches) {
+        setScale(1);
+        setScaledHeight(undefined);
+        return;
+      }
       const available = outer.clientWidth;
       const next = Math.min(1, available / STAGE_WIDTH);
       setScale(next);
@@ -138,16 +151,21 @@ const EcosystemGrowth: React.FC = () => {
     if (stageRef.current) ro.observe(stageRef.current);
     return () => {
       window.removeEventListener('resize', recompute);
+      mql.removeEventListener('change', onMql);
       ro.disconnect();
     };
   }, []);
 
   return (
-    <div className="ug-eg-scroll" ref={outerRef} style={{ height: scaledHeight }}>
+    <div
+      className={`ug-eg-scroll${isMobile ? ' ug-eg-mobile' : ''}`}
+      ref={outerRef}
+      style={{ height: isMobile ? undefined : scaledHeight }}
+    >
       <div
         className="ug-ecosystem-growth"
         ref={stageRef}
-        style={{ transform: `scale(${scale})`, transformOrigin: 'top left' }}
+        style={isMobile ? undefined : { transform: `scale(${scale})`, transformOrigin: 'top left' }}
       >
       <style>{`
         .ug-eg-scroll {
