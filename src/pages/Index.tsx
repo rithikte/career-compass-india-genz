@@ -34,10 +34,11 @@ const Index = () => {
     { id: 'domain-explore', title: 'Domain Explore', component: DomainExplore },
     { id: 'ecosystem-growth', title: 'Ecosystem Growth', component: EcosystemGrowth },
     { id: 'career-stability', title: 'Career Stability Check', component: CareerStabilityCheck },
+    { id: 'fresher-daily-work', title: 'What Freshers Actually Do', component: FresherDailyWork },
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
-  const fullBleedIds = new Set(['ug-homepage', 'search-degree', 'domain-subjects', 'domain-chapters', 'role-profile', 'domain-explore', 'ecosystem-growth', 'career-stability']);
+  const fullBleedIds = new Set(['ug-homepage', 'search-degree', 'domain-subjects', 'domain-chapters', 'role-profile', 'domain-explore', 'ecosystem-growth', 'career-stability', 'fresher-daily-work']);
   const isFullBleed = fullBleedIds.has(activeSection);
 
   return (
