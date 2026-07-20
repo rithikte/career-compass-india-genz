@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+
+const STAGE_WIDTH = 1240;
 
 interface GrowthRow {
   period: string;
