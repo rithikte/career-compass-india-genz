@@ -16,6 +16,7 @@ import FresherDailyWork from '../components/FresherDailyWork';
 import EntryBarrierVerdict from '../components/EntryBarrierVerdict';
 import WhereFreshersGetHired from '../components/WhereFreshersGetHired';
 import HowSubjectsAffectRealWork from '../components/HowSubjectsAffectRealWork';
+import MostImportantSubjects from '../components/MostImportantSubjects';
 
 
 
