@@ -1,10 +1,11 @@
-Plan for the selected "Trusted by Thousands" stat section in `src/components/UGHomepage.tsx`:
+Make all fonts on the Ecosystem Growth page fully responsive using `clamp()` so text scales proportionally across mobile, tablet, and desktop without breaking the existing layout.
 
-1. **Remove the icon container** from each stat card (lines 663–668) without affecting the grid or the card shell.
-2. **Center the remaining content vertically** inside each stat card so the layout stays balanced after the icon is removed.
-3. **Insert a thin divider line** between the stat value (e.g., `60+`) and the label (e.g., `ENGINEERING DEGREES`).
-4. **Animate the divider** so it scales from 0 to full width on hover/touch, matching the existing teal stat accent color for each card (`--stat-color`).
-5. **Respect reduced motion** by adding the new divider class to the existing `prefers-reduced-motion` rule.
-6. **Verify** the build passes and the section still looks consistent across mobile, tablet, and desktop breakpoints.
+**What will change**
+- Convert every fixed font-size in `src/components/EcosystemGrowth.tsx` from `px` or static `rem` values to `clamp()` values that shrink on small screens and scale up on large screens.
+- Targets: eyebrow label, section label, section title, section tag, layer index number, layer tag, card title, meaning line, timeline period/outlook/reality, score reason label/text, and remember label/text.
+- Keep the same visual hierarchy (headings still biggest, body/helper text still smaller) so the design does not change at desktop size, only becomes readable at mobile/tablet sizes.
+- Maintain current line-heights, letter-spacing, colors, and structural padding.
 
-No changes to the data values, labels, or other sections of the page.
+**Verification**
+- Check the preview at desktop, tablet, and mobile widths to confirm no clipping, overlapping, or unreadable text.
+- Run a build check to ensure no CSS/syntax errors.
