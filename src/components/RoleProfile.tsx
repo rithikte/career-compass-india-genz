@@ -36,7 +36,7 @@ interface HierarchyItem {
   label: string;
   hint: string;
   value: string;
-  icon: React.ComponentType<{ size?: number; className?: string; style?: React.CSSProperties }>;
+  icon: LucideIcon;
   accent: string;
 }
 
