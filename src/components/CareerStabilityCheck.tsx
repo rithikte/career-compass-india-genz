@@ -286,7 +286,7 @@ const CareerStabilityCheck: React.FC = () => {
 
         {/* Reality Check final block */}
         <SectionTitle eyebrow="Reality Check" title="The Honest Picture" />
-        <div style={cardStyle({ background: 'linear-gradient(180deg, rgba(56,189,248,0.06), rgba(168,85,247,0.06))' })}>
+        <div className="cs-card" tabIndex={0} style={cardStyle({ background: 'linear-gradient(180deg, rgba(56,189,248,0.06), rgba(168,85,247,0.06))' })}>
           <p style={pStyle()}>
             Most students think <b style={{ color: '#f1f5f9' }}>Junior Site Engineer</b> means designing structures. In reality, freshers mostly check, observe, measure, document, and follow up.
           </p>
