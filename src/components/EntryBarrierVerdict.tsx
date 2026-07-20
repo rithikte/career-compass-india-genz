@@ -155,7 +155,7 @@ const EntryBarrierVerdict: React.FC = () => {
         </div>
 
         {/* Entry Barrier Breakdown */}
-        <SectionTitle eyebrow="Section 2" title="Entry Barrier Breakdown" />
+        <SectionTitle title="Entry Barrier Breakdown" />
         <div className="ebv-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
           <div className="ebv-table" role="table" aria-label="Entry barrier breakdown">
             <div className="ebv-thead" role="row">
@@ -177,7 +177,7 @@ const EntryBarrierVerdict: React.FC = () => {
         </div>
 
         {/* Entry Proof Matrix */}
-        <SectionTitle eyebrow="Section 3" title="Entry Proof Matrix" />
+        <SectionTitle title="Entry Proof Matrix" />
         <div className="ebv-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
           <div className="ebv-table ebv-table-2" role="table" aria-label="Entry proof matrix">
             <div className="ebv-thead" role="row">
@@ -206,7 +206,7 @@ const EntryBarrierVerdict: React.FC = () => {
           }}
         >
           <div className="ebv-card" tabIndex={0} style={cardStyle()}>
-            <EyebrowLabel>Section 4 · Biggest Entry Obstacles</EyebrowLabel>
+            <EyebrowLabel>Biggest Entry Obstacles</EyebrowLabel>
             <ul style={ulStyle()}>
               {obstacles.map((item, i) => (
                 <Li key={i} warn>{item}</Li>
@@ -215,7 +215,7 @@ const EntryBarrierVerdict: React.FC = () => {
           </div>
 
           <div className="ebv-card" tabIndex={0} style={cardStyle()}>
-            <EyebrowLabel>Section 5 · What Makes Entry Easier?</EyebrowLabel>
+            <EyebrowLabel>What Makes Entry Easier?</EyebrowLabel>
             <ul style={ulStyle()}>
               {easier.map((item, i) => (
                 <Li key={i}>{item}</Li>
@@ -224,19 +224,6 @@ const EntryBarrierVerdict: React.FC = () => {
           </div>
         </div>
 
-        {/* Final Summary */}
-        <SectionTitle eyebrow="Final Takeaway" title="What To Remember" />
-        <div className="ebv-card" tabIndex={0} style={cardStyle({ background: 'linear-gradient(180deg, rgba(96,165,250,0.06), rgba(168,85,247,0.06))' })}>
-          <p style={pStyle()}>
-            Civil site engineering remains an <b style={{ color: '#f1f5f9' }}>accessible entry point</b> for average Civil Engineering graduates. The barrier is not academic excellence — it is practical site awareness and basic drawing confidence.
-          </p>
-          <p style={pStyle()}>
-            Students who read RCC drawings, communicate clearly, and tolerate site conditions usually get hired. Students who avoid site exposure or struggle with practical communication face the biggest delays.
-          </p>
-          <p style={{ ...pStyle(), marginBottom: 0 }}>
-            The role rewards readiness more than brilliance. A few focused weeks of drawing practice and site observation can make entry significantly easier.
-          </p>
-        </div>
       </div>
 
       <style>{`
@@ -369,12 +356,14 @@ const EyebrowLabel: React.FC<{ children: React.ReactNode }> = ({ children }) => 
   </span>
 );
 
-const SectionTitle: React.FC<{ eyebrow: string; title: string }> = ({ eyebrow, title }) => (
+const SectionTitle: React.FC<{ eyebrow?: string; title: string }> = ({ eyebrow, title }) => (
   <div style={{ marginTop: 40, marginBottom: 14 }}>
-    <div style={{ fontSize: fs.eyebrow, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 700 }}>
-      {eyebrow}
-    </div>
-    <div style={{ marginTop: 6, fontSize: fs.h2, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}>
+    {eyebrow && (
+      <div style={{ fontSize: fs.eyebrow, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 700 }}>
+        {eyebrow}
+      </div>
+    )}
+    <div style={{ marginTop: eyebrow ? 6 : 0, fontSize: fs.h2, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}>
       {title}
     </div>
   </div>
