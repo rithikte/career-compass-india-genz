@@ -37,6 +37,7 @@ const Index = () => {
     { id: 'career-stability', title: 'Career Stability Check', component: CareerStabilityCheck },
     { id: 'fresher-daily-work', title: 'What Freshers Actually Do', component: FresherDailyWork },
     { id: 'entry-barrier-verdict', title: 'Entry Barrier Verdict', component: EntryBarrierVerdict },
+    { id: 'where-freshers-get-hired', title: 'Where Freshers Get Hired', component: WhereFreshersGetHired },
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
