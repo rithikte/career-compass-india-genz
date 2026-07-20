@@ -202,7 +202,7 @@ const EcosystemGrowth: React.FC = () => {
           -webkit-background-clip: text; background-clip: text; color: transparent;
         }
         .ug-eg-index-tag {
-          font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+          font-size: clamp(8px, 1.1vw, 10px); letter-spacing: 0.3em; text-transform: uppercase;
           color: var(--accent-label); padding: 5px 10px; border-radius: 999px;
           background: var(--accent-tint); border: 1px solid var(--accent-border);
           white-space: nowrap;
