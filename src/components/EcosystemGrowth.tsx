@@ -383,102 +383,177 @@ const EcosystemGrowth: React.FC = () => {
           color: #F8FAFC; letter-spacing: -0.01em; max-width: 920px; margin: 0 auto;
         }
 
-        /* ===== Redesigned Final Summary ===== */
-        .ug-eg-summary-panel {
-          padding: clamp(24px, 3.5vw, 44px);
-          border-radius: 24px;
-          background:
-            radial-gradient(800px 300px at 100% 0%, rgba(168,85,247,0.08), transparent 60%),
-            radial-gradient(600px 250px at 0% 100%, rgba(56,189,248,0.08), transparent 60%),
-            linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01));
-          border: 1px solid rgba(255,255,255,0.08);
-          backdrop-filter: blur(14px);
+        /* ===== Redesigned Final Summary — LOCKED LAYOUT (identical at every screen) ===== */
+        .ug-eg-summary-scroll {
+          width: 100%;
+          overflow-x: auto;
+          overflow-y: hidden;
+          -webkit-overflow-scrolling: touch;
+          padding-bottom: 6px;
         }
+        .ug-eg-summary-scroll::-webkit-scrollbar { height: 8px; }
+        .ug-eg-summary-scroll::-webkit-scrollbar-thumb {
+          background: rgba(125,211,252,0.25); border-radius: 999px;
+        }
+        .ug-eg-summary-panel {
+          position: relative;
+          width: 1160px;              /* fixed canvas — never compresses */
+          padding: 40px 44px 44px;
+          border-radius: 26px;
+          background:
+            radial-gradient(900px 320px at 100% 0%, rgba(168,85,247,0.10), transparent 60%),
+            radial-gradient(700px 280px at 0% 100%, rgba(56,189,248,0.10), transparent 60%),
+            linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.012));
+          border: 1px solid rgba(255,255,255,0.09);
+          backdrop-filter: blur(16px);
+          box-shadow: 0 30px 80px -40px rgba(0,0,0,0.6);
+        }
+        .ug-eg-summary-panel::before {
+          content: ''; position: absolute; inset: 0; border-radius: 26px; pointer-events: none;
+          background: linear-gradient(180deg, rgba(255,255,255,0.06), transparent 30%);
+          mask: linear-gradient(#000, transparent 60%);
+        }
+
+        /* Column header row */
+        .ug-eg-rank-head {
+          display: grid;
+          grid-template-columns: 68px minmax(0, 1.25fr) 260px minmax(0, 1.5fr);
+          gap: 24px; align-items: center;
+          padding: 0 22px 14px;
+          border-bottom: 1px dashed rgba(255,255,255,0.10);
+          margin-bottom: 14px;
+        }
+        .ug-eg-rank-head span {
+          font-size: 10px; letter-spacing: 0.34em; text-transform: uppercase;
+          font-weight: 700; color: rgba(203,213,225,0.55);
+        }
+
         .ug-eg-rank-list {
           display: flex; flex-direction: column;
           gap: 10px;
         }
         .ug-eg-rank-item {
           position: relative;
-          display: grid; gap: 16px;
-          grid-template-columns: 56px 1fr;
-          align-items: center;
-          padding: 16px 18px;
-          border-radius: 16px;
-          background: rgba(255,255,255,0.02);
-          border: 1px solid rgba(255,255,255,0.06);
-          transition: transform .35s cubic-bezier(.34,1.56,.64,1), border-color .3s, background .3s;
+          display: grid;
+          grid-template-columns: 68px minmax(0, 1.25fr) 260px minmax(0, 1.5fr);
+          gap: 24px; align-items: center;
+          padding: 18px 22px;
+          border-radius: 18px;
+          background: linear-gradient(180deg, rgba(255,255,255,0.028), rgba(255,255,255,0.008));
+          border: 1px solid rgba(255,255,255,0.07);
+          transition: transform .35s cubic-bezier(.34,1.56,.64,1), border-color .3s, background .3s, box-shadow .3s;
+        }
+        .ug-eg-rank-item::before {
+          content: ''; position: absolute; left: 0; top: 14px; bottom: 14px; width: 3px;
+          border-radius: 3px;
+          background: linear-gradient(180deg, rgba(125,211,252,0.6), rgba(168,85,247,0.4));
+          opacity: 0.6;
         }
         .ug-eg-rank-item:hover {
           transform: translateX(4px);
-          border-color: rgba(125,211,252,0.30);
-          background: rgba(56,189,248,0.04);
+          border-color: rgba(125,211,252,0.32);
+          background: linear-gradient(180deg, rgba(56,189,248,0.06), rgba(255,255,255,0.01));
+          box-shadow: 0 20px 40px -28px rgba(56,189,248,0.5);
+        }
+        .ug-eg-rank-item[data-top="true"]::before {
+          background: linear-gradient(180deg, #FCD34D, #F59E0B); opacity: 1;
+          box-shadow: 0 0 18px rgba(251,191,36,0.5);
         }
         .ug-eg-rank-badge {
           display: inline-flex; align-items: center; justify-content: center;
-          width: 44px; height: 44px; border-radius: 14px;
+          width: 56px; height: 56px; border-radius: 16px;
           font-family: 'Poppins', sans-serif; font-weight: 700;
-          font-size: 1.15rem; letter-spacing: -0.02em;
+          font-size: 1.4rem; letter-spacing: -0.02em;
           color: #F8FAFC;
-          background: linear-gradient(135deg, rgba(56,189,248,0.20), rgba(168,85,247,0.20));
-          border: 1px solid rgba(125,211,252,0.30);
-          box-shadow: 0 8px 24px -12px rgba(56,189,248,0.4);
+          background: linear-gradient(135deg, rgba(56,189,248,0.18), rgba(168,85,247,0.18));
+          border: 1px solid rgba(125,211,252,0.28);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 10px 30px -16px rgba(56,189,248,0.4);
         }
         .ug-eg-rank-item[data-top="true"] .ug-eg-rank-badge {
           background: linear-gradient(135deg, #FDE68A, #FCD34D);
           color: #422006; border-color: rgba(251,191,36,0.5);
-          box-shadow: 0 10px 24px -10px rgba(251,191,36,0.5);
-        }
-        .ug-eg-rank-body {
-          display: grid; gap: 4px 20px;
-          grid-template-columns: 1fr; align-items: center;
-        }
-        @media (min-width: 720px) {
-          .ug-eg-rank-body {
-            grid-template-columns: minmax(220px, 1fr) 130px 1.4fr;
-          }
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 12px 30px -12px rgba(251,191,36,0.55);
         }
         .ug-eg-rank-layer {
           font-family: 'Poppins', sans-serif; font-weight: 600;
-          font-size: 1rem; color: #F1F5F9; letter-spacing: -0.01em;
-        }
-        .ug-eg-rank-strength {
-          display: inline-flex; align-items: center; gap: 8px;
-          padding: 5px 12px; border-radius: 999px;
-          font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em;
-          text-transform: uppercase; width: fit-content;
-          background: rgba(74,222,128,0.10); color: #86EFAC;
-          border: 1px solid rgba(74,222,128,0.28);
-        }
-        .ug-eg-rank-strength::before {
-          content: ''; width: 6px; height: 6px; border-radius: 50%;
-          background: #86EFAC; box-shadow: 0 0 10px #86EFAC;
-        }
-        .ug-eg-rank-reason {
-          font-size: 0.85rem; color: #94A3B8; line-height: 1.55;
+          font-size: 1.05rem; color: #F1F5F9; letter-spacing: -0.01em;
+          line-height: 1.35;
         }
 
-        /* Pillars */
-        .ug-eg-pillars {
-          margin-top: clamp(32px, 4vw, 44px);
-          display: grid; gap: 16px;
-          grid-template-columns: 1fr;
+        /* Strength meter (replaces pill) */
+        .ug-eg-rank-meter {
+          display: flex; flex-direction: column; gap: 8px;
         }
-        @media (min-width: 900px) {
-          .ug-eg-pillars { grid-template-columns: repeat(3, 1fr); }
+        .ug-eg-rank-meter-top {
+          display: flex; align-items: center; justify-content: space-between;
+          font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+          font-weight: 700; color: #86EFAC;
+        }
+        .ug-eg-rank-meter-top .dot {
+          display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+          background: #86EFAC; box-shadow: 0 0 10px #86EFAC; margin-right: 8px;
+          animation: eg-pulse 2s ease-in-out infinite;
+        }
+        @keyframes eg-pulse {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.55; transform: scale(0.85); }
+        }
+        .ug-eg-rank-meter-top .pct { color: rgba(203,213,225,0.75); font-weight: 600; letter-spacing: 0.08em; }
+        .ug-eg-rank-bar {
+          position: relative; height: 8px; border-radius: 999px;
+          background: rgba(255,255,255,0.06);
+          overflow: hidden;
+        }
+        .ug-eg-rank-bar > i {
+          position: absolute; inset: 0; display: block;
+          width: var(--w, 60%);
+          background: linear-gradient(90deg, #34D399, #86EFAC);
+          border-radius: 999px;
+          box-shadow: 0 0 14px rgba(52,211,153,0.55);
+        }
+        .ug-eg-rank-item[data-top="true"] .ug-eg-rank-bar > i {
+          background: linear-gradient(90deg, #F59E0B, #FCD34D);
+          box-shadow: 0 0 16px rgba(251,191,36,0.6);
+        }
+        .ug-eg-rank-reason {
+          font-size: 0.88rem; color: #94A3B8; line-height: 1.6;
+        }
+
+        /* Pillars — always 3 equal columns */
+        .ug-eg-pillars {
+          margin-top: 34px;
+          display: grid; gap: 18px;
+          grid-template-columns: repeat(3, 1fr);
         }
         .ug-eg-pillar {
           position: relative; overflow: hidden;
-          padding: 22px 24px; border-radius: 18px;
-          background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01));
-          border: 1px solid rgba(255,255,255,0.07);
-          transition: transform .3s ease, border-color .3s;
+          padding: 26px 26px 24px;
+          border-radius: 20px;
+          background:
+            radial-gradient(400px 160px at 100% 0%, color-mix(in srgb, var(--pillar-color) 10%, transparent), transparent 60%),
+            linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.012));
+          border: 1px solid rgba(255,255,255,0.08);
+          transition: transform .35s cubic-bezier(.34,1.56,.64,1), border-color .3s, box-shadow .3s;
         }
-        .ug-eg-pillar:hover { transform: translateY(-3px); }
+        .ug-eg-pillar:hover {
+          transform: translateY(-4px);
+          border-color: color-mix(in srgb, var(--pillar-color) 40%, transparent);
+          box-shadow: 0 24px 50px -30px color-mix(in srgb, var(--pillar-color) 60%, transparent);
+        }
         .ug-eg-pillar::after {
           content: ''; position: absolute; left: 0; right: 0; top: 0;
           height: 2px; background: var(--pillar-color);
-          box-shadow: 0 0 20px var(--pillar-color);
+          box-shadow: 0 0 22px var(--pillar-color);
+        }
+        .ug-eg-pillar-num {
+          font-family: 'Poppins', sans-serif; font-weight: 700;
+          font-size: 0.72rem; letter-spacing: 0.28em;
+          color: var(--pillar-color); margin-bottom: 14px;
+          display: flex; align-items: center; gap: 10px;
+        }
+        .ug-eg-pillar-num::before {
+          content: ''; width: 22px; height: 1px;
+          background: var(--pillar-color); opacity: 0.7;
         }
         .ug-eg-pillar-tag {
           display: inline-flex; align-items: center; gap: 8px;
@@ -492,11 +567,11 @@ const EcosystemGrowth: React.FC = () => {
         }
         .ug-eg-pillar-title {
           font-family: 'Poppins', sans-serif; font-weight: 600;
-          font-size: 1.02rem; color: #F8FAFC; line-height: 1.35;
-          margin-bottom: 10px; letter-spacing: -0.01em;
+          font-size: 1.08rem; color: #F8FAFC; line-height: 1.35;
+          margin-bottom: 12px; letter-spacing: -0.01em;
         }
         .ug-eg-pillar-text {
-          font-size: 0.85rem; color: #CBD5E1; line-height: 1.65;
+          font-size: 0.9rem; color: #CBD5E1; line-height: 1.65;
         }
 
         @media (prefers-reduced-motion: reduce) {
