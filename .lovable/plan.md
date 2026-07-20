@@ -1,28 +1,30 @@
-Lock the Ecosystem Growth page to a single fixed desktop composition so it looks identical on every screen size (mobile, tablet, desktop). Instead of the layout reflowing (cards stacking, grids collapsing, fonts scaling), the entire page will render at a fixed desktop width and smaller screens will horizontally scroll to view it — matching the approach previously used for the "Final Ecosystem Summary" dashboard.
+Make the Ecosystem Growth page show the **exact same desktop composition on every screen** — no horizontal scrolling, no layout reflow — by proportionally scaling the whole design down to fit smaller viewports.
 
-**Why the design was changing before**
-The page currently uses responsive techniques that intentionally adapt to screen size:
-- `clamp()` on every font size → text shrinks on small screens.
-- `@media (min-width: 820px)` rules → card top section and reason row switch from 1-column (mobile) to 2-column (desktop).
-- `grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))` on the timeline → 3 columns on desktop, fewer on narrow screens.
-- `clamp()` on paddings and gaps → spacing shrinks on mobile.
+**Approach: CSS scale-to-fit**
 
-These are the reasons the design "changes" between screens. To make it identical everywhere, all of these must be replaced with fixed values.
+Keep the 1240px fixed-width stage that was just built (so the design never reflows), but wrap it in a container that uses a CSS `transform: scale(...)` to shrink the entire stage to the available viewport width. This is the same trick used for pixel-perfect dashboards that must look identical on all devices.
 
 **What will change in `src/components/EcosystemGrowth.tsx`**
 
-1. Wrap the entire page content in a fixed-width stage (e.g. `width: 1240px`, `min-width: 1240px`) inside an outer wrapper with `overflow-x: auto`. On mobile the user swipes horizontally; the design itself never reflows.
-2. Replace every `clamp(...)` font-size with the single desktop value (the upper bound of the current clamp). Example: `clamp(9px, 1.2vw, 11px)` → `11px`.
-3. Replace every `clamp(...)` padding/gap/margin with the desktop value.
-4. Remove all `@media (min-width: 820px)` blocks and hard-code the desktop grids:
-   - `.ug-eg-card-top` → `grid-template-columns: minmax(220px, 320px) 1fr` always.
-   - `.ug-eg-reason-row` → `grid-template-columns: 1fr 1fr` always.
-5. Change `.ug-eg-timeline` from `auto-fit` to a fixed `grid-template-columns: repeat(3, 1fr)` so it's always 3 columns.
-6. Keep `prefers-reduced-motion` rule and all colors, gradients, animations, and content unchanged.
+1. Remove `overflow-x: auto` from `.ug-eg-scroll` (no more sideways scrolling).
+2. Change `.ug-eg-scroll` to be a viewport-width container that contains a scaled inner stage.
+3. Add a new `.ug-eg-stage` wrapper around `.ug-ecosystem-growth`:
+   - `transform-origin: top left`
+   - `transform: scale(var(--eg-scale, 1))`
+   - Its parent gets `height: calc(<stage-height> * var(--eg-scale))` so the scaled content doesn't leave empty space below.
+4. Set `--eg-scale` responsively using CSS `min()` so the stage always fits: `--eg-scale: min(1, calc((100vw - 32px) / 1240))`. On desktops ≥1240px it stays 1 (unchanged); on smaller screens it shrinks proportionally.
+5. Because `transform: scale` doesn't change the element's layout box, use a JS `ResizeObserver` (or a simple `useLayoutEffect` on window resize) to measure the natural stage height and apply the scaled height to the outer wrapper. Small hook, ~15 lines.
+6. Keep every internal style exactly as it is (all the fixed 1240px composition, fonts, paddings, grids remain untouched).
+
+**Result**
+- Desktop (≥1240px): identical to now.
+- Tablet (≈768px): entire page rendered at ~0.6× — same layout, smaller.
+- Mobile (≈375px): entire page rendered at ~0.28× — same layout, smaller. Text will be small but the composition is preserved as the user requested.
+- No horizontal scroll on any device.
 
 **Trade-off the user should know**
-This is the exact behavior they asked for: the design will never adapt. On phones and small tablets, users will need to scroll horizontally to see the full page. That's the cost of "same design on all screens."
+On very small phones the design will render quite small (because the desktop layout is being shrunk to fit ~375px). This is the direct consequence of "same design on all screens." Zooming with pinch remains possible.
 
 **Verification**
-- Build check for CSS/syntax errors.
-- Playwright screenshots at 375px, 768px, and 1280px viewports — all three should show the identical desktop composition (with horizontal scroll available on the two smaller ones).
+- Build check.
+- Playwright screenshots at 375px, 768px, 1024px, and 1280px viewports — all four should show the identical composition, each scaled to fit its viewport with no horizontal overflow.
