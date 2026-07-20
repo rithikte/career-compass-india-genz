@@ -52,7 +52,11 @@ const fadeUp = {
   }),
 };
 
-const RoleProfile: React.FC = () => {
+interface RoleProfileProps {
+  onExplore?: () => void;
+}
+
+const RoleProfile: React.FC<RoleProfileProps> = ({ onExplore }) => {
   return (
     <div
       className="ug-role-profile"
@@ -165,8 +169,41 @@ const RoleProfile: React.FC = () => {
           opacity: 0.4;
         }
 
+        .ug-explore-card {
+          position: relative;
+          overflow: hidden;
+          transition: transform 350ms cubic-bezier(.22,1,.36,1), border-color 350ms ease, box-shadow 350ms ease;
+          cursor: pointer;
+        }
+        .ug-explore-card::before {
+          content: '';
+          position: absolute; inset: 0;
+          background: radial-gradient(120% 120% at 100% 0%, rgba(45,212,191,0.12), transparent 55%);
+          opacity: 0;
+          transition: opacity 400ms ease;
+          pointer-events: none;
+        }
+        .ug-explore-card::after {
+          content: '';
+          position: absolute; left: 28px; right: 28px; bottom: 0;
+          height: 1px;
+          background: linear-gradient(90deg, transparent, ${COLORS.accent}, transparent);
+          transform: scaleX(0);
+          transform-origin: left center;
+          transition: transform 500ms cubic-bezier(.22,1,.36,1);
+        }
+        @media (hover: hover) {
+          .ug-explore-card:hover { transform: translateY(-4px); border-color: rgba(45,212,191,0.35); box-shadow: 0 24px 60px -30px rgba(45,212,191,0.28); }
+          .ug-explore-card:hover::before { opacity: 1; }
+          .ug-explore-card:hover::after { transform: scaleX(1); }
+          .ug-explore-card:hover .ug-explore-arrow { transform: translateX(6px); color: ${COLORS.accent}; }
+        }
+        .ug-explore-arrow {
+          transition: transform 350ms cubic-bezier(.22,1,.36,1), color 350ms ease;
+        }
+
         @media (prefers-reduced-motion: reduce) {
-          .ug-tile, .ug-tile::after, .ug-context, .ug-resp-row, .ug-resp-num, .ug-resp-arrow { transition: none !important; }
+          .ug-tile, .ug-tile::after, .ug-context, .ug-resp-row, .ug-resp-num, .ug-resp-arrow, .ug-explore-card, .ug-explore-card::before, .ug-explore-card::after, .ug-explore-arrow { transition: none !important; }
         }
       `}</style>
 
@@ -634,6 +671,93 @@ const RoleProfile: React.FC = () => {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* ========== EXPLORE THE DOMAIN ========== */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5 }}
+          className="mt-16 flex items-end justify-between gap-6"
+        >
+          <div>
+            <span
+              className="text-[0.66rem] font-semibold uppercase"
+              style={{ ...techFont, color: COLORS.accent, letterSpacing: '0.28em' }}
+            >
+              Continue
+            </span>
+            <h2
+              className="mt-2 font-semibold"
+              style={{
+                ...headingFont,
+                fontSize: 'clamp(1.35rem, 2.4vw, 1.7rem)',
+                letterSpacing: '-0.01em',
+              }}
+            >
+              Explore the domain
+            </h2>
+            <p
+              className="mt-2"
+              style={{ ...bodyFont, color: COLORS.mutedSoft, fontSize: '0.85rem', lineHeight: 1.55 }}
+            >
+              See the skills, tools, and career paths that shape this field.
+            </p>
+          </div>
+          <div className="hidden sm:block flex-1" style={{ height: 1, background: COLORS.border }} />
+        </motion.div>
+
+        <motion.button
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] as const }}
+          onClick={onExplore}
+          className="ug-explore-card mt-6 w-full text-left"
+          style={{
+            background: COLORS.card,
+            border: `1px solid ${COLORS.border}`,
+            borderRadius: 22,
+            padding: 'clamp(22px, 3.5vw, 32px)',
+          }}
+          whileHover={{ scale: 1.01 }}
+          whileTap={{ scale: 0.99 }}
+        >
+          <div className="flex items-center justify-between gap-5">
+            <div className="min-w-0 flex-1">
+              <h3
+                className="font-semibold"
+                style={{
+                  ...headingFont,
+                  color: COLORS.text,
+                  fontSize: 'clamp(1.05rem, 2vw, 1.25rem)',
+                  lineHeight: 1.35,
+                  letterSpacing: '-0.005em',
+                }}
+              >
+                Open the domain explorer
+              </h3>
+              <p
+                className="mt-1"
+                style={{
+                  ...bodyFont,
+                  color: COLORS.mutedSoft,
+                  fontSize: '0.85rem',
+                  lineHeight: 1.55,
+                }}
+              >
+                A deeper look at the skills, tools, and projects behind this role.
+              </p>
+            </div>
+            <span
+              className="ug-explore-arrow flex-shrink-0"
+              style={{ ...techFont, color: COLORS.mutedSoft, fontSize: '1.4rem' }}
+              aria-hidden
+            >
+              →
+            </span>
+          </div>
+        </motion.button>
       </div>
     </div>
   );
