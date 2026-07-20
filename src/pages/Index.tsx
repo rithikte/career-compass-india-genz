@@ -64,7 +64,7 @@ const Index = () => {
       </nav>
 
       {/* Main Content */}
-      <main className={isFullBleed ? 'w-full' : 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8'}>
+      <main className={isFullBleed ? 'w-full' : 'max-w-7xl mx-auto px-[0.7rem] sm:px-[1.05rem] lg:px-[1.4rem] py-6 sm:py-8'}>
         <div className="animate-fade-in">
           <ActiveComponent />
         </div>
