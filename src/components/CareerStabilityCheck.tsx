@@ -243,7 +243,7 @@ const CareerStabilityCheck: React.FC = () => {
 
         {/* Top Failure Points */}
         <SectionTitle eyebrow="Top Failure Points" title="Where Freshers Break First" />
-        <div style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+        <div className="cs-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
           <div className="cs-table" role="table" aria-label="Top failure points">
             <div className="cs-thead" role="row">
               <div role="columnheader">Failure Point</div>
