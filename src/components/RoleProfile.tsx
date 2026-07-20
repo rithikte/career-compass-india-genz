@@ -735,7 +735,7 @@ const RoleProfile: React.FC<RoleProfileProps> = ({ onExplore }) => {
                   letterSpacing: '-0.005em',
                 }}
               >
-                Open the domain explorer
+                Explore this career domain in detail
               </h3>
               <p
                 className="mt-1"
