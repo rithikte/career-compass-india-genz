@@ -146,7 +146,7 @@ const EcosystemGrowth: React.FC = () => {
         }
         .ug-eg-sub { max-width: 820px; color: #94A3B8; font-size: clamp(0.9rem, 1.6vw, 1rem); line-height: 1.7; }
         .ug-eg-section-label {
-          font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
+          font-size: clamp(9px, 1.2vw, 11px); letter-spacing: 0.32em; text-transform: uppercase;
           color: #94A3B8; margin-bottom: 12px;
         }
         .ug-eg-section-title {
