@@ -1,19 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import {
-  GraduationCap,
-  Compass,
-  Layers,
-  Focus,
-  Building2,
-  Home,
-  Boxes,
-  UserRound,
-  Target,
-  Briefcase,
-  ClipboardList,
-  type LucideIcon,
-} from 'lucide-react';
 
 const COLORS = {
   bg: '#0B1020',
@@ -36,19 +22,18 @@ interface HierarchyItem {
   label: string;
   hint: string;
   value: string;
-  icon: LucideIcon;
   accent: string;
 }
 
 const HIERARCHY: HierarchyItem[] = [
-  { label: 'Degree', hint: 'The course you study', value: 'B.Tech Civil Engineering', icon: GraduationCap, accent: COLORS.accent },
-  { label: 'Domain', hint: 'The career field your degree prepares you for', value: 'Construction Site Execution', icon: Compass, accent: COLORS.accent2 },
-  { label: 'Core Family Role', hint: 'The main type of work you can build your career in', value: 'Site Engineering', icon: Layers, accent: COLORS.accent3 },
-  { label: 'Sub-function', hint: 'The specific area of work you can specialize in', value: 'RCC Structural Execution', icon: Focus, accent: COLORS.accent4 },
-  { label: 'Industry', hint: 'The industries where this work is available', value: 'Building Construction Companies', icon: Building2, accent: COLORS.accent },
-  { label: 'Sub-industry', hint: 'The specialized sector within an industry', value: 'Residential Building Construction', icon: Home, accent: COLORS.accent2 },
-  { label: 'Cluster', hint: 'The actual business area where the work happens', value: 'RCC Apartment Projects', icon: Boxes, accent: COLORS.accent3 },
-  { label: 'Fresher Role', hint: 'The entry-level job you can get after graduation', value: 'Junior Site Engineer', icon: UserRound, accent: COLORS.accent4 },
+  { label: 'Degree', hint: 'The course you study', value: 'B.Tech Civil Engineering', accent: COLORS.accent },
+  { label: 'Domain', hint: 'The career field your degree prepares you for', value: 'Construction Site Execution', accent: COLORS.accent2 },
+  { label: 'Core Family Role', hint: 'The main type of work you can build your career in', value: 'Site Engineering', accent: COLORS.accent3 },
+  { label: 'Sub-function', hint: 'The specific area of work you can specialize in', value: 'RCC Structural Execution', accent: COLORS.accent4 },
+  { label: 'Industry', hint: 'The industries where this work is available', value: 'Building Construction Companies', accent: COLORS.accent },
+  { label: 'Sub-industry', hint: 'The specialized sector within an industry', value: 'Residential Building Construction', accent: COLORS.accent2 },
+  { label: 'Cluster', hint: 'The actual business area where the work happens', value: 'RCC Apartment Projects', accent: COLORS.accent3 },
+  { label: 'Fresher Role', hint: 'The entry-level job you can get after graduation', value: 'Junior Site Engineer', accent: COLORS.accent4 },
 ];
 
 const RESPONSIBILITIES: { title: string; desc: string }[] = [
@@ -79,16 +64,14 @@ const RoleProfile: React.FC = () => {
         .ug-role-card { transition: transform 250ms ease-out, border-color 250ms ease-out, box-shadow 250ms ease-out; }
         @media (hover: hover) {
           .ug-role-card:hover { transform: translateY(-4px); border-color: ${COLORS.accent}; box-shadow: 0 14px 40px rgba(0,0,0,0.4); }
-          .ug-role-card:hover .ug-role-icon { color: ${COLORS.accent}; }
         }
-        .ug-role-icon { transition: color 250ms ease-out; }
         .ug-role-resp { transition: background-color 200ms ease-out, transform 200ms ease-out, border-color 200ms ease-out; }
         @media (hover: hover) {
           .ug-role-resp:hover { background-color: rgba(255,255,255,0.04); transform: translateX(2px); border-color: ${COLORS.accent}; }
         }
         .ug-role-num { transition: background-color 200ms ease-out, color 200ms ease-out; }
         @media (prefers-reduced-motion: reduce) {
-          .ug-role-card, .ug-role-icon, .ug-role-resp, .ug-role-num { transition: none !important; }
+          .ug-role-card, .ug-role-resp, .ug-role-num { transition: none !important; }
         }
       `}</style>
 
@@ -156,9 +139,7 @@ const RoleProfile: React.FC = () => {
           className="mt-10 grid gap-4 sm:gap-5"
           style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))' }}
         >
-          {HIERARCHY.map((item, i) => {
-            const Icon = item.icon;
-            return (
+          {HIERARCHY.map((item, i) => (
               <motion.div
                 key={item.label}
                 custom={i}
@@ -176,17 +157,6 @@ const RoleProfile: React.FC = () => {
                 }}
               >
                 <div className="flex items-start gap-3">
-                  <div
-                    className="flex items-center justify-center flex-shrink-0"
-                    style={{
-                      background: `${item.accent}15`,
-                      borderRadius: 12,
-                      width: 42,
-                      height: 42,
-                    }}
-                  >
-                    <Icon size={20} className="ug-role-icon" style={{ color: item.accent }} />
-                  </div>
                   <div className="min-w-0 flex-1">
                     <span
                       className="inline-block text-[0.66rem] font-medium uppercase tracking-[0.16em]"
@@ -210,8 +180,7 @@ const RoleProfile: React.FC = () => {
                   {item.value}
                 </div>
               </motion.div>
-            );
-          })}
+          ))}
         </div>
 
         {/* Work Identity & Business Purpose */}
@@ -234,12 +203,6 @@ const RoleProfile: React.FC = () => {
             }}
           >
             <div className="flex items-start gap-3">
-              <div
-                className="flex items-center justify-center flex-shrink-0"
-                style={{ background: `${COLORS.accent}15`, borderRadius: 12, width: 44, height: 44 }}
-              >
-                <Target size={22} className="ug-role-icon" style={{ color: COLORS.accent }} />
-              </div>
               <div className="min-w-0 flex-1">
                 <span
                   className="inline-block text-[0.68rem] font-medium uppercase tracking-[0.16em]"
@@ -279,12 +242,6 @@ const RoleProfile: React.FC = () => {
             }}
           >
             <div className="flex items-start gap-3">
-              <div
-                className="flex items-center justify-center flex-shrink-0"
-                style={{ background: `${COLORS.accent2}15`, borderRadius: 12, width: 44, height: 44 }}
-              >
-                <Briefcase size={22} className="ug-role-icon" style={{ color: COLORS.accent2 }} />
-              </div>
               <div className="min-w-0 flex-1">
                 <span
                   className="inline-block text-[0.68rem] font-medium uppercase tracking-[0.16em]"
@@ -328,12 +285,6 @@ const RoleProfile: React.FC = () => {
           }}
         >
           <div className="flex items-start gap-3">
-            <div
-              className="flex items-center justify-center flex-shrink-0"
-              style={{ background: `${COLORS.accent3}15`, borderRadius: 12, width: 44, height: 44 }}
-            >
-              <ClipboardList size={22} className="ug-role-icon" style={{ color: COLORS.accent3 }} />
-            </div>
             <div className="min-w-0 flex-1">
               <span
                 className="inline-block text-[0.68rem] font-medium uppercase tracking-[0.16em]"
