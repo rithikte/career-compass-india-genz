@@ -34,7 +34,7 @@ const Index = () => {
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
-  const fullBleedIds = new Set(['ug-homepage', 'search-degree', 'domain-subjects', 'domain-chapters', 'role-profile', 'ecosystem-growth']);
+  const fullBleedIds = new Set(['ug-homepage', 'search-degree', 'domain-subjects', 'domain-chapters', 'role-profile', 'domain-explore', 'ecosystem-growth']);
   const isFullBleed = fullBleedIds.has(activeSection);
 
   return (
