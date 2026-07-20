@@ -304,7 +304,7 @@ const RoleProfile: React.FC = () => {
               ...bodyFont,
               color: COLORS.muted,
               maxWidth: '62ch',
-              fontSize: 'clamp(1rem, 2.2vw, 1.15rem)',
+              fontSize: 'clamp(0.75rem, 1.65vw, 0.86rem)',
               lineHeight: 1.65,
             }}
           >
