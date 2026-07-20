@@ -197,8 +197,7 @@ const RoleProfile: React.FC = () => {
                   {item.value}
                 </div>
               </motion.div>
-            );
-          })}
+          ))}
         </div>
 
         {/* Work Identity & Business Purpose */}
