@@ -302,12 +302,6 @@ const RoleProfile: React.FC = () => {
           }}
         >
           <div className="flex items-start gap-3">
-            <div
-              className="flex items-center justify-center flex-shrink-0"
-              style={{ background: `${COLORS.accent3}15`, borderRadius: 12, width: 44, height: 44 }}
-            >
-              <ClipboardList size={22} className="ug-role-icon" style={{ color: COLORS.accent3 }} />
-            </div>
             <div className="min-w-0 flex-1">
               <span
                 className="inline-block text-[0.68rem] font-medium uppercase tracking-[0.16em]"
