@@ -12,6 +12,7 @@ import DomainChapters from '../components/DomainChapters';
 import RoleProfile from '../components/RoleProfile';
 import DomainExplore from '../components/DomainExplore';
 import EcosystemGrowth from '../components/EcosystemGrowth';
+import CareerStabilityCheck from '../components/CareerStabilityCheck';
 
 
 
