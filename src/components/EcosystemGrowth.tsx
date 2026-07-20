@@ -283,7 +283,7 @@ const EcosystemGrowth: React.FC = () => {
         .ug-eg-reason-label::before {
           content: ''; width: 14px; height: 1px; background: currentColor; opacity: 0.6;
         }
-        .ug-eg-reason-text { font-size: 0.85rem; color: #CBD5E1; line-height: 1.7; }
+        .ug-eg-reason-text { font-size: clamp(0.76rem, 1.3vw, 0.85rem); color: #CBD5E1; line-height: 1.7; }
         .ug-eg-remember {
           position: relative;
           padding: 18px 20px 18px 44px; border-radius: 16px;
