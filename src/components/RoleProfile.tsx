@@ -12,6 +12,7 @@ import {
   Target,
   Briefcase,
   ClipboardList,
+  type LucideIcon,
 } from 'lucide-react';
 
 const COLORS = {
