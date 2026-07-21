@@ -23,6 +23,7 @@ import WhenToFocusSubjects from '../components/WhenToFocusSubjects';
 import BehaviorsThatMatter from '../components/BehaviorsThatMatter';
 import Skills from '../components/Skills';
 import Tools from '../components/Tools';
+import Labs from '../components/Labs';
 
 
 
