@@ -692,8 +692,8 @@ const CompaniesHiring: React.FC = () => {
         {/* Why Companies Fear Freshers */}
         <SectionTitle eyebrow="Risk Assessment" title="Why Companies Fear Freshers" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ minWidth: 560, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
+          <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', marginLeft: -18, marginRight: -18, paddingLeft: 18, paddingRight: 18 }}>
+            <table style={{ minWidth: 640, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
               <thead>
                 <tr>
                   {['Factor', 'Fresher', 'Experienced Employee'].map((h) => (
