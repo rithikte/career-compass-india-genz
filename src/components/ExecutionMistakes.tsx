@@ -613,33 +613,49 @@ const ExecutionMistakes: React.FC = () => {
         }
         @media (max-width: 640px) {
           .recovery-table th,
-          .recovery-table td {
+          .recovery-table td,
+          .escalation-table th,
+          .escalation-table td {
             padding: 6px 6px !important;
             font-size: 11px !important;
             white-space: normal !important;
             vertical-align: top;
           }
-          .recovery-table th {
+          .recovery-table th,
+          .escalation-table th {
             letter-spacing: 0.02em !important;
             font-size: 10px !important;
           }
-          .recovery-table td span {
+          .recovery-table td span,
+          .escalation-table td span {
             padding: 3px 6px !important;
             font-size: 9px !important;
             letter-spacing: 0.04em !important;
           }
+          .escalation-table td span {
+            width: 22px !important;
+            height: 22px !important;
+          }
         }
         @media (max-width: 390px) {
           .recovery-table th,
-          .recovery-table td {
+          .recovery-table td,
+          .escalation-table th,
+          .escalation-table td {
             padding: 4px 4px !important;
             font-size: 10px !important;
           }
-          .recovery-table th {
+          .recovery-table th,
+          .escalation-table th {
             font-size: 9px !important;
           }
-          .recovery-table td span {
+          .recovery-table td span,
+          .escalation-table td span {
             font-size: 8px !important;
+          }
+          .escalation-table td span {
+            width: 20px !important;
+            height: 20px !important;
           }
         }
       `}</style>
