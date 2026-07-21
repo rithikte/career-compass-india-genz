@@ -736,8 +736,8 @@ const CompaniesHiring: React.FC = () => {
         {/* What a Bad Hire Costs */}
         <SectionTitle eyebrow="Business Impact" title="What A Bad Hire Costs A Company" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ minWidth: 520, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
+          <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', marginLeft: -18, marginRight: -18, paddingLeft: 18, paddingRight: 18 }}>
+            <table style={{ minWidth: 560, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
               <thead>
                 <tr>
                   {['Problem', 'Business Impact'].map((h) => (
