@@ -24,6 +24,7 @@ import BehaviorsThatMatter from '../components/BehaviorsThatMatter';
 import Skills from '../components/Skills';
 import Tools from '../components/Tools';
 import Labs from '../components/Labs';
+import MiniProjects from '../components/MiniProjects';
 
 
 
@@ -57,11 +58,12 @@ const Index = () => {
     { id: 'skills', title: 'Skills', component: Skills },
     { id: 'tools', title: 'Tools', component: Tools },
     { id: 'labs', title: 'Labs', component: Labs },
+    { id: 'mini-projects', title: 'Mini Projects', component: MiniProjects },
 
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
-  const fullBleedIds = new Set(['ug-homepage', 'search-degree', 'domain-subjects', 'domain-chapters', 'role-profile', 'domain-explore', 'ecosystem-growth', 'career-stability', 'fresher-daily-work', 'entry-barrier-verdict', 'where-freshers-get-hired', 'how-subjects-affect-real-work', 'most-important-subjects', 'subjects-recognition', 'subject-to-chapter', 'when-to-focus', 'behaviors-that-matter', 'skills', 'tools', 'labs']);
+  const fullBleedIds = new Set(['ug-homepage', 'search-degree', 'domain-subjects', 'domain-chapters', 'role-profile', 'domain-explore', 'ecosystem-growth', 'career-stability', 'fresher-daily-work', 'entry-barrier-verdict', 'where-freshers-get-hired', 'how-subjects-affect-real-work', 'most-important-subjects', 'subjects-recognition', 'subject-to-chapter', 'when-to-focus', 'behaviors-that-matter', 'skills', 'tools', 'labs', 'mini-projects']);
   const isFullBleed = fullBleedIds.has(activeSection);
 
   return (
