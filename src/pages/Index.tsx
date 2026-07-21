@@ -70,6 +70,7 @@ const Index = () => {
     { id: 'mini-projects', title: 'Mini Projects', component: MiniProjects },
     { id: 'minor-projects', title: 'Minor Projects', component: MinorProjects },
     { id: 'major-projects', title: 'Major Projects', component: MajorProjects },
+    { id: 'real-execution-exposure', title: 'Real Execution Exposure', component: RealExecutionExposure },
 
   ];
 
