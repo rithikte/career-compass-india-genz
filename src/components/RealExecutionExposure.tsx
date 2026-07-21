@@ -487,43 +487,41 @@ const RealExecutionExposure: React.FC = () => {
         {/* Priority Table */}
         <SectionTitle eyebrow="Priority Analysis" title="Exposure Priority Table" />
         <div className="exposure-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ minWidth: 640, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
-              <thead>
-                <tr>
-                  {['Exposure', 'Awareness Built', 'Workplace Importance', 'Interview Value', 'Job Value'].map((h) => (
-                    <th
-                      key={h}
-                      style={{
-                        textAlign: 'left',
-                        padding: '12px 14px',
-                        borderBottom: '1px solid rgba(148,163,184,0.18)',
-                        fontSize: fs.labelLg,
-                        letterSpacing: '0.12em',
-                        textTransform: 'uppercase',
-                        color: accentTeal,
-                        fontWeight: 700,
-                        background: 'rgba(110,231,215,0.06)',
-                      }}
-                    >
-                      {h}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {priorityRows.map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
-                    <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.exposure}</td>
-                    <td style={{ padding: '12px 14px', color: textSoft }}>{row.awareness}</td>
-                    <td style={{ padding: '12px 14px', color: accentViolet }}>{row.importance}</td>
-                    <td style={{ padding: '12px 14px', color: accentTeal }}>{row.interview}</td>
-                    <td style={{ padding: '12px 14px', color: success }}>{row.job}</td>
-                  </tr>
+          <table className="priority-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
+            <thead>
+              <tr>
+                {['Exposure', 'Awareness Built', 'Workplace Importance', 'Interview Value', 'Job Value'].map((h) => (
+                  <th
+                    key={h}
+                    style={{
+                      textAlign: 'left',
+                      padding: '12px 14px',
+                      borderBottom: '1px solid rgba(148,163,184,0.18)',
+                      fontSize: fs.labelLg,
+                      letterSpacing: '0.12em',
+                      textTransform: 'uppercase',
+                      color: accentTeal,
+                      fontWeight: 700,
+                      background: 'rgba(110,231,215,0.06)',
+                    }}
+                  >
+                    {h}
+                  </th>
                 ))}
-              </tbody>
-            </table>
-          </div>
+              </tr>
+            </thead>
+            <tbody>
+              {priorityRows.map((row, i) => (
+                <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
+                  <td style={{ color: textMain, fontWeight: 600 }}>{row.exposure}</td>
+                  <td style={{ color: textSoft }}>{row.awareness}</td>
+                  <td style={{ color: accentViolet }}>{row.importance}</td>
+                  <td style={{ color: accentTeal }}>{row.interview}</td>
+                  <td style={{ color: success }}>{row.job}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
         {/* Connection Table */}
@@ -645,6 +643,23 @@ const RealExecutionExposure: React.FC = () => {
               0 0 0 1px rgba(110,231,215,0.4),
               0 0 22px rgba(110,231,215,0.32),
               0 0 46px rgba(167,139,250,0.26);
+          }
+        }
+        .priority-table th,
+        .priority-table td {
+          padding: 12px 14px;
+        }
+        @media (max-width: 640px) {
+          .priority-table {
+            font-size: 11px !important;
+          }
+          .priority-table th,
+          .priority-table td {
+            padding: 6px 6px;
+            letter-spacing: 0.04em;
+          }
+          .priority-table th {
+            font-size: 9px !important;
           }
         }
       `}</style>
