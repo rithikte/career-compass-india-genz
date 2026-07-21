@@ -518,43 +518,42 @@ const MajorProjects: React.FC = () => {
         {/* Priority Table */}
         <SectionTitle eyebrow="Priority Analysis" title="Major Project Priority Table" />
         <div className="major-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ minWidth: 640, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
-              <thead>
-                <tr>
-                  {['Major Project', 'Workflow Simulated', 'Capability Built', 'Interview Value', 'Job Value'].map((h) => (
-                    <th
-                      key={h}
-                      style={{
-                        textAlign: 'left',
-                        padding: '12px 14px',
-                        borderBottom: '1px solid rgba(148,163,184,0.18)',
-                        fontSize: fs.labelLg,
-                        letterSpacing: '0.12em',
-                        textTransform: 'uppercase',
-                        color: accentTeal,
-                        fontWeight: 700,
-                        background: 'rgba(110,231,215,0.06)',
-                      }}
-                    >
-                      {h}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {priorityRows.map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
-                    <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.project}</td>
-                    <td style={{ padding: '12px 14px', color: textSoft }}>{row.workflow}</td>
-                    <td style={{ padding: '12px 14px', color: success }}>{row.capability}</td>
-                    <td style={{ padding: '12px 14px', color: accentTeal }}>{row.interview}</td>
-                    <td style={{ padding: '12px 14px', color: accentViolet }}>{row.job}</td>
-                  </tr>
+          <table className="priority-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
+            <thead>
+              <tr>
+                {['Major Project', 'Workflow Simulated', 'Capability Built', 'Interview Value', 'Job Value'].map((h) => (
+                  <th
+                    key={h}
+                    className="priority-table-th"
+                    style={{
+                      textAlign: 'left',
+                      padding: '12px 14px',
+                      borderBottom: '1px solid rgba(148,163,184,0.18)',
+                      fontSize: fs.labelLg,
+                      letterSpacing: '0.12em',
+                      textTransform: 'uppercase',
+                      color: accentTeal,
+                      fontWeight: 700,
+                      background: 'rgba(110,231,215,0.06)',
+                    }}
+                  >
+                    {h}
+                  </th>
                 ))}
-              </tbody>
-            </table>
-          </div>
+              </tr>
+            </thead>
+            <tbody>
+              {priorityRows.map((row, i) => (
+                <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
+                  <td className="priority-table-td" style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.project}</td>
+                  <td className="priority-table-td" style={{ padding: '12px 14px', color: textSoft }}>{row.workflow}</td>
+                  <td className="priority-table-td" style={{ padding: '12px 14px', color: success }}>{row.capability}</td>
+                  <td className="priority-table-td" style={{ padding: '12px 14px', color: accentTeal }}>{row.interview}</td>
+                  <td className="priority-table-td" style={{ padding: '12px 14px', color: accentViolet }}>{row.job}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
         {/* Connection Table */}
@@ -722,6 +721,30 @@ const MajorProjects: React.FC = () => {
               0 0 0 1px rgba(110,231,215,0.4),
               0 0 22px rgba(110,231,215,0.32),
               0 0 46px rgba(167,139,250,0.26);
+          }
+        }
+        .priority-table th,
+        .priority-table td {
+          white-space: normal;
+        }
+        @media (max-width: 640px) {
+          .priority-table {
+            font-size: 11px !important;
+          }
+          .priority-table-th,
+          .priority-table-td {
+            padding: 6px 8px !important;
+            font-size: 10px !important;
+            letter-spacing: 0.06em !important;
+            word-break: break-word;
+            hyphens: auto;
+          }
+        }
+        @media (max-width: 420px) {
+          .priority-table-th,
+          .priority-table-td {
+            padding: 4px 5px !important;
+            font-size: 9px !important;
           }
         }
       `}</style>
