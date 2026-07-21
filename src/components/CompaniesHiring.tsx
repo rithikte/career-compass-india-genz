@@ -721,8 +721,8 @@ const CompaniesHiring: React.FC = () => {
                 {fearComparison.map((row, i) => (
                   <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
                     <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600, whiteSpace: 'nowrap' }}>{row.factor}</td>
-                    <td style={{ padding: '12px 14px', color: '#fecaca', fontWeight: 600 }}>{row.fresher}</td>
-                    <td style={{ padding: '12px 14px', color: success, fontWeight: 600 }}>{row.experienced}</td>
+                    <td style={{ padding: '12px 14px', color: '#fecaca', fontWeight: 600, whiteSpace: 'nowrap' }}>{row.fresher}</td>
+                    <td style={{ padding: '12px 14px', color: success, fontWeight: 600, whiteSpace: 'nowrap' }}>{row.experienced}</td>
                   </tr>
                 ))}
               </tbody>
