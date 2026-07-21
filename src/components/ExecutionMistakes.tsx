@@ -363,73 +363,70 @@ const ExecutionMistakes: React.FC = () => {
         {/* Recovery Table */}
         <SectionTitle eyebrow="Failure Response" title="Common Execution Failure Recovery Table" />
         <div className="mistake-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ minWidth: 900, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
-              <thead>
-                <tr>
-                  {[
-                    'Common Workplace Mistake',
-                    'Risk Level',
-                    'How It Is Usually Detected',
-                    'Fresher Responsibility',
-                    'Possible Consequence',
-                    'Immediate Action',
-                    'Trust Impact',
-                    'What NOT To Do',
-                  ].map((h) => (
-                    <th
-                      key={h}
+          <table className="recovery-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
+            <thead>
+              <tr>
+                {[
+                  'Common Workplace Mistake',
+                  'Risk Level',
+                  'How It Is Usually Detected',
+                  'Fresher Responsibility',
+                  'Possible Consequence',
+                  'Immediate Action',
+                  'Trust Impact',
+                  'What NOT To Do',
+                ].map((h) => (
+                  <th
+                    key={h}
+                    style={{
+                      textAlign: 'left',
+                      padding: '12px 14px',
+                      borderBottom: '1px solid rgba(148,163,184,0.18)',
+                      fontSize: fs.labelLg,
+                      letterSpacing: '0.12em',
+                      textTransform: 'uppercase',
+                      color: warn,
+                      fontWeight: 700,
+                      background: 'rgba(248,113,113,0.06)',
+                    }}
+                  >
+                    {h}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {recoveryRows.map((row, i) => (
+                <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
+                  <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.mistake}</td>
+                  <td style={{ padding: '12px 14px' }}>
+                    <span
                       style={{
-                        textAlign: 'left',
-                        padding: '12px 14px',
-                        borderBottom: '1px solid rgba(148,163,184,0.18)',
-                        fontSize: fs.labelLg,
-                        letterSpacing: '0.12em',
+                        display: 'inline-block',
+                        padding: '4px 10px',
+                        borderRadius: 999,
+                        fontSize: fs.labelMd,
+                        fontWeight: 800,
+                        letterSpacing: '0.08em',
                         textTransform: 'uppercase',
-                        color: warn,
-                        fontWeight: 700,
-                        background: 'rgba(248,113,113,0.06)',
-                        whiteSpace: 'nowrap',
+                        background: row.risk === 'HIGH' ? 'rgba(248,113,113,0.12)' : 'rgba(250,204,21,0.12)',
+                        border: `1px solid ${row.risk === 'HIGH' ? 'rgba(248,113,113,0.35)' : 'rgba(250,204,21,0.35)'}`,
+                        color: row.risk === 'HIGH' ? warn : '#facc15',
                       }}
                     >
-                      {h}
-                    </th>
-                  ))}
+                      {row.risk}
+                    </span>
+                  </td>
+                  <td style={{ padding: '12px 14px', color: textSoft }}>{row.detected}</td>
+                  <td style={{ padding: '12px 14px', color: accentTeal, fontWeight: 600 }}>{row.responsibility}</td>
+                  <td style={{ padding: '12px 14px', color: textSoft }}>{row.consequence}</td>
+                  <td style={{ padding: '12px 14px', color: success, fontWeight: 600 }}>{row.action}</td>
+                  <td style={{ padding: '12px 14px', color: textSoft }}>{row.trustImpact}</td>
+                  <td style={{ padding: '12px 14px', color: '#fecaca' }}>{row.whatNotToDo}</td>
                 </tr>
-              </thead>
-              <tbody>
-                {recoveryRows.map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
-                    <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600, whiteSpace: 'nowrap' }}>{row.mistake}</td>
-                    <td style={{ padding: '12px 14px' }}>
-                      <span
-                        style={{
-                          display: 'inline-block',
-                          padding: '4px 10px',
-                          borderRadius: 999,
-                          fontSize: fs.labelMd,
-                          fontWeight: 800,
-                          letterSpacing: '0.08em',
-                          textTransform: 'uppercase',
-                          background: row.risk === 'HIGH' ? 'rgba(248,113,113,0.12)' : 'rgba(250,204,21,0.12)',
-                          border: `1px solid ${row.risk === 'HIGH' ? 'rgba(248,113,113,0.35)' : 'rgba(250,204,21,0.35)'}`,
-                          color: row.risk === 'HIGH' ? warn : '#facc15',
-                        }}
-                      >
-                        {row.risk}
-                      </span>
-                    </td>
-                    <td style={{ padding: '12px 14px', color: textSoft, minWidth: 180 }}>{row.detected}</td>
-                    <td style={{ padding: '12px 14px', color: accentTeal, fontWeight: 600, minWidth: 120 }}>{row.responsibility}</td>
-                    <td style={{ padding: '12px 14px', color: textSoft, minWidth: 160 }}>{row.consequence}</td>
-                    <td style={{ padding: '12px 14px', color: success, fontWeight: 600, minWidth: 180 }}>{row.action}</td>
-                    <td style={{ padding: '12px 14px', color: textSoft, minWidth: 150 }}>{row.trustImpact}</td>
-                    <td style={{ padding: '12px 14px', color: '#fecaca', minWidth: 180 }}>{row.whatNotToDo}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+              ))}
+            </tbody>
+          </table>
         </div>
 
         {/* Escalation Judgment Guide */}
