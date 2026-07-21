@@ -692,42 +692,40 @@ const CompaniesHiring: React.FC = () => {
         {/* Why Companies Fear Freshers */}
         <SectionTitle eyebrow="Risk Assessment" title="Why Companies Fear Freshers" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
-          <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', marginLeft: -18, marginRight: -18, paddingLeft: 18, paddingRight: 18 }}>
-            <table style={{ minWidth: 640, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
-              <thead>
-                <tr>
-                  {['Factor', 'Fresher', 'Experienced Employee'].map((h) => (
-                    <th
-                      key={h}
-                      style={{
-                        textAlign: 'left',
-                        padding: '12px 14px',
-                        borderBottom: '1px solid rgba(148,163,184,0.18)',
-                        fontSize: fs.labelLg,
-                        letterSpacing: '0.12em',
-                        textTransform: 'uppercase',
-                        color: warn,
-                        fontWeight: 700,
-                        background: 'rgba(248,113,113,0.06)',
-                        whiteSpace: 'nowrap',
-                      }}
-                    >
-                      {h}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {fearComparison.map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
-                    <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600, whiteSpace: 'nowrap' }}>{row.factor}</td>
-                    <td style={{ padding: '12px 14px', color: '#fecaca', fontWeight: 600, whiteSpace: 'nowrap' }}>{row.fresher}</td>
-                    <td style={{ padding: '12px 14px', color: success, fontWeight: 600, whiteSpace: 'nowrap' }}>{row.experienced}</td>
-                  </tr>
+          <table className="fear-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body, tableLayout: 'fixed' }}>
+            <thead>
+              <tr>
+                {['Factor', 'Fresher', 'Experienced Employee'].map((h) => (
+                  <th
+                    key={h}
+                    style={{
+                      textAlign: 'left',
+                      padding: '12px 14px',
+                      borderBottom: '1px solid rgba(148,163,184,0.18)',
+                      fontSize: fs.labelLg,
+                      letterSpacing: '0.12em',
+                      textTransform: 'uppercase',
+                      color: warn,
+                      fontWeight: 700,
+                      background: 'rgba(248,113,113,0.06)',
+                    }}
+                  >
+                    {h}
+                  </th>
                 ))}
-              </tbody>
-            </table>
-          </div>
+              </tr>
+            </thead>
+            <tbody>
+              {fearComparison.map((row, i) => (
+                <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
+                  <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.factor}</td>
+                  <td style={{ padding: '12px 14px', color: '#fecaca', fontWeight: 600 }}>{row.fresher}</td>
+                  <td style={{ padding: '12px 14px', color: success, fontWeight: 600 }}>{row.experienced}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
           <p style={{ marginTop: 22, fontSize: fs.h3, color: accentAmber, fontWeight: 700, lineHeight: 1.4, textAlign: 'center', fontStyle: 'italic' }}>
             "Paying the salary is easy. Trusting the fresher with real work is the difficult part."
           </p>
@@ -983,15 +981,22 @@ const CompaniesHiring: React.FC = () => {
           }
         }
         .attitude-table td, .attitude-table th { word-break: break-word; }
+        .fear-table td, .fear-table th { word-break: break-word; }
         @media (max-width: 640px) {
           .attitude-table { font-size: 12px !important; }
           .attitude-table th, .attitude-table td { padding: 10px 8px !important; }
           .attitude-table th { font-size: 9px !important; letter-spacing: 0.06em !important; white-space: normal !important; }
+          .fear-table { font-size: 12px !important; }
+          .fear-table th, .fear-table td { padding: 10px 8px !important; }
+          .fear-table th { font-size: 9px !important; letter-spacing: 0.06em !important; white-space: normal !important; }
         }
         @media (max-width: 380px) {
           .attitude-table { font-size: 11px !important; }
           .attitude-table th, .attitude-table td { padding: 8px 6px !important; }
+          .fear-table { font-size: 11px !important; }
+          .fear-table th, .fear-table td { padding: 6px 4px !important; }
         }
+
       `}</style>
     </div>
   );
