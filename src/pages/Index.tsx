@@ -29,6 +29,8 @@ import MinorProjects from '../components/MinorProjects';
 import MajorProjects from '../components/MajorProjects';
 import RealExecutionExposure from '../components/RealExecutionExposure';
 import ExecutionMistakes from '../components/ExecutionMistakes';
+import CompaniesHiring from '../components/CompaniesHiring';
+
 
 
 
