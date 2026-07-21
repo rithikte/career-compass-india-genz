@@ -432,43 +432,40 @@ const ExecutionMistakes: React.FC = () => {
         {/* Escalation Judgment Guide */}
         <SectionTitle eyebrow="Decision Framework" title="Escalation Judgment Guide" />
         <div className="mistake-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ minWidth: 640, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
-              <thead>
-                <tr>
-                  {['Situation', 'Escalate Immediately', 'Verify First Then Escalate', 'Record Only'].map((h) => (
-                    <th
-                      key={h}
-                      style={{
-                        textAlign: 'left',
-                        padding: '12px 14px',
-                        borderBottom: '1px solid rgba(148,163,184,0.18)',
-                        fontSize: fs.labelLg,
-                        letterSpacing: '0.12em',
-                        textTransform: 'uppercase',
-                        color: accentViolet,
-                        fontWeight: 700,
-                        background: 'rgba(167,139,250,0.06)',
-                        whiteSpace: 'nowrap',
-                      }}
-                    >
-                      {h}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {escalationRows.map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
-                    <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.situation}</td>
-                    <td style={{ padding: '12px 14px' }}>{renderCheck(row.escalate)}</td>
-                    <td style={{ padding: '12px 14px' }}>{renderCheck(row.verify)}</td>
-                    <td style={{ padding: '12px 14px' }}>{renderCheck(row.record)}</td>
-                  </tr>
+          <table className="escalation-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
+            <thead>
+              <tr>
+                {['Situation', 'Escalate Immediately', 'Verify First Then Escalate', 'Record Only'].map((h) => (
+                  <th
+                    key={h}
+                    style={{
+                      textAlign: 'left',
+                      padding: '12px 14px',
+                      borderBottom: '1px solid rgba(148,163,184,0.18)',
+                      fontSize: fs.labelLg,
+                      letterSpacing: '0.12em',
+                      textTransform: 'uppercase',
+                      color: accentViolet,
+                      fontWeight: 700,
+                      background: 'rgba(167,139,250,0.06)',
+                    }}
+                  >
+                    {h}
+                  </th>
                 ))}
-              </tbody>
-            </table>
-          </div>
+              </tr>
+            </thead>
+            <tbody>
+              {escalationRows.map((row, i) => (
+                <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
+                  <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.situation}</td>
+                  <td style={{ padding: '12px 14px' }}>{renderCheck(row.escalate)}</td>
+                  <td style={{ padding: '12px 14px' }}>{renderCheck(row.verify)}</td>
+                  <td style={{ padding: '12px 14px' }}>{renderCheck(row.record)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
         {/* 5 Rules */}
