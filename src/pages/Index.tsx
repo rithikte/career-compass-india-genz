@@ -28,6 +28,7 @@ import MiniProjects from '../components/MiniProjects';
 import MinorProjects from '../components/MinorProjects';
 import MajorProjects from '../components/MajorProjects';
 import RealExecutionExposure from '../components/RealExecutionExposure';
+import ExecutionMistakes from '../components/ExecutionMistakes';
 
 
 
@@ -71,11 +72,12 @@ const Index = () => {
     { id: 'minor-projects', title: 'Minor Projects', component: MinorProjects },
     { id: 'major-projects', title: 'Major Projects', component: MajorProjects },
     { id: 'real-execution-exposure', title: 'Real Execution Exposure', component: RealExecutionExposure },
+    { id: 'execution-mistakes', title: 'Execution Mistakes', component: ExecutionMistakes },
 
   ];
 
   const ActiveComponent = sections.find(s => s.id === activeSection)?.component || HomePage;
-  const fullBleedIds = new Set(['ug-homepage', 'search-degree', 'domain-subjects', 'domain-chapters', 'role-profile', 'domain-explore', 'ecosystem-growth', 'career-stability', 'fresher-daily-work', 'entry-barrier-verdict', 'where-freshers-get-hired', 'how-subjects-affect-real-work', 'most-important-subjects', 'subjects-recognition', 'subject-to-chapter', 'when-to-focus', 'behaviors-that-matter', 'skills', 'tools', 'labs', 'mini-projects', 'minor-projects', 'major-projects', 'real-execution-exposure']);
+  const fullBleedIds = new Set(['ug-homepage', 'search-degree', 'domain-subjects', 'domain-chapters', 'role-profile', 'domain-explore', 'ecosystem-growth', 'career-stability', 'fresher-daily-work', 'entry-barrier-verdict', 'where-freshers-get-hired', 'how-subjects-affect-real-work', 'most-important-subjects', 'subjects-recognition', 'subject-to-chapter', 'when-to-focus', 'behaviors-that-matter', 'skills', 'tools', 'labs', 'mini-projects', 'minor-projects', 'major-projects', 'real-execution-exposure', 'execution-mistakes']);
   const isFullBleed = fullBleedIds.has(activeSection);
 
   return (
