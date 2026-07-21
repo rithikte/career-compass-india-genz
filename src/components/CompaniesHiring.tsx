@@ -540,8 +540,8 @@ const CompaniesHiring: React.FC = () => {
         {/* Attitude Can Beat Skill */}
         <SectionTitle eyebrow="Behavior" title="Attitude Can Beat Skill" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
-          <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', marginLeft: -18, marginRight: -18, paddingLeft: 18, paddingRight: 18, marginBottom: 22 }}>
-            <table style={{ minWidth: 520, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
+          <div className="attitude-table-wrap" style={{ marginBottom: 22 }}>
+            <table className="attitude-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
               <thead>
                 <tr>
                   {['Candidate Profile', 'Hiring Preference'].map((h) => (
