@@ -25,6 +25,7 @@ import Skills from '../components/Skills';
 import Tools from '../components/Tools';
 import Labs from '../components/Labs';
 import MiniProjects from '../components/MiniProjects';
+import MinorProjects from '../components/MinorProjects';
 
 
 
