@@ -692,8 +692,9 @@ const CompaniesHiring: React.FC = () => {
         {/* Why Companies Fear Freshers */}
         <SectionTitle eyebrow="Risk Assessment" title="Why Companies Fear Freshers" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
-          <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', marginLeft: -18, marginRight: -18, paddingLeft: 18, paddingRight: 18 }}>
-            <table style={{ minWidth: 640, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
+          {/* Desktop / tablet: full table */}
+          <div className="hidden sm:block">
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
               <thead>
                 <tr>
                   {['Factor', 'Fresher', 'Experienced Employee'].map((h) => (
@@ -721,17 +722,46 @@ const CompaniesHiring: React.FC = () => {
                 {fearComparison.map((row, i) => (
                   <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
                     <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600, whiteSpace: 'nowrap' }}>{row.factor}</td>
-                    <td style={{ padding: '12px 14px', color: '#fecaca', fontWeight: 600, whiteSpace: 'nowrap' }}>{row.fresher}</td>
-                    <td style={{ padding: '12px 14px', color: success, fontWeight: 600, whiteSpace: 'nowrap' }}>{row.experienced}</td>
+                    <td style={{ padding: '12px 14px', color: '#fecaca', fontWeight: 600 }}>{row.fresher}</td>
+                    <td style={{ padding: '12px 14px', color: success, fontWeight: 600 }}>{row.experienced}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
+          {/* Mobile: stacked cards */}
+          <div className="sm:hidden" style={{ display: 'grid', gap: 12 }}>
+            {fearComparison.map((row, i) => (
+              <div
+                key={i}
+                style={{
+                  background: 'rgba(255,255,255,0.03)',
+                  border: '1px solid rgba(148,163,184,0.14)',
+                  borderRadius: 12,
+                  padding: 14,
+                }}
+              >
+                <div style={{ fontSize: fs.labelLg, letterSpacing: '0.14em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 10 }}>
+                  {row.factor}
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+                  <div>
+                    <div style={{ fontSize: fs.labelMd, letterSpacing: '0.14em', textTransform: 'uppercase', color: muted, fontWeight: 700, marginBottom: 4 }}>Fresher</div>
+                    <div style={{ fontSize: fs.body, color: '#fecaca', fontWeight: 600 }}>{row.fresher}</div>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: fs.labelMd, letterSpacing: '0.14em', textTransform: 'uppercase', color: muted, fontWeight: 700, marginBottom: 4 }}>Experienced</div>
+                    <div style={{ fontSize: fs.body, color: success, fontWeight: 600 }}>{row.experienced}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
           <p style={{ marginTop: 22, fontSize: fs.h3, color: accentAmber, fontWeight: 700, lineHeight: 1.4, textAlign: 'center', fontStyle: 'italic' }}>
             "Paying the salary is easy. Trusting the fresher with real work is the difficult part."
           </p>
         </div>
+
 
         {/* What a Bad Hire Costs */}
         <SectionTitle eyebrow="Business Impact" title="What A Bad Hire Costs A Company" />
