@@ -980,6 +980,7 @@ const CompaniesHiring: React.FC = () => {
         }
         .attitude-table td, .attitude-table th { word-break: break-word; }
         .fear-table td, .fear-table th { word-break: break-word; }
+        .badhire-table td, .badhire-table th { word-break: break-word; }
         @media (max-width: 640px) {
           .attitude-table { font-size: 12px !important; }
           .attitude-table th, .attitude-table td { padding: 10px 8px !important; }
@@ -987,13 +988,19 @@ const CompaniesHiring: React.FC = () => {
           .fear-table { font-size: 12px !important; }
           .fear-table th, .fear-table td { padding: 10px 8px !important; }
           .fear-table th { font-size: 9px !important; letter-spacing: 0.06em !important; white-space: normal !important; }
+          .badhire-table { font-size: 12px !important; }
+          .badhire-table th, .badhire-table td { padding: 10px 8px !important; }
+          .badhire-table th { font-size: 9px !important; letter-spacing: 0.06em !important; white-space: normal !important; }
         }
         @media (max-width: 380px) {
           .attitude-table { font-size: 11px !important; }
           .attitude-table th, .attitude-table td { padding: 8px 6px !important; }
           .fear-table { font-size: 11px !important; }
           .fear-table th, .fear-table td { padding: 6px 4px !important; }
+          .badhire-table { font-size: 11px !important; }
+          .badhire-table th, .badhire-table td { padding: 6px 4px !important; }
         }
+
 
       `}</style>
     </div>
