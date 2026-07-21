@@ -540,8 +540,8 @@ const CompaniesHiring: React.FC = () => {
         {/* Attitude Can Beat Skill */}
         <SectionTitle eyebrow="Behavior" title="Attitude Can Beat Skill" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
-          <div style={{ overflowX: 'auto', marginBottom: 22 }}>
-            <table style={{ minWidth: 480, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
+          <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', marginLeft: -18, marginRight: -18, paddingLeft: 18, paddingRight: 18, marginBottom: 22 }}>
+            <table style={{ minWidth: 520, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
               <thead>
                 <tr>
                   {['Candidate Profile', 'Hiring Preference'].map((h) => (
@@ -692,8 +692,8 @@ const CompaniesHiring: React.FC = () => {
         {/* Why Companies Fear Freshers */}
         <SectionTitle eyebrow="Risk Assessment" title="Why Companies Fear Freshers" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ minWidth: 560, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
+          <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', marginLeft: -18, marginRight: -18, paddingLeft: 18, paddingRight: 18 }}>
+            <table style={{ minWidth: 640, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
               <thead>
                 <tr>
                   {['Factor', 'Fresher', 'Experienced Employee'].map((h) => (
@@ -736,8 +736,8 @@ const CompaniesHiring: React.FC = () => {
         {/* What a Bad Hire Costs */}
         <SectionTitle eyebrow="Business Impact" title="What A Bad Hire Costs A Company" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ minWidth: 520, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
+          <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', marginLeft: -18, marginRight: -18, paddingLeft: 18, paddingRight: 18 }}>
+            <table style={{ minWidth: 560, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
               <thead>
                 <tr>
                   {['Problem', 'Business Impact'].map((h) => (
