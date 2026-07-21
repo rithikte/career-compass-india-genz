@@ -58,6 +58,7 @@ const Index = () => {
     { id: 'skills', title: 'Skills', component: Skills },
     { id: 'tools', title: 'Tools', component: Tools },
     { id: 'labs', title: 'Labs', component: Labs },
+    { id: 'mini-projects', title: 'Mini Projects', component: MiniProjects },
 
   ];
 
