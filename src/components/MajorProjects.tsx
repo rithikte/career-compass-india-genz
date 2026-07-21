@@ -723,6 +723,30 @@ const MajorProjects: React.FC = () => {
               0 0 46px rgba(167,139,250,0.26);
           }
         }
+        .priority-table th,
+        .priority-table td {
+          white-space: normal;
+        }
+        @media (max-width: 640px) {
+          .priority-table {
+            font-size: 11px !important;
+          }
+          .priority-table-th,
+          .priority-table-td {
+            padding: 6px 8px !important;
+            font-size: 10px !important;
+            letter-spacing: 0.06em !important;
+            word-break: break-word;
+            hyphens: auto;
+          }
+        }
+        @media (max-width: 420px) {
+          .priority-table-th,
+          .priority-table-td {
+            padding: 4px 5px !important;
+            font-size: 9px !important;
+          }
+        }
       `}</style>
     </div>
   );
