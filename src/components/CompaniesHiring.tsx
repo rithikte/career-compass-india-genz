@@ -540,8 +540,8 @@ const CompaniesHiring: React.FC = () => {
         {/* Attitude Can Beat Skill */}
         <SectionTitle eyebrow="Behavior" title="Attitude Can Beat Skill" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
-          <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', marginLeft: -18, marginRight: -18, paddingLeft: 18, paddingRight: 18, marginBottom: 22 }}>
-            <table style={{ minWidth: 520, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
+          <div className="attitude-table-wrap" style={{ marginBottom: 22 }}>
+            <table className="attitude-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
               <thead>
                 <tr>
                   {['Candidate Profile', 'Hiring Preference'].map((h) => (
@@ -981,6 +981,16 @@ const CompaniesHiring: React.FC = () => {
               0 0 22px rgba(110,231,215,0.32),
               0 0 46px rgba(167,139,250,0.26);
           }
+        }
+        .attitude-table td, .attitude-table th { word-break: break-word; }
+        @media (max-width: 640px) {
+          .attitude-table { font-size: 12px !important; }
+          .attitude-table th, .attitude-table td { padding: 10px 8px !important; }
+          .attitude-table th { font-size: 9px !important; letter-spacing: 0.06em !important; white-space: normal !important; }
+        }
+        @media (max-width: 380px) {
+          .attitude-table { font-size: 11px !important; }
+          .attitude-table th, .attitude-table td { padding: 8px 6px !important; }
         }
       `}</style>
     </div>
