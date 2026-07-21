@@ -645,6 +645,23 @@ const RealExecutionExposure: React.FC = () => {
               0 0 46px rgba(167,139,250,0.26);
           }
         }
+        .priority-table th,
+        .priority-table td {
+          padding: 12px 14px;
+        }
+        @media (max-width: 640px) {
+          .priority-table {
+            font-size: 11px !important;
+          }
+          .priority-table th,
+          .priority-table td {
+            padding: 6px 6px;
+            letter-spacing: 0.04em;
+          }
+          .priority-table th {
+            font-size: 9px !important;
+          }
+        }
       `}</style>
     </div>
   );
