@@ -945,6 +945,22 @@ const CompaniesHiring: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Bottom Note */}
+        <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), marginTop: 28, position: 'relative', overflow: 'hidden', textAlign: 'center' }}>
+          <div
+            aria-hidden
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: `radial-gradient(500px 240px at 50% 50%, rgba(110,231,215,0.08), transparent 60%)`,
+              pointerEvents: 'none',
+            }}
+          />
+          <p style={{ position: 'relative', zIndex: 1, margin: 0, fontSize: fs.h3, color: accentTeal, fontWeight: 700, lineHeight: 1.5 }}>
+            Better preparation creates better opportunities—even if the market rises or falls.
+          </p>
+        </div>
       </div>
 
       <style>{`
