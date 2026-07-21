@@ -982,6 +982,16 @@ const CompaniesHiring: React.FC = () => {
               0 0 46px rgba(167,139,250,0.26);
           }
         }
+        .attitude-table td, .attitude-table th { word-break: break-word; }
+        @media (max-width: 640px) {
+          .attitude-table { font-size: 12px !important; }
+          .attitude-table th, .attitude-table td { padding: 10px 8px !important; }
+          .attitude-table th { font-size: 9px !important; letter-spacing: 0.06em !important; white-space: normal !important; }
+        }
+        @media (max-width: 380px) {
+          .attitude-table { font-size: 11px !important; }
+          .attitude-table th, .attitude-table td { padding: 8px 6px !important; }
+        }
       `}</style>
     </div>
   );
