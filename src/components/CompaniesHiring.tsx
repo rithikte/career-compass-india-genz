@@ -409,60 +409,51 @@ const CompaniesHiring: React.FC = () => {
         {/* 3 Types of Freshers */}
         <SectionTitle eyebrow="Candidate Segments" title="The 3 Types of Freshers Companies See" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ minWidth: 640, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
-              <thead>
-                <tr>
-                  {['Stage', 'Student Type', 'Company View', 'Hiring Interest'].map((h) => (
-                    <th
-                      key={h}
+          <style>{`
+            .stages-table { width: 100%; border-collapse: collapse; }
+            .stages-table th, .stages-table td { padding: 12px 14px; text-align: left; vertical-align: top; }
+            .stages-table thead th { border-bottom: 1px solid rgba(148,163,184,0.18); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; background: rgba(110,231,215,0.06); white-space: nowrap; }
+            .stages-table tbody tr { border-bottom: 1px solid rgba(148,163,184,0.10); }
+            .stages-interest { display: inline-block; padding: 4px 10px; border-radius: 999px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
+            @media (max-width: 640px) {
+              .stages-table, .stages-table tbody, .stages-table tr, .stages-table td { display: block; width: 100%; }
+              .stages-table thead { display: none; }
+              .stages-table tbody tr { padding: 14px 4px; border-bottom: 1px solid rgba(148,163,184,0.14); }
+              .stages-table td { padding: 6px 0; border: none; }
+              .stages-table td::before { content: attr(data-label); display: block; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(110,231,215,0.9); font-weight: 700; margin-bottom: 4px; }
+            }
+          `}</style>
+          <table className="stages-table" style={{ fontSize: fs.body }}>
+            <thead>
+              <tr>
+                {['Stage', 'Student Type', 'Company View', 'Hiring Interest'].map((h) => (
+                  <th key={h} style={{ fontSize: fs.labelLg, color: accentTeal }}>{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {fresherTypes.map((row, i) => (
+                <tr key={i}>
+                  <td data-label="Stage" style={{ color: textMain, fontWeight: 600 }}>{row.stage}</td>
+                  <td data-label="Student Type" style={{ color: '#f8fafc', fontWeight: 700 }}>{row.type}</td>
+                  <td data-label="Company View" style={{ color: textSoft }}>{row.view}</td>
+                  <td data-label="Hiring Interest">
+                    <span
+                      className="stages-interest"
                       style={{
-                        textAlign: 'left',
-                        padding: '12px 14px',
-                        borderBottom: '1px solid rgba(148,163,184,0.18)',
-                        fontSize: fs.labelLg,
-                        letterSpacing: '0.12em',
-                        textTransform: 'uppercase',
-                        color: accentTeal,
-                        fontWeight: 700,
-                        background: 'rgba(110,231,215,0.06)',
-                        whiteSpace: 'nowrap',
+                        fontSize: fs.labelMd,
+                        background: i === 0 ? 'rgba(52,211,153,0.12)' : i === 1 ? 'rgba(250,204,21,0.12)' : 'rgba(248,113,113,0.12)',
+                        border: `1px solid ${i === 0 ? 'rgba(52,211,153,0.35)' : i === 1 ? 'rgba(250,204,21,0.35)' : 'rgba(248,113,113,0.35)'}`,
+                        color: i === 0 ? success : i === 1 ? '#facc15' : warn,
                       }}
                     >
-                      {h}
-                    </th>
-                  ))}
+                      {row.interest}
+                    </span>
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                {fresherTypes.map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
-                    <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600, whiteSpace: 'nowrap' }}>{row.stage}</td>
-                    <td style={{ padding: '12px 14px', color: '#f8fafc', fontWeight: 700 }}>{row.type}</td>
-                    <td style={{ padding: '12px 14px', color: textSoft, minWidth: 220 }}>{row.view}</td>
-                    <td style={{ padding: '12px 14px' }}>
-                      <span
-                        style={{
-                          display: 'inline-block',
-                          padding: '4px 10px',
-                          borderRadius: 999,
-                          fontSize: fs.labelMd,
-                          fontWeight: 800,
-                          letterSpacing: '0.08em',
-                          textTransform: 'uppercase',
-                          background: i === 0 ? 'rgba(52,211,153,0.12)' : i === 1 ? 'rgba(250,204,21,0.12)' : 'rgba(248,113,113,0.12)',
-                          border: `1px solid ${i === 0 ? 'rgba(52,211,153,0.35)' : i === 1 ? 'rgba(250,204,21,0.35)' : 'rgba(248,113,113,0.35)'}`,
-                          color: i === 0 ? success : i === 1 ? '#facc15' : warn,
-                        }}
-                      >
-                        {row.interest}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+              ))}
+            </tbody>
+          </table>
         </div>
 
         {/* Stage Cards */}
