@@ -370,13 +370,11 @@ const RoleProfile: React.FC<RoleProfileProps> = ({ onExplore }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mt-5"
+            className="mt-5 role-body"
             style={{
               ...bodyFont,
               color: COLORS.muted,
               maxWidth: '62ch',
-              fontSize: 'clamp(0.75rem, 1.65vw, 0.86rem)',
-              lineHeight: 1.65,
             }}
           >
             A complete map from your degree to the exact fresher role you can step into on day one.
