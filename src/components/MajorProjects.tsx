@@ -589,7 +589,7 @@ const MajorProjects: React.FC = () => {
         </div>
 
         {/* Behaviors */}
-        <SectionTitle eyebrow="Workplace Behaviors" title="The 5 Most Important Major Project Behaviors" />
+        <SectionTitle eyebrow="Workplace Behaviors" title="The 5 Most Important Major Project Behaviors" className="major-section-title" />
         <div style={{ display: 'grid', gap: 16 }}>
           {behaviors.map((b) => (
             <div key={b.id} className="major-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
