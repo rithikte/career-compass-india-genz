@@ -102,13 +102,16 @@ const CareerStabilityCheck: React.FC = () => {
             fontWeight: 700,
             letterSpacing: '-0.02em',
             margin: 0,
-            whiteSpace: 'nowrap',
             background: 'linear-gradient(180deg,#ffffff 0%, #cbd5e1 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
           }}
         >
-          Will This Career Continue Creating Fresher Opportunities?
+          Will This Career
+          <br />
+          Continue Creating
+          <br />
+          Fresher Opportunities?
         </h1>
         <p style={{ marginTop: 14, fontSize: fs.body, color: '#94a3b8', maxWidth: '72ch', lineHeight: 1.6 }}>
           Shows whether this career will keep creating fresher jobs — verdict, survival factors, hiring reality, and honest failure points.
