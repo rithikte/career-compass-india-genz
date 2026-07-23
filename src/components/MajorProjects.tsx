@@ -299,19 +299,7 @@ const MajorProjects: React.FC = () => {
         </div>
 
         {/* Headline */}
-        <h1
-          style={{
-            fontSize: fs.h1,
-            lineHeight: 1.05,
-            fontWeight: 700,
-            letterSpacing: '-0.02em',
-            margin: 0,
-            maxWidth: '30ch',
-            background: 'linear-gradient(180deg,#ffffff 0%, #cbd5e1 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}
-        >
+        <h1 className="major-headline-gradient" style={{ margin: 0, maxWidth: '30ch' }}>
           Major Projects That Build Job Readiness
         </h1>
 
