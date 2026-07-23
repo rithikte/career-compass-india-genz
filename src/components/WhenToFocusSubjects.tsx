@@ -308,7 +308,7 @@ const WhenToFocusSubjects: React.FC = () => {
                         ))}
                       </ul>
                     </div>
-                    <div>
+                    <div className="wtf-reality-box" style={{ background: 'linear-gradient(180deg, rgba(245,194,107,0.08), rgba(245,194,107,0.04))', border: '1px solid rgba(245,194,107,0.25)', borderRadius: 12, padding: 14 }}>
                       <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 8 }}>
                         Without This Foundation
                       </div>
