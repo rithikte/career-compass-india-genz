@@ -624,7 +624,7 @@ const MajorProjects: React.FC = () => {
                   <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 6 }}>
                     Weak Fresher Behavior
                   </div>
-                  <p style={{ margin: 0, fontSize: fs.body, color: '#fecaca', lineHeight: 1.6 }}>{b.weak}</p>
+                  <p style={{ margin: 0, fontSize: fs.body, color: warnLight, lineHeight: 1.6 }}>{b.weak}</p>
                 </div>
                 <ImpactBlock label="Why It Matters" color={accentTeal} text={b.why} />
                 <ImpactBlock label="Trust Impact" color={accentViolet} text={b.trust} />
