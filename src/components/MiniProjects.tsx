@@ -469,7 +469,7 @@ const MiniProjects: React.FC = () => {
         </div>
 
         {/* Mini Project Priority Table */}
-        <SectionTitle eyebrow="Priority Map" title="Mini Project Priority Table" />
+        <SectionTitle eyebrow="Priority Map" title="Mini Project Priority Table" gradient />
         <div className="mini-card" tabIndex={0} style={{ ...cardStyle({ padding: 0, overflow: 'hidden' }), position: 'relative' }}>
           <div className="mini-table-header mini-priority-cols">
             <div>Mini Project</div>
