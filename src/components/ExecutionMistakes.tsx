@@ -583,6 +583,16 @@ const ExecutionMistakes: React.FC = () => {
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
+        .mistake-section-title {
+          font-family: 'Poppins', 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+          font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+          font-weight: 600;
+          line-height: 1.2;
+          letter-spacing: -0.01em;
+          background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
         .mistake-card {
           position: relative;
           outline: none;
@@ -592,23 +602,31 @@ const ExecutionMistakes: React.FC = () => {
         .mistake-card:focus-visible,
         .mistake-card:focus-within,
         .mistake-card:active {
-          border-color: rgba(248,113,113,0.55) !important;
+          border-color: rgba(110,231,215,0.55) !important;
           box-shadow:
-            0 0 0 1px rgba(248,113,113,0.35),
-            0 0 18px rgba(248,113,113,0.28),
+            0 0 0 1px rgba(110,231,215,0.35),
+            0 0 18px rgba(110,231,215,0.28),
             0 0 42px rgba(167,139,250,0.22),
             0 1px 0 rgba(255,255,255,0.05) inset,
             0 20px 40px -30px rgba(0,0,0,0.6);
-          transform: translateY(-1px);
+          transform: translateY(-2px);
         }
         @media (hover: none) {
           .mistake-card:active {
-            border-color: rgba(248,113,113,0.6) !important;
+            border-color: rgba(110,231,215,0.6) !important;
             box-shadow:
-              0 0 0 1px rgba(248,113,113,0.4),
-              0 0 22px rgba(248,113,113,0.32),
+              0 0 0 1px rgba(110,231,215,0.4),
+              0 0 22px rgba(110,231,215,0.32),
               0 0 46px rgba(167,139,250,0.26);
           }
+        }
+        .reality-check-box {
+          background: linear-gradient(180deg, rgba(245,194,107,0.08), rgba(245,194,107,0.03)) !important;
+          border-color: rgba(245,194,107,0.35) !important;
+        }
+        .recovery-table tbody tr:hover,
+        .escalation-table tbody tr:hover {
+          background: rgba(110,231,215,0.06);
         }
         @media (max-width: 640px) {
           .recovery-table th,
