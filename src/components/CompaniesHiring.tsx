@@ -1020,8 +1020,8 @@ const StageCard: React.FC<{
 }> = ({ stage, title, companyThinking, sees, why, logic, color }) => {
   const colorMap = {
     teal: { accent: accentTeal, bg: 'rgba(110,231,215,0.12)', border: 'rgba(110,231,215,0.35)', soft: 'rgba(110,231,215,0.08)' },
-    amber: { accent: 'accentAmber', bg: 'rgba(245,194,107,0.12)', border: 'rgba(245,194,107,0.35)', soft: 'rgba(245,194,107,0.08)' },
-    warn: { accent: warn, bg: 'rgba(245,194,107,0.12)', border: 'rgba(245,194,107,0.35)', soft: 'rgba(248,113,113,0.08)' },
+    amber: { accent: accentAmber, bg: 'rgba(245,194,107,0.12)', border: 'rgba(245,194,107,0.35)', soft: 'rgba(245,194,107,0.08)' },
+    warn: { accent: warn, bg: 'rgba(245,194,107,0.12)', border: 'rgba(245,194,107,0.35)', soft: 'rgba(245,194,107,0.08)' },
   };
   const c = colorMap[color];
 
