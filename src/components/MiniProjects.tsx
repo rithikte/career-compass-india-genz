@@ -549,8 +549,11 @@ const MiniProjects: React.FC = () => {
               <div key={i} style={mobileCardStyle}>
                 <div style={mobileTitle}>{row.project}</div>
                 <MapMobileItem label="Subject Connection" text={row.subject} />
+                <div className="mini-mobile-divider" />
                 <MapMobileItem label="Skill Practiced" text={row.skill} />
+                <div className="mini-mobile-divider" />
                 <MapMobileItem label="Tool Used" text={row.tool} />
+                <div className="mini-mobile-divider" />
                 <MapMobileItem label="Fresher Responsibility Supported" text={row.responsibility} />
               </div>
             ))}
