@@ -20,11 +20,12 @@ const fs = {
 
 const accentTeal = '#6ee7d7';
 const accentViolet = '#a78bfa';
-const accentAmber = '#fbbf24';
-const muted = '#94a3b8';
-const textMain = '#e5e7eb';
-const textSoft = '#cbd5e1';
-const warn = '#f87171';
+const accentAmber = '#f5c26b';
+const muted = '#9aa4b2';
+const textMain = '#e7ecf3';
+const textSoft = '#9aa4b2';
+const warn = '#f5c26b';
+const warnText = '#fef3c7';
 const success = '#34d399';
 
 const involvement = [
@@ -219,7 +220,7 @@ const CompaniesHiring: React.FC = () => {
     <div
       style={{
         background:
-          'radial-gradient(1200px 600px at 10% -10%, rgba(110,231,215,0.10), transparent 60%), radial-gradient(900px 500px at 100% 0%, rgba(167,139,250,0.10), transparent 60%), #05070d',
+          'radial-gradient(1200px 600px at 10% -10%, rgba(110,231,215,0.10), transparent 60%), radial-gradient(900px 500px at 100% 0%, rgba(167,139,250,0.10), transparent 60%), #06080d',
         color: textMain,
         minHeight: '100vh',
         width: '100%',
@@ -285,7 +286,7 @@ const CompaniesHiring: React.FC = () => {
         </p>
 
         {/* Company Side Story */}
-        <SectionTitle eyebrow="Perspective" title="The Company's Side of the Story" />
+        <SectionTitle eyebrow="Perspective" title="The Company's Side of the Story" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div
             aria-hidden
@@ -327,7 +328,7 @@ const CompaniesHiring: React.FC = () => {
               <EyebrowLabel small>Mistakes In These Activities Can Cause</EyebrowLabel>
               <ul style={{ margin: '12px 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: 6 }}>
                 {mistakesCause.map((item, i) => (
-                  <li key={i} style={{ fontSize: fs.body, color: '#fecaca', lineHeight: 1.55, display: 'flex', gap: 8 }}>
+                  <li key={i} style={{ fontSize: fs.body, color: 'warnText', lineHeight: 1.55, display: 'flex', gap: 8 }}>
                     <span style={{ color: warn }}>×</span>
                     <span>{item}</span>
                   </li>
@@ -338,7 +339,7 @@ const CompaniesHiring: React.FC = () => {
 
           <div style={{ marginTop: 24, display: 'grid', gap: 14, gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
             {marketResult.map((item, i) => (
-              <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(148,163,184,0.12)', borderRadius: 12, padding: 14 }}>
+              <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, padding: 14 }}>
                 <div style={{ fontSize: fs.labelLg, letterSpacing: '0.14em', textTransform: 'uppercase', color: accentViolet, fontWeight: 700, marginBottom: 6 }}>
                   {item.label}
                 </div>
@@ -349,7 +350,7 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* Why Companies Don't Hire Degrees */}
-        <SectionTitle eyebrow="Eligibility vs. Capability" title="Why Companies Do Not Hire Degrees" />
+        <SectionTitle eyebrow="Eligibility vs. Capability" title="Why Companies Do Not Hire Degrees" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div
             aria-hidden
@@ -392,7 +393,7 @@ const CompaniesHiring: React.FC = () => {
                 <EyebrowLabel small>What A Degree Does Not Prove</EyebrowLabel>
                 <ul style={{ margin: '12px 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: 6 }}>
                   {degreeDoesNotProve.map((item, i) => (
-                    <li key={i} style={{ fontSize: fs.body, color: '#fecaca', lineHeight: 1.55, display: 'flex', gap: 8 }}>
+                    <li key={i} style={{ fontSize: fs.body, color: 'warnText', lineHeight: 1.55, display: 'flex', gap: 8 }}>
                       <span style={{ color: warn }}>×</span>
                       <span>{item}</span>
                     </li>
@@ -408,18 +409,19 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* 3 Types of Freshers */}
-        <SectionTitle eyebrow="Candidate Segments" title="The 3 Types of Freshers Companies See" />
+        <SectionTitle eyebrow="Candidate Segments" title="The 3 Types of Freshers Companies See" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <style>{`
             .stages-table { width: 100%; border-collapse: collapse; }
             .stages-table th, .stages-table td { padding: 12px 14px; text-align: left; vertical-align: top; }
-            .stages-table thead th { border-bottom: 1px solid rgba(148,163,184,0.18); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; background: rgba(110,231,215,0.06); white-space: nowrap; }
-            .stages-table tbody tr { border-bottom: 1px solid rgba(148,163,184,0.10); }
+            .stages-table thead th { border-bottom: 1px solid rgba(255,255,255,0.14); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; background: rgba(110,231,215,0.06); white-space: nowrap; }
+            .stages-table tbody tr { border-bottom: 1px solid rgba(255,255,255,0.08); transition: background 200ms ease; }
+            .stages-table tbody tr:hover { background: rgba(110,231,215,0.06); }
             .stages-interest { display: inline-block; padding: 4px 10px; border-radius: 999px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
             @media (max-width: 640px) {
               .stages-table, .stages-table tbody, .stages-table tr, .stages-table td { display: block; width: 100%; }
               .stages-table thead { display: none; }
-              .stages-table tbody tr { padding: 14px 4px; border-bottom: 1px solid rgba(148,163,184,0.14); }
+              .stages-table tbody tr { padding: 14px 4px; border-bottom: 1px solid rgba(255,255,255,0.08); }
               .stages-table td { padding: 6px 0; border: none; }
               .stages-table td::before { content: attr(data-label); display: block; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(110,231,215,0.9); font-weight: 700; margin-bottom: 4px; }
             }
@@ -443,9 +445,9 @@ const CompaniesHiring: React.FC = () => {
                       className="stages-interest"
                       style={{
                         fontSize: fs.labelMd,
-                        background: i === 0 ? 'rgba(52,211,153,0.12)' : i === 1 ? 'rgba(250,204,21,0.12)' : 'rgba(248,113,113,0.12)',
-                        border: `1px solid ${i === 0 ? 'rgba(52,211,153,0.35)' : i === 1 ? 'rgba(250,204,21,0.35)' : 'rgba(248,113,113,0.35)'}`,
-                        color: i === 0 ? success : i === 1 ? '#facc15' : warn,
+                        background: i === 0 ? 'rgba(52,211,153,0.12)' : i === 1 ? 'rgba(245,194,107,0.12)' : 'rgba(245,194,107,0.12)',
+                        border: `1px solid ${i === 0 ? 'rgba(52,211,153,0.35)' : i === 1 ? 'rgba(245,194,107,0.35)' : 'rgba(245,194,107,0.35)'}`,
+                        color: i === 0 ? success : i === 1 ? accentAmber : warn,
                       }}
                     >
                       {row.interest}
@@ -489,7 +491,7 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* High Potential Freshers */}
-        <SectionTitle eyebrow="Growth Pipeline" title="Why Companies Love High-Potential Freshers" />
+        <SectionTitle eyebrow="Growth Pipeline" title="Why Companies Love High-Potential Freshers" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div
             aria-hidden
@@ -513,7 +515,7 @@ const CompaniesHiring: React.FC = () => {
                       padding: '8px 14px',
                       borderRadius: 999,
                       background: i === 0 ? 'rgba(110,231,215,0.12)' : 'rgba(255,255,255,0.04)',
-                      border: `1px solid ${i === 0 ? 'rgba(110,231,215,0.35)' : 'rgba(148,163,184,0.18)'}`,
+                      border: `1px solid ${i === 0 ? 'rgba(110,231,215,0.35)' : 'rgba(255,255,255,0.14)'}`,
                       color: i === 0 ? accentTeal : textSoft,
                       fontSize: fs.body,
                       fontWeight: i === 0 ? 700 : 600,
@@ -539,7 +541,7 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* Attitude Can Beat Skill */}
-        <SectionTitle eyebrow="Behavior" title="Attitude Can Beat Skill" />
+        <SectionTitle eyebrow="Behavior" title="Attitude Can Beat Skill" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div className="attitude-table-wrap" style={{ marginBottom: 22 }}>
             <table className="attitude-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
@@ -551,7 +553,7 @@ const CompaniesHiring: React.FC = () => {
                       style={{
                         textAlign: 'left',
                         padding: '12px 14px',
-                        borderBottom: '1px solid rgba(148,163,184,0.18)',
+                        borderBottom: '1px solid rgba(255,255,255,0.14)',
                         fontSize: fs.labelLg,
                         letterSpacing: '0.12em',
                         textTransform: 'uppercase',
@@ -568,7 +570,7 @@ const CompaniesHiring: React.FC = () => {
               </thead>
               <tbody>
                 {attitudeCompare.map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
+                  <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                     <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.candidate}</td>
                     <td style={{ padding: '12px 14px' }}>
                       <span
@@ -580,8 +582,8 @@ const CompaniesHiring: React.FC = () => {
                           fontWeight: 800,
                           letterSpacing: '0.08em',
                           textTransform: 'uppercase',
-                          background: row.preference === 'Higher' ? 'rgba(52,211,153,0.12)' : 'rgba(248,113,113,0.12)',
-                          border: `1px solid ${row.preference === 'Higher' ? 'rgba(52,211,153,0.35)' : 'rgba(248,113,113,0.35)'}`,
+                          background: row.preference === 'Higher' ? 'rgba(52,211,153,0.12)' : 'rgba(245,194,107,0.12)',
+                          border: `1px solid ${row.preference === 'Higher' ? 'rgba(52,211,153,0.35)' : 'rgba(245,194,107,0.35)'}`,
                           color: row.preference === 'Higher' ? success : warn,
                         }}
                       >
@@ -595,7 +597,7 @@ const CompaniesHiring: React.FC = () => {
           </div>
           <div style={{ display: 'grid', gap: 14, gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
             {attitudeWhy.map((item, i) => (
-              <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(148,163,184,0.12)', borderRadius: 12, padding: 14 }}>
+              <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, padding: 14 }}>
                 <div style={{ fontSize: fs.labelLg, letterSpacing: '0.14em', textTransform: 'uppercase', color: accentViolet, fontWeight: 700, marginBottom: 6 }}>
                   {item.label}
                 </div>
@@ -606,7 +608,7 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* Why Some Students See More Opportunities */}
-        <SectionTitle eyebrow="Opportunity Gap" title="Why Some Students See More Opportunities" />
+        <SectionTitle eyebrow="Opportunity Gap" title="Why Some Students See More Opportunities" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div
             aria-hidden
@@ -633,7 +635,7 @@ const CompaniesHiring: React.FC = () => {
               <EyebrowLabel>Student B</EyebrowLabel>
               <ul style={{ margin: '12px 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: 6 }}>
                 {compareStudents.studentB.map((item, i) => (
-                  <li key={i} style={{ fontSize: fs.body, color: '#fecaca', lineHeight: 1.55, display: 'flex', gap: 8 }}>
+                  <li key={i} style={{ fontSize: fs.body, color: 'warnText', lineHeight: 1.55, display: 'flex', gap: 8 }}>
                     <span>×</span>
                     <span>{item}</span>
                   </li>
@@ -647,7 +649,7 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* Biggest Hiring Myth */}
-        <SectionTitle eyebrow="Reality Check" title="The Biggest Hiring Myth" />
+        <SectionTitle eyebrow="Reality Check" title="The Biggest Hiring Myth" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'relative', zIndex: 1, display: 'grid', gap: 22, gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
             <div>
@@ -691,7 +693,7 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* Why Companies Fear Freshers */}
-        <SectionTitle eyebrow="Risk Assessment" title="Why Companies Fear Freshers" />
+        <SectionTitle eyebrow="Risk Assessment" title="Why Companies Fear Freshers" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <table className="fear-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body, tableLayout: 'fixed' }}>
             <thead>
@@ -702,13 +704,13 @@ const CompaniesHiring: React.FC = () => {
                     style={{
                       textAlign: 'left',
                       padding: '12px 14px',
-                      borderBottom: '1px solid rgba(148,163,184,0.18)',
+                      borderBottom: '1px solid rgba(255,255,255,0.14)',
                       fontSize: fs.labelLg,
                       letterSpacing: '0.12em',
                       textTransform: 'uppercase',
                       color: warn,
                       fontWeight: 700,
-                      background: 'rgba(248,113,113,0.06)',
+                      background: 'rgba(245,194,107,0.06)',
                     }}
                   >
                     {h}
@@ -718,9 +720,9 @@ const CompaniesHiring: React.FC = () => {
             </thead>
             <tbody>
               {fearComparison.map((row, i) => (
-                <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
+                <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                   <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.factor}</td>
-                  <td style={{ padding: '12px 14px', color: '#fecaca', fontWeight: 600 }}>{row.fresher}</td>
+                  <td style={{ padding: '12px 14px', color: 'warnText', fontWeight: 600 }}>{row.fresher}</td>
                   <td style={{ padding: '12px 14px', color: success, fontWeight: 600 }}>{row.experienced}</td>
                 </tr>
               ))}
@@ -733,7 +735,7 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* What a Bad Hire Costs */}
-        <SectionTitle eyebrow="Business Impact" title="What A Bad Hire Costs A Company" />
+        <SectionTitle eyebrow="Business Impact" title="What A Bad Hire Costs A Company" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <table className="badhire-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body, tableLayout: 'fixed' }}>
             <thead>
@@ -744,13 +746,13 @@ const CompaniesHiring: React.FC = () => {
                     style={{
                       textAlign: 'left',
                       padding: '12px 14px',
-                      borderBottom: '1px solid rgba(148,163,184,0.18)',
+                      borderBottom: '1px solid rgba(255,255,255,0.14)',
                       fontSize: fs.labelLg,
                       letterSpacing: '0.12em',
                       textTransform: 'uppercase',
                       color: warn,
                       fontWeight: 700,
-                      background: 'rgba(248,113,113,0.06)',
+                      background: 'rgba(245,194,107,0.06)',
                     }}
                   >
                     {h}
@@ -760,9 +762,9 @@ const CompaniesHiring: React.FC = () => {
             </thead>
             <tbody>
               {badHireImpact.map((row, i) => (
-                <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
+                <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                   <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.problem}</td>
-                  <td style={{ padding: '12px 14px', color: '#fecaca', fontWeight: 600 }}>{row.impact}</td>
+                  <td style={{ padding: '12px 14px', color: 'warnText', fontWeight: 600 }}>{row.impact}</td>
                 </tr>
               ))}
             </tbody>
@@ -778,8 +780,8 @@ const CompaniesHiring: React.FC = () => {
                     display: 'inline-block',
                     padding: '6px 12px',
                     borderRadius: 999,
-                    background: 'rgba(248,113,113,0.12)',
-                    border: '1px solid rgba(248,113,113,0.35)',
+                    background: 'rgba(245,194,107,0.12)',
+                    border: '1px solid rgba(245,194,107,0.35)',
                     color: warn,
                     fontSize: fs.body,
                     fontWeight: 700,
@@ -793,7 +795,7 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* What Companies Are Actually Buying */}
-        <SectionTitle eyebrow="Value Exchange" title="What Companies Are Actually Buying" />
+        <SectionTitle eyebrow="Value Exchange" title="What Companies Are Actually Buying" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div
             aria-hidden
@@ -809,7 +811,7 @@ const CompaniesHiring: React.FC = () => {
               <EyebrowLabel>Companies Are Not Buying</EyebrowLabel>
               <ul style={{ margin: '12px 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: 6 }}>
                 {notBuying.map((item, i) => (
-                  <li key={i} style={{ fontSize: fs.body, color: '#fecaca', lineHeight: 1.55, display: 'flex', gap: 8 }}>
+                  <li key={i} style={{ fontSize: fs.body, color: 'warnText', lineHeight: 1.55, display: 'flex', gap: 8 }}>
                     <span style={{ color: warn }}>×</span>
                     <span>{item}</span>
                   </li>
@@ -831,17 +833,17 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* Harsh Reality */}
-        <SectionTitle eyebrow="Market Truth" title="The Harsh Reality About The Job Market" />
+        <SectionTitle eyebrow="Market Truth" title="The Harsh Reality About The Job Market" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'relative', zIndex: 1 }}>
             <div style={{ display: 'grid', gap: 14, gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
-              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(148,163,184,0.12)', borderRadius: 12, padding: 16 }}>
+              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, padding: 16 }}>
                 <p style={{ margin: 0, fontSize: fs.body, color: muted, lineHeight: 1.6 }}>The market does not ask:</p>
                 <p style={{ margin: '8px 0 0', fontSize: fs.h3, color: '#f8fafc', fontWeight: 700, lineHeight: 1.4 }}>
                   "Who worked hard?"
                 </p>
               </div>
-              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(148,163,184,0.12)', borderRadius: 12, padding: 16 }}>
+              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, padding: 16 }}>
                 <p style={{ margin: 0, fontSize: fs.body, color: muted, lineHeight: 1.6 }}>The market asks:</p>
                 <p style={{ margin: '8px 0 0', fontSize: fs.h3, color: accentTeal, fontWeight: 700, lineHeight: 1.4 }}>
                   "Who creates the most value and the least risk?"
@@ -863,7 +865,7 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* Most Important Thing */}
-        <SectionTitle eyebrow="The Unspoken Question" title="The Most Important Thing Students Never Hear" />
+        <SectionTitle eyebrow="The Unspoken Question" title="The Most Important Thing Students Never Hear" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div
             aria-hidden
@@ -884,15 +886,15 @@ const CompaniesHiring: React.FC = () => {
               "If we trust this person with our money, projects, clients, deadlines, reputation, and future growth, how confident are we that it will be a good decision?"
             </p>
             <div style={{ marginTop: 24, display: 'grid', gap: 14, gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
-              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(148,163,184,0.12)', borderRadius: 12, padding: 14 }}>
+              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, padding: 14 }}>
                 <div style={{ fontSize: fs.labelLg, letterSpacing: '0.14em', textTransform: 'uppercase', color: accentViolet, fontWeight: 700, marginBottom: 6 }}>Interviews Differ</div>
                 <p style={{ margin: 0, fontSize: fs.body, color: textSoft, lineHeight: 1.5 }}>Companies evaluate risk differently.</p>
               </div>
-              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(148,163,184,0.12)', borderRadius: 12, padding: 14 }}>
+              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, padding: 14 }}>
                 <div style={{ fontSize: fs.labelLg, letterSpacing: '0.14em', textTransform: 'uppercase', color: accentViolet, fontWeight: 700, marginBottom: 6 }}>Salaries Differ</div>
                 <p style={{ margin: 0, fontSize: fs.body, color: textSoft, lineHeight: 1.5 }}>Companies pay differently based on expected value and trust.</p>
               </div>
-              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(148,163,184,0.12)', borderRadius: 12, padding: 14 }}>
+              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, padding: 14 }}>
                 <div style={{ fontSize: fs.labelLg, letterSpacing: '0.14em', textTransform: 'uppercase', color: accentViolet, fontWeight: 700, marginBottom: 6 }}>Opportunities Differ</div>
                 <p style={{ margin: 0, fontSize: fs.body, color: textSoft, lineHeight: 1.5 }}>Companies give opportunities to people they believe can handle responsibility.</p>
               </div>
@@ -901,7 +903,7 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* Final Conclusion */}
-        <SectionTitle eyebrow="Closing" title="Final Conclusion" />
+        <SectionTitle eyebrow="Closing" title="Final Conclusion" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div
             aria-hidden
@@ -952,6 +954,17 @@ const CompaniesHiring: React.FC = () => {
       </div>
 
       <style>{`
+        .companies-section-title {
+          font-family: 'Poppins', 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+          font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+          line-height: 1.12;
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
         .hiring-card {
           position: relative;
           outline: none;
@@ -968,7 +981,7 @@ const CompaniesHiring: React.FC = () => {
             0 0 42px rgba(167,139,250,0.22),
             0 1px 0 rgba(255,255,255,0.05) inset,
             0 20px 40px -30px rgba(0,0,0,0.6);
-          transform: translateY(-1px);
+          transform: translateY(-2px);
         }
         @media (hover: none) {
           .hiring-card:active {
@@ -982,6 +995,12 @@ const CompaniesHiring: React.FC = () => {
         .attitude-table td, .attitude-table th { word-break: break-word; }
         .fear-table td, .fear-table th { word-break: break-word; }
         .badhire-table td, .badhire-table th { word-break: break-word; }
+        .attitude-table tbody tr,
+        .fear-table tbody tr,
+        .badhire-table tbody tr { transition: background 200ms ease; }
+        .attitude-table tbody tr:hover,
+        .fear-table tbody tr:hover,
+        .badhire-table tbody tr:hover { background: rgba(110,231,215,0.06); }
         @media (max-width: 640px) {
           .attitude-table { font-size: 12px !important; }
           .attitude-table th, .attitude-table td { padding: 10px 8px !important; }
@@ -1001,8 +1020,6 @@ const CompaniesHiring: React.FC = () => {
           .badhire-table { font-size: 11px !important; }
           .badhire-table th, .badhire-table td { padding: 6px 4px !important; }
         }
-
-
       `}</style>
     </div>
   );
@@ -1019,8 +1036,8 @@ const StageCard: React.FC<{
 }> = ({ stage, title, companyThinking, sees, why, logic, color }) => {
   const colorMap = {
     teal: { accent: accentTeal, bg: 'rgba(110,231,215,0.12)', border: 'rgba(110,231,215,0.35)', soft: 'rgba(110,231,215,0.08)' },
-    amber: { accent: '#facc15', bg: 'rgba(250,204,21,0.12)', border: 'rgba(250,204,21,0.35)', soft: 'rgba(250,204,21,0.08)' },
-    warn: { accent: warn, bg: 'rgba(248,113,113,0.12)', border: 'rgba(248,113,113,0.35)', soft: 'rgba(248,113,113,0.08)' },
+    amber: { accent: accentAmber, bg: 'rgba(245,194,107,0.12)', border: 'rgba(245,194,107,0.35)', soft: 'rgba(245,194,107,0.08)' },
+    warn: { accent: warn, bg: 'rgba(245,194,107,0.12)', border: 'rgba(245,194,107,0.35)', soft: 'rgba(245,194,107,0.08)' },
   };
   const c = colorMap[color];
 
@@ -1090,7 +1107,7 @@ const StageCard: React.FC<{
           </div>
         </div>
 
-        <div style={{ marginTop: 16, padding: 12, borderRadius: 10, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(148,163,184,0.12)' }}>
+        <div style={{ marginTop: 16, padding: 12, borderRadius: 10, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
           <EyebrowLabel small>Company Investment Logic</EyebrowLabel>
           <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.55 }}>{logic}</p>
         </div>
@@ -1100,8 +1117,8 @@ const StageCard: React.FC<{
 };
 
 const cardStyle = (extra: React.CSSProperties = {}): React.CSSProperties => ({
-  background: 'linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))',
-  border: '1px solid rgba(148,163,184,0.14)',
+  background: 'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03))',
+  border: '1px solid rgba(255,255,255,0.14)',
   borderRadius: 16,
   padding: 18,
   backdropFilter: 'blur(6px)',
@@ -1125,14 +1142,27 @@ const EyebrowLabel: React.FC<{ children: React.ReactNode; small?: boolean }> = (
   </div>
 );
 
-const SectionTitle: React.FC<{ eyebrow?: string; title: string }> = ({ eyebrow, title }) => (
+const SectionTitle: React.FC<{ eyebrow?: string; title: string; className?: string }> = ({
+  eyebrow,
+  title,
+  className,
+}) => (
   <div style={{ marginTop: 40, marginBottom: 14 }}>
     {eyebrow && (
       <div style={{ fontSize: fs.eyebrow, letterSpacing: '0.22em', textTransform: 'uppercase', color: muted, fontWeight: 700 }}>
         {eyebrow}
       </div>
     )}
-    <div style={{ marginTop: eyebrow ? 6 : 0, fontSize: fs.h2, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}>
+    <div
+      className={className}
+      style={{
+        marginTop: eyebrow ? 6 : 0,
+        fontSize: className ? undefined : fs.h2,
+        fontWeight: className ? undefined : 700,
+        color: className ? undefined : '#f8fafc',
+        letterSpacing: '-0.01em',
+      }}
+    >
       {title}
     </div>
   </div>
