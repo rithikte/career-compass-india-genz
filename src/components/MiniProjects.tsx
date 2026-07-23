@@ -605,18 +605,22 @@ const MiniProjects: React.FC = () => {
                     <EyebrowLabel small>Strong Fresher Behavior</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: success, lineHeight: 1.6 }}>{b.strong}</p>
                   </div>
+                  <div className="mini-mobile-divider" />
                   <div>
                     <EyebrowLabel small>Weak Fresher Behavior</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: warn, lineHeight: 1.6 }}>{b.weak}</p>
                   </div>
+                  <div className="mini-mobile-divider" />
                   <div>
                     <EyebrowLabel small>Why It Matters</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{b.why}</p>
                   </div>
+                  <div className="mini-mobile-divider" />
                   <div>
                     <EyebrowLabel small>Trust Impact</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{b.trust}</p>
                   </div>
+                  <div className="mini-mobile-divider" />
                   <div>
                     <EyebrowLabel small>Growth Impact</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{b.growth}</p>
