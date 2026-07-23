@@ -411,6 +411,7 @@ const MiniProjects: React.FC = () => {
                       ))}
                     </ul>
                   </div>
+                  <div className="mini-mobile-divider" />
                   <div>
                     <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 6 }}>
                       Common Mistakes Observed
@@ -424,9 +425,13 @@ const MiniProjects: React.FC = () => {
                       ))}
                     </ul>
                   </div>
+                  <div className="mini-mobile-divider" />
                   <ImpactBlock label="Why This Project Matters" color={accentTeal} text={project.matters} />
+                  <div className="mini-mobile-divider" />
                   <ImpactBlock label="Interview Advantage" color={accentTeal} text={project.interviewAdvantage} />
+                  <div className="mini-mobile-divider" />
                   <ImpactBlock label="Job Advantage" color={accentViolet} text={project.jobAdvantage} />
+                  <div className="mini-mobile-divider" />
                   <div>
                     <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: success, fontWeight: 700, marginBottom: 6 }}>
                       Companies DO Expect
@@ -440,6 +445,7 @@ const MiniProjects: React.FC = () => {
                       ))}
                     </ul>
                   </div>
+                  <div className="mini-mobile-divider" />
                   <div>
                     <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: muted, fontWeight: 700, marginBottom: 6 }}>
                       Companies DO NOT Expect
@@ -453,12 +459,14 @@ const MiniProjects: React.FC = () => {
                       ))}
                     </ul>
                   </div>
+                  <div className="mini-mobile-divider" />
                   <div>
                     <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 6 }}>
                       If Not Done — Interview
                     </div>
                     <p style={{ margin: 0, fontSize: fs.bodySm, color: '#fecaca', lineHeight: 1.6 }}>{project.ignoredInterview}</p>
                   </div>
+                  <div className="mini-mobile-divider" />
                   <div>
                     <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 6 }}>
                       If Not Done — Job
