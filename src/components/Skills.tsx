@@ -439,10 +439,17 @@ const Skills: React.FC = () => {
                 <div style={{ fontSize: fs.labelLg, letterSpacing: '0.1em', textTransform: 'uppercase', color: accentTeal, fontWeight: 700 }}>
                   {row.skill}
                 </div>
-                <MapMobileItem label="Responsibility Connection" text={row.responsibility} />
-                <MapMobileItem label="Subject Connection" text={row.subject} />
-                <MapMobileItem label="Chapter Connection" text={row.chapter} />
-                <MapMobileItem label="Workplace Connection" text={row.workplace} />
+                {[
+                  { label: 'Responsibility Connection', text: row.responsibility },
+                  { label: 'Subject Connection', text: row.subject },
+                  { label: 'Chapter Connection', text: row.chapter },
+                  { label: 'Workplace Connection', text: row.workplace },
+                ].map((item, j, arr) => (
+                  <React.Fragment key={item.label}>
+                    <MapMobileItem label={item.label} text={item.text} />
+                    {j < arr.length - 1 && <div className="skills-mobile-divider" />}
+                  </React.Fragment>
+                ))}
               </div>
             ))}
           </div>
