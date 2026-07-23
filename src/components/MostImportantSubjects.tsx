@@ -144,19 +144,7 @@ const MostImportantSubjects: React.FC = () => {
         </div>
 
         {/* Headline */}
-        <h1
-          style={{
-            fontSize: fs.h1,
-            lineHeight: 1.05,
-            fontWeight: 700,
-            letterSpacing: '-0.02em',
-            margin: 0,
-            maxWidth: '24ch',
-            background: 'linear-gradient(180deg,#ffffff 0%, #cbd5e1 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}
-        >
+        <h1 className="wfg-headline-gradient">
           What Actually Drives Success In This Role?
         </h1>
         <p style={{ marginTop: 14, fontSize: fs.body, color: muted, maxWidth: '72ch', lineHeight: 1.6 }}>
@@ -270,6 +258,19 @@ const MostImportantSubjects: React.FC = () => {
       </div>
 
       <style>{`
+        .wfg-headline-gradient {
+          font-family: 'Poppins', 'Inter', sans-serif;
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          line-height: 1.05;
+          font-size: clamp(1.9rem, 4.5vw, 3.4rem);
+          margin: 0;
+          max-width: 24ch;
+          background: linear-gradient(135deg, #F8FAFC 0%, #A5B4FC 55%, #7DD3FC 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
         .wfg-card {
           position: relative;
           outline: none;
