@@ -256,7 +256,7 @@ const BehaviorsThatMatter: React.FC = () => {
                     </div>
                     <p style={{ margin: 0, fontSize: fs.bodyLg, color: textMain, lineHeight: 1.6 }}>{behavior.strong}</p>
                   </div>
-                  <div style={{ background: 'rgba(248,113,113,0.06)', border: '1px solid rgba(248,113,113,0.16)', borderRadius: 12, padding: 14 }}>
+                  <div style={{ background: 'rgba(245,194,107,0.06)', border: '1px solid rgba(245,194,107,0.16)', borderRadius: 12, padding: 14 }}>
                     <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 8 }}>
                       Weak Freshers
                     </div>
@@ -293,7 +293,7 @@ const BehaviorsThatMatter: React.FC = () => {
             style={{
               position: 'absolute',
               inset: 0,
-              background: `radial-gradient(600px 300px at 50% 100%, rgba(248,113,113,0.10), transparent 60%)`,
+              background: `radial-gradient(600px 300px at 50% 100%, rgba(245,194,107,0.10), transparent 60%)`,
               pointerEvents: 'none',
             }}
           />
@@ -301,7 +301,7 @@ const BehaviorsThatMatter: React.FC = () => {
             <EyebrowLabel>Brutal Reality</EyebrowLabel>
 
             <div style={{ marginTop: 16, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
-              <div style={{ background: 'rgba(248,113,113,0.06)', border: '1px solid rgba(248,113,113,0.16)', borderRadius: 12, padding: 14 }}>
+              <div style={{ background: 'rgba(245,194,107,0.06)', border: '1px solid rgba(245,194,107,0.16)', borderRadius: 12, padding: 14 }}>
                 <div style={{ fontSize: fs.labelLg, letterSpacing: '0.14em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 10 }}>
                   Companies Rarely Remember
                 </div>
@@ -382,7 +382,7 @@ const BehaviorsThatMatter: React.FC = () => {
                   }}
                 >
                   <div style={{ color: accentTeal, fontWeight: 700, display: 'flex', alignItems: 'center' }}>{row.area}</div>
-                  <div style={{ color: '#fecaca', display: 'flex', alignItems: 'center' }}>{row.weak}</div>
+                  <div style={{ color: '#fde68a', display: 'flex', alignItems: 'center' }}>{row.weak}</div>
                   <div style={{ color: '#a7f3d0', display: 'flex', alignItems: 'center' }}>{row.strong}</div>
                   <div style={{ color: textSoft, display: 'flex', alignItems: 'center' }}>{row.why}</div>
                 </div>
@@ -408,7 +408,7 @@ const BehaviorsThatMatter: React.FC = () => {
                   </div>
                   <div>
                     <div style={{ fontSize: fs.label, letterSpacing: '0.1em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 4 }}>Weak Fresher</div>
-                    <div style={{ fontSize: fs.body, color: '#fecaca', lineHeight: 1.5 }}>{row.weak}</div>
+                    <div style={{ fontSize: fs.body, color: '#fde68a', lineHeight: 1.5 }}>{row.weak}</div>
                   </div>
                   <div>
                     <div style={{ fontSize: fs.label, letterSpacing: '0.1em', textTransform: 'uppercase', color: success, fontWeight: 700, marginBottom: 4 }}>Strong Fresher</div>
@@ -557,7 +557,7 @@ const Li: React.FC<{ children: React.ReactNode; warn?: boolean; success?: boolea
       gap: 10,
       alignItems: 'flex-start',
       fontSize: small ? fs.body : fs.bodyLg,
-      color: isWarn ? '#fecaca' : isSuccess ? '#a7f3d0' : textSoft,
+      color: isWarn ? '#fde68a' : isSuccess ? '#a7f3d0' : textSoft,
       lineHeight: 1.6,
     }}
   >
