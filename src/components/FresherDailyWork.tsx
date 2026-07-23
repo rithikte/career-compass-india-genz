@@ -42,15 +42,18 @@ const styles = `
   display: inline-block;
 }
 .fdw-headline {
-  font-size: clamp(30.4px, 5.2vw, 54.4px);
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: clamp(1.9rem, 4.5vw, 3.4rem);
   line-height: 1.05;
   letter-spacing: -0.02em;
   font-weight: 700;
   margin: 14px 0 12px;
-  background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+}
+.fdw-headline-gradient {
+  background: linear-gradient(135deg, #F8FAFC 0%, #A5B4FC 55%, #7DD3FC 100%);
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 .fdw-sub {
   font-size: clamp(11px, 1.15vw, 15px);
@@ -324,7 +327,7 @@ const FresherDailyWork: React.FC = () => {
       <div className="fdw-wrap">
         {/* Hero */}
         <div className="fdw-eyebrow">What Freshers Actually Do</div>
-        <h1 className="fdw-headline">The real daily work<br />after joining this role.</h1>
+        <h1 className="fdw-headline fdw-headline-gradient">The real daily work<br />after joining this role.</h1>
         <p className="fdw-sub">
           A Junior Site Engineer in RCC apartment execution spends most of the day on-site checking work,
           following drawings, updating seniors, and recording progress. This is not a design-heavy role — the
