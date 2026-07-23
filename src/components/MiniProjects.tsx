@@ -512,7 +512,7 @@ const MiniProjects: React.FC = () => {
         </div>
 
         {/* Mini Project-to-Work Connection Table */}
-        <SectionTitle eyebrow="Connection Map" title="Mini Project-To-Work Connection Table" />
+        <SectionTitle eyebrow="Connection Map" title="Mini Project-To-Work Connection Table" gradient />
         <div className="mini-card" tabIndex={0} style={{ ...cardStyle({ padding: 0, overflow: 'hidden' }), position: 'relative' }}>
           <div className="mini-table-header mini-connection-cols">
             <div>Mini Project</div>
