@@ -247,7 +247,7 @@ const WhereFreshersGetHired: React.FC = () => {
         </div>
 
         {/* Reality Check */}
-        <div className="wfg-card" tabIndex={0} style={{ ...cardStyle(), marginTop: 28, position: 'relative', overflow: 'hidden' }}>
+        <div className="wfg-card" tabIndex={0} style={{ ...cardStyle(), marginTop: 28, position: 'relative', overflow: 'hidden', background: 'linear-gradient(180deg, rgba(167,139,250,0.06), rgba(255,255,255,0.03))' }}>
           <div
             aria-hidden
             style={{
