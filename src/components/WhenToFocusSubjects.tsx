@@ -260,9 +260,9 @@ const WhenToFocusSubjects: React.FC = () => {
                   <div style={{ fontSize: fs.labelLg, letterSpacing: '0.16em', textTransform: 'uppercase', color: muted, fontWeight: 700 }}>
                     {phase.phase.split(' — ')[0]}
                   </div>
-                  <div style={{ marginTop: 2, fontSize: fs.h3, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}>
+                  <h2 className="wtf-phase-headline" style={{ marginTop: 2 }}>
                     {phase.phase.split(' — ')[1]}
-                  </div>
+                  </h2>
                 </div>
               </div>
 
