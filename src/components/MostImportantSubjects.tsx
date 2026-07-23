@@ -19,8 +19,9 @@ const fs = {
 
 const accentTeal = '#6ee7d7';
 const accentViolet = '#a78bfa';
-const muted = '#94a3b8';
-const textMain = '#e5e7eb';
+const accentAmber = '#f5c26b';
+const muted = '#9aa4b2';
+const textMain = '#e7ecf3';
 const textSoft = '#cbd5e1';
 
 const knowledgeData = [
@@ -100,7 +101,7 @@ const MostImportantSubjects: React.FC = () => {
     <div
       style={{
         background:
-          'radial-gradient(1200px 600px at 10% -10%, rgba(110,231,215,0.10), transparent 60%), radial-gradient(900px 500px at 100% 0%, rgba(167,139,250,0.10), transparent 60%), #05070d',
+          'radial-gradient(1200px 600px at 10% -10%, rgba(110,231,215,0.08), transparent 60%), radial-gradient(900px 500px at 100% 0%, rgba(167,139,250,0.08), transparent 60%), radial-gradient(800px 400px at 50% 120%, rgba(110,231,215,0.05), transparent 55%), #06080d',
         color: textMain,
         minHeight: '100vh',
         width: '100%',
@@ -234,7 +235,7 @@ const MostImportantSubjects: React.FC = () => {
         </div>
 
         {/* Reality Check */}
-        <div className="wfg-card" tabIndex={0} style={{ ...cardStyle(), marginTop: 28, position: 'relative', overflow: 'hidden' }}>
+        <div className="wfg-card wfg-reality-check" tabIndex={0} style={{ ...cardStyle(), marginTop: 28, position: 'relative', overflow: 'hidden' }}>
           <div
             aria-hidden
             style={{
@@ -395,13 +396,13 @@ const MostImportantSubjects: React.FC = () => {
 };
 
 const cardStyle = (extra: React.CSSProperties = {}): React.CSSProperties => ({
-  background: 'linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))',
-  border: '1px solid rgba(148,163,184,0.14)',
+  background: 'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03))',
+  border: '1px solid rgba(255,255,255,0.14)',
   borderRadius: 16,
   padding: 18,
   backdropFilter: 'blur(6px)',
   WebkitBackdropFilter: 'blur(6px)',
-  boxShadow: '0 1px 0 rgba(255,255,255,0.03) inset, 0 20px 40px -30px rgba(0,0,0,0.6)',
+  boxShadow: '0 1px 0 rgba(255,255,255,0.05) inset, 0 20px 40px -30px rgba(0,0,0,0.6)',
   ...extra,
 });
 
@@ -458,9 +459,12 @@ const SectionTitle: React.FC<{ eyebrow?: string; title: string }> = ({ eyebrow, 
         {eyebrow}
       </div>
     )}
-    <div style={{ marginTop: eyebrow ? 6 : 0, fontSize: fs.h2, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}>
+    <h2
+      className="mis-subtitle-gradient"
+      style={{ marginTop: eyebrow ? 6 : 0, marginBottom: 0 }}
+    >
       {title}
-    </div>
+    </h2>
   </div>
 );
 
