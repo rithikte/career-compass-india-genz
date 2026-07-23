@@ -695,6 +695,16 @@ const MajorProjects: React.FC = () => {
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
+        .major-section-title {
+          font-family: 'Poppins', 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+          font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          line-height: 1.2;
+          background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
         .major-card {
           position: relative;
           outline: none;
@@ -711,7 +721,7 @@ const MajorProjects: React.FC = () => {
             0 0 42px rgba(167,139,250,0.22),
             0 1px 0 rgba(255,255,255,0.05) inset,
             0 20px 40px -30px rgba(0,0,0,0.6);
-          transform: translateY(-1px);
+          transform: translateY(-2px);
         }
         @media (hover: none) {
           .major-card:active {
@@ -721,6 +731,14 @@ const MajorProjects: React.FC = () => {
               0 0 22px rgba(110,231,215,0.32),
               0 0 46px rgba(167,139,250,0.26);
           }
+        }
+        .priority-table tbody tr,
+        .connection-table tbody tr {
+          transition: background-color 180ms ease;
+        }
+        .priority-table tbody tr:hover,
+        .connection-table tbody tr:hover {
+          background-color: rgba(110,231,215,0.06);
         }
         .priority-table th,
         .priority-table td {
