@@ -328,7 +328,7 @@ const CompaniesHiring: React.FC = () => {
               <EyebrowLabel small>Mistakes In These Activities Can Cause</EyebrowLabel>
               <ul style={{ margin: '12px 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: 6 }}>
                 {mistakesCause.map((item, i) => (
-                  <li key={i} style={{ fontSize: fs.body, color: '#fecaca', lineHeight: 1.55, display: 'flex', gap: 8 }}>
+                  <li key={i} style={{ fontSize: fs.body, color: 'warnText', lineHeight: 1.55, display: 'flex', gap: 8 }}>
                     <span style={{ color: warn }}>×</span>
                     <span>{item}</span>
                   </li>
@@ -393,7 +393,7 @@ const CompaniesHiring: React.FC = () => {
                 <EyebrowLabel small>What A Degree Does Not Prove</EyebrowLabel>
                 <ul style={{ margin: '12px 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: 6 }}>
                   {degreeDoesNotProve.map((item, i) => (
-                    <li key={i} style={{ fontSize: fs.body, color: '#fecaca', lineHeight: 1.55, display: 'flex', gap: 8 }}>
+                    <li key={i} style={{ fontSize: fs.body, color: 'warnText', lineHeight: 1.55, display: 'flex', gap: 8 }}>
                       <span style={{ color: warn }}>×</span>
                       <span>{item}</span>
                     </li>
@@ -444,9 +444,9 @@ const CompaniesHiring: React.FC = () => {
                       className="stages-interest"
                       style={{
                         fontSize: fs.labelMd,
-                        background: i === 0 ? 'rgba(52,211,153,0.12)' : i === 1 ? 'rgba(250,204,21,0.12)' : 'rgba(248,113,113,0.12)',
-                        border: `1px solid ${i === 0 ? 'rgba(52,211,153,0.35)' : i === 1 ? 'rgba(250,204,21,0.35)' : 'rgba(248,113,113,0.35)'}`,
-                        color: i === 0 ? success : i === 1 ? '#facc15' : warn,
+                        background: i === 0 ? 'rgba(52,211,153,0.12)' : i === 1 ? 'rgba(245,194,107,0.12)' : 'rgba(245,194,107,0.12)',
+                        border: `1px solid ${i === 0 ? 'rgba(52,211,153,0.35)' : i === 1 ? 'rgba(245,194,107,0.35)' : 'rgba(245,194,107,0.35)'}`,
+                        color: i === 0 ? success : i === 1 ? 'accentAmber' : warn,
                       }}
                     >
                       {row.interest}
@@ -581,8 +581,8 @@ const CompaniesHiring: React.FC = () => {
                           fontWeight: 800,
                           letterSpacing: '0.08em',
                           textTransform: 'uppercase',
-                          background: row.preference === 'Higher' ? 'rgba(52,211,153,0.12)' : 'rgba(248,113,113,0.12)',
-                          border: `1px solid ${row.preference === 'Higher' ? 'rgba(52,211,153,0.35)' : 'rgba(248,113,113,0.35)'}`,
+                          background: row.preference === 'Higher' ? 'rgba(52,211,153,0.12)' : 'rgba(245,194,107,0.12)',
+                          border: `1px solid ${row.preference === 'Higher' ? 'rgba(52,211,153,0.35)' : 'rgba(245,194,107,0.35)'}`,
                           color: row.preference === 'Higher' ? success : warn,
                         }}
                       >
@@ -634,7 +634,7 @@ const CompaniesHiring: React.FC = () => {
               <EyebrowLabel>Student B</EyebrowLabel>
               <ul style={{ margin: '12px 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: 6 }}>
                 {compareStudents.studentB.map((item, i) => (
-                  <li key={i} style={{ fontSize: fs.body, color: '#fecaca', lineHeight: 1.55, display: 'flex', gap: 8 }}>
+                  <li key={i} style={{ fontSize: fs.body, color: 'warnText', lineHeight: 1.55, display: 'flex', gap: 8 }}>
                     <span>×</span>
                     <span>{item}</span>
                   </li>
@@ -709,7 +709,7 @@ const CompaniesHiring: React.FC = () => {
                       textTransform: 'uppercase',
                       color: warn,
                       fontWeight: 700,
-                      background: 'rgba(248,113,113,0.06)',
+                      background: 'rgba(245,194,107,0.06)',
                     }}
                   >
                     {h}
@@ -721,7 +721,7 @@ const CompaniesHiring: React.FC = () => {
               {fearComparison.map((row, i) => (
                 <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                   <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.factor}</td>
-                  <td style={{ padding: '12px 14px', color: '#fecaca', fontWeight: 600 }}>{row.fresher}</td>
+                  <td style={{ padding: '12px 14px', color: 'warnText', fontWeight: 600 }}>{row.fresher}</td>
                   <td style={{ padding: '12px 14px', color: success, fontWeight: 600 }}>{row.experienced}</td>
                 </tr>
               ))}
@@ -751,7 +751,7 @@ const CompaniesHiring: React.FC = () => {
                       textTransform: 'uppercase',
                       color: warn,
                       fontWeight: 700,
-                      background: 'rgba(248,113,113,0.06)',
+                      background: 'rgba(245,194,107,0.06)',
                     }}
                   >
                     {h}
@@ -763,7 +763,7 @@ const CompaniesHiring: React.FC = () => {
               {badHireImpact.map((row, i) => (
                 <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                   <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.problem}</td>
-                  <td style={{ padding: '12px 14px', color: '#fecaca', fontWeight: 600 }}>{row.impact}</td>
+                  <td style={{ padding: '12px 14px', color: 'warnText', fontWeight: 600 }}>{row.impact}</td>
                 </tr>
               ))}
             </tbody>
@@ -779,8 +779,8 @@ const CompaniesHiring: React.FC = () => {
                     display: 'inline-block',
                     padding: '6px 12px',
                     borderRadius: 999,
-                    background: 'rgba(248,113,113,0.12)',
-                    border: '1px solid rgba(248,113,113,0.35)',
+                    background: 'rgba(245,194,107,0.12)',
+                    border: '1px solid rgba(245,194,107,0.35)',
                     color: warn,
                     fontSize: fs.body,
                     fontWeight: 700,
@@ -810,7 +810,7 @@ const CompaniesHiring: React.FC = () => {
               <EyebrowLabel>Companies Are Not Buying</EyebrowLabel>
               <ul style={{ margin: '12px 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: 6 }}>
                 {notBuying.map((item, i) => (
-                  <li key={i} style={{ fontSize: fs.body, color: '#fecaca', lineHeight: 1.55, display: 'flex', gap: 8 }}>
+                  <li key={i} style={{ fontSize: fs.body, color: 'warnText', lineHeight: 1.55, display: 'flex', gap: 8 }}>
                     <span style={{ color: warn }}>×</span>
                     <span>{item}</span>
                   </li>
@@ -1020,8 +1020,8 @@ const StageCard: React.FC<{
 }> = ({ stage, title, companyThinking, sees, why, logic, color }) => {
   const colorMap = {
     teal: { accent: accentTeal, bg: 'rgba(110,231,215,0.12)', border: 'rgba(110,231,215,0.35)', soft: 'rgba(110,231,215,0.08)' },
-    amber: { accent: '#facc15', bg: 'rgba(250,204,21,0.12)', border: 'rgba(250,204,21,0.35)', soft: 'rgba(250,204,21,0.08)' },
-    warn: { accent: warn, bg: 'rgba(248,113,113,0.12)', border: 'rgba(248,113,113,0.35)', soft: 'rgba(248,113,113,0.08)' },
+    amber: { accent: 'accentAmber', bg: 'rgba(245,194,107,0.12)', border: 'rgba(245,194,107,0.35)', soft: 'rgba(245,194,107,0.08)' },
+    warn: { accent: warn, bg: 'rgba(245,194,107,0.12)', border: 'rgba(245,194,107,0.35)', soft: 'rgba(248,113,113,0.08)' },
   };
   const c = colorMap[color];
 
