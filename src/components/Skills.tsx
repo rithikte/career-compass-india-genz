@@ -327,30 +327,22 @@ const Skills: React.FC = () => {
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
-                  <div>
-                    <EyebrowLabel small>Why Selected</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{skill.why}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>What Freshers Actually Do</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{skill.what}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Responsibilities Supported</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{skill.responsibilities}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Subjects Behind This Skill</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{skill.subjects}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Key Chapters Behind This Skill</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{skill.chapters}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Where It Appears In Real Work</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{skill.workplace}</p>
-                  </div>
+                  {[
+                    { label: 'Why Selected', text: skill.why, size: fs.body },
+                    { label: 'What Freshers Actually Do', text: skill.what, size: fs.body },
+                    { label: 'Responsibilities Supported', text: skill.responsibilities, size: fs.bodySm },
+                    { label: 'Subjects Behind This Skill', text: skill.subjects, size: fs.bodySm },
+                    { label: 'Key Chapters Behind This Skill', text: skill.chapters, size: fs.bodySm },
+                    { label: 'Where It Appears In Real Work', text: skill.workplace, size: fs.bodySm },
+                  ].map((item, i, arr) => (
+                    <React.Fragment key={item.label}>
+                      <div>
+                        <EyebrowLabel small>{item.label}</EyebrowLabel>
+                        <p style={{ margin: '8px 0 0', fontSize: item.size, color: textSoft, lineHeight: 1.6 }}>{item.text}</p>
+                      </div>
+                      {i < arr.length - 1 && <div className="skills-mobile-divider" />}
+                    </React.Fragment>
+                  ))}
                 </div>
 
                 <div
@@ -363,25 +355,36 @@ const Skills: React.FC = () => {
                     gap: 14,
                   }}
                 >
-                  <ImpactBlock label="Business Value Created" color={accentTeal} text={skill.businessValue} />
-                  <ImpactBlock label="Capability Built" color={accentViolet} text={skill.capability} />
-                  <ImpactBlock label="Trust Impact" color={success} text={skill.trust} />
-                  <ImpactBlock label="Growth Impact" color={accentTeal} text={skill.growth} />
-                  <div style={{ gridColumn: '1 / -1' }}>
-                    <div
-                      style={{
-                        fontSize: fs.label,
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color: warn,
-                        fontWeight: 700,
-                        marginBottom: 6,
-                      }}
-                    >
-                      If Ignored
-                    </div>
-                    <p style={{ margin: 0, fontSize: fs.body, color: '#fecaca', lineHeight: 1.6 }}>{skill.ignored}</p>
-                  </div>
+                  {[
+                    { label: 'Business Value Created', color: accentTeal, text: skill.businessValue },
+                    { label: 'Capability Built', color: accentViolet, text: skill.capability },
+                    { label: 'Trust Impact', color: success, text: skill.trust },
+                    { label: 'Growth Impact', color: accentTeal, text: skill.growth },
+                    { label: 'If Ignored', color: warn, text: skill.ignored, textColor: '#fecaca', fullWidth: true },
+                  ].map((item, i, arr) => (
+                    <React.Fragment key={item.label}>
+                      {item.fullWidth ? (
+                        <div style={{ gridColumn: '1 / -1' }}>
+                          <div
+                            style={{
+                              fontSize: fs.label,
+                              letterSpacing: '0.14em',
+                              textTransform: 'uppercase',
+                              color: item.color,
+                              fontWeight: 700,
+                              marginBottom: 6,
+                            }}
+                          >
+                            {item.label}
+                          </div>
+                          <p style={{ margin: 0, fontSize: fs.body, color: item.textColor, lineHeight: 1.6 }}>{item.text}</p>
+                        </div>
+                      ) : (
+                        <ImpactBlock label={item.label} color={item.color} text={item.text} />
+                      )}
+                      {i < arr.length - 1 && <div className="skills-mobile-divider" />}
+                    </React.Fragment>
+                  ))}
                 </div>
               </div>
             </div>
@@ -574,6 +577,20 @@ const Skills: React.FC = () => {
         .skills-table-row:last-child { border-bottom: none; }
         .skills-table-mobile {
           display: none;
+        }
+        .skills-mobile-divider {
+          display: none;
+        }
+        @media (max-width: 640px) {
+          .skills-mobile-divider {
+            display: block;
+            grid-column: 1 / -1;
+            height: 1px;
+            width: 100%;
+            margin: 14px 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.18) 80%, transparent 100%);
+            border: none;
+          }
         }
         @media (max-width: 860px) {
           .skills-table-header,
