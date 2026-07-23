@@ -481,7 +481,7 @@ const MinorProjects: React.FC = () => {
                         key={j}
                         style={{
                           background: 'rgba(255,255,255,0.03)',
-                          border: '1px solid rgba(148,163,184,0.14)',
+                          border: '1px solid rgba(255,255,255,0.14)',
                           borderRadius: 10,
                           padding: '10px 12px',
                           fontSize: fs.body,
