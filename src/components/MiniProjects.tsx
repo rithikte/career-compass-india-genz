@@ -371,14 +371,17 @@ const MiniProjects: React.FC = () => {
                     <EyebrowLabel small>Real Fresher Responsibility Simulated</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{project.simulated}</p>
                   </div>
+                  <div className="mini-mobile-divider" />
                   <div>
                     <EyebrowLabel small>What You Build</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{project.build}</p>
                   </div>
+                  <div className="mini-mobile-divider" />
                   <div>
                     <EyebrowLabel small>Capability Built</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: success, lineHeight: 1.6 }}>{project.capability}</p>
                   </div>
+                  <div className="mini-mobile-divider" />
                   <div>
                     <EyebrowLabel small>Tools Used</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{project.tools}</p>
