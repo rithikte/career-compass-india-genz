@@ -644,7 +644,7 @@ const FlowBox: React.FC<{ label: string; sub: string; active?: boolean }> = ({ l
   <div
     style={{
       background: active ? 'rgba(110,231,215,0.10)' : 'rgba(255,255,255,0.03)',
-      border: `1px solid ${active ? 'rgba(110,231,215,0.45)' : 'rgba(148,163,184,0.14)'}`,
+      border: `1px solid ${active ? 'rgba(110,231,215,0.45)' : 'rgba(255,255,255,0.14)'}`,
       borderRadius: 12,
       padding: '14px 16px',
       textAlign: 'center',
