@@ -695,6 +695,17 @@ const MiniProjects: React.FC = () => {
           -webkit-text-fill-color: transparent;
           background-clip: text;
         }
+        .mini-section-headline {
+          font-family: 'Poppins', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          line-height: 1.15;
+          background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
         .mini-card {
           position: relative;
           outline: none;
@@ -711,7 +722,7 @@ const MiniProjects: React.FC = () => {
             0 0 42px rgba(167,139,250,0.22),
             0 1px 0 rgba(255,255,255,0.05) inset,
             0 20px 40px -30px rgba(0,0,0,0.6);
-          transform: translateY(-1px);
+          transform: translateY(-2px);
         }
         @media (hover: none) {
           .mini-card:active {
@@ -726,19 +737,23 @@ const MiniProjects: React.FC = () => {
           display: grid;
           gap: 8px;
           padding: 12px 10px;
-          background: rgba(148,163,184,0.10);
+          background: rgba(255,255,255,0.08);
           font-size: ${fs.labelLg};
           letter-spacing: 0.1em;
           text-transform: uppercase;
           color: ${muted};
           font-weight: 700;
-          border-bottom: 1px solid rgba(148,163,184,0.14);
+          border-bottom: 1px solid rgba(255,255,255,0.14);
         }
         .mini-table-row {
           display: grid;
           gap: 8px;
           align-items: center;
-          border-bottom: 1px solid rgba(148,163,184,0.08);
+          border-bottom: 1px solid rgba(255,255,255,0.08);
+          transition: background-color 180ms ease;
+        }
+        .mini-table-row:hover {
+          background-color: rgba(110,231,215,0.06) !important;
         }
         .mini-table-row:last-child { border-bottom: none; }
         .mini-priority-cols { grid-template-columns: minmax(180px, 1.6fr) minmax(130px, 1fr) minmax(130px, 1fr) minmax(110px, 0.9fr) minmax(110px, 0.9fr); }
