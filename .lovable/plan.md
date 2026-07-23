@@ -1,18 +1,42 @@
+## Apply gradient & typography update to CareerStabilityCheck section headlines
 
-# Plan: Career Stability Check → PDF
+### Goal
+Update the three section headlines in the "Career Stability Check" page —
+1. **What Keeps This Career Alive**
+2. **Where Freshers Break First**
+3. **Expectation vs Reality**
 
-Generate a downloadable PDF that captures the full content flow of the Career Stability Check page (`src/components/CareerStabilityCheck.tsx`) and deliver it as a `/mnt/documents` artifact. No app code changes.
+— so they use the new white-to-gray gradient text and the requested sub-section heading font style, and bring the entire page’s visual tokens/effects in line with the latest spec.
 
-## Steps
+### Changes
 
-1. Read `src/components/CareerStabilityCheck.tsx` to extract the full content flow (headline, eyebrow, sections, tables, cards, callouts, bottom-line).
-2. Render the page in the running preview via Playwright at desktop width, print-to-PDF the section in order (full-page capture with dark background preserved), OR generate a styled PDF with ReportLab using the extracted content and the site's dark palette (#070B18 bg, #E6ECF5 text, sky/purple accents).
-   - Preferred: Playwright `page.pdf()` on `/home` after navigating to the Career Stability Check tab — preserves exact visual design (gradient headline, glass cards, tables).
-3. Save output to `/mnt/documents/career-stability-check.pdf`.
-4. QA: `pdftoppm` each page to JPG, view images, check for clipped text, overlap, missing sections; fix and re-render if needed.
-5. Deliver via `<presentation-artifact>` tag.
+1. **Headline gradient + font**
+   - Add a shared class `.cs-section-headline` in `src/components/CareerStabilityCheck.tsx`.
+   - Apply `linear-gradient(180deg, #fff 0%, #b7c0cc 100%)` with `-webkit-background-clip: text` / `-webkit-text-fill-color: transparent`.
+   - Set `font-family: 'Poppins', 'Inter', sans-serif`, `font-weight: 600`, `font-size: clamp(1.35rem, 2.6vw, 1.9rem)`.
+   - Apply the class to the three `<h2>` elements rendered by the `SectionTitle` component for the above titles.
 
-## Technical notes
+2. **Color system update**
+   - Page background: `#06080d`.
+   - Primary text: `#e7ecf3`.
+   - Muted text: `#9aa4b2`.
+   - Card backgrounds: `rgba(255,255,255,0.03)` / `rgba(255,255,255,0.05)`.
+   - Borders: `rgba(255,255,255,0.08)` / `rgba(255,255,255,0.14)`.
+   - Accents: teal `#6ee7d7`, purple `#a78bfa`, amber `#f5c26b`.
+   - Update rating severity pills (Very High, High, Medium, Critical, Moderate, Low) to use these accent colors.
 
-- Use headless Chromium via Playwright already available in sandbox. Navigate to `http://localhost:8080/home`, click the "Career Stability Check" tab, wait for content, then `page.emulate_media(media="screen")` and `page.pdf(format="A4", print_background=True)`.
-- If tab navigation is complex, fall back to a ReportLab-generated PDF using DejaVu Sans font, dark background rectangles, and the extracted text/table content.
+3. **Effects**
+   - Radial background glows: teal + purple at low opacity behind the page.
+   - Card hover lift: `translateY(-2px)` + multi-layer teal/purple glow shadow.
+   - Table rows: teal-tint hover highlight.
+   - Teal and amber tag badges with translucent fills + matching borders.
+   - "Reality Check" box (the Honest Picture card): subtle gradient background + stronger border.
+
+4. **Verification**
+   - Run `tsgo` (TypeScript check) and visually confirm the three headlines render the gradient at both desktop and mobile widths.
+
+### Files
+- `src/components/CareerStabilityCheck.tsx` (only file modified)
+
+### No new dependencies
+Styling is done inline + CSS-in-JSX as existing convention.

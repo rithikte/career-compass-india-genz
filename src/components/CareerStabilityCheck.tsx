@@ -19,17 +19,32 @@ const fs = {
   eyebrow: clamp(9, 375, 11),
 };
 
+// Design tokens
+const TOKENS = {
+  bg: '#06080d',
+  primary: '#e7ecf3',
+  muted: '#9aa4b2',
+  teal: '#6ee7d7',
+  purple: '#a78bfa',
+  amber: '#f5c26b',
+  cardBg: 'rgba(255,255,255,0.03)',
+  cardBgHover: 'rgba(255,255,255,0.05)',
+  border: 'rgba(255,255,255,0.08)',
+  borderHover: 'rgba(255,255,255,0.14)',
+  sectionGradient: 'linear-gradient(180deg, #fff 0%, #b7c0cc 100%)',
+};
+
 type Rating = 'Very High' | 'High' | 'Medium' | 'Low' | 'Critical' | 'Moderate';
 
 const ratingColor = (r: Rating | string) => {
   switch (r) {
-    case 'Very High': return { bg: 'rgba(16,185,129,0.14)', bd: 'rgba(16,185,129,0.45)', fg: '#34d399' };
-    case 'High': return { bg: 'rgba(59,130,246,0.14)', bd: 'rgba(59,130,246,0.45)', fg: '#60a5fa' };
-    case 'Medium': return { bg: 'rgba(234,179,8,0.14)', bd: 'rgba(234,179,8,0.45)', fg: '#facc15' };
+    case 'Very High': return { bg: 'rgba(110,231,215,0.14)', bd: 'rgba(110,231,215,0.45)', fg: TOKENS.teal };
+    case 'High': return { bg: 'rgba(167,139,250,0.14)', bd: 'rgba(167,139,250,0.45)', fg: TOKENS.purple };
+    case 'Medium': return { bg: 'rgba(245,194,107,0.14)', bd: 'rgba(245,194,107,0.45)', fg: TOKENS.amber };
     case 'Critical': return { bg: 'rgba(239,68,68,0.16)', bd: 'rgba(239,68,68,0.5)', fg: '#f87171' };
-    case 'Moderate': return { bg: 'rgba(249,115,22,0.14)', bd: 'rgba(249,115,22,0.45)', fg: '#fb923c' };
-    case 'Low': return { bg: 'rgba(148,163,184,0.14)', bd: 'rgba(148,163,184,0.45)', fg: '#94a3b8' };
-    default: return { bg: 'rgba(148,163,184,0.14)', bd: 'rgba(148,163,184,0.45)', fg: '#94a3b8' };
+    case 'Moderate': return { bg: 'rgba(245,194,107,0.14)', bd: 'rgba(245,194,107,0.45)', fg: TOKENS.amber };
+    case 'Low': return { bg: 'rgba(154,164,178,0.14)', bd: 'rgba(154,164,178,0.45)', fg: TOKENS.muted };
+    default: return { bg: 'rgba(154,164,178,0.14)', bd: 'rgba(154,164,178,0.45)', fg: TOKENS.muted };
   }
 };
 
@@ -63,8 +78,8 @@ const CareerStabilityCheck: React.FC = () => {
   return (
     <div
       style={{
-        background: 'radial-gradient(1200px 600px at 10% -10%, rgba(56,189,248,0.10), transparent 60%), radial-gradient(900px 500px at 100% 0%, rgba(168,85,247,0.10), transparent 60%), #05070d',
-        color: '#e5e7eb',
+        background: `radial-gradient(1200px 600px at 10% -10%, rgba(110,231,215,0.10), transparent 60%), radial-gradient(900px 500px at 100% 0%, rgba(167,139,250,0.10), transparent 60%), ${TOKENS.bg}`,
+        color: TOKENS.primary,
         minHeight: '100vh',
         width: '100%',
         fontFamily: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
@@ -86,10 +101,10 @@ const CareerStabilityCheck: React.FC = () => {
           <span
             style={{
               display: 'inline-block', width: 8, height: 8, borderRadius: 999,
-              background: '#34d399', boxShadow: '0 0 0 4px rgba(52,211,153,0.15)',
+              background: TOKENS.teal, boxShadow: '0 0 0 4px rgba(110,231,215,0.15)',
             }}
           />
-          <span style={{ fontSize: fs.eyebrow, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 600 }}>
+          <span style={{ fontSize: fs.eyebrow, letterSpacing: '0.22em', textTransform: 'uppercase', color: TOKENS.muted, fontWeight: 600 }}>
             Career Path Stability Check
           </span>
         </div>
@@ -115,7 +130,7 @@ const CareerStabilityCheck: React.FC = () => {
           <br />
           Fresher Opportunities?
         </h1>
-        <p style={{ marginTop: 14, fontSize: fs.body, color: '#94a3b8', maxWidth: '72ch', lineHeight: 1.6 }}>
+        <p style={{ marginTop: 14, fontSize: fs.body, color: TOKENS.muted, maxWidth: '72ch', lineHeight: 1.6 }}>
           Shows whether this career will keep creating fresher jobs — verdict, survival factors, hiring reality, and honest failure points.
         </p>
 
@@ -131,19 +146,19 @@ const CareerStabilityCheck: React.FC = () => {
           <VerdictCard
             eyebrow="Career Stability Verdict"
             title="Very Stable"
-            tint="#34d399"
-            body="RCC apartment construction still needs physical site checking, coordination, and daily execution tracking. India’s residential construction market is projected to keep growing, but slowdowns can still affect hiring speed."
+            tint={TOKENS.teal}
+            body="RCC apartment construction still needs physical site checking, coordination, and daily execution tracking. India's residential construction market is projected to keep growing, but slowdowns can still affect hiring speed."
           />
           <VerdictCard
             eyebrow="Career Survival Strength"
             title="Strong"
-            tint="#60a5fa"
+            tint={TOKENS.purple}
             body="Junior site engineering roles remain hard to automate, outsource, or replace with AI. Physical execution control keeps the fresher pipeline alive."
           />
         </div>
 
         {/* Survival Factors */}
-        <SectionTitle eyebrow="Survival Factors" title="What Keeps This Career Alive" />
+        <SectionTitle eyebrow="Survival Factors" title="What Keeps This Career Alive" titleClassName="cs-section-headline" />
         <div
           style={{
             display: 'grid', gap: 10,
@@ -155,13 +170,13 @@ const CareerStabilityCheck: React.FC = () => {
             return (
               <div key={f.factor} className="cs-card" tabIndex={0} style={cardStyle()}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 10 }}>
-                  <span style={{ fontSize: fs.label, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 600 }}>
+                  <span style={{ fontSize: fs.label, letterSpacing: '0.16em', textTransform: 'uppercase', color: TOKENS.muted, fontWeight: 600 }}>
                     Factor
                   </span>
                   <span style={pill(c)}>{f.rating}</span>
                 </div>
-                <div style={{ marginTop: 10, fontSize: fs.h3, fontWeight: 600, color: '#f1f5f9', lineHeight: 1.25 }}>{f.factor}</div>
-                <div style={{ marginTop: 8, fontSize: fs.bodySm, color: '#94a3b8', lineHeight: 1.6 }}>{f.why}</div>
+                <div style={{ marginTop: 10, fontSize: fs.h3, fontWeight: 600, color: TOKENS.primary, lineHeight: 1.25 }}>{f.factor}</div>
+                <div style={{ marginTop: 8, fontSize: fs.bodySm, color: TOKENS.muted, lineHeight: 1.6 }}>{f.why}</div>
               </div>
             );
           })}
@@ -178,7 +193,7 @@ const CareerStabilityCheck: React.FC = () => {
           <div className="cs-card" tabIndex={0} style={cardStyle()}>
             <EyebrowLabel>Fresher Hiring Reality</EyebrowLabel>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginTop: 8 }}>
-              <span style={{ fontSize: fs.h2, fontWeight: 700, color: '#34d399' }}>Strong Hiring</span>
+              <span style={{ fontSize: fs.h2, fontWeight: 700, color: TOKENS.teal }}>Strong Hiring</span>
             </div>
             <ul style={ulStyle()}>
               <Li>RCC work needs daily site presence</Li>
@@ -193,10 +208,10 @@ const CareerStabilityCheck: React.FC = () => {
               <span style={{ fontSize: fs.h1, fontWeight: 800, background: 'linear-gradient(180deg,#e2e8f0,#94a3b8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', letterSpacing: '-0.02em' }}>
                 91
               </span>
-              <span style={{ fontSize: fs.body, color: '#94a3b8' }}>/ 100</span>
+              <span style={{ fontSize: fs.body, color: TOKENS.muted }}>/ 100</span>
             </div>
-            <div style={{ marginTop: 10, height: 8, borderRadius: 999, background: 'rgba(148,163,184,0.15)', overflow: 'hidden' }}>
-              <div style={{ width: '91%', height: '100%', background: 'linear-gradient(90deg,#22d3ee,#34d399)', borderRadius: 999 }} />
+            <div style={{ marginTop: 10, height: 8, borderRadius: 999, background: 'rgba(255,255,255,0.08)', overflow: 'hidden' }}>
+              <div style={{ width: '91%', height: '100%', background: 'linear-gradient(90deg,#6ee7d7,#a78bfa)', borderRadius: 999 }} />
             </div>
             <ul style={ulStyle()}>
               <Li>RCC Design supports steel checking</Li>
@@ -247,7 +262,7 @@ const CareerStabilityCheck: React.FC = () => {
         </div>
 
         {/* Top Failure Points */}
-        <SectionTitle eyebrow="Top Failure Points" title="Where Freshers Break First" />
+        <SectionTitle eyebrow="Top Failure Points" title="Where Freshers Break First" titleClassName="cs-section-headline" />
         <div className="cs-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
           <div className="cs-table" role="table" aria-label="Top failure points">
             <div className="cs-thead" role="row">
@@ -260,10 +275,10 @@ const CareerStabilityCheck: React.FC = () => {
               const c = ratingColor(f.severity);
               return (
                 <div className="cs-row" role="row" key={f.point}>
-                  <div role="cell" data-label="Failure Point" style={{ fontWeight: 600, color: '#f1f5f9' }}>{f.point}</div>
+                  <div role="cell" data-label="Failure Point" style={{ fontWeight: 600, color: TOKENS.primary }}>{f.point}</div>
                   <div role="cell" data-label="Category" style={{ color: '#cbd5e1' }}>{f.category}</div>
                   <div role="cell" data-label="Severity"><span style={pill(c)}>{f.severity}</span></div>
-                  <div role="cell" data-label="Explanation" style={{ color: '#94a3b8' }}>{f.explanation}</div>
+                  <div role="cell" data-label="Explanation" style={{ color: TOKENS.muted }}>{f.explanation}</div>
                 </div>
               );
             })}
@@ -271,7 +286,7 @@ const CareerStabilityCheck: React.FC = () => {
         </div>
 
         {/* Reality Shock Areas */}
-        <SectionTitle eyebrow="Reality Shock Areas" title="Expectation vs Reality" />
+        <SectionTitle eyebrow="Reality Shock Areas" title="Expectation vs Reality" titleClassName="cs-section-headline" />
         <div className="cs-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
           <div className="cs-table cs-table-3" role="table" aria-label="Reality shock areas">
             <div className="cs-thead" role="row">
@@ -281,9 +296,9 @@ const CareerStabilityCheck: React.FC = () => {
             </div>
             {realityShocks.map((r) => (
               <div className="cs-row" role="row" key={r.area}>
-                <div role="cell" data-label="Area" style={{ fontWeight: 600, color: '#f1f5f9' }}>{r.area}</div>
+                <div role="cell" data-label="Area" style={{ fontWeight: 600, color: TOKENS.primary }}>{r.area}</div>
                 <div role="cell" data-label="Expect" style={{ color: '#cbd5e1' }}>{r.expect}</div>
-                <div role="cell" data-label="Actual" style={{ color: '#94a3b8' }}>{r.actual}</div>
+                <div role="cell" data-label="Actual" style={{ color: TOKENS.muted }}>{r.actual}</div>
               </div>
             ))}
           </div>
@@ -291,9 +306,9 @@ const CareerStabilityCheck: React.FC = () => {
 
         {/* Reality Check final block */}
         <SectionTitle eyebrow="Reality Check" title="The Honest Picture" />
-        <div className="cs-card" tabIndex={0} style={cardStyle({ background: 'linear-gradient(180deg, rgba(56,189,248,0.06), rgba(168,85,247,0.06))' })}>
+        <div className="cs-card cs-reality-check" tabIndex={0} style={cardStyle({ background: 'linear-gradient(180deg, rgba(110,231,215,0.06), rgba(167,139,250,0.06))' })}>
           <p style={pStyle()}>
-            Most students think <b style={{ color: '#f1f5f9' }}>Junior Site Engineer</b> means designing structures. In reality, freshers mostly check, observe, measure, document, and follow up.
+            Most students think <b style={{ color: TOKENS.primary }}>Junior Site Engineer</b> means designing structures. In reality, freshers mostly check, observe, measure, document, and follow up.
           </p>
           <p style={pStyle()}>
             This career survives because buildings need physical execution control. RCC apartments cannot be built safely through drawings alone.
@@ -308,6 +323,16 @@ const CareerStabilityCheck: React.FC = () => {
       </div>
 
       <style>{`
+        .cs-section-headline {
+          font-family: 'Poppins', 'Inter', sans-serif;
+          font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          background: ${TOKENS.sectionGradient};
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
         .cs-card {
           position: relative;
           outline: none;
@@ -317,22 +342,31 @@ const CareerStabilityCheck: React.FC = () => {
         .cs-card:focus-visible,
         .cs-card:focus-within,
         .cs-card:active {
-          border-color: rgba(56,189,248,0.55) !important;
+          border-color: ${TOKENS.borderHover} !important;
           box-shadow:
-            0 0 0 1px rgba(56,189,248,0.35),
-            0 0 18px rgba(56,189,248,0.28),
-            0 0 42px rgba(168,85,247,0.22),
+            0 0 0 1px rgba(110,231,215,0.35),
+            0 0 18px rgba(110,231,215,0.28),
+            0 0 42px rgba(167,139,250,0.22),
             0 1px 0 rgba(255,255,255,0.05) inset,
             0 20px 40px -30px rgba(0,0,0,0.6);
-          transform: translateY(-1px);
+          transform: translateY(-2px);
+        }
+        .cs-card.cs-reality-check {
+          border: 1px solid rgba(110,231,215,0.22);
+        }
+        .cs-card.cs-reality-check:hover,
+        .cs-card.cs-reality-check:focus-visible,
+        .cs-card.cs-reality-check:focus-within,
+        .cs-card.cs-reality-check:active {
+          border-color: rgba(167,139,250,0.45) !important;
         }
         @media (hover: none) {
           .cs-card:active {
-            border-color: rgba(56,189,248,0.6) !important;
+            border-color: ${TOKENS.borderHover} !important;
             box-shadow:
-              0 0 0 1px rgba(56,189,248,0.4),
-              0 0 22px rgba(56,189,248,0.32),
-              0 0 46px rgba(168,85,247,0.26);
+              0 0 0 1px rgba(110,231,215,0.4),
+              0 0 22px rgba(110,231,215,0.32),
+              0 0 46px rgba(167,139,250,0.26);
           }
         }
         .cs-table { display: grid; }
@@ -349,22 +383,22 @@ const CareerStabilityCheck: React.FC = () => {
           grid-template-columns: 1fr 1.2fr 1.3fr;
         }
         .cs-thead {
-          background: rgba(148,163,184,0.06);
-          border-bottom: 1px solid rgba(148,163,184,0.14);
+          background: rgba(255,255,255,0.04);
+          border-bottom: 1px solid ${TOKENS.borderHover};
           font-size: ${fs.label};
           letter-spacing: 0.16em;
           text-transform: uppercase;
-          color: #94a3b8;
+          color: ${TOKENS.muted};
           font-weight: 700;
         }
         .cs-row {
-          border-bottom: 1px solid rgba(148,163,184,0.08);
+          border-bottom: 1px solid ${TOKENS.border};
           font-size: ${fs.bodySm};
           line-height: 1.55;
           transition: background 200ms ease;
         }
         .cs-row:last-child { border-bottom: none; }
-        .cs-row:hover { background: rgba(148,163,184,0.04); }
+        .cs-row:hover { background: rgba(110,231,215,0.06); }
 
         @media (max-width: 720px) {
           .cs-table .cs-thead { display: none; }
@@ -393,13 +427,13 @@ const CareerStabilityCheck: React.FC = () => {
 /* ---------- helpers ---------- */
 
 const cardStyle = (extra: React.CSSProperties = {}): React.CSSProperties => ({
-  background: 'linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))',
-  border: '1px solid rgba(148,163,184,0.14)',
+  background: 'linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.05))',
+  border: `1px solid ${TOKENS.border}`,
   borderRadius: 16,
   padding: 18,
   backdropFilter: 'blur(6px)',
   WebkitBackdropFilter: 'blur(6px)',
-  boxShadow: '0 1px 0 rgba(255,255,255,0.03) inset, 0 20px 40px -30px rgba(0,0,0,0.6)',
+  boxShadow: '0 1px 0 rgba(255,255,255,0.05) inset, 0 20px 40px -30px rgba(0,0,0,0.6)',
   ...extra,
 });
 
@@ -426,7 +460,7 @@ const Li: React.FC<{ children: React.ReactNode }> = ({ children }) => (
       style={{
         position: 'absolute', left: 0, top: '0.6em',
         width: 6, height: 6, borderRadius: 999,
-        background: 'linear-gradient(180deg,#22d3ee,#60a5fa)',
+        background: 'linear-gradient(180deg,#6ee7d7,#a78bfa)',
       }}
     />
     {children}
@@ -434,17 +468,17 @@ const Li: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 );
 
 const EyebrowLabel: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <span style={{ fontSize: fs.label, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 700 }}>
+  <span style={{ fontSize: fs.label, letterSpacing: '0.2em', textTransform: 'uppercase', color: TOKENS.muted, fontWeight: 700 }}>
     {children}
   </span>
 );
 
-const SectionTitle: React.FC<{ eyebrow: string; title: string }> = ({ eyebrow, title }) => (
+const SectionTitle: React.FC<{ eyebrow: string; title: string; titleClassName?: string }> = ({ eyebrow, title, titleClassName }) => (
   <div style={{ marginTop: 40, marginBottom: 14 }}>
-    <div style={{ fontSize: fs.eyebrow, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 700 }}>
+    <div style={{ fontSize: fs.eyebrow, letterSpacing: '0.22em', textTransform: 'uppercase', color: TOKENS.muted, fontWeight: 700 }}>
       {eyebrow}
     </div>
-    <div style={{ marginTop: 6, fontSize: fs.h2, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}>
+    <div className={titleClassName} style={{ marginTop: 6, fontSize: fs.h2, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}>
       {title}
     </div>
   </div>
@@ -470,7 +504,7 @@ const VerdictCard: React.FC<{ eyebrow: string; title: string; tint: string; body
     <EyebrowLabel>{eyebrow}</EyebrowLabel>
     <div style={{ marginTop: 8, display: 'flex', alignItems: 'center', gap: 10 }}>
       <span style={{ width: 10, height: 10, borderRadius: 999, background: tint, boxShadow: `0 0 0 5px ${tint}22` }} />
-      <span style={{ fontSize: fs.h2, fontWeight: 800, color: '#f8fafc', letterSpacing: '-0.01em' }}>{title}</span>
+      <span style={{ fontSize: fs.h2, fontWeight: 800, color: TOKENS.primary, letterSpacing: '-0.01em' }}>{title}</span>
     </div>
     <p style={{ marginTop: 10, fontSize: fs.body, color: '#cbd5e1', lineHeight: 1.65 }}>{body}</p>
   </div>
