@@ -205,6 +205,20 @@ const SubjectsRecognition: React.FC = () => {
       </div>
 
       <style>{`
+        .sr-headline-gradient {
+          font-size: ${fs.h1};
+          line-height: 1.05;
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          margin: 0;
+          max-width: 24ch;
+          font-family: Poppins, Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+          background: linear-gradient(135deg, #F8FAFC 0%, #A5B4FC 55%, #7DD3FC 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          color: transparent;
+        }
         .wfg-card {
           position: relative;
           outline: none;
