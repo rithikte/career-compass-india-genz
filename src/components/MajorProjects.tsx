@@ -505,7 +505,7 @@ const MajorProjects: React.FC = () => {
         </div>
 
         {/* Priority Table */}
-        <SectionTitle eyebrow="Priority Analysis" title="Major Project Priority Table" />
+        <SectionTitle eyebrow="Priority Analysis" title="Major Project Priority Table" className="major-section-title" />
         <div className="major-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <table className="priority-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
             <thead>
