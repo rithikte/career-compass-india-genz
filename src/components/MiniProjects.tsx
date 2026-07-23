@@ -789,6 +789,7 @@ const MiniProjects: React.FC = () => {
           .mini-table-header,
           .mini-table-desktop { display: none !important; }
           .mini-table-mobile { display: grid !important; }
+          .mini-mobile-divider { display: block; }
         }
       `}</style>
     </div>
