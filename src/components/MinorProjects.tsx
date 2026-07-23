@@ -435,7 +435,7 @@ const MinorProjects: React.FC = () => {
         </div>
 
         {/* Progression Analysis */}
-        <SectionTitle eyebrow="Progression Map" title="Minor Project Progression Analysis" />
+        <SectionTitle eyebrow="Progression Map" title="Minor Project Progression Analysis" gradient />
         <div className="minor-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div
             aria-hidden
