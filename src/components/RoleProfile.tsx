@@ -59,11 +59,48 @@ interface RoleProfileProps {
 const RoleProfile: React.FC<RoleProfileProps> = ({ onExplore }) => {
   return (
     <div
-      className="ug-role-profile"
-      style={{ background: COLORS.bg, color: COLORS.text, borderRadius: 24 }}
+      className="ug-role-profile role-profile-responsive"
+      style={{ background: COLORS.bg, color: COLORS.text }}
     >
       <style>{`
         .ug-role-profile { position: relative; overflow: hidden; }
+        .role-profile-responsive {
+          padding: clamp(36px, 5vw, 80px) 11.2px;
+        }
+        @media (min-width: 768px) {
+          .role-profile-responsive {
+            padding: clamp(44px, 5vw, 88px) 16.8px;
+          }
+        }
+        @media (min-width: 1280px) {
+          .role-profile-responsive {
+            padding: clamp(52px, 5vw, 96px) 22.4px;
+          }
+        }
+
+        .role-label {
+          font-size: 8px;
+          letter-spacing: 0.28em;
+        }
+        .role-headline {
+          font-size: 30.4px;
+          line-height: 1.02;
+          letter-spacing: -0.02em;
+        }
+        .role-body {
+          font-size: 11px;
+          line-height: 1.65;
+        }
+        @media (min-width: 768px) {
+          .role-label { font-size: 8.4px; }
+          .role-headline { font-size: 34.6px; }
+          .role-body { font-size: 13px; }
+        }
+        @media (min-width: 1280px) {
+          .role-label { font-size: 10px; }
+          .role-headline { font-size: 54.4px; }
+          .role-body { font-size: 15px; }
+        }
 
         @keyframes ug-title-shimmer {
           0% { background-position: 0% 50%; }
@@ -236,7 +273,7 @@ const RoleProfile: React.FC<RoleProfileProps> = ({ onExplore }) => {
 
       <div
         className="relative mx-auto"
-        style={{ maxWidth: 1200, padding: 'clamp(36px, 6vw, 80px) clamp(20px, 5vw, 56px)' }}
+        style={{ maxWidth: 1200 }}
       >
         {/* ========== HERO ========== */}
         <div className="max-w-3xl">
@@ -249,8 +286,8 @@ const RoleProfile: React.FC<RoleProfileProps> = ({ onExplore }) => {
           >
             <span style={{ height: 1, width: 40, background: COLORS.accent }} />
             <span
-              className="text-xs font-semibold uppercase"
-              style={{ ...techFont, color: COLORS.accent, letterSpacing: '0.28em' }}
+              className="font-semibold uppercase role-label"
+              style={{ ...techFont, color: COLORS.accent }}
             >
               Role Profile
             </span>
@@ -264,12 +301,9 @@ const RoleProfile: React.FC<RoleProfileProps> = ({ onExplore }) => {
               hidden: {},
               visible: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
             }}
-            className="ug-role-title mt-5 font-bold"
+            className="ug-role-title mt-5 font-bold role-headline"
             style={{
               ...headingFont,
-              fontSize: 'clamp(2.2rem, 6vw, 4.2rem)',
-              lineHeight: 1.02,
-              letterSpacing: '-0.02em',
               display: 'inline-block',
               position: 'relative',
             }}
@@ -336,13 +370,11 @@ const RoleProfile: React.FC<RoleProfileProps> = ({ onExplore }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mt-5"
+            className="mt-5 role-body"
             style={{
               ...bodyFont,
               color: COLORS.muted,
               maxWidth: '62ch',
-              fontSize: 'clamp(0.75rem, 1.65vw, 0.86rem)',
-              lineHeight: 1.65,
             }}
           >
             A complete map from your degree to the exact fresher role you can step into on day one.
