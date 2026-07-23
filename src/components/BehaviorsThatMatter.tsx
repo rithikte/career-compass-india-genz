@@ -440,6 +440,18 @@ const BehaviorsThatMatter: React.FC = () => {
           background-clip: text;
           color: transparent;
         }
+        .btm-behavior-title {
+          font-family: Poppins, Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+          font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+          font-weight: 600;
+          line-height: 1.2;
+          letter-spacing: -0.01em;
+          background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          color: transparent;
+        }
         .btm-card {
           position: relative;
           outline: none;
