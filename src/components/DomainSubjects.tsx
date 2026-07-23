@@ -201,6 +201,17 @@ const DomainSubjects: React.FC = () => {
         /* Fluid typography per spec */
         .ug-domain-subjects h1,
         .ug-domain-subjects .ds-headline { font-size: clamp(30.4px, calc(30.4px + (54.4 - 30.4) * ((100vw - 375px) / (1280 - 375))), 54.4px) !important; line-height: 1.1; }
+        .ug-domain-subjects .ds-headline-gradient {
+          font-family: 'Poppins', 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+          font-size: clamp(1.9rem, 4.5vw, 3.4rem) !important;
+          line-height: 1.05;
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          background: linear-gradient(135deg, #F8FAFC 0%, #A5B4FC 55%, #7DD3FC 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
         .ug-domain-subjects h2 { font-size: clamp(22px, calc(22px + (36 - 22) * ((100vw - 375px) / (1280 - 375))), 36px) !important; line-height: 1.15; }
         .ug-domain-subjects h3 { font-size: clamp(16px, calc(16px + (22 - 16) * ((100vw - 375px) / (1280 - 375))), 22px) !important; }
         .ug-domain-subjects p,
@@ -247,8 +258,7 @@ const DomainSubjects: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.6, delay: 0.08, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mt-4 font-bold"
-            style={{ ...headingFont, fontSize: 'clamp(1.9rem, 5vw, 3.2rem)', lineHeight: 1.1 }}
+            className="mt-4 font-bold ds-headline-gradient"
           >
             Pick the subjects you are interested in
           </motion.h1>
