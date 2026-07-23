@@ -453,7 +453,7 @@ const MajorProjects: React.FC = () => {
                     </div>
                     <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 4 }}>
                       {project.mistakes.map((m, i) => (
-                        <li key={i} style={{ fontSize: fs.bodySm, color: '#fecaca', lineHeight: 1.55, display: 'flex', gap: 8 }}>
+                        <li key={i} style={{ fontSize: fs.bodySm, color: warnLight, lineHeight: 1.55, display: 'flex', gap: 8 }}>
                           <span style={{ color: warn }}>×</span>
                           <span>{m}</span>
                         </li>
