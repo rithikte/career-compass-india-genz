@@ -472,6 +472,16 @@ const CareerStabilityCheck: React.FC = () => {
             font-weight: 700;
             margin-bottom: 2px;
           }
+          .cs-fail-desktop { display: none !important; }
+          .cs-fail-mobile { display: grid !important; }
+        }
+        .cs-fail-divider {
+          height: 1px;
+          margin: 12px 0;
+          background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.14) 20%, rgba(255,255,255,0.14) 80%, transparent 100%);
+        }
+        .cs-fail-card {
+          transition: border-color 260ms ease, box-shadow 320ms ease, transform 260ms ease;
         }
       `}</style>
     </div>
