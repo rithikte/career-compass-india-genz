@@ -391,14 +391,17 @@ const RealExecutionExposure: React.FC = () => {
                     <EyebrowLabel small>Real Activity Being Observed</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{exp.realActivity}</p>
                   </div>
+                  <div className="exposure-mobile-divider" />
                   <div>
                     <EyebrowLabel small>Workflow Connection</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: accentViolet, lineHeight: 1.6 }}>{exp.workflowConnection}</p>
                   </div>
+                  <div className="exposure-mobile-divider" />
                   <div>
                     <EyebrowLabel small>What You Learn</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: success, lineHeight: 1.6 }}>{exp.whatYouLearn}</p>
                   </div>
+                  <div className="exposure-mobile-divider" />
                   <div>
                     <EyebrowLabel small>Why This Matters</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{exp.whyMatters}</p>
@@ -675,6 +678,19 @@ const RealExecutionExposure: React.FC = () => {
           }
           .priority-table th {
             font-size: 9px !important;
+          }
+        }
+        .exposure-mobile-divider {
+          display: none;
+        }
+        @media (max-width: 640px) {
+          .exposure-mobile-divider {
+            display: block;
+            height: 1px;
+            width: 100%;
+            margin: 14px 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.18) 80%, transparent 100%);
+            border: none;
           }
         }
       `}</style>
