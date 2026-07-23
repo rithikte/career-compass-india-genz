@@ -465,30 +465,37 @@ const Labs: React.FC = () => {
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
-                  <div>
-                    <EyebrowLabel small>Real Work Activity Simulated</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{lab.simulated}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Primary Subject Owner</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{lab.ownerSubject}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Why This Subject Owns This Lab</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{lab.ownerReason}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Encounter Frequency</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{lab.frequency}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Workplace Exposure Level</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{lab.exposure}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Most Valuable During</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{lab.valuableDuring}</p>
-                  </div>
+                  {[
+                    <div key="sim">
+                      <EyebrowLabel small>Real Work Activity Simulated</EyebrowLabel>
+                      <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{lab.simulated}</p>
+                    </div>,
+                    <div key="owner">
+                      <EyebrowLabel small>Primary Subject Owner</EyebrowLabel>
+                      <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{lab.ownerSubject}</p>
+                    </div>,
+                    <div key="ownerReason">
+                      <EyebrowLabel small>Why This Subject Owns This Lab</EyebrowLabel>
+                      <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{lab.ownerReason}</p>
+                    </div>,
+                    <div key="freq">
+                      <EyebrowLabel small>Encounter Frequency</EyebrowLabel>
+                      <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{lab.frequency}</p>
+                    </div>,
+                    <div key="exposure">
+                      <EyebrowLabel small>Workplace Exposure Level</EyebrowLabel>
+                      <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{lab.exposure}</p>
+                    </div>,
+                    <div key="valuable">
+                      <EyebrowLabel small>Most Valuable During</EyebrowLabel>
+                      <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{lab.valuableDuring}</p>
+                    </div>,
+                  ].map((child, i, arr) => (
+                    <React.Fragment key={`top-${i}`}>
+                      {child}
+                      {i !== arr.length - 1 && <div className="labs-mobile-divider" />}
+                    </React.Fragment>
+                  ))}
                 </div>
 
                 <div
@@ -501,82 +508,89 @@ const Labs: React.FC = () => {
                     gap: 14,
                   }}
                 >
-                  <div>
-                    <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: accentTeal, fontWeight: 700, marginBottom: 6 }}>
-                      What You Practice
-                    </div>
-                    <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 4 }}>
-                      {lab.practice.map((p, i) => (
-                        <li key={i} style={{ fontSize: fs.bodySm, color: textSoft, lineHeight: 1.55, display: 'flex', gap: 8 }}>
-                          <span style={{ color: accentTeal }}>•</span>
-                          <span>{p}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <ImpactBlock label="What You Build" color={accentViolet} text={lab.build} />
-                  <ImpactBlock label="Capability Built" color={success} text={lab.capability} />
-                  <ImpactBlock label="Fresher Responsibility Supported" color={accentTeal} text={lab.responsibility} />
-                  <ImpactBlock label="Trust Impact" color={success} text={lab.trustImpact} />
-                  <ImpactBlock label="Growth Impact" color={accentTeal} text={lab.growthImpact} />
-                  <ImpactBlock label="Tools Used" color={accentViolet} text={lab.tools} />
-                  <div>
-                    <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 6 }}>
-                      Common Mistakes Students Make
-                    </div>
-                    <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 4 }}>
-                      {lab.mistakes.map((m, i) => (
-                        <li key={i} style={{ fontSize: fs.bodySm, color: '#fecaca', lineHeight: 1.55, display: 'flex', gap: 8 }}>
-                          <span style={{ color: warn }}>×</span>
-                          <span>{m}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <ImpactBlock label="Workplace Mistake This Lab Prevents" color={warn} text={lab.prevents} />
-                  <ImpactBlock label="Execution Awareness Gained" color={muted} text={lab.awareness} />
-                  <ImpactBlock label="Why This Lab Matters" color={accentTeal} text={lab.matters} />
-                  <ImpactBlock label="What Strong Freshers Understand" color={success} text={lab.strongUnderstand} />
-                  <div>
-                    <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: success, fontWeight: 700, marginBottom: 6 }}>
-                      Companies DO Expect
-                    </div>
-                    <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 4 }}>
-                      {lab.companiesExpect.map((c, i) => (
-                        <li key={i} style={{ fontSize: fs.bodySm, color: textSoft, lineHeight: 1.55, display: 'flex', gap: 8 }}>
-                          <span style={{ color: success }}>✓</span>
-                          <span>{c}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: muted, fontWeight: 700, marginBottom: 6 }}>
-                      Companies DO NOT Expect
-                    </div>
-                    <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 4 }}>
-                      {lab.companiesNotExpect.map((c, i) => (
-                        <li key={i} style={{ fontSize: fs.bodySm, color: textSoft, lineHeight: 1.55, display: 'flex', gap: 8 }}>
-                          <span style={{ color: muted }}>—</span>
-                          <span>{c}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <ImpactBlock label="Interview Advantage" color={accentTeal} text={lab.interviewAdvantage} />
-                  <ImpactBlock label="Job Advantage" color={accentViolet} text={lab.jobAdvantage} />
-                  <div>
-                    <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 6 }}>
-                      If Ignored — Interview
-                    </div>
-                    <p style={{ margin: 0, fontSize: fs.bodySm, color: '#fecaca', lineHeight: 1.6 }}>{lab.ignoredInterview}</p>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 6 }}>
-                      If Ignored — Job
-                    </div>
-                    <p style={{ margin: 0, fontSize: fs.bodySm, color: '#fecaca', lineHeight: 1.6 }}>{lab.ignoredJob}</p>
-                  </div>
+                  {[
+                    <div key="practice">
+                      <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: accentTeal, fontWeight: 700, marginBottom: 6 }}>
+                        What You Practice
+                      </div>
+                      <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 4 }}>
+                        {lab.practice.map((p, i) => (
+                          <li key={i} style={{ fontSize: fs.bodySm, color: textSoft, lineHeight: 1.55, display: 'flex', gap: 8 }}>
+                            <span style={{ color: accentTeal }}>•</span>
+                            <span>{p}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>,
+                    <ImpactBlock key="build" label="What You Build" color={accentViolet} text={lab.build} />,
+                    <ImpactBlock key="capability" label="Capability Built" color={success} text={lab.capability} />,
+                    <ImpactBlock key="responsibility" label="Fresher Responsibility Supported" color={accentTeal} text={lab.responsibility} />,
+                    <ImpactBlock key="trustImpact" label="Trust Impact" color={success} text={lab.trustImpact} />,
+                    <ImpactBlock key="growthImpact" label="Growth Impact" color={accentTeal} text={lab.growthImpact} />,
+                    <ImpactBlock key="tools" label="Tools Used" color={accentViolet} text={lab.tools} />,
+                    <div key="mistakes">
+                      <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 6 }}>
+                        Common Mistakes Students Make
+                      </div>
+                      <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 4 }}>
+                        {lab.mistakes.map((m, i) => (
+                          <li key={i} style={{ fontSize: fs.bodySm, color: '#fecaca', lineHeight: 1.55, display: 'flex', gap: 8 }}>
+                            <span style={{ color: warn }}>×</span>
+                            <span>{m}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>,
+                    <ImpactBlock key="prevents" label="Workplace Mistake This Lab Prevents" color={warn} text={lab.prevents} />,
+                    <ImpactBlock key="awareness" label="Execution Awareness Gained" color={muted} text={lab.awareness} />,
+                    <ImpactBlock key="matters" label="Why This Lab Matters" color={accentTeal} text={lab.matters} />,
+                    <ImpactBlock key="strongUnderstand" label="What Strong Freshers Understand" color={success} text={lab.strongUnderstand} />,
+                    <div key="expect">
+                      <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: success, fontWeight: 700, marginBottom: 6 }}>
+                        Companies DO Expect
+                      </div>
+                      <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 4 }}>
+                        {lab.companiesExpect.map((c, i) => (
+                          <li key={i} style={{ fontSize: fs.bodySm, color: textSoft, lineHeight: 1.55, display: 'flex', gap: 8 }}>
+                            <span style={{ color: success }}>✓</span>
+                            <span>{c}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>,
+                    <div key="notExpect">
+                      <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: muted, fontWeight: 700, marginBottom: 6 }}>
+                        Companies DO NOT Expect
+                      </div>
+                      <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 4 }}>
+                        {lab.companiesNotExpect.map((c, i) => (
+                          <li key={i} style={{ fontSize: fs.bodySm, color: textSoft, lineHeight: 1.55, display: 'flex', gap: 8 }}>
+                            <span style={{ color: muted }}>—</span>
+                            <span>{c}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>,
+                    <ImpactBlock key="interview" label="Interview Advantage" color={accentTeal} text={lab.interviewAdvantage} />,
+                    <ImpactBlock key="job" label="Job Advantage" color={accentViolet} text={lab.jobAdvantage} />,
+                    <div key="ignoredInterview">
+                      <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 6 }}>
+                        If Ignored — Interview
+                      </div>
+                      <p style={{ margin: 0, fontSize: fs.bodySm, color: '#fecaca', lineHeight: 1.6 }}>{lab.ignoredInterview}</p>
+                    </div>,
+                    <div key="ignoredJob">
+                      <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 6 }}>
+                        If Ignored — Job
+                      </div>
+                      <p style={{ margin: 0, fontSize: fs.bodySm, color: '#fecaca', lineHeight: 1.6 }}>{lab.ignoredJob}</p>
+                    </div>,
+                  ].map((child, i, arr) => (
+                    <React.Fragment key={`bottom-${i}`}>
+                      {child}
+                      {i !== arr.length - 1 && <div className="labs-mobile-divider" />}
+                    </React.Fragment>
+                  ))}
                 </div>
               </div>
             </div>
@@ -933,6 +947,19 @@ const Labs: React.FC = () => {
           .labs-table-header,
           .labs-table-desktop { display: none !important; }
           .labs-table-mobile { display: grid !important; }
+        }
+        .labs-mobile-divider {
+          display: none;
+        }
+        @media (max-width: 640px) {
+          .labs-mobile-divider {
+            display: block;
+            height: 1px;
+            width: 100%;
+            margin: 4px 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(148,163,184,0.25) 20%, rgba(148,163,184,0.25) 80%, transparent 100%);
+            border: none;
+          }
         }
       `}</style>
     </div>
