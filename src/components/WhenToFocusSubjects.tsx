@@ -20,10 +20,10 @@ const fs = {
 
 const accentTeal = '#6ee7d7';
 const accentViolet = '#a78bfa';
-const muted = '#94a3b8';
-const textMain = '#e5e7eb';
+const muted = '#9aa4b2';
+const textMain = '#e7ecf3';
 const textSoft = '#cbd5e1';
-const warn = '#f87171';
+const warn = '#f5c26b';
 
 interface Phase {
   phase: string;
@@ -151,7 +151,7 @@ const WhenToFocusSubjects: React.FC = () => {
     <div
       style={{
         background:
-          'radial-gradient(1200px 600px at 10% -10%, rgba(110,231,215,0.10), transparent 60%), radial-gradient(900px 500px at 100% 0%, rgba(167,139,250,0.10), transparent 60%), #05070d',
+          'radial-gradient(1400px 700px at 15% -10%, rgba(110,231,215,0.08), transparent 55%), radial-gradient(1100px 600px at 100% 0%, rgba(167,139,250,0.08), transparent 55%), radial-gradient(1200px 600px at 50% 120%, rgba(110,231,215,0.05), transparent 60%), #06080d',
         color: textMain,
         minHeight: '100vh',
         width: '100%',
@@ -260,9 +260,9 @@ const WhenToFocusSubjects: React.FC = () => {
                   <div style={{ fontSize: fs.labelLg, letterSpacing: '0.16em', textTransform: 'uppercase', color: muted, fontWeight: 700 }}>
                     {phase.phase.split(' — ')[0]}
                   </div>
-                  <div style={{ marginTop: 2, fontSize: fs.h3, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}>
+                  <h2 className="wtf-phase-headline" style={{ marginTop: 2 }}>
                     {phase.phase.split(' — ')[1]}
-                  </div>
+                  </h2>
                 </div>
               </div>
 
@@ -308,7 +308,7 @@ const WhenToFocusSubjects: React.FC = () => {
                         ))}
                       </ul>
                     </div>
-                    <div>
+                    <div className="wtf-reality-box" style={{ background: 'linear-gradient(180deg, rgba(245,194,107,0.08), rgba(245,194,107,0.04))', border: '1px solid rgba(245,194,107,0.25)', borderRadius: 12, padding: 14 }}>
                       <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 8 }}>
                         Without This Foundation
                       </div>
@@ -349,7 +349,7 @@ const WhenToFocusSubjects: React.FC = () => {
             style={{
               position: 'absolute',
               inset: 0,
-              background: `radial-gradient(600px 300px at 50% 100%, rgba(248,113,113,0.10), transparent 60%)`,
+              background: `radial-gradient(600px 300px at 50% 100%, rgba(245,194,107,0.10), transparent 60%)`,
               pointerEvents: 'none',
             }}
           />
@@ -393,20 +393,33 @@ const WhenToFocusSubjects: React.FC = () => {
           border-color: rgba(110,231,215,0.55) !important;
           box-shadow:
             0 0 0 1px rgba(110,231,215,0.35),
-            0 0 18px rgba(110,231,215,0.28),
-            0 0 42px rgba(167,139,250,0.22),
+            0 0 22px rgba(110,231,215,0.28),
+            0 0 46px rgba(167,139,250,0.22),
             0 1px 0 rgba(255,255,255,0.05) inset,
             0 20px 40px -30px rgba(0,0,0,0.6);
-          transform: translateY(-1px);
+          transform: translateY(-2px);
         }
         @media (hover: none) {
           .wtf-card:active {
             border-color: rgba(110,231,215,0.6) !important;
             box-shadow:
               0 0 0 1px rgba(110,231,215,0.4),
-              0 0 22px rgba(110,231,215,0.32),
-              0 0 46px rgba(167,139,250,0.26);
+              0 0 26px rgba(110,231,215,0.32),
+              0 0 52px rgba(167,139,250,0.26);
           }
+        }
+        .wtf-phase-headline {
+          font-family: Poppins, Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+          font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+          font-weight: 600;
+          line-height: 1.2;
+          letter-spacing: -0.01em;
+          background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          color: transparent;
+          margin: 0;
         }
       `}</style>
     </div>
@@ -414,8 +427,8 @@ const WhenToFocusSubjects: React.FC = () => {
 };
 
 const cardStyle = (extra: React.CSSProperties = {}): React.CSSProperties => ({
-  background: 'linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))',
-  border: '1px solid rgba(148,163,184,0.14)',
+  background: 'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03))',
+  border: '1px solid rgba(255,255,255,0.14)',
   borderRadius: 16,
   padding: 18,
   backdropFilter: 'blur(6px)',
@@ -451,7 +464,7 @@ const Li: React.FC<{ children: React.ReactNode; warn?: boolean; bold?: boolean; 
       gap: 10,
       alignItems: 'flex-start',
       fontSize: small ? fs.body : fs.bodyLg,
-      color: isWarn ? '#fecaca' : textSoft,
+      color: isWarn ? '#f5c26b' : textSoft,
       lineHeight: 1.6,
       fontWeight: bold ? 500 : 400,
     }}
