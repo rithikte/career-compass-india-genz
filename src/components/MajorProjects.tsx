@@ -533,7 +533,7 @@ const MajorProjects: React.FC = () => {
             </thead>
             <tbody>
               {priorityRows.map((row, i) => (
-                <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
+                <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                   <td className="priority-table-td" style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.project}</td>
                   <td className="priority-table-td" style={{ padding: '12px 14px', color: textSoft }}>{row.workflow}</td>
                   <td className="priority-table-td" style={{ padding: '12px 14px', color: success }}>{row.capability}</td>
