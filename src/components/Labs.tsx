@@ -726,9 +726,16 @@ const Labs: React.FC = () => {
             {connectionRows.map((row, i) => (
               <div key={i} style={mobileCardStyle}>
                 <div style={mobileTitle}>{row.lab}</div>
-                <MapMobileItem label="Subject Connection" text={row.subject} />
-                <MapMobileItem label="Workplace Capability Built" text={row.capability} />
-                <MapMobileItem label="Fresher Responsibility Supported" text={row.responsibility} />
+                {[
+                  <MapMobileItem key="subject" label="Subject Connection" text={row.subject} />,
+                  <MapMobileItem key="capability" label="Workplace Capability Built" text={row.capability} />,
+                  <MapMobileItem key="responsibility" label="Fresher Responsibility Supported" text={row.responsibility} />,
+                ].map((child, idx, arr) => (
+                  <React.Fragment key={`connection-${idx}`}>
+                    {child}
+                    {idx !== arr.length - 1 && <div className="labs-mobile-divider" />}
+                  </React.Fragment>
+                ))}
               </div>
             ))}
           </div>
