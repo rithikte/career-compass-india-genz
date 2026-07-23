@@ -231,19 +231,19 @@ const SubjectsRecognition: React.FC = () => {
           border-color: rgba(110,231,215,0.55) !important;
           box-shadow:
             0 0 0 1px rgba(110,231,215,0.35),
-            0 0 18px rgba(110,231,215,0.28),
-            0 0 42px rgba(167,139,250,0.22),
+            0 0 22px rgba(110,231,215,0.28),
+            0 0 46px rgba(167,139,250,0.22),
             0 1px 0 rgba(255,255,255,0.05) inset,
             0 20px 40px -30px rgba(0,0,0,0.6);
-          transform: translateY(-1px);
+          transform: translateY(-2px);
         }
         @media (hover: none) {
           .wfg-card:active {
             border-color: rgba(110,231,215,0.6) !important;
             box-shadow:
               0 0 0 1px rgba(110,231,215,0.4),
-              0 0 22px rgba(110,231,215,0.32),
-              0 0 46px rgba(167,139,250,0.26);
+              0 0 26px rgba(110,231,215,0.32),
+              0 0 52px rgba(167,139,250,0.26);
           }
         }
         .wfg-table { display: grid; }
@@ -256,22 +256,22 @@ const SubjectsRecognition: React.FC = () => {
           align-items: start;
         }
         .wfg-thead {
-          background: rgba(148,163,184,0.06);
-          border-bottom: 1px solid rgba(148,163,184,0.14);
+          background: rgba(255,255,255,0.06);
+          border-bottom: 1px solid rgba(255,255,255,0.14);
           font-size: ${fs.label};
           letter-spacing: 0.16em;
           text-transform: uppercase;
-          color: #94a3b8;
+          color: #9aa4b2;
           font-weight: 700;
         }
         .wfg-row {
-          border-bottom: 1px solid rgba(148,163,184,0.08);
+          border-bottom: 1px solid rgba(255,255,255,0.08);
           font-size: ${fs.bodySm};
           line-height: 1.55;
           transition: background 200ms ease;
         }
         .wfg-row:last-child { border-bottom: none; }
-        .wfg-row:hover { background: rgba(148,163,184,0.04); }
+        .wfg-row:hover { background: rgba(110,231,215,0.06); }
 
         @media (max-width: 900px) {
           .wfg-table .wfg-thead { display: none; }
