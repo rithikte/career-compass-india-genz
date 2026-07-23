@@ -20,11 +20,12 @@ const fs = {
 
 const accentTeal = '#6ee7d7';
 const accentViolet = '#a78bfa';
-const muted = '#94a3b8';
-const textMain = '#e5e7eb';
-const textSoft = '#cbd5e1';
-const warn = '#f87171';
+const muted = '#9aa4b2';
+const textMain = '#e7ecf3';
+const textSoft = '#9aa4b2';
+const warn = '#f5c26b';
 const success = '#34d399';
+const warnLight = '#fef3c7';
 
 interface MajorProject {
   id: string;
@@ -255,7 +256,7 @@ const MajorProjects: React.FC = () => {
     <div
       style={{
         background:
-          'radial-gradient(1200px 600px at 10% -10%, rgba(110,231,215,0.10), transparent 60%), radial-gradient(900px 500px at 100% 0%, rgba(167,139,250,0.10), transparent 60%), #05070d',
+          'radial-gradient(1200px 600px at 10% -10%, rgba(110,231,215,0.10), transparent 60%), radial-gradient(900px 500px at 100% 0%, rgba(167,139,250,0.10), transparent 60%), radial-gradient(900px 500px at 50% 120%, rgba(167,139,250,0.08), transparent 55%), #06080d',
         color: textMain,
         minHeight: '100vh',
         width: '100%',
@@ -411,7 +412,7 @@ const MajorProjects: React.FC = () => {
                   style={{
                     marginTop: 18,
                     paddingTop: 16,
-                    borderTop: '1px solid rgba(148,163,184,0.12)',
+                    borderTop: '1px solid rgba(255,255,255,0.08)',
                     display: 'grid',
                     gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
                     gap: 14,
@@ -452,7 +453,7 @@ const MajorProjects: React.FC = () => {
                     </div>
                     <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 4 }}>
                       {project.mistakes.map((m, i) => (
-                        <li key={i} style={{ fontSize: fs.bodySm, color: '#fecaca', lineHeight: 1.55, display: 'flex', gap: 8 }}>
+                        <li key={i} style={{ fontSize: fs.bodySm, color: warnLight, lineHeight: 1.55, display: 'flex', gap: 8 }}>
                           <span style={{ color: warn }}>×</span>
                           <span>{m}</span>
                         </li>
@@ -465,7 +466,7 @@ const MajorProjects: React.FC = () => {
                     </div>
                     <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 4 }}>
                       {project.doNotExpect.map((m, i) => (
-                        <li key={i} style={{ fontSize: fs.bodySm, color: '#fecaca', lineHeight: 1.55, display: 'flex', gap: 8 }}>
+                        <li key={i} style={{ fontSize: fs.bodySm, color: warnLight, lineHeight: 1.55, display: 'flex', gap: 8 }}>
                           <span style={{ color: warn }}>×</span>
                           <span>{m}</span>
                         </li>
@@ -504,7 +505,7 @@ const MajorProjects: React.FC = () => {
         </div>
 
         {/* Priority Table */}
-        <SectionTitle eyebrow="Priority Analysis" title="Major Project Priority Table" />
+        <SectionTitle eyebrow="Priority Analysis" title="Major Project Priority Table" className="major-section-title" />
         <div className="major-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <table className="priority-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
             <thead>
@@ -516,11 +517,11 @@ const MajorProjects: React.FC = () => {
                     style={{
                       textAlign: 'left',
                       padding: '12px 14px',
-                      borderBottom: '1px solid rgba(148,163,184,0.18)',
+                      borderBottom: '1px solid rgba(255,255,255,0.14)',
                       fontSize: fs.labelLg,
                       letterSpacing: '0.12em',
                       textTransform: 'uppercase',
-                      color: accentTeal,
+                        color: accentTeal,
                       fontWeight: 700,
                       background: 'rgba(110,231,215,0.06)',
                     }}
@@ -532,7 +533,7 @@ const MajorProjects: React.FC = () => {
             </thead>
             <tbody>
               {priorityRows.map((row, i) => (
-                <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
+                <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                   <td className="priority-table-td" style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.project}</td>
                   <td className="priority-table-td" style={{ padding: '12px 14px', color: textSoft }}>{row.workflow}</td>
                   <td className="priority-table-td" style={{ padding: '12px 14px', color: success }}>{row.capability}</td>
@@ -545,10 +546,10 @@ const MajorProjects: React.FC = () => {
         </div>
 
         {/* Connection Table */}
-        <SectionTitle eyebrow="Subject Linkage" title="Major Project-To-Work Connection Table" />
+        <SectionTitle eyebrow="Subject Linkage" title="Major Project-To-Work Connection Table" className="major-section-title" />
         <div className="major-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div style={{ overflowX: 'auto' }}>
-            <table style={{ minWidth: 720, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
+            <table className="connection-table" style={{ minWidth: 720, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
               <thead>
                 <tr>
                   {['Major Project', 'Subject Connection', 'Skill Practiced', 'Tool Used', 'Workflow Understanding Built', 'Fresher Responsibility Supported'].map((h) => (
@@ -557,7 +558,7 @@ const MajorProjects: React.FC = () => {
                       style={{
                         textAlign: 'left',
                         padding: '12px 14px',
-                        borderBottom: '1px solid rgba(148,163,184,0.18)',
+                        borderBottom: '1px solid rgba(255,255,255,0.14)',
                         fontSize: fs.labelLg,
                         letterSpacing: '0.12em',
                         textTransform: 'uppercase',
@@ -573,7 +574,7 @@ const MajorProjects: React.FC = () => {
               </thead>
               <tbody>
                 {connectionRows.map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
+                  <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                     <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.project}</td>
                     <td style={{ padding: '12px 14px', color: textSoft }}>{row.subject}</td>
                     <td style={{ padding: '12px 14px', color: accentTeal }}>{row.skill}</td>
@@ -588,7 +589,7 @@ const MajorProjects: React.FC = () => {
         </div>
 
         {/* Behaviors */}
-        <SectionTitle eyebrow="Workplace Behaviors" title="The 5 Most Important Major Project Behaviors" />
+        <SectionTitle eyebrow="Workplace Behaviors" title="The 5 Most Important Major Project Behaviors" className="major-section-title" />
         <div style={{ display: 'grid', gap: 16 }}>
           {behaviors.map((b) => (
             <div key={b.id} className="major-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
@@ -623,7 +624,7 @@ const MajorProjects: React.FC = () => {
                   <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 6 }}>
                     Weak Fresher Behavior
                   </div>
-                  <p style={{ margin: 0, fontSize: fs.body, color: '#fecaca', lineHeight: 1.6 }}>{b.weak}</p>
+                  <p style={{ margin: 0, fontSize: fs.body, color: warnLight, lineHeight: 1.6 }}>{b.weak}</p>
                 </div>
                 <ImpactBlock label="Why It Matters" color={accentTeal} text={b.why} />
                 <ImpactBlock label="Trust Impact" color={accentViolet} text={b.trust} />
@@ -634,14 +635,14 @@ const MajorProjects: React.FC = () => {
         </div>
 
         {/* Brutal Reality */}
-        <SectionTitle eyebrow="Reality Check" title="Brutal Reality" />
-        <div className="major-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
+        <SectionTitle eyebrow="Reality Check" title="Brutal Reality" className="major-section-title" />
+        <div className="major-card reality-check-box" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden', border: '1px solid rgba(245,194,107,0.35)', background: 'linear-gradient(180deg, rgba(245,194,107,0.08), rgba(255,255,255,0.03))' }}>
           <div
             aria-hidden
             style={{
               position: 'absolute',
               inset: 0,
-              background: `radial-gradient(600px 300px at 50% 100%, rgba(248,113,113,0.10), transparent 60%)`,
+              background: `radial-gradient(600px 300px at 50% 100%, rgba(245,194,107,0.14), transparent 60%)`,
               pointerEvents: 'none',
             }}
           />
@@ -650,7 +651,7 @@ const MajorProjects: React.FC = () => {
               <EyebrowLabel>Companies Rarely Care About</EyebrowLabel>
               <ul style={{ margin: '12px 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: 6 }}>
                 {rareCare.map((item, i) => (
-                  <li key={i} style={{ fontSize: fs.body, color: '#fecaca', lineHeight: 1.55, display: 'flex', gap: 8 }}>
+                  <li key={i} style={{ fontSize: fs.body, color: warnLight, lineHeight: 1.55, display: 'flex', gap: 8 }}>
                     <span style={{ color: warn }}>×</span>
                     <span>{item}</span>
                   </li>
@@ -694,6 +695,16 @@ const MajorProjects: React.FC = () => {
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
+        .major-section-title {
+          font-family: 'Poppins', 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+          font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          line-height: 1.2;
+          background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
         .major-card {
           position: relative;
           outline: none;
@@ -710,7 +721,7 @@ const MajorProjects: React.FC = () => {
             0 0 42px rgba(167,139,250,0.22),
             0 1px 0 rgba(255,255,255,0.05) inset,
             0 20px 40px -30px rgba(0,0,0,0.6);
-          transform: translateY(-1px);
+          transform: translateY(-2px);
         }
         @media (hover: none) {
           .major-card:active {
@@ -720,6 +731,30 @@ const MajorProjects: React.FC = () => {
               0 0 22px rgba(110,231,215,0.32),
               0 0 46px rgba(167,139,250,0.26);
           }
+        }
+        .reality-check-box {
+          transition: border-color 260ms ease, box-shadow 320ms ease, transform 260ms ease;
+        }
+        .reality-check-box:hover,
+        .reality-check-box:focus-visible,
+        .reality-check-box:focus-within,
+        .reality-check-box:active {
+          border-color: rgba(245,194,107,0.55) !important;
+          box-shadow:
+            0 0 0 1px rgba(245,194,107,0.35),
+            0 0 18px rgba(245,194,107,0.28),
+            0 0 42px rgba(245,194,107,0.18),
+            0 1px 0 rgba(255,255,255,0.05) inset,
+            0 20px 40px -30px rgba(0,0,0,0.6);
+          transform: translateY(-2px);
+        }
+        .priority-table tbody tr,
+        .connection-table tbody tr {
+          transition: background-color 180ms ease;
+        }
+        .priority-table tbody tr:hover,
+        .connection-table tbody tr:hover {
+          background-color: rgba(110,231,215,0.06);
         }
         .priority-table th,
         .priority-table td {
@@ -751,8 +786,8 @@ const MajorProjects: React.FC = () => {
 };
 
 const cardStyle = (extra: React.CSSProperties = {}): React.CSSProperties => ({
-  background: 'linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))',
-  border: '1px solid rgba(148,163,184,0.14)',
+  background: 'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03))',
+  border: '1px solid rgba(255,255,255,0.14)',
   borderRadius: 16,
   padding: 18,
   backdropFilter: 'blur(6px)',
@@ -776,14 +811,14 @@ const EyebrowLabel: React.FC<{ children: React.ReactNode; small?: boolean }> = (
   </div>
 );
 
-const SectionTitle: React.FC<{ eyebrow?: string; title: string }> = ({ eyebrow, title }) => (
+const SectionTitle: React.FC<{ eyebrow?: string; title: string; className?: string }> = ({ eyebrow, title, className }) => (
   <div style={{ marginTop: 40, marginBottom: 14 }}>
     {eyebrow && (
       <div style={{ fontSize: fs.eyebrow, letterSpacing: '0.22em', textTransform: 'uppercase', color: muted, fontWeight: 700 }}>
         {eyebrow}
       </div>
     )}
-    <div style={{ marginTop: eyebrow ? 6 : 0, fontSize: fs.h2, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}>
+    <div className={className || undefined} style={{ marginTop: eyebrow ? 6 : 0, fontSize: className ? undefined : fs.h2, fontWeight: className ? undefined : 700, color: className ? undefined : '#f8fafc', letterSpacing: '-0.01em' }}>
       {title}
     </div>
   </div>
