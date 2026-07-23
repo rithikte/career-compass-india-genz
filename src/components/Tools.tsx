@@ -404,30 +404,22 @@ const Tools: React.FC = () => {
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
-                  <div>
-                    <EyebrowLabel small>Alternate Names</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{tool.alternateNames}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Primary Purpose</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{tool.purpose}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Where It Is Used</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{tool.whereUsed}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Encounter Frequency</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{tool.frequency}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>What Strong Freshers Understand</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{tool.strongUnderstand}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Capability Supported</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{tool.capability}</p>
-                  </div>
+                  {[
+                    { label: 'Alternate Names', text: tool.alternateNames, size: fs.body },
+                    { label: 'Primary Purpose', text: tool.purpose, size: fs.body },
+                    { label: 'Where It Is Used', text: tool.whereUsed, size: fs.bodySm },
+                    { label: 'Encounter Frequency', text: tool.frequency, size: fs.bodySm },
+                    { label: 'What Strong Freshers Understand', text: tool.strongUnderstand, size: fs.bodySm },
+                    { label: 'Capability Supported', text: tool.capability, size: fs.bodySm },
+                  ].map((item, i, arr) => (
+                    <React.Fragment key={item.label}>
+                      <div>
+                        <EyebrowLabel small>{item.label}</EyebrowLabel>
+                        <p style={{ margin: '8px 0 0', fontSize: item.size, color: textSoft, lineHeight: 1.6 }}>{item.text}</p>
+                      </div>
+                      {i < arr.length - 1 && <div className="tools-mobile-divider" />}
+                    </React.Fragment>
+                  ))}
                 </div>
 
                 <div
@@ -440,130 +432,39 @@ const Tools: React.FC = () => {
                     gap: 14,
                   }}
                 >
-                  <ImpactBlock label="Trust Impact" color={success} text={tool.trustImpact} />
-                  <ImpactBlock label="Growth Impact" color={accentTeal} text={tool.growthImpact} />
-                  <ImpactBlock label="Common Mistakes" color={warn} text={tool.mistakes.join(' • ')} />
-                  <ImpactBlock label="Authority Boundary" color={accentViolet} text={tool.authority} />
-                  <div>
-                    <div
-                      style={{
-                        fontSize: fs.label,
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color: success,
-                        fontWeight: 700,
-                        marginBottom: 6,
-                      }}
-                    >
-                      What Companies Expect
-                    </div>
-                    <p style={{ margin: 0, fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{tool.companiesExpect}</p>
-                  </div>
-                  <div>
-                    <div
-                      style={{
-                        fontSize: fs.label,
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color: muted,
-                        fontWeight: 700,
-                        marginBottom: 6,
-                      }}
-                    >
-                      What Companies Do NOT Expect
-                    </div>
-                    <p style={{ margin: 0, fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{tool.companiesNotExpect}</p>
-                  </div>
-                  <div>
-                    <div
-                      style={{
-                        fontSize: fs.label,
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color: accentTeal,
-                        fontWeight: 700,
-                        marginBottom: 6,
-                      }}
-                    >
-                      Interview Advantage
-                    </div>
-                    <p style={{ margin: 0, fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{tool.interviewAdvantage}</p>
-                  </div>
-                  <div>
-                    <div
-                      style={{
-                        fontSize: fs.label,
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color: accentViolet,
-                        fontWeight: 700,
-                        marginBottom: 6,
-                      }}
-                    >
-                      Job Advantage
-                    </div>
-                    <p style={{ margin: 0, fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{tool.jobAdvantage}</p>
-                  </div>
-                  <div>
-                    <div
-                      style={{
-                        fontSize: fs.label,
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color: warn,
-                        fontWeight: 700,
-                        marginBottom: 6,
-                      }}
-                    >
-                      If Ignored — Interview
-                    </div>
-                    <p style={{ margin: 0, fontSize: fs.bodySm, color: '#fecaca', lineHeight: 1.6 }}>{tool.ignoredInterview}</p>
-                  </div>
-                  <div>
-                    <div
-                      style={{
-                        fontSize: fs.label,
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color: warn,
-                        fontWeight: 700,
-                        marginBottom: 6,
-                      }}
-                    >
-                      If Ignored — Job
-                    </div>
-                    <p style={{ margin: 0, fontSize: fs.bodySm, color: '#fecaca', lineHeight: 1.6 }}>{tool.ignoredJob}</p>
-                  </div>
-                  <div style={{ gridColumn: '1 / -1' }}>
-                    <div
-                      style={{
-                        fontSize: fs.label,
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color: warn,
-                        fontWeight: 700,
-                        marginBottom: 6,
-                      }}
-                    >
-                      Workplace Consequence
-                    </div>
-                    <p style={{ margin: 0, fontSize: fs.body, color: '#fecaca', lineHeight: 1.6 }}>{tool.consequence}</p>
-                  </div>
-                  <div style={{ gridColumn: '1 / -1' }}>
-                    <div
-                      style={{
-                        fontSize: fs.label,
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color: accentTeal,
-                        fontWeight: 700,
-                        marginBottom: 6,
-                      }}
-                    >
-                      What Problem This Tool Prevents
-                    </div>
-                    <p style={{ margin: 0, fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{tool.prevents}</p>
-                  </div>
+                  {[
+                    { label: 'Trust Impact', color: success, text: tool.trustImpact },
+                    { label: 'Growth Impact', color: accentTeal, text: tool.growthImpact },
+                    { label: 'Common Mistakes', color: warn, text: tool.mistakes.join(' • ') },
+                    { label: 'Authority Boundary', color: accentViolet, text: tool.authority },
+                    { label: 'What Companies Expect', color: success, text: tool.companiesExpect },
+                    { label: 'What Companies Do NOT Expect', color: muted, text: tool.companiesNotExpect },
+                    { label: 'Interview Advantage', color: accentTeal, text: tool.interviewAdvantage },
+                    { label: 'Job Advantage', color: accentViolet, text: tool.jobAdvantage },
+                    { label: 'If Ignored — Interview', color: warn, text: tool.ignoredInterview, textColor: '#fecaca' },
+                    { label: 'If Ignored — Job', color: warn, text: tool.ignoredJob, textColor: '#fecaca' },
+                    { label: 'Workplace Consequence', color: warn, text: tool.consequence, textColor: '#fecaca', fullWidth: true, size: fs.body },
+                    { label: 'What Problem This Tool Prevents', color: accentTeal, text: tool.prevents, fullWidth: true, size: fs.body },
+                  ].map((item, i, arr) => (
+                    <React.Fragment key={item.label}>
+                      <div style={item.fullWidth ? { gridColumn: '1 / -1' } : undefined}>
+                        <div
+                          style={{
+                            fontSize: fs.label,
+                            letterSpacing: '0.14em',
+                            textTransform: 'uppercase',
+                            color: item.color,
+                            fontWeight: 700,
+                            marginBottom: 6,
+                          }}
+                        >
+                          {item.label}
+                        </div>
+                        <p style={{ margin: 0, fontSize: item.size || fs.bodySm, color: item.textColor || textSoft, lineHeight: 1.6 }}>{item.text}</p>
+                      </div>
+                      {i < arr.length - 1 && <div className="tools-mobile-divider" />}
+                    </React.Fragment>
+                  ))}
                 </div>
               </div>
             </div>
@@ -841,6 +742,20 @@ const Tools: React.FC = () => {
           }
           .tools-table-mobile {
             display: grid !important;
+          }
+        }
+        .tools-mobile-divider {
+          display: none;
+        }
+        @media (max-width: 640px) {
+          .tools-mobile-divider {
+            display: block;
+            grid-column: 1 / -1;
+            height: 1px;
+            width: 100%;
+            margin: 14px 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.18) 80%, transparent 100%);
+            border: none;
           }
         }
       `}</style>
