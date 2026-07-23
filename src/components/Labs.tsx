@@ -782,30 +782,22 @@ const Labs: React.FC = () => {
                   </div>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
-                  <div>
-                    <EyebrowLabel small>Strong Fresher Behavior</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.body, color: success, lineHeight: 1.6 }}>{b.strong}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Weak Fresher Behavior</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.body, color: warn, lineHeight: 1.6 }}>{b.weak}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Why It Matters</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{b.why}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Workplace Impact</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{b.impact}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Trust Impact</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{b.trust}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Growth Impact</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{b.growth}</p>
-                  </div>
+                  {[
+                    { label: 'Strong Fresher Behavior', text: b.strong, color: success },
+                    { label: 'Weak Fresher Behavior', text: b.weak, color: warn },
+                    { label: 'Why It Matters', text: b.why, color: textSoft },
+                    { label: 'Workplace Impact', text: b.impact, color: textSoft },
+                    { label: 'Trust Impact', text: b.trust, color: textSoft },
+                    { label: 'Growth Impact', text: b.growth, color: textSoft },
+                  ].map((item, idx, arr) => (
+                    <React.Fragment key={`behavior-${idx}`}>
+                      <div>
+                        <EyebrowLabel small>{item.label}</EyebrowLabel>
+                        <p style={{ margin: '8px 0 0', fontSize: fs.body, color: item.color, lineHeight: 1.6 }}>{item.text}</p>
+                      </div>
+                      {idx !== arr.length - 1 && <div className="labs-mobile-divider" />}
+                    </React.Fragment>
+                  ))}
                 </div>
               </div>
             </div>
