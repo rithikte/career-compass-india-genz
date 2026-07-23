@@ -517,9 +517,16 @@ const Tools: React.FC = () => {
                 <div style={{ fontSize: fs.labelLg, letterSpacing: '0.1em', textTransform: 'uppercase', color: accentTeal, fontWeight: 700 }}>
                   {row.tool}
                 </div>
-                <MapMobileItem label="Subject Connection" text={row.subject} />
-                <MapMobileItem label="Real Work Connection" text={row.work} />
-                <MapMobileItem label="Capability Supported" text={row.capability} />
+                {[
+                  { label: 'Subject Connection', text: row.subject },
+                  { label: 'Real Work Connection', text: row.work },
+                  { label: 'Capability Supported', text: row.capability },
+                ].map((item, i, arr) => (
+                  <React.Fragment key={item.label}>
+                    <MapMobileItem label={item.label} text={item.text} />
+                    {i < arr.length - 1 && <div className="tools-mobile-divider" />}
+                  </React.Fragment>
+                ))}
               </div>
             ))}
           </div>
@@ -749,6 +756,20 @@ const Tools: React.FC = () => {
         }
         @media (max-width: 640px) {
           .tools-mobile-divider {
+            display: block;
+            grid-column: 1 / -1;
+            height: 1px;
+            width: 100%;
+            margin: 14px 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.18) 80%, transparent 100%);
+            border: none;
+          }
+        }
+        .tools-table-mobile .tools-mobile-divider {
+          display: none;
+        }
+        @media (max-width: 860px) {
+          .tools-table-mobile .tools-mobile-divider {
             display: block;
             grid-column: 1 / -1;
             height: 1px;
