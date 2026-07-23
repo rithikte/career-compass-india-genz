@@ -272,6 +272,17 @@ const MostImportantSubjects: React.FC = () => {
           background-clip: text;
           -webkit-text-fill-color: transparent;
         }
+        .mis-subtitle-gradient {
+          font-family: 'Poppins', 'Inter', sans-serif;
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          line-height: 1.15;
+          font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+          background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
         .wfg-card {
           position: relative;
           outline: none;
@@ -288,7 +299,7 @@ const MostImportantSubjects: React.FC = () => {
             0 0 42px rgba(167,139,250,0.22),
             0 1px 0 rgba(255,255,255,0.05) inset,
             0 20px 40px -30px rgba(0,0,0,0.6);
-          transform: translateY(-1px);
+          transform: translateY(-2px);
         }
         @media (hover: none) {
           .wfg-card:active {
@@ -319,22 +330,22 @@ const MostImportantSubjects: React.FC = () => {
           grid-template-columns: 0.35fr 1.1fr 1.55fr;
         }
         .wfg-thead {
-          background: rgba(148,163,184,0.06);
-          border-bottom: 1px solid rgba(148,163,184,0.14);
+          background: rgba(255,255,255,0.05);
+          border-bottom: 1px solid rgba(255,255,255,0.14);
           font-size: ${fs.label};
           letter-spacing: 0.16em;
           text-transform: uppercase;
-          color: #94a3b8;
+          color: #9aa4b2;
           font-weight: 700;
         }
         .wfg-row {
-          border-bottom: 1px solid rgba(148,163,184,0.08);
+          border-bottom: 1px solid rgba(255,255,255,0.08);
           font-size: ${fs.bodySm};
           line-height: 1.55;
           transition: background 200ms ease;
         }
         .wfg-row:last-child { border-bottom: none; }
-        .wfg-row:hover { background: rgba(148,163,184,0.04); }
+        .wfg-row:hover { background: rgba(110,231,215,0.06); }
         .wfg-total {
           display: flex;
           justify-content: flex-end;
@@ -342,10 +353,14 @@ const MostImportantSubjects: React.FC = () => {
           font-size: ${fs.label};
           letter-spacing: 0.16em;
           text-transform: uppercase;
-          color: #94a3b8;
-          border-top: 1px solid rgba(148,163,184,0.14);
-          background: rgba(148,163,184,0.04);
+          color: #9aa4b2;
+          border-top: 1px solid rgba(255,255,255,0.14);
+          background: rgba(255,255,255,0.05);
           font-weight: 700;
+        }
+        .wfg-reality-check {
+          background: linear-gradient(180deg, rgba(245,194,107,0.06), rgba(245,194,107,0.02)) !important;
+          border: 1px solid rgba(245,194,107,0.22) !important;
         }
         .wfg-pct {
           display: inline-flex;
@@ -385,7 +400,7 @@ const MostImportantSubjects: React.FC = () => {
             font-size: ${fs.label};
             letter-spacing: 0.16em;
             text-transform: uppercase;
-            color: #64748b;
+            color: #9aa4b2;
             font-weight: 700;
             margin-bottom: 2px;
           }
