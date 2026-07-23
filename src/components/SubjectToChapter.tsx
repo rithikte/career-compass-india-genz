@@ -479,6 +479,13 @@ const SubjectToChapter: React.FC = () => {
           background: linear-gradient(90deg, ${accentTeal}, ${accentViolet});
           border-radius: 999px;
         }
+        .stc-mobile-divider {
+          display: none;
+          height: 1px;
+          margin: 6px 0;
+          background: linear-gradient(90deg, transparent 0%, rgba(148,163,184,0.28) 18%, rgba(148,163,184,0.28) 82%, transparent 100%);
+          border: none;
+        }
 
         @media (max-width: 720px) {
           .wfg-table-chapters .wfg-thead,
