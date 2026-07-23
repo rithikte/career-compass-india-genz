@@ -19,8 +19,9 @@ const fs = {
 
 const accentTeal = '#6ee7d7';
 const accentViolet = '#a78bfa';
-const muted = '#94a3b8';
-const textMain = '#e5e7eb';
+const accentAmber = '#f5c26b';
+const muted = '#9aa4b2';
+const textMain = '#e7ecf3';
 const textSoft = '#cbd5e1';
 
 const impactColor: Record<string, string> = {
@@ -128,7 +129,7 @@ const HowSubjectsAffectRealWork: React.FC = () => {
     <div
       style={{
         background:
-          'radial-gradient(1200px 600px at 10% -10%, rgba(110,231,215,0.10), transparent 60%), radial-gradient(900px 500px at 100% 0%, rgba(167,139,250,0.10), transparent 60%), #05070d',
+          'radial-gradient(1200px 600px at 10% -10%, rgba(110,231,215,0.08), transparent 60%), radial-gradient(900px 500px at 100% 0%, rgba(167,139,250,0.08), transparent 60%), radial-gradient(800px 400px at 50% 120%, rgba(110,231,215,0.05), transparent 55%), #06080d',
         color: textMain,
         minHeight: '100vh',
         width: '100%',
@@ -273,18 +274,18 @@ const HowSubjectsAffectRealWork: React.FC = () => {
                 <EyebrowLabel>{item.subject}</EyebrowLabel>
                 <div style={{ marginTop: 14, display: 'grid', gap: 10 }}>
                   <div>
-                    <span style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#64748b', fontWeight: 700 }}>
+                    <span style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#9aa4b2', fontWeight: 700 }}>
                       Used For
                     </span>
                     <p style={{ marginTop: 6, marginBottom: 0, fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{item.usedFor}</p>
                   </div>
                   <div>
-                    <span style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#64748b', fontWeight: 700 }}>
+                    <span style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#9aa4b2', fontWeight: 700 }}>
                       Why It Matters
                     </span>
                     <p style={{ marginTop: 6, marginBottom: 0, fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{item.why}</p>
                   </div>
-                  <div style={{ padding: 12, borderRadius: 12, background: 'rgba(248,113,113,0.06)', border: '1px solid rgba(248,113,113,0.16)' }}>
+                  <div style={{ padding: 12, borderRadius: 12, background: 'linear-gradient(180deg, rgba(248,113,113,0.08), rgba(248,113,113,0.03))', border: '1px solid rgba(248,113,113,0.28)' }}>
                     <span style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#f87171', fontWeight: 700 }}>
                       If Weak
                     </span>
@@ -311,6 +312,17 @@ const HowSubjectsAffectRealWork: React.FC = () => {
           background-clip: text;
           -webkit-text-fill-color: transparent;
         }
+        .hsw-subtitle-gradient {
+          font-family: 'Poppins', 'Inter', sans-serif;
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          line-height: 1.15;
+          font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+          background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
         .wfg-card {
           position: relative;
           outline: none;
@@ -327,7 +339,7 @@ const HowSubjectsAffectRealWork: React.FC = () => {
             0 0 42px rgba(167,139,250,0.22),
             0 1px 0 rgba(255,255,255,0.05) inset,
             0 20px 40px -30px rgba(0,0,0,0.6);
-          transform: translateY(-1px);
+          transform: translateY(-2px);
         }
         @media (hover: none) {
           .wfg-card:active {
@@ -358,22 +370,22 @@ const HowSubjectsAffectRealWork: React.FC = () => {
           grid-template-columns: 2.4fr 1fr;
         }
         .wfg-thead {
-          background: rgba(148,163,184,0.06);
-          border-bottom: 1px solid rgba(148,163,184,0.14);
+          background: rgba(255,255,255,0.05);
+          border-bottom: 1px solid rgba(255,255,255,0.14);
           font-size: ${fs.label};
           letter-spacing: 0.16em;
           text-transform: uppercase;
-          color: #94a3b8;
+          color: #9aa4b2;
           font-weight: 700;
         }
         .wfg-row {
-          border-bottom: 1px solid rgba(148,163,184,0.08);
+          border-bottom: 1px solid rgba(255,255,255,0.08);
           font-size: ${fs.bodySm};
           line-height: 1.55;
           transition: background 200ms ease;
         }
         .wfg-row:last-child { border-bottom: none; }
-        .wfg-row:hover { background: rgba(148,163,184,0.04); }
+        .wfg-row:hover { background: rgba(110,231,215,0.06); }
 
         @media (max-width: 900px) {
           .wfg-table-subject .wfg-thead,
@@ -387,7 +399,7 @@ const HowSubjectsAffectRealWork: React.FC = () => {
             font-size: ${fs.label};
             letter-spacing: 0.16em;
             text-transform: uppercase;
-            color: #64748b;
+            color: #9aa4b2;
             font-weight: 700;
             margin-bottom: 2px;
           }
@@ -406,7 +418,7 @@ const HowSubjectsAffectRealWork: React.FC = () => {
             font-size: ${fs.label};
             letter-spacing: 0.16em;
             text-transform: uppercase;
-            color: #64748b;
+            color: #9aa4b2;
             font-weight: 700;
             margin-bottom: 2px;
           }
@@ -417,13 +429,13 @@ const HowSubjectsAffectRealWork: React.FC = () => {
 };
 
 const cardStyle = (extra: React.CSSProperties = {}): React.CSSProperties => ({
-  background: 'linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))',
-  border: '1px solid rgba(148,163,184,0.14)',
+  background: 'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03))',
+  border: '1px solid rgba(255,255,255,0.14)',
   borderRadius: 16,
   padding: 18,
   backdropFilter: 'blur(6px)',
   WebkitBackdropFilter: 'blur(6px)',
-  boxShadow: '0 1px 0 rgba(255,255,255,0.03) inset, 0 20px 40px -30px rgba(0,0,0,0.6)',
+  boxShadow: '0 1px 0 rgba(255,255,255,0.05) inset, 0 20px 40px -30px rgba(0,0,0,0.6)',
   ...extra,
 });
 
@@ -455,9 +467,12 @@ const SectionTitle: React.FC<{ eyebrow?: string; title: string }> = ({ eyebrow, 
         {eyebrow}
       </div>
     )}
-    <div style={{ marginTop: eyebrow ? 6 : 0, fontSize: fs.h2, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}>
+    <h2
+      className="hsw-subtitle-gradient"
+      style={{ marginTop: eyebrow ? 6 : 0, marginBottom: 0 }}
+    >
       {title}
-    </div>
+    </h2>
   </div>
 );
 
