@@ -680,6 +680,19 @@ const RealExecutionExposure: React.FC = () => {
             font-size: 9px !important;
           }
         }
+        .exposure-mobile-divider {
+          display: none;
+        }
+        @media (max-width: 640px) {
+          .exposure-mobile-divider {
+            display: block;
+            height: 1px;
+            width: 100%;
+            margin: 14px 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.18) 80%, transparent 100%);
+            border: none;
+          }
+        }
       `}</style>
     </div>
   );
