@@ -948,6 +948,19 @@ const Labs: React.FC = () => {
           .labs-table-desktop { display: none !important; }
           .labs-table-mobile { display: grid !important; }
         }
+        .labs-mobile-divider {
+          display: none;
+        }
+        @media (max-width: 640px) {
+          .labs-mobile-divider {
+            display: block;
+            height: 1px;
+            width: 100%;
+            margin: 12px 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(148,163,184,0.25) 20%, rgba(148,163,184,0.25) 80%, transparent 100%);
+            border: none;
+          }
+        }
       `}</style>
     </div>
   );
