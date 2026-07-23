@@ -506,6 +506,9 @@ const BehaviorsThatMatter: React.FC = () => {
         .btm-table-mobile {
           display: none;
         }
+        .btm-mobile-divider {
+          display: none;
+        }
         @media (max-width: 640px) {
           .btm-table-header,
           .btm-table-desktop {
@@ -513,6 +516,15 @@ const BehaviorsThatMatter: React.FC = () => {
           }
           .btm-table-mobile {
             display: grid !important;
+          }
+          .btm-mobile-divider {
+            display: block;
+            grid-column: 1 / -1;
+            height: 1px;
+            width: 100%;
+            margin: 14px 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.18) 80%, transparent 100%);
+            border: none;
           }
         }
       `}</style>
