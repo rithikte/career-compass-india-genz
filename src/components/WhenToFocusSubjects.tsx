@@ -464,7 +464,7 @@ const Li: React.FC<{ children: React.ReactNode; warn?: boolean; bold?: boolean; 
       gap: 10,
       alignItems: 'flex-start',
       fontSize: small ? fs.body : fs.bodyLg,
-      color: isWarn ? '#fecaca' : textSoft,
+      color: isWarn ? '#f5c26b' : textSoft,
       lineHeight: 1.6,
       fontWeight: bold ? 500 : 400,
     }}
