@@ -59,11 +59,48 @@ interface RoleProfileProps {
 const RoleProfile: React.FC<RoleProfileProps> = ({ onExplore }) => {
   return (
     <div
-      className="ug-role-profile"
-      style={{ background: COLORS.bg, color: COLORS.text, borderRadius: 24 }}
+      className="ug-role-profile role-profile-responsive"
+      style={{ background: COLORS.bg, color: COLORS.text }}
     >
       <style>{`
         .ug-role-profile { position: relative; overflow: hidden; }
+        .role-profile-responsive {
+          padding: clamp(36px, 5vw, 80px) 11.2px;
+        }
+        @media (min-width: 768px) {
+          .role-profile-responsive {
+            padding: clamp(44px, 5vw, 88px) 16.8px;
+          }
+        }
+        @media (min-width: 1280px) {
+          .role-profile-responsive {
+            padding: clamp(52px, 5vw, 96px) 22.4px;
+          }
+        }
+
+        .role-label {
+          font-size: 8px;
+          letter-spacing: 0.28em;
+        }
+        .role-headline {
+          font-size: 30.4px;
+          line-height: 1.02;
+          letter-spacing: -0.02em;
+        }
+        .role-body {
+          font-size: 11px;
+          line-height: 1.65;
+        }
+        @media (min-width: 768px) {
+          .role-label { font-size: 8.4px; }
+          .role-headline { font-size: 34.6px; }
+          .role-body { font-size: 13px; }
+        }
+        @media (min-width: 1280px) {
+          .role-label { font-size: 10px; }
+          .role-headline { font-size: 54.4px; }
+          .role-body { font-size: 15px; }
+        }
 
         @keyframes ug-title-shimmer {
           0% { background-position: 0% 50%; }
