@@ -312,19 +312,7 @@ const RealExecutionExposure: React.FC = () => {
         </div>
 
         {/* Headline */}
-        <h1
-          style={{
-            fontSize: fs.h1,
-            lineHeight: 1.05,
-            fontWeight: 700,
-            letterSpacing: '-0.02em',
-            margin: 0,
-            maxWidth: '30ch',
-            background: 'linear-gradient(180deg,#ffffff 0%, #cbd5e1 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}
-        >
+        <h1 className="exposure-headline-gradient" style={{ margin: 0, maxWidth: '30ch' }}>
           Real Execution Exposure Checklist
         </h1>
 
@@ -618,6 +606,16 @@ const RealExecutionExposure: React.FC = () => {
       </div>
 
       <style>{`
+        .exposure-headline-gradient {
+          font-family: 'Poppins', 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+          font-size: clamp(1.9rem, 4.5vw, 3.4rem);
+          line-height: 1.05;
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          background: linear-gradient(135deg, #F8FAFC 0%, #A5B4FC 55%, #7DD3FC 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
         .exposure-card {
           position: relative;
           outline: none;
