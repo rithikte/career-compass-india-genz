@@ -339,7 +339,7 @@ const CompaniesHiring: React.FC = () => {
 
           <div style={{ marginTop: 24, display: 'grid', gap: 14, gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
             {marketResult.map((item, i) => (
-              <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(148,163,184,0.12)', borderRadius: 12, padding: 14 }}>
+              <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, padding: 14 }}>
                 <div style={{ fontSize: fs.labelLg, letterSpacing: '0.14em', textTransform: 'uppercase', color: accentViolet, fontWeight: 700, marginBottom: 6 }}>
                   {item.label}
                 </div>
@@ -414,13 +414,13 @@ const CompaniesHiring: React.FC = () => {
           <style>{`
             .stages-table { width: 100%; border-collapse: collapse; }
             .stages-table th, .stages-table td { padding: 12px 14px; text-align: left; vertical-align: top; }
-            .stages-table thead th { border-bottom: 1px solid rgba(148,163,184,0.18); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; background: rgba(110,231,215,0.06); white-space: nowrap; }
-            .stages-table tbody tr { border-bottom: 1px solid rgba(148,163,184,0.10); }
+            .stages-table thead th { border-bottom: 1px solid rgba(255,255,255,0.14); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; background: rgba(110,231,215,0.06); white-space: nowrap; }
+            .stages-table tbody tr { border-bottom: 1px solid rgba(255,255,255,0.08); }
             .stages-interest { display: inline-block; padding: 4px 10px; border-radius: 999px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
             @media (max-width: 640px) {
               .stages-table, .stages-table tbody, .stages-table tr, .stages-table td { display: block; width: 100%; }
               .stages-table thead { display: none; }
-              .stages-table tbody tr { padding: 14px 4px; border-bottom: 1px solid rgba(148,163,184,0.14); }
+              .stages-table tbody tr { padding: 14px 4px; border-bottom: 1px solid rgba(255,255,255,0.08); }
               .stages-table td { padding: 6px 0; border: none; }
               .stages-table td::before { content: attr(data-label); display: block; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(110,231,215,0.9); font-weight: 700; margin-bottom: 4px; }
             }
@@ -514,7 +514,7 @@ const CompaniesHiring: React.FC = () => {
                       padding: '8px 14px',
                       borderRadius: 999,
                       background: i === 0 ? 'rgba(110,231,215,0.12)' : 'rgba(255,255,255,0.04)',
-                      border: `1px solid ${i === 0 ? 'rgba(110,231,215,0.35)' : 'rgba(148,163,184,0.18)'}`,
+                      border: `1px solid ${i === 0 ? 'rgba(110,231,215,0.35)' : 'rgba(255,255,255,0.14)'}`,
                       color: i === 0 ? accentTeal : textSoft,
                       fontSize: fs.body,
                       fontWeight: i === 0 ? 700 : 600,
@@ -552,7 +552,7 @@ const CompaniesHiring: React.FC = () => {
                       style={{
                         textAlign: 'left',
                         padding: '12px 14px',
-                        borderBottom: '1px solid rgba(148,163,184,0.18)',
+                        borderBottom: '1px solid rgba(255,255,255,0.14)',
                         fontSize: fs.labelLg,
                         letterSpacing: '0.12em',
                         textTransform: 'uppercase',
@@ -569,7 +569,7 @@ const CompaniesHiring: React.FC = () => {
               </thead>
               <tbody>
                 {attitudeCompare.map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
+                  <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                     <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.candidate}</td>
                     <td style={{ padding: '12px 14px' }}>
                       <span
@@ -596,7 +596,7 @@ const CompaniesHiring: React.FC = () => {
           </div>
           <div style={{ display: 'grid', gap: 14, gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
             {attitudeWhy.map((item, i) => (
-              <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(148,163,184,0.12)', borderRadius: 12, padding: 14 }}>
+              <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, padding: 14 }}>
                 <div style={{ fontSize: fs.labelLg, letterSpacing: '0.14em', textTransform: 'uppercase', color: accentViolet, fontWeight: 700, marginBottom: 6 }}>
                   {item.label}
                 </div>
@@ -703,7 +703,7 @@ const CompaniesHiring: React.FC = () => {
                     style={{
                       textAlign: 'left',
                       padding: '12px 14px',
-                      borderBottom: '1px solid rgba(148,163,184,0.18)',
+                      borderBottom: '1px solid rgba(255,255,255,0.14)',
                       fontSize: fs.labelLg,
                       letterSpacing: '0.12em',
                       textTransform: 'uppercase',
@@ -719,7 +719,7 @@ const CompaniesHiring: React.FC = () => {
             </thead>
             <tbody>
               {fearComparison.map((row, i) => (
-                <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
+                <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                   <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.factor}</td>
                   <td style={{ padding: '12px 14px', color: '#fecaca', fontWeight: 600 }}>{row.fresher}</td>
                   <td style={{ padding: '12px 14px', color: success, fontWeight: 600 }}>{row.experienced}</td>
@@ -745,7 +745,7 @@ const CompaniesHiring: React.FC = () => {
                     style={{
                       textAlign: 'left',
                       padding: '12px 14px',
-                      borderBottom: '1px solid rgba(148,163,184,0.18)',
+                      borderBottom: '1px solid rgba(255,255,255,0.14)',
                       fontSize: fs.labelLg,
                       letterSpacing: '0.12em',
                       textTransform: 'uppercase',
@@ -761,7 +761,7 @@ const CompaniesHiring: React.FC = () => {
             </thead>
             <tbody>
               {badHireImpact.map((row, i) => (
-                <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
+                <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                   <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.problem}</td>
                   <td style={{ padding: '12px 14px', color: '#fecaca', fontWeight: 600 }}>{row.impact}</td>
                 </tr>
@@ -836,13 +836,13 @@ const CompaniesHiring: React.FC = () => {
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'relative', zIndex: 1 }}>
             <div style={{ display: 'grid', gap: 14, gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
-              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(148,163,184,0.12)', borderRadius: 12, padding: 16 }}>
+              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, padding: 16 }}>
                 <p style={{ margin: 0, fontSize: fs.body, color: muted, lineHeight: 1.6 }}>The market does not ask:</p>
                 <p style={{ margin: '8px 0 0', fontSize: fs.h3, color: '#f8fafc', fontWeight: 700, lineHeight: 1.4 }}>
                   "Who worked hard?"
                 </p>
               </div>
-              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(148,163,184,0.12)', borderRadius: 12, padding: 16 }}>
+              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, padding: 16 }}>
                 <p style={{ margin: 0, fontSize: fs.body, color: muted, lineHeight: 1.6 }}>The market asks:</p>
                 <p style={{ margin: '8px 0 0', fontSize: fs.h3, color: accentTeal, fontWeight: 700, lineHeight: 1.4 }}>
                   "Who creates the most value and the least risk?"
@@ -885,15 +885,15 @@ const CompaniesHiring: React.FC = () => {
               "If we trust this person with our money, projects, clients, deadlines, reputation, and future growth, how confident are we that it will be a good decision?"
             </p>
             <div style={{ marginTop: 24, display: 'grid', gap: 14, gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
-              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(148,163,184,0.12)', borderRadius: 12, padding: 14 }}>
+              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, padding: 14 }}>
                 <div style={{ fontSize: fs.labelLg, letterSpacing: '0.14em', textTransform: 'uppercase', color: accentViolet, fontWeight: 700, marginBottom: 6 }}>Interviews Differ</div>
                 <p style={{ margin: 0, fontSize: fs.body, color: textSoft, lineHeight: 1.5 }}>Companies evaluate risk differently.</p>
               </div>
-              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(148,163,184,0.12)', borderRadius: 12, padding: 14 }}>
+              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, padding: 14 }}>
                 <div style={{ fontSize: fs.labelLg, letterSpacing: '0.14em', textTransform: 'uppercase', color: accentViolet, fontWeight: 700, marginBottom: 6 }}>Salaries Differ</div>
                 <p style={{ margin: 0, fontSize: fs.body, color: textSoft, lineHeight: 1.5 }}>Companies pay differently based on expected value and trust.</p>
               </div>
-              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(148,163,184,0.12)', borderRadius: 12, padding: 14 }}>
+              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, padding: 14 }}>
                 <div style={{ fontSize: fs.labelLg, letterSpacing: '0.14em', textTransform: 'uppercase', color: accentViolet, fontWeight: 700, marginBottom: 6 }}>Opportunities Differ</div>
                 <p style={{ margin: 0, fontSize: fs.body, color: textSoft, lineHeight: 1.5 }}>Companies give opportunities to people they believe can handle responsibility.</p>
               </div>
@@ -1091,7 +1091,7 @@ const StageCard: React.FC<{
           </div>
         </div>
 
-        <div style={{ marginTop: 16, padding: 12, borderRadius: 10, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(148,163,184,0.12)' }}>
+        <div style={{ marginTop: 16, padding: 12, borderRadius: 10, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
           <EyebrowLabel small>Company Investment Logic</EyebrowLabel>
           <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.55 }}>{logic}</p>
         </div>
