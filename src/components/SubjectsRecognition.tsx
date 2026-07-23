@@ -150,7 +150,7 @@ const SubjectsRecognition: React.FC = () => {
             </div>
             {recognitionData.map((r) => (
               <div className="wfg-row" role="row" key={r.subject}>
-                <div role="cell" data-label="Subject" style={{ fontWeight: 600, color: '#f1f5f9' }}>
+                <div role="cell" data-label="Subject" className="sr-subject-headline">
                   {r.subject}
                 </div>
                 <div role="cell" data-label="Alternate Names" style={{ color: textSoft }}>
