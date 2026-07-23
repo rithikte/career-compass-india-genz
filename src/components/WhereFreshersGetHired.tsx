@@ -212,7 +212,7 @@ const WhereFreshersGetHired: React.FC = () => {
                 </div>
 
                 <div style={{ marginTop: 12 }}>
-                  <span style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#64748b', fontWeight: 700 }}>
+                  <span style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: muted, fontWeight: 700 }}>
                     Why freshers get hired
                   </span>
                   <p style={{ marginTop: 6, fontSize: fs.body, color: textSoft, lineHeight: 1.6, marginBottom: 0 }}>{company.freshers}</p>
