@@ -12,6 +12,7 @@ const SignUp = lazy(() => import("./components/SignUp"));
 const Login = lazy(() => import("./components/Login"));
 const Index = lazy(() => import("./pages/Index"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const OAuthConsent = lazy(() => import("./pages/OAuthConsent"));
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
                   <Route path="/signup" element={<SignUp />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/home" element={<Index />} />
+                  <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />
                   <Route path="/" element={<Login />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
