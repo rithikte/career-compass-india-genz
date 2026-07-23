@@ -59,6 +59,17 @@ const SearchDegree: React.FC = () => {
     >
       <style>{`
         .ug-search-degree { position: relative; overflow: hidden; }
+        .ug-search-degree .sd-headline-gradient {
+          font-family: 'Poppins', 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+          font-size: clamp(1.9rem, 4.5vw, 3.4rem);
+          line-height: 1.05;
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          background: linear-gradient(135deg, #F8FAFC 0%, #A5B4FC 55%, #7DD3FC 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
         .ug-search-input::placeholder { color: ${COLORS.muted}; }
         .ug-search-input:focus { outline: none; border-color: ${COLORS.accent}; box-shadow: 0 0 0 3px rgba(109,212,200,0.15); }
         .ug-degree-card { transition: transform 250ms ease-out, border-color 250ms ease-out, box-shadow 250ms ease-out; }
@@ -111,8 +122,7 @@ const SearchDegree: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.6, delay: 0.08, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mt-4 font-bold"
-            style={{ ...headingFont, fontSize: 'clamp(1.9rem, 5vw, 3.2rem)', lineHeight: 1.1 }}
+            className="mt-4 font-bold sd-headline-gradient"
           >
             Search your engineering degree
           </motion.h1>
