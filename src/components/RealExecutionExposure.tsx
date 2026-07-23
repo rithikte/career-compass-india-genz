@@ -721,7 +721,13 @@ const SectionTitle: React.FC<{ eyebrow?: string; title: string; className?: stri
     )}
     <div
       className={className}
-      style={{ marginTop: eyebrow ? 6 : 0, fontSize: className ? undefined : fs.h2, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}
+      style={{
+        marginTop: eyebrow ? 6 : 0,
+        fontSize: className ? undefined : fs.h2,
+        fontWeight: className ? undefined : 700,
+        color: className ? undefined : '#f8fafc',
+        letterSpacing: '-0.01em',
+      }}
     >
       {title}
     </div>
