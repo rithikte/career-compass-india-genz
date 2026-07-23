@@ -546,7 +546,7 @@ const MajorProjects: React.FC = () => {
         </div>
 
         {/* Connection Table */}
-        <SectionTitle eyebrow="Subject Linkage" title="Major Project-To-Work Connection Table" />
+        <SectionTitle eyebrow="Subject Linkage" title="Major Project-To-Work Connection Table" className="major-section-title" />
         <div className="major-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ minWidth: 720, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
