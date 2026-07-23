@@ -20,10 +20,11 @@ const fs = {
 
 const accentTeal = '#6ee7d7';
 const accentViolet = '#a78bfa';
-const muted = '#94a3b8';
-const textMain = '#e5e7eb';
-const textSoft = '#cbd5e1';
-const warn = '#f87171';
+const muted = '#9aa4b2';
+const textMain = '#e7ecf3';
+const textSoft = '#9aa4b2';
+const warn = '#f5c26b';
+const warnText = '#fef3c7';
 const success = '#34d399';
 
 interface RecoveryRow {
