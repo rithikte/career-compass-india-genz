@@ -464,7 +464,7 @@ const SectionTitle: React.FC<{ eyebrow?: string; title: string }> = ({ eyebrow, 
         {eyebrow}
       </div>
     )}
-    <div style={{ marginTop: eyebrow ? 6 : 0, fontSize: fs.h2, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}>
+    <div className="wfg-section-title" style={{ marginTop: eyebrow ? 6 : 0 }}>
       {title}
     </div>
   </div>
