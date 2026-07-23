@@ -192,6 +192,22 @@ const DomainSubjects: React.FC = () => {
         @media (prefers-reduced-motion: reduce) {
           .ug-section-card, .ug-section-arrow, .ug-section-icon, .ug-skill-row, .ug-subj-skills-wrap, .ug-subj-chevron, .ug-subj-toggle { transition: none !important; }
         }
+
+        /* Responsive horizontal padding: mobile 11.2 / tablet 16.8 / desktop 22.4 */
+        .ug-domain-subjects .ds-container { padding-left: 11.2px; padding-right: 11.2px; }
+        @media (min-width: 768px) { .ug-domain-subjects .ds-container { padding-left: 16.8px; padding-right: 16.8px; } }
+        @media (min-width: 1280px) { .ug-domain-subjects .ds-container { padding-left: 22.4px; padding-right: 22.4px; } }
+
+        /* Fluid typography per spec */
+        .ug-domain-subjects h1,
+        .ug-domain-subjects .ds-headline { font-size: clamp(30.4px, calc(30.4px + (54.4 - 30.4) * ((100vw - 375px) / (1280 - 375))), 54.4px) !important; line-height: 1.1; }
+        .ug-domain-subjects h2 { font-size: clamp(22px, calc(22px + (36 - 22) * ((100vw - 375px) / (1280 - 375))), 36px) !important; line-height: 1.15; }
+        .ug-domain-subjects h3 { font-size: clamp(16px, calc(16px + (22 - 16) * ((100vw - 375px) / (1280 - 375))), 22px) !important; }
+        .ug-domain-subjects p,
+        .ug-domain-subjects li,
+        .ug-domain-subjects .ds-body { font-size: clamp(11px, calc(11px + (15 - 11) * ((100vw - 375px) / (1280 - 375))), 15px) !important; }
+        .ug-domain-subjects .ds-label,
+        .ug-domain-subjects small { font-size: clamp(8px, calc(8px + (11 - 8) * ((100vw - 375px) / (1280 - 375))), 11px) !important; letter-spacing: 0.08em; }
       `}</style>
 
       {/* ambient glow */}
@@ -210,8 +226,8 @@ const DomainSubjects: React.FC = () => {
       />
 
       <div
-        className="relative mx-auto"
-        style={{ maxWidth: 1200, padding: 'clamp(32px, 6vw, 72px) clamp(20px, 5vw, 48px)' }}
+        className="relative mx-auto ds-container"
+        style={{ maxWidth: '100%', paddingTop: 'clamp(32px, 6vw, 72px)', paddingBottom: 'clamp(32px, 6vw, 72px)' }}
       >
         {/* Header */}
         <div className="text-center">
