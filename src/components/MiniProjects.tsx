@@ -503,8 +503,11 @@ const MiniProjects: React.FC = () => {
               <div key={i} style={mobileCardStyle}>
                 <div style={mobileTitle}>{row.project}</div>
                 <MapMobileItem label="Main Capability Built" text={row.capability} />
+                <div className="mini-mobile-divider" />
                 <MapMobileItem label="Workplace Importance" text={row.importance} />
+                <div className="mini-mobile-divider" />
                 <MapMobileItem label="Interview Value" text={row.interview} />
+                <div className="mini-mobile-divider" />
                 <MapMobileItem label="Job Value" text={row.job} />
               </div>
             ))}
@@ -764,6 +767,12 @@ const MiniProjects: React.FC = () => {
           background: linear-gradient(180deg, rgba(245,194,107,0.08), rgba(255,255,255,0.03)) !important;
           border: 1px solid rgba(245,194,107,0.35) !important;
         }
+        .mini-mobile-divider {
+          display: none;
+          height: 1px;
+          background: linear-gradient(90deg, transparent 0%, rgba(148,163,184,0.26) 18%, rgba(148,163,184,0.26) 82%, transparent 100%);
+          margin: 4px 0;
+        }
         .mini-reality-card:hover,
         .mini-reality-card:focus-visible,
         .mini-reality-card:focus-within,
@@ -780,6 +789,7 @@ const MiniProjects: React.FC = () => {
           .mini-table-header,
           .mini-table-desktop { display: none !important; }
           .mini-table-mobile { display: grid !important; }
+          .mini-mobile-divider { display: block; }
         }
       `}</style>
     </div>
