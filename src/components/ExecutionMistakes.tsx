@@ -273,7 +273,7 @@ const ExecutionMistakes: React.FC = () => {
     <div
       style={{
         background:
-          'radial-gradient(1200px 600px at 10% -10%, rgba(110,231,215,0.10), transparent 60%), radial-gradient(900px 500px at 100% 0%, rgba(167,139,250,0.10), transparent 60%), #05070d',
+          'radial-gradient(1200px 600px at 10% -10%, rgba(110,231,215,0.10), transparent 60%), radial-gradient(900px 500px at 100% 0%, rgba(167,139,250,0.10), transparent 60%), #06080d',
         color: textMain,
         minHeight: '100vh',
         width: '100%',
@@ -300,7 +300,7 @@ const ExecutionMistakes: React.FC = () => {
               height: 8,
               borderRadius: 999,
               background: warn,
-              boxShadow: '0 0 0 4px rgba(248,113,113,0.15)',
+              boxShadow: '0 0 0 4px rgba(245,194,107,0.15)',
             }}
           />
           <span
@@ -332,7 +332,7 @@ const ExecutionMistakes: React.FC = () => {
             style={{
               position: 'absolute',
               inset: 0,
-              background: `radial-gradient(500px 240px at 0% 0%, rgba(248,113,113,0.10), transparent 60%)`,
+              background: `radial-gradient(500px 240px at 0% 0%, rgba(245,194,107,0.10), transparent 60%)`,
               pointerEvents: 'none',
             }}
           />
@@ -350,7 +350,7 @@ const ExecutionMistakes: React.FC = () => {
         </div>
 
         {/* Recovery Table */}
-        <SectionTitle eyebrow="Failure Response" title="Common Execution Failure Recovery Table" />
+        <SectionTitle eyebrow="Failure Response" title="Common Execution Failure Recovery Table" className="mistake-section-title" />
         <div className="mistake-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <table className="recovery-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
             <thead>
@@ -370,13 +370,13 @@ const ExecutionMistakes: React.FC = () => {
                     style={{
                       textAlign: 'left',
                       padding: '12px 14px',
-                      borderBottom: '1px solid rgba(148,163,184,0.18)',
+                      borderBottom: '1px solid rgba(255,255,255,0.14)',
                       fontSize: fs.labelLg,
                       letterSpacing: '0.12em',
                       textTransform: 'uppercase',
-                      color: warn,
+                      color: accentTeal,
                       fontWeight: 700,
-                      background: 'rgba(248,113,113,0.06)',
+                      background: 'rgba(110,231,215,0.06)',
                     }}
                   >
                     {h}
@@ -386,7 +386,7 @@ const ExecutionMistakes: React.FC = () => {
             </thead>
             <tbody>
               {recoveryRows.map((row, i) => (
-                <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
+                <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                   <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.mistake}</td>
                   <td style={{ padding: '12px 14px' }}>
                     <span
@@ -398,9 +398,9 @@ const ExecutionMistakes: React.FC = () => {
                         fontWeight: 800,
                         letterSpacing: '0.08em',
                         textTransform: 'uppercase',
-                        background: row.risk === 'HIGH' ? 'rgba(248,113,113,0.12)' : 'rgba(250,204,21,0.12)',
-                        border: `1px solid ${row.risk === 'HIGH' ? 'rgba(248,113,113,0.35)' : 'rgba(250,204,21,0.35)'}`,
-                        color: row.risk === 'HIGH' ? warn : '#facc15',
+                        background: 'rgba(245,194,107,0.12)',
+                        border: '1px solid rgba(245,194,107,0.35)',
+                        color: warn,
                       }}
                     >
                       {row.risk}
@@ -411,7 +411,7 @@ const ExecutionMistakes: React.FC = () => {
                   <td style={{ padding: '12px 14px', color: textSoft }}>{row.consequence}</td>
                   <td style={{ padding: '12px 14px', color: success, fontWeight: 600 }}>{row.action}</td>
                   <td style={{ padding: '12px 14px', color: textSoft }}>{row.trustImpact}</td>
-                  <td style={{ padding: '12px 14px', color: '#fecaca' }}>{row.whatNotToDo}</td>
+                  <td style={{ padding: '12px 14px', color: warnText }}>{row.whatNotToDo}</td>
                 </tr>
               ))}
             </tbody>
@@ -419,7 +419,7 @@ const ExecutionMistakes: React.FC = () => {
         </div>
 
         {/* Escalation Judgment Guide */}
-        <SectionTitle eyebrow="Decision Framework" title="Escalation Judgment Guide" />
+        <SectionTitle eyebrow="Decision Framework" title="Escalation Judgment Guide" className="mistake-section-title" />
         <div className="mistake-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <table className="escalation-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
             <thead>
@@ -430,7 +430,7 @@ const ExecutionMistakes: React.FC = () => {
                     style={{
                       textAlign: 'left',
                       padding: '12px 14px',
-                      borderBottom: '1px solid rgba(148,163,184,0.18)',
+                      borderBottom: '1px solid rgba(255,255,255,0.14)',
                       fontSize: fs.labelLg,
                       letterSpacing: '0.12em',
                       textTransform: 'uppercase',
@@ -446,7 +446,7 @@ const ExecutionMistakes: React.FC = () => {
             </thead>
             <tbody>
               {escalationRows.map((row, i) => (
-                <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
+                <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                   <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.situation}</td>
                   <td style={{ padding: '12px 14px' }}>{renderCheck(row.escalate)}</td>
                   <td style={{ padding: '12px 14px' }}>{renderCheck(row.verify)}</td>
@@ -458,7 +458,7 @@ const ExecutionMistakes: React.FC = () => {
         </div>
 
         {/* 5 Rules */}
-        <SectionTitle eyebrow="Behavior Code" title="The 5 Rules Strong Freshers Follow During Problems" />
+        <SectionTitle eyebrow="Behavior Code" title="The 5 Rules Strong Freshers Follow During Problems" className="mistake-section-title" />
         <div style={{ marginTop: 28, display: 'grid', gap: 22 }}>
           {rules.map((rule, idx) => (
             <div key={rule.id} className="mistake-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
@@ -494,7 +494,7 @@ const ExecutionMistakes: React.FC = () => {
                   >
                     {rule.id}
                   </span>
-                  <div style={{ fontSize: fs.h3, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}>
+                  <div style={{ fontSize: fs.h3, fontWeight: 700, color: textMain, letterSpacing: '-0.01em' }}>
                     Rule {parseInt(rule.id, 10)}
                   </div>
                 </div>
@@ -506,7 +506,7 @@ const ExecutionMistakes: React.FC = () => {
                   </div>
                   <div>
                     <EyebrowLabel small>Weak Freshers</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.body, color: '#fecaca', lineHeight: 1.6 }}>{rule.weak}</p>
+                    <p style={{ margin: '8px 0 0', fontSize: fs.body, color: warnText, lineHeight: 1.6 }}>{rule.weak}</p>
                   </div>
                   <div>
                     <EyebrowLabel small>Why It Matters</EyebrowLabel>
@@ -523,14 +523,14 @@ const ExecutionMistakes: React.FC = () => {
         </div>
 
         {/* Brutal Reality */}
-        <SectionTitle eyebrow="Reality Check" title="Brutal Reality" />
-        <div className="mistake-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
+        <SectionTitle eyebrow="Reality Check" title="Brutal Reality" className="mistake-section-title" />
+        <div className="mistake-card reality-check-box" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div
             aria-hidden
             style={{
               position: 'absolute',
               inset: 0,
-              background: `radial-gradient(600px 300px at 50% 100%, rgba(248,113,113,0.10), transparent 60%)`,
+              background: `radial-gradient(600px 300px at 50% 100%, rgba(245,194,107,0.10), transparent 60%)`,
               pointerEvents: 'none',
             }}
           />
@@ -539,7 +539,7 @@ const ExecutionMistakes: React.FC = () => {
               <EyebrowLabel>Companies Do NOT Expect Freshers To</EyebrowLabel>
               <ul style={{ margin: '12px 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: 6 }}>
                 {doNotExpect.map((item, i) => (
-                  <li key={i} style={{ fontSize: fs.body, color: '#fecaca', lineHeight: 1.55, display: 'flex', gap: 8 }}>
+                  <li key={i} style={{ fontSize: fs.body, color: warnText, lineHeight: 1.55, display: 'flex', gap: 8 }}>
                     <span style={{ color: warn }}>×</span>
                     <span>{item}</span>
                   </li>
@@ -686,8 +686,8 @@ const renderCheck = (value: string) => {
 };
 
 const cardStyle = (extra: React.CSSProperties = {}): React.CSSProperties => ({
-  background: 'linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))',
-  border: '1px solid rgba(148,163,184,0.14)',
+  background: 'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03))',
+  border: '1px solid rgba(255,255,255,0.14)',
   borderRadius: 16,
   padding: 18,
   backdropFilter: 'blur(6px)',
@@ -711,14 +711,27 @@ const EyebrowLabel: React.FC<{ children: React.ReactNode; small?: boolean }> = (
   </div>
 );
 
-const SectionTitle: React.FC<{ eyebrow?: string; title: string }> = ({ eyebrow, title }) => (
+const SectionTitle: React.FC<{ eyebrow?: string; title: string; className?: string }> = ({
+  eyebrow,
+  title,
+  className,
+}) => (
   <div style={{ marginTop: 40, marginBottom: 14 }}>
     {eyebrow && (
       <div style={{ fontSize: fs.eyebrow, letterSpacing: '0.22em', textTransform: 'uppercase', color: muted, fontWeight: 700 }}>
         {eyebrow}
       </div>
     )}
-    <div style={{ marginTop: eyebrow ? 6 : 0, fontSize: fs.h2, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}>
+    <div
+      className={className}
+      style={{
+        marginTop: eyebrow ? 6 : 0,
+        fontSize: className ? undefined : fs.h2,
+        fontWeight: className ? undefined : 700,
+        color: className ? undefined : '#f8fafc',
+        letterSpacing: '-0.01em',
+      }}
+    >
       {title}
     </div>
   </div>
