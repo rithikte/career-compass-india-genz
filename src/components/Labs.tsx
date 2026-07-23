@@ -676,9 +676,16 @@ const Labs: React.FC = () => {
             {readinessRows.map((row, i) => (
               <div key={i} style={mobileCardStyle}>
                 <div style={mobileTitle}>{row.lab}</div>
-                <MapMobileItem label="Primary Subject Owner" text={row.owner} />
-                <MapMobileItem label="Readiness Contribution" text={row.contribution} />
-                <MapMobileItem label="Most Valuable During" text={row.valuable} />
+                {[
+                  <MapMobileItem key="owner" label="Primary Subject Owner" text={row.owner} />,
+                  <MapMobileItem key="contribution" label="Readiness Contribution" text={row.contribution} />,
+                  <MapMobileItem key="valuable" label="Most Valuable During" text={row.valuable} />,
+                ].map((child, idx, arr) => (
+                  <React.Fragment key={`readiness-${idx}`}>
+                    {child}
+                    {idx !== arr.length - 1 && <div className="labs-mobile-divider" />}
+                  </React.Fragment>
+                ))}
               </div>
             ))}
           </div>
