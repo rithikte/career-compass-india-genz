@@ -1,42 +1,33 @@
-## Apply gradient & typography update to CareerStabilityCheck section headlines
+Add thin, gray, faded-tip horizontal dividers between each of the four EyebrowLabel sub-sections (Strong Freshers, Weak Freshers, Why It Matters, Mistake Recovery Impact) inside every rule card in the "5 Rules" section.
 
-### Goal
-Update the three section headlines in the "Career Stability Check" page —
-1. **What Keeps This Career Alive**
-2. **Where Freshers Break First**
-3. **Expectation vs Reality**
+## What to build
+- Insert a divider element after each of the first three sub-sections inside each rule card.
+- The divider should be a short, thin horizontal line with tips that fade to transparent ("erased" effect), using a linear gradient.
+- Use a CSS class added to the existing `<style>` block so the dividers are visible only on mobile (where the sub-sections stack vertically in one column) and hidden on desktop where the grid shows them side by side.
+- Keep all existing card glassmorphism, hover lift, border glow, and content intact.
 
-— so they use the new white-to-gray gradient text and the requested sub-section heading font style, and bring the entire page’s visual tokens/effects in line with the latest spec.
+## Implementation details
+- In `src/components/ExecutionMistakes.tsx`, locate the mapped `rules` grid around line 502.
+- Add a `<div className="rule-mobile-divider" />` after each of the first three inner sub-section blocks.
+- Add a new rule in the existing `<style>` block:
+  ```css
+  .rule-mobile-divider {
+    display: none;
+  }
+  @media (max-width: 640px) {
+    .rule-mobile-divider {
+      display: block;
+      height: 1px;
+      width: 100%;
+      margin: 14px 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.18) 80%, transparent 100%);
+      border: none;
+    }
+  }
+  ```
+- Adjust opacity or spacing as needed to match the existing muted/white-translucency design system.
 
-### Changes
-
-1. **Headline gradient + font**
-   - Add a shared class `.cs-section-headline` in `src/components/CareerStabilityCheck.tsx`.
-   - Apply `linear-gradient(180deg, #fff 0%, #b7c0cc 100%)` with `-webkit-background-clip: text` / `-webkit-text-fill-color: transparent`.
-   - Set `font-family: 'Poppins', 'Inter', sans-serif`, `font-weight: 600`, `font-size: clamp(1.35rem, 2.6vw, 1.9rem)`.
-   - Apply the class to the three `<h2>` elements rendered by the `SectionTitle` component for the above titles.
-
-2. **Color system update**
-   - Page background: `#06080d`.
-   - Primary text: `#e7ecf3`.
-   - Muted text: `#9aa4b2`.
-   - Card backgrounds: `rgba(255,255,255,0.03)` / `rgba(255,255,255,0.05)`.
-   - Borders: `rgba(255,255,255,0.08)` / `rgba(255,255,255,0.14)`.
-   - Accents: teal `#6ee7d7`, purple `#a78bfa`, amber `#f5c26b`.
-   - Update rating severity pills (Very High, High, Medium, Critical, Moderate, Low) to use these accent colors.
-
-3. **Effects**
-   - Radial background glows: teal + purple at low opacity behind the page.
-   - Card hover lift: `translateY(-2px)` + multi-layer teal/purple glow shadow.
-   - Table rows: teal-tint hover highlight.
-   - Teal and amber tag badges with translucent fills + matching borders.
-   - "Reality Check" box (the Honest Picture card): subtle gradient background + stronger border.
-
-4. **Verification**
-   - Run `tsgo` (TypeScript check) and visually confirm the three headlines render the gradient at both desktop and mobile widths.
-
-### Files
-- `src/components/CareerStabilityCheck.tsx` (only file modified)
-
-### No new dependencies
-Styling is done inline + CSS-in-JSX as existing convention.
+## Verification
+- Run the build/type-check.
+- Check the mobile preview to confirm the four layers inside each rule card are visually separated without mixing together.
+- Confirm desktop layout remains unchanged.
