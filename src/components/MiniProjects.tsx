@@ -555,7 +555,7 @@ const MiniProjects: React.FC = () => {
         </div>
 
         {/* Behaviors */}
-        <SectionTitle eyebrow="Behavior Map" title="The 5 Most Important Mini Project Behaviors" />
+        <SectionTitle eyebrow="Behavior Map" title="The 5 Most Important Mini Project Behaviors" gradient />
         <div style={{ display: 'grid', gap: 18 }}>
           {behaviors.map((b, i) => (
             <div key={i} className="mini-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
