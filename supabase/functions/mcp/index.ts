@@ -3,7 +3,7 @@
 // supabase function: mcp
 // Bundled from src/lib/mcp/index.ts by @lovable.dev/mcp-js.
 // src/lib/mcp/index.ts
-import { defineMcp } from "npm:@lovable.dev/mcp-js@0.20.0";
+import { auth, defineMcp } from "npm:@lovable.dev/mcp-js@0.20.0";
 
 // src/lib/mcp/tools/list-degree-paths.ts
 import { defineTool } from "npm:@lovable.dev/mcp-js@0.20.0";
@@ -86,11 +86,16 @@ var explore_careers_default = defineTool2({
 });
 
 // src/lib/mcp/index.ts
+var projectRef = "wlvewpuyciduyciixtvv";
 var mcp_default = defineMcp({
   name: "undergraduate-maps-mcp",
   title: "Undergraduate Maps MCP",
   version: "0.1.0",
   instructions: "Tools for Undergraduate Maps, a career-and-degree guidance app for Indian students. Use `list_degree_paths` to see degree domains and subject combinations, and `explore_careers` to get honest overviews, job roles, and reality checks for engineering branches.",
+  auth: auth.oauth.issuer({
+    issuer: `https://${projectRef}.supabase.co/auth/v1`,
+    acceptedAudiences: "authenticated"
+  }),
   tools: [list_degree_paths_default, explore_careers_default]
 });
 
