@@ -273,6 +273,7 @@ const SubjectToChapter: React.FC = () => {
                     <div role="cell" data-label="Career-Critical Chapter" style={{ fontWeight: 600, color: '#f1f5f9' }}>
                       {ch.chapter}
                     </div>
+                    <div className="stc-mobile-divider" aria-hidden="true" />
                     <div role="cell" data-label="Contribution">
                       <span className="wfg-pct">
                         <span className="wfg-bar">
@@ -281,6 +282,7 @@ const SubjectToChapter: React.FC = () => {
                         {ch.contribution}%
                       </span>
                     </div>
+                    <div className="stc-mobile-divider" aria-hidden="true" />
                     <div role="cell" data-label="Practical Reason" style={{ color: textSoft }}>
                       {ch.reason}
                     </div>
