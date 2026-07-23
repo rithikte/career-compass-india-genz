@@ -732,6 +732,22 @@ const MajorProjects: React.FC = () => {
               0 0 46px rgba(167,139,250,0.26);
           }
         }
+        .reality-check-box {
+          transition: border-color 260ms ease, box-shadow 320ms ease, transform 260ms ease;
+        }
+        .reality-check-box:hover,
+        .reality-check-box:focus-visible,
+        .reality-check-box:focus-within,
+        .reality-check-box:active {
+          border-color: rgba(245,194,107,0.55) !important;
+          box-shadow:
+            0 0 0 1px rgba(245,194,107,0.35),
+            0 0 18px rgba(245,194,107,0.28),
+            0 0 42px rgba(245,194,107,0.18),
+            0 1px 0 rgba(255,255,255,0.05) inset,
+            0 20px 40px -30px rgba(0,0,0,0.6);
+          transform: translateY(-2px);
+        }
         .priority-table tbody tr,
         .connection-table tbody tr {
           transition: background-color 180ms ease;
