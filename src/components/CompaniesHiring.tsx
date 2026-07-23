@@ -286,7 +286,7 @@ const CompaniesHiring: React.FC = () => {
         </p>
 
         {/* Company Side Story */}
-        <SectionTitle eyebrow="Perspective" title="The Company's Side of the Story" />
+        <SectionTitle eyebrow="Perspective" title="The Company's Side of the Story" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div
             aria-hidden
@@ -350,7 +350,7 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* Why Companies Don't Hire Degrees */}
-        <SectionTitle eyebrow="Eligibility vs. Capability" title="Why Companies Do Not Hire Degrees" />
+        <SectionTitle eyebrow="Eligibility vs. Capability" title="Why Companies Do Not Hire Degrees" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div
             aria-hidden
@@ -409,7 +409,7 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* 3 Types of Freshers */}
-        <SectionTitle eyebrow="Candidate Segments" title="The 3 Types of Freshers Companies See" />
+        <SectionTitle eyebrow="Candidate Segments" title="The 3 Types of Freshers Companies See" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <style>{`
             .stages-table { width: 100%; border-collapse: collapse; }
@@ -490,7 +490,7 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* High Potential Freshers */}
-        <SectionTitle eyebrow="Growth Pipeline" title="Why Companies Love High-Potential Freshers" />
+        <SectionTitle eyebrow="Growth Pipeline" title="Why Companies Love High-Potential Freshers" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div
             aria-hidden
@@ -540,7 +540,7 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* Attitude Can Beat Skill */}
-        <SectionTitle eyebrow="Behavior" title="Attitude Can Beat Skill" />
+        <SectionTitle eyebrow="Behavior" title="Attitude Can Beat Skill" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div className="attitude-table-wrap" style={{ marginBottom: 22 }}>
             <table className="attitude-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
@@ -607,7 +607,7 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* Why Some Students See More Opportunities */}
-        <SectionTitle eyebrow="Opportunity Gap" title="Why Some Students See More Opportunities" />
+        <SectionTitle eyebrow="Opportunity Gap" title="Why Some Students See More Opportunities" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div
             aria-hidden
@@ -648,7 +648,7 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* Biggest Hiring Myth */}
-        <SectionTitle eyebrow="Reality Check" title="The Biggest Hiring Myth" />
+        <SectionTitle eyebrow="Reality Check" title="The Biggest Hiring Myth" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'relative', zIndex: 1, display: 'grid', gap: 22, gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
             <div>
@@ -692,7 +692,7 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* Why Companies Fear Freshers */}
-        <SectionTitle eyebrow="Risk Assessment" title="Why Companies Fear Freshers" />
+        <SectionTitle eyebrow="Risk Assessment" title="Why Companies Fear Freshers" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <table className="fear-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body, tableLayout: 'fixed' }}>
             <thead>
@@ -734,7 +734,7 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* What a Bad Hire Costs */}
-        <SectionTitle eyebrow="Business Impact" title="What A Bad Hire Costs A Company" />
+        <SectionTitle eyebrow="Business Impact" title="What A Bad Hire Costs A Company" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <table className="badhire-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body, tableLayout: 'fixed' }}>
             <thead>
@@ -794,7 +794,7 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* What Companies Are Actually Buying */}
-        <SectionTitle eyebrow="Value Exchange" title="What Companies Are Actually Buying" />
+        <SectionTitle eyebrow="Value Exchange" title="What Companies Are Actually Buying" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div
             aria-hidden
@@ -832,7 +832,7 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* Harsh Reality */}
-        <SectionTitle eyebrow="Market Truth" title="The Harsh Reality About The Job Market" />
+        <SectionTitle eyebrow="Market Truth" title="The Harsh Reality About The Job Market" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'relative', zIndex: 1 }}>
             <div style={{ display: 'grid', gap: 14, gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
@@ -864,7 +864,7 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* Most Important Thing */}
-        <SectionTitle eyebrow="The Unspoken Question" title="The Most Important Thing Students Never Hear" />
+        <SectionTitle eyebrow="The Unspoken Question" title="The Most Important Thing Students Never Hear" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div
             aria-hidden
@@ -902,7 +902,7 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* Final Conclusion */}
-        <SectionTitle eyebrow="Closing" title="Final Conclusion" />
+        <SectionTitle eyebrow="Closing" title="Final Conclusion" className="companies-section-title" />
         <div className="hiring-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div
             aria-hidden
