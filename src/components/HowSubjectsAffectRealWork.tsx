@@ -399,7 +399,7 @@ const HowSubjectsAffectRealWork: React.FC = () => {
             font-size: ${fs.label};
             letter-spacing: 0.16em;
             text-transform: uppercase;
-            color: #64748b;
+            color: #9aa4b2;
             font-weight: 700;
             margin-bottom: 2px;
           }
@@ -418,7 +418,7 @@ const HowSubjectsAffectRealWork: React.FC = () => {
             font-size: ${fs.label};
             letter-spacing: 0.16em;
             text-transform: uppercase;
-            color: #64748b;
+            color: #9aa4b2;
             font-weight: 700;
             margin-bottom: 2px;
           }
