@@ -274,13 +274,13 @@ const HowSubjectsAffectRealWork: React.FC = () => {
                 <EyebrowLabel>{item.subject}</EyebrowLabel>
                 <div style={{ marginTop: 14, display: 'grid', gap: 10 }}>
                   <div>
-                    <span style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#64748b', fontWeight: 700 }}>
+                    <span style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#9aa4b2', fontWeight: 700 }}>
                       Used For
                     </span>
                     <p style={{ marginTop: 6, marginBottom: 0, fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{item.usedFor}</p>
                   </div>
                   <div>
-                    <span style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#64748b', fontWeight: 700 }}>
+                    <span style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#9aa4b2', fontWeight: 700 }}>
                       Why It Matters
                     </span>
                     <p style={{ marginTop: 6, marginBottom: 0, fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{item.why}</p>
