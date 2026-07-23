@@ -865,6 +865,17 @@ const Labs: React.FC = () => {
           -webkit-text-fill-color: transparent;
           background-clip: text;
         }
+        .labs-section-title {
+          font-family: 'Poppins', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          line-height: 1.1;
+          background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
         .labs-card {
           position: relative;
           outline: none;
@@ -881,7 +892,7 @@ const Labs: React.FC = () => {
             0 0 42px rgba(167,139,250,0.22),
             0 1px 0 rgba(255,255,255,0.05) inset,
             0 20px 40px -30px rgba(0,0,0,0.6);
-          transform: translateY(-1px);
+          transform: translateY(-2px);
         }
         @media (hover: none) {
           .labs-card:active {
@@ -896,21 +907,23 @@ const Labs: React.FC = () => {
           display: grid;
           gap: 8px;
           padding: 12px 10px;
-          background: rgba(148,163,184,0.10);
+          background: rgba(255,255,255,0.05);
           font-size: ${fs.labelLg};
           letter-spacing: 0.1em;
           text-transform: uppercase;
           color: ${muted};
           font-weight: 700;
-          border-bottom: 1px solid rgba(148,163,184,0.14);
+          border-bottom: 1px solid rgba(255,255,255,0.14);
         }
         .labs-table-row {
           display: grid;
           gap: 8px;
           align-items: center;
-          border-bottom: 1px solid rgba(148,163,184,0.08);
+          border-bottom: 1px solid rgba(255,255,255,0.08);
+          transition: background 220ms ease;
         }
         .labs-table-row:last-child { border-bottom: none; }
+        .labs-table-row:hover { background: rgba(110,231,215,0.06); }
         .labs-priority-cols { grid-template-columns: minmax(180px, 1.6fr) minmax(130px, 1fr) minmax(140px, 1fr) minmax(130px, 1fr); }
         .labs-readiness-cols { grid-template-columns: minmax(200px, 1.6fr) minmax(160px, 1.2fr) minmax(140px, 1fr) minmax(180px, 1.3fr); }
         .labs-connection-cols { grid-template-columns: minmax(200px, 1.6fr) minmax(160px, 1.2fr) minmax(200px, 1.4fr) minmax(200px, 1.4fr); }
