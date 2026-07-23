@@ -20,10 +20,11 @@ const fs = {
 
 const accentTeal = '#6ee7d7';
 const accentViolet = '#a78bfa';
-const muted = '#94a3b8';
-const textMain = '#e5e7eb';
-const textSoft = '#cbd5e1';
-const warn = '#f87171';
+const muted = '#9aa4b2';
+const textMain = '#e7ecf3';
+const textSoft = '#9aa4b2';
+const warn = '#f5c26b';
+const warnText = '#fef3c7';
 const success = '#34d399';
 
 interface Exposure {
@@ -268,7 +269,7 @@ const RealExecutionExposure: React.FC = () => {
     <div
       style={{
         background:
-          'radial-gradient(1200px 600px at 10% -10%, rgba(110,231,215,0.10), transparent 60%), radial-gradient(900px 500px at 100% 0%, rgba(167,139,250,0.10), transparent 60%), #05070d',
+          'radial-gradient(1200px 600px at 10% -10%, rgba(110,231,215,0.10), transparent 60%), radial-gradient(900px 500px at 100% 0%, rgba(167,139,250,0.10), transparent 60%), #06080d',
         color: textMain,
         minHeight: '100vh',
         width: '100%',
@@ -380,7 +381,7 @@ const RealExecutionExposure: React.FC = () => {
                   >
                     {exp.id}
                   </span>
-                  <div style={{ fontSize: fs.h3, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}>
+                  <div style={{ fontSize: fs.h3, fontWeight: 700, color: textMain, letterSpacing: '-0.01em' }}>
                     {exp.name}
                   </div>
                 </div>
@@ -405,14 +406,14 @@ const RealExecutionExposure: React.FC = () => {
                 </div>
 
                 <div
-                  style={{
-                    marginTop: 18,
-                    paddingTop: 16,
-                    borderTop: '1px solid rgba(148,163,184,0.12)',
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-                    gap: 14,
-                  }}
+                style={{
+                  marginTop: 18,
+                  paddingTop: 16,
+                  borderTop: '1px solid rgba(255,255,255,0.08)',
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+                  gap: 14,
+                }}
                 >
                   <div>
                     <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: accentTeal, fontWeight: 700, marginBottom: 6 }}>
@@ -446,7 +447,7 @@ const RealExecutionExposure: React.FC = () => {
                     </div>
                     <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 4 }}>
                       {exp.mistakes.map((m, i) => (
-                        <li key={i} style={{ fontSize: fs.bodySm, color: '#fecaca', lineHeight: 1.55, display: 'flex', gap: 8 }}>
+                        <li key={i} style={{ fontSize: fs.bodySm, color: warnText, lineHeight: 1.55, display: 'flex', gap: 8 }}>
                           <span style={{ color: warn }}>×</span>
                           <span>{m}</span>
                         </li>
@@ -516,7 +517,7 @@ const RealExecutionExposure: React.FC = () => {
         <SectionTitle eyebrow="Subject Linkage" title="Exposure-To-Work Connection Table" />
         <div className="exposure-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div style={{ overflowX: 'auto' }}>
-            <table style={{ minWidth: 760, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
+            <table className="connection-table" style={{ minWidth: 760, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
               <thead>
                 <tr>
                   {['Exposure', 'Subject Connection', 'Skill Practiced', 'Tool / Document Seen', 'Workflow Connection', 'Fresher Responsibility Supported'].map((h) => (
@@ -563,7 +564,7 @@ const RealExecutionExposure: React.FC = () => {
             style={{
               position: 'absolute',
               inset: 0,
-              background: `radial-gradient(600px 300px at 50% 100%, rgba(248,113,113,0.10), transparent 60%)`,
+              background: `radial-gradient(600px 300px at 50% 100%, rgba(245,194,107,0.10), transparent 60%)`,
               pointerEvents: 'none',
             }}
           />
@@ -572,7 +573,7 @@ const RealExecutionExposure: React.FC = () => {
               <EyebrowLabel>Students Usually Waste Exposure By</EyebrowLabel>
               <ul style={{ margin: '12px 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: 6 }}>
                 {wasteList.map((item, i) => (
-                  <li key={i} style={{ fontSize: fs.body, color: '#fecaca', lineHeight: 1.55, display: 'flex', gap: 8 }}>
+                  <li key={i} style={{ fontSize: fs.body, color: warnText, lineHeight: 1.55, display: 'flex', gap: 8 }}>
                     <span style={{ color: warn }}>×</span>
                     <span>{item}</span>
                   </li>
@@ -666,8 +667,8 @@ const RealExecutionExposure: React.FC = () => {
 };
 
 const cardStyle = (extra: React.CSSProperties = {}): React.CSSProperties => ({
-  background: 'linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))',
-  border: '1px solid rgba(148,163,184,0.14)',
+  background: 'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03))',
+  border: '1px solid rgba(255,255,255,0.14)',
   borderRadius: 16,
   padding: 18,
   backdropFilter: 'blur(6px)',
