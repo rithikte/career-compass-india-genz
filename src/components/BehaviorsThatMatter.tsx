@@ -244,7 +244,7 @@ const BehaviorsThatMatter: React.FC = () => {
                   >
                     {behavior.id}
                   </span>
-                  <div style={{ fontSize: fs.h3, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}>
+                  <div className="btm-behavior-title">
                     {behavior.title}
                   </div>
                 </div>
