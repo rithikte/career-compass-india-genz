@@ -635,7 +635,7 @@ const MajorProjects: React.FC = () => {
         </div>
 
         {/* Brutal Reality */}
-        <SectionTitle eyebrow="Reality Check" title="Brutal Reality" />
+        <SectionTitle eyebrow="Reality Check" title="Brutal Reality" className="major-section-title" />
         <div className="major-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div
             aria-hidden
