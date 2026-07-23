@@ -760,6 +760,22 @@ const MiniProjects: React.FC = () => {
         .mini-connection-cols { grid-template-columns: minmax(180px, 1.6fr) minmax(130px, 1fr) minmax(130px, 1fr) minmax(120px, 1fr) minmax(180px, 1.3fr); }
         .mini-table-desktop { display: grid; }
         .mini-table-mobile { display: none; }
+        .mini-reality-card {
+          background: linear-gradient(180deg, rgba(245,194,107,0.08), rgba(255,255,255,0.03)) !important;
+          border: 1px solid rgba(245,194,107,0.35) !important;
+        }
+        .mini-reality-card:hover,
+        .mini-reality-card:focus-visible,
+        .mini-reality-card:focus-within,
+        .mini-reality-card:active {
+          border-color: rgba(245,194,107,0.55) !important;
+          box-shadow:
+            0 0 0 1px rgba(245,194,107,0.35),
+            0 0 18px rgba(245,194,107,0.22),
+            0 0 42px rgba(167,139,250,0.18),
+            0 1px 0 rgba(255,255,255,0.05) inset,
+            0 20px 40px -30px rgba(0,0,0,0.6);
+        }
         @media (max-width: 860px) {
           .mini-table-header,
           .mini-table-desktop { display: none !important; }
