@@ -620,14 +620,18 @@ const MajorProjects: React.FC = () => {
                   </div>
                   <p style={{ margin: 0, fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{b.strong}</p>
                 </div>
+                <div className="major-mobile-divider" />
                 <div>
                   <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 6 }}>
                     Weak Fresher Behavior
                   </div>
                   <p style={{ margin: 0, fontSize: fs.body, color: warnLight, lineHeight: 1.6 }}>{b.weak}</p>
                 </div>
+                <div className="major-mobile-divider" />
                 <ImpactBlock label="Why It Matters" color={accentTeal} text={b.why} />
+                <div className="major-mobile-divider" />
                 <ImpactBlock label="Trust Impact" color={accentViolet} text={b.trust} />
+                <div className="major-mobile-divider" />
                 <ImpactBlock label="Growth Impact" color={success} text={b.growth} />
               </div>
             </div>
@@ -778,6 +782,19 @@ const MajorProjects: React.FC = () => {
           .priority-table-td {
             padding: 4px 5px !important;
             font-size: 9px !important;
+          }
+        }
+        .major-mobile-divider {
+          display: none;
+        }
+        @media (max-width: 640px) {
+          .major-mobile-divider {
+            display: block;
+            height: 1px;
+            width: 100%;
+            margin: 14px 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.18) 80%, transparent 100%);
+            border: none;
           }
         }
       `}</style>
