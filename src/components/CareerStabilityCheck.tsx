@@ -263,7 +263,8 @@ const CareerStabilityCheck: React.FC = () => {
 
         {/* Top Failure Points */}
         <SectionTitle eyebrow="Top Failure Points" title="Where Freshers Break First" titleClassName="cs-section-headline" />
-        <div className="cs-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+        {/* Desktop table */}
+        <div className="cs-card cs-fail-desktop" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
           <div className="cs-table" role="table" aria-label="Top failure points">
             <div className="cs-thead" role="row">
               <div role="columnheader">Failure Point</div>
@@ -283,6 +284,59 @@ const CareerStabilityCheck: React.FC = () => {
               );
             })}
           </div>
+        </div>
+
+        {/* Mobile redesigned cards */}
+        <div className="cs-fail-mobile" style={{ display: 'none', gap: 14, gridTemplateColumns: '1fr' }}>
+          {failurePoints.map((f, i) => {
+            const c = ratingColor(f.severity);
+            return (
+              <div className="cs-card cs-fail-card" tabIndex={0} key={f.point} style={cardStyle({ padding: 16, position: 'relative', overflow: 'hidden' })}>
+                <div aria-hidden style={{
+                  position: 'absolute', top: 0, left: 0, right: 0, height: 2,
+                  background: `linear-gradient(90deg, transparent, ${c.fg}, transparent)`,
+                  opacity: 0.7,
+                }} />
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10 }}>
+                  <span style={{
+                    fontSize: '10px', letterSpacing: '0.22em', textTransform: 'uppercase',
+                    color: TOKENS.muted, fontWeight: 700,
+                    display: 'inline-flex', alignItems: 'center', gap: 8,
+                  }}>
+                    <span style={{
+                      display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                      width: 22, height: 22, borderRadius: 999,
+                      background: 'rgba(255,255,255,0.04)', border: `1px solid ${TOKENS.borderHover}`,
+                      color: TOKENS.primary, fontSize: 10, letterSpacing: 0,
+                    }}>{String(i + 1).padStart(2, '0')}</span>
+                    Failure Point
+                  </span>
+                  <span style={pill(c)}>{f.severity}</span>
+                </div>
+                <div style={{
+                  marginTop: 10, fontFamily: "'Poppins','Inter',sans-serif",
+                  fontSize: 'clamp(15px, 4.4vw, 18px)', fontWeight: 600, lineHeight: 1.3,
+                  color: TOKENS.primary, letterSpacing: '-0.01em',
+                }}>
+                  {f.point}
+                </div>
+                <div style={{
+                  marginTop: 8, display: 'inline-flex', alignItems: 'center', gap: 6,
+                  fontSize: 11, color: TOKENS.muted, letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 700,
+                }}>
+                  <span style={{ width: 4, height: 4, borderRadius: 999, background: c.fg }} />
+                  {f.category}
+                </div>
+                <div className="cs-fail-divider" aria-hidden />
+                <p style={{
+                  margin: 0, fontSize: 'clamp(12px, 3.6vw, 13.5px)', lineHeight: 1.6,
+                  color: '#cbd5e1',
+                }}>
+                  {f.explanation}
+                </p>
+              </div>
+            );
+          })}
         </div>
 
         {/* Reality Shock Areas */}
@@ -418,6 +472,16 @@ const CareerStabilityCheck: React.FC = () => {
             font-weight: 700;
             margin-bottom: 2px;
           }
+          .cs-fail-desktop { display: none !important; }
+          .cs-fail-mobile { display: grid !important; }
+        }
+        .cs-fail-divider {
+          height: 1px;
+          margin: 12px 0;
+          background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.14) 20%, rgba(255,255,255,0.14) 80%, transparent 100%);
+        }
+        .cs-fail-card {
+          transition: border-color 260ms ease, box-shadow 320ms ease, transform 260ms ease;
         }
       `}</style>
     </div>
