@@ -517,9 +517,16 @@ const Tools: React.FC = () => {
                 <div style={{ fontSize: fs.labelLg, letterSpacing: '0.1em', textTransform: 'uppercase', color: accentTeal, fontWeight: 700 }}>
                   {row.tool}
                 </div>
-                <MapMobileItem label="Subject Connection" text={row.subject} />
-                <MapMobileItem label="Real Work Connection" text={row.work} />
-                <MapMobileItem label="Capability Supported" text={row.capability} />
+                {[
+                  { label: 'Subject Connection', text: row.subject },
+                  { label: 'Real Work Connection', text: row.work },
+                  { label: 'Capability Supported', text: row.capability },
+                ].map((item, i, arr) => (
+                  <React.Fragment key={item.label}>
+                    <MapMobileItem label={item.label} text={item.text} />
+                    {i < arr.length - 1 && <div className="tools-mobile-divider" />}
+                  </React.Fragment>
+                ))}
               </div>
             ))}
           </div>
