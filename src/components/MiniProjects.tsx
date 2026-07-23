@@ -371,14 +371,17 @@ const MiniProjects: React.FC = () => {
                     <EyebrowLabel small>Real Fresher Responsibility Simulated</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{project.simulated}</p>
                   </div>
+                  <div className="mini-mobile-divider" />
                   <div>
                     <EyebrowLabel small>What You Build</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{project.build}</p>
                   </div>
+                  <div className="mini-mobile-divider" />
                   <div>
                     <EyebrowLabel small>Capability Built</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: success, lineHeight: 1.6 }}>{project.capability}</p>
                   </div>
+                  <div className="mini-mobile-divider" />
                   <div>
                     <EyebrowLabel small>Tools Used</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{project.tools}</p>
@@ -408,6 +411,7 @@ const MiniProjects: React.FC = () => {
                       ))}
                     </ul>
                   </div>
+                  <div className="mini-mobile-divider" />
                   <div>
                     <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 6 }}>
                       Common Mistakes Observed
@@ -421,9 +425,13 @@ const MiniProjects: React.FC = () => {
                       ))}
                     </ul>
                   </div>
+                  <div className="mini-mobile-divider" />
                   <ImpactBlock label="Why This Project Matters" color={accentTeal} text={project.matters} />
+                  <div className="mini-mobile-divider" />
                   <ImpactBlock label="Interview Advantage" color={accentTeal} text={project.interviewAdvantage} />
+                  <div className="mini-mobile-divider" />
                   <ImpactBlock label="Job Advantage" color={accentViolet} text={project.jobAdvantage} />
+                  <div className="mini-mobile-divider" />
                   <div>
                     <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: success, fontWeight: 700, marginBottom: 6 }}>
                       Companies DO Expect
@@ -437,6 +445,7 @@ const MiniProjects: React.FC = () => {
                       ))}
                     </ul>
                   </div>
+                  <div className="mini-mobile-divider" />
                   <div>
                     <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: muted, fontWeight: 700, marginBottom: 6 }}>
                       Companies DO NOT Expect
@@ -450,12 +459,14 @@ const MiniProjects: React.FC = () => {
                       ))}
                     </ul>
                   </div>
+                  <div className="mini-mobile-divider" />
                   <div>
                     <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 6 }}>
                       If Not Done — Interview
                     </div>
                     <p style={{ margin: 0, fontSize: fs.bodySm, color: '#fecaca', lineHeight: 1.6 }}>{project.ignoredInterview}</p>
                   </div>
+                  <div className="mini-mobile-divider" />
                   <div>
                     <div style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 6 }}>
                       If Not Done — Job
@@ -779,6 +790,7 @@ const MiniProjects: React.FC = () => {
           height: 1px;
           background: linear-gradient(90deg, transparent 0%, rgba(148,163,184,0.26) 18%, rgba(148,163,184,0.26) 82%, transparent 100%);
           margin: 4px 0;
+          grid-column: 1 / -1;
         }
         .mini-reality-card:hover,
         .mini-reality-card:focus-visible,
