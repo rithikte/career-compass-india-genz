@@ -651,7 +651,7 @@ const MajorProjects: React.FC = () => {
               <EyebrowLabel>Companies Rarely Care About</EyebrowLabel>
               <ul style={{ margin: '12px 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: 6 }}>
                 {rareCare.map((item, i) => (
-                  <li key={i} style={{ fontSize: fs.body, color: '#fecaca', lineHeight: 1.55, display: 'flex', gap: 8 }}>
+                  <li key={i} style={{ fontSize: fs.body, color: warnLight, lineHeight: 1.55, display: 'flex', gap: 8 }}>
                     <span style={{ color: warn }}>×</span>
                     <span>{item}</span>
                   </li>
