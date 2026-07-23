@@ -286,10 +286,23 @@ const SubjectsRecognition: React.FC = () => {
             font-size: ${fs.label};
             letter-spacing: 0.16em;
             text-transform: uppercase;
-            color: #64748b;
+            color: #9aa4b2;
             font-weight: 700;
             margin-bottom: 2px;
           }
+        }
+        .sr-subtitle-gradient {
+          font-family: Poppins, Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+          font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+          font-weight: 600;
+          line-height: 1.2;
+          letter-spacing: -0.01em;
+          background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          color: transparent;
+          margin: 0;
         }
       `}</style>
     </div>
