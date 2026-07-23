@@ -393,20 +393,33 @@ const WhenToFocusSubjects: React.FC = () => {
           border-color: rgba(110,231,215,0.55) !important;
           box-shadow:
             0 0 0 1px rgba(110,231,215,0.35),
-            0 0 18px rgba(110,231,215,0.28),
-            0 0 42px rgba(167,139,250,0.22),
+            0 0 22px rgba(110,231,215,0.28),
+            0 0 46px rgba(167,139,250,0.22),
             0 1px 0 rgba(255,255,255,0.05) inset,
             0 20px 40px -30px rgba(0,0,0,0.6);
-          transform: translateY(-1px);
+          transform: translateY(-2px);
         }
         @media (hover: none) {
           .wtf-card:active {
             border-color: rgba(110,231,215,0.6) !important;
             box-shadow:
               0 0 0 1px rgba(110,231,215,0.4),
-              0 0 22px rgba(110,231,215,0.32),
-              0 0 46px rgba(167,139,250,0.26);
+              0 0 26px rgba(110,231,215,0.32),
+              0 0 52px rgba(167,139,250,0.26);
           }
+        }
+        .wtf-phase-headline {
+          font-family: Poppins, Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+          font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+          font-weight: 600;
+          line-height: 1.2;
+          letter-spacing: -0.01em;
+          background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          color: transparent;
+          margin: 0;
         }
       `}</style>
     </div>
