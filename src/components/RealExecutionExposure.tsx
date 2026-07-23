@@ -617,6 +617,16 @@ const RealExecutionExposure: React.FC = () => {
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
+        .exposure-section-title {
+          font-family: 'Poppins', 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+          font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+          font-weight: 600;
+          line-height: 1.2;
+          letter-spacing: -0.01em;
+          background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
         .exposure-card {
           position: relative;
           outline: none;
@@ -633,7 +643,7 @@ const RealExecutionExposure: React.FC = () => {
             0 0 42px rgba(167,139,250,0.22),
             0 1px 0 rgba(255,255,255,0.05) inset,
             0 20px 40px -30px rgba(0,0,0,0.6);
-          transform: translateY(-1px);
+          transform: translateY(-2px);
         }
         @media (hover: none) {
           .exposure-card:active {
@@ -645,8 +655,14 @@ const RealExecutionExposure: React.FC = () => {
           }
         }
         .priority-table th,
-        .priority-table td {
+        .priority-table td,
+        .connection-table th,
+        .connection-table td {
           padding: 12px 14px;
+        }
+        .priority-table tbody tr:hover,
+        .connection-table tbody tr:hover {
+          background: rgba(110,231,215,0.06);
         }
         @media (max-width: 640px) {
           .priority-table {
