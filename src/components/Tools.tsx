@@ -404,30 +404,22 @@ const Tools: React.FC = () => {
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
-                  <div>
-                    <EyebrowLabel small>Alternate Names</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{tool.alternateNames}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Primary Purpose</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{tool.purpose}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Where It Is Used</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{tool.whereUsed}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Encounter Frequency</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{tool.frequency}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>What Strong Freshers Understand</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{tool.strongUnderstand}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Capability Supported</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{tool.capability}</p>
-                  </div>
+                  {[
+                    { label: 'Alternate Names', text: tool.alternateNames, size: fs.body },
+                    { label: 'Primary Purpose', text: tool.purpose, size: fs.body },
+                    { label: 'Where It Is Used', text: tool.whereUsed, size: fs.bodySm },
+                    { label: 'Encounter Frequency', text: tool.frequency, size: fs.bodySm },
+                    { label: 'What Strong Freshers Understand', text: tool.strongUnderstand, size: fs.bodySm },
+                    { label: 'Capability Supported', text: tool.capability, size: fs.bodySm },
+                  ].map((item, i, arr) => (
+                    <React.Fragment key={item.label}>
+                      <div>
+                        <EyebrowLabel small>{item.label}</EyebrowLabel>
+                        <p style={{ margin: '8px 0 0', fontSize: item.size, color: textSoft, lineHeight: 1.6 }}>{item.text}</p>
+                      </div>
+                      {i < arr.length - 1 && <div className="tools-mobile-divider" />}
+                    </React.Fragment>
+                  ))}
                 </div>
 
                 <div
