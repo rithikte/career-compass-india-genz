@@ -622,7 +622,7 @@ const MiniProjects: React.FC = () => {
         </div>
 
         {/* Brutal Reality */}
-        <div className="mini-card" tabIndex={0} style={{ ...cardStyle(), marginTop: 40, position: 'relative', overflow: 'hidden' }}>
+        <div className="mini-card mini-reality-card" tabIndex={0} style={{ ...cardStyle(), marginTop: 40, position: 'relative', overflow: 'hidden' }}>
           <div
             aria-hidden
             style={{
