@@ -415,7 +415,8 @@ const CompaniesHiring: React.FC = () => {
             .stages-table { width: 100%; border-collapse: collapse; }
             .stages-table th, .stages-table td { padding: 12px 14px; text-align: left; vertical-align: top; }
             .stages-table thead th { border-bottom: 1px solid rgba(255,255,255,0.14); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; background: rgba(110,231,215,0.06); white-space: nowrap; }
-            .stages-table tbody tr { border-bottom: 1px solid rgba(255,255,255,0.08); }
+            .stages-table tbody tr { border-bottom: 1px solid rgba(255,255,255,0.08); transition: background 200ms ease; }
+            .stages-table tbody tr:hover { background: rgba(110,231,215,0.06); }
             .stages-interest { display: inline-block; padding: 4px 10px; border-radius: 999px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
             @media (max-width: 640px) {
               .stages-table, .stages-table tbody, .stages-table tr, .stages-table td { display: block; width: 100%; }
