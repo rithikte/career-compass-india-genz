@@ -765,6 +765,20 @@ const Tools: React.FC = () => {
             border: none;
           }
         }
+        .tools-table-mobile .tools-mobile-divider {
+          display: none;
+        }
+        @media (max-width: 860px) {
+          .tools-table-mobile .tools-mobile-divider {
+            display: block;
+            grid-column: 1 / -1;
+            height: 1px;
+            width: 100%;
+            margin: 14px 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.18) 80%, transparent 100%);
+            border: none;
+          }
+        }
       `}</style>
     </div>
   );
