@@ -406,18 +406,19 @@ const BehaviorsThatMatter: React.FC = () => {
                   <div style={{ fontSize: fs.labelLg, letterSpacing: '0.1em', textTransform: 'uppercase', color: accentTeal, fontWeight: 700 }}>
                     {row.area}
                   </div>
-                  <div>
-                    <div style={{ fontSize: fs.label, letterSpacing: '0.1em', textTransform: 'uppercase', color: warn, fontWeight: 700, marginBottom: 4 }}>Weak Fresher</div>
-                    <div style={{ fontSize: fs.body, color: '#fde68a', lineHeight: 1.5 }}>{row.weak}</div>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: fs.label, letterSpacing: '0.1em', textTransform: 'uppercase', color: success, fontWeight: 700, marginBottom: 4 }}>Strong Fresher</div>
-                    <div style={{ fontSize: fs.body, color: '#a7f3d0', lineHeight: 1.5 }}>{row.strong}</div>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: fs.label, letterSpacing: '0.1em', textTransform: 'uppercase', color: muted, fontWeight: 700, marginBottom: 4 }}>Why It Matters</div>
-                    <div style={{ fontSize: fs.body, color: textSoft, lineHeight: 1.5 }}>{row.why}</div>
-                  </div>
+                  {[
+                    { label: 'Weak Fresher', color: warn, textColor: '#fde68a', text: row.weak },
+                    { label: 'Strong Fresher', color: success, textColor: '#a7f3d0', text: row.strong },
+                    { label: 'Why It Matters', color: muted, textColor: textSoft, text: row.why },
+                  ].map((item, j, arr) => (
+                    <React.Fragment key={item.label}>
+                      <div>
+                        <div style={{ fontSize: fs.label, letterSpacing: '0.1em', textTransform: 'uppercase', color: item.color, fontWeight: 700, marginBottom: 4 }}>{item.label}</div>
+                        <div style={{ fontSize: fs.body, color: item.textColor, lineHeight: 1.5 }}>{item.text}</div>
+                      </div>
+                      {j < arr.length - 1 && <div className="btm-mobile-divider" />}
+                    </React.Fragment>
+                  ))}
                 </div>
               ))}
             </div>
@@ -505,6 +506,9 @@ const BehaviorsThatMatter: React.FC = () => {
         .btm-table-mobile {
           display: none;
         }
+        .btm-mobile-divider {
+          display: none;
+        }
         @media (max-width: 640px) {
           .btm-table-header,
           .btm-table-desktop {
@@ -512,6 +516,15 @@ const BehaviorsThatMatter: React.FC = () => {
           }
           .btm-table-mobile {
             display: grid !important;
+          }
+          .btm-mobile-divider {
+            display: block;
+            grid-column: 1 / -1;
+            height: 1px;
+            width: 100%;
+            margin: 14px 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.18) 80%, transparent 100%);
+            border: none;
           }
         }
       `}</style>
