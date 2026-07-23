@@ -258,8 +258,7 @@ const DomainSubjects: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.6, delay: 0.08, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mt-4 font-bold"
-            style={{ ...headingFont, fontSize: 'clamp(1.9rem, 5vw, 3.2rem)', lineHeight: 1.1 }}
+            className="mt-4 font-bold ds-headline-gradient"
           >
             Pick the subjects you are interested in
           </motion.h1>
