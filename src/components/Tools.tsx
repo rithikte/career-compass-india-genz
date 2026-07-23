@@ -432,130 +432,39 @@ const Tools: React.FC = () => {
                     gap: 14,
                   }}
                 >
-                  <ImpactBlock label="Trust Impact" color={success} text={tool.trustImpact} />
-                  <ImpactBlock label="Growth Impact" color={accentTeal} text={tool.growthImpact} />
-                  <ImpactBlock label="Common Mistakes" color={warn} text={tool.mistakes.join(' • ')} />
-                  <ImpactBlock label="Authority Boundary" color={accentViolet} text={tool.authority} />
-                  <div>
-                    <div
-                      style={{
-                        fontSize: fs.label,
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color: success,
-                        fontWeight: 700,
-                        marginBottom: 6,
-                      }}
-                    >
-                      What Companies Expect
-                    </div>
-                    <p style={{ margin: 0, fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{tool.companiesExpect}</p>
-                  </div>
-                  <div>
-                    <div
-                      style={{
-                        fontSize: fs.label,
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color: muted,
-                        fontWeight: 700,
-                        marginBottom: 6,
-                      }}
-                    >
-                      What Companies Do NOT Expect
-                    </div>
-                    <p style={{ margin: 0, fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{tool.companiesNotExpect}</p>
-                  </div>
-                  <div>
-                    <div
-                      style={{
-                        fontSize: fs.label,
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color: accentTeal,
-                        fontWeight: 700,
-                        marginBottom: 6,
-                      }}
-                    >
-                      Interview Advantage
-                    </div>
-                    <p style={{ margin: 0, fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{tool.interviewAdvantage}</p>
-                  </div>
-                  <div>
-                    <div
-                      style={{
-                        fontSize: fs.label,
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color: accentViolet,
-                        fontWeight: 700,
-                        marginBottom: 6,
-                      }}
-                    >
-                      Job Advantage
-                    </div>
-                    <p style={{ margin: 0, fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{tool.jobAdvantage}</p>
-                  </div>
-                  <div>
-                    <div
-                      style={{
-                        fontSize: fs.label,
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color: warn,
-                        fontWeight: 700,
-                        marginBottom: 6,
-                      }}
-                    >
-                      If Ignored — Interview
-                    </div>
-                    <p style={{ margin: 0, fontSize: fs.bodySm, color: '#fecaca', lineHeight: 1.6 }}>{tool.ignoredInterview}</p>
-                  </div>
-                  <div>
-                    <div
-                      style={{
-                        fontSize: fs.label,
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color: warn,
-                        fontWeight: 700,
-                        marginBottom: 6,
-                      }}
-                    >
-                      If Ignored — Job
-                    </div>
-                    <p style={{ margin: 0, fontSize: fs.bodySm, color: '#fecaca', lineHeight: 1.6 }}>{tool.ignoredJob}</p>
-                  </div>
-                  <div style={{ gridColumn: '1 / -1' }}>
-                    <div
-                      style={{
-                        fontSize: fs.label,
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color: warn,
-                        fontWeight: 700,
-                        marginBottom: 6,
-                      }}
-                    >
-                      Workplace Consequence
-                    </div>
-                    <p style={{ margin: 0, fontSize: fs.body, color: '#fecaca', lineHeight: 1.6 }}>{tool.consequence}</p>
-                  </div>
-                  <div style={{ gridColumn: '1 / -1' }}>
-                    <div
-                      style={{
-                        fontSize: fs.label,
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color: accentTeal,
-                        fontWeight: 700,
-                        marginBottom: 6,
-                      }}
-                    >
-                      What Problem This Tool Prevents
-                    </div>
-                    <p style={{ margin: 0, fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{tool.prevents}</p>
-                  </div>
+                  {[
+                    { label: 'Trust Impact', color: success, text: tool.trustImpact },
+                    { label: 'Growth Impact', color: accentTeal, text: tool.growthImpact },
+                    { label: 'Common Mistakes', color: warn, text: tool.mistakes.join(' • ') },
+                    { label: 'Authority Boundary', color: accentViolet, text: tool.authority },
+                    { label: 'What Companies Expect', color: success, text: tool.companiesExpect },
+                    { label: 'What Companies Do NOT Expect', color: muted, text: tool.companiesNotExpect },
+                    { label: 'Interview Advantage', color: accentTeal, text: tool.interviewAdvantage },
+                    { label: 'Job Advantage', color: accentViolet, text: tool.jobAdvantage },
+                    { label: 'If Ignored — Interview', color: warn, text: tool.ignoredInterview, textColor: '#fecaca' },
+                    { label: 'If Ignored — Job', color: warn, text: tool.ignoredJob, textColor: '#fecaca' },
+                    { label: 'Workplace Consequence', color: warn, text: tool.consequence, textColor: '#fecaca', fullWidth: true, size: fs.body },
+                    { label: 'What Problem This Tool Prevents', color: accentTeal, text: tool.prevents, fullWidth: true, size: fs.body },
+                  ].map((item, i, arr) => (
+                    <React.Fragment key={item.label}>
+                      <div style={item.fullWidth ? { gridColumn: '1 / -1' } : undefined}>
+                        <div
+                          style={{
+                            fontSize: fs.label,
+                            letterSpacing: '0.14em',
+                            textTransform: 'uppercase',
+                            color: item.color,
+                            fontWeight: 700,
+                            marginBottom: 6,
+                          }}
+                        >
+                          {item.label}
+                        </div>
+                        <p style={{ margin: 0, fontSize: item.size || fs.bodySm, color: item.textColor || textSoft, lineHeight: 1.6 }}>{item.text}</p>
+                      </div>
+                      {i < arr.length - 1 && <div className="tools-mobile-divider" />}
+                    </React.Fragment>
+                  ))}
                 </div>
               </div>
             </div>
