@@ -286,8 +286,8 @@ const RoleProfile: React.FC<RoleProfileProps> = ({ onExplore }) => {
           >
             <span style={{ height: 1, width: 40, background: COLORS.accent }} />
             <span
-              className="text-xs font-semibold uppercase"
-              style={{ ...techFont, color: COLORS.accent, letterSpacing: '0.28em' }}
+              className="font-semibold uppercase role-label"
+              style={{ ...techFont, color: COLORS.accent }}
             >
               Role Profile
             </span>
