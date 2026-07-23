@@ -129,6 +129,12 @@ const DomainChapters: React.FC = () => {
     >
       <style>{`
         .ug-domain-chapters { position: relative; overflow: hidden; }
+        .dc-headline-gradient {
+          background: linear-gradient(90deg, #18B7B8, #25757F, #061B38);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
         .ug-chap-input::placeholder { color: ${COLORS.muted}; }
         .ug-chap-input:focus { outline: none; border-color: ${COLORS.accent}; box-shadow: 0 0 0 3px rgba(109,212,200,0.15); }
         .ug-chap-card { transition: transform 250ms ease-out, border-color 250ms ease-out, box-shadow 250ms ease-out; }
