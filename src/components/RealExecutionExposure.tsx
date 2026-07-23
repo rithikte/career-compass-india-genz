@@ -474,7 +474,7 @@ const RealExecutionExposure: React.FC = () => {
         </div>
 
         {/* Priority Table */}
-        <SectionTitle eyebrow="Priority Analysis" title="Exposure Priority Table" />
+        <SectionTitle eyebrow="Priority Analysis" title="Exposure Priority Table" className="exposure-section-title" />
         <div className="exposure-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <table className="priority-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
             <thead>
@@ -485,7 +485,7 @@ const RealExecutionExposure: React.FC = () => {
                     style={{
                       textAlign: 'left',
                       padding: '12px 14px',
-                      borderBottom: '1px solid rgba(148,163,184,0.18)',
+                      borderBottom: '1px solid rgba(255,255,255,0.14)',
                       fontSize: fs.labelLg,
                       letterSpacing: '0.12em',
                       textTransform: 'uppercase',
@@ -501,7 +501,7 @@ const RealExecutionExposure: React.FC = () => {
             </thead>
             <tbody>
               {priorityRows.map((row, i) => (
-                <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
+                <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                   <td style={{ color: textMain, fontWeight: 600 }}>{row.exposure}</td>
                   <td style={{ color: textSoft }}>{row.awareness}</td>
                   <td style={{ color: accentViolet }}>{row.importance}</td>
@@ -514,7 +514,7 @@ const RealExecutionExposure: React.FC = () => {
         </div>
 
         {/* Connection Table */}
-        <SectionTitle eyebrow="Subject Linkage" title="Exposure-To-Work Connection Table" />
+        <SectionTitle eyebrow="Subject Linkage" title="Exposure-To-Work Connection Table" className="exposure-section-title" />
         <div className="exposure-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div style={{ overflowX: 'auto' }}>
             <table className="connection-table" style={{ minWidth: 760, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
@@ -526,7 +526,7 @@ const RealExecutionExposure: React.FC = () => {
                       style={{
                         textAlign: 'left',
                         padding: '12px 14px',
-                        borderBottom: '1px solid rgba(148,163,184,0.18)',
+                        borderBottom: '1px solid rgba(255,255,255,0.14)',
                         fontSize: fs.labelLg,
                         letterSpacing: '0.12em',
                         textTransform: 'uppercase',
@@ -542,7 +542,7 @@ const RealExecutionExposure: React.FC = () => {
               </thead>
               <tbody>
                 {connectionRows.map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
+                  <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                     <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.exposure}</td>
                     <td style={{ padding: '12px 14px', color: textSoft }}>{row.subject}</td>
                     <td style={{ padding: '12px 14px', color: accentTeal }}>{row.skill}</td>
@@ -557,7 +557,7 @@ const RealExecutionExposure: React.FC = () => {
         </div>
 
         {/* Brutal Reality */}
-        <SectionTitle eyebrow="Reality Check" title="Brutal Reality" />
+        <SectionTitle eyebrow="Reality Check" title="Brutal Reality" className="exposure-section-title" />
         <div className="exposure-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div
             aria-hidden
@@ -692,14 +692,21 @@ const EyebrowLabel: React.FC<{ children: React.ReactNode; small?: boolean }> = (
   </div>
 );
 
-const SectionTitle: React.FC<{ eyebrow?: string; title: string }> = ({ eyebrow, title }) => (
+const SectionTitle: React.FC<{ eyebrow?: string; title: string; className?: string }> = ({
+  eyebrow,
+  title,
+  className,
+}) => (
   <div style={{ marginTop: 40, marginBottom: 14 }}>
     {eyebrow && (
       <div style={{ fontSize: fs.eyebrow, letterSpacing: '0.22em', textTransform: 'uppercase', color: muted, fontWeight: 700 }}>
         {eyebrow}
       </div>
     )}
-    <div style={{ marginTop: eyebrow ? 6 : 0, fontSize: fs.h2, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}>
+    <div
+      className={className}
+      style={{ marginTop: eyebrow ? 6 : 0, fontSize: className ? undefined : fs.h2, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}
+    >
       {title}
     </div>
   </div>
