@@ -20,10 +20,10 @@ const fs = {
 
 const accentTeal = '#6ee7d7';
 const accentViolet = '#a78bfa';
-const muted = '#94a3b8';
-const textMain = '#e5e7eb';
-const textSoft = '#cbd5e1';
-const warn = '#f87171';
+const muted = '#9aa4b2';
+const textMain = '#e7ecf3';
+const textSoft = '#9aa4b2';
+const warn = '#f5c26b';
 const success = '#34d399';
 
 interface MinorProject {
@@ -139,7 +139,7 @@ const MinorProjects: React.FC = () => {
     <div
       style={{
         background:
-          'radial-gradient(1200px 600px at 10% -10%, rgba(110,231,215,0.10), transparent 60%), radial-gradient(900px 500px at 100% 0%, rgba(167,139,250,0.10), transparent 60%), #05070d',
+          'radial-gradient(1200px 600px at 10% -10%, rgba(110,231,215,0.10), transparent 60%), radial-gradient(900px 500px at 100% 0%, rgba(167,139,250,0.10), transparent 60%), #06080d',
         color: textMain,
         minHeight: '100vh',
         width: '100%',
@@ -435,7 +435,7 @@ const MinorProjects: React.FC = () => {
         </div>
 
         {/* Progression Analysis */}
-        <SectionTitle eyebrow="Progression Map" title="Minor Project Progression Analysis" />
+        <SectionTitle eyebrow="Progression Map" title="Minor Project Progression Analysis" gradient />
         <div className="minor-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
           <div
             aria-hidden
@@ -481,7 +481,7 @@ const MinorProjects: React.FC = () => {
                         key={j}
                         style={{
                           background: 'rgba(255,255,255,0.03)',
-                          border: '1px solid rgba(148,163,184,0.14)',
+                          border: '1px solid rgba(255,255,255,0.14)',
                           borderRadius: 10,
                           padding: '10px 12px',
                           fontSize: fs.body,
@@ -540,6 +540,17 @@ const MinorProjects: React.FC = () => {
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
+        .minor-section-headline {
+          font-family: 'Poppins', 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+          font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          line-height: 1.15;
+          background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
         .minor-card {
           position: relative;
           outline: none;
@@ -556,7 +567,7 @@ const MinorProjects: React.FC = () => {
             0 0 42px rgba(167,139,250,0.22),
             0 1px 0 rgba(255,255,255,0.05) inset,
             0 20px 40px -30px rgba(0,0,0,0.6);
-          transform: translateY(-1px);
+          transform: translateY(-2px);
         }
         @media (hover: none) {
           .minor-card:active {
@@ -573,8 +584,8 @@ const MinorProjects: React.FC = () => {
 };
 
 const cardStyle = (extra: React.CSSProperties = {}): React.CSSProperties => ({
-  background: 'linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))',
-  border: '1px solid rgba(148,163,184,0.14)',
+  background: 'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03))',
+  border: '1px solid rgba(255,255,255,0.14)',
   borderRadius: 16,
   padding: 18,
   backdropFilter: 'blur(6px)',
@@ -598,14 +609,14 @@ const EyebrowLabel: React.FC<{ children: React.ReactNode; small?: boolean }> = (
   </div>
 );
 
-const SectionTitle: React.FC<{ eyebrow?: string; title: string }> = ({ eyebrow, title }) => (
+const SectionTitle: React.FC<{ eyebrow?: string; title: string; gradient?: boolean }> = ({ eyebrow, title, gradient }) => (
   <div style={{ marginTop: 40, marginBottom: 14 }}>
     {eyebrow && (
       <div style={{ fontSize: fs.eyebrow, letterSpacing: '0.22em', textTransform: 'uppercase', color: muted, fontWeight: 700 }}>
         {eyebrow}
       </div>
     )}
-    <div style={{ marginTop: eyebrow ? 6 : 0, fontSize: fs.h2, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}>
+    <div className={gradient ? 'minor-section-headline' : ''} style={{ marginTop: eyebrow ? 6 : 0, fontSize: fs.h2, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}>
       {title}
     </div>
   </div>
@@ -633,7 +644,7 @@ const FlowBox: React.FC<{ label: string; sub: string; active?: boolean }> = ({ l
   <div
     style={{
       background: active ? 'rgba(110,231,215,0.10)' : 'rgba(255,255,255,0.03)',
-      border: `1px solid ${active ? 'rgba(110,231,215,0.45)' : 'rgba(148,163,184,0.14)'}`,
+      border: `1px solid ${active ? 'rgba(110,231,215,0.45)' : 'rgba(255,255,255,0.14)'}`,
       borderRadius: 12,
       padding: '14px 16px',
       textAlign: 'center',
