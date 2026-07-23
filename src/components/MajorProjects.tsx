@@ -412,7 +412,7 @@ const MajorProjects: React.FC = () => {
                   style={{
                     marginTop: 18,
                     paddingTop: 16,
-                    borderTop: '1px solid rgba(148,163,184,0.12)',
+                    borderTop: '1px solid rgba(255,255,255,0.08)',
                     display: 'grid',
                     gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
                     gap: 14,
