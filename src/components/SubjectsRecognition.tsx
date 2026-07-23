@@ -150,7 +150,7 @@ const SubjectsRecognition: React.FC = () => {
             </div>
             {recognitionData.map((r) => (
               <div className="wfg-row" role="row" key={r.subject}>
-                <div role="cell" data-label="Subject" style={{ fontWeight: 600, color: '#f1f5f9' }}>
+                <div role="cell" data-label="Subject" className="sr-subject-headline">
                   {r.subject}
                 </div>
                 <div role="cell" data-label="Alternate Names" style={{ color: textSoft }}>
@@ -303,6 +303,18 @@ const SubjectsRecognition: React.FC = () => {
           background-clip: text;
           color: transparent;
           margin: 0;
+        }
+        .sr-subject-headline {
+          font-family: Poppins, Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+          font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+          font-weight: 600;
+          line-height: 1.2;
+          letter-spacing: -0.01em;
+          background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          color: transparent;
         }
       `}</style>
     </div>
