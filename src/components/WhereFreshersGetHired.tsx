@@ -140,19 +140,7 @@ const WhereFreshersGetHired: React.FC = () => {
         </div>
 
         {/* Headline */}
-        <h1
-          style={{
-            fontSize: fs.h1,
-            lineHeight: 1.05,
-            fontWeight: 700,
-            letterSpacing: '-0.02em',
-            margin: 0,
-            maxWidth: '24ch',
-            background: 'linear-gradient(180deg,#ffffff 0%, #cbd5e1 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}
-        >
+        <h1 className="wfg-headline-gradient">
           Where Most Fresher Opportunities Actually Exist
         </h1>
         <p style={{ marginTop: 14, fontSize: fs.body, color: muted, maxWidth: '72ch', lineHeight: 1.6 }}>
