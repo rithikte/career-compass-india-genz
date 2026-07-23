@@ -273,7 +273,7 @@ const RoleProfile: React.FC<RoleProfileProps> = ({ onExplore }) => {
 
       <div
         className="relative mx-auto"
-        style={{ maxWidth: 1200, padding: 'clamp(36px, 6vw, 80px) clamp(20px, 5vw, 56px)' }}
+        style={{ maxWidth: 1200 }}
       >
         {/* ========== HERO ========== */}
         <div className="max-w-3xl">
