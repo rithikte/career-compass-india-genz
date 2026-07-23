@@ -349,7 +349,7 @@ const WhenToFocusSubjects: React.FC = () => {
             style={{
               position: 'absolute',
               inset: 0,
-              background: `radial-gradient(600px 300px at 50% 100%, rgba(248,113,113,0.10), transparent 60%)`,
+              background: `radial-gradient(600px 300px at 50% 100%, rgba(245,194,107,0.10), transparent 60%)`,
               pointerEvents: 'none',
             }}
           />
