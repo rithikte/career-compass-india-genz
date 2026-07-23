@@ -558,7 +558,7 @@ const MajorProjects: React.FC = () => {
                       style={{
                         textAlign: 'left',
                         padding: '12px 14px',
-                        borderBottom: '1px solid rgba(148,163,184,0.18)',
+                        borderBottom: '1px solid rgba(255,255,255,0.14)',
                         fontSize: fs.labelLg,
                         letterSpacing: '0.12em',
                         textTransform: 'uppercase',
