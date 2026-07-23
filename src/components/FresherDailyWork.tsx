@@ -64,10 +64,16 @@ const styles = `
 
 .fdw-section { margin-top: clamp(36px, 5vw, 72px); }
 .fdw-h2 {
-  font-size: clamp(18px, 2vw, 26px);
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: clamp(1.35rem, 2.6vw, 1.9rem);
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
   margin: 0 0 6px;
+  background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .fdw-kicker {
   font-size: clamp(8px, 0.85vw, 10px);
