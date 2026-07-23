@@ -130,7 +130,7 @@ const DomainChapters: React.FC = () => {
       <style>{`
         .ug-domain-chapters { position: relative; overflow: hidden; }
         .dc-headline-gradient {
-          background: linear-gradient(90deg, #18B7B8, #25757F, #061B38);
+          background: linear-gradient(135deg, #F8FAFC 0%, #A5B4FC 55%, #7DD3FC 100%);
           -webkit-background-clip: text;
           background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -197,7 +197,12 @@ const DomainChapters: React.FC = () => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.6, delay: 0.08, ease: [0.22, 1, 0.36, 1] as const }}
             className="mt-4 font-bold dc-headline-gradient"
-            style={{ ...headingFont, fontSize: 'clamp(1.9rem, 5vw, 3.2rem)', lineHeight: 1.1 }}
+            style={{
+              fontFamily: "'Poppins', 'Inter', sans-serif",
+              fontSize: 'clamp(1.9rem, 4.5vw, 3.4rem)',
+              letterSpacing: '-0.02em',
+              lineHeight: 1.05,
+            }}
           >
             Pick the chapters you are interested in
           </motion.h1>
