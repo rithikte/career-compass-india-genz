@@ -504,14 +504,17 @@ const ExecutionMistakes: React.FC = () => {
                     <EyebrowLabel small>Strong Freshers</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: success, lineHeight: 1.6 }}>{rule.strong}</p>
                   </div>
+                  <div className="rule-mobile-divider" />
                   <div>
                     <EyebrowLabel small>Weak Freshers</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: warnText, lineHeight: 1.6 }}>{rule.weak}</p>
                   </div>
+                  <div className="rule-mobile-divider" />
                   <div>
                     <EyebrowLabel small>Why It Matters</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{rule.why}</p>
                   </div>
+                  <div className="rule-mobile-divider" />
                   <div>
                     <EyebrowLabel small>Mistake Recovery Impact</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: accentTeal, lineHeight: 1.6 }}>{rule.impact}</p>
