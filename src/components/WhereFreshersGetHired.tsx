@@ -337,16 +337,16 @@ const WhereFreshersGetHired: React.FC = () => {
           align-items: center;
         }
         .wfg-thead {
-          background: rgba(148,163,184,0.06);
-          border-bottom: 1px solid rgba(148,163,184,0.14);
+          background: rgba(154,164,178,0.06);
+          border-bottom: 1px solid rgba(154,164,178,0.14);
           font-size: ${fs.label};
           letter-spacing: 0.16em;
           text-transform: uppercase;
-          color: #94a3b8;
+          color: #9aa4b2;
           font-weight: 700;
         }
         .wfg-row {
-          border-bottom: 1px solid rgba(148,163,184,0.08);
+          border-bottom: 1px solid rgba(154,164,178,0.08);
           font-size: ${fs.bodySm};
           line-height: 1.55;
           transition: background 200ms ease;
@@ -360,9 +360,9 @@ const WhereFreshersGetHired: React.FC = () => {
           font-size: ${fs.label};
           letter-spacing: 0.16em;
           text-transform: uppercase;
-          color: #94a3b8;
-          border-top: 1px solid rgba(148,163,184,0.14);
-          background: rgba(148,163,184,0.04);
+          color: #9aa4b2;
+          border-top: 1px solid rgba(154,164,178,0.14);
+          background: rgba(154,164,178,0.04);
           font-weight: 700;
         }
         .wfg-pct {
