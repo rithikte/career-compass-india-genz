@@ -394,14 +394,17 @@ const MajorProjects: React.FC = () => {
                     <EyebrowLabel small>Real Work Workflow Simulated</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{project.simulated}</p>
                   </div>
+                  <div className="major-mobile-divider" />
                   <div>
                     <EyebrowLabel small>What You Build</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{project.build}</p>
                   </div>
+                  <div className="major-mobile-divider" />
                   <div>
                     <EyebrowLabel small>Capability Built</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: success, lineHeight: 1.6 }}>{project.capability}</p>
                   </div>
+                  <div className="major-mobile-divider" />
                   <div>
                     <EyebrowLabel small>Workflow Understanding Gained</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: accentViolet, lineHeight: 1.6 }}>{project.understanding}</p>
