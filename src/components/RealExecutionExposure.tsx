@@ -391,14 +391,17 @@ const RealExecutionExposure: React.FC = () => {
                     <EyebrowLabel small>Real Activity Being Observed</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{exp.realActivity}</p>
                   </div>
+                  <div className="exposure-mobile-divider" />
                   <div>
                     <EyebrowLabel small>Workflow Connection</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: accentViolet, lineHeight: 1.6 }}>{exp.workflowConnection}</p>
                   </div>
+                  <div className="exposure-mobile-divider" />
                   <div>
                     <EyebrowLabel small>What You Learn</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: success, lineHeight: 1.6 }}>{exp.whatYouLearn}</p>
                   </div>
+                  <div className="exposure-mobile-divider" />
                   <div>
                     <EyebrowLabel small>Why This Matters</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{exp.whyMatters}</p>
