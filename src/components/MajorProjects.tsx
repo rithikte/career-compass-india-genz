@@ -636,13 +636,13 @@ const MajorProjects: React.FC = () => {
 
         {/* Brutal Reality */}
         <SectionTitle eyebrow="Reality Check" title="Brutal Reality" className="major-section-title" />
-        <div className="major-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
+        <div className="major-card reality-check-box" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden', border: '1px solid rgba(245,194,107,0.35)', background: 'linear-gradient(180deg, rgba(245,194,107,0.08), rgba(255,255,255,0.03))' }}>
           <div
             aria-hidden
             style={{
               position: 'absolute',
               inset: 0,
-              background: `radial-gradient(600px 300px at 50% 100%, rgba(248,113,113,0.10), transparent 60%)`,
+              background: `radial-gradient(600px 300px at 50% 100%, rgba(245,194,107,0.14), transparent 60%)`,
               pointerEvents: 'none',
             }}
           />
