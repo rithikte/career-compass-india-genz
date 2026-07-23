@@ -504,14 +504,17 @@ const ExecutionMistakes: React.FC = () => {
                     <EyebrowLabel small>Strong Freshers</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: success, lineHeight: 1.6 }}>{rule.strong}</p>
                   </div>
+                  <div className="rule-mobile-divider" />
                   <div>
                     <EyebrowLabel small>Weak Freshers</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: warnText, lineHeight: 1.6 }}>{rule.weak}</p>
                   </div>
+                  <div className="rule-mobile-divider" />
                   <div>
                     <EyebrowLabel small>Why It Matters</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{rule.why}</p>
                   </div>
+                  <div className="rule-mobile-divider" />
                   <div>
                     <EyebrowLabel small>Mistake Recovery Impact</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: accentTeal, lineHeight: 1.6 }}>{rule.impact}</p>
@@ -627,6 +630,19 @@ const ExecutionMistakes: React.FC = () => {
         .recovery-table tbody tr:hover,
         .escalation-table tbody tr:hover {
           background: rgba(110,231,215,0.06);
+        }
+        .rule-mobile-divider {
+          display: none;
+        }
+        @media (max-width: 640px) {
+          .rule-mobile-divider {
+            display: block;
+            height: 1px;
+            width: 100%;
+            margin: 14px 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.18) 80%, transparent 100%);
+            border: none;
+          }
         }
         @media (max-width: 640px) {
           .recovery-table th,
