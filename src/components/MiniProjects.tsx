@@ -20,10 +20,10 @@ const fs = {
 
 const accentTeal = '#6ee7d7';
 const accentViolet = '#a78bfa';
-const muted = '#94a3b8';
-const textMain = '#e5e7eb';
-const textSoft = '#cbd5e1';
-const warn = '#f87171';
+const muted = '#9aa4b2';
+const textMain = '#e7ecf3';
+const textSoft = '#9aa4b2';
+const warn = '#f5c26b';
 const success = '#34d399';
 
 interface MiniProject {
@@ -233,7 +233,7 @@ const MiniProjects: React.FC = () => {
     <div
       style={{
         background:
-          'radial-gradient(1200px 600px at 10% -10%, rgba(110,231,215,0.10), transparent 60%), radial-gradient(900px 500px at 100% 0%, rgba(167,139,250,0.10), transparent 60%), #05070d',
+          'radial-gradient(1200px 600px at 10% -10%, rgba(110,231,215,0.10), transparent 60%), radial-gradient(900px 500px at 100% 0%, rgba(167,139,250,0.10), transparent 60%), #06080d',
         color: textMain,
         minHeight: '100vh',
         width: '100%',
@@ -469,7 +469,7 @@ const MiniProjects: React.FC = () => {
         </div>
 
         {/* Mini Project Priority Table */}
-        <SectionTitle eyebrow="Priority Map" title="Mini Project Priority Table" />
+        <SectionTitle eyebrow="Priority Map" title="Mini Project Priority Table" gradient />
         <div className="mini-card" tabIndex={0} style={{ ...cardStyle({ padding: 0, overflow: 'hidden' }), position: 'relative' }}>
           <div className="mini-table-header mini-priority-cols">
             <div>Mini Project</div>
@@ -512,7 +512,7 @@ const MiniProjects: React.FC = () => {
         </div>
 
         {/* Mini Project-to-Work Connection Table */}
-        <SectionTitle eyebrow="Connection Map" title="Mini Project-To-Work Connection Table" />
+        <SectionTitle eyebrow="Connection Map" title="Mini Project-To-Work Connection Table" gradient />
         <div className="mini-card" tabIndex={0} style={{ ...cardStyle({ padding: 0, overflow: 'hidden' }), position: 'relative' }}>
           <div className="mini-table-header mini-connection-cols">
             <div>Mini Project</div>
@@ -555,7 +555,7 @@ const MiniProjects: React.FC = () => {
         </div>
 
         {/* Behaviors */}
-        <SectionTitle eyebrow="Behavior Map" title="The 5 Most Important Mini Project Behaviors" />
+        <SectionTitle eyebrow="Behavior Map" title="The 5 Most Important Mini Project Behaviors" gradient />
         <div style={{ display: 'grid', gap: 18 }}>
           {behaviors.map((b, i) => (
             <div key={i} className="mini-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
@@ -622,7 +622,7 @@ const MiniProjects: React.FC = () => {
         </div>
 
         {/* Brutal Reality */}
-        <div className="mini-card" tabIndex={0} style={{ ...cardStyle(), marginTop: 40, position: 'relative', overflow: 'hidden' }}>
+        <div className="mini-card mini-reality-card" tabIndex={0} style={{ ...cardStyle(), marginTop: 40, position: 'relative', overflow: 'hidden' }}>
           <div
             aria-hidden
             style={{
@@ -695,6 +695,17 @@ const MiniProjects: React.FC = () => {
           -webkit-text-fill-color: transparent;
           background-clip: text;
         }
+        .mini-section-headline {
+          font-family: 'Poppins', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          line-height: 1.15;
+          background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
         .mini-card {
           position: relative;
           outline: none;
@@ -711,7 +722,7 @@ const MiniProjects: React.FC = () => {
             0 0 42px rgba(167,139,250,0.22),
             0 1px 0 rgba(255,255,255,0.05) inset,
             0 20px 40px -30px rgba(0,0,0,0.6);
-          transform: translateY(-1px);
+          transform: translateY(-2px);
         }
         @media (hover: none) {
           .mini-card:active {
@@ -726,25 +737,45 @@ const MiniProjects: React.FC = () => {
           display: grid;
           gap: 8px;
           padding: 12px 10px;
-          background: rgba(148,163,184,0.10);
+          background: rgba(255,255,255,0.08);
           font-size: ${fs.labelLg};
           letter-spacing: 0.1em;
           text-transform: uppercase;
           color: ${muted};
           font-weight: 700;
-          border-bottom: 1px solid rgba(148,163,184,0.14);
+          border-bottom: 1px solid rgba(255,255,255,0.14);
         }
         .mini-table-row {
           display: grid;
           gap: 8px;
           align-items: center;
-          border-bottom: 1px solid rgba(148,163,184,0.08);
+          border-bottom: 1px solid rgba(255,255,255,0.08);
+          transition: background-color 180ms ease;
+        }
+        .mini-table-row:hover {
+          background-color: rgba(110,231,215,0.06) !important;
         }
         .mini-table-row:last-child { border-bottom: none; }
         .mini-priority-cols { grid-template-columns: minmax(180px, 1.6fr) minmax(130px, 1fr) minmax(130px, 1fr) minmax(110px, 0.9fr) minmax(110px, 0.9fr); }
         .mini-connection-cols { grid-template-columns: minmax(180px, 1.6fr) minmax(130px, 1fr) minmax(130px, 1fr) minmax(120px, 1fr) minmax(180px, 1.3fr); }
         .mini-table-desktop { display: grid; }
         .mini-table-mobile { display: none; }
+        .mini-reality-card {
+          background: linear-gradient(180deg, rgba(245,194,107,0.08), rgba(255,255,255,0.03)) !important;
+          border: 1px solid rgba(245,194,107,0.35) !important;
+        }
+        .mini-reality-card:hover,
+        .mini-reality-card:focus-visible,
+        .mini-reality-card:focus-within,
+        .mini-reality-card:active {
+          border-color: rgba(245,194,107,0.55) !important;
+          box-shadow:
+            0 0 0 1px rgba(245,194,107,0.35),
+            0 0 18px rgba(245,194,107,0.22),
+            0 0 42px rgba(167,139,250,0.18),
+            0 1px 0 rgba(255,255,255,0.05) inset,
+            0 20px 40px -30px rgba(0,0,0,0.6);
+        }
         @media (max-width: 860px) {
           .mini-table-header,
           .mini-table-desktop { display: none !important; }
@@ -756,8 +787,8 @@ const MiniProjects: React.FC = () => {
 };
 
 const cardStyle = (extra: React.CSSProperties = {}): React.CSSProperties => ({
-  background: 'linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))',
-  border: '1px solid rgba(148,163,184,0.14)',
+  background: 'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03))',
+  border: '1px solid rgba(255,255,255,0.14)',
   borderRadius: 16,
   padding: 18,
   backdropFilter: 'blur(6px)',
@@ -768,7 +799,7 @@ const cardStyle = (extra: React.CSSProperties = {}): React.CSSProperties => ({
 
 const mobileCardStyle: React.CSSProperties = {
   background: 'rgba(255,255,255,0.03)',
-  border: '1px solid rgba(148,163,184,0.14)',
+  border: '1px solid rgba(255,255,255,0.14)',
   borderRadius: 12,
   padding: 14,
   display: 'grid',
@@ -798,14 +829,14 @@ const EyebrowLabel: React.FC<{ children: React.ReactNode; small?: boolean }> = (
   </div>
 );
 
-const SectionTitle: React.FC<{ eyebrow?: string; title: string }> = ({ eyebrow, title }) => (
+const SectionTitle: React.FC<{ eyebrow?: string; title: string; gradient?: boolean }> = ({ eyebrow, title, gradient }) => (
   <div style={{ marginTop: 40, marginBottom: 14 }}>
     {eyebrow && (
       <div style={{ fontSize: fs.eyebrow, letterSpacing: '0.22em', textTransform: 'uppercase', color: muted, fontWeight: 700 }}>
         {eyebrow}
       </div>
     )}
-    <div style={{ marginTop: eyebrow ? 6 : 0, fontSize: fs.h2, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}>
+    <div className={gradient ? 'mini-section-headline' : ''} style={{ marginTop: eyebrow ? 6 : 0, fontSize: fs.h2, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}>
       {title}
     </div>
   </div>
