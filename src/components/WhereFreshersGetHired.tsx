@@ -341,7 +341,7 @@ const WhereFreshersGetHired: React.FC = () => {
           transition: background 200ms ease;
         }
         .wfg-row:last-child { border-bottom: none; }
-        .wfg-row:hover { background: rgba(148,163,184,0.04); }
+        .wfg-row:hover { background: rgba(110,231,215,0.06); }
         .wfg-total {
           display: flex;
           justify-content: flex-end;
