@@ -102,7 +102,7 @@ const CareerStabilityCheck: React.FC = () => {
             fontWeight: 700,
             letterSpacing: '-0.02em',
             margin: 0,
-            maxWidth: '18ch',
+            whiteSpace: 'nowrap',
             background: 'linear-gradient(180deg,#ffffff 0%, #cbd5e1 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
