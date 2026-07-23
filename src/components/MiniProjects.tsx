@@ -790,6 +790,7 @@ const MiniProjects: React.FC = () => {
           height: 1px;
           background: linear-gradient(90deg, transparent 0%, rgba(148,163,184,0.26) 18%, rgba(148,163,184,0.26) 82%, transparent 100%);
           margin: 4px 0;
+          grid-column: 1 / -1;
         }
         .mini-reality-card:hover,
         .mini-reality-card:focus-visible,
