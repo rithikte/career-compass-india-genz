@@ -275,6 +275,19 @@ const WhereFreshersGetHired: React.FC = () => {
       </div>
 
       <style>{`
+        .wfg-headline-gradient {
+          font-family: 'Poppins', 'Inter', sans-serif;
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          line-height: 1.05;
+          font-size: clamp(1.9rem, 4.5vw, 3.4rem);
+          margin: 0;
+          max-width: 24ch;
+          background: linear-gradient(135deg, #F8FAFC 0%, #A5B4FC 55%, #7DD3FC 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
         .wfg-card {
           position: relative;
           outline: none;
