@@ -530,6 +530,16 @@ const MinorProjects: React.FC = () => {
       </div>
 
       <style>{`
+        .minor-headline-gradient {
+          font-family: 'Poppins', 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+          font-size: clamp(1.9rem, 4.5vw, 3.4rem);
+          line-height: 1.05;
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          background: linear-gradient(135deg, #F8FAFC 0%, #A5B4FC 55%, #7DD3FC 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
         .minor-card {
           position: relative;
           outline: none;
