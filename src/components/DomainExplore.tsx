@@ -345,7 +345,7 @@ const DomainExplore: React.FC = () => {
         <p className="ug-section-tag">The narrow door that stays open — and what closes it.</p>
 
         <div className="ug-panel">
-          <ul className="ug-list" style={{ color: '#7DD3FC' }}>
+          <ul className="ug-list" style={{ color: '#6ee7d7' }}>
             {fresherPoints.map((p, i) => (
               <motion.li
                 key={i}
@@ -354,7 +354,7 @@ const DomainExplore: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
               >
-                <span style={{ color: '#E2E8F0' }}>{p}</span>
+                <span style={{ color: '#e7ecf3' }}>{p}</span>
               </motion.li>
             ))}
           </ul>
@@ -375,9 +375,9 @@ const DomainExplore: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="ug-section-label" style={{ color: '#86EFAC' }}>What could strengthen it</div>
+            <div className="ug-section-label" style={{ color: '#6ee7d7' }}>What could strengthen it</div>
             <ul className="ug-list ug-strengthen">
-              {strengtheners.map((s) => <li key={s}><span style={{ color: '#E2E8F0' }}>{s}</span></li>)}
+              {strengtheners.map((s) => <li key={s}><span style={{ color: '#e7ecf3' }}>{s}</span></li>)}
             </ul>
           </motion.div>
 
@@ -388,9 +388,9 @@ const DomainExplore: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.08 }}
           >
-            <div className="ug-section-label" style={{ color: '#FCA5A5' }}>What could weaken it</div>
+            <div className="ug-section-label" style={{ color: '#f5c26b' }}>What could weaken it</div>
             <ul className="ug-list ug-weaken">
-              {weakeners.map((w) => <li key={w}><span style={{ color: '#E2E8F0' }}>{w}</span></li>)}
+              {weakeners.map((w) => <li key={w}><span style={{ color: '#e7ecf3' }}>{w}</span></li>)}
             </ul>
           </motion.div>
         </div>
