@@ -312,10 +312,14 @@ const MinorProjects: React.FC = () => {
                     <EyebrowLabel small>Why Companies Value It</EyebrowLabel>
                     <p style={{ margin: '8px 0 0', fontSize: fs.body, color: accentTeal, lineHeight: 1.6 }}>{project.whyCompaniesValue}</p>
                   </div>
-                </div>
+        </div>
 
-                <div
-                  style={{
+        <div className="minor-mobile-divider" />
+
+        <div
+          className="minor-bottom-block"
+          style={{
+
                     marginTop: 18,
                     paddingTop: 16,
                     borderTop: '1px solid rgba(148,163,184,0.12)',
@@ -578,7 +582,27 @@ const MinorProjects: React.FC = () => {
               0 0 46px rgba(167,139,250,0.26);
           }
         }
+        .minor-mobile-divider {
+          display: none;
+        }
+        .minor-bottom-block {
+          /* desktop separator kept via inline styles */
+        }
+        @media (max-width: 640px) {
+          .minor-mobile-divider {
+            display: block;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(148,163,184,0.25) 50%, transparent 100%);
+            margin: 6px 0;
+            border: 0;
+          }
+          .minor-bottom-block {
+            border-top: none !important;
+            padding-top: 0 !important;
+          }
+        }
       `}</style>
+
     </div>
   );
 };
