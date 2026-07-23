@@ -229,7 +229,7 @@ const WhereFreshersGetHired: React.FC = () => {
                   </ul>
                 </div>
 
-                <div style={{ marginTop: 14, padding: 12, borderRadius: 12, background: 'rgba(245,194,107,0.06)', border: '1px solid rgba(245,194,107,0.16)' }}>
+                <div style={{ marginTop: 14, padding: 12, borderRadius: 12, background: 'linear-gradient(180deg, rgba(245,194,107,0.08), rgba(245,194,107,0.03))', border: '1px solid rgba(245,194,107,0.28)' }}>
                   <span style={{ fontSize: fs.label, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#f5c26b', fontWeight: 700 }}>
                     Ground Reality
                   </span>
