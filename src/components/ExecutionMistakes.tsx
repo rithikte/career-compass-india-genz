@@ -631,6 +631,19 @@ const ExecutionMistakes: React.FC = () => {
         .escalation-table tbody tr:hover {
           background: rgba(110,231,215,0.06);
         }
+        .rule-mobile-divider {
+          display: none;
+        }
+        @media (max-width: 640px) {
+          .rule-mobile-divider {
+            display: block;
+            height: 1px;
+            width: 100%;
+            margin: 14px 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.18) 80%, transparent 100%);
+            border: none;
+          }
+        }
         @media (max-width: 640px) {
           .recovery-table th,
           .recovery-table td,
