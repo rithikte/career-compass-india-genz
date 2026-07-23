@@ -578,6 +578,20 @@ const Skills: React.FC = () => {
         .skills-table-mobile {
           display: none;
         }
+        .skills-mobile-divider {
+          display: none;
+        }
+        @media (max-width: 640px) {
+          .skills-mobile-divider {
+            display: block;
+            grid-column: 1 / -1;
+            height: 1px;
+            width: 100%;
+            margin: 14px 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.18) 80%, transparent 100%);
+            border: none;
+          }
+        }
         @media (max-width: 860px) {
           .skills-table-header,
           .skills-table-desktop {
