@@ -273,6 +273,7 @@ const SubjectToChapter: React.FC = () => {
                     <div role="cell" data-label="Career-Critical Chapter" style={{ fontWeight: 600, color: '#f1f5f9' }}>
                       {ch.chapter}
                     </div>
+                    <div className="stc-mobile-divider" aria-hidden="true" />
                     <div role="cell" data-label="Contribution">
                       <span className="wfg-pct">
                         <span className="wfg-bar">
@@ -281,6 +282,7 @@ const SubjectToChapter: React.FC = () => {
                         {ch.contribution}%
                       </span>
                     </div>
+                    <div className="stc-mobile-divider" aria-hidden="true" />
                     <div role="cell" data-label="Practical Reason" style={{ color: textSoft }}>
                       {ch.reason}
                     </div>
@@ -476,6 +478,13 @@ const SubjectToChapter: React.FC = () => {
           inset: 0;
           background: linear-gradient(90deg, ${accentTeal}, ${accentViolet});
           border-radius: 999px;
+        }
+        .stc-mobile-divider {
+          display: none;
+          height: 1px;
+          margin: 6px 0;
+          background: linear-gradient(90deg, transparent 0%, rgba(148,163,184,0.28) 18%, rgba(148,163,184,0.28) 82%, transparent 100%);
+          border: none;
         }
 
         @media (max-width: 720px) {
