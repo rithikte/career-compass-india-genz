@@ -137,7 +137,7 @@ const BehaviorsThatMatter: React.FC = () => {
     <div
       style={{
         background:
-          'radial-gradient(1200px 600px at 10% -10%, rgba(110,231,215,0.10), transparent 60%), radial-gradient(900px 500px at 100% 0%, rgba(167,139,250,0.10), transparent 60%), #05070d',
+          'radial-gradient(1200px 600px at 10% -10%, rgba(110,231,215,0.10), transparent 60%), radial-gradient(900px 500px at 100% 0%, rgba(167,139,250,0.10), transparent 60%), #06080d',
         color: textMain,
         minHeight: '100vh',
         width: '100%',
@@ -468,7 +468,7 @@ const BehaviorsThatMatter: React.FC = () => {
             0 0 42px rgba(167,139,250,0.22),
             0 1px 0 rgba(255,255,255,0.05) inset,
             0 20px 40px -30px rgba(0,0,0,0.6);
-          transform: translateY(-1px);
+          transform: translateY(-2px);
         }
         @media (hover: none) {
           .btm-card:active {
@@ -497,6 +497,10 @@ const BehaviorsThatMatter: React.FC = () => {
           display: grid;
           grid-template-columns: minmax(110px, 1fr) minmax(140px, 1.4fr) minmax(160px, 1.6fr) minmax(130px, 1.3fr);
           gap: 8px;
+          transition: background 220ms ease;
+        }
+        .btm-table-row:hover {
+          background: rgba(110,231,215,0.06) !important;
         }
         .btm-table-mobile {
           display: none;
