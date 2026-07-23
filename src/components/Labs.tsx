@@ -956,7 +956,7 @@ const Labs: React.FC = () => {
             display: block;
             height: 1px;
             width: 100%;
-            margin: 12px 0;
+            margin: 4px 0;
             background: linear-gradient(90deg, transparent 0%, rgba(148,163,184,0.25) 20%, rgba(148,163,184,0.25) 80%, transparent 100%);
             border: none;
           }
