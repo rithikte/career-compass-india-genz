@@ -82,9 +82,9 @@ const weakeners = [
 ];
 
 const accentMap: Record<string, { ring: string; dot: string; glow: string; label: string }> = {
-  rose: { ring: 'rgba(244,114,182,0.35)', dot: '#F472B6', glow: 'rgba(244,114,182,0.18)', label: '#FBCFE8' },
-  amber: { ring: 'rgba(251,191,36,0.35)', dot: '#FBBF24', glow: 'rgba(251,191,36,0.18)', label: '#FDE68A' },
-  sky: { ring: 'rgba(56,189,248,0.35)', dot: '#38BDF8', glow: 'rgba(56,189,248,0.18)', label: '#BAE6FD' },
+  rose: { ring: 'rgba(110,231,215,0.35)', dot: '#6ee7d7', glow: 'rgba(110,231,215,0.18)', label: '#6ee7d7' },
+  amber: { ring: 'rgba(245,194,107,0.35)', dot: '#f5c26b', glow: 'rgba(245,194,107,0.18)', label: '#f5c26b' },
+  sky: { ring: 'rgba(167,139,250,0.35)', dot: '#a78bfa', glow: 'rgba(167,139,250,0.18)', label: '#a78bfa' },
 };
 
 const DomainExplore: React.FC = () => {
@@ -95,38 +95,40 @@ const DomainExplore: React.FC = () => {
           position: relative;
           overflow: hidden;
           min-height: 100%;
-          background: radial-gradient(1200px 600px at 15% -10%, rgba(56,189,248,0.10), transparent 60%),
-                      radial-gradient(900px 500px at 100% 10%, rgba(168,85,247,0.10), transparent 60%),
-                      #070B18;
-          color: #E6ECF5;
+          background: radial-gradient(1200px 600px at 15% -10%, rgba(110,231,215,0.08), transparent 60%),
+                      radial-gradient(900px 500px at 100% 10%, rgba(167,139,250,0.08), transparent 60%),
+                      #06080d;
+          color: #e7ecf3;
           border-radius: 24px;
           padding: clamp(24px, 5vw, 72px) clamp(18px, 4vw, 56px);
         }
         .ug-eyebrow {
           display: inline-flex; align-items: center; gap: 10px;
           font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
-          color: #7DD3FC; padding: 8px 14px; border-radius: 999px;
-          background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.25);
+          color: #6ee7d7; padding: 8px 14px; border-radius: 999px;
+          background: rgba(110,231,215,0.08); border: 1px solid rgba(110,231,215,0.25);
         }
-        .ug-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: #7DD3FC; box-shadow: 0 0 12px #7DD3FC; }
+        .ug-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: #6ee7d7; box-shadow: 0 0 12px #6ee7d7; }
         .ug-h1 {
           font-family: 'Poppins', 'Inter', sans-serif;
           font-weight: 700; letter-spacing: -0.02em; line-height: 1.05;
           font-size: clamp(1.9rem, 4.5vw, 3.4rem); margin: 18px 0 14px;
-          background: linear-gradient(135deg, #F8FAFC 0%, #A5B4FC 55%, #7DD3FC 100%);
+          background: linear-gradient(135deg, #e7ecf3 0%, #a5b4fc 55%, #6ee7d7 100%);
           -webkit-background-clip: text; background-clip: text; color: transparent;
         }
-        .ug-sub { max-width: 780px; color: #94A3B8; font-size: clamp(0.9rem, 1.6vw, 1rem); line-height: 1.7; }
+        .ug-sub { max-width: 780px; color: #9aa4b2; font-size: clamp(0.9rem, 1.6vw, 1rem); line-height: 1.7; }
         .ug-section-label {
           font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
-          color: #94A3B8; margin-bottom: 12px;
+          color: #9aa4b2; margin-bottom: 12px;
         }
         .ug-section-title {
           font-family: 'Poppins', sans-serif; font-weight: 600;
           font-size: clamp(1.35rem, 2.6vw, 1.9rem); letter-spacing: -0.01em;
-          color: #F1F5F9; margin-bottom: 8px;
+          margin-bottom: 8px;
+          background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+          -webkit-background-clip: text; background-clip: text; color: transparent;
         }
-        .ug-section-tag { color: #64748B; font-size: 0.9rem; margin-bottom: 28px; }
+        .ug-section-tag { color: #9aa4b2; font-size: 0.9rem; margin-bottom: 28px; }
 
         .ug-chain-grid {
           display: grid; gap: 20px;
@@ -134,19 +136,19 @@ const DomainExplore: React.FC = () => {
         }
         .ug-chain-card {
           position: relative; padding: 26px 22px 22px;
-          background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
+          background: rgba(255,255,255,0.03);
           border: 1px solid rgba(255,255,255,0.08);
           border-radius: 20px; backdrop-filter: blur(12px);
           transition: transform .35s cubic-bezier(.34,1.56,.64,1), border-color .3s, box-shadow .3s;
         }
-        .ug-chain-card:hover { transform: translateY(-4px); }
+        .ug-chain-card:hover { transform: translateY(-2px); box-shadow: 0 12px 32px -16px rgba(110,231,215,0.18), 0 12px 32px -16px rgba(167,139,250,0.14); }
         .ug-chain-num {
           font-family: 'Poppins', sans-serif; font-weight: 700;
           font-size: 12px; letter-spacing: 0.24em; opacity: 0.7;
         }
         .ug-chain-title {
           font-family: 'Poppins', sans-serif; font-weight: 600;
-          font-size: 1.15rem; color: #F8FAFC; margin: 8px 0 18px;
+          font-size: 1.15rem; color: #e7ecf3; margin: 8px 0 18px;
         }
         .ug-trigger {
           display: inline-block; padding: 8px 12px; border-radius: 10px;
@@ -160,24 +162,24 @@ const DomainExplore: React.FC = () => {
         }
         .ug-step {
           position: relative; padding: 8px 0; font-size: 0.86rem;
-          color: #CBD5E1; line-height: 1.55;
+          color: #e7ecf3; line-height: 1.55;
         }
         .ug-step::before {
           content: ''; position: absolute; left: -22px; top: 15px;
           width: 9px; height: 9px; border-radius: 50%;
-          border: 1px solid rgba(255,255,255,0.3); background: #0B1120;
+          border: 1px solid rgba(255,255,255,0.3); background: #06080d;
         }
         .ug-step.last::before { background: currentColor; box-shadow: 0 0 10px currentColor; }
         .ug-meaning {
           margin-top: 18px; padding: 12px 14px; border-radius: 12px;
           background: rgba(255,255,255,0.03); border-left: 2px solid currentColor;
-          font-size: 0.82rem; color: #E2E8F0; line-height: 1.55;
+          font-size: 0.82rem; color: #e7ecf3; line-height: 1.55;
         }
 
         .ug-panel {
           padding: clamp(24px, 3.5vw, 40px);
           border-radius: 22px;
-          background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
+          background: rgba(255,255,255,0.03);
           border: 1px solid rgba(255,255,255,0.08);
           backdrop-filter: blur(12px);
         }
@@ -187,16 +189,16 @@ const DomainExplore: React.FC = () => {
         }
         .ug-pillar {
           padding: 16px 18px; border-radius: 14px;
-          background: rgba(255,255,255,0.025);
+          background: rgba(255,255,255,0.03);
           border: 1px solid rgba(255,255,255,0.06);
-          transition: border-color .3s, transform .3s;
+          transition: border-color .3s, transform .3s, box-shadow .3s;
         }
-        .ug-pillar:hover { border-color: rgba(125,211,252,0.35); transform: translateY(-2px); }
+        .ug-pillar:hover { border-color: rgba(110,231,215,0.35); transform: translateY(-2px); box-shadow: 0 10px 28px -14px rgba(110,231,215,0.14); }
         .ug-pillar-label {
           font-family: 'Poppins', sans-serif; font-weight: 600;
-          font-size: 0.92rem; color: #F1F5F9; margin-bottom: 6px;
+          font-size: 0.92rem; color: #e7ecf3; margin-bottom: 6px;
         }
-        .ug-pillar-reason { font-size: 0.8rem; color: #94A3B8; line-height: 1.5; }
+        .ug-pillar-reason { font-size: 0.8rem; color: #9aa4b2; line-height: 1.5; }
 
         .ug-two-col {
           display: grid; gap: 20px;
@@ -205,44 +207,46 @@ const DomainExplore: React.FC = () => {
         .ug-list { list-style: none; padding: 0; margin: 0; }
         .ug-list li {
           padding: 10px 0 10px 22px; position: relative;
-          font-size: 0.88rem; color: #CBD5E1; line-height: 1.6;
+          font-size: 0.88rem; color: #e7ecf3; line-height: 1.6;
           border-bottom: 1px dashed rgba(255,255,255,0.06);
+          transition: background .2s;
         }
+        .ug-list li:hover { background: rgba(110,231,215,0.06); }
         .ug-list li:last-child { border-bottom: none; }
         .ug-list li::before {
           content: ''; position: absolute; left: 0; top: 18px;
           width: 8px; height: 1px; background: currentColor;
         }
-        .ug-strengthen { color: #86EFAC; }
-        .ug-weaken { color: #FCA5A5; }
+        .ug-strengthen { color: #6ee7d7; }
+        .ug-weaken { color: #f5c26b; }
 
         .ug-takeaway {
           margin-top: clamp(32px, 4vw, 48px);
           padding: clamp(24px, 4vw, 40px);
           border-radius: 22px; text-align: center;
-          background: linear-gradient(135deg, rgba(56,189,248,0.10), rgba(168,85,247,0.10));
-          border: 1px solid rgba(125,211,252,0.25);
+          background: linear-gradient(135deg, rgba(110,231,215,0.10), rgba(167,139,250,0.10));
+          border: 1px solid rgba(110,231,215,0.25);
           position: relative; overflow: hidden;
         }
         .ug-takeaway::before {
           content: ''; position: absolute; inset: 0;
-          background: radial-gradient(600px 200px at 50% 0%, rgba(125,211,252,0.15), transparent);
+          background: radial-gradient(600px 200px at 50% 0%, rgba(110,231,215,0.15), transparent);
           pointer-events: none;
         }
         .ug-takeaway-label {
           font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase;
-          color: #7DD3FC; margin-bottom: 14px;
+          color: #6ee7d7; margin-bottom: 14px;
         }
         .ug-takeaway-text {
           font-family: 'Poppins', sans-serif; font-weight: 500;
           font-size: clamp(0.7875rem, 1.8vw, 1.125rem); line-height: 1.5;
-          color: #F8FAFC; letter-spacing: -0.01em; max-width: 820px; margin: 0 auto;
+          color: #e7ecf3; letter-spacing: -0.01em; max-width: 820px; margin: 0 auto;
         }
 
         .ug-block { margin-top: clamp(40px, 6vw, 72px); }
-        .ug-final-copy { color: #CBD5E1; font-size: 0.92rem; line-height: 1.75; }
+        .ug-final-copy { color: #e7ecf3; font-size: 0.92rem; line-height: 1.75; }
         .ug-final-copy p { margin-bottom: 14px; }
-        .ug-final-copy strong { color: #F1F5F9; font-weight: 600; }
+        .ug-final-copy strong { color: #e7ecf3; font-weight: 600; }
 
         @media (prefers-reduced-motion: reduce) {
           .ug-domain-explore * { animation: none !important; transition: none !important; }
