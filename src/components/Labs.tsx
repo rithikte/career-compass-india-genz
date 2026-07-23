@@ -465,30 +465,37 @@ const Labs: React.FC = () => {
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
-                  <div>
-                    <EyebrowLabel small>Real Work Activity Simulated</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{lab.simulated}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Primary Subject Owner</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{lab.ownerSubject}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Why This Subject Owns This Lab</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{lab.ownerReason}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Encounter Frequency</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{lab.frequency}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Workplace Exposure Level</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{lab.exposure}</p>
-                  </div>
-                  <div>
-                    <EyebrowLabel small>Most Valuable During</EyebrowLabel>
-                    <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{lab.valuableDuring}</p>
-                  </div>
+                  {[
+                    <div key="sim">
+                      <EyebrowLabel small>Real Work Activity Simulated</EyebrowLabel>
+                      <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{lab.simulated}</p>
+                    </div>,
+                    <div key="owner">
+                      <EyebrowLabel small>Primary Subject Owner</EyebrowLabel>
+                      <p style={{ margin: '8px 0 0', fontSize: fs.body, color: textSoft, lineHeight: 1.6 }}>{lab.ownerSubject}</p>
+                    </div>,
+                    <div key="ownerReason">
+                      <EyebrowLabel small>Why This Subject Owns This Lab</EyebrowLabel>
+                      <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{lab.ownerReason}</p>
+                    </div>,
+                    <div key="freq">
+                      <EyebrowLabel small>Encounter Frequency</EyebrowLabel>
+                      <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{lab.frequency}</p>
+                    </div>,
+                    <div key="exposure">
+                      <EyebrowLabel small>Workplace Exposure Level</EyebrowLabel>
+                      <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{lab.exposure}</p>
+                    </div>,
+                    <div key="valuable">
+                      <EyebrowLabel small>Most Valuable During</EyebrowLabel>
+                      <p style={{ margin: '8px 0 0', fontSize: fs.bodySm, color: textSoft, lineHeight: 1.6 }}>{lab.valuableDuring}</p>
+                    </div>,
+                  ].map((child, i, arr) => (
+                    <React.Fragment key={`top-${i}`}>
+                      {child}
+                      {i !== arr.length - 1 && <div className="labs-mobile-divider" />}
+                    </React.Fragment>
+                  ))}
                 </div>
 
                 <div
