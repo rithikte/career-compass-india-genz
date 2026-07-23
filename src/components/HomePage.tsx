@@ -132,7 +132,17 @@ export const HomePage = () => {
     }, 500);
     return () => clearTimeout(timer);
   }, []);
-  return <div className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50/30 min-h-screen overflow-hidden">
+  return <div className="home-responsive relative bg-gradient-to-br from-slate-50 via-white to-blue-50/30 min-h-screen overflow-hidden w-full px-[11.2px] md:px-[16.8px] lg:px-[22.4px]">
+      <style>{`
+        .home-responsive h1 { font-size: clamp(30.4px, 2.4vw + 22px, 54.4px); line-height: 1.15; }
+        .home-responsive h2 { font-size: clamp(22px, 1.8vw + 16px, 40px); line-height: 1.2; }
+        .home-responsive h3 { font-size: clamp(16px, 0.8vw + 13px, 24px); line-height: 1.25; }
+        .home-responsive p, .home-responsive li { font-size: clamp(11px, 0.35vw + 10px, 15px); line-height: 1.55; }
+        .home-responsive .text-xs, .home-responsive [class*="text-[10"], .home-responsive [class*="text-[11"] { font-size: clamp(8px, 0.2vw + 7.5px, 11px) !important; }
+        @media (min-width: 768px) and (max-width: 1023px) {
+          .home-responsive h1 { font-size: 34.6px; }
+        }
+      `}</style>
       {/* Subtle Background Elements - Reduced Visual Noise */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float-gentle"></div>
