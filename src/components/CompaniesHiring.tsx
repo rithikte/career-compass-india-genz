@@ -446,7 +446,7 @@ const CompaniesHiring: React.FC = () => {
                         fontSize: fs.labelMd,
                         background: i === 0 ? 'rgba(52,211,153,0.12)' : i === 1 ? 'rgba(245,194,107,0.12)' : 'rgba(245,194,107,0.12)',
                         border: `1px solid ${i === 0 ? 'rgba(52,211,153,0.35)' : i === 1 ? 'rgba(245,194,107,0.35)' : 'rgba(245,194,107,0.35)'}`,
-                        color: i === 0 ? success : i === 1 ? 'accentAmber' : warn,
+                        color: i === 0 ? success : i === 1 ? accentAmber : warn,
                       }}
                     >
                       {row.interest}
