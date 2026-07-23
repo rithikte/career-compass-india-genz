@@ -197,7 +197,12 @@ const DomainChapters: React.FC = () => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.6, delay: 0.08, ease: [0.22, 1, 0.36, 1] as const }}
             className="mt-4 font-bold dc-headline-gradient"
-            style={{ ...headingFont, fontSize: 'clamp(1.9rem, 5vw, 3.2rem)', lineHeight: 1.1 }}
+            style={{
+              fontFamily: "'Poppins', 'Inter', sans-serif",
+              fontSize: 'clamp(1.9rem, 4.5vw, 3.4rem)',
+              letterSpacing: '-0.02em',
+              lineHeight: 1.05,
+            }}
           >
             Pick the chapters you are interested in
           </motion.h1>
