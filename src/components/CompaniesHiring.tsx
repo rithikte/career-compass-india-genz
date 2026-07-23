@@ -954,6 +954,17 @@ const CompaniesHiring: React.FC = () => {
       </div>
 
       <style>{`
+        .companies-section-title {
+          font-family: 'Poppins', 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+          font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+          line-height: 1.12;
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
         .hiring-card {
           position: relative;
           outline: none;
@@ -970,7 +981,7 @@ const CompaniesHiring: React.FC = () => {
             0 0 42px rgba(167,139,250,0.22),
             0 1px 0 rgba(255,255,255,0.05) inset,
             0 20px 40px -30px rgba(0,0,0,0.6);
-          transform: translateY(-1px);
+          transform: translateY(-2px);
         }
         @media (hover: none) {
           .hiring-card:active {
@@ -984,6 +995,12 @@ const CompaniesHiring: React.FC = () => {
         .attitude-table td, .attitude-table th { word-break: break-word; }
         .fear-table td, .fear-table th { word-break: break-word; }
         .badhire-table td, .badhire-table th { word-break: break-word; }
+        .attitude-table tbody tr,
+        .fear-table tbody tr,
+        .badhire-table tbody tr { transition: background 200ms ease; }
+        .attitude-table tbody tr:hover,
+        .fear-table tbody tr:hover,
+        .badhire-table tbody tr:hover { background: rgba(110,231,215,0.06); }
         @media (max-width: 640px) {
           .attitude-table { font-size: 12px !important; }
           .attitude-table th, .attitude-table td { padding: 10px 8px !important; }
@@ -1003,8 +1020,6 @@ const CompaniesHiring: React.FC = () => {
           .badhire-table { font-size: 11px !important; }
           .badhire-table th, .badhire-table td { padding: 6px 4px !important; }
         }
-
-
       `}</style>
     </div>
   );
