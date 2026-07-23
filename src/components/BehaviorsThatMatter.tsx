@@ -181,19 +181,7 @@ const BehaviorsThatMatter: React.FC = () => {
         </div>
 
         {/* Headline */}
-        <h1
-          style={{
-            fontSize: fs.h1,
-            lineHeight: 1.05,
-            fontWeight: 700,
-            letterSpacing: '-0.02em',
-            margin: 0,
-            maxWidth: '26ch',
-            background: 'linear-gradient(180deg,#ffffff 0%, #cbd5e1 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}
-        >
+        <h1 className="btm-headline-gradient">
           Behaviors That Separate Strong And Weak Freshers
         </h1>
 
@@ -438,6 +426,20 @@ const BehaviorsThatMatter: React.FC = () => {
       </div>
 
       <style>{`
+        .btm-headline-gradient {
+          font-size: ${fs.h1};
+          line-height: 1.05;
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          margin: 0;
+          max-width: 26ch;
+          font-family: Poppins, Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+          background: linear-gradient(135deg, #F8FAFC 0%, #A5B4FC 55%, #7DD3FC 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          color: transparent;
+        }
         .btm-card {
           position: relative;
           outline: none;
