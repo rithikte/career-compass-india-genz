@@ -364,7 +364,20 @@ const SectionTitle: React.FC<{ eyebrow?: string; title: string }> = ({ eyebrow, 
         {eyebrow}
       </div>
     )}
-    <div style={{ marginTop: eyebrow ? 6 : 0, fontSize: fs.h2, fontWeight: 700, color: '#f8fafc', letterSpacing: '-0.01em' }}>
+    <div
+      style={{
+        marginTop: eyebrow ? 6 : 0,
+        fontFamily: "'Poppins', 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
+        fontSize: 'clamp(1.35rem, 2.6vw, 1.9rem)',
+        fontWeight: 600,
+        letterSpacing: '-0.02em',
+        lineHeight: 1.15,
+        background: 'linear-gradient(180deg, #fff 0%, #b7c0cc 100%)',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+        backgroundClip: 'text',
+      }}
+    >
       {title}
     </div>
   </div>
