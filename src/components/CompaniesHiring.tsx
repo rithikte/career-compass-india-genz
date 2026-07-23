@@ -263,19 +263,20 @@ const CompaniesHiring: React.FC = () => {
         </div>
 
         {/* Headline */}
-        <h1
-          style={{
-            fontSize: fs.h1,
-            lineHeight: 1.05,
-            fontWeight: 700,
-            letterSpacing: '-0.02em',
-            margin: 0,
-            maxWidth: '30ch',
-            background: 'linear-gradient(180deg,#ffffff 0%, #cbd5e1 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}
-        >
+        <style>{`
+          .hiring-headline-gradient {
+            font-family: 'Poppins', 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            font-size: clamp(1.9rem, 4.5vw, 3.4rem);
+            line-height: 1.05;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #F8FAFC 0%, #A5B4FC 55%, #7DD3FC 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+        `}</style>
+        <h1 className="hiring-headline-gradient" style={{ margin: 0, maxWidth: '30ch' }}>
           How Companies Actually Think Before Hiring
         </h1>
 
