@@ -574,7 +574,7 @@ const MajorProjects: React.FC = () => {
               </thead>
               <tbody>
                 {connectionRows.map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid rgba(148,163,184,0.10)' }}>
+                  <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                     <td style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.project}</td>
                     <td style={{ padding: '12px 14px', color: textSoft }}>{row.subject}</td>
                     <td style={{ padding: '12px 14px', color: accentTeal }}>{row.skill}</td>
