@@ -2,16 +2,18 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const COLORS = {
-  bg: '#0A1020',
-  card: '#0F1730',
-  cardSoft: 'rgba(255,255,255,0.03)',
-  text: '#F5F7FA',
-  muted: '#9BA6BF',
-  mutedSoft: 'rgba(245,247,250,0.55)',
+  bg: '#06080d',
+  card: 'rgba(255,255,255,0.03)',
+  cardSoft: 'rgba(255,255,255,0.05)',
+  text: '#e7ecf3',
+  muted: '#9aa4b2',
+  mutedSoft: 'rgba(231,236,243,0.55)',
   border: 'rgba(255,255,255,0.08)',
   borderStrong: 'rgba(255,255,255,0.14)',
-  accent: '#6DD4C8',
-  accentDeep: '#2DD4BF',
+  accent: '#6ee7d7',
+  accentDeep: '#34d399',
+  purple: '#a78bfa',
+  amber: '#f5c26b',
 };
 
 const headingFont = { fontFamily: "'Satoshi', 'Inter', sans-serif" };
@@ -111,6 +113,13 @@ const RoleProfile: React.FC<RoleProfileProps> = ({ onExplore }) => {
         }
         @media (prefers-reduced-motion: reduce) {
           .ug-role-title-accent { animation: none !important; }
+        }
+
+        .role-section-headline {
+          background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
         }
 
         .ug-tile {
@@ -398,7 +407,7 @@ const RoleProfile: React.FC<RoleProfileProps> = ({ onExplore }) => {
               Career Hierarchy
             </span>
             <h2
-              className="mt-2 font-semibold"
+              className="mt-2 font-semibold role-section-headline"
               style={{
                 ...headingFont,
                 fontSize: 'clamp(1.35rem, 2.4vw, 1.7rem)',
@@ -513,7 +522,7 @@ const RoleProfile: React.FC<RoleProfileProps> = ({ onExplore }) => {
               Role Essence
             </span>
             <h2
-              className="mt-2 font-semibold"
+              className="mt-2 font-semibold role-section-headline"
               style={{
                 ...headingFont,
                 fontSize: 'clamp(1.35rem, 2.4vw, 1.7rem)',
@@ -625,7 +634,7 @@ const RoleProfile: React.FC<RoleProfileProps> = ({ onExplore }) => {
               Day One
             </span>
             <h2
-              className="mt-2 font-semibold"
+              className="mt-2 font-semibold role-section-headline"
               style={{
                 ...headingFont,
                 fontSize: 'clamp(1.35rem, 2.4vw, 1.7rem)',
