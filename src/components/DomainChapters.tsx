@@ -130,7 +130,7 @@ const DomainChapters: React.FC = () => {
       <style>{`
         .ug-domain-chapters { position: relative; overflow: hidden; }
         .dc-headline-gradient {
-          background: linear-gradient(90deg, #18B7B8, #25757F, #061B38);
+          background: linear-gradient(135deg, #F8FAFC 0%, #A5B4FC 55%, #7DD3FC 100%);
           -webkit-background-clip: text;
           background-clip: text;
           -webkit-text-fill-color: transparent;
