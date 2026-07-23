@@ -301,12 +301,9 @@ const RoleProfile: React.FC<RoleProfileProps> = ({ onExplore }) => {
               hidden: {},
               visible: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
             }}
-            className="ug-role-title mt-5 font-bold"
+            className="ug-role-title mt-5 font-bold role-headline"
             style={{
               ...headingFont,
-              fontSize: 'clamp(2.2rem, 6vw, 4.2rem)',
-              lineHeight: 1.02,
-              letterSpacing: '-0.02em',
               display: 'inline-block',
               position: 'relative',
             }}
