@@ -240,7 +240,7 @@ const MostImportantSubjects: React.FC = () => {
 
         {/* Final 5 subjects table */}
         <SectionTitle eyebrow="Final Five" title="Final 5 Subjects For This Career" />
-        <div className="wfg-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+        <div className="mis-f5-desktop wfg-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
           <div className="wfg-table-final" role="table" aria-label="Final five subjects for this career">
             <div className="wfg-thead" role="row">
               <div role="columnheader">Rank</div>
@@ -263,6 +263,26 @@ const MostImportantSubjects: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Mobile redesign - Final 5 Subjects */}
+        <div className="mis-f5-mobile" role="list" aria-label="Final five subjects for this career">
+          {finalSubjects.map((r) => (
+            <div className="mis-f5-card wfg-card" tabIndex={0} role="listitem" key={r.rank} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+              <div className="mis-f5-accent" aria-hidden />
+              <div className="mis-f5-inner">
+                <div className="mis-f5-head">
+                  <span className="mis-f5-rank">#{r.rank}</span>
+                  <div className="mis-f5-title">{r.subject}</div>
+                </div>
+                <div className="mis-f5-divider" aria-hidden />
+                <div className="mis-f5-why">
+                  <span className="mis-kab-metric-label">Why It Matters</span>
+                  <p>{r.why}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Reality Check */}
