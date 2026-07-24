@@ -416,6 +416,8 @@ const MostImportantSubjects: React.FC = () => {
           border-radius: 999px;
         }
 
+        .mis-kab-mobile { display: none; }
+
         @media (max-width: 720px) {
           .wfg-table .wfg-thead,
           .wfg-table-final .wfg-thead { display: none; }
@@ -435,6 +437,111 @@ const MostImportantSubjects: React.FC = () => {
             font-weight: 700;
             margin-bottom: 2px;
           }
+          .mis-kab-desktop { display: none !important; }
+          .mis-kab-mobile { display: grid; gap: 14px; margin-top: 4px; }
+        }
+
+        .mis-kab-card { position: relative; }
+        .mis-kab-accent {
+          position: absolute;
+          top: 0; left: 0; right: 0;
+          height: 2px;
+          background: linear-gradient(90deg, transparent, ${accentTeal} 30%, ${accentViolet} 70%, transparent);
+          opacity: 0.85;
+        }
+        .mis-kab-inner {
+          padding: 16px 16px 18px;
+          display: grid;
+          gap: 12px;
+        }
+        .mis-kab-head {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+        .mis-kab-index {
+          font-family: 'Poppins', 'Inter', sans-serif;
+          font-weight: 700;
+          font-size: ${fs.body};
+          color: ${accentTeal};
+          background: rgba(110,231,215,0.10);
+          border: 1px solid rgba(110,231,215,0.35);
+          border-radius: 999px;
+          min-width: 34px;
+          height: 26px;
+          padding: 0 10px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          letter-spacing: 0.06em;
+          font-variant-numeric: tabular-nums;
+        }
+        .mis-kab-title {
+          font-family: 'Poppins', 'Inter', sans-serif;
+          font-weight: 600;
+          color: #f1f5f9;
+          font-size: ${fs.body};
+          line-height: 1.35;
+          flex: 1;
+        }
+        .mis-kab-divider {
+          height: 1px;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.18) 80%, transparent);
+        }
+        .mis-kab-metric-label {
+          display: block;
+          font-size: ${fs.label};
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: ${muted};
+          font-weight: 700;
+          margin-bottom: 8px;
+        }
+        .mis-kab-metric-row {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+        .mis-kab-progress {
+          flex: 1;
+          height: 6px;
+          border-radius: 999px;
+          background: rgba(110,231,215,0.12);
+          overflow: hidden;
+          position: relative;
+        }
+        .mis-kab-progress span {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(90deg, ${accentTeal}, ${accentViolet});
+          border-radius: 999px;
+        }
+        .mis-kab-pct {
+          font-variant-numeric: tabular-nums;
+          font-weight: 700;
+          color: ${accentTeal};
+          font-size: ${fs.body};
+          min-width: 44px;
+          text-align: right;
+        }
+        .mis-kab-reality p {
+          margin: 0;
+          color: ${textSoft};
+          font-size: ${fs.bodySm};
+          line-height: 1.6;
+        }
+        .mis-kab-total {
+          margin-top: 4px;
+          padding: 10px 14px;
+          text-align: right;
+          font-size: ${fs.label};
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: ${muted};
+          font-weight: 700;
+          border: 1px solid rgba(255,255,255,0.14);
+          border-radius: 12px;
+          background: rgba(255,255,255,0.04);
         }
       `}</style>
     </div>
