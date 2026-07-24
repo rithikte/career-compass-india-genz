@@ -137,7 +137,7 @@ const SubjectsRecognition: React.FC = () => {
 
         {/* Recognition table */}
         <SectionTitle eyebrow="Subject Mapping" title="Subjects Recognition Table" />
-        <div className="wfg-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+        <div className="sr-desktop wfg-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
           <div className="wfg-table" role="table" aria-label="Subjects recognition table">
             <div className="wfg-thead" role="row">
               <div role="columnheader">Subject</div>
@@ -174,6 +174,40 @@ const SubjectsRecognition: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Mobile redesign - Subjects Recognition */}
+        <div className="sr-mobile" role="list" aria-label="Subjects recognition table">
+          {recognitionData.map((r, i) => {
+            const fields: { label: string; value: string; warn?: boolean }[] = [
+              { label: 'Alternate Names', value: r.alternate },
+              { label: 'What It Teaches', value: r.teaches },
+              { label: 'Semester', value: r.semester },
+              { label: 'Search For', value: r.searchFor },
+              { label: 'Key Topics', value: r.topics },
+              { label: 'Confused With', value: r.confused, warn: true },
+            ];
+            return (
+              <div className="sr-card wfg-card" tabIndex={0} role="listitem" key={r.subject} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+                <div className="sr-accent" aria-hidden />
+                <div className="sr-inner">
+                  <div className="sr-head">
+                    <span className="sr-index">{String(i + 1).padStart(2, '0')}</span>
+                    <div className="sr-title">{r.subject}</div>
+                  </div>
+                  {fields.map((f, k) => (
+                    <React.Fragment key={f.label}>
+                      <div className="sr-divider" aria-hidden />
+                      <div className={`sr-field${f.warn ? ' sr-field-warn' : ''}`}>
+                        <span className="sr-field-label">{f.label}</span>
+                        <p>{f.value}</p>
+                      </div>
+                    </React.Fragment>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         {/* Takeaway cards */}
