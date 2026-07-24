@@ -293,7 +293,119 @@ const styles = `
     min-width: 40%;
   }
 }
+
+/* Mobile cards for Time Distribution */
+.fdw-time-desktop { display: block; }
+.fdw-time-mobile { display: none; }
+
+.fdw-time-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 12px;
+  transition: transform 220ms ease, box-shadow 260ms ease, border-color 220ms ease, background 220ms ease;
+}
+.fdw-time-card:hover, .fdw-time-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(110,231,215,0.35);
+  background: var(--panel-2);
+  box-shadow:
+    0 0 0 1px rgba(110,231,215,0.18) inset,
+    0 10px 30px -12px rgba(110,231,215,0.25),
+    0 0 40px -6px rgba(167,139,250,0.18);
+}
+
+.fdw-time-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.fdw-time-index {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #06080d;
+  background: var(--accent);
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+
+.fdw-time-name {
+  flex: 1 1 auto;
+  font-size: clamp(13px, 3.2vw, 15px);
+  font-weight: 600;
+  color: #e7ecf3;
+  line-height: 1.3;
+}
+
+.fdw-time-value {
+  color: var(--accent);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(13px, 3.5vw, 15px);
+  flex-shrink: 0;
+}
+
+.fdw-time-bar {
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(110,231,215,0.12);
+  overflow: hidden;
+  margin: 12px 0 0;
+}
+.fdw-time-bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 999px;
+}
+
+.fdw-time-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(148,163,184,0.25), transparent);
+  margin: 12px 0;
+}
+
+.fdw-time-reality {
+  font-size: clamp(12px, 3vw, 14px);
+  line-height: 1.55;
+  color: #d5dbe4;
+}
+
+.fdw-time-reality-label {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.fdw-time-total {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 4px;
+  font-size: clamp(9px, 2.5vw, 11px);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .fdw-time-desktop { display: none; }
+  .fdw-time-mobile { display: block; }
+}
 `;
+
 
 const timeDist = [
   ['Reinforcement verification', '30%', 30, 'Most repeated RCC checking work.'],
