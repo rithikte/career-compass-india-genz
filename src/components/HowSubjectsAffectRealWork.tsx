@@ -467,6 +467,7 @@ const HowSubjectsAffectRealWork: React.FC = () => {
         .wfg-row:hover { background: rgba(110,231,215,0.06); }
 
         .hsw-swc-mobile { display: none; }
+        .hsw-dwm-mobile { display: none; }
 
         @media (max-width: 900px) {
           .wfg-table-subject .wfg-thead,
