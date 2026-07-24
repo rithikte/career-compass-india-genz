@@ -336,7 +336,7 @@ const DomainChapters: React.FC = () => {
         </div>
 
         <div
-          className="mt-10 grid gap-6"
+          className="dc-desktop mt-10 grid gap-6"
           style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))' }}
         >
           {SECTIONS.map((section, sectionIndex) => {
