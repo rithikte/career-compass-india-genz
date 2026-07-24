@@ -486,6 +486,68 @@ const DomainChapters: React.FC = () => {
           })}
         </div>
 
+        <div className="dc-mobile mt-8" style={{ display: 'none', gap: 16, gridTemplateColumns: '1fr' }}>
+          {SECTIONS.map((section, sectionIndex) => {
+            const accent = SECTION_ACCENTS[sectionIndex % SECTION_ACCENTS.length];
+            return (
+              <motion.div
+                key={`m-${section.id}`}
+                custom={sectionIndex}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.1 }}
+                variants={cardVariants}
+                className="dc-m-card"
+                style={{
+                  ['--dc-accent' as any]: accent,
+                  ['--dc-accent-bg' as any]: `${accent}18`,
+                  ['--dc-accent-soft' as any]: `${accent}55`,
+                }}
+              >
+                <span className="dc-m-section-label">Section {section.id}</span>
+                <h3 className="dc-m-title">{section.title}</h3>
+
+                {section.subjects.map((subject, si) => (
+                  <div key={`m-${section.id}-${si}`} className="dc-m-subject">
+                    <div className="dc-m-subject-head">
+                      <span className="dc-m-subject-num">{String(si + 1).padStart(2, '0')}</span>
+                      <span className="dc-m-subject-name">{subject.name}</span>
+                    </div>
+                    <div>
+                      {subject.chapters.map((ch, ci) => {
+                        const chapKey = `m-${section.id}-${si}-${ci}`;
+                        const isOpen = expanded.has(chapKey);
+                        return (
+                          <div key={ci} className="dc-m-chap">
+                            <div className="dc-m-chap-title">{ch.title}</div>
+                            <button
+                              type="button"
+                              onClick={() => toggleKey(chapKey)}
+                              aria-expanded={isOpen}
+                              aria-controls={`chap-tags-${chapKey}`}
+                              className="ug-chap-toggle mt-1.5 inline-flex items-center gap-1.5 rounded-md px-1.5 py-0.5 text-[0.62rem] font-medium uppercase tracking-wider"
+                              style={{ ...techFont, color: accent, background: 'transparent' }}
+                            >
+                              Also Called
+                              <ChevronDown size={12} className="ug-chap-chevron" data-open={isOpen} style={{ color: accent }} />
+                            </button>
+                            <div id={`chap-tags-${chapKey}`} className="ug-chap-tags-wrap" data-open={isOpen}>
+                              <div className="dc-m-chap-alt">
+                                <span className="dc-m-chap-alt-label">Aka</span>
+                                <span>{ch.tags}</span>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ))}
+              </motion.div>
+            );
+          })}
+        </div>
+
       </div>
     </div>
   );
