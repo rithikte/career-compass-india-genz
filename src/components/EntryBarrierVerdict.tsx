@@ -203,7 +203,7 @@ const EntryBarrierVerdict: React.FC = () => {
 
         {/* Entry Proof Matrix */}
         <SectionTitle title="Entry Proof Matrix" />
-        <div className="ebv-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+        <div className="ebv-card ebv-pm-desktop" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
           <div className="ebv-table ebv-table-2" role="table" aria-label="Entry proof matrix">
             <div className="ebv-thead" role="row">
               <div role="columnheader">Factor</div>
@@ -219,6 +219,29 @@ const EntryBarrierVerdict: React.FC = () => {
               );
             })}
           </div>
+        </div>
+
+        {/* Mobile: Entry Proof Matrix redesigned cards */}
+        <div className="ebv-pm-mobile" aria-label="Entry proof matrix mobile">
+          {proofMatrix.map((r, i) => {
+            const c = evidenceColor(r.evidence);
+            return (
+              <div className="ebv-card ebv-bd-card" tabIndex={0} key={r.factor} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+                <div className="ebv-bd-accent" style={{ background: `linear-gradient(90deg, ${c.fg}, transparent)` }} />
+                <div className="ebv-bd-body">
+                  <div className="ebv-bd-head">
+                    <span className="ebv-bd-index" style={{ color: c.fg, borderColor: c.bd, background: c.bg }}>
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <div className="ebv-bd-title">{r.factor}</div>
+                  </div>
+                  <div className="ebv-bd-divider" aria-hidden />
+                  <div className="ebv-bd-eyebrow">Evidence Level</div>
+                  <div><span style={pill(c)}>{r.evidence}</span></div>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         {/* Biggest Entry Obstacles + Easier */}
@@ -310,7 +333,7 @@ const EntryBarrierVerdict: React.FC = () => {
         .ebv-row:last-child { border-bottom: none; }
         .ebv-row:hover { background: rgba(148,163,184,0.04); }
 
-        .ebv-bd-mobile { display: none; }
+        .ebv-bd-mobile, .ebv-pm-mobile { display: none; }
 
         @media (max-width: 720px) {
           .ebv-table .ebv-thead { display: none; }
@@ -330,8 +353,8 @@ const EntryBarrierVerdict: React.FC = () => {
             font-weight: 700;
             margin-bottom: 2px;
           }
-          .ebv-bd-desktop { display: none; }
-          .ebv-bd-mobile {
+          .ebv-bd-desktop, .ebv-pm-desktop { display: none; }
+          .ebv-bd-mobile, .ebv-pm-mobile {
             display: grid;
             gap: 12px;
             margin-top: 4px;
