@@ -352,7 +352,7 @@ const ExecutionMistakes: React.FC = () => {
         {/* Recovery Table */}
         <SectionTitle eyebrow="Failure Response" title="Common Execution Failure Recovery Table" className="mistake-section-title" />
         <div className="mistake-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
-          <table className="recovery-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
+          <table className="recovery-table recovery-table-desktop" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
             <thead>
               <tr>
                 {[
@@ -416,6 +416,58 @@ const ExecutionMistakes: React.FC = () => {
               ))}
             </tbody>
           </table>
+
+          <div className="recovery-table-mobile">
+            {recoveryRows.map((row, i) => (
+              <div key={i} className="rec-card">
+                <div className="rec-card-accent" aria-hidden />
+                <div className="rec-card-inner">
+                  <div className="rec-card-header">
+                    <span className="rec-index">{String(i + 1).padStart(2, '0')}</span>
+                    <div className="rec-title-wrap">
+                      <div className="rec-mistake">{row.mistake}</div>
+                      <span className="rec-risk">{row.risk}</span>
+                    </div>
+                  </div>
+
+                  <div className="rec-field">
+                    <span className="rec-label">How It Is Usually Detected</span>
+                    <span className="rec-value">{row.detected}</span>
+                  </div>
+                  <div className="rec-divider" />
+
+                  <div className="rec-field">
+                    <span className="rec-label">Fresher Responsibility</span>
+                    <span className="rec-value rec-value-teal">{row.responsibility}</span>
+                  </div>
+                  <div className="rec-divider" />
+
+                  <div className="rec-field">
+                    <span className="rec-label">Possible Consequence</span>
+                    <span className="rec-value">{row.consequence}</span>
+                  </div>
+                  <div className="rec-divider" />
+
+                  <div className="rec-field">
+                    <span className="rec-label">Immediate Action</span>
+                    <span className="rec-value rec-value-success">{row.action}</span>
+                  </div>
+                  <div className="rec-divider" />
+
+                  <div className="rec-field">
+                    <span className="rec-label">Trust Impact</span>
+                    <span className="rec-value">{row.trustImpact}</span>
+                  </div>
+                  <div className="rec-divider" />
+
+                  <div className="rec-field">
+                    <span className="rec-label">What NOT To Do</span>
+                    <span className="rec-value rec-value-warn">{row.whatNotToDo}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Escalation Judgment Guide */}
