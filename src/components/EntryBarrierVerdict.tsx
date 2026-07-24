@@ -157,7 +157,7 @@ const EntryBarrierVerdict: React.FC = () => {
 
         {/* Entry Barrier Breakdown */}
         <SectionTitle title="Entry Barrier Breakdown" />
-        <div className="ebv-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+        <div className="ebv-card ebv-bd-desktop" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
           <div className="ebv-table" role="table" aria-label="Entry barrier breakdown">
             <div className="ebv-thead" role="row">
               <div role="columnheader">Entry Factor</div>
@@ -175,6 +175,30 @@ const EntryBarrierVerdict: React.FC = () => {
               );
             })}
           </div>
+        </div>
+
+        {/* Mobile: Entry Barrier Breakdown redesigned cards */}
+        <div className="ebv-bd-mobile" aria-label="Entry barrier breakdown mobile">
+          {breakdownData.map((r, i) => {
+            const c = ratingColor(r.rating);
+            return (
+              <div className="ebv-card ebv-bd-card" tabIndex={0} key={r.factor} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+                <div className="ebv-bd-accent" style={{ background: `linear-gradient(90deg, ${c.fg}, transparent)` }} />
+                <div className="ebv-bd-body">
+                  <div className="ebv-bd-head">
+                    <span className="ebv-bd-index" style={{ color: c.fg, borderColor: c.bd, background: c.bg }}>
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <div className="ebv-bd-title">{r.factor}</div>
+                    <span style={pill(c)}>{r.rating}</span>
+                  </div>
+                  <div className="ebv-bd-divider" aria-hidden />
+                  <div className="ebv-bd-eyebrow">Simple Why</div>
+                  <div className="ebv-bd-why">{r.why}</div>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         {/* Entry Proof Matrix */}
