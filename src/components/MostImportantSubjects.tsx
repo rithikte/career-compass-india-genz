@@ -240,7 +240,7 @@ const MostImportantSubjects: React.FC = () => {
 
         {/* Final 5 subjects table */}
         <SectionTitle eyebrow="Final Five" title="Final 5 Subjects For This Career" />
-        <div className="wfg-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+        <div className="mis-f5-desktop wfg-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
           <div className="wfg-table-final" role="table" aria-label="Final five subjects for this career">
             <div className="wfg-thead" role="row">
               <div role="columnheader">Rank</div>
@@ -263,6 +263,26 @@ const MostImportantSubjects: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Mobile redesign - Final 5 Subjects */}
+        <div className="mis-f5-mobile" role="list" aria-label="Final five subjects for this career">
+          {finalSubjects.map((r) => (
+            <div className="mis-f5-card wfg-card" tabIndex={0} role="listitem" key={r.rank} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+              <div className="mis-f5-accent" aria-hidden />
+              <div className="mis-f5-inner">
+                <div className="mis-f5-head">
+                  <span className="mis-f5-rank">#{r.rank}</span>
+                  <div className="mis-f5-title">{r.subject}</div>
+                </div>
+                <div className="mis-f5-divider" aria-hidden />
+                <div className="mis-f5-why">
+                  <span className="mis-kab-metric-label">Why It Matters</span>
+                  <p>{r.why}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Reality Check */}
@@ -417,17 +437,16 @@ const MostImportantSubjects: React.FC = () => {
         }
 
         .mis-kab-mobile { display: none; }
+        .mis-f5-mobile { display: none; }
 
         @media (max-width: 720px) {
-          .wfg-table .wfg-thead,
-          .wfg-table-final .wfg-thead { display: none; }
-          .wfg-table .wfg-row,
-          .wfg-table-final .wfg-row {
+          .wfg-table .wfg-thead { display: none; }
+          .wfg-table .wfg-row {
             grid-template-columns: 1fr;
             gap: 6px;
             padding: 14px 14px;
           }
-          .wfg-row [role="cell"]::before {
+          .wfg-table .wfg-row [role="cell"]::before {
             content: attr(data-label);
             display: block;
             font-size: ${fs.label};
@@ -439,6 +458,62 @@ const MostImportantSubjects: React.FC = () => {
           }
           .mis-kab-desktop { display: none !important; }
           .mis-kab-mobile { display: grid; gap: 14px; margin-top: 4px; }
+          .mis-f5-desktop { display: none !important; }
+          .mis-f5-mobile { display: grid; gap: 14px; margin-top: 4px; }
+        }
+
+        .mis-f5-card { position: relative; }
+        .mis-f5-accent {
+          position: absolute;
+          top: 0; left: 0; right: 0;
+          height: 2px;
+          background: linear-gradient(90deg, transparent, ${accentViolet} 30%, ${accentTeal} 70%, transparent);
+          opacity: 0.85;
+        }
+        .mis-f5-inner {
+          padding: 16px 16px 18px;
+          display: grid;
+          gap: 12px;
+        }
+        .mis-f5-head {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+        .mis-f5-rank {
+          font-family: 'Poppins', 'Inter', sans-serif;
+          font-weight: 700;
+          font-size: ${fs.body};
+          color: ${accentTeal};
+          background: rgba(110,231,215,0.10);
+          border: 1px solid rgba(110,231,215,0.35);
+          border-radius: 999px;
+          min-width: 40px;
+          height: 26px;
+          padding: 0 10px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          letter-spacing: 0.04em;
+          font-variant-numeric: tabular-nums;
+        }
+        .mis-f5-title {
+          font-family: 'Poppins', 'Inter', sans-serif;
+          font-weight: 600;
+          color: #f1f5f9;
+          font-size: ${fs.body};
+          line-height: 1.35;
+          flex: 1;
+        }
+        .mis-f5-divider {
+          height: 1px;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.18) 80%, transparent);
+        }
+        .mis-f5-why p {
+          margin: 0;
+          color: ${textSoft};
+          font-size: ${fs.bodySm};
+          line-height: 1.6;
         }
 
         .mis-kab-card { position: relative; }
