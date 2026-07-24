@@ -551,7 +551,8 @@ const MajorProjects: React.FC = () => {
         {/* Connection Table */}
         <SectionTitle eyebrow="Subject Linkage" title="Major Project-To-Work Connection Table" className="major-section-title" />
         <div className="major-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
-          <div style={{ overflowX: 'auto' }}>
+          {/* Desktop table */}
+          <div className="connection-table-desktop" style={{ overflowX: 'auto' }}>
             <table className="connection-table" style={{ minWidth: 720, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
               <thead>
                 <tr>
@@ -588,6 +589,43 @@ const MajorProjects: React.FC = () => {
                 ))}
               </tbody>
             </table>
+          </div>
+
+          {/* Mobile cards */}
+          <div className="connection-table-mobile">
+            {connectionRows.map((row, i) => (
+              <div key={i} className="mp-conn-card">
+                <div className="mp-conn-accent" />
+                <div className="mp-conn-header">
+                  <span className="mp-conn-index">{String(i + 1).padStart(2, '0')}</span>
+                  <div className="mp-conn-title">{row.project}</div>
+                </div>
+                <div className="mp-conn-field">
+                  <div className="mp-conn-label">Subject Connection</div>
+                  <div className="mp-conn-value">{row.subject}</div>
+                </div>
+                <div className="mp-conn-divider" />
+                <div className="mp-conn-field">
+                  <div className="mp-conn-label">Skill Practiced</div>
+                  <div className="mp-conn-value mp-conn-value-teal">{row.skill}</div>
+                </div>
+                <div className="mp-conn-divider" />
+                <div className="mp-conn-field">
+                  <div className="mp-conn-label">Tool Used</div>
+                  <div className="mp-conn-value">{row.tool}</div>
+                </div>
+                <div className="mp-conn-divider" />
+                <div className="mp-conn-field">
+                  <div className="mp-conn-label">Workflow Understanding Built</div>
+                  <div className="mp-conn-value mp-conn-value-success">{row.understanding}</div>
+                </div>
+                <div className="mp-conn-divider" />
+                <div className="mp-conn-field">
+                  <div className="mp-conn-label">Fresher Responsibility Supported</div>
+                  <div className="mp-conn-value mp-conn-value-violet">{row.responsibility}</div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
