@@ -458,7 +458,7 @@ const FresherDailyWork: React.FC = () => {
           <h2 className="fdw-h2">Typical Daily Time Distribution</h2>
           <p className="fdw-lede">How a full workday breaks down across the five recurring on-site activities.</p>
 
-          <div className="fdw-table-wrap" tabIndex={0}>
+          <div className="fdw-table-wrap fdw-time-desktop" tabIndex={0}>
             <table className="fdw-table">
               <thead>
                 <tr>
@@ -479,7 +479,29 @@ const FresherDailyWork: React.FC = () => {
             </table>
             <div className="fdw-total">Total · 100%</div>
           </div>
+
+          <div className="fdw-time-mobile">
+            {timeDist.map((r, i) => (
+              <div className="fdw-time-card" key={i} tabIndex={0}>
+                <div className="fdw-time-top">
+                  <span className="fdw-time-index">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="fdw-time-name">{r[0]}</span>
+                  <span className="fdw-time-value">{r[1]}</span>
+                </div>
+                <div className="fdw-time-bar">
+                  <span style={{ width: `${(r[2] as number) * 2.5}%`, maxWidth: '100%' }} />
+                </div>
+                <div className="fdw-time-divider" />
+                <div className="fdw-time-reality">
+                  <span className="fdw-time-reality-label">Ground Reality</span>
+                  {r[3]}
+                </div>
+              </div>
+            ))}
+            <div className="fdw-time-total">Total · 100%</div>
+          </div>
         </section>
+
 
         {/* People Interaction */}
         <section className="fdw-section">
