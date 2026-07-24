@@ -269,7 +269,7 @@ const HowSubjectsAffectRealWork: React.FC = () => {
 
         {/* Daily Work → Subject Mapping */}
         <SectionTitle eyebrow="Daily Responsibility Mapping" title="Daily Work → Subject Mapping" />
-        <div className="wfg-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+        <div className="wfg-card hsw-dwm-desktop" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
           <div className="wfg-table-daily" role="table" aria-label="Daily work to subject mapping">
             <div className="wfg-thead" role="row">
               <div role="columnheader">Real Fresher Responsibility</div>
@@ -288,6 +288,48 @@ const HowSubjectsAffectRealWork: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Mobile: Daily Work → Subject Mapping redesigned cards, grouped by subject */}
+        <div className="hsw-dwm-mobile" aria-label="Daily work to subject mapping mobile">
+          {Array.from(
+            dailyMapping.reduce((map, r) => {
+              const list = map.get(r.subject) ?? [];
+              list.push(r.responsibility);
+              map.set(r.subject, list);
+              return map;
+            }, new Map<string, string[]>()).entries()
+          ).map(([subject, items], gi) => {
+            const palette = [accentTeal, accentViolet, accentAmber, '#7DD3FC', '#f472b6'];
+            const color = palette[gi % palette.length];
+            return (
+              <div className="wfg-card hsw-dwm-card" tabIndex={0} key={subject} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+                <div className="hsw-dwm-accent" style={{ background: `linear-gradient(90deg, ${color}, transparent)` }} />
+                <div className="hsw-dwm-body">
+                  <div className="hsw-dwm-head">
+                    <span className="hsw-dwm-index" style={{ color, borderColor: `${color}55`, background: `${color}20` }}>
+                      {String(gi + 1).padStart(2, '0')}
+                    </span>
+                    <span style={pill({ bg: `${color}20`, bd: `${color}55`, fg: color })}>{subject}</span>
+                  </div>
+
+                  <div className="hsw-dwm-divider" aria-hidden />
+                  <div className="hsw-dwm-eyebrow">Real Fresher Responsibilities</div>
+                  <ul className="hsw-dwm-list">
+                    {items.map((it, i) => (
+                      <React.Fragment key={i}>
+                        {i > 0 && <li className="hsw-dwm-sep" aria-hidden />}
+                        <li className="hsw-dwm-item">
+                          <span className="hsw-dwm-bullet" style={{ background: color, boxShadow: `0 0 0 3px ${color}22` }} />
+                          <span className="hsw-dwm-text">{it}</span>
+                        </li>
+                      </React.Fragment>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         {/* What Students Must Understand */}
@@ -425,6 +467,7 @@ const HowSubjectsAffectRealWork: React.FC = () => {
         .wfg-row:hover { background: rgba(110,231,215,0.06); }
 
         .hsw-swc-mobile { display: none; }
+        .hsw-dwm-mobile { display: none; }
 
         @media (max-width: 900px) {
           .wfg-table-subject .wfg-thead,
@@ -444,8 +487,6 @@ const HowSubjectsAffectRealWork: React.FC = () => {
           }
         }
         @media (max-width: 720px) {
-          .wfg-table-daily .wfg-thead { display: none; }
-          .wfg-table-daily .wfg-row,
           .wfg-table-subject .wfg-row {
             grid-template-columns: 1fr;
             gap: 6px;
@@ -467,6 +508,79 @@ const HowSubjectsAffectRealWork: React.FC = () => {
             gap: 12px;
             margin-top: 4px;
           }
+          .hsw-dwm-desktop { display: none; }
+          .hsw-dwm-mobile {
+            display: grid;
+            gap: 12px;
+            margin-top: 4px;
+          }
+        }
+
+        .hsw-dwm-card { position: relative; }
+        .hsw-dwm-accent { height: 3px; width: 100%; opacity: 0.9; }
+        .hsw-dwm-body { padding: 14px 14px 16px; }
+        .hsw-dwm-head {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          flex-wrap: wrap;
+        }
+        .hsw-dwm-index {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 30px;
+          height: 24px;
+          padding: 0 8px;
+          border-radius: 8px;
+          border: 1px solid;
+          font-size: ${fs.label};
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          font-variant-numeric: tabular-nums;
+        }
+        .hsw-dwm-divider {
+          margin: 12px 0 10px;
+          height: 1px;
+          background: linear-gradient(to right, rgba(154,164,178,0) 0%, rgba(154,164,178,0.35) 50%, rgba(154,164,178,0) 100%);
+        }
+        .hsw-dwm-eyebrow {
+          font-size: ${fs.label};
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: #9aa4b2;
+          font-weight: 700;
+          margin-bottom: 8px;
+        }
+        .hsw-dwm-list {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: grid;
+          gap: 0;
+        }
+        .hsw-dwm-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 10px;
+          padding: 8px 0;
+        }
+        .hsw-dwm-bullet {
+          flex: 0 0 auto;
+          width: 6px;
+          height: 6px;
+          border-radius: 999px;
+          margin-top: 8px;
+        }
+        .hsw-dwm-text {
+          font-size: ${fs.bodySm};
+          color: ${textSoft};
+          line-height: 1.55;
+        }
+        .hsw-dwm-sep {
+          list-style: none;
+          height: 1px;
+          background: linear-gradient(to right, rgba(154,164,178,0) 0%, rgba(154,164,178,0.22) 50%, rgba(154,164,178,0) 100%);
         }
 
         .hsw-swc-card { position: relative; }
