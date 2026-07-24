@@ -834,18 +834,14 @@ const ExecutionMistakes: React.FC = () => {
           }
         }
         @media (max-width: 390px) {
-          .recovery-table th,
-          .recovery-table td,
           .escalation-table th,
           .escalation-table td {
             padding: 4px 4px !important;
             font-size: 10px !important;
           }
-          .recovery-table th,
           .escalation-table th {
             font-size: 9px !important;
           }
-          .recovery-table td span,
           .escalation-table td span {
             font-size: 8px !important;
           }
