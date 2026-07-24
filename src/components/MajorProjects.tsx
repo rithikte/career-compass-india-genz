@@ -962,11 +962,16 @@ const MajorProjects: React.FC = () => {
           background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.14) 20%, rgba(255,255,255,0.14) 80%, transparent 100%);
           border: none;
         }
+        .priority-table-mobile {
+          display: none;
+        }
         @media (max-width: 720px) {
-          .connection-table-desktop {
+          .connection-table-desktop,
+          .priority-table-desktop {
             display: none !important;
           }
-          .connection-table-mobile {
+          .connection-table-mobile,
+          .priority-table-mobile {
             display: grid;
             grid-template-columns: 1fr;
             gap: 16px;
