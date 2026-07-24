@@ -812,8 +812,6 @@ const ExecutionMistakes: React.FC = () => {
           }
         }
         @media (max-width: 640px) {
-          .recovery-table th,
-          .recovery-table td,
           .escalation-table th,
           .escalation-table td {
             padding: 6px 6px !important;
@@ -821,12 +819,10 @@ const ExecutionMistakes: React.FC = () => {
             white-space: normal !important;
             vertical-align: top;
           }
-          .recovery-table th,
           .escalation-table th {
             letter-spacing: 0.02em !important;
             font-size: 10px !important;
           }
-          .recovery-table td span,
           .escalation-table td span {
             padding: 3px 6px !important;
             font-size: 9px !important;
