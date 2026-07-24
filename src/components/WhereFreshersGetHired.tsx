@@ -411,6 +411,8 @@ const WhereFreshersGetHired: React.FC = () => {
           border-radius: 999px;
         }
 
+        .wfg-dist-mobile { display: none; }
+
         @media (max-width: 720px) {
           .wfg-table .wfg-thead { display: none; }
           .wfg-table .wfg-row {
@@ -428,6 +430,98 @@ const WhereFreshersGetHired: React.FC = () => {
             font-weight: 700;
             margin-bottom: 2px;
           }
+          .wfg-dist-desktop { display: none; }
+          .wfg-dist-mobile {
+            display: grid;
+            gap: 12px;
+            margin-top: 4px;
+          }
+        }
+
+        .wfg-dist-card { position: relative; }
+        .wfg-dist-accent {
+          height: 3px;
+          width: 100%;
+          background: linear-gradient(90deg, ${accentTeal}, ${accentViolet});
+          opacity: 0.9;
+        }
+        .wfg-dist-body { padding: 14px 14px 16px; }
+        .wfg-dist-head {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+        .wfg-dist-index {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 30px;
+          height: 24px;
+          padding: 0 8px;
+          border-radius: 8px;
+          border: 1px solid rgba(110,231,215,0.35);
+          background: rgba(110,231,215,0.10);
+          color: ${accentTeal};
+          font-size: ${fs.label};
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          font-variant-numeric: tabular-nums;
+        }
+        .wfg-dist-title {
+          flex: 1 1 auto;
+          min-width: 0;
+          font-weight: 600;
+          color: #f1f5f9;
+          font-size: ${fs.body};
+          line-height: 1.3;
+        }
+        .wfg-dist-share {
+          font-variant-numeric: tabular-nums;
+          font-weight: 700;
+          color: ${accentTeal};
+          font-size: ${fs.body};
+        }
+        .wfg-dist-progress {
+          margin-top: 10px;
+          height: 6px;
+          border-radius: 999px;
+          background: rgba(110,231,215,0.12);
+          overflow: hidden;
+          position: relative;
+        }
+        .wfg-dist-progress span {
+          display: block;
+          height: 100%;
+          background: linear-gradient(90deg, ${accentTeal}, ${accentViolet});
+          border-radius: 999px;
+        }
+        .wfg-dist-divider {
+          margin: 12px 0 10px;
+          height: 1px;
+          background: linear-gradient(to right, rgba(154,164,178,0) 0%, rgba(154,164,178,0.35) 50%, rgba(154,164,178,0) 100%);
+        }
+        .wfg-dist-eyebrow {
+          font-size: ${fs.label};
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: #9aa4b2;
+          font-weight: 700;
+          margin-bottom: 4px;
+        }
+        .wfg-dist-why {
+          font-size: ${fs.bodySm};
+          color: ${textSoft};
+          line-height: 1.6;
+        }
+        .wfg-dist-total {
+          display: flex;
+          justify-content: flex-end;
+          padding: 6px 4px 0;
+          font-size: ${fs.label};
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+          color: #9aa4b2;
+          font-weight: 700;
         }
       `}</style>
     </div>
