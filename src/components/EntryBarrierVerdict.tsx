@@ -310,6 +310,8 @@ const EntryBarrierVerdict: React.FC = () => {
         .ebv-row:last-child { border-bottom: none; }
         .ebv-row:hover { background: rgba(148,163,184,0.04); }
 
+        .ebv-bd-mobile { display: none; }
+
         @media (max-width: 720px) {
           .ebv-table .ebv-thead { display: none; }
           .ebv-table .ebv-row,
@@ -328,6 +330,66 @@ const EntryBarrierVerdict: React.FC = () => {
             font-weight: 700;
             margin-bottom: 2px;
           }
+          .ebv-bd-desktop { display: none; }
+          .ebv-bd-mobile {
+            display: grid;
+            gap: 12px;
+            margin-top: 4px;
+          }
+        }
+
+        .ebv-bd-card { position: relative; }
+        .ebv-bd-accent {
+          height: 3px;
+          width: 100%;
+          opacity: 0.85;
+        }
+        .ebv-bd-body { padding: 14px 14px 16px; }
+        .ebv-bd-head {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          flex-wrap: wrap;
+        }
+        .ebv-bd-index {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 30px;
+          height: 24px;
+          padding: 0 8px;
+          border-radius: 8px;
+          border: 1px solid;
+          font-size: ${fs.label};
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          font-variant-numeric: tabular-nums;
+        }
+        .ebv-bd-title {
+          flex: 1 1 auto;
+          min-width: 0;
+          font-weight: 600;
+          color: #f1f5f9;
+          font-size: ${fs.body};
+          line-height: 1.3;
+        }
+        .ebv-bd-divider {
+          margin: 12px 0 10px;
+          height: 1px;
+          background: linear-gradient(to right, rgba(148,163,184,0) 0%, rgba(148,163,184,0.35) 50%, rgba(148,163,184,0) 100%);
+        }
+        .ebv-bd-eyebrow {
+          font-size: ${fs.label};
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: #64748b;
+          font-weight: 700;
+          margin-bottom: 4px;
+        }
+        .ebv-bd-why {
+          font-size: ${fs.bodySm};
+          color: #cbd5e1;
+          line-height: 1.6;
         }
       `}</style>
     </div>
