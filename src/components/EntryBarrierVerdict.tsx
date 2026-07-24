@@ -333,7 +333,7 @@ const EntryBarrierVerdict: React.FC = () => {
         .ebv-row:last-child { border-bottom: none; }
         .ebv-row:hover { background: rgba(148,163,184,0.04); }
 
-        .ebv-bd-mobile { display: none; }
+        .ebv-bd-mobile, .ebv-pm-mobile { display: none; }
 
         @media (max-width: 720px) {
           .ebv-table .ebv-thead { display: none; }
@@ -353,8 +353,8 @@ const EntryBarrierVerdict: React.FC = () => {
             font-weight: 700;
             margin-bottom: 2px;
           }
-          .ebv-bd-desktop { display: none; }
-          .ebv-bd-mobile {
+          .ebv-bd-desktop, .ebv-pm-desktop { display: none; }
+          .ebv-bd-mobile, .ebv-pm-mobile {
             display: grid;
             gap: 12px;
             margin-top: 4px;
