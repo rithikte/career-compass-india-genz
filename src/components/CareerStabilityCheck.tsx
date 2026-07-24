@@ -341,7 +341,7 @@ const CareerStabilityCheck: React.FC = () => {
 
         {/* Reality Shock Areas */}
         <SectionTitle eyebrow="Reality Shock Areas" title="Expectation vs Reality" titleClassName="cs-section-headline" />
-        <div className="cs-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+        <div className="cs-shock-desktop cs-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
           <div className="cs-table cs-table-3" role="table" aria-label="Reality shock areas">
             <div className="cs-thead" role="row">
               <div role="columnheader">Reality Shock Area</div>
@@ -356,6 +356,39 @@ const CareerStabilityCheck: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="cs-shock-mobile" role="list" aria-label="Reality shock areas">
+          {realityShocks.map((r, i) => (
+            <div key={r.area} className="cs-card cs-shock-card" tabIndex={0} role="listitem" style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+              <div aria-hidden className="cs-shock-accent" />
+              <div style={{ padding: '16px 16px 14px 16px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+                  <span className="cs-shock-num">{String(i + 1).padStart(2, '0')}</span>
+                  <span style={{
+                    fontFamily: "'Poppins','Inter',sans-serif",
+                    fontWeight: 600,
+                    fontSize: 'clamp(15px, 4.4vw, 17px)',
+                    lineHeight: 1.3,
+                    color: TOKENS.primary,
+                    letterSpacing: '-0.005em',
+                  }}>{r.area}</span>
+                </div>
+
+                <div className="cs-shock-block">
+                  <div className="cs-shock-eyebrow cs-shock-eyebrow--expect">What Most Students Expect</div>
+                  <p className="cs-shock-text">{r.expect}</p>
+                </div>
+
+                <div className="cs-shock-divider" aria-hidden />
+
+                <div className="cs-shock-block">
+                  <div className="cs-shock-eyebrow cs-shock-eyebrow--actual">What Actually Happens</div>
+                  <p className="cs-shock-text cs-shock-text--actual">{r.actual}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Reality Check final block */}
