@@ -549,7 +549,7 @@ const RealExecutionExposure: React.FC = () => {
         {/* Connection Table */}
         <SectionTitle eyebrow="Subject Linkage" title="Exposure-To-Work Connection Table" className="exposure-section-title" />
         <div className="exposure-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
-          <div style={{ overflowX: 'auto' }}>
+          <div style={{ overflowX: 'auto' }} className="connection-table-desktop">
             <table className="connection-table" style={{ minWidth: 760, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
               <thead>
                 <tr>
@@ -586,6 +586,41 @@ const RealExecutionExposure: React.FC = () => {
                 ))}
               </tbody>
             </table>
+          </div>
+
+          <div className="connection-table-mobile">
+            {connectionRows.map((row, i) => (
+              <div key={i} className="ree-ct-card">
+                <div className="ree-ct-header">
+                  <span className="ree-ct-index">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="ree-ct-title">{row.exposure}</span>
+                </div>
+                <div className="ree-ct-field">
+                  <span className="ree-ct-label">Subject Connection</span>
+                  <span className="ree-ct-value">{row.subject}</span>
+                </div>
+                <div className="ree-ct-divider" />
+                <div className="ree-ct-field">
+                  <span className="ree-ct-label">Skill Practiced</span>
+                  <span className="ree-ct-value ree-ct-value-teal">{row.skill}</span>
+                </div>
+                <div className="ree-ct-divider" />
+                <div className="ree-ct-field">
+                  <span className="ree-ct-label">Tool / Document Seen</span>
+                  <span className="ree-ct-value">{row.tool}</span>
+                </div>
+                <div className="ree-ct-divider" />
+                <div className="ree-ct-field">
+                  <span className="ree-ct-label">Workflow Connection</span>
+                  <span className="ree-ct-value ree-ct-value-success">{row.workflow}</span>
+                </div>
+                <div className="ree-ct-divider" />
+                <div className="ree-ct-field">
+                  <span className="ree-ct-label">Fresher Responsibility Supported</span>
+                  <span className="ree-ct-value ree-ct-value-violet">{row.responsibility}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
