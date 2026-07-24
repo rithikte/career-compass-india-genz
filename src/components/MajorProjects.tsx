@@ -510,42 +510,77 @@ const MajorProjects: React.FC = () => {
         {/* Priority Table */}
         <SectionTitle eyebrow="Priority Analysis" title="Major Project Priority Table" className="major-section-title" />
         <div className="major-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
-          <table className="priority-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
-            <thead>
-              <tr>
-                {['Major Project', 'Workflow Simulated', 'Capability Built', 'Interview Value', 'Job Value'].map((h) => (
-                  <th
-                    key={h}
-                    className="priority-table-th"
-                    style={{
-                      textAlign: 'left',
-                      padding: '12px 14px',
-                      borderBottom: '1px solid rgba(255,255,255,0.14)',
-                      fontSize: fs.labelLg,
-                      letterSpacing: '0.12em',
-                      textTransform: 'uppercase',
-                        color: accentTeal,
-                      fontWeight: 700,
-                      background: 'rgba(110,231,215,0.06)',
-                    }}
-                  >
-                    {h}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {priorityRows.map((row, i) => (
-                <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-                  <td className="priority-table-td" style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.project}</td>
-                  <td className="priority-table-td" style={{ padding: '12px 14px', color: textSoft }}>{row.workflow}</td>
-                  <td className="priority-table-td" style={{ padding: '12px 14px', color: success }}>{row.capability}</td>
-                  <td className="priority-table-td" style={{ padding: '12px 14px', color: accentTeal }}>{row.interview}</td>
-                  <td className="priority-table-td" style={{ padding: '12px 14px', color: accentViolet }}>{row.job}</td>
+          {/* Desktop table */}
+          <div className="priority-table-desktop">
+            <table className="priority-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
+              <thead>
+                <tr>
+                  {['Major Project', 'Workflow Simulated', 'Capability Built', 'Interview Value', 'Job Value'].map((h) => (
+                    <th
+                      key={h}
+                      className="priority-table-th"
+                      style={{
+                        textAlign: 'left',
+                        padding: '12px 14px',
+                        borderBottom: '1px solid rgba(255,255,255,0.14)',
+                        fontSize: fs.labelLg,
+                        letterSpacing: '0.12em',
+                        textTransform: 'uppercase',
+                          color: accentTeal,
+                        fontWeight: 700,
+                        background: 'rgba(110,231,215,0.06)',
+                      }}
+                    >
+                      {h}
+                    </th>
+                  ))}
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {priorityRows.map((row, i) => (
+                  <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+                    <td className="priority-table-td" style={{ padding: '12px 14px', color: textMain, fontWeight: 600 }}>{row.project}</td>
+                    <td className="priority-table-td" style={{ padding: '12px 14px', color: textSoft }}>{row.workflow}</td>
+                    <td className="priority-table-td" style={{ padding: '12px 14px', color: success }}>{row.capability}</td>
+                    <td className="priority-table-td" style={{ padding: '12px 14px', color: accentTeal }}>{row.interview}</td>
+                    <td className="priority-table-td" style={{ padding: '12px 14px', color: accentViolet }}>{row.job}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Mobile cards */}
+          <div className="priority-table-mobile">
+            {priorityRows.map((row, i) => (
+              <div key={i} className="mp-conn-card">
+                <div className="mp-conn-accent" />
+                <div className="mp-conn-header">
+                  <span className="mp-conn-index">{String(i + 1).padStart(2, '0')}</span>
+                  <div className="mp-conn-title">{row.project}</div>
+                </div>
+                <div className="mp-conn-field">
+                  <div className="mp-conn-label">Workflow Simulated</div>
+                  <div className="mp-conn-value">{row.workflow}</div>
+                </div>
+                <div className="mp-conn-divider" />
+                <div className="mp-conn-field">
+                  <div className="mp-conn-label">Capability Built</div>
+                  <div className="mp-conn-value mp-conn-value-success">{row.capability}</div>
+                </div>
+                <div className="mp-conn-divider" />
+                <div className="mp-conn-field">
+                  <div className="mp-conn-label">Interview Value</div>
+                  <div className="mp-conn-value mp-conn-value-teal">{row.interview}</div>
+                </div>
+                <div className="mp-conn-divider" />
+                <div className="mp-conn-field">
+                  <div className="mp-conn-label">Job Value</div>
+                  <div className="mp-conn-value mp-conn-value-violet">{row.job}</div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Connection Table */}
@@ -927,11 +962,16 @@ const MajorProjects: React.FC = () => {
           background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.14) 20%, rgba(255,255,255,0.14) 80%, transparent 100%);
           border: none;
         }
+        .priority-table-mobile {
+          display: none;
+        }
         @media (max-width: 720px) {
-          .connection-table-desktop {
+          .connection-table-desktop,
+          .priority-table-desktop {
             display: none !important;
           }
-          .connection-table-mobile {
+          .connection-table-mobile,
+          .priority-table-mobile {
             display: grid;
             grid-template-columns: 1fr;
             gap: 16px;
