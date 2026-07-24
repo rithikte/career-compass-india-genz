@@ -551,7 +551,8 @@ const MajorProjects: React.FC = () => {
         {/* Connection Table */}
         <SectionTitle eyebrow="Subject Linkage" title="Major Project-To-Work Connection Table" className="major-section-title" />
         <div className="major-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
-          <div style={{ overflowX: 'auto' }}>
+          {/* Desktop table */}
+          <div className="connection-table-desktop" style={{ overflowX: 'auto' }}>
             <table className="connection-table" style={{ minWidth: 720, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
               <thead>
                 <tr>
@@ -588,6 +589,43 @@ const MajorProjects: React.FC = () => {
                 ))}
               </tbody>
             </table>
+          </div>
+
+          {/* Mobile cards */}
+          <div className="connection-table-mobile">
+            {connectionRows.map((row, i) => (
+              <div key={i} className="mp-conn-card">
+                <div className="mp-conn-accent" />
+                <div className="mp-conn-header">
+                  <span className="mp-conn-index">{String(i + 1).padStart(2, '0')}</span>
+                  <div className="mp-conn-title">{row.project}</div>
+                </div>
+                <div className="mp-conn-field">
+                  <div className="mp-conn-label">Subject Connection</div>
+                  <div className="mp-conn-value">{row.subject}</div>
+                </div>
+                <div className="mp-conn-divider" />
+                <div className="mp-conn-field">
+                  <div className="mp-conn-label">Skill Practiced</div>
+                  <div className="mp-conn-value mp-conn-value-teal">{row.skill}</div>
+                </div>
+                <div className="mp-conn-divider" />
+                <div className="mp-conn-field">
+                  <div className="mp-conn-label">Tool Used</div>
+                  <div className="mp-conn-value">{row.tool}</div>
+                </div>
+                <div className="mp-conn-divider" />
+                <div className="mp-conn-field">
+                  <div className="mp-conn-label">Workflow Understanding Built</div>
+                  <div className="mp-conn-value mp-conn-value-success">{row.understanding}</div>
+                </div>
+                <div className="mp-conn-divider" />
+                <div className="mp-conn-field">
+                  <div className="mp-conn-label">Fresher Responsibility Supported</div>
+                  <div className="mp-conn-value mp-conn-value-violet">{row.responsibility}</div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -798,6 +836,105 @@ const MajorProjects: React.FC = () => {
             margin: 14px 0;
             background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.18) 80%, transparent 100%);
             border: none;
+          }
+        }
+
+        /* Major Project-To-Work Connection Table — mobile card layout */
+        .connection-table-mobile {
+          display: none;
+        }
+        .mp-conn-card {
+          position: relative;
+          background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+          border: 1px solid rgba(255,255,255,0.14);
+          border-radius: 14px;
+          padding: 18px;
+          overflow: hidden;
+          transition: border-color 260ms ease, box-shadow 320ms ease, transform 260ms ease;
+        }
+        .mp-conn-card:hover,
+        .mp-conn-card:focus-visible,
+        .mp-conn-card:active {
+          border-color: rgba(110,231,215,0.55);
+          box-shadow:
+            0 0 0 1px rgba(110,231,215,0.35),
+            0 0 18px rgba(110,231,215,0.28),
+            0 0 42px rgba(167,139,250,0.22);
+          transform: translateY(-2px);
+        }
+        .mp-conn-accent {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background: linear-gradient(90deg, rgba(110,231,215,0.9), rgba(167,139,250,0.9));
+        }
+        .mp-conn-header {
+          display: flex;
+          align-items: flex-start;
+          gap: 12px;
+          margin-bottom: 16px;
+        }
+        .mp-conn-index {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 30px;
+          height: 30px;
+          border-radius: 999px;
+          flex-shrink: 0;
+          background: linear-gradient(135deg, rgba(110,231,215,0.18), rgba(167,139,250,0.18));
+          border: 1px solid rgba(110,231,215,0.35);
+          color: #6ee7d7;
+          font-size: 12px;
+          font-weight: 800;
+        }
+        .mp-conn-title {
+          font-family: 'Poppins', 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+          font-size: 15px;
+          font-weight: 700;
+          line-height: 1.35;
+          letter-spacing: -0.01em;
+          background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        .mp-conn-field {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
+        .mp-conn-label {
+          font-size: 10px;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          color: #9aa4b2;
+          font-weight: 700;
+        }
+        .mp-conn-value {
+          font-size: 13px;
+          color: #e7ecf3;
+          line-height: 1.5;
+        }
+        .mp-conn-value-teal { color: #6ee7d7; }
+        .mp-conn-value-success { color: #34d399; }
+        .mp-conn-value-violet { color: #a78bfa; }
+        .mp-conn-divider {
+          height: 1px;
+          width: 100%;
+          margin: 12px 0;
+          background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.14) 20%, rgba(255,255,255,0.14) 80%, transparent 100%);
+          border: none;
+        }
+        @media (max-width: 720px) {
+          .connection-table-desktop {
+            display: none !important;
+          }
+          .connection-table-mobile {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
           }
         }
       `}</style>
