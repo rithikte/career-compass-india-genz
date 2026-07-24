@@ -596,7 +596,7 @@ const FresherDailyWork: React.FC = () => {
           <h2 className="fdw-h2">The Five Tasks You Will Actually Do</h2>
           <p className="fdw-lede">Concrete tasks freshers perform, how often, and under what level of ownership.</p>
 
-          <div className="fdw-table-wrap" tabIndex={0}>
+          <div className="fdw-table-wrap fdw-time-desktop" tabIndex={0}>
             <table className="fdw-table">
               <thead>
                 <tr>
@@ -621,6 +621,30 @@ const FresherDailyWork: React.FC = () => {
                 ))}
               </tbody>
             </table>
+          </div>
+
+          <div className="fdw-time-mobile">
+            {tasks.map((t, i) => (
+              <div className="fdw-time-card" key={i} tabIndex={0}>
+                <div className="fdw-time-top">
+                  <span className="fdw-time-index">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="fdw-time-name">{t[1]}</span>
+                </div>
+                <div className="fdw-time-divider" />
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, alignItems: 'center' }}>
+                  <span style={{ fontSize: 9, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--muted)', fontWeight: 600 }}>
+                    {t[2]}
+                  </span>
+                  <span style={{ width: 3, height: 3, borderRadius: '50%', background: 'rgba(148,163,184,0.4)' }} />
+                  <span className={`fdw-tag ${t[3] === 'Directly Handled' ? 'good' : 'warn'}`}>{t[3]}</span>
+                </div>
+                <div className="fdw-time-divider" />
+                <div className="fdw-time-reality">
+                  <span className="fdw-time-reality-label">Ground Reality</span>
+                  {t[4]}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
