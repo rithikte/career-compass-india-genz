@@ -696,6 +696,121 @@ const ExecutionMistakes: React.FC = () => {
             border: none;
           }
         }
+        .recovery-table-mobile {
+          display: none;
+        }
+        .rec-card {
+          position: relative;
+          background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+          border: 1px solid rgba(255,255,255,0.14);
+          border-radius: 16px;
+          overflow: hidden;
+          box-shadow: 0 1px 0 rgba(255,255,255,0.03) inset, 0 20px 40px -30px rgba(0,0,0,0.6);
+        }
+        .rec-card-accent {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background: linear-gradient(90deg, rgba(110,231,215,0.6), rgba(167,139,250,0.6));
+        }
+        .rec-card-inner {
+          position: relative;
+          z-index: 1;
+          padding: 16px;
+        }
+        .rec-card-header {
+          display: flex;
+          align-items: flex-start;
+          gap: 12px;
+          margin-bottom: 16px;
+        }
+        .rec-index {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          border-radius: 999px;
+          flex-shrink: 0;
+          background: linear-gradient(135deg, rgba(110,231,215,0.18), rgba(167,139,250,0.18));
+          border: 1px solid rgba(110,231,215,0.35);
+          color: #6ee7d7;
+          font-size: 12px;
+          font-weight: 800;
+        }
+        .rec-title-wrap {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          min-width: 0;
+        }
+        .rec-mistake {
+          font-size: 15px;
+          font-weight: 700;
+          color: #e7ecf3;
+          line-height: 1.35;
+          letter-spacing: -0.01em;
+        }
+        .rec-risk {
+          align-self: flex-start;
+          display: inline-block;
+          padding: 4px 10px;
+          border-radius: 999px;
+          font-size: 10px;
+          font-weight: 800;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          background: rgba(245,194,107,0.12);
+          border: 1px solid rgba(245,194,107,0.35);
+          color: #f5c26b;
+        }
+        .rec-field {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
+        .rec-label {
+          font-size: 10px;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          color: #9aa4b2;
+          font-weight: 700;
+        }
+        .rec-value {
+          font-size: 14px;
+          color: #b8c0cc;
+          line-height: 1.5;
+        }
+        .rec-value-teal {
+          color: #6ee7d7;
+          font-weight: 600;
+        }
+        .rec-value-success {
+          color: #34d399;
+          font-weight: 600;
+        }
+        .rec-value-warn {
+          color: #fef3c7;
+        }
+        .rec-divider {
+          height: 1px;
+          width: 100%;
+          margin: 12px 0;
+          background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.14) 15%, rgba(255,255,255,0.14) 85%, transparent 100%);
+          border: none;
+        }
+        @media (max-width: 720px) {
+          .recovery-table-desktop {
+            display: none !important;
+          }
+          .recovery-table-mobile {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+          }
+        }
         @media (max-width: 640px) {
           .recovery-table th,
           .recovery-table td,
