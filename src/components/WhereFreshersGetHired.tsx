@@ -151,7 +151,7 @@ const WhereFreshersGetHired: React.FC = () => {
 
         {/* Distribution table */}
         <SectionTitle eyebrow="Fresher Hiring Distribution" title="Company Type Breakdown" />
-        <div className="wfg-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+        <div className="wfg-card wfg-dist-desktop" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
           <div className="wfg-table" role="table" aria-label="Fresher hiring distribution">
             <div className="wfg-thead" role="row">
               <div role="columnheader">Company Type</div>
@@ -178,6 +178,29 @@ const WhereFreshersGetHired: React.FC = () => {
             ))}
           </div>
           <div className="wfg-total">Total = 100%</div>
+        </div>
+
+        {/* Mobile: Company Type Breakdown redesigned cards */}
+        <div className="wfg-dist-mobile" aria-label="Fresher hiring distribution mobile">
+          {hiringData.map((r, i) => (
+            <div className="wfg-card wfg-dist-card" tabIndex={0} key={r.type} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+              <div className="wfg-dist-accent" />
+              <div className="wfg-dist-body">
+                <div className="wfg-dist-head">
+                  <span className="wfg-dist-index">{String(i + 1).padStart(2, '0')}</span>
+                  <div className="wfg-dist-title">{r.type}</div>
+                  <span className="wfg-dist-share">{r.share}%</span>
+                </div>
+                <div className="wfg-dist-progress" aria-hidden>
+                  <span style={{ width: `${r.share}%` }} />
+                </div>
+                <div className="wfg-dist-divider" aria-hidden />
+                <div className="wfg-dist-eyebrow">Why Freshers Get Hired</div>
+                <div className="wfg-dist-why">{r.why}</div>
+              </div>
+            </div>
+          ))}
+          <div className="wfg-dist-total">Total = 100%</div>
         </div>
 
         {/* Company detail cards */}
