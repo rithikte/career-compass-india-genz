@@ -507,6 +507,8 @@ const CareerStabilityCheck: React.FC = () => {
           }
           .cs-fail-desktop { display: none !important; }
           .cs-fail-mobile { display: grid !important; }
+          .cs-shock-desktop { display: none !important; }
+          .cs-shock-mobile { display: grid !important; }
         }
         .cs-fail-divider {
           height: 1px;
@@ -515,6 +517,50 @@ const CareerStabilityCheck: React.FC = () => {
         }
         .cs-fail-card {
           transition: border-color 260ms ease, box-shadow 320ms ease, transform 260ms ease;
+        }
+
+        /* Expectation vs Reality — mobile cards */
+        .cs-shock-mobile { display: none; gap: 12px; margin-top: 4px; }
+        .cs-shock-card {
+          position: relative;
+          transition: border-color 260ms ease, box-shadow 320ms ease, transform 260ms ease;
+        }
+        .cs-shock-accent {
+          position: absolute; top: 0; left: 0; right: 0; height: 2px;
+          background: linear-gradient(90deg, rgba(110,231,215,0.9), rgba(167,139,250,0.9));
+          opacity: 0.85;
+        }
+        .cs-shock-num {
+          display: inline-flex; align-items: center; justify-content: center;
+          min-width: 34px; height: 24px; padding: 0 8px;
+          border-radius: 999px;
+          background: rgba(148,163,184,0.10);
+          border: 1px solid rgba(148,163,184,0.22);
+          font-family: 'JetBrains Mono','SF Mono',ui-monospace,monospace;
+          font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+          color: #cbd5e1;
+        }
+        .cs-shock-eyebrow {
+          font-size: 10.5px;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          font-weight: 700;
+          margin-bottom: 6px;
+          color: #64748b;
+        }
+        .cs-shock-eyebrow--expect { color: #94a3b8; }
+        .cs-shock-eyebrow--actual { color: #fbbf24; }
+        .cs-shock-text {
+          margin: 0;
+          font-size: clamp(12.5px, 3.6vw, 13.75px);
+          line-height: 1.6;
+          color: #cbd5e1;
+        }
+        .cs-shock-text--actual { color: #e2e8f0; }
+        .cs-shock-divider {
+          height: 1px;
+          margin: 12px 0;
+          background: linear-gradient(90deg, transparent 0%, rgba(148,163,184,0.28) 22%, rgba(148,163,184,0.28) 78%, transparent 100%);
         }
       `}</style>
     </div>
