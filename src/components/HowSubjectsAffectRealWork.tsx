@@ -193,7 +193,7 @@ const HowSubjectsAffectRealWork: React.FC = () => {
 
         {/* Subject-to-Work Connection Table */}
         <SectionTitle eyebrow="Subject-to-Work Mapping" title="Subject-to-Work Connection Table" />
-        <div className="wfg-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+        <div className="wfg-card hsw-swc-desktop" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
           <div className="wfg-table-subject" role="table" aria-label="Subject to work connection table">
             <div className="wfg-thead" role="row">
               <div role="columnheader">Subject</div>
@@ -228,6 +228,43 @@ const HowSubjectsAffectRealWork: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Mobile: Subject-to-Work Connection redesigned cards */}
+        <div className="hsw-swc-mobile" aria-label="Subject to work connection mobile">
+          {subjectWorkData.map((r, i) => {
+            const color = impactColor[r.impact];
+            return (
+              <div className="wfg-card hsw-swc-card" tabIndex={0} key={r.subject} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+                <div className="hsw-swc-accent" style={{ background: `linear-gradient(90deg, ${color}, transparent)` }} />
+                <div className="hsw-swc-body">
+                  <div className="hsw-swc-head">
+                    <span className="hsw-swc-index" style={{ color, borderColor: `${color}55`, background: `${color}20` }}>
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <div className="hsw-swc-title">{r.subject}</div>
+                    <span style={pill({ bg: `${color}20`, bd: `${color}55`, fg: color })}>{r.impact}</span>
+                  </div>
+
+                  <div className="hsw-swc-divider" aria-hidden />
+                  <div className="hsw-swc-eyebrow">Real Fresher Task</div>
+                  <div className="hsw-swc-text">{r.task}</div>
+
+                  <div className="hsw-swc-divider" aria-hidden />
+                  <div className="hsw-swc-eyebrow">How Subject Helps</div>
+                  <div className="hsw-swc-text">{r.helps}</div>
+
+                  <div className="hsw-swc-divider" aria-hidden />
+                  <div className="hsw-swc-eyebrow">Interview Advantage</div>
+                  <div className="hsw-swc-text">{r.interview}</div>
+
+                  <div className="hsw-swc-divider" aria-hidden />
+                  <div className="hsw-swc-eyebrow" style={{ color: '#f5c26b' }}>If Weak In Job</div>
+                  <div className="hsw-swc-text" style={{ color: '#f5c26b' }}>{r.weak}</div>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         {/* Daily Work → Subject Mapping */}
@@ -387,6 +424,8 @@ const HowSubjectsAffectRealWork: React.FC = () => {
         .wfg-row:last-child { border-bottom: none; }
         .wfg-row:hover { background: rgba(110,231,215,0.06); }
 
+        .hsw-swc-mobile { display: none; }
+
         @media (max-width: 900px) {
           .wfg-table-subject .wfg-thead,
           .wfg-table-subject .wfg-row {
@@ -422,6 +461,66 @@ const HowSubjectsAffectRealWork: React.FC = () => {
             font-weight: 700;
             margin-bottom: 2px;
           }
+          .hsw-swc-desktop { display: none; }
+          .hsw-swc-mobile {
+            display: grid;
+            gap: 12px;
+            margin-top: 4px;
+          }
+        }
+
+        .hsw-swc-card { position: relative; }
+        .hsw-swc-accent {
+          height: 3px;
+          width: 100%;
+          opacity: 0.9;
+        }
+        .hsw-swc-body { padding: 14px 14px 16px; }
+        .hsw-swc-head {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          flex-wrap: wrap;
+        }
+        .hsw-swc-index {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 30px;
+          height: 24px;
+          padding: 0 8px;
+          border-radius: 8px;
+          border: 1px solid;
+          font-size: ${fs.label};
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          font-variant-numeric: tabular-nums;
+        }
+        .hsw-swc-title {
+          flex: 1 1 auto;
+          min-width: 0;
+          font-weight: 600;
+          color: #f1f5f9;
+          font-size: ${fs.body};
+          line-height: 1.3;
+        }
+        .hsw-swc-divider {
+          margin: 12px 0 10px;
+          height: 1px;
+          background: linear-gradient(to right, rgba(154,164,178,0) 0%, rgba(154,164,178,0.35) 50%, rgba(154,164,178,0) 100%);
+        }
+        .hsw-swc-eyebrow {
+          font-size: ${fs.label};
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: #9aa4b2;
+          font-weight: 700;
+          margin-bottom: 4px;
+        }
+        .hsw-swc-text {
+          font-size: ${fs.bodySm};
+          color: ${textSoft};
+          line-height: 1.6;
         }
       `}</style>
     </div>
