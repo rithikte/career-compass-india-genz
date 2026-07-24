@@ -178,7 +178,7 @@ const MostImportantSubjects: React.FC = () => {
 
         {/* Knowledge Area distribution table */}
         <SectionTitle eyebrow="Knowledge Contribution" title="Knowledge Area Breakdown" />
-        <div className="wfg-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+        <div className="mis-kab-desktop wfg-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
           <div className="wfg-table" role="table" aria-label="Knowledge area contribution breakdown">
             <div className="wfg-thead" role="row">
               <div role="columnheader">Knowledge Area</div>
@@ -205,6 +205,37 @@ const MostImportantSubjects: React.FC = () => {
             ))}
           </div>
           <div className="wfg-total">Total = 100%</div>
+        </div>
+
+        {/* Mobile redesign - Knowledge Area Breakdown */}
+        <div className="mis-kab-mobile" role="list" aria-label="Knowledge area contribution breakdown">
+          {knowledgeData.map((r, i) => (
+            <div className="mis-kab-card wfg-card" tabIndex={0} role="listitem" key={r.area} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+              <div className="mis-kab-accent" aria-hidden />
+              <div className="mis-kab-inner">
+                <div className="mis-kab-head">
+                  <span className="mis-kab-index">{String(i + 1).padStart(2, '0')}</span>
+                  <div className="mis-kab-title">{r.area}</div>
+                </div>
+                <div className="mis-kab-divider" aria-hidden />
+                <div className="mis-kab-metric">
+                  <span className="mis-kab-metric-label">Approx Share</span>
+                  <div className="mis-kab-metric-row">
+                    <div className="mis-kab-progress" aria-hidden>
+                      <span style={{ width: `${r.share}%` }} />
+                    </div>
+                    <span className="mis-kab-pct">{r.share}%</span>
+                  </div>
+                </div>
+                <div className="mis-kab-divider" aria-hidden />
+                <div className="mis-kab-reality">
+                  <span className="mis-kab-metric-label">Ground Reality</span>
+                  <p>{r.reality}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+          <div className="mis-kab-total">Total = 100%</div>
         </div>
 
         {/* Final 5 subjects table */}
