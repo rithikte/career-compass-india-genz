@@ -159,6 +159,117 @@ const DomainChapters: React.FC = () => {
         @media (prefers-reduced-motion: reduce) {
           .ug-chap-card, .ug-chap-icon, .ug-chap-row, .ug-chap-tags-wrap, .ug-chap-chevron { transition: none !important; }
         }
+
+        /* Mobile redesign (≤720px) */
+        .dc-mobile { display: none; }
+        @media (max-width: 720px) {
+          .dc-desktop { display: none !important; }
+          .dc-mobile { display: grid !important; }
+        }
+        .dc-m-card {
+          position: relative;
+          background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 100%);
+          border: 1px solid ${COLORS.border};
+          border-radius: 18px;
+          padding: 20px 18px;
+          overflow: hidden;
+        }
+        .dc-m-card::before {
+          content: '';
+          position: absolute; top: 0; left: 0; right: 0; height: 3px;
+          background: linear-gradient(90deg, var(--dc-accent), transparent);
+          opacity: 0.9;
+        }
+        .dc-m-section-label {
+          display: inline-flex; align-items: center; gap: 8px;
+          font-family: 'IBM Plex Sans','Inter',sans-serif;
+          font-size: 0.62rem; font-weight: 600;
+          letter-spacing: 0.18em; text-transform: uppercase;
+          color: var(--dc-accent);
+        }
+        .dc-m-section-label::before {
+          content: ''; width: 20px; height: 1px; background: var(--dc-accent); opacity: 0.6;
+        }
+        .dc-m-title {
+          margin-top: 8px;
+          font-family: 'Poppins','Inter',sans-serif;
+          font-weight: 600;
+          font-size: 1.15rem;
+          line-height: 1.25;
+          letter-spacing: -0.01em;
+          background: linear-gradient(135deg, #F8FAFC 0%, #A5B4FC 60%, #7DD3FC 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        .dc-m-subject {
+          margin-top: 18px;
+          padding-top: 16px;
+          border-top: 1px solid transparent;
+          border-image: linear-gradient(90deg, transparent 0%, ${COLORS.border} 20%, ${COLORS.border} 80%, transparent 100%) 1;
+        }
+        .dc-m-subject:first-of-type {
+          border-top: none;
+          padding-top: 6px;
+          margin-top: 14px;
+        }
+        .dc-m-subject-head {
+          display: flex; align-items: center; gap: 10px;
+          margin-bottom: 12px;
+        }
+        .dc-m-subject-num {
+          flex-shrink: 0;
+          width: 26px; height: 26px;
+          display: inline-flex; align-items: center; justify-content: center;
+          border-radius: 8px;
+          background: var(--dc-accent-bg);
+          color: var(--dc-accent);
+          font-family: 'IBM Plex Sans','Inter',sans-serif;
+          font-size: 0.72rem; font-weight: 700;
+          letter-spacing: 0.04em;
+        }
+        .dc-m-subject-name {
+          font-family: 'Poppins','Inter',sans-serif;
+          font-weight: 600;
+          font-size: 0.98rem;
+          color: ${COLORS.text};
+          line-height: 1.3;
+        }
+        .dc-m-chap {
+          padding: 10px 0 10px 12px;
+          border-left: 2px solid var(--dc-accent-soft);
+          margin-left: 4px;
+          position: relative;
+        }
+        .dc-m-chap + .dc-m-chap {
+          margin-top: 2px;
+          border-top: 1px dashed rgba(255,255,255,0.05);
+          padding-top: 12px;
+        }
+        .dc-m-chap-title {
+          font-family: 'Poppins','Inter',sans-serif;
+          font-weight: 500;
+          font-size: 0.92rem;
+          line-height: 1.4;
+          color: ${COLORS.text};
+        }
+        .dc-m-chap-alt {
+          margin-top: 6px;
+          font-family: 'Inter',sans-serif;
+          font-size: 0.72rem;
+          line-height: 1.55;
+          color: ${COLORS.muted};
+          display: flex; gap: 6px;
+        }
+        .dc-m-chap-alt-label {
+          color: var(--dc-accent);
+          font-weight: 600;
+          font-size: 0.62rem;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          flex-shrink: 0;
+          padding-top: 2px;
+        }
       `}</style>
 
       <div
