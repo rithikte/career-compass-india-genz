@@ -289,6 +289,25 @@ const SubjectToChapter: React.FC = () => {
                   </div>
                 ))}
               </div>
+
+              {/* Mobile-only card layout */}
+              <div className="stc-cc-mobile" aria-hidden="true">
+                {subject.criticalChapters.map((ch, i) => (
+                  <div className="stc-cc-card" key={ch.chapter}>
+                    <div className="stc-cc-accent" />
+                    <div className="stc-cc-head">
+                      <span className="stc-cc-index">{String(i + 1).padStart(2, '0')}</span>
+                      <span className="stc-cc-pill">{ch.contribution}% Weight</span>
+                    </div>
+                    <div className="stc-cc-title">{ch.chapter}</div>
+                    <div className="stc-cc-bar"><span style={{ width: `${ch.contribution}%` }} /></div>
+                    <div className="stc-cc-sep" />
+                    <div className="stc-cc-label">Practical Reason</div>
+                    <div className="stc-cc-reason">{ch.reason}</div>
+                  </div>
+                ))}
+              </div>
+
               <div className="wfg-total">Total Contribution: {subject.totalContribution}</div>
             </div>
 
@@ -312,7 +331,28 @@ const SubjectToChapter: React.FC = () => {
                   </div>
                 ))}
               </div>
+
+              {/* Mobile-only card layout */}
+              <div className="stc-alt-mobile" aria-hidden="true">
+                {subject.alternateNames.map((alt, i) => (
+                  <div className="stc-alt-card" key={alt.chapter}>
+                    <div className="stc-alt-accent" />
+                    <div className="stc-alt-head">
+                      <span className="stc-cc-index stc-alt-index">{String(i + 1).padStart(2, '0')}</span>
+                      <span className="stc-alt-pill">Also Known As</span>
+                    </div>
+                    <div className="stc-cc-title">{alt.chapter}</div>
+                    <div className="stc-cc-sep" />
+                    <div className="stc-alt-list">
+                      <div className="stc-alt-item"><span className="stc-alt-key">Alt 1</span><span className="stc-alt-val">{alt.alt1}</span></div>
+                      <div className="stc-alt-item"><span className="stc-alt-key">Alt 2</span><span className="stc-alt-val">{alt.alt2}</span></div>
+                      <div className="stc-alt-item"><span className="stc-alt-key">Alt 3</span><span className="stc-alt-val">{alt.alt3}</span></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
+
 
             {/* Academic Readiness */}
             <div className="wfg-card" tabIndex={0} style={{ ...cardStyle(), marginTop: 14, position: 'relative', overflow: 'hidden' }}>
