@@ -710,6 +710,100 @@ const RealExecutionExposure: React.FC = () => {
             font-size: 9px !important;
           }
         }
+        .priority-table-mobile {
+          display: none;
+        }
+        @media (max-width: 720px) {
+          .priority-table-desktop {
+            display: none !important;
+          }
+          .priority-table-mobile {
+            display: grid;
+            gap: 14px;
+          }
+          .ree-pt-card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 14px;
+            padding: 14px 16px;
+            position: relative;
+            overflow: hidden;
+          }
+          .ree-pt-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, rgba(110,231,215,0.8), rgba(167,139,250,0.8));
+            opacity: 0.7;
+          }
+          .ree-pt-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+          }
+          .ree-pt-index {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 28px;
+            height: 28px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, rgba(110,231,215,0.18), rgba(167,139,250,0.18));
+            border: 1px solid rgba(110,231,215,0.35);
+            color: #6ee7d7;
+            font-size: 11px;
+            font-weight: 800;
+            flex-shrink: 0;
+          }
+          .ree-pt-title {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #f8fafc;
+            line-height: 1.35;
+            letter-spacing: -0.01em;
+            padding-top: 4px;
+          }
+          .ree-pt-field {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+          }
+          .ree-pt-label {
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #9aa4b2;
+            font-weight: 700;
+          }
+          .ree-pt-value {
+            font-size: 12px;
+            font-weight: 600;
+            color: #e7ecf3;
+            text-align: right;
+            flex-shrink: 0;
+          }
+          .ree-pt-value-violet {
+            color: #a78bfa;
+          }
+          .ree-pt-value-teal {
+            color: #6ee7d7;
+          }
+          .ree-pt-value-success {
+            color: #34d399;
+          }
+          .ree-pt-divider {
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.14) 20%, rgba(255,255,255,0.14) 80%, transparent 100%);
+            border: none;
+          }
+        }
         .exposure-mobile-divider {
           display: none;
         }
