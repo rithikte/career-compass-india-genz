@@ -487,8 +487,6 @@ const HowSubjectsAffectRealWork: React.FC = () => {
           }
         }
         @media (max-width: 720px) {
-          .wfg-table-daily .wfg-thead { display: none; }
-          .wfg-table-daily .wfg-row,
           .wfg-table-subject .wfg-row {
             grid-template-columns: 1fr;
             gap: 6px;
@@ -510,6 +508,79 @@ const HowSubjectsAffectRealWork: React.FC = () => {
             gap: 12px;
             margin-top: 4px;
           }
+          .hsw-dwm-desktop { display: none; }
+          .hsw-dwm-mobile {
+            display: grid;
+            gap: 12px;
+            margin-top: 4px;
+          }
+        }
+
+        .hsw-dwm-card { position: relative; }
+        .hsw-dwm-accent { height: 3px; width: 100%; opacity: 0.9; }
+        .hsw-dwm-body { padding: 14px 14px 16px; }
+        .hsw-dwm-head {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          flex-wrap: wrap;
+        }
+        .hsw-dwm-index {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 30px;
+          height: 24px;
+          padding: 0 8px;
+          border-radius: 8px;
+          border: 1px solid;
+          font-size: ${fs.label};
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          font-variant-numeric: tabular-nums;
+        }
+        .hsw-dwm-divider {
+          margin: 12px 0 10px;
+          height: 1px;
+          background: linear-gradient(to right, rgba(154,164,178,0) 0%, rgba(154,164,178,0.35) 50%, rgba(154,164,178,0) 100%);
+        }
+        .hsw-dwm-eyebrow {
+          font-size: ${fs.label};
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: #9aa4b2;
+          font-weight: 700;
+          margin-bottom: 8px;
+        }
+        .hsw-dwm-list {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: grid;
+          gap: 0;
+        }
+        .hsw-dwm-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 10px;
+          padding: 8px 0;
+        }
+        .hsw-dwm-bullet {
+          flex: 0 0 auto;
+          width: 6px;
+          height: 6px;
+          border-radius: 999px;
+          margin-top: 8px;
+        }
+        .hsw-dwm-text {
+          font-size: ${fs.bodySm};
+          color: ${textSoft};
+          line-height: 1.55;
+        }
+        .hsw-dwm-sep {
+          list-style: none;
+          height: 1px;
+          background: linear-gradient(to right, rgba(154,164,178,0) 0%, rgba(154,164,178,0.22) 50%, rgba(154,164,178,0) 100%);
         }
 
         .hsw-swc-card { position: relative; }
