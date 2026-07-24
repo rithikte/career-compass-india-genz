@@ -307,24 +307,82 @@ const SubjectsRecognition: React.FC = () => {
         .wfg-row:last-child { border-bottom: none; }
         .wfg-row:hover { background: rgba(110,231,215,0.06); }
 
+        .sr-mobile { display: none; }
+
         @media (max-width: 900px) {
-          .wfg-table .wfg-thead { display: none; }
-          .wfg-table .wfg-row {
-            grid-template-columns: 1fr;
-            gap: 6px;
-            padding: 14px 14px;
-          }
-          .wfg-row [role="cell"]::before {
-            content: attr(data-label);
-            display: block;
-            font-size: ${fs.label};
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            color: #9aa4b2;
-            font-weight: 700;
-            margin-bottom: 2px;
-          }
+          .sr-desktop { display: none !important; }
+          .sr-mobile { display: grid; gap: 14px; margin-top: 4px; }
         }
+
+        .sr-card { position: relative; }
+        .sr-accent {
+          position: absolute;
+          top: 0; left: 0; right: 0;
+          height: 2px;
+          background: linear-gradient(90deg, transparent, ${accentTeal} 30%, ${accentViolet} 70%, transparent);
+          opacity: 0.85;
+        }
+        .sr-inner {
+          padding: 16px 16px 18px;
+          display: grid;
+          gap: 12px;
+        }
+        .sr-head {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+        .sr-index {
+          font-family: Poppins, Inter, sans-serif;
+          font-weight: 700;
+          font-size: ${fs.body};
+          color: ${accentTeal};
+          background: rgba(110,231,215,0.10);
+          border: 1px solid rgba(110,231,215,0.35);
+          border-radius: 999px;
+          min-width: 34px;
+          height: 26px;
+          padding: 0 10px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          letter-spacing: 0.06em;
+          font-variant-numeric: tabular-nums;
+        }
+        .sr-title {
+          font-family: Poppins, Inter, sans-serif;
+          font-weight: 600;
+          color: #f1f5f9;
+          font-size: ${fs.body};
+          line-height: 1.35;
+          flex: 1;
+          background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          color: transparent;
+        }
+        .sr-divider {
+          height: 1px;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.18) 80%, transparent);
+        }
+        .sr-field-label {
+          display: block;
+          font-size: ${fs.label};
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: ${muted};
+          font-weight: 700;
+          margin-bottom: 6px;
+        }
+        .sr-field p {
+          margin: 0;
+          color: ${textSoft};
+          font-size: ${fs.bodySm};
+          line-height: 1.6;
+        }
+        .sr-field-warn p { color: #f5c26b; }
+
         .sr-subtitle-gradient {
           font-family: Poppins, Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
           font-size: clamp(1.35rem, 2.6vw, 1.9rem);
