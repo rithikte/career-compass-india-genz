@@ -479,7 +479,7 @@ const RealExecutionExposure: React.FC = () => {
         {/* Priority Table */}
         <SectionTitle eyebrow="Priority Analysis" title="Exposure Priority Table" className="exposure-section-title" />
         <div className="exposure-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
-          <table className="priority-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
+          <table className="priority-table priority-table-desktop" style={{ width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
             <thead>
               <tr>
                 {['Exposure', 'Awareness Built', 'Workplace Importance', 'Interview Value', 'Job Value'].map((h) => (
@@ -514,6 +514,36 @@ const RealExecutionExposure: React.FC = () => {
               ))}
             </tbody>
           </table>
+
+          <div className="priority-table-mobile">
+            {priorityRows.map((row, i) => (
+              <div key={i} className="ree-pt-card">
+                <div className="ree-pt-header">
+                  <span className="ree-pt-index">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="ree-pt-title">{row.exposure}</span>
+                </div>
+                <div className="ree-pt-field">
+                  <span className="ree-pt-label">Awareness Built</span>
+                  <span className="ree-pt-value">{row.awareness}</span>
+                </div>
+                <div className="ree-pt-divider" />
+                <div className="ree-pt-field">
+                  <span className="ree-pt-label">Workplace Importance</span>
+                  <span className="ree-pt-value ree-pt-value-violet">{row.importance}</span>
+                </div>
+                <div className="ree-pt-divider" />
+                <div className="ree-pt-field">
+                  <span className="ree-pt-label">Interview Value</span>
+                  <span className="ree-pt-value ree-pt-value-teal">{row.interview}</span>
+                </div>
+                <div className="ree-pt-divider" />
+                <div className="ree-pt-field">
+                  <span className="ree-pt-label">Job Value</span>
+                  <span className="ree-pt-value ree-pt-value-success">{row.job}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Connection Table */}
