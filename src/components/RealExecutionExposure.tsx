@@ -549,7 +549,7 @@ const RealExecutionExposure: React.FC = () => {
         {/* Connection Table */}
         <SectionTitle eyebrow="Subject Linkage" title="Exposure-To-Work Connection Table" className="exposure-section-title" />
         <div className="exposure-card" tabIndex={0} style={{ ...cardStyle(), position: 'relative', overflow: 'hidden' }}>
-          <div style={{ overflowX: 'auto' }}>
+          <div style={{ overflowX: 'auto' }} className="connection-table-desktop">
             <table className="connection-table" style={{ minWidth: 760, width: '100%', borderCollapse: 'collapse', fontSize: fs.body }}>
               <thead>
                 <tr>
@@ -586,6 +586,41 @@ const RealExecutionExposure: React.FC = () => {
                 ))}
               </tbody>
             </table>
+          </div>
+
+          <div className="connection-table-mobile">
+            {connectionRows.map((row, i) => (
+              <div key={i} className="ree-ct-card">
+                <div className="ree-ct-header">
+                  <span className="ree-ct-index">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="ree-ct-title">{row.exposure}</span>
+                </div>
+                <div className="ree-ct-field">
+                  <span className="ree-ct-label">Subject Connection</span>
+                  <span className="ree-ct-value">{row.subject}</span>
+                </div>
+                <div className="ree-ct-divider" />
+                <div className="ree-ct-field">
+                  <span className="ree-ct-label">Skill Practiced</span>
+                  <span className="ree-ct-value ree-ct-value-teal">{row.skill}</span>
+                </div>
+                <div className="ree-ct-divider" />
+                <div className="ree-ct-field">
+                  <span className="ree-ct-label">Tool / Document Seen</span>
+                  <span className="ree-ct-value">{row.tool}</span>
+                </div>
+                <div className="ree-ct-divider" />
+                <div className="ree-ct-field">
+                  <span className="ree-ct-label">Workflow Connection</span>
+                  <span className="ree-ct-value ree-ct-value-success">{row.workflow}</span>
+                </div>
+                <div className="ree-ct-divider" />
+                <div className="ree-ct-field">
+                  <span className="ree-ct-label">Fresher Responsibility Supported</span>
+                  <span className="ree-ct-value ree-ct-value-violet">{row.responsibility}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -798,6 +833,98 @@ const RealExecutionExposure: React.FC = () => {
             color: #34d399;
           }
           .ree-pt-divider {
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.14) 20%, rgba(255,255,255,0.14) 80%, transparent 100%);
+            border: none;
+          }
+        }
+        .connection-table-mobile {
+          display: none;
+        }
+        @media (max-width: 720px) {
+          .connection-table-desktop {
+            display: none !important;
+          }
+          .connection-table-mobile {
+            display: grid;
+            gap: 14px;
+          }
+          .ree-ct-card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 14px;
+            padding: 14px 16px;
+            position: relative;
+            overflow: hidden;
+          }
+          .ree-ct-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, rgba(110,231,215,0.8), rgba(167,139,250,0.8));
+            opacity: 0.7;
+          }
+          .ree-ct-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+          }
+          .ree-ct-index {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 28px;
+            height: 28px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, rgba(110,231,215,0.18), rgba(167,139,250,0.18));
+            border: 1px solid rgba(110,231,215,0.35);
+            color: #6ee7d7;
+            font-size: 11px;
+            font-weight: 800;
+            flex-shrink: 0;
+          }
+          .ree-ct-title {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #f8fafc;
+            line-height: 1.35;
+            letter-spacing: -0.01em;
+            padding-top: 4px;
+          }
+          .ree-ct-field {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding: 8px 0;
+          }
+          .ree-ct-label {
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #9aa4b2;
+            font-weight: 700;
+          }
+          .ree-ct-value {
+            font-size: 12px;
+            font-weight: 600;
+            color: #e7ecf3;
+            line-height: 1.45;
+          }
+          .ree-ct-value-teal {
+            color: #6ee7d7;
+          }
+          .ree-ct-value-success {
+            color: #34d399;
+          }
+          .ree-ct-value-violet {
+            color: #a78bfa;
+          }
+          .ree-ct-divider {
             height: 1px;
             width: 100%;
             background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.14) 20%, rgba(255,255,255,0.14) 80%, transparent 100%);
