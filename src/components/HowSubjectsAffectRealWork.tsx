@@ -269,7 +269,7 @@ const HowSubjectsAffectRealWork: React.FC = () => {
 
         {/* Daily Work → Subject Mapping */}
         <SectionTitle eyebrow="Daily Responsibility Mapping" title="Daily Work → Subject Mapping" />
-        <div className="wfg-card" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+        <div className="wfg-card hsw-dwm-desktop" tabIndex={0} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
           <div className="wfg-table-daily" role="table" aria-label="Daily work to subject mapping">
             <div className="wfg-thead" role="row">
               <div role="columnheader">Real Fresher Responsibility</div>
@@ -288,6 +288,48 @@ const HowSubjectsAffectRealWork: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Mobile: Daily Work → Subject Mapping redesigned cards, grouped by subject */}
+        <div className="hsw-dwm-mobile" aria-label="Daily work to subject mapping mobile">
+          {Array.from(
+            dailyMapping.reduce((map, r) => {
+              const list = map.get(r.subject) ?? [];
+              list.push(r.responsibility);
+              map.set(r.subject, list);
+              return map;
+            }, new Map<string, string[]>()).entries()
+          ).map(([subject, items], gi) => {
+            const palette = [accentTeal, accentViolet, accentAmber, '#7DD3FC', '#f472b6'];
+            const color = palette[gi % palette.length];
+            return (
+              <div className="wfg-card hsw-dwm-card" tabIndex={0} key={subject} style={cardStyle({ padding: 0, overflow: 'hidden' })}>
+                <div className="hsw-dwm-accent" style={{ background: `linear-gradient(90deg, ${color}, transparent)` }} />
+                <div className="hsw-dwm-body">
+                  <div className="hsw-dwm-head">
+                    <span className="hsw-dwm-index" style={{ color, borderColor: `${color}55`, background: `${color}20` }}>
+                      {String(gi + 1).padStart(2, '0')}
+                    </span>
+                    <span style={pill({ bg: `${color}20`, bd: `${color}55`, fg: color })}>{subject}</span>
+                  </div>
+
+                  <div className="hsw-dwm-divider" aria-hidden />
+                  <div className="hsw-dwm-eyebrow">Real Fresher Responsibilities</div>
+                  <ul className="hsw-dwm-list">
+                    {items.map((it, i) => (
+                      <React.Fragment key={i}>
+                        {i > 0 && <li className="hsw-dwm-sep" aria-hidden />}
+                        <li className="hsw-dwm-item">
+                          <span className="hsw-dwm-bullet" style={{ background: color, boxShadow: `0 0 0 3px ${color}22` }} />
+                          <span className="hsw-dwm-text">{it}</span>
+                        </li>
+                      </React.Fragment>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         {/* What Students Must Understand */}
