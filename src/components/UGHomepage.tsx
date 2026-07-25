@@ -390,7 +390,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
         {/* ============ HERO ============ */}
         <section aria-labelledby="ug-hero-heading" className="relative overflow-hidden pt-12 pb-6 sm:pt-24 sm:pb-8">
           <div className="ug-hero-glow" aria-hidden="true" />
-          <div className="relative z-10 flex flex-col items-center md:items-start text-center md:text-left">
+          <div className="relative z-10 flex flex-col items-start text-left">
             <Reveal delay={20}>
               <div
                 className="ug-hero-badge inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm font-medium border"
