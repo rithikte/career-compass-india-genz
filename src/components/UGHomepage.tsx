@@ -406,11 +406,21 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
 
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
         {/* ============ HERO ============ */}
-        <section className="relative overflow-hidden pt-12 pb-6 sm:pt-24 sm:pb-8">
+        <section aria-labelledby="ug-hero-heading" className="relative overflow-hidden pt-12 pb-6 sm:pt-24 sm:pb-8">
           <div className="ug-hero-glow" aria-hidden="true" />
           <div className="relative z-10">
+            <Reveal delay={20}>
+              <div
+                className="ug-hero-badge inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm font-medium border"
+                style={{ ...techFont, background: 'rgba(109,212,200,0.08)', borderColor: 'rgba(109,212,200,0.25)', color: '#6DD4C8' }}
+              >
+                <span className="ug-hero-badge-dot h-2 w-2 rounded-full bg-[#6DD4C8]" />
+                Built in Telangana. Built for India.
+              </div>
+            </Reveal>
             <Reveal delay={60}>
               <SplitHeading
+                id="ug-hero-heading"
                 className="mt-6 text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.15]"
                 style={{ ...headingFont, maxWidth: '18ch' }}
               />
@@ -435,18 +445,21 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
               </p>
             </Reveal>
             <Reveal delay={200}>
-              <div className="text-center mt-6">
-                <div
-                  className="ug-hero-badge inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm font-medium border"
-                  style={{ ...techFont, background: 'rgba(109,212,200,0.08)', borderColor: 'rgba(109,212,200,0.25)', color: '#6DD4C8' }}
-                >
-                  <span className="ug-hero-badge-dot h-2 w-2 rounded-full bg-[#6DD4C8]" />
-                  Built in Telangana. Built for India.
-                </div>
+              <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <PrimaryButton onClick={handleExplore}>
+                  <Compass strokeWidth={2} className="h-5 w-5" />
+                  Explore Career Maps
+                  <ArrowRight strokeWidth={2} className="ug-cta-arrow h-5 w-5" />
+                </PrimaryButton>
+                <SecondaryButton onClick={handleSearchDegree}>
+                  <Search strokeWidth={2} className="h-5 w-5" style={{ color: '#6DD4C8' }} />
+                  Search your degree
+                </SecondaryButton>
               </div>
             </Reveal>
           </div>
         </section>
+
 
         {/* ============ WHY START WITH SUBJECTS ============ */}
         <section className="py-12 sm:py-16">
