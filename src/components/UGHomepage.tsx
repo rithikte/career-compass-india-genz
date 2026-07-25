@@ -490,7 +490,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
               See where your interests can lead.
             </h2>
             <p
-              className="mt-5 text-base sm:text-lg leading-[1.7]"
+              className="mt-5 text-[11.2px] sm:text-[12.6px] leading-[1.7]"
               style={{ color: COLORS.muted, maxWidth: '68ch' }}
             >
               Choose a subject and explore the full path — learn what freshers
@@ -517,7 +517,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
                     >
                       Step {i + 1}
                     </span>
-                    <p className="mt-1 font-medium" style={techFont}>
+                    <p className="mt-1 text-[11.2px] font-medium" style={techFont}>
                       {step}
                     </p>
                   </div>
@@ -561,7 +561,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
                     <h3 className="mt-4 text-lg font-medium" style={headingFont}>
                       <span className="ug-discover-title">{item.title}</span>
                     </h3>
-                    <p className="mt-2 leading-[1.7]" style={{ color: COLORS.muted }}>
+                    <p className="mt-2 text-[11.2px] leading-[1.7]" style={{ color: COLORS.muted }}>
                       {item.desc}
                     </p>
                   </div>
@@ -597,7 +597,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
                 <h3 className="mt-4 text-lg font-medium" style={{ ...headingFont, color: '#FF7B72' }}>
                   <span className="ug-matters-title">The gap</span>
                 </h3>
-                <p className="mt-2 leading-[1.7]" style={{ color: COLORS.muted }}>
+                <p className="mt-2 text-[11.2px] leading-[1.7]" style={{ color: COLORS.muted }}>
                   Companies also look for practical skills, project experience, and
                   domain knowledge — not just a certificate.
                 </p>
@@ -615,7 +615,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
                 <h3 className="mt-4 text-lg font-medium" style={{ ...headingFont, color: '#8FBFA3' }}>
                   <span className="ug-matters-title">The way forward</span>
                 </h3>
-                <p className="mt-2 leading-[1.7]" style={{ color: COLORS.muted }}>
+                <p className="mt-2 text-[11.2px] leading-[1.7]" style={{ color: COLORS.muted }}>
                   Knowing the path early helps you prepare with direction from the
                   very beginning.
                 </p>
