@@ -1,44 +1,33 @@
-## UG Homepage — UI/UX Audit (based on the built component)
+Plan: Reduce UG Homepage paragraph font sizes by 30%
 
-### Scorecard (20 parameters)
+Goal
+Reduce the font size of every `<p>` text element in `src/components/UGHomepage.tsx` by 30% from its current rendered size, without changing line-height, colors, spacing, or layout.
 
-| # | Parameter | Score | Note |
-|---|---|---|---|
-| 1 | Visual hierarchy | 82 | Clear label → H2 → body rhythm; hero CTA missing above the fold |
-| 2 | Typography system | 80 | Consistent scale, good line-height; Satoshi/IBM Plex likely not loaded → Inter fallback |
-| 3 | Color & contrast | 76 | Muted #9BA6BF on #121A2F ≈ 6:1 (ok); tiny uppercase labels at 0.18em tracking read faint |
-| 4 | Layout & spacing | 84 | 6xl container, consistent 12/16 section padding |
-| 5 | Responsiveness | 83 | Good breakpoints; 8-col stat grid at lg is very tight |
-| 6 | Content clarity | 88 | Plain, student-friendly, jargon-free |
-| 7 | Information architecture | 80 | Logical order, but Approach and Journey overlap conceptually |
-| 8 | CTA effectiveness | 62 | Single CTA at the very bottom only; no hero CTA, no sticky CTA |
-| 9 | Motion & micro-interaction | 86 | Well-crafted reveals, hover lift, glow; reduced-motion respected |
-| 10 | Consistency of components | 78 | Card/hover patterns duplicated as 5 near-identical CSS blocks |
-| 11 | Accessibility (semantics) | 70 | Icons imported but many cards render no icon; decorative glow correctly aria-hidden |
-| 12 | Keyboard/focus states | 55 | No visible :focus-visible styles on button or interactive cards |
-| 13 | Scannability | 74 | Long unbroken text-only card runs; no icons/numbers as anchors |
-| 14 | Trust & credibility | 68 | "Live Statistics" and "Trusted by Thousands" are unverified claims |
-| 15 | Emotional tone/brand | 85 | Calm teal-on-navy, distinct from generic purple SaaS |
-| 16 | Whitespace balance | 82 | Generous, but hero feels top-heavy with 3 stacked paragraphs |
-| 17 | Progressive disclosure | 72 | Everything flat; no expand/see-more for the 8-step journey |
-| 18 | Performance hygiene | 74 | Large inline <style> block, 8s infinite blur(80px) animation = repaint cost |
-| 19 | Mobile ergonomics | 79 | Tap targets fine; approach arrows hidden on mobile breaks the flow metaphor |
-| 20 | Conversion flow | 65 | No secondary path (e.g. "Search a degree"), no anchor nav on a long page |
+Current state
+Read the UG Homepage component and identified all `<p>` elements and their current sizes:
 
-**Overall: 78/100** — strong visual craft and content, weakest on conversion, focus states, and trust claims.
+- Hero problem paragraph (line 411): `text-base sm:text-lg` → 16px / 18px
+- Hero value proposition paragraph (line 420): `text-base sm:text-lg` → 16px / 18px
+- Why Start With Subjects description (line 445): `text-base sm:text-lg` → 16px / 18px
+- Why Start card descriptions (line 471): default 16px
+- What is Undergraduate Maps description (line 492): `text-base sm:text-lg` → 16px / 18px
+- Journey step text (line 520): default 16px
+- Discover card descriptions (line 564): default 16px
+- Why This Matters gap description (line 600): default 16px
+- Why This Matters way-forward description (line 618): default 16px
+- Our Approach description (line 639): `text-base sm:text-lg` → 16px / 18px
+- Our Approach goal paragraph (line 679): default 16px
+- CTA description (line 790): default 16px
 
-### Top fixes, in priority order
+Implementation approach
+1. For paragraphs currently using `text-base sm:text-lg`, replace with `text-[11.2px] sm:text-[12.6px]` to apply an exact 30% reduction.
+2. For paragraphs with no explicit size class (defaulting to 16px), add `text-[11.2px]`.
+3. Preserve all existing `mt-*`, `leading-[1.7]`, `font-medium`, `mx-auto`, and `maxWidth` styles to avoid layout shifts.
+4. Keep headings, labels, cards, icons, and buttons untouched.
 
-1. **Hero CTA** — add "Explore Career Maps" primary + "Search your degree" secondary directly under the hero paragraphs; move the Telangana badge above the H1.
-2. **Focus visibility** — global `:focus-visible` ring (2px #6DD4C8, 2px offset) on the primary button, journey steps, and any interactive card.
-3. **Trust honesty** — replace "Live Statistics" with "Platform Coverage" and "Trusted by Thousands" with a factual coverage headline (matches the project's Truth Curve rule).
-4. **Scannability** — render the already-imported icons in Discover / Why-this-matters cards; add step connectors on mobile instead of hiding arrows.
-5. **Stat grid** — cap at 4 columns on lg (2 rows of 4) instead of 8 across.
-6. **Consistency** — collapse the 5 duplicated hover CSS blocks into one `.ug-card` + CSS-variable accent pattern.
-7. **Performance** — reduce hero glow to a static radial gradient with a low-cost opacity pulse instead of animating a `blur(80px)` layer.
-8. **Semantics/SEO** — one H1 confirmed; add a `<section aria-labelledby>` per block and ensure the heading fonts are actually loaded or drop them from the stack.
+Verification
+- Run a build check after edits.
+- Capture a preview screenshot of the UG Homepage to confirm the text remains readable and the design is intact.
 
-### Technical notes
-Dead code to remove: `JourneyChip` (defined, never used) and several unused lucide imports (`AlertCircle`, `CheckCircle2`, `Users`, `Monitor`, `Building2` in some paths).
-
-Say the word and I'll implement any subset of these.
+Files to change
+- `src/components/UGHomepage.tsx`
