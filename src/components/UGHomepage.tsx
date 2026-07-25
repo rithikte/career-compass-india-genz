@@ -511,13 +511,15 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
         </section>
 
         {/* ============ WHAT IS UNDERGRADUATE MAPS ============ */}
-        <section className="py-12 sm:py-16">
+        <section aria-labelledby="ug-what-heading" className="py-12 sm:py-16">
           <Reveal>
             <SectionLabel accent="#6E9F9A">What is Undergraduate Maps</SectionLabel>
             <h2
+              id="ug-what-heading"
               className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
               style={{ ...headingFont, maxWidth: '20ch' }}
             >
+
               See where your interests can lead.
             </h2>
             <p
