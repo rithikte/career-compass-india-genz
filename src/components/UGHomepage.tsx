@@ -557,10 +557,11 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
         </section>
 
         {/* ============ WHAT YOU WILL DISCOVER ============ */}
-        <section className="py-12 sm:py-16">
+        <section aria-labelledby="ug-discover-heading" className="py-12 sm:py-16">
           <Reveal>
             <SectionLabel accent="#7FC8A9">What You Will Discover</SectionLabel>
             <h2
+              id="ug-discover-heading"
               className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
               style={{ ...headingFont, maxWidth: '20ch' }}
             >
@@ -571,6 +572,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
           <div className="mt-8 grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {DISCOVER.map((item, i) => {
               const featured = i === 0;
+              const Icon = item.icon;
               return (
                 <Reveal
                   key={item.title}
@@ -578,6 +580,13 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
                   className={featured ? 'sm:col-span-2 lg:col-span-1 lg:row-span-2' : ''}
                 >
                   <div className="ug-lift ug-discover-card h-full" style={cardStyle}>
+                    <div
+                      className="ug-discover-icon flex h-11 w-11 items-center justify-center rounded-xl"
+                      style={{ background: 'rgba(127,200,169,0.12)' }}
+                      aria-hidden="true"
+                    >
+                      <Icon strokeWidth={2} className="h-5 w-5" style={{ color: '#7FC8A9' }} />
+                    </div>
                     <h3 className="mt-4 text-lg font-medium" style={headingFont}>
                       <span className="ug-discover-title">{item.title}</span>
                     </h3>
@@ -592,10 +601,11 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
         </section>
 
         {/* ============ WHY THIS MATTERS ============ */}
-        <section className="py-12 sm:py-16">
+        <section aria-labelledby="ug-matters-heading" className="py-12 sm:py-16">
           <Reveal>
             <SectionLabel accent="#FF7B72">Why This Matters</SectionLabel>
             <h2
+              id="ug-matters-heading"
               className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
               style={{ ...headingFont, maxWidth: '20ch' }}
             >
@@ -606,6 +616,13 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
           <div className="mt-8 grid gap-4 sm:gap-6 md:grid-cols-2">
             <Reveal>
               <div className="ug-lift ug-matters-card h-full" style={{ ...cardStyle, borderColor: 'rgba(255,123,114,0.4)', '--accent-color': 'rgba(255,123,114,0.75)', '--accent-bg': 'rgba(255,123,114,0.18)' } as React.CSSProperties}>
+                <div
+                  className="ug-matters-icon flex h-11 w-11 items-center justify-center rounded-xl"
+                  style={{ background: 'rgba(255,123,114,0.12)' }}
+                  aria-hidden="true"
+                >
+                  <AlertTriangle strokeWidth={2} className="h-5 w-5" style={{ color: '#FF7B72' }} />
+                </div>
                 <h3 className="mt-4 text-lg font-medium" style={{ ...headingFont, color: '#FF7B72' }}>
                   <span className="ug-matters-title">The gap</span>
                 </h3>
@@ -617,6 +634,13 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
             </Reveal>
             <Reveal delay={80}>
               <div className="ug-lift ug-matters-card h-full" style={{ ...cardStyle, borderColor: 'rgba(143,191,163,0.4)', '--accent-color': 'rgba(143,191,163,0.75)', '--accent-bg': 'rgba(143,191,163,0.18)' } as React.CSSProperties}>
+                <div
+                  className="ug-matters-icon flex h-11 w-11 items-center justify-center rounded-xl"
+                  style={{ background: 'rgba(143,191,163,0.12)' }}
+                  aria-hidden="true"
+                >
+                  <Route strokeWidth={2} className="h-5 w-5" style={{ color: '#8FBFA3' }} />
+                </div>
                 <h3 className="mt-4 text-lg font-medium" style={{ ...headingFont, color: '#8FBFA3' }}>
                   <span className="ug-matters-title">The way forward</span>
                 </h3>
@@ -628,6 +652,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
             </Reveal>
           </div>
         </section>
+
 
         {/* ============ OUR APPROACH ============ */}
         <section className="py-12 sm:py-16">
