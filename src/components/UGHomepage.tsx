@@ -680,7 +680,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
                       <ArrowRight
                         strokeWidth={2}
                         aria-hidden="true"
-                        className="ug-approach-arrow absolute h-4 w-4 rotate-90 left-1/2 -translate-x-1/2 -bottom-[14px] sm:rotate-0 sm:translate-x-0 sm:left-auto sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 sm:-right-[14px]"
+                        className="ug-approach-arrow absolute h-4 w-4 rotate-90 left-1/2 -translate-x-1/2 -bottom-[14px] sm:hidden"
                         style={{ color: 'rgba(143,167,191,0.55)' }}
                       />
                     )}
