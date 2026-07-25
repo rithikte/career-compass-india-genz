@@ -86,7 +86,8 @@ const wordVariants = {
   }),
 };
 
-const SplitHeading: React.FC<{ className?: string; style?: React.CSSProperties }> = ({
+const SplitHeading: React.FC<{ id?: string; className?: string; style?: React.CSSProperties }> = ({
+  id,
   className,
   style,
 }) => {
@@ -96,7 +97,8 @@ const SplitHeading: React.FC<{ className?: string; style?: React.CSSProperties }
   const second = ['See', 'where', 'it', 'can', 'take', 'you.'];
 
   return (
-    <h1 ref={ref} className={className} style={style}>
+    <h1 id={id} ref={ref} className={className} style={style}>
+
       {first.map((word, i) => (
         <span key={`f-${i}`} className="inline-block overflow-hidden align-bottom">
           <motion.span
