@@ -94,11 +94,9 @@ const SplitHeading: React.FC<{ id?: string; className?: string; style?: React.CS
   const ref = useRef<HTMLHeadingElement>(null);
   const isInView = useFramerInView(ref, { once: true, amount: 0.6 });
   const first = ['Start', 'with', 'what', 'you', 'like.'];
-  const second = ['See', 'where', 'it', 'can', 'take', 'you.'];
 
   return (
     <h1 id={id} ref={ref} className={className} style={style}>
-
       {first.map((word, i) => (
         <span key={`f-${i}`} className="inline-block overflow-hidden align-bottom">
           <motion.span
@@ -112,27 +110,9 @@ const SplitHeading: React.FC<{ id?: string; className?: string; style?: React.CS
           </motion.span>
         </span>
       ))}
-      {second.map((word, j) => {
-        const i = first.length + j;
-        return (
-          <span
-            key={`s-${j}`}
-            className="inline-block overflow-hidden align-bottom"
-          >
-            <motion.span
-              className="ug-glow-word inline-block"
-              style={{ color: '#6DD4C8' }}
-              custom={i}
-              initial="hidden"
-              animate={isInView ? 'visible' : 'hidden'}
-              variants={wordVariants}
-            >
-              {word}
-              {j < second.length - 1 ? '\u00A0' : ''}
-            </motion.span>
-          </span>
-        );
-      })}
+      <span className="inline-block" style={{ color: '#6DD4C8' }}>
+        See where it can take you.
+      </span>
     </h1>
   );
 };
