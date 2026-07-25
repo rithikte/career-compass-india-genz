@@ -50,7 +50,7 @@ const Index = () => {
     { id: 'home', title: 'Home', component: HomePage },
     { id: 'embedded-product', title: 'Embedded Product Engineering', component: EmbeddedProductEngineering },
     { id: 'home-page', title: 'Home Page', component: PremiumHomePage },
-    { id: 'ug-homepage', title: 'UG Homepage', component: () => <UGHomepage onExplore={() => setActiveSection('home')} /> },
+    { id: 'ug-homepage', title: 'UG Homepage', component: () => <UGHomepage onExplore={() => setActiveSection('home')} onSearchDegree={() => setActiveSection('search-degree')} /> },
     { id: 'search-degree', title: 'Search Degree', component: SearchDegree },
     { id: 'domain-subjects', title: 'Domain subjects', component: DomainSubjects },
     { id: 'domain-chapters', title: 'Domain chapters', component: DomainChapters },
