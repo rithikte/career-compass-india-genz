@@ -225,7 +225,7 @@ const DISCOVER = [
   { icon: TrendingUp, title: 'Career Growth', desc: 'How your path evolves over time.' },
 ];
 
-const APPROACH = ['Subjects', 'Domains', 'Fresher Roles', 'Skills', 'Projects', 'Hiring'];
+const APPROACH = ['Subjects', 'Domains', 'Fresher Jobs', 'Skills', 'Projects', 'Hiring'];
 
 const STATS = [
   { value: '60+', label: 'Engineering Degrees', icon: GraduationCap, color: '#89C2D9' },
