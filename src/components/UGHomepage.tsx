@@ -373,16 +373,17 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
         .ug-hero-glow {
           position: absolute; top: 0; left: 50%; transform: translateX(-50%);
           width: 120%; height: 120%;
-          background: radial-gradient(circle at 50% 40%, rgba(109,212,200,0.10) 0%, rgba(109,212,200,0) 55%);
-          filter: blur(80px);
+          background: radial-gradient(circle at 50% 40%, rgba(109,212,200,0.16) 0%, rgba(109,212,200,0) 58%);
           animation: ug-hero-breathe 8s ease-in-out infinite alternate;
+          will-change: opacity;
           pointer-events: none;
           z-index: 0;
         }
         @keyframes ug-hero-breathe {
-          from { transform: translateX(-50%) scale(0.95); opacity: 0.45; }
-          to { transform: translateX(-50%) scale(1.08); opacity: 0.75; }
+          from { opacity: 0.5; }
+          to { opacity: 0.9; }
         }
+
         .ug-hero-badge {
           transition: transform 300ms cubic-bezier(0.22,1,0.36,1), box-shadow 300ms ease, border-color 300ms ease;
         }
