@@ -205,15 +205,16 @@ const SecondaryButton: React.FC<{ onClick?: () => void; children: React.ReactNod
 
 /* ---------- Journey steps ---------- */
 const JOURNEY = [
-  'Subject',
-  'Domain',
-  'Industry',
-  'Career Path',
-  'Fresher Role',
-  'Skills',
-  'Projects',
-  'Hiring Reality',
+  { label: 'Subject', note: 'What you study.' },
+  { label: 'Domain', note: 'Where it applies.' },
+  { label: 'Industry', note: 'Who uses it.' },
+  { label: 'Career Path', note: 'Roles it opens.' },
+  { label: 'Fresher Role', note: 'Your first job.' },
+  { label: 'Skills', note: 'What to learn.' },
+  { label: 'Projects', note: 'What to build.' },
+  { label: 'Hiring Reality', note: 'What companies expect.' },
 ];
+
 
 const DISCOVER = [
   { icon: Layers, title: 'Domains & Industries', desc: 'Where your subject applies in the real world.' },
@@ -506,33 +507,53 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
             </p>
           </Reveal>
 
-          <div className="mt-8 flex flex-col md:flex-row md:flex-wrap md:items-stretch gap-3">
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {JOURNEY.map((step, i) => (
-              <Reveal key={step} delay={i * 70} className="md:contents">
-                <div className="flex items-center gap-3 md:flex-col md:items-stretch">
-                  <div
-                    className="ug-lift ug-step flex-1 md:w-40"
+              <Reveal key={step.label} delay={i * 60}>
+                <div
+                  className="ug-lift ug-step relative h-full overflow-hidden"
+                  style={{
+                    ...cardStyle,
+                    padding: '18px 18px 16px',
+                    borderColor: 'rgba(110,159,154,0.28)',
+                  }}
+                >
+                  <span
+                    aria-hidden
+                    className="absolute left-0 top-0 h-full w-[2px]"
                     style={{
-                      ...cardStyle,
-                      padding: '16px 18px',
-                      borderColor: 'rgba(110,159,154,0.35)',
+                      background:
+                        'linear-gradient(180deg, rgba(110,159,154,0) 0%, #6E9F9A 45%, rgba(110,159,154,0) 100%)',
                     }}
-                  >
+                  />
+                  <div className="flex items-center gap-2.5">
                     <span
-                      className="ug-step-num text-xs"
-                      style={{ ...techFont, color: '#6E9F9A' }}
+                      className="ug-step-num inline-flex h-6 w-6 items-center justify-center rounded-full text-[10px]"
+                      style={{
+                        ...techFont,
+                        color: '#6E9F9A',
+                        border: '1px solid rgba(110,159,154,0.45)',
+                        background: 'rgba(110,159,154,0.10)',
+                      }}
                     >
-                      Step {i + 1}
+                      {String(i + 1).padStart(2, '0')}
                     </span>
-                    <p className="mt-1 text-[11.2px] font-medium" style={techFont}>
-                      {step}
+                    <p className="text-[12.6px] font-medium" style={techFont}>
+                      {step.label}
                     </p>
                   </div>
+                  <p
+                    className="mt-2.5 text-[11.2px] leading-[1.6]"
+                    style={{ color: COLORS.muted }}
+                  >
+                    {step.note}
+                  </p>
                 </div>
               </Reveal>
             ))}
           </div>
         </section>
+
 
         {/* ============ WHAT YOU WILL DISCOVER ============ */}
         <section aria-labelledby="ug-discover-heading" className="py-12 sm:py-16">
