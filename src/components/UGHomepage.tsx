@@ -280,6 +280,15 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
     >
       <style>{`
         .ug-primary-btn:hover { transform: translateY(-3px); filter: brightness(1.08); }
+        .ug-secondary-btn:hover { transform: translateY(-3px); background: rgba(109,212,200,0.10) !important; border-color: rgba(109,212,200,0.6) !important; }
+        .ug-focusable:focus-visible,
+        .ug-primary-btn:focus-visible,
+        .ug-secondary-btn:focus-visible {
+          outline: 2px solid #6DD4C8;
+          outline-offset: 3px;
+          border-radius: 16px;
+        }
+
         .ug-lift { transition: transform 250ms ease-out, box-shadow 250ms ease-out; }
         .ug-lift:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.35); }
         .ug-icon-box { transition: transform 300ms cubic-bezier(0.22,1,0.36,1), background 300ms ease; }
