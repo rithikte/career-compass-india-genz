@@ -409,7 +409,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
             </Reveal>
             <Reveal delay={120}>
               <p
-                className="mt-6 text-base sm:text-lg leading-[1.7]"
+                className="mt-6 text-[11.2px] sm:text-[12.6px] leading-[1.7]"
                 style={{ color: COLORS.muted, maxWidth: '65ch' }}
               >
                 Students know the subjects they like, but don't know where those
@@ -418,7 +418,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
             </Reveal>
             <Reveal delay={160}>
               <p
-                className="mt-4 text-base sm:text-lg leading-[1.7]"
+                className="mt-4 text-[11.2px] sm:text-[12.6px] leading-[1.7]"
                 style={{ color: COLORS.muted, maxWidth: '68ch' }}
               >
                 Undergraduate Maps shows you real career paths, what freshers
@@ -443,7 +443,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
               Students learn better when they are interested.
             </h2>
             <p
-              className="mt-5 text-base sm:text-lg leading-[1.7]"
+              className="mt-5 text-[11.2px] sm:text-[12.6px] leading-[1.7]"
               style={{ color: COLORS.muted, maxWidth: '68ch' }}
             >
               When a career is connected to subjects students genuinely enjoy,
@@ -468,7 +468,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
                   <h3 className="mt-4 text-lg font-medium" style={headingFont}>
                     <span className="ug-underline">{item.title}</span>
                   </h3>
-                  <p className="mt-2 leading-[1.7]" style={{ color: COLORS.muted }}>
+                  <p className="mt-2 text-[11.2px] leading-[1.7]" style={{ color: COLORS.muted }}>
                     {item.desc}
                   </p>
                 </div>
