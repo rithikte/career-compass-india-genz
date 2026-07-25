@@ -464,13 +464,15 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
 
 
         {/* ============ WHY START WITH SUBJECTS ============ */}
-        <section className="py-12 sm:py-16">
+        <section aria-labelledby="ug-why-heading" className="py-12 sm:py-16">
           <Reveal>
             <SectionLabel accent="#89C2D9">Why Start With Subjects</SectionLabel>
             <h2
+              id="ug-why-heading"
               className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
               style={{ ...headingFont, maxWidth: '20ch' }}
             >
+
               Students learn better when they are interested.
             </h2>
             <p
