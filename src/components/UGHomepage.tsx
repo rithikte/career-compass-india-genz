@@ -154,9 +154,10 @@ const cardStyle: React.CSSProperties = {
   backgroundImage: `linear-gradient(${COLORS.glass}, ${COLORS.glass})`,
 };
 
-const headingFont = { fontFamily: "'Satoshi', 'Inter', sans-serif" };
+const headingFont = { fontFamily: "'Poppins', 'Inter', sans-serif" };
 const bodyFont = { fontFamily: "'Inter', sans-serif" };
 const techFont = { fontFamily: "'IBM Plex Sans', 'Inter', sans-serif" };
+
 
 /* ---------- Section label ---------- */
 const SectionLabel: React.FC<{ accent: string; children: React.ReactNode }> = ({
