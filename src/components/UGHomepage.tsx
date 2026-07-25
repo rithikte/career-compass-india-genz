@@ -423,26 +423,27 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
                   aria-hidden="true"
                 />
                 <div className="pl-3 sm:pl-4">
-                  <p
-                    className="text-base sm:text-lg leading-[1.75]"
-                    style={{ color: COLORS.text }}
-                  >
-                    Students know the subjects they like, but don't know where those
-                    subjects can lead.
-                  </p>
-                  <div
-                    className="my-4 sm:my-5 h-px w-full"
-                    style={{ background: 'linear-gradient(90deg, rgba(155,166,191,0.35) 0%, rgba(155,166,191,0.05) 100%)' }}
-                    aria-hidden="true"
-                  />
-                  <p
-                    className="text-base sm:text-lg leading-[1.75]"
-                    style={{ color: COLORS.muted }}
-                  >
-                    Undergraduate Maps shows you real career paths, what freshers
-                    actually do, and the skills, projects &amp; knowledge companies
-                    expect.
-                  </p>
+                  <ul className="space-y-3 sm:space-y-4">
+                    {[
+                      'Start with the subjects you actually enjoy.',
+                      'See where those subjects can lead.',
+                      'Learn what freshers really do day-to-day.',
+                      'Build the skills, projects & knowledge companies expect.',
+                    ].map((point, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-3 sm:gap-4 text-base sm:text-lg leading-[1.7]"
+                        style={{ color: i < 2 ? COLORS.text : COLORS.muted }}
+                      >
+                        <span
+                          className="mt-2.5 sm:mt-3 h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full flex-shrink-0"
+                          style={{ background: '#6DD4C8', boxShadow: '0 0 8px rgba(109,212,200,0.55)' }}
+                          aria-hidden="true"
+                        />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </Reveal>
