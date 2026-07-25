@@ -10,14 +10,15 @@ import {
   Target,
   GraduationCap,
   TrendingUp,
-  AlertCircle,
-  CheckCircle2,
   ArrowRight,
   Shield,
-  Users,
   FileText,
-  Monitor,
+  Search,
+  Compass,
+  AlertTriangle,
+  Route,
 } from 'lucide-react';
+
 
 /* ---------- In-view reveal helper ---------- */
 function useInView<T extends HTMLElement>(options?: IntersectionObserverInit) {
@@ -85,7 +86,8 @@ const wordVariants = {
   }),
 };
 
-const SplitHeading: React.FC<{ className?: string; style?: React.CSSProperties }> = ({
+const SplitHeading: React.FC<{ id?: string; className?: string; style?: React.CSSProperties }> = ({
+  id,
   className,
   style,
 }) => {
@@ -95,7 +97,8 @@ const SplitHeading: React.FC<{ className?: string; style?: React.CSSProperties }
   const second = ['See', 'where', 'it', 'can', 'take', 'you.'];
 
   return (
-    <h1 ref={ref} className={className} style={style}>
+    <h1 id={id} ref={ref} className={className} style={style}>
+
       {first.map((word, i) => (
         <span key={`f-${i}`} className="inline-block overflow-hidden align-bottom">
           <motion.span
@@ -153,9 +156,10 @@ const cardStyle: React.CSSProperties = {
   backgroundImage: `linear-gradient(${COLORS.glass}, ${COLORS.glass})`,
 };
 
-const headingFont = { fontFamily: "'Satoshi', 'Inter', sans-serif" };
+const headingFont = { fontFamily: "'Poppins', 'Inter', sans-serif" };
 const bodyFont = { fontFamily: "'Inter', sans-serif" };
 const techFont = { fontFamily: "'IBM Plex Sans', 'Inter', sans-serif" };
+
 
 /* ---------- Section label ---------- */
 const SectionLabel: React.FC<{ accent: string; children: React.ReactNode }> = ({
@@ -195,6 +199,30 @@ const PrimaryButton: React.FC<{ onClick?: () => void; children: React.ReactNode 
   </button>
 );
 
+/* ---------- Secondary button ---------- */
+const SecondaryButton: React.FC<{ onClick?: () => void; children: React.ReactNode }> = ({
+  onClick,
+  children,
+}) => (
+  <button
+    onClick={onClick}
+    className="ug-secondary-btn inline-flex items-center gap-2 font-medium"
+    style={{
+      ...bodyFont,
+      background: 'transparent',
+      color: COLORS.text,
+      border: '1px solid rgba(109,212,200,0.35)',
+      borderRadius: 16,
+      padding: '15px 26px',
+      transition: 'transform 250ms ease-out, background 250ms ease-out, border-color 250ms ease-out',
+    }}
+  >
+    {children}
+  </button>
+);
+
+
+
 /* ---------- Journey steps ---------- */
 const JOURNEY = [
   'Subject',
@@ -232,13 +260,20 @@ const STATS = [
 
 interface UGHomepageProps {
   onExplore?: () => void;
+  onSearchDegree?: () => void;
 }
 
-const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
+const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) => {
   const handleExplore = () => {
     if (onExplore) onExplore();
     else window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const handleSearchDegree = () => {
+    if (onSearchDegree) onSearchDegree();
+    else handleExplore();
+  };
+
 
   return (
     <div
@@ -247,6 +282,15 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
     >
       <style>{`
         .ug-primary-btn:hover { transform: translateY(-3px); filter: brightness(1.08); }
+        .ug-secondary-btn:hover { transform: translateY(-3px); background: rgba(109,212,200,0.10) !important; border-color: rgba(109,212,200,0.6) !important; }
+        .ug-focusable:focus-visible,
+        .ug-primary-btn:focus-visible,
+        .ug-secondary-btn:focus-visible {
+          outline: 2px solid #6DD4C8;
+          outline-offset: 3px;
+          border-radius: 16px;
+        }
+
         .ug-lift { transition: transform 250ms ease-out, box-shadow 250ms ease-out; }
         .ug-lift:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.35); }
         .ug-icon-box { transition: transform 300ms cubic-bezier(0.22,1,0.36,1), background 300ms ease; }
@@ -331,16 +375,17 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
         .ug-hero-glow {
           position: absolute; top: 0; left: 50%; transform: translateX(-50%);
           width: 120%; height: 120%;
-          background: radial-gradient(circle at 50% 40%, rgba(109,212,200,0.10) 0%, rgba(109,212,200,0) 55%);
-          filter: blur(80px);
+          background: radial-gradient(circle at 50% 40%, rgba(109,212,200,0.16) 0%, rgba(109,212,200,0) 58%);
           animation: ug-hero-breathe 8s ease-in-out infinite alternate;
+          will-change: opacity;
           pointer-events: none;
           z-index: 0;
         }
         @keyframes ug-hero-breathe {
-          from { transform: translateX(-50%) scale(0.95); opacity: 0.45; }
-          to { transform: translateX(-50%) scale(1.08); opacity: 0.75; }
+          from { opacity: 0.5; }
+          to { opacity: 0.9; }
         }
+
         .ug-hero-badge {
           transition: transform 300ms cubic-bezier(0.22,1,0.36,1), box-shadow 300ms ease, border-color 300ms ease;
         }
@@ -363,11 +408,21 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
 
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
         {/* ============ HERO ============ */}
-        <section className="relative overflow-hidden pt-12 pb-6 sm:pt-24 sm:pb-8">
+        <section aria-labelledby="ug-hero-heading" className="relative overflow-hidden pt-12 pb-6 sm:pt-24 sm:pb-8">
           <div className="ug-hero-glow" aria-hidden="true" />
           <div className="relative z-10">
+            <Reveal delay={20}>
+              <div
+                className="ug-hero-badge inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm font-medium border"
+                style={{ ...techFont, background: 'rgba(109,212,200,0.08)', borderColor: 'rgba(109,212,200,0.25)', color: '#6DD4C8' }}
+              >
+                <span className="ug-hero-badge-dot h-2 w-2 rounded-full bg-[#6DD4C8]" />
+                Built in Telangana. Built for India.
+              </div>
+            </Reveal>
             <Reveal delay={60}>
               <SplitHeading
+                id="ug-hero-heading"
                 className="mt-6 text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.15]"
                 style={{ ...headingFont, maxWidth: '18ch' }}
               />
@@ -392,27 +447,32 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
               </p>
             </Reveal>
             <Reveal delay={200}>
-              <div className="text-center mt-6">
-                <div
-                  className="ug-hero-badge inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm font-medium border"
-                  style={{ ...techFont, background: 'rgba(109,212,200,0.08)', borderColor: 'rgba(109,212,200,0.25)', color: '#6DD4C8' }}
-                >
-                  <span className="ug-hero-badge-dot h-2 w-2 rounded-full bg-[#6DD4C8]" />
-                  Built in Telangana. Built for India.
-                </div>
+              <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <PrimaryButton onClick={handleExplore}>
+                  <Compass strokeWidth={2} className="h-5 w-5" />
+                  Explore Career Maps
+                  <ArrowRight strokeWidth={2} className="ug-cta-arrow h-5 w-5" />
+                </PrimaryButton>
+                <SecondaryButton onClick={handleSearchDegree}>
+                  <Search strokeWidth={2} className="h-5 w-5" style={{ color: '#6DD4C8' }} />
+                  Search your degree
+                </SecondaryButton>
               </div>
             </Reveal>
           </div>
         </section>
 
+
         {/* ============ WHY START WITH SUBJECTS ============ */}
-        <section className="py-12 sm:py-16">
+        <section aria-labelledby="ug-why-heading" className="py-12 sm:py-16">
           <Reveal>
             <SectionLabel accent="#89C2D9">Why Start With Subjects</SectionLabel>
             <h2
+              id="ug-why-heading"
               className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
               style={{ ...headingFont, maxWidth: '20ch' }}
             >
+
               Students learn better when they are interested.
             </h2>
             <p
@@ -451,13 +511,15 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
         </section>
 
         {/* ============ WHAT IS UNDERGRADUATE MAPS ============ */}
-        <section className="py-12 sm:py-16">
+        <section aria-labelledby="ug-what-heading" className="py-12 sm:py-16">
           <Reveal>
             <SectionLabel accent="#6E9F9A">What is Undergraduate Maps</SectionLabel>
             <h2
+              id="ug-what-heading"
               className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
               style={{ ...headingFont, maxWidth: '20ch' }}
             >
+
               See where your interests can lead.
             </h2>
             <p
@@ -499,10 +561,11 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
         </section>
 
         {/* ============ WHAT YOU WILL DISCOVER ============ */}
-        <section className="py-12 sm:py-16">
+        <section aria-labelledby="ug-discover-heading" className="py-12 sm:py-16">
           <Reveal>
             <SectionLabel accent="#7FC8A9">What You Will Discover</SectionLabel>
             <h2
+              id="ug-discover-heading"
               className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
               style={{ ...headingFont, maxWidth: '20ch' }}
             >
@@ -513,6 +576,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
           <div className="mt-8 grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {DISCOVER.map((item, i) => {
               const featured = i === 0;
+              const Icon = item.icon;
               return (
                 <Reveal
                   key={item.title}
@@ -520,6 +584,13 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
                   className={featured ? 'sm:col-span-2 lg:col-span-1 lg:row-span-2' : ''}
                 >
                   <div className="ug-lift ug-discover-card h-full" style={cardStyle}>
+                    <div
+                      className="ug-discover-icon flex h-11 w-11 items-center justify-center rounded-xl"
+                      style={{ background: 'rgba(127,200,169,0.12)' }}
+                      aria-hidden="true"
+                    >
+                      <Icon strokeWidth={2} className="h-5 w-5" style={{ color: '#7FC8A9' }} />
+                    </div>
                     <h3 className="mt-4 text-lg font-medium" style={headingFont}>
                       <span className="ug-discover-title">{item.title}</span>
                     </h3>
@@ -534,10 +605,11 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
         </section>
 
         {/* ============ WHY THIS MATTERS ============ */}
-        <section className="py-12 sm:py-16">
+        <section aria-labelledby="ug-matters-heading" className="py-12 sm:py-16">
           <Reveal>
             <SectionLabel accent="#FF7B72">Why This Matters</SectionLabel>
             <h2
+              id="ug-matters-heading"
               className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
               style={{ ...headingFont, maxWidth: '20ch' }}
             >
@@ -548,6 +620,13 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
           <div className="mt-8 grid gap-4 sm:gap-6 md:grid-cols-2">
             <Reveal>
               <div className="ug-lift ug-matters-card h-full" style={{ ...cardStyle, borderColor: 'rgba(255,123,114,0.4)', '--accent-color': 'rgba(255,123,114,0.75)', '--accent-bg': 'rgba(255,123,114,0.18)' } as React.CSSProperties}>
+                <div
+                  className="ug-matters-icon flex h-11 w-11 items-center justify-center rounded-xl"
+                  style={{ background: 'rgba(255,123,114,0.12)' }}
+                  aria-hidden="true"
+                >
+                  <AlertTriangle strokeWidth={2} className="h-5 w-5" style={{ color: '#FF7B72' }} />
+                </div>
                 <h3 className="mt-4 text-lg font-medium" style={{ ...headingFont, color: '#FF7B72' }}>
                   <span className="ug-matters-title">The gap</span>
                 </h3>
@@ -559,6 +638,13 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
             </Reveal>
             <Reveal delay={80}>
               <div className="ug-lift ug-matters-card h-full" style={{ ...cardStyle, borderColor: 'rgba(143,191,163,0.4)', '--accent-color': 'rgba(143,191,163,0.75)', '--accent-bg': 'rgba(143,191,163,0.18)' } as React.CSSProperties}>
+                <div
+                  className="ug-matters-icon flex h-11 w-11 items-center justify-center rounded-xl"
+                  style={{ background: 'rgba(143,191,163,0.12)' }}
+                  aria-hidden="true"
+                >
+                  <Route strokeWidth={2} className="h-5 w-5" style={{ color: '#8FBFA3' }} />
+                </div>
                 <h3 className="mt-4 text-lg font-medium" style={{ ...headingFont, color: '#8FBFA3' }}>
                   <span className="ug-matters-title">The way forward</span>
                 </h3>
@@ -571,11 +657,13 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
           </div>
         </section>
 
+
         {/* ============ OUR APPROACH ============ */}
-        <section className="py-12 sm:py-16">
+        <section aria-labelledby="ug-approach-heading" className="py-12 sm:py-16">
           <Reveal>
             <SectionLabel accent="#8FA7BF">Our Approach</SectionLabel>
             <h2
+              id="ug-approach-heading"
               className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
               style={{ ...headingFont, maxWidth: '24ch' }}
             >
@@ -613,7 +701,8 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
                     {i < APPROACH.length - 1 && (
                       <ArrowRight
                         strokeWidth={2}
-                        className="ug-approach-arrow hidden sm:block h-4 w-4 flex-shrink-0"
+                        aria-hidden="true"
+                        className="ug-approach-arrow h-4 w-4 flex-shrink-0 rotate-90 self-center sm:rotate-0 sm:self-auto"
                         style={{ color: '#8FA7BF' }}
                       />
                     )}
@@ -628,56 +717,67 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
           </Reveal>
         </section>
 
-        {/* ============ TRUSTED BY THOUSANDS ============ */}
-        <section className="py-12 sm:py-16">
+        {/* ============ PLATFORM COVERAGE ============ */}
+        <section aria-labelledby="ug-coverage-heading" className="py-12 sm:py-16">
           <Reveal>
             <div className="flex justify-center">
               <span
                 className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium uppercase tracking-[0.12em] border"
                 style={{ ...techFont, background: 'rgba(109,212,200,0.08)', borderColor: 'rgba(109,212,200,0.25)', color: '#6DD4C8' }}
               >
-                <TrendingUp strokeWidth={2} className="h-4 w-4 ug-stat-pulse" />
-                Live Statistics
-                <span className="h-2 w-2 rounded-full bg-[#6DD4C8] ug-stat-dot" />
+                <TrendingUp strokeWidth={2} className="h-4 w-4 ug-stat-pulse" aria-hidden="true" />
+                Platform Coverage
+                <span className="h-2 w-2 rounded-full bg-[#6DD4C8] ug-stat-dot" aria-hidden="true" />
               </span>
             </div>
           </Reveal>
 
           <Reveal delay={80}>
             <h2
+              id="ug-coverage-heading"
               className="mt-6 text-center text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight"
-              style={{ ...headingFont, maxWidth: '22ch', marginLeft: 'auto', marginRight: 'auto' }}
+              style={{ ...headingFont, maxWidth: '24ch', marginLeft: 'auto', marginRight: 'auto' }}
             >
-              Trusted by{' '}
-              <span style={{ color: '#6DD4C8' }}>Thousands</span>
-              <br className="hidden sm:block" /> Across India
+              What is{' '}
+              <span style={{ color: '#6DD4C8' }}>mapped</span>
+              <br className="hidden sm:block" /> on the platform
             </h2>
           </Reveal>
 
-          <div className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 sm:gap-4">
-            {STATS.map((stat, i) => (
-              <Reveal key={stat.label} delay={i * 60}>
-                <div
-                  className="ug-stat-card text-center h-full flex flex-col items-center justify-center"
-                  style={{
-                    ...cardStyle,
-                    padding: '20px 12px',
-                    '--stat-color': stat.color,
-                  } as React.CSSProperties}
-                >
+          <div className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+            {STATS.map((stat, i) => {
+              const Icon = stat.icon;
+              return (
+                <Reveal key={stat.label} delay={i * 60}>
                   <div
-                    className="ug-stat-value text-2xl sm:text-3xl font-bold"
-                    style={{ color: stat.color, ...headingFont }}
+                    className="ug-stat-card text-center h-full flex flex-col items-center justify-center"
+                    style={{
+                      ...cardStyle,
+                      padding: '22px 14px',
+                      '--stat-color': stat.color,
+                    } as React.CSSProperties}
                   >
-                    {stat.value}
+                    <div
+                      className="ug-stat-icon mb-3 flex h-10 w-10 items-center justify-center rounded-xl"
+                      style={{ background: `${stat.color}1F` }}
+                      aria-hidden="true"
+                    >
+                      <Icon strokeWidth={2} className="h-5 w-5" style={{ color: stat.color }} />
+                    </div>
+                    <div
+                      className="ug-stat-value text-2xl sm:text-3xl font-bold"
+                      style={{ color: stat.color, ...headingFont }}
+                    >
+                      {stat.value}
+                    </div>
+                    <div className="ug-stat-divider" />
+                    <div className="text-xs font-medium uppercase tracking-wider text-center leading-tight" style={{ color: COLORS.muted }}>
+                      {stat.label}
+                    </div>
                   </div>
-                  <div className="ug-stat-divider" />
-                  <div className="text-xs font-medium uppercase tracking-wider text-center leading-tight" style={{ color: COLORS.muted }}>
-                    {stat.label}
-                  </div>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              );
+            })}
           </div>
 
           <Reveal delay={120}>
@@ -686,16 +786,17 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
                 className="ug-stat-trust inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm font-medium border"
                 style={{ ...techFont, background: 'rgba(143,191,163,0.08)', borderColor: 'rgba(143,191,163,0.25)', color: '#8FBFA3' }}
               >
-                <Shield strokeWidth={2} className="h-4 w-4" />
-                100% Secure &amp; Privacy-Protected Platform
-                <span className="h-2 w-2 rounded-full bg-[#8FBFA3] ug-stat-dot" />
+                <Shield strokeWidth={2} className="h-4 w-4" aria-hidden="true" />
+                No ads. No spam. Your data stays private.
+                <span className="h-2 w-2 rounded-full bg-[#8FBFA3] ug-stat-dot" aria-hidden="true" />
               </span>
             </div>
           </Reveal>
         </section>
 
+
         {/* ============ CTA ============ */}
-        <section className="py-14 sm:py-20">
+        <section aria-labelledby="ug-cta-heading" className="py-14 sm:py-20">
           <Reveal>
             <div
               className="ug-cta-card text-center"
@@ -708,10 +809,12 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
               <div
                 className="ug-cta-icon mx-auto flex h-12 w-12 items-center justify-center rounded-2xl"
                 style={{ background: 'rgba(109,212,200,0.12)' }}
+                aria-hidden="true"
               >
                 <Sparkles strokeWidth={2} className="h-6 w-6" style={{ color: '#6DD4C8' }} />
               </div>
               <h2
+                id="ug-cta-heading"
                 className="mx-auto mt-6 text-2xl sm:text-4xl font-bold leading-tight"
                 style={{ ...headingFont, maxWidth: '18ch' }}
               >
@@ -724,11 +827,15 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
                 Discover the domains, careers, skills, projects, and opportunities
                 connected to the subjects you like.
               </p>
-              <div className="mt-8 flex justify-center">
+              <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
                 <PrimaryButton onClick={handleExplore}>
                   Explore Now
                   <ArrowRight strokeWidth={2} className="ug-cta-arrow h-5 w-5" />
                 </PrimaryButton>
+                <SecondaryButton onClick={handleSearchDegree}>
+                  <Search strokeWidth={2} className="h-5 w-5" style={{ color: '#6DD4C8' }} />
+                  Search your degree
+                </SecondaryButton>
               </div>
             </div>
           </Reveal>
@@ -738,32 +845,5 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
   );
 };
 
-/* ---------- Journey chip with sequential reveal ---------- */
-const JourneyChip: React.FC<{ label: string; index: number; accent: string }> = ({
-  label,
-  index,
-  accent,
-}) => {
-  const { ref, inView } = useInView<HTMLSpanElement>();
-  return (
-    <span
-      ref={ref}
-      className="rounded-lg px-3 py-1.5 text-sm font-medium ug-reveal-line"
-      style={{
-        ...techFont,
-        color: accent,
-        background: 'rgba(109,212,200,0.1)',
-        border: `1px solid rgba(109,212,200,0.3)`,
-        opacity: inView ? 1 : 0,
-        transform: inView ? 'translateY(0)' : 'translateY(8px)',
-        transition: 'opacity 250ms ease-out, transform 250ms ease-out',
-        transitionDelay: `${index * 80}ms`,
-        whiteSpace: 'nowrap',
-      }}
-    >
-      {label}
-    </span>
-  );
-};
-
 export default UGHomepage;
+
