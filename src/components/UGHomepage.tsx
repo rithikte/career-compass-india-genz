@@ -225,7 +225,14 @@ const DISCOVER = [
   { icon: TrendingUp, title: 'Career Growth', desc: 'How your path evolves over time.' },
 ];
 
-const APPROACH = ['Subjects', 'Domains', 'Fresher Jobs', 'Skills', 'Projects', 'Hiring'];
+const APPROACH = [
+  { label: 'Subjects', note: 'What you study in college.' },
+  { label: 'Domains', note: 'Where those subjects are used.' },
+  { label: 'Fresher Jobs', note: 'Roles you can start with.' },
+  { label: 'Skills', note: 'What the job actually needs.' },
+  { label: 'Projects', note: 'Proof that you can do it.' },
+  { label: 'Hiring', note: 'How companies pick you.' },
+];
 
 const STATS = [
   { value: '60+', label: 'Engineering Degrees', icon: GraduationCap, color: '#89C2D9' },
