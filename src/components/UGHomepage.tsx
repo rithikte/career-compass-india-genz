@@ -408,23 +408,43 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
               />
             </Reveal>
             <Reveal delay={120}>
-              <p
-                className="mt-6 text-base sm:text-lg leading-[1.7]"
-                style={{ color: COLORS.muted, maxWidth: '65ch' }}
+              <div
+                className="mt-6 sm:mt-8 rounded-2xl sm:rounded-3xl p-5 sm:p-7 relative overflow-hidden"
+                style={{
+                  ...cardStyle,
+                  maxWidth: '68ch',
+                  borderColor: 'rgba(109,212,200,0.22)',
+                  background: 'linear-gradient(135deg, rgba(109,212,200,0.06) 0%, rgba(18,26,47,0.85) 55%)',
+                }}
               >
-                Students know the subjects they like, but don't know where those
-                subjects can lead.
-              </p>
-            </Reveal>
-            <Reveal delay={160}>
-              <p
-                className="mt-4 text-base sm:text-lg leading-[1.7]"
-                style={{ color: COLORS.muted, maxWidth: '68ch' }}
-              >
-                Undergraduate Maps shows you real career paths, what freshers
-                actually do, and the skills, projects &amp; knowledge companies
-                expect.
-              </p>
+                <div
+                  className="absolute top-0 left-0 h-full w-1 sm:w-1.5"
+                  style={{ background: 'linear-gradient(180deg, #6DD4C8 0%, rgba(109,212,200,0.15) 100%)' }}
+                  aria-hidden="true"
+                />
+                <div className="pl-3 sm:pl-4">
+                  <p
+                    className="text-base sm:text-lg leading-[1.75]"
+                    style={{ color: COLORS.text }}
+                  >
+                    Students know the subjects they like, but don't know where those
+                    subjects can lead.
+                  </p>
+                  <div
+                    className="my-4 sm:my-5 h-px w-full"
+                    style={{ background: 'linear-gradient(90deg, rgba(155,166,191,0.35) 0%, rgba(155,166,191,0.05) 100%)' }}
+                    aria-hidden="true"
+                  />
+                  <p
+                    className="text-base sm:text-lg leading-[1.75]"
+                    style={{ color: COLORS.muted }}
+                  >
+                    Undergraduate Maps shows you real career paths, what freshers
+                    actually do, and the skills, projects &amp; knowledge companies
+                    expect.
+                  </p>
+                </div>
+              </div>
             </Reveal>
           </div>
         </section>
