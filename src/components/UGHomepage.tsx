@@ -197,6 +197,30 @@ const PrimaryButton: React.FC<{ onClick?: () => void; children: React.ReactNode 
   </button>
 );
 
+/* ---------- Secondary button ---------- */
+const SecondaryButton: React.FC<{ onClick?: () => void; children: React.ReactNode }> = ({
+  onClick,
+  children,
+}) => (
+  <button
+    onClick={onClick}
+    className="ug-secondary-btn inline-flex items-center gap-2 font-medium"
+    style={{
+      ...bodyFont,
+      background: 'transparent',
+      color: COLORS.text,
+      border: '1px solid rgba(109,212,200,0.35)',
+      borderRadius: 16,
+      padding: '15px 26px',
+      transition: 'transform 250ms ease-out, background 250ms ease-out, border-color 250ms ease-out',
+    }}
+  >
+    {children}
+  </button>
+);
+
+
+
 /* ---------- Journey steps ---------- */
 const JOURNEY = [
   'Subject',
