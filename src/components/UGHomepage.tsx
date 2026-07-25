@@ -225,7 +225,14 @@ const DISCOVER = [
   { icon: TrendingUp, title: 'Career Growth', desc: 'How your path evolves over time.' },
 ];
 
-const APPROACH = ['Subjects', 'Domains', 'Fresher Jobs', 'Skills', 'Projects', 'Hiring'];
+const APPROACH = [
+  { label: 'Subjects', note: 'What you study in college.' },
+  { label: 'Domains', note: 'Where those subjects are used.' },
+  { label: 'Fresher Jobs', note: 'Roles you can start with.' },
+  { label: 'Skills', note: 'What the job actually needs.' },
+  { label: 'Projects', note: 'Proof that you can do it.' },
+  { label: 'Hiring', note: 'How companies pick you.' },
+];
 
 const STATS = [
   { value: '60+', label: 'Engineering Degrees', icon: GraduationCap, color: '#89C2D9' },
@@ -648,39 +655,44 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
 
           <Reveal delay={120}>
             <div className="mt-8" style={cardStyle}>
-              <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3">
+              <ol className="ug-approach-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {APPROACH.map((node, i) => (
-                  <React.Fragment key={node}>
-                    <div
-                      className="ug-approach-chip flex items-center gap-3 rounded-xl px-4 py-3"
-                      style={{ background: 'rgba(143,167,191,0.1)', border: '1px solid rgba(143,167,191,0.3)' }}
+                  <li
+                    key={node.label}
+                    className="ug-approach-chip relative flex items-start gap-3 rounded-xl px-4 py-4"
+                    style={{ background: 'rgba(143,167,191,0.08)', border: '1px solid rgba(143,167,191,0.24)' }}
+                  >
+                    <span
+                      className="ug-approach-num mt-[2px] flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-xs"
+                      style={{ ...techFont, background: '#8FA7BF', color: COLORS.bg }}
                     >
-                      <span
-                        className="ug-approach-num flex h-6 w-6 items-center justify-center rounded-full text-xs"
-                        style={{ ...techFont, background: '#8FA7BF', color: COLORS.bg }}
-                      >
-                        {i + 1}
+                      {i + 1}
+                    </span>
+                    <span className="min-w-0">
+                      <span style={techFont} className="block text-sm font-medium">
+                        {node.label}
                       </span>
-                      <span style={techFont} className="font-medium">
-                        {node}
+                      <span className="mt-1 block text-[11.2px] leading-[1.6]" style={{ color: COLORS.muted }}>
+                        {node.note}
                       </span>
-                    </div>
+                    </span>
                     {i < APPROACH.length - 1 && (
                       <ArrowRight
                         strokeWidth={2}
                         aria-hidden="true"
-                        className="ug-approach-arrow h-4 w-4 flex-shrink-0 rotate-90 self-center sm:rotate-0 sm:self-auto"
-                        style={{ color: '#8FA7BF' }}
+                        className="ug-approach-arrow absolute h-4 w-4 rotate-90 left-1/2 -translate-x-1/2 -bottom-[14px] sm:hidden"
+                        style={{ color: 'rgba(143,167,191,0.55)' }}
                       />
                     )}
-                  </React.Fragment>
+                  </li>
                 ))}
-              </div>
-              <p className="mt-6 text-[11.2px] leading-[1.7]" style={{ color: COLORS.muted, maxWidth: '60ch' }}>
+              </ol>
+              <p className="mt-8 text-[11.2px] leading-[1.7]" style={{ color: COLORS.muted, maxWidth: '60ch' }}>
                 The goal is simple: help students understand what lies between a
                 degree and a job.
               </p>
             </div>
+
           </Reveal>
         </section>
 
