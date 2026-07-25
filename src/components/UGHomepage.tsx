@@ -408,44 +408,23 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
               />
             </Reveal>
             <Reveal delay={120}>
-              <div
-                className="mt-6 sm:mt-8 rounded-2xl sm:rounded-3xl p-5 sm:p-7 relative overflow-hidden"
-                style={{
-                  ...cardStyle,
-                  maxWidth: '68ch',
-                  borderColor: 'rgba(109,212,200,0.22)',
-                  background: 'linear-gradient(135deg, rgba(109,212,200,0.06) 0%, rgba(18,26,47,0.85) 55%)',
-                }}
+              <p
+                className="mt-6 text-base sm:text-lg leading-[1.7]"
+                style={{ color: COLORS.muted, maxWidth: '65ch' }}
               >
-                <div
-                  className="absolute top-0 left-0 h-full w-1 sm:w-1.5"
-                  style={{ background: 'linear-gradient(180deg, #6DD4C8 0%, rgba(109,212,200,0.15) 100%)' }}
-                  aria-hidden="true"
-                />
-                <div className="pl-3 sm:pl-4">
-                  <ul className="space-y-3 sm:space-y-4">
-                    {[
-                      'Start with the subjects you actually enjoy.',
-                      'See where those subjects can lead.',
-                      'Learn what freshers really do day-to-day.',
-                      'Build the skills, projects & knowledge companies expect.',
-                    ].map((point, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start gap-3 sm:gap-4 text-base sm:text-lg leading-[1.7]"
-                        style={{ color: i < 2 ? COLORS.text : COLORS.muted }}
-                      >
-                        <span
-                          className="mt-2.5 sm:mt-3 h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full flex-shrink-0"
-                          style={{ background: '#6DD4C8', boxShadow: '0 0 8px rgba(109,212,200,0.55)' }}
-                          aria-hidden="true"
-                        />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+                Students know the subjects they like, but don't know where those
+                subjects can lead.
+              </p>
+            </Reveal>
+            <Reveal delay={160}>
+              <p
+                className="mt-4 text-base sm:text-lg leading-[1.7]"
+                style={{ color: COLORS.muted, maxWidth: '68ch' }}
+              >
+                Undergraduate Maps shows you real career paths, what freshers
+                actually do, and the skills, projects &amp; knowledge companies
+                expect.
+              </p>
             </Reveal>
           </div>
         </section>
