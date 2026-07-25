@@ -637,7 +637,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
               Built around real work and industry expectations.
             </h2>
             <p
-              className="mt-5 text-base sm:text-lg leading-[1.7]"
+              className="mt-5 text-[11.2px] sm:text-[12.6px] leading-[1.7]"
               style={{ color: COLORS.muted, maxWidth: '68ch' }}
             >
               Every career map connects academic subjects, industry domains,
@@ -676,7 +676,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
                   </React.Fragment>
                 ))}
               </div>
-              <p className="mt-6 leading-[1.7]" style={{ color: COLORS.muted, maxWidth: '60ch' }}>
+              <p className="mt-6 text-[11.2px] leading-[1.7]" style={{ color: COLORS.muted, maxWidth: '60ch' }}>
                 The goal is simple: help students understand what lies between a
                 degree and a job.
               </p>
@@ -788,7 +788,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
                 Start exploring career maps
               </h2>
               <p
-                className="mx-auto mt-4 leading-[1.7]"
+                className="mx-auto mt-4 text-[11.2px] leading-[1.7]"
                 style={{ color: COLORS.muted, maxWidth: '60ch' }}
               >
                 Discover the domains, careers, skills, projects, and opportunities
