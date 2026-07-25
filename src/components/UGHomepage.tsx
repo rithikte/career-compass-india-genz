@@ -258,13 +258,20 @@ const STATS = [
 
 interface UGHomepageProps {
   onExplore?: () => void;
+  onSearchDegree?: () => void;
 }
 
-const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore }) => {
+const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) => {
   const handleExplore = () => {
     if (onExplore) onExplore();
     else window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const handleSearchDegree = () => {
+    if (onSearchDegree) onSearchDegree();
+    else handleExplore();
+  };
+
 
   return (
     <div
