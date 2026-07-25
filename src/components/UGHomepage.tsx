@@ -655,10 +655,11 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
 
 
         {/* ============ OUR APPROACH ============ */}
-        <section className="py-12 sm:py-16">
+        <section aria-labelledby="ug-approach-heading" className="py-12 sm:py-16">
           <Reveal>
             <SectionLabel accent="#8FA7BF">Our Approach</SectionLabel>
             <h2
+              id="ug-approach-heading"
               className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
               style={{ ...headingFont, maxWidth: '24ch' }}
             >
@@ -696,7 +697,8 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
                     {i < APPROACH.length - 1 && (
                       <ArrowRight
                         strokeWidth={2}
-                        className="ug-approach-arrow hidden sm:block h-4 w-4 flex-shrink-0"
+                        aria-hidden="true"
+                        className="ug-approach-arrow h-4 w-4 flex-shrink-0 rotate-90 self-center sm:rotate-0 sm:self-auto"
                         style={{ color: '#8FA7BF' }}
                       />
                     )}
@@ -711,56 +713,67 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
           </Reveal>
         </section>
 
-        {/* ============ TRUSTED BY THOUSANDS ============ */}
-        <section className="py-12 sm:py-16">
+        {/* ============ PLATFORM COVERAGE ============ */}
+        <section aria-labelledby="ug-coverage-heading" className="py-12 sm:py-16">
           <Reveal>
             <div className="flex justify-center">
               <span
                 className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium uppercase tracking-[0.12em] border"
                 style={{ ...techFont, background: 'rgba(109,212,200,0.08)', borderColor: 'rgba(109,212,200,0.25)', color: '#6DD4C8' }}
               >
-                <TrendingUp strokeWidth={2} className="h-4 w-4 ug-stat-pulse" />
-                Live Statistics
-                <span className="h-2 w-2 rounded-full bg-[#6DD4C8] ug-stat-dot" />
+                <TrendingUp strokeWidth={2} className="h-4 w-4 ug-stat-pulse" aria-hidden="true" />
+                Platform Coverage
+                <span className="h-2 w-2 rounded-full bg-[#6DD4C8] ug-stat-dot" aria-hidden="true" />
               </span>
             </div>
           </Reveal>
 
           <Reveal delay={80}>
             <h2
+              id="ug-coverage-heading"
               className="mt-6 text-center text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight"
-              style={{ ...headingFont, maxWidth: '22ch', marginLeft: 'auto', marginRight: 'auto' }}
+              style={{ ...headingFont, maxWidth: '24ch', marginLeft: 'auto', marginRight: 'auto' }}
             >
-              Trusted by{' '}
-              <span style={{ color: '#6DD4C8' }}>Thousands</span>
-              <br className="hidden sm:block" /> Across India
+              What is{' '}
+              <span style={{ color: '#6DD4C8' }}>mapped</span>
+              <br className="hidden sm:block" /> on the platform
             </h2>
           </Reveal>
 
-          <div className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 sm:gap-4">
-            {STATS.map((stat, i) => (
-              <Reveal key={stat.label} delay={i * 60}>
-                <div
-                  className="ug-stat-card text-center h-full flex flex-col items-center justify-center"
-                  style={{
-                    ...cardStyle,
-                    padding: '20px 12px',
-                    '--stat-color': stat.color,
-                  } as React.CSSProperties}
-                >
+          <div className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+            {STATS.map((stat, i) => {
+              const Icon = stat.icon;
+              return (
+                <Reveal key={stat.label} delay={i * 60}>
                   <div
-                    className="ug-stat-value text-2xl sm:text-3xl font-bold"
-                    style={{ color: stat.color, ...headingFont }}
+                    className="ug-stat-card text-center h-full flex flex-col items-center justify-center"
+                    style={{
+                      ...cardStyle,
+                      padding: '22px 14px',
+                      '--stat-color': stat.color,
+                    } as React.CSSProperties}
                   >
-                    {stat.value}
+                    <div
+                      className="ug-stat-icon mb-3 flex h-10 w-10 items-center justify-center rounded-xl"
+                      style={{ background: `${stat.color}1F` }}
+                      aria-hidden="true"
+                    >
+                      <Icon strokeWidth={2} className="h-5 w-5" style={{ color: stat.color }} />
+                    </div>
+                    <div
+                      className="ug-stat-value text-2xl sm:text-3xl font-bold"
+                      style={{ color: stat.color, ...headingFont }}
+                    >
+                      {stat.value}
+                    </div>
+                    <div className="ug-stat-divider" />
+                    <div className="text-xs font-medium uppercase tracking-wider text-center leading-tight" style={{ color: COLORS.muted }}>
+                      {stat.label}
+                    </div>
                   </div>
-                  <div className="ug-stat-divider" />
-                  <div className="text-xs font-medium uppercase tracking-wider text-center leading-tight" style={{ color: COLORS.muted }}>
-                    {stat.label}
-                  </div>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              );
+            })}
           </div>
 
           <Reveal delay={120}>
@@ -769,13 +782,14 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
                 className="ug-stat-trust inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm font-medium border"
                 style={{ ...techFont, background: 'rgba(143,191,163,0.08)', borderColor: 'rgba(143,191,163,0.25)', color: '#8FBFA3' }}
               >
-                <Shield strokeWidth={2} className="h-4 w-4" />
-                100% Secure &amp; Privacy-Protected Platform
-                <span className="h-2 w-2 rounded-full bg-[#8FBFA3] ug-stat-dot" />
+                <Shield strokeWidth={2} className="h-4 w-4" aria-hidden="true" />
+                No ads. No spam. Your data stays private.
+                <span className="h-2 w-2 rounded-full bg-[#8FBFA3] ug-stat-dot" aria-hidden="true" />
               </span>
             </div>
           </Reveal>
         </section>
+
 
         {/* ============ CTA ============ */}
         <section className="py-14 sm:py-20">
