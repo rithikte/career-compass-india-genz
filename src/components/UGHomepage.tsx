@@ -426,19 +426,6 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
                 expect.
               </p>
             </Reveal>
-            <Reveal delay={200}>
-              <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <PrimaryButton onClick={handleExplore}>
-                  <Compass strokeWidth={2} className="h-5 w-5" />
-                  Explore Career Maps
-                  <ArrowRight strokeWidth={2} className="ug-cta-arrow h-5 w-5" />
-                </PrimaryButton>
-                <SecondaryButton onClick={handleSearchDegree}>
-                  <Search strokeWidth={2} className="h-5 w-5" style={{ color: '#6DD4C8' }} />
-                  Search your degree
-                </SecondaryButton>
-              </div>
-            </Reveal>
           </div>
         </section>
 
