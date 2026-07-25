@@ -796,7 +796,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
 
 
         {/* ============ CTA ============ */}
-        <section className="py-14 sm:py-20">
+        <section aria-labelledby="ug-cta-heading" className="py-14 sm:py-20">
           <Reveal>
             <div
               className="ug-cta-card text-center"
@@ -809,10 +809,12 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
               <div
                 className="ug-cta-icon mx-auto flex h-12 w-12 items-center justify-center rounded-2xl"
                 style={{ background: 'rgba(109,212,200,0.12)' }}
+                aria-hidden="true"
               >
                 <Sparkles strokeWidth={2} className="h-6 w-6" style={{ color: '#6DD4C8' }} />
               </div>
               <h2
+                id="ug-cta-heading"
                 className="mx-auto mt-6 text-2xl sm:text-4xl font-bold leading-tight"
                 style={{ ...headingFont, maxWidth: '18ch' }}
               >
@@ -825,11 +827,15 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
                 Discover the domains, careers, skills, projects, and opportunities
                 connected to the subjects you like.
               </p>
-              <div className="mt-8 flex justify-center">
+              <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
                 <PrimaryButton onClick={handleExplore}>
                   Explore Now
                   <ArrowRight strokeWidth={2} className="ug-cta-arrow h-5 w-5" />
                 </PrimaryButton>
+                <SecondaryButton onClick={handleSearchDegree}>
+                  <Search strokeWidth={2} className="h-5 w-5" style={{ color: '#6DD4C8' }} />
+                  Search your degree
+                </SecondaryButton>
               </div>
             </div>
           </Reveal>
@@ -839,32 +845,5 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
   );
 };
 
-/* ---------- Journey chip with sequential reveal ---------- */
-const JourneyChip: React.FC<{ label: string; index: number; accent: string }> = ({
-  label,
-  index,
-  accent,
-}) => {
-  const { ref, inView } = useInView<HTMLSpanElement>();
-  return (
-    <span
-      ref={ref}
-      className="rounded-lg px-3 py-1.5 text-sm font-medium ug-reveal-line"
-      style={{
-        ...techFont,
-        color: accent,
-        background: 'rgba(109,212,200,0.1)',
-        border: `1px solid rgba(109,212,200,0.3)`,
-        opacity: inView ? 1 : 0,
-        transform: inView ? 'translateY(0)' : 'translateY(8px)',
-        transition: 'opacity 250ms ease-out, transform 250ms ease-out',
-        transitionDelay: `${index * 80}ms`,
-        whiteSpace: 'nowrap',
-      }}
-    >
-      {label}
-    </span>
-  );
-};
-
 export default UGHomepage;
+
