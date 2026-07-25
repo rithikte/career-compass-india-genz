@@ -10,14 +10,15 @@ import {
   Target,
   GraduationCap,
   TrendingUp,
-  AlertCircle,
-  CheckCircle2,
   ArrowRight,
   Shield,
-  Users,
   FileText,
-  Monitor,
+  Search,
+  Compass,
+  AlertTriangle,
+  Route,
 } from 'lucide-react';
+
 
 /* ---------- In-view reveal helper ---------- */
 function useInView<T extends HTMLElement>(options?: IntersectionObserverInit) {
