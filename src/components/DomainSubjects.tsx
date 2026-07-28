@@ -449,7 +449,7 @@ const DomainSubjects: React.FC<DomainSubjectsProps> = ({ onExploreChapters }) =>
                     border: `1px solid ${isActive ? accent : COLORS.border}`,
                   }}
                 >
-                  Sections {pair.map((s) => s.id).join('–')}
+                  Subjects Section {pair.map((s) => s.id).join('–')}
                 </button>
               );
             })}
@@ -503,7 +503,7 @@ const DomainSubjects: React.FC<DomainSubjectsProps> = ({ onExploreChapters }) =>
               <button
                 key={`dot-${i}`}
                 type="button"
-                aria-label={`Go to sections ${pair.map((s) => s.id).join(' and ')}`}
+                aria-label={`Go to subjects section ${pair.map((s) => s.id).join(' and ')}`}
                 onClick={() => goTo(i)}
                 className="ds-dot rounded-full"
                 style={{
