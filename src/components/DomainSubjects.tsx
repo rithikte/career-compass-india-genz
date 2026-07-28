@@ -148,7 +148,7 @@ const DomainSubjects: React.FC<DomainSubjectsProps> = ({ onExploreChapters }) =>
           </div>
           <div className="min-w-0 flex-1">
             <span className="inline-block ds-label font-medium uppercase" style={{ ...techFont, color: accent }}>
-              Section {section.id}
+              Subjects Section - {section.id}
             </span>
             <h3 className="mt-1 font-semibold" style={{ ...headingFont, color: COLORS.text, lineHeight: 1.4 }}>
               {section.title}
@@ -449,14 +449,14 @@ const DomainSubjects: React.FC<DomainSubjectsProps> = ({ onExploreChapters }) =>
                     border: `1px solid ${isActive ? accent : COLORS.border}`,
                   }}
                 >
-                  Sections {pair.map((s) => s.id).join('–')}
+                  Subjects Section {pair.map((s) => s.id).join('–')}
                 </button>
               );
             })}
           </div>
 
           <p className="mt-3 text-center ds-body" style={{ ...bodyFont, color: COLORS.muted }}>
-            Swipe to compare Sections 1–2 and 3–4
+            Swipe to compare Subjects Section 1–2 and 3–4
           </p>
 
           <div ref={railRef} className="ds-rail mt-3">
@@ -503,7 +503,7 @@ const DomainSubjects: React.FC<DomainSubjectsProps> = ({ onExploreChapters }) =>
               <button
                 key={`dot-${i}`}
                 type="button"
-                aria-label={`Go to sections ${pair.map((s) => s.id).join(' and ')}`}
+                aria-label={`Go to subjects section ${pair.map((s) => s.id).join(' and ')}`}
                 onClick={() => goTo(i)}
                 className="ds-dot rounded-full"
                 style={{
