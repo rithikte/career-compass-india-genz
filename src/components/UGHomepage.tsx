@@ -550,20 +550,23 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
         </section>
 
 
-        {/* ============ WHAT YOU WILL DISCOVER ============ */}
+        {/* ============ WHAT YOU WILL GET ============ */}
         <section aria-labelledby="ug-discover-heading" className="py-12 sm:py-16">
           <Reveal>
-            <SectionLabel accent="#7FC8A9">What You Will Discover</SectionLabel>
+            <SectionLabel accent="#7FC8A9">WHAT YOU WILL GET</SectionLabel>
             <h2
               id="ug-discover-heading"
               className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
               style={{ ...headingFont, ...headingGradient, maxWidth: '20ch' }}
             >
-              More than just career names.
+              Know exactly how to prepare.
             </h2>
+            <p className="mt-4 text-[11.2px] leading-[1.6]" style={{ color: COLORS.muted }}>
+              Every career map helps you understand:
+            </p>
           </Reveal>
 
-          <div className="mt-8 grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-6 grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {DISCOVER.map((item, i) => {
               const featured = i === 0;
               const Icon = item.icon;
