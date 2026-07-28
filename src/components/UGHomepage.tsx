@@ -806,6 +806,63 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
         </section>
 
 
+        {/* ============ MISSION: SKILLING INDIA ============ */}
+        <section aria-labelledby="ug-mission-heading" className="py-12 sm:py-16">
+          <Reveal>
+            <div className="flex justify-center">
+              <SectionLabel accent="#F5C26B">Mission Skilling India</SectionLabel>
+            </div>
+            <h2
+              id="ug-mission-heading"
+              className="mt-5 text-center text-2xl sm:text-4xl font-bold leading-tight"
+              style={{ ...headingFont, ...headingGradient, maxWidth: '24ch', marginLeft: 'auto', marginRight: 'auto' }}
+            >
+              Skilling India, one career map at a time.
+            </h2>
+            <p
+              className="mt-5 text-center text-[11.2px] sm:text-[12.6px] leading-[1.7]"
+              style={{ color: COLORS.muted, maxWidth: '60ch', marginLeft: 'auto', marginRight: 'auto' }}
+            >
+              Our mission is to make career clarity accessible to every Indian student —
+              from metros to small towns — so they can learn with purpose and enter the
+              workforce with confidence.
+            </p>
+          </Reveal>
+
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
+            {[
+              { icon: Compass, accent: '#F5C26B', title: 'Clarity First', desc: 'Show every student the real path behind their subjects and degree.' },
+              { icon: Wrench, accent: '#6DD4C8', title: 'Skills That Matter', desc: 'Map the practical skills, tools, and projects companies actually expect.' },
+              { icon: Briefcase, accent: '#A78BFA', title: 'Work-Ready Talent', desc: 'Bridge the gap between academic learning and industry hiring.' },
+            ].map((m, i) => {
+              const Icon = m.icon;
+              return (
+                <Reveal key={m.title} delay={i * 80}>
+                  <div
+                    className="ug-lift h-full text-center"
+                    style={{ ...cardStyle, borderColor: `${m.accent}4D` }}
+                  >
+                    <div
+                      className="mx-auto flex h-11 w-11 items-center justify-center rounded-xl"
+                      style={{ background: `${m.accent}1F` }}
+                      aria-hidden="true"
+                    >
+                      <Icon strokeWidth={2} className="h-5 w-5" style={{ color: m.accent }} />
+                    </div>
+                    <h3 className="mt-4 text-lg font-medium" style={{ ...headingFont, color: m.accent }}>
+                      {m.title}
+                    </h3>
+                    <p className="mt-2 text-[11.2px] leading-[1.7]" style={{ color: COLORS.muted }}>
+                      {m.desc}
+                    </p>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
+        </section>
+
+
         {/* ============ CTA ============ */}
         <section aria-labelledby="ug-cta-heading" className="py-14 sm:py-20">
           <Reveal>
