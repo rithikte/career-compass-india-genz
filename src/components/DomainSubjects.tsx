@@ -432,7 +432,7 @@ const DomainSubjects: React.FC<DomainSubjectsProps> = ({ onExploreChapters }) =>
 
                             <button
                               type="button"
-                              onClick={() => toggleAlias(aliasKey)}
+                              onClick={(e) => { e.stopPropagation(); toggleAlias(aliasKey); }}
                               aria-expanded={aliasOpen}
                               aria-controls={`alias-${aliasKey}`}
                               className="ug-subj-toggle ds-label mt-2 inline-flex items-center gap-1.5 rounded-md px-2 py-1 font-medium uppercase"
