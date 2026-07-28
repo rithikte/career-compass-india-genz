@@ -364,13 +364,20 @@ const DomainSubjects: React.FC<DomainSubjectsProps> = ({ onExploreChapters }) =>
                   </span>
                   <span className="min-w-0 flex-1">
                     <span
-                      className="ds-label block font-medium uppercase"
-                      style={{ ...techFont, color: accent }}
+                      className="ds-label inline-flex items-center gap-1.5 font-medium uppercase rounded-full"
+                      style={{
+                        ...techFont,
+                        color: accent,
+                        background: `${accent}1A`,
+                        border: `1px solid ${accent}40`,
+                        padding: '2px 8px',
+                      }}
                     >
-                      Subject {group.index + 1}
+                      <span className="h-1.5 w-1.5 rounded-full" style={{ background: accent }} />
+                      {priority.label}
                     </span>
-                    <h3 className="mt-1 font-semibold" style={{ ...headingFont, color: COLORS.text }}>
-                      {group.title} — across all sections
+                    <h3 className="mt-1.5 font-semibold" style={{ ...headingFont, color: COLORS.text }}>
+                      {pickedName || group.title}
                     </h3>
                   </span>
                   <ChevronDown
