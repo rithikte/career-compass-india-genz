@@ -404,8 +404,20 @@ const DomainSubjects: React.FC<DomainSubjectsProps> = ({ onExploreChapters }) =>
                         return (
                           <div
                             key={aliasKey}
-                            className="ug-skill-row rounded-xl"
-                            style={{ padding: '12px 14px', border: `1px solid ${COLORS.border}` }}
+                            role="button"
+                            tabIndex={0}
+                            onClick={() => setPicked((p) => ({ ...p, [group.index]: item.subject.name }))}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                setPicked((p) => ({ ...p, [group.index]: item.subject.name }));
+                              }
+                            }}
+                            className="ug-skill-row rounded-xl cursor-pointer"
+                            style={{
+                              padding: '12px 14px',
+                              border: `1px solid ${pickedName ? `${accent}55` : COLORS.border}`,
+                            }}
                           >
                             <span
                               className="ds-label block font-medium uppercase"
@@ -414,8 +426,9 @@ const DomainSubjects: React.FC<DomainSubjectsProps> = ({ onExploreChapters }) =>
                               Section {item.sectionId}
                             </span>
                             <h4 className="mt-1 font-medium" style={{ ...headingFont, color: COLORS.text }}>
-                              {item.subject.name}
+                              {pickedName || item.subject.name}
                             </h4>
+
 
                             <button
                               type="button"
