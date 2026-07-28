@@ -471,6 +471,31 @@ const DomainSubjects: React.FC<DomainSubjectsProps> = ({ onExploreChapters }) =>
             );
           })}
         </div>
+
+        {/* Pick Subjects Wise Chapters */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
+          className="mt-8 text-center"
+        >
+          <button
+            type="button"
+            onClick={() => onExploreChapters?.()}
+            className="ug-chapters-cta inline-flex items-center gap-2 rounded-full font-semibold"
+            style={{
+              ...headingFont,
+              color: COLORS.bg,
+              background: `linear-gradient(90deg, ${COLORS.accent}, ${COLORS.accent2})`,
+              padding: 'clamp(10px, 2.2vw, 14px) clamp(18px, 4vw, 28px)',
+              border: 'none',
+            }}
+          >
+            Pick Subjects Wise Chapters
+            <ArrowRight size={16} />
+          </button>
+        </motion.div>
       </div>
     </div>
   );
