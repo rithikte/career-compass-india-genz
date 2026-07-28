@@ -214,14 +214,14 @@ const SecondaryButton: React.FC<{ onClick?: () => void; children: React.ReactNod
 
 /* ---------- Journey steps ---------- */
 const JOURNEY = [
-  { label: 'Subject', note: 'What you study.' },
-  { label: 'Domain', note: 'Where it applies.' },
-  { label: 'Industry', note: 'Who uses it.' },
-  { label: 'Career Path', note: 'Roles it opens.' },
-  { label: 'Fresher Role', note: 'Your first job.' },
-  { label: 'Skills', note: 'What to learn.' },
-  { label: 'Projects', note: 'What to build.' },
-  { label: 'Hiring Reality', note: 'What companies expect.' },
+  { label: 'Subject — What you study', note: '' },
+  { label: 'Domain — Where the knowledge is used', note: '' },
+  { label: 'Industry — Where the work happens', note: '' },
+  { label: 'Career Path — Your long-term direction', note: '' },
+  { label: 'Fresher Role — Your first job opportunity', note: '' },
+  { label: 'Skills — What to learn', note: '' },
+  { label: 'Projects — What to build', note: '' },
+  { label: 'Hiring Reality — What companies expect', note: '' },
 ];
 
 
@@ -485,22 +485,19 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
         {/* ============ WHAT IS UNDERGRADUATE MAPS ============ */}
         <section aria-labelledby="ug-what-heading" className="py-12 sm:py-16">
           <Reveal>
-            <SectionLabel accent="#6E9F9A">What is Undergraduate Maps</SectionLabel>
+            <SectionLabel accent="#6E9F9A">HOW UNDERGRADUATE MAPS WORKS</SectionLabel>
             <h2
               id="ug-what-heading"
               className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
-              style={{ ...headingFont, ...headingGradient, maxWidth: '20ch' }}
+              style={{ ...headingFont, ...headingGradient, maxWidth: '30ch' }}
             >
-
-              See where your interests can lead.
+              Follow the complete journey from classroom to career.
             </h2>
             <p
               className="mt-5 text-[11.2px] sm:text-[12.6px] leading-[1.7]"
               style={{ color: COLORS.muted, maxWidth: '68ch' }}
             >
-              Choose a subject and explore the full path — learn what freshers
-              actually do, what companies expect, and what knowledge is needed for
-              different opportunities.
+              Choose a subject and explore how it connects to real opportunities.
             </p>
           </Reveal>
 
@@ -539,12 +536,14 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
                       {step.label}
                     </p>
                   </div>
-                  <p
-                    className="mt-2.5 text-[11.2px] leading-[1.6]"
-                    style={{ color: COLORS.muted }}
-                  >
-                    {step.note}
-                  </p>
+                  {step.note && (
+                    <p
+                      className="mt-2.5 text-[11.2px] leading-[1.6]"
+                      style={{ color: COLORS.muted }}
+                    >
+                      {step.note}
+                    </p>
+                  )}
                 </div>
               </Reveal>
             ))}
