@@ -168,7 +168,6 @@ const DomainSubjects: React.FC<DomainSubjectsProps> = ({ onExploreChapters }) =>
 
         <div className={compact ? 'space-y-4' : 'space-y-5'}>
           {section.subjects.map((subject, si) => {
-            const priority = PRIORITIES[si % PRIORITIES.length];
             const key = `${section.id}-${si}`;
             const isOpen = expanded.has(key);
             return (
@@ -186,19 +185,6 @@ const DomainSubjects: React.FC<DomainSubjectsProps> = ({ onExploreChapters }) =>
                   >
                     {subject.name}
                   </h4>
-                  <span
-                    className="ds-label inline-flex items-center gap-1.5 font-medium uppercase rounded-full"
-                    style={{
-                      ...techFont,
-                      color: priority.color,
-                      background: `${priority.color}1A`,
-                      border: `1px solid ${priority.color}40`,
-                      padding: '2px 8px',
-                    }}
-                  >
-                    <span className="h-1.5 w-1.5 rounded-full" style={{ background: priority.color }} />
-                    {priority.label}
-                  </span>
                 </div>
 
                 <button
