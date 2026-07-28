@@ -536,12 +536,14 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
                       {step.label}
                     </p>
                   </div>
-                  <p
-                    className="mt-2.5 text-[11.2px] leading-[1.6]"
-                    style={{ color: COLORS.muted }}
-                  >
-                    {step.note}
-                  </p>
+                  {step.note && (
+                    <p
+                      className="mt-2.5 text-[11.2px] leading-[1.6]"
+                      style={{ color: COLORS.muted }}
+                    >
+                      {step.note}
+                    </p>
+                  )}
                 </div>
               </Reveal>
             ))}
