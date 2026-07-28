@@ -214,14 +214,14 @@ const SecondaryButton: React.FC<{ onClick?: () => void; children: React.ReactNod
 
 /* ---------- Journey steps ---------- */
 const JOURNEY = [
-  { label: 'Subject', note: 'What you study.' },
-  { label: 'Domain', note: 'Where the knowledge is used.' },
-  { label: 'Industry', note: 'Where the work happens.' },
-  { label: 'Career Path', note: 'Your long-term direction.' },
-  { label: 'Fresher Role', note: 'Your first job opportunity.' },
-  { label: 'Skills', note: 'What to learn.' },
-  { label: 'Projects', note: 'What to build.' },
-  { label: 'Hiring Reality', note: 'What companies expect.' },
+  { label: 'Subject — What you study', note: '' },
+  { label: 'Domain — Where the knowledge is used', note: '' },
+  { label: 'Industry — Where the work happens', note: '' },
+  { label: 'Career Path — Your long-term direction', note: '' },
+  { label: 'Fresher Role — Your first job opportunity', note: '' },
+  { label: 'Skills — What to learn', note: '' },
+  { label: 'Projects — What to build', note: '' },
+  { label: 'Hiring Reality — What companies expect', note: '' },
 ];
 
 
