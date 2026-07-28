@@ -791,6 +791,17 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
                 <span className="h-2 w-2 rounded-full bg-[#8FBFA3] ug-stat-dot" aria-hidden="true" />
               </span>
             </div>
+
+            <div className="mt-4 flex justify-center">
+              <div
+                className="inline-flex items-center gap-2.5 rounded-full px-4 py-2 text-xs sm:text-sm font-medium border"
+                style={{ ...techFont, background: 'rgba(109,212,200,0.08)', borderColor: 'rgba(109,212,200,0.25)', color: '#6DD4C8' }}
+              >
+                <MapPin strokeWidth={2} className="h-4 w-4" aria-hidden="true" />
+                Built in Telangana. Built for India.
+                <span className="h-2 w-2 rounded-full bg-[#6DD4C8] ug-stat-dot" aria-hidden="true" />
+              </div>
+            </div>
           </Reveal>
         </section>
 
