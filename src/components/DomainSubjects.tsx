@@ -170,9 +170,14 @@ const cardVariants = {
   }),
 };
 
-const DomainSubjects: React.FC = () => {
+interface DomainSubjectsProps {
+  onExploreChapters?: () => void;
+}
+
+const DomainSubjects: React.FC<DomainSubjectsProps> = ({ onExploreChapters }) => {
   const [openGroups, setOpenGroups] = useState<Set<number>>(new Set([0]));
   const [openAlias, setOpenAlias] = useState<Set<string>>(new Set());
+  const [picked, setPicked] = useState<Record<number, string>>({});
 
   const toggleGroup = (key: number) => {
     setOpenGroups((prev) => {
