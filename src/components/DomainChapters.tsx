@@ -329,45 +329,45 @@ const DomainChapters: React.FC = () => {
           .ug-chap-toggle:hover { background-color: rgba(255,255,255,0.06); }
         }
 
-        /* Fluid typography: 375 -> 768 -> 1280 breakpoint ramps */
+        /* Fluid typography: 375 -> 768 -> 1280 breakpoint ramps (reduced 5%) */
         .ug-domain-chapters h1,
         .ug-domain-chapters .dc-headline-size {
           font-family: 'Poppins', 'Inter', sans-serif;
           font-weight: 700;
           letter-spacing: -0.02em;
           line-height: 1.08;
-          font-size: clamp(30.4px, calc(30.4px + (34.6 - 30.4) * ((100vw - 375px) / (768 - 375))), 34.6px) !important;
+          font-size: clamp(28.88px, calc(28.88px + (32.87 - 28.88) * ((100vw - 375px) / (768 - 375))), 32.87px) !important;
         }
         @media (min-width: 768px) {
           .ug-domain-chapters h1,
           .ug-domain-chapters .dc-headline-size {
-            font-size: clamp(34.6px, calc(34.6px + (54.4 - 34.6) * ((100vw - 768px) / (1280 - 768))), 54.4px) !important;
+            font-size: clamp(32.87px, calc(32.87px + (51.68 - 32.87) * ((100vw - 768px) / (1280 - 768))), 51.68px) !important;
           }
         }
-        .ug-domain-chapters h3 { font-size: clamp(13px, calc(13px + (18 - 13) * ((100vw - 375px) / (1280 - 375))), 18px) !important; line-height: 1.35; }
-        .ug-domain-chapters h4 { font-size: clamp(12px, calc(12px + (15 - 12) * ((100vw - 375px) / (1280 - 375))), 15px) !important; line-height: 1.4; }
+        .ug-domain-chapters h3 { font-size: clamp(12.35px, calc(12.35px + (17.1 - 12.35) * ((100vw - 375px) / (1280 - 375))), 17.1px) !important; line-height: 1.35; }
+        .ug-domain-chapters h4 { font-size: clamp(11.4px, calc(11.4px + (14.25 - 11.4) * ((100vw - 375px) / (1280 - 375))), 14.25px) !important; line-height: 1.4; }
         .ug-domain-chapters p,
         .ug-domain-chapters li,
         .ug-domain-chapters .dc-body {
-          font-size: clamp(11px, calc(11px + (13 - 11) * ((100vw - 375px) / (768 - 375))), 13px) !important;
+          font-size: clamp(10.45px, calc(10.45px + (12.35 - 10.45) * ((100vw - 375px) / (768 - 375))), 12.35px) !important;
           line-height: 1.6;
         }
         @media (min-width: 768px) {
           .ug-domain-chapters p,
           .ug-domain-chapters li,
           .ug-domain-chapters .dc-body {
-            font-size: clamp(13px, calc(13px + (15 - 13) * ((100vw - 768px) / (1280 - 768))), 15px) !important;
+            font-size: clamp(12.35px, calc(12.35px + (14.25 - 12.35) * ((100vw - 768px) / (1280 - 768))), 14.25px) !important;
           }
         }
         .ug-domain-chapters .dc-label,
         .ug-domain-chapters small {
-          font-size: clamp(8px, calc(8px + (9.2 - 8) * ((100vw - 375px) / (768 - 375))), 9.2px) !important;
+          font-size: clamp(7.6px, calc(7.6px + (8.74 - 7.6) * ((100vw - 375px) / (768 - 375))), 8.74px) !important;
           letter-spacing: 0.12em;
         }
         @media (min-width: 768px) {
           .ug-domain-chapters .dc-label,
           .ug-domain-chapters small {
-            font-size: clamp(9.2px, calc(9.2px + (11 - 9.2) * ((100vw - 768px) / (1280 - 768))), 11px) !important;
+            font-size: clamp(8.74px, calc(8.74px + (10.45 - 8.74) * ((100vw - 768px) / (1280 - 768))), 10.45px) !important;
           }
         }
 
