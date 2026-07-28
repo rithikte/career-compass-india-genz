@@ -603,7 +603,28 @@ const DomainChapters: React.FC<DomainChaptersProps> = ({ onContinue }) => {
           </div>
         </div>
 
-
+        <div className="mt-10 flex flex-col items-center gap-3">
+          <p className="dc-body text-center" style={{ ...bodyFont, color: COLORS.muted }}>
+            {selected ? `Chapters Section - ${selected} selected` : 'Select a section to continue'}
+          </p>
+          <button
+            type="button"
+            onClick={() => onContinue?.()}
+            disabled={!selected}
+            className="dc-label rounded-full px-6 py-3 font-medium uppercase"
+            style={{
+              ...techFont,
+              color: COLORS.bg,
+              background: selected ? COLORS.accent : COLORS.border,
+              opacity: selected ? 1 : 0.6,
+              cursor: selected ? 'pointer' : 'not-allowed',
+              border: 'none',
+              letterSpacing: '0.12em',
+            }}
+          >
+            Continue
+          </button>
+        </div>
       </div>
     </div>
   );
