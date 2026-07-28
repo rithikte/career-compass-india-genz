@@ -496,10 +496,11 @@ const DomainChapters: React.FC<DomainChaptersProps> = ({ onContinue }) => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
               variants={cardVariants}
-              className="ug-chap-card"
+              className="ug-chap-card cursor-pointer"
+              onClick={() => setSelected(section.id)}
               style={{
                 background: COLORS.card,
-                border: `1px solid ${COLORS.border}`,
+                border: `1px solid ${selected === section.id ? SECTION_ACCENTS[sectionIndex % SECTION_ACCENTS.length] : COLORS.border}`,
                 borderRadius: 20,
                 padding: 'clamp(20px, 4vw, 28px)',
                 backgroundImage: `linear-gradient(${COLORS.glass}, ${COLORS.glass})`,
