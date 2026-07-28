@@ -485,22 +485,19 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
         {/* ============ WHAT IS UNDERGRADUATE MAPS ============ */}
         <section aria-labelledby="ug-what-heading" className="py-12 sm:py-16">
           <Reveal>
-            <SectionLabel accent="#6E9F9A">What is Undergraduate Maps</SectionLabel>
+            <SectionLabel accent="#6E9F9A">HOW UNDERGRADUATE MAPS WORKS</SectionLabel>
             <h2
               id="ug-what-heading"
               className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
-              style={{ ...headingFont, ...headingGradient, maxWidth: '20ch' }}
+              style={{ ...headingFont, ...headingGradient, maxWidth: '30ch' }}
             >
-
-              See where your interests can lead.
+              Follow the complete journey from classroom to career.
             </h2>
             <p
               className="mt-5 text-[11.2px] sm:text-[12.6px] leading-[1.7]"
               style={{ color: COLORS.muted, maxWidth: '68ch' }}
             >
-              Choose a subject and explore the full path — learn what freshers
-              actually do, what companies expect, and what knowledge is needed for
-              different opportunities.
+              Choose a subject and explore how it connects to real opportunities.
             </p>
           </Reveal>
 
