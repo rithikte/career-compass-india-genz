@@ -386,7 +386,7 @@ const DomainSubjects: React.FC<DomainSubjectsProps> = ({ onExploreChapters }) =>
             transition={{ duration: 0.6, delay: 0.08, ease: [0.22, 1, 0.36, 1] as const }}
             className="mt-4 ds-headline-gradient ds-headline-size"
           >
-            Pick the subjects you are interested in
+            Pick the subjects section you are interested in
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
