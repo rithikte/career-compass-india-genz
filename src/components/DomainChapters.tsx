@@ -200,7 +200,7 @@ const DomainChapters: React.FC = () => {
         <div className={compact ? 'space-y-5' : 'space-y-6'}>
           {section.subjects.map((subject, si) => (
             <div key={`${section.id}-${si}`}>
-              <div className="flex items-center gap-2 mb-3 flex-wrap">
+              <div className="mb-3 flex flex-col items-start gap-1">
                 <span
                   className="dc-label font-medium uppercase px-2 py-0.5"
                   style={{
@@ -213,15 +213,15 @@ const DomainChapters: React.FC = () => {
                   Subject {si + 1}
                 </span>
                 <h4
-                  className="font-semibold"
-                  style={{ ...headingFont, color: COLORS.text }}
+                  className="font-semibold w-full"
+                  style={{ ...headingFont, color: COLORS.text, overflowWrap: 'anywhere' }}
                 >
                   {subject.name}
                 </h4>
               </div>
               <div className="space-y-2">
                 {subject.chapters.map((ch, ci) => {
-                  const chapKey = `${si}-${ci}`;
+                  const chapKey = `${section.id}-${si}-${ci}`;
                   const isOpen = expanded.has(chapKey);
                   return (
                     <div
