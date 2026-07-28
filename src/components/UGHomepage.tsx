@@ -472,18 +472,10 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
               },
             ].map((item, i) => (
               <Reveal key={item.title} delay={i * 80}>
-                <div className="ug-lift h-full" style={cardStyle}>
-                  <h3 className="mt-4 text-lg font-medium" style={headingFont}>
+                <div className="ug-lift h-full flex items-center justify-center px-4 py-6" style={cardStyle}>
+                  <h3 className="text-lg font-medium text-center" style={headingFont}>
                     <span className="ug-underline">{item.title}</span>
                   </h3>
-                  {'desc' in item && item.desc && (
-                    <p
-                      className="mt-2 text-[11.2px] leading-[1.7]"
-                      style={{ color: COLORS.muted }}
-                    >
-                      {item.desc}
-                    </p>
-                  )}
                 </div>
               </Reveal>
             ))}
