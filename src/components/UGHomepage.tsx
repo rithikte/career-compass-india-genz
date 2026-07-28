@@ -600,13 +600,13 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
         {/* ============ WHY THIS MATTERS ============ */}
         <section aria-labelledby="ug-matters-heading" className="py-12 sm:py-16">
           <Reveal>
-            <SectionLabel accent="#FF7B72">Why This Matters</SectionLabel>
+            <SectionLabel accent="#FF7B72">WHY THIS MATTERS</SectionLabel>
             <h2
               id="ug-matters-heading"
               className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
               style={{ ...headingFont, ...headingGradient, maxWidth: '20ch' }}
             >
-              A degree alone is not enough.
+              Preparation without direction wastes time.
             </h2>
           </Reveal>
 
@@ -624,8 +624,8 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
                   <span className="ug-matters-title">The gap</span>
                 </h3>
                 <p className="mt-2 text-[11.2px] leading-[1.7]" style={{ color: COLORS.muted }}>
-                  Companies also look for practical skills, project experience, and
-                  domain knowledge — not just a certificate.
+                  Many students collect certificates, learn random skills, and build
+                  unrelated projects without knowing whether they match the jobs they want.
                 </p>
               </div>
             </Reveal>
@@ -642,8 +642,8 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
                   <span className="ug-matters-title">The way forward</span>
                 </h3>
                 <p className="mt-2 text-[11.2px] leading-[1.7]" style={{ color: COLORS.muted }}>
-                  Knowing the path early helps you prepare with direction from the
-                  very beginning.
+                  Knowing your career path early helps you prepare for the right
+                  opportunities from the beginning.
                 </p>
               </div>
             </Reveal>
