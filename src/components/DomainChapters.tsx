@@ -181,14 +181,14 @@ const DomainChapters: React.FC = () => {
           </div>
           <div className="min-w-0 flex-1">
             <span
-              className="inline-block text-[0.68rem] font-medium uppercase tracking-[0.14em]"
+              className="inline-block dc-label font-medium uppercase"
               style={{ ...techFont, color: accent }}
             >
               Section {section.id}
             </span>
             <h3
               className="mt-1 font-semibold"
-              style={{ ...headingFont, color: COLORS.text, fontSize: compact ? '0.98rem' : '1.05rem', lineHeight: 1.4 }}
+              style={{ ...headingFont, color: COLORS.text, lineHeight: 1.4 }}
             >
               {section.title}
             </h3>
@@ -202,7 +202,7 @@ const DomainChapters: React.FC = () => {
             <div key={`${section.id}-${si}`}>
               <div className="flex items-center gap-2 mb-3 flex-wrap">
                 <span
-                  className="text-[0.62rem] font-medium uppercase tracking-[0.16em] px-2 py-0.5"
+                  className="dc-label font-medium uppercase px-2 py-0.5"
                   style={{
                     ...techFont,
                     color: accent,
@@ -214,7 +214,7 @@ const DomainChapters: React.FC = () => {
                 </span>
                 <h4
                   className="font-semibold"
-                  style={{ ...headingFont, color: COLORS.text, fontSize: compact ? '0.9rem' : '0.95rem' }}
+                  style={{ ...headingFont, color: COLORS.text }}
                 >
                   {subject.name}
                 </h4>
@@ -236,13 +236,8 @@ const DomainChapters: React.FC = () => {
                         />
                         <div className="flex-1 min-w-0">
                           <div
-                            className="font-medium"
-                            style={{
-                              ...headingFont,
-                              color: COLORS.text,
-                              fontSize: compact ? '0.85rem' : '0.9rem',
-                              lineHeight: 1.4,
-                            }}
+                            className="font-medium dc-body"
+                            style={{ ...headingFont, color: COLORS.text, lineHeight: 1.4 }}
                           >
                             {ch.title}
                           </div>
@@ -251,7 +246,7 @@ const DomainChapters: React.FC = () => {
                             onClick={() => toggleKey(chapKey)}
                             aria-expanded={isOpen}
                             aria-controls={`chap-tags-${variant}-${section.id}-${chapKey}`}
-                            className="ug-chap-toggle mt-2 inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[0.68rem] font-medium uppercase tracking-wider"
+                            className="ug-chap-toggle dc-label mt-2 inline-flex items-center gap-1.5 rounded-md px-2 py-1 font-medium uppercase"
                             style={{ ...techFont, color: accent, background: 'transparent' }}
                           >
                             Also Called
@@ -268,8 +263,8 @@ const DomainChapters: React.FC = () => {
                             data-open={isOpen}
                           >
                             <div
-                              className="pt-2 flex items-start gap-2"
-                              style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.74rem', lineHeight: 1.55 }}
+                              className="pt-2 flex items-start gap-2 dc-body"
+                              style={{ ...bodyFont, color: COLORS.muted, lineHeight: 1.55 }}
                             >
                               <span style={{ color: accent, flexShrink: 0 }}>—</span>
                               <span>{ch.tags}</span>
@@ -291,10 +286,21 @@ const DomainChapters: React.FC = () => {
   return (
     <div
       className="ug-domain-chapters"
-      style={{ background: COLORS.bg, color: COLORS.text, borderRadius: 24 }}
+      style={{ background: COLORS.bg, color: COLORS.text, width: '100%' }}
     >
       <style>{`
-        .ug-domain-chapters { position: relative; overflow: hidden; }
+        .ug-domain-chapters { position: relative; overflow: hidden; width: 100%; }
+
+        /* Full-bleed edge-to-edge with responsive horizontal padding */
+        .ug-domain-chapters .dc-container {
+          width: 100%;
+          max-width: 100%;
+          padding-left: 11.2px;
+          padding-right: 11.2px;
+        }
+        @media (min-width: 768px) { .ug-domain-chapters .dc-container { padding-left: 16.8px; padding-right: 16.8px; } }
+        @media (min-width: 1280px) { .ug-domain-chapters .dc-container { padding-left: 22.4px; padding-right: 22.4px; } }
+
         .dc-headline-gradient {
           background: linear-gradient(135deg, #F8FAFC 0%, #A5B4FC 55%, #7DD3FC 100%);
           -webkit-background-clip: text;
@@ -321,6 +327,48 @@ const DomainChapters: React.FC = () => {
         .ug-chap-toggle { transition: background-color 200ms ease-out, color 200ms ease-out; }
         @media (hover: hover) {
           .ug-chap-toggle:hover { background-color: rgba(255,255,255,0.06); }
+        }
+
+        /* Fluid typography: 375 -> 768 -> 1280 breakpoint ramps */
+        .ug-domain-chapters h1,
+        .ug-domain-chapters .dc-headline-size {
+          font-family: 'Poppins', 'Inter', sans-serif;
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          line-height: 1.08;
+          font-size: clamp(30.4px, calc(30.4px + (34.6 - 30.4) * ((100vw - 375px) / (768 - 375))), 34.6px) !important;
+        }
+        @media (min-width: 768px) {
+          .ug-domain-chapters h1,
+          .ug-domain-chapters .dc-headline-size {
+            font-size: clamp(34.6px, calc(34.6px + (54.4 - 34.6) * ((100vw - 768px) / (1280 - 768))), 54.4px) !important;
+          }
+        }
+        .ug-domain-chapters h3 { font-size: clamp(13px, calc(13px + (18 - 13) * ((100vw - 375px) / (1280 - 375))), 18px) !important; line-height: 1.35; }
+        .ug-domain-chapters h4 { font-size: clamp(12px, calc(12px + (15 - 12) * ((100vw - 375px) / (1280 - 375))), 15px) !important; line-height: 1.4; }
+        .ug-domain-chapters p,
+        .ug-domain-chapters li,
+        .ug-domain-chapters .dc-body {
+          font-size: clamp(11px, calc(11px + (13 - 11) * ((100vw - 375px) / (768 - 375))), 13px) !important;
+          line-height: 1.6;
+        }
+        @media (min-width: 768px) {
+          .ug-domain-chapters p,
+          .ug-domain-chapters li,
+          .ug-domain-chapters .dc-body {
+            font-size: clamp(13px, calc(13px + (15 - 13) * ((100vw - 768px) / (1280 - 768))), 15px) !important;
+          }
+        }
+        .ug-domain-chapters .dc-label,
+        .ug-domain-chapters small {
+          font-size: clamp(8px, calc(8px + (9.2 - 8) * ((100vw - 375px) / (768 - 375))), 9.2px) !important;
+          letter-spacing: 0.12em;
+        }
+        @media (min-width: 768px) {
+          .ug-domain-chapters .dc-label,
+          .ug-domain-chapters small {
+            font-size: clamp(9.2px, calc(9.2px + (11 - 9.2) * ((100vw - 768px) / (1280 - 768))), 11px) !important;
+          }
         }
 
         /* --- Desktop grid vs tablet/mobile comparison rail --- */
@@ -393,8 +441,8 @@ const DomainChapters: React.FC = () => {
       />
 
       <div
-        className="relative mx-auto"
-        style={{ maxWidth: 1200, padding: 'clamp(32px, 6vw, 72px) clamp(20px, 5vw, 48px)' }}
+        className="relative dc-container"
+        style={{ paddingTop: 'clamp(32px, 6vw, 72px)', paddingBottom: 'clamp(32px, 6vw, 72px)' }}
       >
         <div className="text-center">
           <motion.span
@@ -402,7 +450,7 @@ const DomainChapters: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
-            className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em]"
+            className="dc-label inline-flex items-center gap-2 font-medium uppercase"
             style={{ ...techFont, color: COLORS.accent }}
           >
             <span className="h-1.5 w-1.5 rounded-full" style={{ background: COLORS.accent }} />
@@ -413,13 +461,8 @@ const DomainChapters: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.6, delay: 0.08, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mt-4 font-bold dc-headline-gradient"
-            style={{
-              fontFamily: "'Poppins', 'Inter', sans-serif",
-              fontSize: 'clamp(1.9rem, 4.5vw, 3.4rem)',
-              letterSpacing: '-0.02em',
-              lineHeight: 1.05,
-            }}
+            className="mt-4 dc-headline-gradient dc-headline-size"
+            style={{ fontFamily: "'Poppins', 'Inter', sans-serif" }}
           >
             Pick the chapters you are interested in
           </motion.h1>
@@ -428,14 +471,8 @@ const DomainChapters: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.6, delay: 0.18, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mx-auto mt-4"
-            style={{
-              ...bodyFont,
-              color: COLORS.muted,
-              maxWidth: '62ch',
-              fontSize: 'clamp(0.95rem, 2.2vw, 1.1rem)',
-              lineHeight: 1.7,
-            }}
+            className="mx-auto mt-4 dc-body"
+            style={{ ...bodyFont, color: COLORS.muted, maxWidth: '62ch' }}
           >
             Learn the concepts that build real civil engineering knowledge.
           </motion.p>
@@ -481,7 +518,7 @@ const DomainChapters: React.FC = () => {
                   role="tab"
                   aria-selected={isActive}
                   onClick={() => goTo(i)}
-                  className="dc-chip rounded-full px-3 py-1.5 text-[0.68rem] font-medium uppercase tracking-[0.14em]"
+                  className="dc-chip dc-label rounded-full px-3 py-1.5 font-medium uppercase"
                   style={{
                     ...techFont,
                     color: isActive ? COLORS.bg : accent,
@@ -496,8 +533,8 @@ const DomainChapters: React.FC = () => {
           </div>
 
           <p
-            className="mt-3 text-center"
-            style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.72rem' }}
+            className="mt-3 text-center dc-body"
+            style={{ ...bodyFont, color: COLORS.muted }}
           >
             Swipe to compare Sections 1–2 and 3–4
           </p>
