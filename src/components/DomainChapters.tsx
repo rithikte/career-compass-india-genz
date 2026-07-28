@@ -102,6 +102,9 @@ const SECTIONS: Section[] = [
   { id: 4, title: 'Chapters Section - 4', subjects: [SUB.survey, SUB.building, SUB.concrete, SUB.estimation, SUB.estimation] },
 ];
 
+const PAIRS: Section[][] = [SECTIONS.slice(0, 2), SECTIONS.slice(2, 4)];
+
+
 const cardVariants = {
   hidden: { opacity: 0, y: 18 },
   visible: (i: number) => ({
@@ -341,12 +344,28 @@ const DomainChapters: React.FC = () => {
         .dc-rail-card {
           scroll-snap-align: center;
           flex: 0 0 auto;
-          width: 82vw;
-          max-width: 420px;
+          width: 92vw;
+          max-width: 760px;
         }
         @media (min-width: 640px) {
-          .dc-rail-card { width: 46vw; max-width: 420px; }
+          .dc-rail-card { width: 88vw; max-width: 760px; }
         }
+        .dc-pair-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+        }
+        @media (min-width: 640px) {
+          .dc-pair-grid { gap: 16px; }
+        }
+        .dc-pair-col + .dc-pair-col {
+          border-left: 1px solid ${COLORS.border};
+          padding-left: 10px;
+        }
+        @media (min-width: 640px) {
+          .dc-pair-col + .dc-pair-col { padding-left: 16px; }
+        }
+
         .dc-chip {
           transition: background-color 200ms ease-out, color 200ms ease-out, border-color 200ms ease-out;
           white-space: nowrap;
@@ -452,12 +471,12 @@ const DomainChapters: React.FC = () => {
         {/* Tablet + mobile: side-by-side comparison rail */}
         <div className="dc-compare mt-8">
           <div className="flex items-center gap-2 overflow-x-auto dc-rail" role="tablist" aria-label="Chapter sections">
-            {SECTIONS.map((section, i) => {
-              const accent = SECTION_ACCENTS[i % SECTION_ACCENTS.length];
+            {PAIRS.map((pair, i) => {
+              const accent = SECTION_ACCENTS[(i * 2) % SECTION_ACCENTS.length];
               const isActive = active === i;
               return (
                 <button
-                  key={section.id}
+                  key={`chip-${i}`}
                   type="button"
                   role="tab"
                   aria-selected={isActive}
@@ -470,7 +489,7 @@ const DomainChapters: React.FC = () => {
                     border: `1px solid ${isActive ? accent : COLORS.border}`,
                   }}
                 >
-                  Section {section.id}
+                  Sections {pair.map((s) => s.id).join('–')}
                 </button>
               );
             })}
@@ -480,40 +499,49 @@ const DomainChapters: React.FC = () => {
             className="mt-3 text-center"
             style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.72rem' }}
           >
-            Swipe sideways to compare all 4 sections
+            Swipe to compare Sections 1–2 and 3–4
           </p>
 
           <div ref={railRef} className="dc-rail mt-3">
-            {SECTIONS.map((section, sectionIndex) => (
+            {PAIRS.map((pair, pairIndex) => (
               <div
-                key={section.id}
+                key={`pair-${pairIndex}`}
                 data-rail-card
                 className="dc-rail-card ug-chap-card"
                 style={{
                   background: COLORS.card,
-                  border: `1px solid ${active === sectionIndex ? SECTION_ACCENTS[sectionIndex % SECTION_ACCENTS.length] + '66' : COLORS.border}`,
+                  border: `1px solid ${active === pairIndex ? SECTION_ACCENTS[(pairIndex * 2) % SECTION_ACCENTS.length] + '66' : COLORS.border}`,
                   borderRadius: 20,
-                  padding: 'clamp(16px, 4vw, 22px)',
+                  padding: 'clamp(12px, 3vw, 20px)',
                   backgroundImage: `linear-gradient(${COLORS.glass}, ${COLORS.glass})`,
                 }}
               >
-                {renderSection(section, sectionIndex, 'rail')}
+                <div className="dc-pair-grid">
+                  {pair.map((section) => {
+                    const sectionIndex = SECTIONS.indexOf(section);
+                    return (
+                      <div key={section.id} className="dc-pair-col min-w-0">
+                        {renderSection(section, sectionIndex, 'rail')}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             ))}
           </div>
 
           <div className="mt-4 flex items-center justify-center gap-2">
-            {SECTIONS.map((section, i) => (
+            {PAIRS.map((pair, i) => (
               <button
-                key={section.id}
+                key={`dot-${i}`}
                 type="button"
-                aria-label={`Go to section ${section.id}`}
+                aria-label={`Go to sections ${pair.map((s) => s.id).join(' and ')}`}
                 onClick={() => goTo(i)}
                 className="dc-dot rounded-full"
                 style={{
                   height: 6,
                   width: active === i ? 22 : 6,
-                  background: active === i ? SECTION_ACCENTS[i % SECTION_ACCENTS.length] : COLORS.border,
+                  background: active === i ? SECTION_ACCENTS[(i * 2) % SECTION_ACCENTS.length] : COLORS.border,
                   border: 'none',
                   padding: 0,
                 }}
@@ -521,6 +549,7 @@ const DomainChapters: React.FC = () => {
             ))}
           </div>
         </div>
+
 
       </div>
     </div>
