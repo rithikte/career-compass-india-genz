@@ -114,8 +114,13 @@ const cardVariants = {
   }),
 };
 
-const DomainChapters: React.FC = () => {
+interface DomainChaptersProps {
+  onContinue?: () => void;
+}
+
+const DomainChapters: React.FC<DomainChaptersProps> = ({ onContinue }) => {
   const [expanded, setExpanded] = useState<Set<string>>(new Set());
+  const [selected, setSelected] = useState<number | null>(null);
   const [active, setActive] = useState(0);
   const railRef = useRef<HTMLDivElement | null>(null);
 
