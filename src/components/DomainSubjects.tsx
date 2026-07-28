@@ -23,14 +23,6 @@ const techFont = { fontFamily: "'IBM Plex Sans', 'Inter', sans-serif" };
 
 const SECTION_ACCENTS = [COLORS.accent, COLORS.accent2, COLORS.accent3, COLORS.accent4];
 
-/* Priority ladder for the 5 subject slots inside each section */
-const PRIORITIES = [
-  { label: 'High Priority', color: '#F87171' },
-  { label: 'High Priority', color: '#F87171' },
-  { label: 'Moderate', color: '#FBBF24' },
-  { label: 'Supporting', color: '#6DD4C8' },
-  { label: 'Supporting', color: '#6DD4C8' },
-];
 
 interface Subject {
   name: string;
