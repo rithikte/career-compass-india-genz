@@ -226,13 +226,12 @@ const JOURNEY = [
 
 
 const DISCOVER = [
-  { icon: Layers, title: 'Domains & Industries', desc: 'Where your subject applies in the real world.' },
-  { icon: Briefcase, title: 'Fresher Roles', desc: 'The actual first jobs you can start with.' },
-  { icon: Wrench, title: 'Skills & Tools', desc: 'What you need to learn and practice.' },
-  { icon: FolderKanban, title: 'Mini & Major Projects', desc: 'Practical work that builds your portfolio.' },
-  { icon: Target, title: 'Hiring Expectations', desc: 'What companies actually look for.' },
-  { icon: GraduationCap, title: 'Placement Preparation', desc: 'Get ready with clear direction.' },
-  { icon: TrendingUp, title: 'Career Growth', desc: 'How your path evolves over time.' },
+  { icon: Sparkles, title: 'Skills to develop', desc: 'The exact abilities employers expect from freshers.' },
+  { icon: Wrench, title: 'Tools to learn', desc: 'Industry-standard software and platforms used on the job.' },
+  { icon: FolderKanban, title: 'Projects to build', desc: 'Practical work that proves you can apply what you study.' },
+  { icon: Target, title: 'What companies expect', desc: 'Clear hiring criteria beyond just your degree marks.' },
+  { icon: GraduationCap, title: 'How to prepare for placements', desc: 'Focused steps to get ready for interviews and tests.' },
+  { icon: TrendingUp, title: 'How your career can grow', desc: 'The long-term path after your first job.' },
 ];
 
 const APPROACH = [
@@ -551,20 +550,23 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
         </section>
 
 
-        {/* ============ WHAT YOU WILL DISCOVER ============ */}
+        {/* ============ WHAT YOU WILL GET ============ */}
         <section aria-labelledby="ug-discover-heading" className="py-12 sm:py-16">
           <Reveal>
-            <SectionLabel accent="#7FC8A9">What You Will Discover</SectionLabel>
+            <SectionLabel accent="#7FC8A9">WHAT YOU WILL GET</SectionLabel>
             <h2
               id="ug-discover-heading"
               className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
               style={{ ...headingFont, ...headingGradient, maxWidth: '20ch' }}
             >
-              More than just career names.
+              Know exactly how to prepare.
             </h2>
+            <p className="mt-4 text-[11.2px] leading-[1.6]" style={{ color: COLORS.muted }}>
+              Every career map helps you understand:
+            </p>
           </Reveal>
 
-          <div className="mt-8 grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-6 grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {DISCOVER.map((item, i) => {
               const featured = i === 0;
               const Icon = item.icon;
