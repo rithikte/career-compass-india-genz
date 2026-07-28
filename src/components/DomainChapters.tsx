@@ -291,10 +291,21 @@ const DomainChapters: React.FC = () => {
   return (
     <div
       className="ug-domain-chapters"
-      style={{ background: COLORS.bg, color: COLORS.text, borderRadius: 24 }}
+      style={{ background: COLORS.bg, color: COLORS.text, width: '100%' }}
     >
       <style>{`
-        .ug-domain-chapters { position: relative; overflow: hidden; }
+        .ug-domain-chapters { position: relative; overflow: hidden; width: 100%; }
+
+        /* Full-bleed edge-to-edge with responsive horizontal padding */
+        .ug-domain-chapters .dc-container {
+          width: 100%;
+          max-width: 100%;
+          padding-left: 11.2px;
+          padding-right: 11.2px;
+        }
+        @media (min-width: 768px) { .ug-domain-chapters .dc-container { padding-left: 16.8px; padding-right: 16.8px; } }
+        @media (min-width: 1280px) { .ug-domain-chapters .dc-container { padding-left: 22.4px; padding-right: 22.4px; } }
+
         .dc-headline-gradient {
           background: linear-gradient(135deg, #F8FAFC 0%, #A5B4FC 55%, #7DD3FC 100%);
           -webkit-background-clip: text;
@@ -321,6 +332,48 @@ const DomainChapters: React.FC = () => {
         .ug-chap-toggle { transition: background-color 200ms ease-out, color 200ms ease-out; }
         @media (hover: hover) {
           .ug-chap-toggle:hover { background-color: rgba(255,255,255,0.06); }
+        }
+
+        /* Fluid typography: 375 -> 768 -> 1280 breakpoint ramps */
+        .ug-domain-chapters h1,
+        .ug-domain-chapters .dc-headline-size {
+          font-family: 'Poppins', 'Inter', sans-serif;
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          line-height: 1.08;
+          font-size: clamp(30.4px, calc(30.4px + (34.6 - 30.4) * ((100vw - 375px) / (768 - 375))), 34.6px) !important;
+        }
+        @media (min-width: 768px) {
+          .ug-domain-chapters h1,
+          .ug-domain-chapters .dc-headline-size {
+            font-size: clamp(34.6px, calc(34.6px + (54.4 - 34.6) * ((100vw - 768px) / (1280 - 768))), 54.4px) !important;
+          }
+        }
+        .ug-domain-chapters h3 { font-size: clamp(13px, calc(13px + (18 - 13) * ((100vw - 375px) / (1280 - 375))), 18px) !important; line-height: 1.35; }
+        .ug-domain-chapters h4 { font-size: clamp(12px, calc(12px + (15 - 12) * ((100vw - 375px) / (1280 - 375))), 15px) !important; line-height: 1.4; }
+        .ug-domain-chapters p,
+        .ug-domain-chapters li,
+        .ug-domain-chapters .dc-body {
+          font-size: clamp(11px, calc(11px + (13 - 11) * ((100vw - 375px) / (768 - 375))), 13px) !important;
+          line-height: 1.6;
+        }
+        @media (min-width: 768px) {
+          .ug-domain-chapters p,
+          .ug-domain-chapters li,
+          .ug-domain-chapters .dc-body {
+            font-size: clamp(13px, calc(13px + (15 - 13) * ((100vw - 768px) / (1280 - 768))), 15px) !important;
+          }
+        }
+        .ug-domain-chapters .dc-label,
+        .ug-domain-chapters small {
+          font-size: clamp(8px, calc(8px + (9.2 - 8) * ((100vw - 375px) / (768 - 375))), 9.2px) !important;
+          letter-spacing: 0.12em;
+        }
+        @media (min-width: 768px) {
+          .ug-domain-chapters .dc-label,
+          .ug-domain-chapters small {
+            font-size: clamp(9.2px, calc(9.2px + (11 - 9.2) * ((100vw - 768px) / (1280 - 768))), 11px) !important;
+          }
         }
 
         /* --- Desktop grid vs tablet/mobile comparison rail --- */
