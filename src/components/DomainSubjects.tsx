@@ -456,7 +456,7 @@ const DomainSubjects: React.FC<DomainSubjectsProps> = ({ onExploreChapters }) =>
           </div>
 
           <p className="mt-3 text-center ds-body" style={{ ...bodyFont, color: COLORS.muted }}>
-            Swipe to compare Sections 1–2 and 3–4
+            Swipe to compare Subjects Section 1–2 and 3–4
           </p>
 
           <div ref={railRef} className="ds-rail mt-3">
