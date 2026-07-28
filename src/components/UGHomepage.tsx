@@ -137,6 +137,14 @@ const cardStyle: React.CSSProperties = {
 };
 
 const headingFont = { fontFamily: "'Poppins', 'Inter', sans-serif" };
+
+const headingGradient: React.CSSProperties = {
+  backgroundImage: 'linear-gradient(180deg, #ffffff 0%, #b7c0cc 100%)',
+  backgroundClip: 'text',
+  WebkitBackgroundClip: 'text',
+  color: 'transparent',
+  WebkitTextFillColor: 'transparent',
+};
 const bodyFont = { fontFamily: "'Inter', sans-serif" };
 const techFont = { fontFamily: "'IBM Plex Sans', 'Inter', sans-serif" };
 
@@ -445,7 +453,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
             <h2
               id="ug-why-heading"
               className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
-              style={{ ...headingFont, maxWidth: '20ch' }}
+              style={{ ...headingFont, ...headingGradient, maxWidth: '20ch' }}
             >
 
               Students learn better when they are interested.
@@ -492,7 +500,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
             <h2
               id="ug-what-heading"
               className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
-              style={{ ...headingFont, maxWidth: '20ch' }}
+              style={{ ...headingFont, ...headingGradient, maxWidth: '20ch' }}
             >
 
               See where your interests can lead.
@@ -562,7 +570,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
             <h2
               id="ug-discover-heading"
               className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
-              style={{ ...headingFont, maxWidth: '20ch' }}
+              style={{ ...headingFont, ...headingGradient, maxWidth: '20ch' }}
             >
               More than just career names.
             </h2>
@@ -606,7 +614,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
             <h2
               id="ug-matters-heading"
               className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
-              style={{ ...headingFont, maxWidth: '20ch' }}
+              style={{ ...headingFont, ...headingGradient, maxWidth: '20ch' }}
             >
               A degree alone is not enough.
             </h2>
@@ -660,7 +668,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
             <h2
               id="ug-approach-heading"
               className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
-              style={{ ...headingFont, maxWidth: '24ch' }}
+              style={{ ...headingFont, ...headingGradient, maxWidth: '24ch' }}
             >
               Built around real work and industry expectations.
             </h2>
@@ -816,7 +824,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
               <h2
                 id="ug-cta-heading"
                 className="mx-auto mt-6 text-2xl sm:text-4xl font-bold leading-tight"
-                style={{ ...headingFont, maxWidth: '18ch' }}
+                style={{ ...headingFont, ...headingGradient, maxWidth: '18ch' }}
               >
                 Start exploring career maps
               </h2>
