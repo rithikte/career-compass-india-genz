@@ -518,7 +518,7 @@ const DomainChapters: React.FC = () => {
                   role="tab"
                   aria-selected={isActive}
                   onClick={() => goTo(i)}
-                  className="dc-chip rounded-full px-3 py-1.5 text-[0.68rem] font-medium uppercase tracking-[0.14em]"
+                  className="dc-chip dc-label rounded-full px-3 py-1.5 font-medium uppercase"
                   style={{
                     ...techFont,
                     color: isActive ? COLORS.bg : accent,
@@ -533,8 +533,8 @@ const DomainChapters: React.FC = () => {
           </div>
 
           <p
-            className="mt-3 text-center"
-            style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.72rem' }}
+            className="mt-3 text-center dc-body"
+            style={{ ...bodyFont, color: COLORS.muted }}
           >
             Swipe to compare Sections 1–2 and 3–4
           </p>
