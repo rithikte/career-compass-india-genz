@@ -235,12 +235,12 @@ const DISCOVER = [
 ];
 
 const APPROACH = [
-  { label: 'Subjects', note: 'What you study in college.' },
-  { label: 'Domains', note: 'Where those subjects are used.' },
-  { label: 'Fresher Jobs', note: 'Roles you can start with.' },
-  { label: 'Skills', note: 'What the job actually needs.' },
-  { label: 'Projects', note: 'Proof that you can do it.' },
-  { label: 'Hiring', note: 'How companies pick you.' },
+  { label: 'College subjects', note: '' },
+  { label: 'Real fresher job responsibilities', note: '' },
+  { label: 'Skills used at work', note: '' },
+  { label: 'Tools used in industry', note: '' },
+  { label: 'Practical projects', note: '' },
+  { label: 'Hiring expectations', note: '' },
 ];
 
 const STATS = [
@@ -651,24 +651,22 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
         </section>
 
 
-        {/* ============ OUR APPROACH ============ */}
+        {/* ============ HOW WE BUILD EVERY CAREER MAP ============ */}
         <section aria-labelledby="ug-approach-heading" className="py-12 sm:py-16">
           <Reveal>
-            <SectionLabel accent="#8FA7BF">Our Approach</SectionLabel>
+            <SectionLabel accent="#8FA7BF">HOW WE BUILD EVERY CAREER MAP</SectionLabel>
             <h2
               id="ug-approach-heading"
               className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
               style={{ ...headingFont, ...headingGradient, maxWidth: '24ch' }}
             >
-              Built around real work and industry expectations.
+              Built using real industry work.
             </h2>
             <p
               className="mt-5 text-[11.2px] sm:text-[12.6px] leading-[1.7]"
               style={{ color: COLORS.muted, maxWidth: '68ch' }}
             >
-              Every career map connects academic subjects, industry domains,
-              fresher roles, skills, projects, and hiring expectations into one
-              structured pathway.
+              Every career map is created by studying:
             </p>
           </Reveal>
 
@@ -691,9 +689,11 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
                       <span style={techFont} className="block text-sm font-medium">
                         {node.label}
                       </span>
-                      <span className="mt-1 block text-[11.2px] leading-[1.6]" style={{ color: COLORS.muted }}>
-                        {node.note}
-                      </span>
+                      {node.note && (
+                        <span className="mt-1 block text-[11.2px] leading-[1.6]" style={{ color: COLORS.muted }}>
+                          {node.note}
+                        </span>
+                      )}
                     </span>
                     {i < APPROACH.length - 1 && (
                       <ArrowRight
@@ -707,8 +707,8 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
                 ))}
               </ol>
               <p className="mt-8 text-[11.2px] leading-[1.7]" style={{ color: COLORS.muted, maxWidth: '60ch' }}>
-                The goal is simple: help students understand what lies between a
-                degree and a job.
+                This helps every career map stay connected to real work instead of
+                assumptions.
               </p>
             </div>
 
