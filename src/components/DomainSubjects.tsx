@@ -327,7 +327,9 @@ const DomainSubjects: React.FC<DomainSubjectsProps> = ({ onExploreChapters }) =>
         {/* Subject dropdowns */}
         <div className="mt-8 flex flex-col gap-4">
           {GROUPS.map((group) => {
-            const accent = GROUP_ACCENTS[group.index % GROUP_ACCENTS.length];
+            const priority = PRIORITIES[group.index % PRIORITIES.length];
+            const accent = priority.color;
+            const pickedName = picked[group.index];
             const isOpen = openGroups.has(group.index);
             return (
               <motion.div
