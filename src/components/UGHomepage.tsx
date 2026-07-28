@@ -445,40 +445,37 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
             <h2
               id="ug-why-heading"
               className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
-              style={{ ...headingFont, ...headingGradient, maxWidth: '20ch' }}
+              style={{ ...headingFont, ...headingGradient, maxWidth: '22ch' }}
             >
-
-              Students learn better when they are interested.
+              Every career starts with knowledge.
             </h2>
             <p
               className="mt-5 text-[11.2px] sm:text-[12.6px] leading-[1.7]"
               style={{ color: COLORS.muted, maxWidth: '68ch' }}
             >
-              When a career is connected to subjects students genuinely enjoy,
-              they are more likely to stay engaged, build stronger knowledge, and
-              develop relevant skills and projects.
+              The subjects you enjoy often become the knowledge behind real jobs.
+              Starting with subjects helps you explore careers that match both your
+              interests and what companies actually need.
             </p>
           </Reveal>
 
-          <div className="mt-8 grid gap-4 sm:gap-6 md:grid-cols-2">
+          <div className="mt-8 grid gap-4 sm:gap-6 md:grid-cols-3">
             {[
               {
-                title: 'Better career alignment',
-                desc: 'Students choose paths that match what they genuinely enjoy.',
+                title: 'Learn with more interest',
               },
               {
-                title: 'Better prepared freshers',
-                desc: 'Industry gets candidates ready with real, relevant skills.',
+                title: 'Build stronger knowledge',
+              },
+              {
+                title: 'Prepare with clear direction',
               },
             ].map((item, i) => (
               <Reveal key={item.title} delay={i * 80}>
-                <div className="ug-lift h-full" style={cardStyle}>
-                  <h3 className="mt-4 text-lg font-medium" style={headingFont}>
+                <div className="ug-lift h-full flex items-center justify-center px-4 py-6" style={cardStyle}>
+                  <h3 className="text-lg font-medium text-center" style={headingFont}>
                     <span className="ug-underline">{item.title}</span>
                   </h3>
-                  <p className="mt-2 text-[11.2px] leading-[1.7]" style={{ color: COLORS.muted }}>
-                    {item.desc}
-                  </p>
                 </div>
               </Reveal>
             ))}
