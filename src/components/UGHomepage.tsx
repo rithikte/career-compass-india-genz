@@ -235,12 +235,12 @@ const DISCOVER = [
 ];
 
 const APPROACH = [
-  { label: 'Subjects', note: 'What you study in college.' },
-  { label: 'Domains', note: 'Where those subjects are used.' },
-  { label: 'Fresher Jobs', note: 'Roles you can start with.' },
-  { label: 'Skills', note: 'What the job actually needs.' },
-  { label: 'Projects', note: 'Proof that you can do it.' },
-  { label: 'Hiring', note: 'How companies pick you.' },
+  { label: 'College subjects', note: '' },
+  { label: 'Real fresher job responsibilities', note: '' },
+  { label: 'Skills used at work', note: '' },
+  { label: 'Tools used in industry', note: '' },
+  { label: 'Practical projects', note: '' },
+  { label: 'Hiring expectations', note: '' },
 ];
 
 const STATS = [
