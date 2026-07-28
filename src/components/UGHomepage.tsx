@@ -226,13 +226,12 @@ const JOURNEY = [
 
 
 const DISCOVER = [
-  { icon: Layers, title: 'Domains & Industries', desc: 'Where your subject applies in the real world.' },
-  { icon: Briefcase, title: 'Fresher Roles', desc: 'The actual first jobs you can start with.' },
-  { icon: Wrench, title: 'Skills & Tools', desc: 'What you need to learn and practice.' },
-  { icon: FolderKanban, title: 'Mini & Major Projects', desc: 'Practical work that builds your portfolio.' },
-  { icon: Target, title: 'Hiring Expectations', desc: 'What companies actually look for.' },
-  { icon: GraduationCap, title: 'Placement Preparation', desc: 'Get ready with clear direction.' },
-  { icon: TrendingUp, title: 'Career Growth', desc: 'How your path evolves over time.' },
+  { icon: Sparkles, title: 'Skills to develop', desc: 'The exact abilities employers expect from freshers.' },
+  { icon: Wrench, title: 'Tools to learn', desc: 'Industry-standard software and platforms used on the job.' },
+  { icon: FolderKanban, title: 'Projects to build', desc: 'Practical work that proves you can apply what you study.' },
+  { icon: Target, title: 'What companies expect', desc: 'Clear hiring criteria beyond just your degree marks.' },
+  { icon: GraduationCap, title: 'How to prepare for placements', desc: 'Focused steps to get ready for interviews and tests.' },
+  { icon: TrendingUp, title: 'How your career can grow', desc: 'The long-term path after your first job.' },
 ];
 
 const APPROACH = [
