@@ -181,14 +181,14 @@ const DomainChapters: React.FC = () => {
           </div>
           <div className="min-w-0 flex-1">
             <span
-              className="inline-block text-[0.68rem] font-medium uppercase tracking-[0.14em]"
+              className="inline-block dc-label font-medium uppercase"
               style={{ ...techFont, color: accent }}
             >
               Section {section.id}
             </span>
             <h3
               className="mt-1 font-semibold"
-              style={{ ...headingFont, color: COLORS.text, fontSize: compact ? '0.98rem' : '1.05rem', lineHeight: 1.4 }}
+              style={{ ...headingFont, color: COLORS.text, lineHeight: 1.4 }}
             >
               {section.title}
             </h3>
@@ -202,7 +202,7 @@ const DomainChapters: React.FC = () => {
             <div key={`${section.id}-${si}`}>
               <div className="flex items-center gap-2 mb-3 flex-wrap">
                 <span
-                  className="text-[0.62rem] font-medium uppercase tracking-[0.16em] px-2 py-0.5"
+                  className="dc-label font-medium uppercase px-2 py-0.5"
                   style={{
                     ...techFont,
                     color: accent,
@@ -214,7 +214,7 @@ const DomainChapters: React.FC = () => {
                 </span>
                 <h4
                   className="font-semibold"
-                  style={{ ...headingFont, color: COLORS.text, fontSize: compact ? '0.9rem' : '0.95rem' }}
+                  style={{ ...headingFont, color: COLORS.text }}
                 >
                   {subject.name}
                 </h4>
@@ -236,13 +236,8 @@ const DomainChapters: React.FC = () => {
                         />
                         <div className="flex-1 min-w-0">
                           <div
-                            className="font-medium"
-                            style={{
-                              ...headingFont,
-                              color: COLORS.text,
-                              fontSize: compact ? '0.85rem' : '0.9rem',
-                              lineHeight: 1.4,
-                            }}
+                            className="font-medium dc-body"
+                            style={{ ...headingFont, color: COLORS.text, lineHeight: 1.4 }}
                           >
                             {ch.title}
                           </div>
@@ -251,7 +246,7 @@ const DomainChapters: React.FC = () => {
                             onClick={() => toggleKey(chapKey)}
                             aria-expanded={isOpen}
                             aria-controls={`chap-tags-${variant}-${section.id}-${chapKey}`}
-                            className="ug-chap-toggle mt-2 inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[0.68rem] font-medium uppercase tracking-wider"
+                            className="ug-chap-toggle dc-label mt-2 inline-flex items-center gap-1.5 rounded-md px-2 py-1 font-medium uppercase"
                             style={{ ...techFont, color: accent, background: 'transparent' }}
                           >
                             Also Called
@@ -268,8 +263,8 @@ const DomainChapters: React.FC = () => {
                             data-open={isOpen}
                           >
                             <div
-                              className="pt-2 flex items-start gap-2"
-                              style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.74rem', lineHeight: 1.55 }}
+                              className="pt-2 flex items-start gap-2 dc-body"
+                              style={{ ...bodyFont, color: COLORS.muted, lineHeight: 1.55 }}
                             >
                               <span style={{ color: accent, flexShrink: 0 }}>—</span>
                               <span>{ch.tags}</span>
