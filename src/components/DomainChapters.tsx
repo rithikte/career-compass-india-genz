@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Layers, ChevronDown } from 'lucide-react';
+
 
 const COLORS = {
   bg: '#0B1020',
