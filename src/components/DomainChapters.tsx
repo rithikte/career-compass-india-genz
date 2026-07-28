@@ -469,7 +469,7 @@ const DomainChapters: React.FC<DomainChaptersProps> = ({ onContinue }) => {
             className="mt-4 dc-headline-gradient dc-headline-size"
             style={{ fontFamily: "'Poppins', 'Inter', sans-serif" }}
           >
-            Pick the chapters you are interested in
+            Pick the chapters section you are interested in
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
