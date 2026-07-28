@@ -53,7 +53,7 @@ const Index = () => {
     { id: 'ug-homepage', title: 'UG Homepage', component: () => <UGHomepage onExplore={() => setActiveSection('home')} onSearchDegree={() => setActiveSection('search-degree')} /> },
     { id: 'search-degree', title: 'Search Degree', component: SearchDegree },
     { id: 'domain-subjects', title: 'Domain subjects', component: () => <DomainSubjects onExploreChapters={() => setActiveSection('domain-chapters')} /> },
-    { id: 'domain-chapters', title: 'Domain chapters', component: DomainChapters },
+    { id: 'domain-chapters', title: 'Domain chapters', component: () => <DomainChapters onContinue={() => setActiveSection('role-profile')} /> },
     { id: 'role-profile', title: 'Role Profile', component: () => <RoleProfile onExplore={() => setActiveSection('domain-explore')} /> },
     { id: 'domain-explore', title: 'Domain Explore', component: DomainExplore },
     { id: 'ecosystem-growth', title: 'Ecosystem Growth', component: EcosystemGrowth },
