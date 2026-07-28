@@ -446,8 +446,8 @@ const DomainChapters: React.FC = () => {
       />
 
       <div
-        className="relative mx-auto"
-        style={{ maxWidth: 1200, padding: 'clamp(32px, 6vw, 72px) clamp(20px, 5vw, 48px)' }}
+        className="relative dc-container"
+        style={{ paddingTop: 'clamp(32px, 6vw, 72px)', paddingBottom: 'clamp(32px, 6vw, 72px)' }}
       >
         <div className="text-center">
           <motion.span
@@ -455,7 +455,7 @@ const DomainChapters: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
-            className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em]"
+            className="dc-label inline-flex items-center gap-2 font-medium uppercase"
             style={{ ...techFont, color: COLORS.accent }}
           >
             <span className="h-1.5 w-1.5 rounded-full" style={{ background: COLORS.accent }} />
@@ -466,13 +466,8 @@ const DomainChapters: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.6, delay: 0.08, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mt-4 font-bold dc-headline-gradient"
-            style={{
-              fontFamily: "'Poppins', 'Inter', sans-serif",
-              fontSize: 'clamp(1.9rem, 4.5vw, 3.4rem)',
-              letterSpacing: '-0.02em',
-              lineHeight: 1.05,
-            }}
+            className="mt-4 dc-headline-gradient dc-headline-size"
+            style={{ fontFamily: "'Poppins', 'Inter', sans-serif" }}
           >
             Pick the chapters you are interested in
           </motion.h1>
@@ -481,14 +476,8 @@ const DomainChapters: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.6, delay: 0.18, ease: [0.22, 1, 0.36, 1] as const }}
-            className="mx-auto mt-4"
-            style={{
-              ...bodyFont,
-              color: COLORS.muted,
-              maxWidth: '62ch',
-              fontSize: 'clamp(0.95rem, 2.2vw, 1.1rem)',
-              lineHeight: 1.7,
-            }}
+            className="mx-auto mt-4 dc-body"
+            style={{ ...bodyFont, color: COLORS.muted, maxWidth: '62ch' }}
           >
             Learn the concepts that build real civil engineering knowledge.
           </motion.p>
