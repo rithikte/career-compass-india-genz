@@ -408,15 +408,6 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
         <section aria-labelledby="ug-hero-heading" className="relative overflow-hidden pt-12 pb-6 sm:pt-24 sm:pb-8">
           <div className="ug-hero-glow" aria-hidden="true" />
           <div className="relative z-10 flex flex-col items-start text-left">
-            <Reveal delay={20}>
-              <div
-                className="ug-hero-badge inline-flex items-center gap-2 rounded-full px-4 py-2 text-[9.6px] sm:text-[11.2px] font-medium border"
-                style={{ ...techFont, background: 'rgba(109,212,200,0.08)', borderColor: 'rgba(109,212,200,0.25)', color: '#6DD4C8' }}
-              >
-                <span className="ug-hero-badge-dot h-2 w-2 rounded-full bg-[#6DD4C8]" />
-                Built in Telangana. Built for India.
-              </div>
-            </Reveal>
             <Reveal delay={60}>
               <SplitHeading
                 id="ug-hero-heading"
