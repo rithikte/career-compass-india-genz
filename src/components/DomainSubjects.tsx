@@ -21,7 +21,14 @@ const headingFont = { fontFamily: "'Satoshi', 'Inter', sans-serif" };
 const bodyFont = { fontFamily: "'Inter', sans-serif" };
 const techFont = { fontFamily: "'IBM Plex Sans', 'Inter', sans-serif" };
 
-const GROUP_ACCENTS = [COLORS.accent, COLORS.accent2, COLORS.accent3, COLORS.accent4, COLORS.accent5];
+/* Priority ladder for the 5 subject groups */
+const PRIORITIES = [
+  { label: 'High Priority', color: '#F87171' },
+  { label: 'High Priority', color: '#F87171' },
+  { label: 'Moderate', color: '#FBBF24' },
+  { label: 'Supporting', color: '#6DD4C8' },
+  { label: 'Supporting', color: '#6DD4C8' },
+];
 
 interface Subject {
   name: string;
