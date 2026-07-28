@@ -396,8 +396,7 @@ const DomainSubjects: React.FC<DomainSubjectsProps> = ({ onExploreChapters }) =>
             className="mx-auto mt-4 ds-body"
             style={{ ...bodyFont, color: COLORS.muted, maxWidth: '62ch' }}
           >
-            Compare the subject sections side by side, expand “Also called” to see the real site-level
-            skills each subject builds, then continue to the chapters.
+            Compare the subject sections side by side, expand & pick interested subjects section, then continue to the chapters.
           </motion.p>
         </div>
 
