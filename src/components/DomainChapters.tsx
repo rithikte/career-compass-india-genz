@@ -113,6 +113,8 @@ const cardVariants = {
 
 const DomainChapters: React.FC = () => {
   const [expanded, setExpanded] = useState<Set<string>>(new Set());
+  const [active, setActive] = useState(0);
+  const railRef = useRef<HTMLDivElement | null>(null);
 
   const toggleKey = (key: string) => {
     setExpanded((prev) => {
@@ -121,6 +123,166 @@ const DomainChapters: React.FC = () => {
       else next.add(key);
       return next;
     });
+  };
+
+  const onRailScroll = useCallback(() => {
+    const rail = railRef.current;
+    if (!rail) return;
+    const cards = Array.from(rail.querySelectorAll<HTMLElement>('[data-rail-card]'));
+    if (!cards.length) return;
+    const center = rail.scrollLeft + rail.clientWidth / 2;
+    let best = 0;
+    let bestDist = Infinity;
+    cards.forEach((c, i) => {
+      const cc = c.offsetLeft + c.offsetWidth / 2;
+      const d = Math.abs(cc - center);
+      if (d < bestDist) {
+        bestDist = d;
+        best = i;
+      }
+    });
+    setActive(best);
+  }, []);
+
+  useEffect(() => {
+    const rail = railRef.current;
+    if (!rail) return;
+    rail.addEventListener('scroll', onRailScroll, { passive: true });
+    onRailScroll();
+    return () => rail.removeEventListener('scroll', onRailScroll);
+  }, [onRailScroll]);
+
+  const goTo = (i: number) => {
+    const rail = railRef.current;
+    if (!rail) return;
+    const card = rail.querySelectorAll<HTMLElement>('[data-rail-card]')[i];
+    if (card) card.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+  };
+
+  const renderSection = (section: Section, sectionIndex: number, variant: 'grid' | 'rail') => {
+    const accent = SECTION_ACCENTS[sectionIndex % SECTION_ACCENTS.length];
+    const compact = variant === 'rail';
+    return (
+      <div className="flex flex-col h-full">
+        <div className="flex items-start gap-4">
+          <div
+            className="flex items-center justify-center flex-shrink-0"
+            style={{
+              background: `${accent}15`,
+              borderRadius: 12,
+              width: compact ? 38 : 44,
+              height: compact ? 38 : 44,
+            }}
+          >
+            <Layers size={compact ? 19 : 22} className="ug-chap-icon" style={{ color: accent }} />
+          </div>
+          <div className="min-w-0 flex-1">
+            <span
+              className="inline-block text-[0.68rem] font-medium uppercase tracking-[0.14em]"
+              style={{ ...techFont, color: accent }}
+            >
+              Section {section.id}
+            </span>
+            <h3
+              className="mt-1 font-semibold"
+              style={{ ...headingFont, color: COLORS.text, fontSize: compact ? '0.98rem' : '1.05rem', lineHeight: 1.4 }}
+            >
+              {section.title}
+            </h3>
+          </div>
+        </div>
+
+        <div className={compact ? 'mt-4 mb-3' : 'mt-5 mb-4'} style={{ height: 1, background: COLORS.border }} />
+
+        <div className={compact ? 'space-y-5' : 'space-y-6'}>
+          {section.subjects.map((subject, si) => (
+            <div key={`${section.id}-${si}`}>
+              <div className="flex items-center gap-2 mb-3 flex-wrap">
+                <span
+                  className="text-[0.62rem] font-medium uppercase tracking-[0.16em] px-2 py-0.5"
+                  style={{
+                    ...techFont,
+                    color: accent,
+                    background: `${accent}12`,
+                    borderRadius: 6,
+                  }}
+                >
+                  Subject {si + 1}
+                </span>
+                <h4
+                  className="font-semibold"
+                  style={{ ...headingFont, color: COLORS.text, fontSize: compact ? '0.9rem' : '0.95rem' }}
+                >
+                  {subject.name}
+                </h4>
+              </div>
+              <div className="space-y-2">
+                {subject.chapters.map((ch, ci) => {
+                  const chapKey = `${si}-${ci}`;
+                  const isOpen = expanded.has(chapKey);
+                  return (
+                    <div
+                      key={ci}
+                      className="ug-chap-row rounded-lg"
+                      style={{ padding: compact ? '8px 10px' : '10px 12px' }}
+                    >
+                      <div className="flex items-start gap-3">
+                        <div
+                          className="flex-shrink-0 mt-1.5"
+                          style={{ width: 6, height: 6, borderRadius: '50%', background: accent }}
+                        />
+                        <div className="flex-1 min-w-0">
+                          <div
+                            className="font-medium"
+                            style={{
+                              ...headingFont,
+                              color: COLORS.text,
+                              fontSize: compact ? '0.85rem' : '0.9rem',
+                              lineHeight: 1.4,
+                            }}
+                          >
+                            {ch.title}
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => toggleKey(chapKey)}
+                            aria-expanded={isOpen}
+                            aria-controls={`chap-tags-${variant}-${section.id}-${chapKey}`}
+                            className="ug-chap-toggle mt-2 inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[0.68rem] font-medium uppercase tracking-wider"
+                            style={{ ...techFont, color: accent, background: 'transparent' }}
+                          >
+                            Also Called
+                            <ChevronDown
+                              size={14}
+                              className="ug-chap-chevron"
+                              data-open={isOpen}
+                              style={{ color: accent }}
+                            />
+                          </button>
+                          <div
+                            id={`chap-tags-${variant}-${section.id}-${chapKey}`}
+                            className="ug-chap-tags-wrap"
+                            data-open={isOpen}
+                          >
+                            <div
+                              className="pt-2 flex items-start gap-2"
+                              style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.74rem', lineHeight: 1.55 }}
+                            >
+                              <span style={{ color: accent, flexShrink: 0 }}>—</span>
+                              <span>{ch.tags}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
   };
 
   return (
@@ -157,8 +319,43 @@ const DomainChapters: React.FC = () => {
         @media (hover: hover) {
           .ug-chap-toggle:hover { background-color: rgba(255,255,255,0.06); }
         }
+
+        /* --- Desktop grid vs tablet/mobile comparison rail --- */
+        .dc-grid { display: none; }
+        .dc-compare { display: block; }
+        @media (min-width: 1024px) {
+          .dc-grid { display: grid; }
+          .dc-compare { display: none; }
+        }
+        .dc-rail {
+          display: flex;
+          gap: 14px;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          scroll-behavior: smooth;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+          padding-bottom: 6px;
+        }
+        .dc-rail::-webkit-scrollbar { display: none; }
+        .dc-rail-card {
+          scroll-snap-align: center;
+          flex: 0 0 auto;
+          width: 82vw;
+          max-width: 420px;
+        }
+        @media (min-width: 640px) {
+          .dc-rail-card { width: 46vw; max-width: 420px; }
+        }
+        .dc-chip {
+          transition: background-color 200ms ease-out, color 200ms ease-out, border-color 200ms ease-out;
+          white-space: nowrap;
+        }
+        .dc-dot { transition: width 250ms ease-out, background-color 250ms ease-out; }
+
         @media (prefers-reduced-motion: reduce) {
-          .ug-chap-card, .ug-chap-icon, .ug-chap-row, .ug-chap-tags-wrap, .ug-chap-chevron { transition: none !important; }
+          .ug-chap-card, .ug-chap-icon, .ug-chap-row, .ug-chap-tags-wrap, .ug-chap-chevron, .dc-chip, .dc-dot { transition: none !important; }
+          .dc-rail { scroll-behavior: auto; }
         }
       `}</style>
 
@@ -225,155 +422,104 @@ const DomainChapters: React.FC = () => {
           </motion.p>
         </div>
 
+        {/* Desktop: side-by-side grid */}
         <div
-          className="mt-10 grid gap-6"
+          className="dc-grid mt-10 gap-6"
           style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))' }}
         >
-          {SECTIONS.map((section, sectionIndex) => {
-            const accent = SECTION_ACCENTS[sectionIndex % SECTION_ACCENTS.length];
-            return (
-              <motion.div
+          {SECTIONS.map((section, sectionIndex) => (
+            <motion.div
+              key={section.id}
+              custom={sectionIndex}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+              variants={cardVariants}
+              className="ug-chap-card"
+              style={{
+                background: COLORS.card,
+                border: `1px solid ${COLORS.border}`,
+                borderRadius: 20,
+                padding: 'clamp(20px, 4vw, 28px)',
+                backgroundImage: `linear-gradient(${COLORS.glass}, ${COLORS.glass})`,
+              }}
+            >
+              {renderSection(section, sectionIndex, 'grid')}
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Tablet + mobile: side-by-side comparison rail */}
+        <div className="dc-compare mt-8">
+          <div className="flex items-center gap-2 overflow-x-auto dc-rail" role="tablist" aria-label="Chapter sections">
+            {SECTIONS.map((section, i) => {
+              const accent = SECTION_ACCENTS[i % SECTION_ACCENTS.length];
+              const isActive = active === i;
+              return (
+                <button
+                  key={section.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  onClick={() => goTo(i)}
+                  className="dc-chip rounded-full px-3 py-1.5 text-[0.68rem] font-medium uppercase tracking-[0.14em]"
+                  style={{
+                    ...techFont,
+                    color: isActive ? COLORS.bg : accent,
+                    background: isActive ? accent : `${accent}12`,
+                    border: `1px solid ${isActive ? accent : COLORS.border}`,
+                  }}
+                >
+                  Section {section.id}
+                </button>
+              );
+            })}
+          </div>
+
+          <p
+            className="mt-3 text-center"
+            style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.72rem' }}
+          >
+            Swipe sideways to compare all 4 sections
+          </p>
+
+          <div ref={railRef} className="dc-rail mt-3">
+            {SECTIONS.map((section, sectionIndex) => (
+              <div
                 key={section.id}
-                custom={sectionIndex}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.1 }}
-                variants={cardVariants}
-                className="ug-chap-card"
+                data-rail-card
+                className="dc-rail-card ug-chap-card"
                 style={{
                   background: COLORS.card,
-                  border: `1px solid ${COLORS.border}`,
+                  border: `1px solid ${active === sectionIndex ? SECTION_ACCENTS[sectionIndex % SECTION_ACCENTS.length] + '66' : COLORS.border}`,
                   borderRadius: 20,
-                  padding: 'clamp(20px, 4vw, 28px)',
+                  padding: 'clamp(16px, 4vw, 22px)',
                   backgroundImage: `linear-gradient(${COLORS.glass}, ${COLORS.glass})`,
                 }}
               >
-                <div className="flex items-start gap-4">
-                  <div
-                    className="flex items-center justify-center flex-shrink-0"
-                    style={{
-                      background: `${accent}15`,
-                      borderRadius: 12,
-                      width: 44,
-                      height: 44,
-                    }}
-                  >
-                    <Layers size={22} className="ug-chap-icon" style={{ color: accent }} />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <span
-                      className="inline-block text-[0.68rem] font-medium uppercase tracking-[0.14em]"
-                      style={{ ...techFont, color: accent }}
-                    >
-                      Section {section.id}
-                    </span>
-                    <h3
-                      className="mt-1 font-semibold"
-                      style={{ ...headingFont, color: COLORS.text, fontSize: '1.05rem', lineHeight: 1.4 }}
-                    >
-                      {section.title}
-                    </h3>
-                  </div>
-                </div>
+                {renderSection(section, sectionIndex, 'rail')}
+              </div>
+            ))}
+          </div>
 
-                <div className="mt-5 mb-4" style={{ height: 1, background: COLORS.border }} />
-
-                <div className="space-y-6">
-                  {section.subjects.map((subject, si) => (
-                    <div key={`${section.id}-${si}`}>
-                      <div className="flex items-center gap-2 mb-3">
-                        <span
-                          className="text-[0.62rem] font-medium uppercase tracking-[0.16em] px-2 py-0.5"
-                          style={{
-                            ...techFont,
-                            color: accent,
-                            background: `${accent}12`,
-                            borderRadius: 6,
-                          }}
-                        >
-                          Subject {si + 1}
-                        </span>
-                        <h4
-                          className="font-semibold"
-                          style={{ ...headingFont, color: COLORS.text, fontSize: '0.95rem' }}
-                        >
-                          {subject.name}
-                        </h4>
-                      </div>
-                      <div className="space-y-2">
-                        {subject.chapters.map((ch, ci) => (
-                          <div
-                            key={ci}
-                            className="ug-chap-row rounded-lg"
-                            style={{ padding: '10px 12px' }}
-                          >
-                            <div className="flex items-start gap-3">
-                              <div
-                                className="flex-shrink-0 mt-1.5"
-                                style={{
-                                  width: 6,
-                                  height: 6,
-                                  borderRadius: '50%',
-                                  background: accent,
-                                }}
-                              />
-                              <div className="flex-1 min-w-0">
-                                <div
-                                  className="font-medium"
-                                  style={{ ...headingFont, color: COLORS.text, fontSize: '0.9rem', lineHeight: 1.4 }}
-                                >
-                                  {ch.title}
-                                </div>
-                                {
-                                  (() => {
-                                    const chapKey = `${section.id}-${si}-${ci}`;
-                                    const isOpen = expanded.has(chapKey);
-                                    return (
-                                      <>
-                                        <button
-                                          type="button"
-                                          onClick={() => toggleKey(chapKey)}
-                                          aria-expanded={isOpen}
-                                          aria-controls={`chap-tags-${chapKey}`}
-                                          className="ug-chap-toggle mt-2 inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[0.68rem] font-medium uppercase tracking-wider"
-                                          style={{ ...techFont, color: accent, background: 'transparent' }}
-                                        >
-                                          Also Called
-                                          <ChevronDown
-                                            size={14}
-                                            className="ug-chap-chevron"
-                                            data-open={isOpen}
-                                            style={{ color: accent }}
-                                          />
-                                        </button>
-                                        <div
-                                          id={`chap-tags-${chapKey}`}
-                                          className="ug-chap-tags-wrap"
-                                          data-open={isOpen}
-                                        >
-                                          <div
-                                            className="pt-2 flex items-start gap-2"
-                                            style={{ ...bodyFont, color: COLORS.muted, fontSize: '0.74rem', lineHeight: 1.55 }}
-                                          >
-                                            <span style={{ color: accent, flexShrink: 0 }}>—</span>
-                                            <span>{ch.tags}</span>
-                                          </div>
-                                        </div>
-                                      </>
-                                    );
-                                  })()
-                                }
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            );
-          })}
+          <div className="mt-4 flex items-center justify-center gap-2">
+            {SECTIONS.map((section, i) => (
+              <button
+                key={section.id}
+                type="button"
+                aria-label={`Go to section ${section.id}`}
+                onClick={() => goTo(i)}
+                className="dc-dot rounded-full"
+                style={{
+                  height: 6,
+                  width: active === i ? 22 : 6,
+                  background: active === i ? SECTION_ACCENTS[i % SECTION_ACCENTS.length] : COLORS.border,
+                  border: 'none',
+                  padding: 0,
+                }}
+              />
+            ))}
+          </div>
         </div>
 
       </div>
@@ -382,3 +528,4 @@ const DomainChapters: React.FC = () => {
 };
 
 export default DomainChapters;
+
