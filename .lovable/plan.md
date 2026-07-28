@@ -1,33 +1,45 @@
-Plan: Reduce UG Homepage paragraph font sizes by 30%
+## Goal
 
-Goal
-Reduce the font size of every `<p>` text element in `src/components/UGHomepage.tsx` by 30% from its current rendered size, without changing line-height, colors, spacing, or layout.
+On desktop the 4 chapter sections sit side by side and can be compared at a glance. On tablet/mobile they currently stack, so each section takes several vertical swipes and students can never see two sections together.
 
-Current state
-Read the UG Homepage component and identified all `<p>` elements and their current sizes:
+## The idea: a snap-scrolling comparison rail (tablet + mobile only)
 
-- Hero problem paragraph (line 411): `text-base sm:text-lg` → 16px / 18px
-- Hero value proposition paragraph (line 420): `text-base sm:text-lg` → 16px / 18px
-- Why Start With Subjects description (line 445): `text-base sm:text-lg` → 16px / 18px
-- Why Start card descriptions (line 471): default 16px
-- What is Undergraduate Maps description (line 492): `text-base sm:text-lg` → 16px / 18px
-- Journey step text (line 520): default 16px
-- Discover card descriptions (line 564): default 16px
-- Why This Matters gap description (line 600): default 16px
-- Why This Matters way-forward description (line 618): default 16px
-- Our Approach description (line 639): `text-base sm:text-lg` → 16px / 18px
-- Our Approach goal paragraph (line 679): default 16px
-- CTA description (line 790): default 16px
+Keep the desktop grid exactly as it is. Below the `lg` breakpoint, render the same 4 sections as a single horizontal, snap-scrolling rail — one thumb-swipe moves you from Section 1 to Section 2, sideways instead of down.
 
-Implementation approach
-1. For paragraphs currently using `text-base sm:text-lg`, replace with `text-[11.2px] sm:text-[12.6px]` to apply an exact 30% reduction.
-2. For paragraphs with no explicit size class (defaulting to 16px), add `text-[11.2px]`.
-3. Preserve all existing `mt-*`, `leading-[1.7]`, `font-medium`, `mx-auto`, and `maxWidth` styles to avoid layout shifts.
-4. Keep headings, labels, cards, icons, and buttons untouched.
+```text
+ mobile / tablet
+ ┌──────────────────────────────────────┐
+ │  [S1] [S2] [S3] [S4]   <- tab chips  │
+ ├──────────────────────────────────────┤
+ │ ┌──────────┐┌──────────┐┌───────     │
+ │ │ Section 1││ Section 2││ Sect..     │  ← horizontal
+ │ │ RCC      ││ RCC      ││ RCC        │    snap scroll
+ │ │ • ch 1   ││ • ch 1   ││ • ch 1     │
+ │ │ • ch 2   ││ • ch 2   ││ • ch 2     │
+ │ └──────────┘└──────────┘└───────     │
+ ├──────────────────────────────────────┤
+ │            ● ○ ○ ○                   │
+ └──────────────────────────────────────┘
+```
 
-Verification
-- Run a build check after edits.
-- Capture a preview screenshot of the UG Homepage to confirm the text remains readable and the design is intact.
+Key details that make it actually comparable:
 
-Files to change
-- `src/components/UGHomepage.tsx`
+1. **Card width ~82vw on mobile, ~46vw on tablet** — tablet shows two sections at once, mobile shows one plus a peek of the next so it's obvious you can swipe sideways.
+2. **Row-aligned content.** All four cards share the same subject/chapter row order and a fixed row height, so scrolling sideways compares the *same* chapter across sections rather than random rows.
+3. **Vertical scroll is shared, not per-card.** The rail scrolls horizontally; the page scrolls vertically. So a student scrolls down once to a subject, then swipes left/right to compare all 4 sections at that same point.
+4. **Section chips + dots.** Chips above the rail (Section 1–4) jump to a section; dots below show position. Both driven by scroll position so they stay in sync.
+5. **"Also called" stays collapsible**, but toggling it on one card toggles the same chapter on all four so rows never drift out of alignment.
+6. **Compact mode on mobile**: slightly reduced padding, 6px bullet, chapter text ~0.85rem so a full subject block fits in one screen height.
+
+## Alternative considered
+
+A "chapter-first" view (one chapter, four section values side by side) compares even tighter, but it breaks the existing section/subject hierarchy and reads poorly with these long chapter titles. The rail keeps the existing structure and design language.
+
+## Technical notes
+
+- All work in `src/components/DomainChapters.tsx`; no data changes.
+- Desktop grid rendered as-is at `lg+`; rail rendered below `lg` via a media-query-driven branch (reuse `useIsMobile`-style matchMedia at 1024px, or pure CSS with two containers and `display:none` — CSS preferred to avoid layout flash).
+- Rail: `display:flex; overflow-x:auto; scroll-snap-type: x mandatory; scroll-behavior:smooth;` with `scroll-snap-align:center` per card, `-webkit-overflow-scrolling:touch`, hidden scrollbar.
+- Active index tracked with an `IntersectionObserver` on the cards (root = rail) to drive chips/dots; chips call `scrollIntoView({inline:'center'})`.
+- `expanded` state key changes from `section-subject-chapter` to `subject-chapter` so the "Also called" toggle applies across all sections.
+- Existing colors, fonts, accents, hover/reduced-motion rules unchanged.
