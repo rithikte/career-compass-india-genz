@@ -17,6 +17,7 @@ import {
   Compass,
   AlertTriangle,
   Route,
+  MapPin,
 } from 'lucide-react';
 
 
