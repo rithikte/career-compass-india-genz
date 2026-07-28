@@ -563,7 +563,17 @@ const DomainChapters: React.FC<DomainChaptersProps> = ({ onContinue }) => {
                   {pair.map((section) => {
                     const sectionIndex = SECTIONS.indexOf(section);
                     return (
-                      <div key={section.id} className="dc-pair-col min-w-0">
+                      <div
+                        key={section.id}
+                        className="dc-pair-col min-w-0 cursor-pointer"
+                        onClick={() => setSelected(section.id)}
+                        style={{
+                          borderRadius: 12,
+                          padding: selected === section.id ? 6 : 6,
+                          background: selected === section.id ? `${SECTION_ACCENTS[sectionIndex % SECTION_ACCENTS.length]}10` : 'transparent',
+                          boxShadow: selected === section.id ? `inset 0 0 0 1px ${SECTION_ACCENTS[sectionIndex % SECTION_ACCENTS.length]}55` : 'none',
+                        }}
+                      >
                         {renderSection(section, sectionIndex, 'rail')}
                       </div>
                     );
