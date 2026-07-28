@@ -147,12 +147,6 @@ const DomainSubjects: React.FC<DomainSubjectsProps> = ({ onExploreChapters }) =>
             <BookOpen size={compact ? 19 : 22} className="ug-subj-icon" style={{ color: accent }} />
           </div>
           <div className="min-w-0 flex-1">
-            <span className="inline-block ds-label font-medium uppercase" style={{ ...techFont, color: accent }}>
-              Section {section.id}
-            </span>
-            <h3 className="mt-1 font-semibold" style={{ ...headingFont, color: COLORS.text, lineHeight: 1.4 }}>
-              {section.title}
-            </h3>
           </div>
         </div>
 
