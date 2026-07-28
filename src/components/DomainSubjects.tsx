@@ -146,8 +146,6 @@ const DomainSubjects: React.FC<DomainSubjectsProps> = ({ onExploreChapters }) =>
           >
             <BookOpen size={compact ? 19 : 22} className="ug-subj-icon" style={{ color: accent }} />
           </div>
-          <div className="min-w-0 flex-1">
-          </div>
         </div>
 
         <div className={compact ? 'mt-4 mb-3' : 'mt-5 mb-4'} style={{ height: 1, background: COLORS.border }} />
