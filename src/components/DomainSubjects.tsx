@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, ChevronDown } from 'lucide-react';
+import { BookOpen, ChevronDown, ArrowRight } from 'lucide-react';
 
 /* ---------- Design tokens (UG Homepage palette) ---------- */
 const COLORS = {
@@ -21,7 +21,14 @@ const headingFont = { fontFamily: "'Satoshi', 'Inter', sans-serif" };
 const bodyFont = { fontFamily: "'Inter', sans-serif" };
 const techFont = { fontFamily: "'IBM Plex Sans', 'Inter', sans-serif" };
 
-const GROUP_ACCENTS = [COLORS.accent, COLORS.accent2, COLORS.accent3, COLORS.accent4, COLORS.accent5];
+/* Priority ladder for the 5 subject groups */
+const PRIORITIES = [
+  { label: 'High Priority', color: '#F87171' },
+  { label: 'High Priority', color: '#F87171' },
+  { label: 'Moderate', color: '#FBBF24' },
+  { label: 'Supporting', color: '#6DD4C8' },
+  { label: 'Supporting', color: '#6DD4C8' },
+];
 
 interface Subject {
   name: string;
@@ -163,9 +170,14 @@ const cardVariants = {
   }),
 };
 
-const DomainSubjects: React.FC = () => {
+interface DomainSubjectsProps {
+  onExploreChapters?: () => void;
+}
+
+const DomainSubjects: React.FC<DomainSubjectsProps> = ({ onExploreChapters }) => {
   const [openGroups, setOpenGroups] = useState<Set<number>>(new Set([0]));
   const [openAlias, setOpenAlias] = useState<Set<string>>(new Set());
+  const [picked, setPicked] = useState<Record<number, string>>({});
 
   const toggleGroup = (key: number) => {
     setOpenGroups((prev) => {
@@ -315,7 +327,9 @@ const DomainSubjects: React.FC = () => {
         {/* Subject dropdowns */}
         <div className="mt-8 flex flex-col gap-4">
           {GROUPS.map((group) => {
-            const accent = GROUP_ACCENTS[group.index % GROUP_ACCENTS.length];
+            const priority = PRIORITIES[group.index % PRIORITIES.length];
+            const accent = priority.color;
+            const pickedName = picked[group.index];
             const isOpen = openGroups.has(group.index);
             return (
               <motion.div
@@ -350,13 +364,20 @@ const DomainSubjects: React.FC = () => {
                   </span>
                   <span className="min-w-0 flex-1">
                     <span
-                      className="ds-label block font-medium uppercase"
-                      style={{ ...techFont, color: accent }}
+                      className="ds-label inline-flex items-center gap-1.5 font-medium uppercase rounded-full"
+                      style={{
+                        ...techFont,
+                        color: accent,
+                        background: `${accent}1A`,
+                        border: `1px solid ${accent}40`,
+                        padding: '2px 8px',
+                      }}
                     >
-                      Subject {group.index + 1}
+                      <span className="h-1.5 w-1.5 rounded-full" style={{ background: accent }} />
+                      {priority.label}
                     </span>
-                    <h3 className="mt-1 font-semibold" style={{ ...headingFont, color: COLORS.text }}>
-                      {group.title} — across all sections
+                    <h3 className="mt-1.5 font-semibold" style={{ ...headingFont, color: COLORS.text }}>
+                      {pickedName || group.title}
                     </h3>
                   </span>
                   <ChevronDown
@@ -383,8 +404,20 @@ const DomainSubjects: React.FC = () => {
                         return (
                           <div
                             key={aliasKey}
-                            className="ug-skill-row rounded-xl"
-                            style={{ padding: '12px 14px', border: `1px solid ${COLORS.border}` }}
+                            role="button"
+                            tabIndex={0}
+                            onClick={() => setPicked((p) => ({ ...p, [group.index]: item.subject.name }))}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                setPicked((p) => ({ ...p, [group.index]: item.subject.name }));
+                              }
+                            }}
+                            className="ug-skill-row rounded-xl cursor-pointer"
+                            style={{
+                              padding: '12px 14px',
+                              border: `1px solid ${pickedName ? `${accent}55` : COLORS.border}`,
+                            }}
                           >
                             <span
                               className="ds-label block font-medium uppercase"
@@ -393,12 +426,13 @@ const DomainSubjects: React.FC = () => {
                               Section {item.sectionId}
                             </span>
                             <h4 className="mt-1 font-medium" style={{ ...headingFont, color: COLORS.text }}>
-                              {item.subject.name}
+                              {pickedName || item.subject.name}
                             </h4>
+
 
                             <button
                               type="button"
-                              onClick={() => toggleAlias(aliasKey)}
+                              onClick={(e) => { e.stopPropagation(); toggleAlias(aliasKey); }}
                               aria-expanded={aliasOpen}
                               aria-controls={`alias-${aliasKey}`}
                               className="ug-subj-toggle ds-label mt-2 inline-flex items-center gap-1.5 rounded-md px-2 py-1 font-medium uppercase"
@@ -437,6 +471,31 @@ const DomainSubjects: React.FC = () => {
             );
           })}
         </div>
+
+        {/* Pick Subjects Wise Chapters */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
+          className="mt-8 text-center"
+        >
+          <button
+            type="button"
+            onClick={() => onExploreChapters?.()}
+            className="ug-chapters-cta inline-flex items-center gap-2 rounded-full font-semibold"
+            style={{
+              ...headingFont,
+              color: COLORS.bg,
+              background: `linear-gradient(90deg, ${COLORS.accent}, ${COLORS.accent2})`,
+              padding: 'clamp(10px, 2.2vw, 14px) clamp(18px, 4vw, 28px)',
+              border: 'none',
+            }}
+          >
+            Pick Subjects Wise Chapters
+            <ArrowRight size={16} />
+          </button>
+        </motion.div>
       </div>
     </div>
   );
