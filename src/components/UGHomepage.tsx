@@ -815,7 +815,7 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
               className="mt-5 text-center text-2xl sm:text-4xl font-bold leading-tight"
               style={{ ...headingFont, ...headingGradient, maxWidth: '24ch', marginLeft: 'auto', marginRight: 'auto' }}
             >
-              Skilling India, one career map at a time.
+              Stronger India Begins with Better Career Decisions.
             </h2>
             <p
               className="mt-5 text-center text-[11.2px] sm:text-[12.6px] leading-[1.7]"
