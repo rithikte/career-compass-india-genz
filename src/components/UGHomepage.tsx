@@ -829,9 +829,9 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
 
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
             {[
-              { icon: Compass, accent: '#F5C26B', title: 'Clarity First', desc: 'Show every student the real path behind their subjects and degree.' },
-              { icon: Wrench, accent: '#6DD4C8', title: 'Skills That Matter', desc: 'Map the practical skills, tools, and projects companies actually expect.' },
-              { icon: Briefcase, accent: '#A78BFA', title: 'Work-Ready Talent', desc: 'Bridge the gap between academic learning and industry hiring.' },
+              { icon: Compass, accent: '#F5C26B', title: 'Career Clarity', desc: 'Help every student understand where their subjects and degree can lead.' },
+              { icon: Wrench, accent: '#6DD4C8', title: 'Industry-Ready Skills', desc: 'Show the skills, tools, and projects employers actually expect.' },
+              { icon: Briefcase, accent: '#A78BFA', title: 'Workforce Readiness', desc: 'Bridge the gap between classroom learning and real careers.' },
             ].map((m, i) => {
               const Icon = m.icon;
               return (
