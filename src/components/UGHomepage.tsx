@@ -733,8 +733,8 @@ const UGHomepage: React.FC<UGHomepageProps> = ({ onExplore, onSearchDegree }) =>
           <Reveal delay={80}>
             <h2
               id="ug-coverage-heading"
-              className="mt-6 text-center text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight"
-              style={{ ...headingFont, maxWidth: '24ch', marginLeft: 'auto', marginRight: 'auto' }}
+              className="mt-5 text-2xl sm:text-4xl font-medium leading-tight"
+              style={{ ...headingFont, ...headingGradient, maxWidth: '24ch' }}
             >
               What is{' '}
               <span style={{ color: '#6DD4C8' }}>mapped</span>
