@@ -305,8 +305,10 @@ const DomainExplore: React.FC = () => {
                 transition={{ duration: 0.55, delay: i * 0.08, ease: [0.34, 1.56, 0.64, 1] }}
                 whileHover={{ borderColor: a.ring } as any}
               >
-                <div className="ug-chain-num" style={{ color: a.label }}>{c.number} — Chain</div>
-                <div className="ug-chain-title">{c.title}</div>
+                <div className="ug-chain-head">
+                  <span className="ug-chain-num" style={{ color: a.label }}>{c.number} — Chain</span>
+                </div>
+                <h3 className="ug-chain-title">{c.title}</h3>
                 <div className="ug-trigger" style={{ borderColor: a.ring, color: a.label }}>
                   If {c.trigger}
                 </div>
