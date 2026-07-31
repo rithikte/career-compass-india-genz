@@ -202,21 +202,41 @@ const DomainExplore: React.FC = () => {
           backdrop-filter: blur(12px);
         }
         .ug-pillar-grid {
-          display: grid; gap: 12px;
-          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          display: grid; gap: clamp(10px, 1.6vw, 16px);
+          grid-template-columns: 1fr;
         }
+        @media (min-width: 640px) { .ug-pillar-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (min-width: 1024px) { .ug-pillar-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
         .ug-pillar {
-          padding: 16px 18px; border-radius: 14px;
-          background: rgba(255,255,255,0.03);
-          border: 1px solid rgba(255,255,255,0.06);
+          position: relative; display: flex; gap: 12px; align-items: flex-start;
+          padding: clamp(14px, 1.8vw, 18px);
+          border-radius: 16px;
+          background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+          border: 1px solid rgba(255,255,255,0.07);
           transition: border-color .3s, transform .3s, box-shadow .3s;
         }
-        .ug-pillar:hover { border-color: rgba(110,231,215,0.35); transform: translateY(-2px); box-shadow: 0 10px 28px -14px rgba(110,231,215,0.14); }
+        .ug-pillar:hover { border-color: rgba(110,231,215,0.35); transform: translateY(-2px); box-shadow: 0 14px 32px -18px rgba(110,231,215,0.28); }
+        .ug-pillar-step {
+          flex: none; width: 26px; height: 26px; border-radius: 8px;
+          display: grid; place-items: center;
+          font-family: 'Poppins', sans-serif; font-weight: 700;
+          font-size: clamp(9px, 1.1vw, 10.5px); letter-spacing: 0.06em;
+          color: #6ee7d7; background: rgba(110,231,215,0.10);
+          border: 1px solid rgba(110,231,215,0.28);
+        }
+        .ug-pillar-body { min-width: 0; }
         .ug-pillar-label {
           font-family: 'Poppins', sans-serif; font-weight: 600;
-          font-size: 0.92rem; color: #e7ecf3; margin-bottom: 6px;
+          font-size: clamp(0.84rem, 1.45vw, 0.94rem); color: #e7ecf3;
+          margin-bottom: 5px; line-height: 1.35; letter-spacing: -0.01em;
         }
-        .ug-pillar-reason { font-size: 0.8rem; color: #9aa4b2; line-height: 1.5; }
+        .ug-pillar-reason { font-size: clamp(0.72rem, 1.25vw, 0.8rem); color: #9aa4b2; line-height: 1.55; }
+        .ug-pillar.final {
+          border-color: rgba(110,231,215,0.35);
+          background: linear-gradient(180deg, rgba(110,231,215,0.12), rgba(110,231,215,0.03));
+        }
+        .ug-pillar.final .ug-pillar-step { color: #06080d; background: #6ee7d7; border-color: #6ee7d7; }
+        @media (min-width: 640px) { .ug-pillar.final { grid-column: 1 / -1; } }
 
         .ug-two-col {
           display: grid; gap: 20px;
