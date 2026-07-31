@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ChevronRight, ArrowDown, ShieldCheck, TrendingUp, TrendingDown } from 'lucide-react';
 
 const chains = [
   {
     id: 'domain',
     number: '01',
+    scope: 'Domain',
     title: 'If the Domain becomes weak',
     trigger: 'Construction Site Execution reduces',
     steps: [
@@ -15,11 +17,12 @@ const chains = [
       'Junior Site Engineer fresher roles reduce',
     ],
     meaning: 'If actual construction activity slows, the fresher role immediately gets hit.',
-    accent: 'rose',
+    accent: 'critical',
   },
   {
     id: 'industry',
     number: '02',
+    scope: 'Industry',
     title: 'If the Industry becomes weak',
     trigger: 'Building Construction Companies reduce projects',
     steps: [
@@ -29,11 +32,12 @@ const chains = [
       'Junior Site Engineer hiring reduces',
     ],
     meaning: 'Even if the role is useful, fewer building projects means fewer entry-level openings.',
-    accent: 'amber',
+    accent: 'warning',
   },
   {
     id: 'cluster',
     number: '03',
+    scope: 'Cluster',
     title: 'If the Cluster becomes weak',
     trigger: 'RCC Apartment Projects reduce',
     steps: [
@@ -43,7 +47,7 @@ const chains = [
       'Junior Site Engineer fresher opportunities reduce',
     ],
     meaning: 'The role survives best when apartment RCC projects keep repeating floor-level execution work.',
-    accent: 'sky',
+    accent: 'info',
   },
 ];
 
@@ -81,10 +85,10 @@ const weakeners = [
   'Fewer new apartment launches',
 ];
 
-const accentMap: Record<string, { ring: string; dot: string; glow: string; label: string }> = {
-  rose: { ring: 'rgba(110,231,215,0.35)', dot: '#6ee7d7', glow: 'rgba(110,231,215,0.18)', label: '#6ee7d7' },
-  amber: { ring: 'rgba(245,194,107,0.35)', dot: '#f5c26b', glow: 'rgba(245,194,107,0.18)', label: '#f5c26b' },
-  sky: { ring: 'rgba(167,139,250,0.35)', dot: '#a78bfa', glow: 'rgba(167,139,250,0.18)', label: '#a78bfa' },
+const accentMap: Record<string, { line: string; text: string }> = {
+  critical: { line: 'rgba(248,113,113,0.55)', text: '#F87171' },
+  warning: { line: 'rgba(245,194,107,0.55)', text: '#F5C26B' },
+  info: { line: 'rgba(167,139,250,0.55)', text: '#A78BFA' },
 };
 
 const DomainExplore: React.FC = () => {
@@ -92,342 +96,354 @@ const DomainExplore: React.FC = () => {
     <div className="ug-domain-explore">
       <style>{`
         .ug-domain-explore {
+          --bg: #0B1020;
+          --surface: #121A2F;
+          --elevated: #18233A;
+          --hover: #202C45;
+          --text: #F5F7FA;
+          --text-2: #C8D1E1;
+          --muted: #94A3B8;
+          --accent: #6DD4C8;
+          --border: rgba(255,255,255,0.08);
+
           position: relative;
-          overflow: hidden;
           min-height: 100%;
-          background: radial-gradient(1200px 600px at 15% -10%, rgba(110,231,215,0.08), transparent 60%),
-                      radial-gradient(900px 500px at 100% 10%, rgba(167,139,250,0.08), transparent 60%),
-                      #06080d;
-          color: #e7ecf3;
-          border-radius: 24px;
-          padding: clamp(24px, 5vw, 72px) clamp(18px, 4vw, 56px);
+          background:
+            radial-gradient(1200px 560px at 50% -12%, rgba(109,212,200,0.10), transparent 62%),
+            var(--bg);
+          color: var(--text);
+          font-family: 'IBM Plex Sans', system-ui, sans-serif;
+          font-size: 16px;
+          padding: 48px 24px 96px;
         }
-        .ug-eyebrow {
-          display: inline-flex; align-items: center; gap: 10px;
-          font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
-          color: #6ee7d7; padding: 8px 14px; border-radius: 999px;
-          background: rgba(110,231,215,0.08); border: 1px solid rgba(110,231,215,0.25);
+        @media (min-width: 768px) { .ug-domain-explore { padding: 64px 32px 120px; } }
+        .ug-domain-explore *, .ug-domain-explore *::before, .ug-domain-explore *::after { font-family: inherit; }
+
+        .ug-wrap { max-width: 1280px; margin: 0 auto; }
+        .ug-read { max-width: 760px; }
+
+        .ug-domain-explore :is(a, button, [tabindex]):focus-visible {
+          outline: 2px solid var(--accent);
+          outline-offset: 3px;
+          border-radius: 12px;
         }
-        .ug-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: #6ee7d7; box-shadow: 0 0 12px #6ee7d7; }
+
+        /* Breadcrumb + role context */
+        .ug-crumbs {
+          display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+          font-size: 14px; color: var(--muted); margin-bottom: 16px;
+        }
+        .ug-crumbs svg { width: 14px; height: 14px; opacity: .6; }
+        .ug-crumbs .current { color: var(--text-2); font-weight: 500; }
+        .ug-role {
+          display: inline-flex; align-items: center; gap: 8px;
+          font-size: 12px; font-weight: 600; letter-spacing: 0.02em; text-transform: uppercase;
+          color: var(--accent); padding: 8px 12px; border-radius: 12px;
+          background: var(--surface); border: 1px solid var(--border);
+        }
+        .ug-role svg { width: 14px; height: 14px; }
+
         .ug-h1 {
-          font-family: 'Poppins', 'Inter', sans-serif;
-          font-weight: 700; letter-spacing: -0.02em; line-height: 1.05;
-          font-size: clamp(1.9rem, 4.5vw, 3.4rem); margin: 18px 0 14px;
-          background: linear-gradient(135deg, #e7ecf3 0%, #a5b4fc 55%, #6ee7d7 100%);
+          font-weight: 700; letter-spacing: -0.02em; line-height: 1.15;
+          font-size: 30px; margin: 16px 0;
+          background: linear-gradient(180deg, #FFFFFF 0%, #C8D1E1 100%);
           -webkit-background-clip: text; background-clip: text; color: transparent;
         }
-        .ug-sub { max-width: 780px; color: #9aa4b2; font-size: clamp(0.9rem, 1.6vw, 1rem); line-height: 1.7; }
+        @media (min-width: 768px) { .ug-h1 { font-size: 36px; } }
+        @media (min-width: 1280px) { .ug-h1 { font-size: 40px; } }
+
+        .ug-sub { color: var(--text-2); font-size: 16px; line-height: 1.6; }
+
+        .ug-block { margin-top: 64px; }
+        @media (min-width: 1280px) { .ug-block { margin-top: 96px; } }
+
         .ug-section-label {
-          font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
-          color: #9aa4b2; margin-bottom: 12px;
+          font-size: 12px; font-weight: 600; letter-spacing: 0.02em; text-transform: uppercase;
+          color: var(--muted); margin-bottom: 8px;
         }
         .ug-section-title {
-          font-family: 'Poppins', sans-serif; font-weight: 600;
-          font-size: clamp(1.35rem, 2.6vw, 1.9rem); letter-spacing: -0.01em;
-          margin-bottom: 8px;
-          background: linear-gradient(180deg, #fff 0%, #b7c0cc 100%);
-          -webkit-background-clip: text; background-clip: text; color: transparent;
+          font-weight: 600; font-size: 26px; line-height: 1.2; letter-spacing: -0.015em;
+          color: var(--text); margin: 0 0 8px;
         }
-        .ug-section-tag { color: #9aa4b2; font-size: 0.9rem; margin-bottom: 28px; }
+        @media (min-width: 768px) { .ug-section-title { font-size: 28px; } }
+        @media (min-width: 1280px) { .ug-section-title { font-size: 32px; } }
+        .ug-section-tag { color: var(--muted); font-size: 16px; line-height: 1.6; margin: 0 0 32px; }
 
-        .ug-chain-grid {
-          display: grid; gap: 20px;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        }
+        /* Chains */
+        .ug-chain-grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
+        @media (min-width: 768px) { .ug-chain-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .ug-chain-grid { grid-template-columns: repeat(3, 1fr); } }
+
         .ug-chain-card {
-          position: relative; padding: 26px 22px 22px;
-          background: rgba(255,255,255,0.03);
-          border: 1px solid rgba(255,255,255,0.08);
-          border-radius: 20px; backdrop-filter: blur(12px);
-          transition: transform .35s cubic-bezier(.34,1.56,.64,1), border-color .3s, box-shadow .3s;
+          padding: 24px; border-radius: 16px;
+          background: var(--surface); border: 1px solid var(--border);
+          transition: background 220ms ease, border-color 220ms ease, transform 220ms ease;
         }
-        .ug-chain-card:hover { transform: translateY(-2px); box-shadow: 0 12px 32px -16px rgba(110,231,215,0.18), 0 12px 32px -16px rgba(167,139,250,0.14); }
-        .ug-chain-num {
-          font-family: 'Poppins', sans-serif; font-weight: 700;
-          font-size: 12px; letter-spacing: 0.24em; opacity: 0.7;
-        }
-        .ug-chain-title {
-          font-family: 'Poppins', sans-serif; font-weight: 600;
-          font-size: 1.15rem; color: #e7ecf3; margin: 8px 0 18px;
-        }
+        .ug-chain-card:hover { background: var(--elevated); transform: translateY(-2px); }
+        .ug-chain-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+        .ug-chain-num { font-size: 12px; font-weight: 600; letter-spacing: 0.02em; text-transform: uppercase; }
+        .ug-chain-scope { font-size: 12px; font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase; color: var(--muted); }
+        .ug-chain-title { font-weight: 600; font-size: 18px; line-height: 1.25; color: var(--text); margin: 8px 0 16px; }
+
         .ug-trigger {
-          display: inline-block; padding: 8px 12px; border-radius: 10px;
-          font-size: 0.82rem; font-weight: 500; margin-bottom: 14px;
-          background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+          display: block; padding: 12px 16px; border-radius: 12px;
+          font-size: 15px; font-weight: 500; line-height: 1.5; margin-bottom: 16px;
+          background: var(--elevated); border: 1px solid var(--border);
+          border-left: 3px solid currentColor;
         }
-        .ug-flow { position: relative; padding-left: 22px; }
+        .ug-flow { position: relative; padding-left: 24px; margin: 0; list-style: none; }
         .ug-flow::before {
-          content: ''; position: absolute; left: 6px; top: 6px; bottom: 6px;
-          width: 1px; background: linear-gradient(180deg, rgba(255,255,255,0.25), rgba(255,255,255,0.02));
+          content: ''; position: absolute; left: 4px; top: 12px; bottom: 12px;
+          width: 1px; background: rgba(255,255,255,0.14);
         }
-        .ug-step {
-          position: relative; padding: 8px 0; font-size: 0.86rem;
-          color: #e7ecf3; line-height: 1.55;
-        }
+        .ug-step { position: relative; padding: 8px 0; font-size: 15px; color: var(--text-2); line-height: 1.6; }
         .ug-step::before {
-          content: ''; position: absolute; left: -22px; top: 15px;
+          content: ''; position: absolute; left: -24px; top: 15px;
           width: 9px; height: 9px; border-radius: 50%;
-          border: 1px solid rgba(255,255,255,0.3); background: #06080d;
+          border: 1px solid rgba(255,255,255,0.28); background: var(--bg);
         }
-        .ug-step.last::before { background: currentColor; box-shadow: 0 0 10px currentColor; }
+        .ug-step.last { color: var(--text); font-weight: 600; }
+        .ug-step.last::before { background: currentColor; border-color: currentColor; }
         .ug-meaning {
-          margin-top: 18px; padding: 12px 14px; border-radius: 12px;
-          background: rgba(255,255,255,0.03); border-left: 2px solid currentColor;
-          font-size: 0.82rem; color: #e7ecf3; line-height: 1.55;
+          margin-top: 16px; padding: 16px; border-radius: 12px;
+          background: var(--elevated); border-left: 3px solid currentColor;
+          font-size: 15px; color: var(--text-2); line-height: 1.6;
         }
 
-        .ug-panel {
-          padding: clamp(24px, 3.5vw, 40px);
-          border-radius: 22px;
-          background: rgba(255,255,255,0.03);
-          border: 1px solid rgba(255,255,255,0.08);
-          backdrop-filter: blur(12px);
+        /* Pillar table */
+        .ug-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 16px; background: var(--surface); }
+        .ug-table { width: 100%; border-collapse: collapse; min-width: 560px; }
+        .ug-table caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+        .ug-table th {
+          text-align: left; font-size: 15px; font-weight: 600; color: var(--muted);
+          padding: 16px 24px; border-bottom: 1px solid var(--border); white-space: nowrap;
         }
-        .ug-pillar-grid {
-          display: grid; gap: 12px;
-          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        .ug-table td {
+          font-size: 15px; line-height: 1.6; padding: 16px 24px; height: 56px;
+          border-bottom: 1px solid var(--border); color: var(--text-2); vertical-align: middle;
         }
-        .ug-pillar {
-          padding: 16px 18px; border-radius: 14px;
-          background: rgba(255,255,255,0.03);
-          border: 1px solid rgba(255,255,255,0.06);
-          transition: border-color .3s, transform .3s, box-shadow .3s;
-        }
-        .ug-pillar:hover { border-color: rgba(110,231,215,0.35); transform: translateY(-2px); box-shadow: 0 10px 28px -14px rgba(110,231,215,0.14); }
-        .ug-pillar-label {
-          font-family: 'Poppins', sans-serif; font-weight: 600;
-          font-size: 0.92rem; color: #e7ecf3; margin-bottom: 6px;
-        }
-        .ug-pillar-reason { font-size: 0.8rem; color: #9aa4b2; line-height: 1.5; }
+        .ug-table tbody tr:last-child td { border-bottom: none; }
+        .ug-table tbody tr { transition: background 220ms ease; }
+        .ug-table tbody tr:hover { background: var(--hover); }
+        .ug-table td.layer { color: var(--text); font-weight: 600; }
 
-        .ug-two-col {
-          display: grid; gap: 20px;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        }
+        /* Panels + lists */
+        .ug-panel { padding: 24px; border-radius: 16px; background: var(--surface); border: 1px solid var(--border); }
+        .ug-two-col { display: grid; gap: 16px; grid-template-columns: 1fr; }
+        @media (min-width: 768px) { .ug-two-col { grid-template-columns: repeat(2, 1fr); } }
+
+        .ug-panel-head { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+        .ug-panel-head svg { width: 18px; height: 18px; }
+        .ug-panel-head span { font-size: 12px; font-weight: 600; letter-spacing: 0.02em; text-transform: uppercase; }
+
         .ug-list { list-style: none; padding: 0; margin: 0; }
         .ug-list li {
-          padding: 10px 0 10px 22px; position: relative;
-          font-size: 0.88rem; color: #e7ecf3; line-height: 1.6;
-          border-bottom: 1px dashed rgba(255,255,255,0.06);
-          transition: background .2s;
+          padding: 12px 0 12px 24px; position: relative;
+          font-size: 16px; color: var(--text-2); line-height: 1.6;
+          border-bottom: 1px solid var(--border);
         }
-        .ug-list li:hover { background: rgba(110,231,215,0.06); }
         .ug-list li:last-child { border-bottom: none; }
         .ug-list li::before {
-          content: ''; position: absolute; left: 0; top: 18px;
+          content: ''; position: absolute; left: 0; top: 22px;
           width: 8px; height: 1px; background: currentColor;
         }
-        .ug-strengthen { color: #6ee7d7; }
-        .ug-weaken { color: #f5c26b; }
+        .ug-strengthen { color: var(--accent); }
+        .ug-weaken { color: #F5C26B; }
+
+        .ug-final-copy { color: var(--text-2); font-size: 16px; line-height: 1.6; max-width: 760px; }
+        .ug-final-copy p { margin: 0 0 16px; }
+        .ug-final-copy p:last-child { margin-bottom: 0; }
+        .ug-final-copy strong { color: var(--text); font-weight: 600; }
 
         .ug-takeaway {
-          margin-top: clamp(32px, 4vw, 48px);
-          padding: clamp(24px, 4vw, 40px);
-          border-radius: 22px; text-align: center;
-          background: linear-gradient(135deg, rgba(110,231,215,0.10), rgba(167,139,250,0.10));
-          border: 1px solid rgba(110,231,215,0.25);
-          position: relative; overflow: hidden;
-        }
-        .ug-takeaway::before {
-          content: ''; position: absolute; inset: 0;
-          background: radial-gradient(600px 200px at 50% 0%, rgba(110,231,215,0.15), transparent);
-          pointer-events: none;
+          margin-top: 48px; padding: 32px; border-radius: 16px;
+          background: var(--surface); border: 1px solid var(--border);
+          border-left: 3px solid var(--accent);
         }
         .ug-takeaway-label {
-          font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase;
-          color: #6ee7d7; margin-bottom: 14px;
+          font-size: 12px; font-weight: 600; letter-spacing: 0.02em; text-transform: uppercase;
+          color: var(--accent); margin-bottom: 8px;
         }
         .ug-takeaway-text {
-          font-family: 'Poppins', sans-serif; font-weight: 500;
-          font-size: clamp(0.7875rem, 1.8vw, 1.125rem); line-height: 1.5;
-          color: #e7ecf3; letter-spacing: -0.01em; max-width: 820px; margin: 0 auto;
+          font-weight: 500; font-size: 18px; line-height: 1.6;
+          color: var(--text); max-width: 760px; margin: 0;
         }
-
-        .ug-block { margin-top: clamp(40px, 6vw, 72px); }
-        .ug-final-copy { color: #e7ecf3; font-size: 0.92rem; line-height: 1.75; }
-        .ug-final-copy p { margin-bottom: 14px; }
-        .ug-final-copy strong { color: #e7ecf3; font-weight: 600; }
 
         @media (prefers-reduced-motion: reduce) {
           .ug-domain-explore * { animation: none !important; transition: none !important; }
         }
       `}</style>
 
-      {/* Hero */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
-      >
-        <span className="ug-eyebrow"><span className="dot" /> Career Ecosystem Stability</span>
-        <h1 className="ug-h1">The Butterfly Effect of a career role.</h1>
-        <p className="ug-sub">
-          What supports this career, what can weaken it, and how stable the ecosystem is behind
-          the Junior Site Engineer role — traced through the domain, the industry, and the cluster.
-        </p>
-      </motion.div>
+      <div className="ug-wrap">
+        {/* Breadcrumb → Role context → Title → Summary */}
+        <motion.header
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.24, ease: 'easeOut' }}
+        >
+          <nav className="ug-crumbs" aria-label="Breadcrumb">
+            <span>Civil Engineering</span>
+            <ChevronRight aria-hidden="true" />
+            <span>Site Execution</span>
+            <ChevronRight aria-hidden="true" />
+            <span className="current" aria-current="page">Domain Explore</span>
+          </nav>
 
-      {/* Butterfly Effect */}
-      <div className="ug-block">
-        <div className="ug-section-label">Butterfly Effect</div>
-        <h2 className="ug-section-title">Three chains that decide the role</h2>
-        <p className="ug-section-tag">Trace how a shock at the top ripples down to fresher openings.</p>
+          <p className="ug-role">
+            <ShieldCheck aria-hidden="true" />
+            Junior Site Engineer · Career Ecosystem Stability
+          </p>
 
-        <div className="ug-chain-grid">
-          {chains.map((c, i) => {
-            const a = accentMap[c.accent];
-            return (
-              <motion.div
-                key={c.id}
-                className="ug-chain-card"
-                style={{ color: a.dot, boxShadow: `0 0 0 1px transparent, 0 20px 40px -20px ${a.glow}` }}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-80px' }}
-                transition={{ duration: 0.55, delay: i * 0.08, ease: [0.34, 1.56, 0.64, 1] }}
-                whileHover={{ borderColor: a.ring } as any}
-              >
-                <div className="ug-chain-num" style={{ color: a.label }}>{c.number} — Chain</div>
-                <div className="ug-chain-title">{c.title}</div>
-                <div className="ug-trigger" style={{ borderColor: a.ring, color: a.label }}>
-                  If {c.trigger}
-                </div>
-                <div className="ug-flow">
-                  {c.steps.map((s, idx) => (
-                    <div
-                      key={idx}
-                      className={`ug-step ${idx === c.steps.length - 1 ? 'last' : ''}`}
-                      style={idx === c.steps.length - 1 ? { color: a.label } : undefined}
-                    >
-                      {s}
-                    </div>
-                  ))}
-                </div>
-                <div className="ug-meaning">{c.meaning}</div>
-              </motion.div>
-            );
-          })}
-        </div>
-      </div>
+          <h1 className="ug-h1">The Butterfly Effect of a career role.</h1>
+          <p className="ug-sub ug-read">
+            What supports this career, what can weaken it, and how stable the ecosystem is behind
+            the Junior Site Engineer role — traced through the domain, the industry, and the cluster.
+          </p>
+        </motion.header>
 
-      {/* Why Safe / Risky */}
-      <div className="ug-block">
-        <div className="ug-section-label">Why it survives</div>
-        <h2 className="ug-section-title">Why this career path is relatively safe — or risky</h2>
-        <p className="ug-section-tag">
-          People need housing. Cities need apartments. Apartments need RCC execution.
-          RCC execution needs site checking.
-        </p>
+        {/* Butterfly Effect */}
+        <section className="ug-block" aria-labelledby="de-chains">
+          <p className="ug-section-label">Butterfly Effect</p>
+          <h2 className="ug-section-title" id="de-chains">Three chains that decide the role</h2>
+          <p className="ug-section-tag ug-read">Trace how a shock at the top ripples down to fresher openings.</p>
 
-        <div className="ug-panel">
-          <div className="ug-pillar-grid">
-            {safetyPillars.map((p, i) => (
-              <motion.div
-                key={p.label}
-                className="ug-pillar"
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
-              >
-                <div className="ug-pillar-label">{p.label}</div>
-                <div className="ug-pillar-reason">{p.reason}</div>
-              </motion.div>
-            ))}
+          <div className="ug-chain-grid">
+            {chains.map((c, i) => {
+              const a = accentMap[c.accent];
+              return (
+                <motion.article
+                  key={c.id}
+                  className="ug-chain-card"
+                  style={{ color: a.text }}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  transition={{ duration: 0.24, delay: i * 0.06, ease: 'easeOut' }}
+                >
+                  <div className="ug-chain-head">
+                    <span className="ug-chain-num">{c.number}</span>
+                    <span className="ug-chain-scope">{c.scope} chain</span>
+                  </div>
+                  <h3 className="ug-chain-title">{c.title}</h3>
+                  <p className="ug-trigger">If {c.trigger}</p>
+                  <ol className="ug-flow">
+                    {c.steps.map((s, idx) => (
+                      <li key={idx} className={`ug-step ${idx === c.steps.length - 1 ? 'last' : ''}`}>
+                        {s}
+                      </li>
+                    ))}
+                  </ol>
+                  <p className="ug-meaning">{c.meaning}</p>
+                </motion.article>
+              );
+            })}
           </div>
-        </div>
-      </div>
+        </section>
 
-      {/* Fresher Opportunity */}
-      <div className="ug-block">
-        <div className="ug-section-label">Fresher Opportunity Check</div>
-        <h2 className="ug-section-title">Where a fresher realistically fits in</h2>
-        <p className="ug-section-tag">The narrow door that stays open — and what closes it.</p>
+        {/* Why Safe / Risky — stability matrix */}
+        <section className="ug-block" aria-labelledby="de-safe">
+          <p className="ug-section-label">Why it survives</p>
+          <h2 className="ug-section-title" id="de-safe">Why this career path is relatively safe — or risky</h2>
+          <p className="ug-section-tag ug-read">
+            People need housing. Cities need apartments. Apartments need RCC execution.
+            RCC execution needs site checking.
+          </p>
 
-        <div className="ug-panel">
-          <ul className="ug-list" style={{ color: '#6ee7d7' }}>
-            {fresherPoints.map((p, i) => (
-              <motion.li
-                key={i}
-                initial={{ opacity: 0, x: -12 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.06 }}
-              >
-                <span style={{ color: '#e7ecf3' }}>{p}</span>
-              </motion.li>
-            ))}
-          </ul>
-        </div>
-      </div>
+          <div className="ug-table-wrap">
+            <table className="ug-table">
+              <caption>Ecosystem layers and the reason each layer keeps existing</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Ecosystem layer</th>
+                  <th scope="col">Why it keeps existing</th>
+                </tr>
+              </thead>
+              <tbody>
+                {safetyPillars.map((p) => (
+                  <tr key={p.label}>
+                    <th scope="row" className="layer" style={{ fontWeight: 600, color: 'var(--text)', borderBottom: '1px solid var(--border)' }}>
+                      {p.label}
+                    </th>
+                    <td>{p.reason}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
 
-      {/* Strengtheners vs Weakeners */}
-      <div className="ug-block">
-        <div className="ug-section-label">Final Reality</div>
-        <h2 className="ug-section-title">What strengthens it — what weakens it</h2>
-        <p className="ug-section-tag">The stronger the chain above the role, the safer the role becomes.</p>
+        {/* Fresher Opportunity */}
+        <section className="ug-block" aria-labelledby="de-fresher">
+          <p className="ug-section-label">Fresher Opportunity Check</p>
+          <h2 className="ug-section-title" id="de-fresher">Where a fresher realistically fits in</h2>
+          <p className="ug-section-tag ug-read">The narrow door that stays open — and what closes it.</p>
 
-        <div className="ug-two-col">
-          <motion.div
-            className="ug-panel"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="ug-section-label" style={{ color: '#6ee7d7' }}>What could strengthen it</div>
+          <div className="ug-panel">
             <ul className="ug-list ug-strengthen">
-              {strengtheners.map((s) => <li key={s}><span style={{ color: '#e7ecf3' }}>{s}</span></li>)}
+              {fresherPoints.map((p, i) => (
+                <li key={i}><span style={{ color: 'var(--text-2)' }}>{p}</span></li>
+              ))}
             </ul>
-          </motion.div>
+          </div>
+        </section>
 
-          <motion.div
-            className="ug-panel"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.08 }}
-          >
-            <div className="ug-section-label" style={{ color: '#f5c26b' }}>What could weaken it</div>
-            <ul className="ug-list ug-weaken">
-              {weakeners.map((w) => <li key={w}><span style={{ color: '#e7ecf3' }}>{w}</span></li>)}
-            </ul>
-          </motion.div>
-        </div>
+        {/* Strengtheners vs Weakeners */}
+        <section className="ug-block" aria-labelledby="de-final">
+          <p className="ug-section-label">Final Reality</p>
+          <h2 className="ug-section-title" id="de-final">What strengthens it — what weakens it</h2>
+          <p className="ug-section-tag ug-read">The stronger the chain above the role, the safer the role becomes.</p>
 
-        <div className="ug-final-copy" style={{ marginTop: 28 }}>
-          <p>
-            This ecosystem is <strong>relatively safe, but not risk-free.</strong> It can slow down
-            during real estate downturns, funding problems, material cost rises, approval delays,
-            or weak housing demand — but it is not easily destroyed by AI because the work depends
-            heavily on physical site execution.
+          <div className="ug-two-col">
+            <div className="ug-panel">
+              <div className="ug-panel-head ug-strengthen">
+                <TrendingUp aria-hidden="true" />
+                <span>What could strengthen it</span>
+              </div>
+              <ul className="ug-list ug-strengthen">
+                {strengtheners.map((s) => <li key={s}><span style={{ color: 'var(--text-2)' }}>{s}</span></li>)}
+              </ul>
+            </div>
+
+            <div className="ug-panel">
+              <div className="ug-panel-head ug-weaken">
+                <TrendingDown aria-hidden="true" />
+                <span>What could weaken it</span>
+              </div>
+              <ul className="ug-list ug-weaken">
+                {weakeners.map((w) => <li key={w}><span style={{ color: 'var(--text-2)' }}>{w}</span></li>)}
+              </ul>
+            </div>
+          </div>
+
+          {/* Evidence / reasoning */}
+          <div className="ug-final-copy" style={{ marginTop: 32 }}>
+            <p>
+              This ecosystem is <strong>relatively safe, but not risk-free.</strong> It can slow down
+              during real estate downturns, funding problems, material cost rises, approval delays,
+              or weak housing demand — but it is not easily destroyed by AI because the work depends
+              heavily on physical site execution.
+            </p>
+            <p>
+              For the next 10 years, this ecosystem appears <strong>relatively stable</strong> for
+              fresher opportunities, but it is cyclical. Hiring rises when apartment projects are
+              active and slows when real estate slows.
+            </p>
+            <p>
+              <strong>Primary reason it survives:</strong> RCC apartment construction still needs
+              daily human site verification.
+            </p>
+          </div>
+        </section>
+
+        {/* Takeaway */}
+        <aside className="ug-takeaway" aria-label="Key takeaway">
+          <p className="ug-takeaway-label">One-line memory takeaway</p>
+          <p className="ug-takeaway-text">
+            “Junior Site Engineer roles survive when RCC apartment projects keep needing
+            daily site verification.”
           </p>
-          <p>
-            For the next 10 years, this ecosystem appears <strong>relatively stable</strong> for
-            fresher opportunities, but it is cyclical. Hiring rises when apartment projects are
-            active and slows when real estate slows.
-          </p>
-          <p>
-            <strong>Primary reason it survives:</strong> RCC apartment construction still needs
-            daily human site verification.
-          </p>
-        </div>
+        </aside>
       </div>
-
-      {/* Takeaway */}
-      <motion.div
-        className="ug-takeaway"
-        initial={{ opacity: 0, scale: 0.97 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
-      >
-        <div className="ug-takeaway-label">One-line memory takeaway</div>
-        <div className="ug-takeaway-text">
-          “Junior Site Engineer roles survive when RCC apartment projects keep needing
-          daily site verification.”
-        </div>
-      </motion.div>
     </div>
   );
 };
