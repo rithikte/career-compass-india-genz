@@ -131,49 +131,67 @@ const DomainExplore: React.FC = () => {
         .ug-section-tag { color: #9aa4b2; font-size: 0.9rem; margin-bottom: 28px; }
 
         .ug-chain-grid {
-          display: grid; gap: 20px;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          display: grid; gap: clamp(14px, 2vw, 22px);
+          grid-template-columns: 1fr;
         }
+        @media (min-width: 720px) { .ug-chain-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (min-width: 1080px) { .ug-chain-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
         .ug-chain-card {
-          position: relative; padding: 26px 22px 22px;
-          background: rgba(255,255,255,0.03);
+          position: relative; display: flex; flex-direction: column;
+          padding: clamp(18px, 2.4vw, 26px);
+          background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.02));
           border: 1px solid rgba(255,255,255,0.08);
-          border-radius: 20px; backdrop-filter: blur(12px);
+          border-radius: 18px; backdrop-filter: blur(12px); overflow: hidden;
           transition: transform .35s cubic-bezier(.34,1.56,.64,1), border-color .3s, box-shadow .3s;
         }
-        .ug-chain-card:hover { transform: translateY(-2px); box-shadow: 0 12px 32px -16px rgba(110,231,215,0.18), 0 12px 32px -16px rgba(167,139,250,0.14); }
+        .ug-chain-card::after {
+          content: ''; position: absolute; inset: 0 0 auto 0; height: 2px;
+          background: linear-gradient(90deg, currentColor, transparent 85%);
+          opacity: .75;
+        }
+        .ug-chain-card:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.16); box-shadow: 0 18px 44px -22px rgba(0,0,0,0.8); }
+        .ug-chain-head {
+          display: flex; align-items: center; gap: 10px; margin-bottom: 10px;
+          flex-wrap: wrap;
+        }
         .ug-chain-num {
           font-family: 'Poppins', sans-serif; font-weight: 700;
-          font-size: 12px; letter-spacing: 0.24em; opacity: 0.7;
+          font-size: clamp(9px, 1.1vw, 10.5px); letter-spacing: 0.22em; text-transform: uppercase;
+          padding: 5px 9px; border-radius: 999px;
+          border: 1px solid currentColor; background: rgba(255,255,255,0.03);
         }
         .ug-chain-title {
           font-family: 'Poppins', sans-serif; font-weight: 600;
-          font-size: 1.15rem; color: #e7ecf3; margin: 8px 0 18px;
+          font-size: clamp(0.98rem, 1.6vw, 1.12rem); color: #e7ecf3;
+          margin: 0 0 14px; line-height: 1.35; letter-spacing: -0.01em;
         }
         .ug-trigger {
-          display: inline-block; padding: 8px 12px; border-radius: 10px;
-          font-size: 0.82rem; font-weight: 500; margin-bottom: 14px;
+          display: block; padding: 10px 12px; border-radius: 12px;
+          font-size: clamp(0.74rem, 1.3vw, 0.82rem); font-weight: 500; margin-bottom: 16px;
           background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+          line-height: 1.45;
         }
-        .ug-flow { position: relative; padding-left: 22px; }
+        .ug-flow { position: relative; padding-left: 20px; flex: 1; }
         .ug-flow::before {
-          content: ''; position: absolute; left: 6px; top: 6px; bottom: 6px;
-          width: 1px; background: linear-gradient(180deg, rgba(255,255,255,0.25), rgba(255,255,255,0.02));
+          content: ''; position: absolute; left: 4px; top: 10px; bottom: 12px;
+          width: 1px; background: linear-gradient(180deg, currentColor, rgba(255,255,255,0.04));
+          opacity: .45;
         }
         .ug-step {
-          position: relative; padding: 8px 0; font-size: 0.86rem;
-          color: #e7ecf3; line-height: 1.55;
+          position: relative; padding: 7px 0; font-size: clamp(0.78rem, 1.35vw, 0.86rem);
+          color: #cfd7e3; line-height: 1.55;
         }
         .ug-step::before {
-          content: ''; position: absolute; left: -22px; top: 15px;
+          content: ''; position: absolute; left: -20px; top: 14px;
           width: 9px; height: 9px; border-radius: 50%;
-          border: 1px solid rgba(255,255,255,0.3); background: #06080d;
+          border: 1px solid rgba(255,255,255,0.28); background: #06080d;
         }
-        .ug-step.last::before { background: currentColor; box-shadow: 0 0 10px currentColor; }
+        .ug-step.last { color: #e7ecf3; font-weight: 600; }
+        .ug-step.last::before { background: currentColor; border-color: currentColor; box-shadow: 0 0 10px currentColor; }
         .ug-meaning {
           margin-top: 18px; padding: 12px 14px; border-radius: 12px;
-          background: rgba(255,255,255,0.03); border-left: 2px solid currentColor;
-          font-size: 0.82rem; color: #e7ecf3; line-height: 1.55;
+          background: rgba(255,255,255,0.035); border-left: 2px solid currentColor;
+          font-size: clamp(0.74rem, 1.3vw, 0.82rem); color: #cfd7e3; line-height: 1.55;
         }
 
         .ug-panel {
@@ -287,8 +305,10 @@ const DomainExplore: React.FC = () => {
                 transition={{ duration: 0.55, delay: i * 0.08, ease: [0.34, 1.56, 0.64, 1] }}
                 whileHover={{ borderColor: a.ring } as any}
               >
-                <div className="ug-chain-num" style={{ color: a.label }}>{c.number} — Chain</div>
-                <div className="ug-chain-title">{c.title}</div>
+                <div className="ug-chain-head">
+                  <span className="ug-chain-num" style={{ color: a.label }}>{c.number} — Chain</span>
+                </div>
+                <h3 className="ug-chain-title">{c.title}</h3>
                 <div className="ug-trigger" style={{ borderColor: a.ring, color: a.label }}>
                   If {c.trigger}
                 </div>
