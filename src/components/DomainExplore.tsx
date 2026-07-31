@@ -364,14 +364,17 @@ const DomainExplore: React.FC = () => {
             {safetyPillars.map((p, i) => (
               <motion.div
                 key={p.label}
-                className="ug-pillar"
+                className={`ug-pillar${i === safetyPillars.length - 1 ? ' final' : ''}`}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
               >
-                <div className="ug-pillar-label">{p.label}</div>
-                <div className="ug-pillar-reason">{p.reason}</div>
+                <span className="ug-pillar-step">{String(i + 1).padStart(2, '0')}</span>
+                <div className="ug-pillar-body">
+                  <div className="ug-pillar-label">{p.label}</div>
+                  <div className="ug-pillar-reason">{p.reason}</div>
+                </div>
               </motion.div>
             ))}
           </div>
